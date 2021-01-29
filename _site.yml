@@ -10,48 +10,32 @@ output:
     number_sections: FALSE
     css: style.css
 navbar: 
-  title: "BIOL 3140"
+  title: "BIOL 5380"
   left: 
     - text: "Home"
       href: index.html
     - text: "Schedule"
       href: schedule.html
-    - text: "Projects"
+    - text: "Mini-Projects"
       menu:
-        - text: "Phase I"
-        - text: "Phase I report rubric"
-          href: phaseI_rubric.html
-        - text: "Module 1 Project"
-          href: mod1_proj.html
-        - text: "Module 2 Project"
-          href: mod2_proj.html
-        - text: "Module 3 Project"
-          href: mod3_proj.html
-        - text: "Module 4 Project"
-          href: mod4_proj.html
-        - text: "Module 5 Project"
-          href: mod5_proj.html
-        - text: "Phase II"
-        - text: "Phase II report rubric"
-          href: phaseII_rubric.html
-        - text: "Module 6 Project"
-          href: mod6_proj.html
-        - text: "Module 7 Project"
-          href: mod7_proj.html
-        - text: "Module 8 Project"
-          href: mod8_proj.html
-        - text: "Module 9 Project"
-          href: mod9_proj.html
-        - text: "Phase III"
-        - text: "Phase III report rubric"
-          href: phaseIII_rubric.html
-        - text: "Final Project"
-          href: final_proj.html
-        - text: "DaqPacks"
-        - text: "DaqPack Item List"
-          href: daqpack.html
-    - text: "BIOL 3140 Discussion"
-      href: https://github.com/orgs/bcorgbio/teams/biol-3140
+      - text: "Mini-Projects Overview"
+        href: mini_projects.html
+      - text: "MP1 Description"
+        href: MP1.html
+      - text: "MP2 Description"
+        href: MP2.html
+      - text: "MP3 Description"
+        href: MP3.html
+      - text: "MP4 Description"
+        href: MP4.html
+      - text: "MP3 Description"
+        href: MP5.html
+    - text: "Final Project"
+      menu:
+      - text: "FP Overview"
+        href: final_project.html
+    - text: "Course Canvas Page"
+      href: https://bostoncollege.instructure.com/courses/1615104
       
     
  

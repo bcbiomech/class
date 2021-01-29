@@ -1,0 +1,87 @@
+---
+title: "Final Project"
+---
+
+The last part of the course is devoted to a single team-based independent project that combines the conceptual knowledge from lecture with the data analysis and report-writing skills from the 5 MPs. Your team should work with Prof. K to develop an interesting question with a reasonable scope to answer with your Final Project. There are two assignments associated with the final project: A report and short presentation.
+
+# Project Guidelines
+
+## General Advice
+
+The most important point to consider while undertaking your FP is this: pose an informed question (i.e., an hypothesis) and address it quantitatively with the data you collect. Beyond this, you must also explain why you asked the question you have, that is, establish what about this question is relevant about the biology and physics underlying your hypothesis. To successfully pose a manageable question and realize its importance, it is critical to choose a topic or problem that is tidy and focused. In doing so, you can address it in enough detail in your report and presentation.
+
+To understand what is important about your question and, just as importantly, establish how you'll get your data (i.e., design your experiment), you must evaluate how similar questions have been answered and what the answers were. In other words, you must review the literature. The introductory and discussion material of your reports and presentations should include information gathered from the literature that address why the work is important and how your work contributes to new knowledge. Prof. K will work with you to review the appropriate literature.
+
+Once you have a good idea of how to approach your problem and in what context it might land, you're now ready to do some science. Your experimental subjects need not be human, but they must permit easy data acquisition---you only have a few days to collect these. Experiments should leverage the skills and technical knowledge you obtained in class, including biomechanical modeling in R, kinematic analysis in imageJ, and data acquisition with Arduino. Of course, critical to your choice of methodologies is the instrumentation you can access: wind tunnel, three-point tester, force transducers, calipers, iPhones and all the software used with these. In choosing what instrumentation and software to use, you must understand what data you want to gather. Therein, as the Bard would say, lies the rub. Think critically about this and consider how your data will perform in answering your question.
+
+## Project Timeline
+
+We'll break from lecture activities in late April to begin thinking about the final project. On Monday, April 19th, and Wednesday, April 21st, we'll hold a round table to discuss potential projects, including their scope and logistics. After this, you'll have approximately three weeks to complete the project and submit your presentation and another week after that to complete and submit the project report. Please have a look at our [schedule](schedule.html) page for more details.
+
+After the round tables, each team will be required to schedule at least one meeting with Prof. K to discuss relevant literature and perhaps colaborate on experiments.
+
+
+# Final Project Report
+
+## Report Guidelines
+
+Just like the MPs, the Final Project report should resemble a short manuscript that models a scientific paper. By this, we mean that it should contain appropriate headings or sections framing the question, how it was answered, the results, and how these results relate to the question and similar work that has been done. Like the [MP reports](mini_projects.html#ReportGuidelines), these sections include: 
+
+  + Introduction: One or two paragraphs that proclaim the motivation for the work and prepares readers for the structure and outcomes described in the report.
+  + Methods: One or two paragraphs that detail how the question was answered and how one could reproduce the experiments presented in the report.
+  + Results: One or two paragraphs that summarize the results. This section should reference at least one figure produced through your analysis in R.
+  + Discussion: Once or two paragraphs that briefly discuss the importance of the results (i.e., how they relate to the main question and the field in a broader context).
+  + Author Contributions: A paragraph that briefly state the contributions made by each team member to the project.
+  + References: A bibliography section that includes the works cited in the text.
+
+Please synthesize your results into a report 5 pages long using R markdown. Each group should submit on document containing the markdown code and a second document rendered in R markdown. These should be emailed to Professor Kenaley. The R markdown document should look something like a scientific paper, perhaps like one you read in your literature review. It should include the following sections and their associated content:
+
+The very prestigious Nature publishing group has released a series of articles on their "Scitable" site devoted to writing in science. You may find [this article](https://www.nature.com/scitable/ebooks/english-communication-for-scientists-14053993/118519636#bookContentViewAreaDivID) helpful in writing your report.
+
+## Report Rubric
+
+The FP report is worth a total of 100 points toward your final grade. The following rubric describes how it will be evaluated. 
+
+ |Component| **Spot On** |  **Pretty Good** | **Needs Work**  
+|--------|-------- |-------- |--------
+| Tasks and Outputs | Completes all tasks fully; submits all required outputs and materials on time, including those scheduled before the final deadline. <br>**(15 pts)** | Completes a majority but not all tasks fully; final submission meets the deadline but some preliminary deadlines may have been missed  <br>**( 8 pts)** | Completes few required tasks or submits few required materials; most submissions miss their respective deadlines <br>**(3 pts)**
+| Scientific Rigor| The project approaches an important question in organismal biology with a reasonable scope using tools and techniques used in the course <br>**(15 pts)** | The project question is well defined, but perhaps trivial, or the project scope is too narrow or ambitious <br>**(8 pts)** | The question is trivial and the scope unreasonable. <br>**(3 pts)**
+| Effort and Engagement | The individual or team pursues help from the instructor, ask  questions and/or seeks help regularly <br>**(15 pts)**|  Individual or team asks questions or seek help sometimes, but not regularly <br>**(8 pts)**  |  Individual or team does not seem help <br>**(3 pts)**
+| Report Format | Report contains all the appropriate headings and components (including a bibliography) <br>**(10 pts)**|  Report contains most of the appropriate headings and components (including a bibliography) <br>**(6 pts)** |  Report contains few of the appropriate headings and components <br>**(2 pt)**
+| Analysis and Code | Report contains concisely written code chunks within the results or methods sections that produce creative analyses, figures, and/or tables that have clear implications for the project's question <br>**(15 pts)**|  One or a few code chunks are unneeded or produce analyses, figures, and/or tables that do not have clear implication for to the project goals <br>**(8 pts)**| No code chunks contained in report or all code chunks are unneeded or produce analyses, figures, and/or tables not directly related to the project goals <br>**(3 pts)** 
+| Graphics and Tables | Figures, tables, and images are clear, add much to the results in analysis, and have concise but descriptive captions <br>**(10 pts)**|   One or a few figures, tables, and images are unneeded or inappropriate or they lack captions that are concise or descriptive  <br>**(6 pts)**|  All figures, tables, and images are unneeded or inappropriate <br>**(2 pt)**
+| Writing and Style | The writing is concise, clear, avoids passive constructions, and is in the past tense; grammar is appropriate <br>**(10 pts)**|   The writing is unclear or rambling in spots or uses passive constructions and future tense; grammar is shaky in spots <br>**(6 pts)** |   The writing is unclear, and/or uses passive constructions or future tense throughout; grammar is shaky for the most part <br>**(2 pt)**
+| Sources and References | The report contains 3 references to primary research pieces that support statements of fact; references are contained in a [BibTex bibliography and inserted with `@` tags](mod4_proj.html#Inserting_References)  <br>**(10 pts)**| Report contains fewer than 3 references; some statements of scientific findings and fact are not supported by references; some references are not contained in a BibTex bibliography or inserted with `@` tags <br>**(6 pts)** |   Most statements of scientific findings and fact are not supported by references; references are not contained in a BibTex bibliography nor inserted with `@` tags <br>**(2 pt)**
+||||
+
+## Writing Advice
+
+Like with the MPs, you may find [this article](https://www.nature.com/scitable/ebooks/english-communication-for-scientists-14053993/118519636#bookContentViewAreaDivID) helpful in writing your FP report. Likewise, advice concerning [how to avoid common writing mistakes]Common_mistakes.pdf)) may also be helpful. 
+
+# Final Project Presentation
+
+Each team will make a 10-minute presentation using the software of their choice. The content of the presentation should be a distillation of project paper, however, it should be visually pleasing and not just a bunch of text.  More specific guidelines and advice for composing the presentation can be found at this nifty [post on Nature's Scitable site](https://www.nature.com/scitable/ebooks/english-communication-for-scientists-14053993/118520778/).
+
+The presentation should include 8 minutes for sharing your project and 2 minutes for questions. This time allotment will be strictly enforced. Each member of your group must present at least one slide. Questions will be addressed to the group as a whole.
+
+## Presentation Guidelines
+
+The presentation should be [recorded in Zoom](https://www.youtube.com/watch?v=lZHSAMd89JE) or some other software that can record video and a screen simultaneously. Each team member should record their part of the presentation for the team to [assemble into the final presentation](https://www.youtube.com/watch?v=WTTDR8nEncY). Presentations should be uploaded to this directory with a file name in the following format "TEAMNAME_final_presentation.mp4". 
+
+The class will convene over Zoom at some point over finals period to watch the pre-recorded presentations and ask questions of each team. 
+
+## Presentation Rubric
+
+The FP presentation is worth a total of 50 points toward your final grade. The following rubric describes how this presentation will be evaluated. 
+
+ |Component| **Spot On** |  **Pretty Good** | **Needs Work**  
+|--------|-------- |-------- |--------
+| Communication and content delivery | The topic was communicated effectively; language and graphics were clear, concise  <br>**(10 pts)** | Communication of the topic was unclear in some parts; some graphics and language may have been confusing  <br>**(6 pts)** | Communication of the topic was unclear throughout; most or all graphics and language were confusing <br>**(2 pts)**
+| Organization | Presentation was well organized; presenters introduced the topic clearly, maintained focus throughout, and made logical and relevant conclusions <br>**(10 pts)** | Presentation was unorganized in parts; presenters failed to either introduce the topic clearly, maintain focus, or make logical and relevant conclusions <br>**(6 pts)** | Presentation was not organized overall; presenters failed to introduce the topic clearly, maintain focus, and make logical and relevant conclusions <br>**(2 pts)**
+| Content | Presenters proposed a logical question, clearly explained the project's process, its results, and what was learned; presenters combined class concepts with their results to draw new insights <br>**(10 pts)**|  Presenters failed to propose a logical question or clearly explain the project's process, its results, and what was learned, or did not combine class concepts with their results to draw new insights <br>**(6 pts)**  |   Presenters failed to propose a logical question,  explain the project's process, its results, and what was learned, and did not combine class concepts with their results to draw new insights <br>**(2 pts)**
+| Questions and answers | Presenters demonstrated enough knowledge of the topic to respond to questions with confident, succinct, and insightful answers <br>**(10 pts)**|  Presenters demonstrated enough knowledge of the topic to respond to most but not all questions with confident, succinct, and insightful answers <br>**(6 pts)** |  Presenters failed to respond to all questions with confident, succinct, and insightful answers. <br>**(2 pt)**
+| Individual contribution | The individual presenter's contribution was substantial and key to an effective presentation <br>**(10 pts)**| The individual presenter's contribution was obvious but perhaps not pivotal. <br>**(6 pts)**| The individual presenter's contribution was unclear, limited, or not important <br>**(2 pts)**
+||||
+
+
+

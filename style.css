@@ -1,4 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla&display=swap');
+
 h1, .h1, h2, .h2, h3, .h3,h4,.h4 {
-    margin-top: 20px;
+    margin-top: 50px;
      margin-bottom: 10px;
 }
+
+/*----------LOGO above TOC---------*/
+
+#TOC::before {
+  content: "";
+  display: block;
+  height: 200px;
+  margin: 1em 10px 10px 10px;
+  background-image: url('bg.png');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+ /*------------- Whole Document---------------- */
+
+body {
+    font-family: 'Karla';
+    font-size: 16px;
+}
+
+
+/* links */
+a { 
+  color: #0D66A3;
+}
+
+a:hover {
+ color: #03203F; /* darker color when hovering */
+}
+
+div.green { background-color:#8BB9D8; border-radius: 7px; padding: 20px;}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">

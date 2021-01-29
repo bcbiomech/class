@@ -1,0 +1,234 @@
+---
+title: 'Miniproject 1: Open Sourcery'
+subtitle: 'BIOL5380: Topics in Biomechanics'
+output:
+  html_document:
+    df_print: paged
+---
+
+Welcome to the first Miniproject of BIO5380. The purposes of MP1 is to (1) become familiar with simple operations in the R computing language and (2) realize a little bit of the potential of scripting and scientific computing in context of biomechanics research. Hopefully, you've already downloaded both R and RStudio. Let's assume you have and we'll get right to it. 
+
+
+# Jumping In
+First off, let's get some data. The file "`OZ_jumping_1.csv`" contains y displacement (in cm) of Prof. Kenaley's two kids jumping. These were digitized from high-speed videos. It can be dowloaded here: <http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_1.csv>. Let's then save it to a folder on you computer, i.e., a directory.
+
+Let's now open up RStudio and open a new script file with "File -> New File". Give it a name and save it to the same directory the jumping data are in. Now, let's tell R that it needs to look for data in a particlar folder by setting the working directory: 
+
+```{r}
+#on a mac
+setwd("~/Documents/BC/5380.s.2018/MP1")
+
+#on a pc
+#setwd("C:\\Users\\user\\Documents\\BC\\5380.s.2018\\MP1")
+```
+
+Note, this is unique to each user. You can pull up the file info with your operating system and copy the directory and paste it within quotes of the `setwd()` command. Select the line and run the the `setwd()` command. 
+
+Now, let's load the data and check that it read with (remember, `<-` is R speak for pass the stuff to the right to a variable name on the left):
+
+```{r}
+dat <- read.csv("OZ_jumping_1.csv") #read the data from the comma-separated file 
+head (dat) #print the first few rows to the monitor
+```
+
+OK, data loaded. Congrats! The `head()` command prints the first few rows, showing that the data include `o` for Ollie's data and `z` for Zoe's vertical displacement and `t` for time in milliseconds (ms), Now, let's plot some of the data, say for Zoe, with the simple graphics packages and `with()` command loaded with R. The `with()` call says, "R, with the data `dat`, plot a scatterplot of `z` versus `t`."
+
+```{r, echo=FALSE}
+with(dat,plot(t,z)) #the with command say do with x something
+```
+
+Splenid! But what about poor Ollie?!? We could add his points with the following `points()` call. The color parameter (`col`) is added with `red` to distinguish the two jumpers.
+
+```{r}
+with(dat,plot(t,z))
+with(dat,points(t,o,col="purple"))
+```
+
+Even better! OK, but don't we want to know more about this experiment, like say who jumped highest? How would we answer that? Well, perhaps something like this would help:
+
+
+```{r}
+max.o <- max(dat$o)
+max.z <- max(dat$z)
+
+max.jump <- c(max.o,max.z)
+names(max.jump) <- c("o","z")
+print(max.jump)
+```
+`print()` prints something to the terminal and the `c()` command combines two or more things and the `names()` command gives a vector (a one-dimensional series) its names (notice the two must be the same length) 
+
+So that's all well and good. It looks like Zoe jumped a littler higher. But, by how much? That's simple to calculate. To do this, we'll make turn these summary statistics into a two-dimensional data frame (like a spreadsheet), with the `data.frame()` function.
+
+```{r}
+oz.stats <- data.frame(o=max.o,z=max.z)
+oz.stats$diff <- abs(oz.stats[,"o"]-oz.stats[,"z"])
+print(oz.stats)
+```
+
+
+Notice how we are able to subset the data by column name with brackets. Within the brackets, anything to the right of a comma references columns and anything to the left rows. So we select columns that equal `o` and `z` and then take the absolute value of one subracted from the other with the `abs()` call. 
+
+
+# Whole 'nutha level
+Spectacular! However, it's a little cumbersome. There is, indeed, a little more streamlined way to do this with slightly more sophisticated data maniplulation and plotting that produces much more pleasing results and a workflow that can be manipulated with ease. Let's first install and then load some packages that make for easy data manipulation and wonderful plot making.
+
+```{r}
+#install.packages("ggplot2")
+#install.packages("reshape2")
+#install.packages("plyr")
+library(ggplot2)
+library(reshape2)
+library(plyr)
+```
+
+Let's go back to the original data and melt it, that is, rather than have seperate columns for the vertical displacement data for `o` and `z`, let's have them in one and identify in another column to whom the data belong. This is super easy with the `melt()` function from `reshape2`. Then we can use the amazingly simple and beautiful plotting commands from `ggplot` to plot the data with a color according to the variable (which kiddo).
+
+```{r}
+dat.m <- melt(dat,id= "t")
+head(dat.m)
+tail(dat.m)
+
+qplot(x=t,y=value,dat=dat.m,col=variable) #a quick plot with ggplot
+```
+
+Super easy and concise. What about those summary statistics? Just as easy with the `ddply` function in the `plyr` package . . . 
+
+```{r}
+dat.sum <- ddply(dat.m,.(variable),summarize,max=max(value),min=min(value),max=max(value),n=length(value))
+head(dat.sum)
+tail(dat.sum)
+
+qplot(x=variable,y=max,dat=dat.sum,col=variable,size=4)
+```
+
+# Loop `if` you can
+
+One of the most magical aspects of command-line computing (i.e., what you're doing right now) is that one can automate the mundane. Imagine that instead of just one jumping experiment, you ran 5 separate jumping expirements with these two goofballs and had digitized data from each. Now that's 5 replicates and worthy of some comprehensive analysis. For the record, 5 is generally seen as the magic minimum number of replicates in biomechanics. Assuming all the replicates result in the same raw data---vertical displacement of `o` and `z` and `t` in milliseconds, this should be relatively straigtforward. Think for a moment about how you would go about this. Would you somehow get these data into Excel and add another column column indicating the replicate? You could do that, but that's slow and, as with so many manual operations in computing, often results in errors. Due to these factors and, as importantly, the ethos of BIOL5380, let's avoid using commercial software with all its limitations. But where to begin? Enter the `for` loop. 
+
+What is a `for` loop you ask? It's a command that runs while a condition is satisfied. For example, how 'bout we print a count down thusly:
+
+```{r}
+cnt <- 10:1 #store some numbers
+
+for(i in cnt){
+  print(paste("It's now", i))
+}
+
+```
+
+The operations contained in the `for` command (within the `"{ }"`) are repeated through the series defined by `cnt`. Specifically, for each value in `i`, `paste()` together `"It's now"` and `i` and `print()` it.
+
+Now that we have a basic understanding of how this works, let's apply it to our problem: automating the combining of a bunch of data. The crux here is that each of our 5 jumping trials are contained in their own files. Go ahead and download the remaining files and move them to your working directory:
+
+<http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_2.csv>
+
+<http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_3.csv>
+
+<http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_4.csv>
+
+<http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_5.csv>
+
+Now have a look at your files in the directory with this: 
+
+
+```{r}
+list.files()
+
+```
+
+Notice something about the file name structure? They are all named with a simple convention, that is, they all end in `_number.csv.` This number indicates the replicate (1 was the first, 5 was the last). With a standard convention like this, we can use a `for` loop to read in each file and extract from the file name from what replicate the data come. Let's walk through it. First, store the file names of interest:
+
+```{r}
+dat.files <- list.files(pattern=".csv")
+
+```
+
+This saves the names of all the files with the pattern `.csv` to the variable name `dat.files`. Now, let's use the for loop to read each file and save it to a list of data frames. 
+
+```{r}
+
+all.dat <- list() #establish an empty list
+for (i in dat.files ){
+  meta.dat <- strsplit(i,"_")[[1]] #store the metadata by splitting the file name
+  if(grepl("OZ",i)) print("YES") 
+  rep <- gsub(".csv","",meta.dat[3]) #use grep commands to remove the ".csv" at the end
+  dat.i <- read.csv(i) #read in the data
+  all.dat[[i]] <- data.frame(dat.i, rep=rep) #combine the data withe replicate number in a data frame and stor it in our list under the file name i
+}
+```
+
+Phew, that was a lot, let's unpack it. The first line establishes a list named `all.dat` to receive our data. Then, the guts of `for` ensues. For all the `dat.files`, first retrieve the meta data, i.e., the data that explains your data, in this case the replicate number. We do this with the `strsplit()` command. It splits a text string by seperator, a `"_"` in this case. Notice that the command `strsplit(i,"_")` outputs a list itself. The tell here is the `[[1]]`, a "1" with the double brackets indicating such.
+
+```{r}
+strsplit(i,"_")
+```
+
+There's only one element in this list, but we still have to identify that's the one we want. Thus the `[[1]]` added to the `strsplit(i,"_")` command. Notice the third element in this is what we want, the replicate number. However, it has the unsightly "`.csv`" stuck to it. Let's zap that with a `gsub()` command. `gsub()` is one of a series of search commands common to all computing languages. These commands use  general regular expressions, or `regex`, in algorithms to find text. It's really powerful, but any in-depth explanation of how they work is way beyond the scope of this MP and the course (however, you can learn more [here](https://en.wikipedia.org/wiki/Regular_expression). `gsub()` finds a string and substitutes it with another. In our case, we want to find `".csv"` and replace it with `""`, that is, nothing. With `gsub(".csv","",meta.dat[3])` we do just this and store the result in `rep`.
+
+Next, we read in the data and pass it to the variable `dat.i`. Then, we combine the data in a data frame with a new column called `rep` with the `rep` meta data. This gets passed to an item in the list `all.dat` with the name `i`. This proceeds for all the items in the `dat.files` variable. Viola! Now we have a list of named data frames. Have a look by typing `all.dat` into the terminal. Caution: R tries to print it all.
+
+
+What's left is to simply combine all the data frames into a single data frame.
+
+```{r}
+all.dat <- do.call(rbind,all.dat)
+```
+
+What we did here is apply a function to all items in our list with the `do.call()` command. This says, "Bind the rows of all the data frames in the `all.dat` list with the command `rbind`." Double viola!! Have a look by printing the first few and last few rows of the new comprehensive data frame.
+
+```{r}
+head(all.dat)
+tail(all.dat)
+```
+
+Wow, all our data from the five replicates in one spot. Now, we can apply some of the manipulation techniques we learned above to derive some summary statistics. So say we want to know the minimum, maximum, and number of data for each trial and for each kiddo:
+
+```{r}
+all.m <- melt(all.dat,id=c("rep","t")) #first melt the data frame
+all.sum <- ddply(all.m,.(rep,variable),summarize,min=min(value),max=max(value),n=length(value)) #summarize the data by rep and variable (kiddo) and extract the min, max, and length (n)
+```
+
+Sweet! Easy peasy. Let's plot our results---the max vertical displacement---but this time save the plot itself to a variable `p`.
+
+```{r}
+p <- qplot(x=rep,y=max,dat=all.sum,col=variable)
+print(p) #print p to see it
+```
+
+After saving the plot, we can add aspects to it using the `ggplot` language. For example, change the x- and y-axis labels and give the plot a clean, classic look with 20 pt font. Then, save the plot as a PDF:
+
+
+```{r}
+p <- p+ylab("y displacement (cm)")+xlab("time (ms)")+theme_classic(20)
+
+pdf("y_disp_vs_t.pdf") #open a pdf
+print(p) #print a plot to it
+dev.off() #shut it down
+```
+
+
+Holy smokes, that looks spectacular! You're now armed with some kick-arse scripting and plotting skills to analyze and visualize data, biomechanical or otherwise.
+
+# Your mission (and you have to accept it)
+
+Now that you have some R skills, lets put them to the test. You're tasked with writing a markdown document using `knitr` in much the same way this document was produced. Yes, I'm throwing you to the wolves, but that's often what makes this stuff stick. You can start with details on using R Markdown at http://rmarkdown.rstudio.com **and** inspecting the contents of this file. This'll help, too: https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf
+
+The markdown must contain the following:
+
+  1. A plot of the mean maximum for each kiddo across all replicates. It must contain or be accompanied with:
+    + properly labelled axes
+    + different colors for each subject
+    + error bars that correspond to 1± standard error of the mean (s.e.)
+    + a simple ANOVA test of results (with alpha of 0.05). [This'll help.](https://www.statmethods.net/stats/anova.html)
+    + a brief paragraph summarizing the differences and any inferences of why they are
+  2. A plot of the maximum vertical displacement for each kiddo versus replicate with a trend line. This must also be accompanied: 
+    + a table and summary of a two-way ANOVA (i.e., analysis of covariance) that tests the differences between subjects as they vary with replicate. [This'll help.](https://rexplorations.wordpress.com/2015/09/07/two-way-anova-in-r/)
+    + a brief paragraph summarizing the differences and any inferences of why they are
+    
+The `knitr` markdown file is due on January 29th at 11:00 Am. You should submit the file to this [google directory](https://drive.google.com/drive/folders/1XnpBl1sx1DJFnEq_ngMZIdUmEySCa-nZ?usp=sharing) by the start of class. 
+  
+  <b>Good luck!</b>
+
+
+
+

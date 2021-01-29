@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Course Schedule</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">BIOL 5380</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Schedule</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Mini-Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="mini_projects.html">Mini-Projects Overview</a>
+    </li>
+    <li>
+      <a href="MP1.html">MP1 Description</a>
+    </li>
+    <li>
+      <a href="MP2.html">MP2 Description</a>
+    </li>
+    <li>
+      <a href="MP3.html">MP3 Description</a>
+    </li>
+    <li>
+      <a href="MP4.html">MP4 Description</a>
+    </li>
+    <li>
+      <a href="MP5.html">MP3 Description</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Final Project
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="final_project.html">FP Overview</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="https://bostoncollege.instructure.com/courses/1615104">Course Canvas Page</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Course Schedule</h1>
+
+</div>
+
+
+<p>All assignments are due at 11:59 pm on the specified date. <em>V</em>= Vogel, S. Vogel, S. 2013. <em>Comparative Biomechanics: Life’s Physical World</em>.]</p>
+<div id="week-1-schedule" class="section level2">
+<h2>Week 1 Schedule</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Feb 1</td>
+<td>Welcome and Introduction</td>
+<td><a href="https://en.wikipedia.org/wiki/Classical_mechanics#:~:text=Classical%20mechanics%20is%20a%20physical,%2C%20planets%2C%20stars%20and%20galaxies.">Classical Physics Wiki page</a>; V Ch. 1 &amp; 2, Append. 1 &amp;2; <a href="Vogel_2007.pdf">Vogel (2007)</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, Feb 3</td>
+<td>Moving on Land I: Walking</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Feb 5</td>
+<td>Mini-Project I: Open Sourcery</td>
+<td></td>
+<td><a href="https://bccte.zoom.us/j/9533582156">Lab Zoom meeting @ 1:00 or 2:00</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="week-2-schedule" class="section level2">
+<h2>Week 2 Schedule</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Feb 8</td>
+<td>Moving on Land II: Running et al.</td>
+<td><a href="KuoWalking.pdf">Kuo (2007)</a></td>
+<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, Feb 10</td>
+<td>Moving on Land III:Scaling</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Feb 12</td>
+<td>Mini-Project I: Open Sourcery Cont’d</td>
+<td></td>
+<td><a href="https://bccte.zoom.us/j/9533582156">Lab Zoom meeting @ 1:00 or 2:00</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="week-3-schedule" class="section level2">
+<h2>Week 3 Schedule</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Feb 15</td>
+<td>Joints, Levers, and Linkages</td>
+<td>V Ch. 20</td>
+<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, Feb 17</td>
+<td>Coarse Materials I</td>
+<td>V pp. 286–306</td>
+<td>MP1 report due</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Feb 19</td>
+<td>Mini-Project II: Get Ur Gait On!</td>
+<td></td>
+<td><a href="https://bccte.zoom.us/j/9533582156">Lab Zoom meeting @ 1:00 or 2:00</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="week-4-schedule" class="section level2">
+<h2>Week 4 Schedule</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Feb 22</td>
+<td>Coarse Materials II</td>
+<td>V Ch. 16, 17</td>
+<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, Feb 24</td>
+<td>Coarse Materials III</td>
+<td>V Ch. 18</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Feb 26</td>
+<td>Mini-Project II: Get Ur Gait On! (Cont’d)</td>
+<td></td>
+<td><a href="https://bccte.zoom.us/j/9533582156">Lab Zoom meeting @ 1:00 or 2:00</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="week-5-schedule" class="section level2">
+<h2>Week 5 Schedule</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Mar 1</td>
+<td>Coarse Structures</td>
+<td>V Ch. 19</td>
+<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Thursday, Mar 4*</td>
+<td>Adhesion</td>
+<td>V pp. 425-436</td>
+<td>MP2 report due</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Mar 5</td>
+<td>Mini-Project III: It Puts the Motion in the Skin</td>
+<td></td>
+<td><a href="https://bccte.zoom.us/j/9533582156">Lab Zoom meeting @ 1:00 or 2:00</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>*Note that Thursday, Mar 4 is a Wednesday schedule</p>
+</div>
+<div id="week-6-schedule" class="section level2">
+<h2>Week 6 Schedule</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Mar 8</td>
+<td>Micro-motors</td>
+<td></td>
+<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, Mar 10</td>
+<td>Muscles: Micro Predicts Macro</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Mar 12</td>
+<td>Mini-Project III: It Puts the Motion in the Skin (Cont’d)</td>
+<td></td>
+<td><a href="https://bccte.zoom.us/j/9533582156">Lab Zoom meeting @ 1:00 or 2:00</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="week-7-schedule" class="section level2">
+<h2>Week 7 Schedule</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Mar 15</td>
+<td>Fluid Motions Around: An Introduction</td>
+<td></td>
+<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, Mar 17</td>
+<td>Fluid Motions Around: Bernoulli</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Mar 19</td>
+<td>Mini-Project III: It Puts the Motion in the Skin (Cont’d)</td>
+<td></td>
+<td><a href="https://bccte.zoom.us/j/9533582156">Lab Zoom meeting @ 1:00 or 2:00</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="week-8-schedule" class="section level2">
+<h2>Week 8 Schedule</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Mar 22</td>
+<td><span class="math inline">\(Re\)</span>: Drag</td>
+<td></td>
+<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, Mar 24</td>
+<td><span class="math inline">\(Re\)</span>: Shape</td>
+<td></td>
+<td>MP3 report due</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Mar 26</td>
+<td>Mini-Project IV: Birds of Feather</td>
+<td></td>
+<td><a href="https://bccte.zoom.us/j/9533582156">Lab Zoom meeting @ 1:00 or 2:00</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="week-9-schedule" class="section level2">
+<h2>Week 9 Schedule</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=350/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Mar 29</td>
+<td>Lift for a Living</td>
+<td></td>
+<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, Mar 31</td>
+<td>Gliding into D = m<span class="math inline">\(\cdot g\cdot\)</span> cos(<span class="math inline">\(\theta\)</span>)</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Apr 2*</td>
+<td>Mini-Project IV: Birds of Feather (Cont’d)</td>
+<td></td>
+<td>no lab Zoom meeting</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>*Note: Good Friday and no class, however, we should continue on with MP IV through the week</p>
+</div>
+<div id="week-10-schedule" class="section level2">
+<h2>Week 10 Schedule</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Apr 5</td>
+<td>Powered Flights of Fancy</td>
+<td></td>
+<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, Apr 7</td>
+<td>The Flow Within</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Apr 9</td>
+<td>Mini-Project IV: Birds of Feather (Cont’d)</td>
+<td></td>
+<td><a href="https://bccte.zoom.us/j/9533582156">Lab Zoom meeting @ 1:00 or 2:00</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="week-11-schedule" class="section level2">
+<h2>Week 11 Schedule</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Apr 12</td>
+<td>There Will Be Blood</td>
+<td></td>
+<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, Apr 14</td>
+<td><span class="math inline">\(Re\)</span>: The Tiny</td>
+<td></td>
+<td>MP4 report due</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Apr 16</td>
+<td>Mini-Project V: It’s Snot Rocket Science</td>
+<td></td>
+<td><a href="https://bccte.zoom.us/j/9533582156">Lab Zoom meeting @ 1:00 or 2:00</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="week-12-schedule" class="section level2">
+<h2>Week 12 Schedule</h2>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Apr 19</td>
+<td>Final Project Discussion</td>
+<td></td>
+<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, Apr 21</td>
+<td>Final Project Round Table</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Apr 23</td>
+<td>Final Project Round Table</td>
+<td></td>
+<td>Team meetings with Prof. K</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="week-13-schedule" class="section level2">
+<h2>Week 13 Schedule</h2>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, Apr 26</td>
+<td>Final Project Work</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, Apr 28</td>
+<td>Final Project Work</td>
+<td></td>
+<td>MP5 report due</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Friday, Apr 30</td>
+<td>Final Project Work</td>
+<td></td>
+<td>Team meetings with Prof. K</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="week-14-schedule" class="section level2">
+<h2>Week 14 Schedule</h2>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Monday, May 3</td>
+<td>Final Project Work</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Wednesday, May 5</td>
+<td>Final Project Work</td>
+<td></td>
+<td>FP presentation*</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>FP presentations can be uploaded to this directory.</p>
+</div>
+<div id="finals-schedule" class="section level2">
+<h2>Finals Schedule</h2>
+<table>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Wednesday, May 12</td>
+<td>Final Project</td>
+<td></td>
+<td>FP report due</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>FP presentations can be uploaded to this directory.</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
