@@ -1,7 +1,7 @@
 
 ---
 title: "BIOL 5380"
-output: pdf_document
+
 ---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">

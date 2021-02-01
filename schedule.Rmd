@@ -9,16 +9,16 @@ All assignments are due at 11:59 pm on the specified date. *V*= Vogel, S. Vogel,
 
 | **Date** <img width=200/>| **Topic** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Monday, Feb 1 | Welcome and Introduction | [Classical Physics Wiki page](https://en.wikipedia.org/wiki/Classical_mechanics#:~:text=Classical%20mechanics%20is%20a%20physical,%2C%20planets%2C%20stars%20and%20galaxies.); V Ch. 1 & 2, Append. 1 &2; [Vogel (2007)](Vogel_2007.pdf)|
- | Wednesday, Feb 3 | Moving on Land I: Walking||
+ | Monday, Feb 1 | [Welcome and Introduction  (1)](lect/Lecture1.html) | [Classical Physics Wiki page](https://en.wikipedia.org/wiki/Classical_mechanics#:~:text=Classical%20mechanics%20is%20a%20physical,%2C%20planets%2C%20stars%20and%20galaxies.); V Ch. 1 & 2, Append. 1 &2; [Vogel (2007)](Vogel_2007.pdf)|
+ | Wednesday, Feb 3 | Moving on Land I: Walking (2)||
  | Friday, Feb 5   | Mini-Project I: Open Sourcery  | |[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 ## Week 2 Schedule
 
 | **Date** <img width=200/>| **Topic** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Monday, Feb 8 | Moving on Land II: Running et al. | [Kuo (2007)](KuoWalking.pdf)| Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Wednesday, Feb 10 | Moving on Land III:Scaling ||
+ | Monday, Feb 8 | Moving on Land II: Running et al.(3) | [Kuo (2007)](KuoWalking.pdf)| Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
+ | Wednesday, Feb 10 | Moving on Land III:Scaling (4)||
  | Friday, Feb 12   | Mini-Project I: Open Sourcery Cont'd  | | [Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 
@@ -27,24 +27,24 @@ All assignments are due at 11:59 pm on the specified date. *V*= Vogel, S. Vogel,
 
 | **Date** <img width=200/>| **Topic** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Monday, Feb 15 | Joints, Levers, and Linkages | V Ch. 20 |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Wednesday, Feb 17 | Coarse Materials I | V pp. 286--306 | MP1 report due 
+ | Monday, Feb 15 | Joints, Levers, and Linkages (5) | V Ch. 20 |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
+ | Wednesday, Feb 17 | Coarse Materials I (6) | V pp. 286--306 | MP1 report due 
  | Friday, Feb 19   | Mini-Project II: Get Ur Gait On!  | | [Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 ## Week 4 Schedule
 
 | **Date** <img width=200/>| **Topic** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Monday, Feb 22 | Coarse Materials II | V Ch. 16, 17 |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Wednesday, Feb 24 | Coarse Materials III |  V Ch. 18|
+ | Monday, Feb 22 | Coarse Materials II (7) | V Ch. 16, 17 |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
+ | Wednesday, Feb 24 | Coarse Materials III (8) |  V Ch. 18|
  | Friday, Feb 26   | Mini-Project II: Get Ur Gait On! (Cont'd)  ||[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 ## Week 5 Schedule
 
-| **Date** <img width=200/>| **Topic** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
+| **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Monday, Mar 1 | Coarse Structures  |  V Ch. 19     |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Thursday, Mar 4* | Adhesion |  V pp. 425-436        | MP2 report due 
+ | Monday, Mar 1 | Coarse Structures (9)  |  V Ch. 19     |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
+ | Thursday, Mar 4* | Adhesion (10) |  V pp. 425-436        | MP2 report due 
  | Friday, Mar 5  | Mini-Project III: It Puts the Motion in the Skin  | |[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 *Note that Thursday, Mar 4 is a Wednesday schedule

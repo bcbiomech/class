@@ -1,0 +1,396 @@
+---
+title: "Welcome and Introduction"
+subtitle: "Setting the Stage"
+author: "Dr. Christopher Kenaley"
+institute: "Boston College"
+date: "2021/2/1"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, top
+# Hello! 
+
+```{r,echo=FALSE,message=FALSE}
+library(tidyverse)
+library(kableExtra)
+```
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+
+.pull-left[
+Today we'll ....
+
+- Learn what the course about
+
+- See how the course organized
+
+- Talk about the basic physical principles to review	
+
+- Work through an illustrative example
+]
+
+.pull-right[
+![](https://you.stonybrook.edu/kevinfeng/files/2015/01/first-day-1ri5frl.png)
+]
+---
+class: inverse, top
+<!-- slide 1 -->
+# Class details
+
+.pull-left[
+
+![](site.png?w=300)
+
+bcbiomech.github.io/class/
+
+Monday, Wednesday 1:00-1:50 for synchronous lectures
+
+Friday 1:00 or 2:00 (over zoom) for launch of asynchronous lab activities (i.e, Mini-Projects) 
+]
+
+.pull-right[
+
+![](https://kenaleylabcom.files.wordpress.com/2017/09/cpk.png )
+
+kenaley@bc.edu
+
+<!-- Add font awesome icons -->
+<p style="text-align: left;">
+    <a href="https://twitter.com/kenaley" class="fab fa-twitter">@kenaley</a>
+</p>
+
+kenaleylab.com
+
+office hours in Higgins 415/535 (by appointment) or over Zoom
+]
+
+
+
+
+---
+class: 
+
+# Meet and Potatoes
+
+
+
+```{r,echo=FALSE}
+g <- rbind(c("","","Points"),
+  c("Class participation and engagement","",50),
+c("Discussion Board ","","10x5"), 
+c("Mini-Project Reports ","","5x50"),
+c("Final Project Report","", "1x100"),
+c("Final Project Presentation","","1x50"),
+c("","total","500")
+)
+
+kbl(g)%>%row_spec(row = 1:nrow(g),background = "white")%>%kable_styling()
+```
+
+---
+
+# Course Text
+
+.pull-left[
+
+- Available from online sellers
+
+- Excellent resource now and later
+
+- Copy on reserve in O'Neil
+
+]
+.pull-right[
+
+![](vogel.jpeg)
+
+Vogel, S. 2013. Comparative Biomechanics: Life's Physical World. 2nd Ed.
+
+]
+
+---
+
+# Course Software
+
+.pull-left[
+```{r,echo=FALSE,out.width=100}
+knitr::include_graphics("rlogo.png")
+```
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmBcLYF8uP0grceY4RGQz-AKoWSGxME5yBbw&usqp=CAU)
+]
+.pull-right[
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJGsX9sltpgeyrY5wI-LVcckPgYXPHCO18Aw&usqp=CAU)
+
+IDE: Integrated Development Environment
+
+]
+
+
+---
+# Lectures
+
+.pull-left[
+
+- Discussion-based (I can only talk so much)
+- Interrupt me!
+- No exams, no quizzes
+- Engagement contributes 10% to grade!
+- Read assignments **before** class
+
+
+]
+
+.pull-right[
+![](https://memegenerator.net/img/instances/81812046.jpg)
+]
+
+---
+class:  top
+# Labs
+
+.pull-left[
+
+## Lab logistics
+
+- Huddle and scatter model
+- Meet over Zoom at 1:00 or 2:00 (synchronous)
+- Scatter with team over 2-3 weeks to complete Mini-Project
+- Check out material from Higgins 535
+
+]
+
+.pull-right[
+
+## Mini-Projects
+
+- MP descriptions release before Friday meetings
+- 2-3 weeks to finish MP
+- Reports due on Wednesdays
+- Team-based
+- Report written in R Markdown (MP1)
+
+
+]
+
+.center[
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUZ9X79kkxuv-FIjlepNqHArJ31_ns7Fb9Eg&usqp=CAU)
+]
+
+---
+class:  top
+# Final Project
+
+.pull-left[
+
+## Overview
+
+- Team-based
+- Topic of your choice (build off of MPs)
+- Same report guidelines as MPs (.Rmd, format, etc.)
+- Additional presentation (10 min)
+- Record presentation and deliver to class
+
+]
+
+.pull-right[
+
+## Timeline
+
+- ~1 month to develop, execute
+- Start mid April
+- Presentation due 1 week before report (May 5)
+- Report due on scheduled final date (May 12)
+
+
+]
+
+.center[
+<video width="500">
+<source src="longjump_project.mp4" type="video/mp4">
+</video>
+]
+
+---
+
+# Starting UP
+
+.pull-left[
+How comfortable are you with physics?
+
+How comfortable are you with scripting?
+
+
+]
+
+.pull-right[
+
+```{r, echo=FALSE,warning=FALSE}
+res <- read.csv("results.csv")
+colnames(res) <- c("time","physics","scripting")
+res%>%pivot_longer(cols=c("physics","scripting"),values_to = "resp")%>%
+  ggplot(aes(name,resp))+geom_boxplot()+ggtitle("How comportable are you with . . . ")+theme_classic(20)+xlab("")
+
+```
+
+]
+
+
+---
+
+# What sort of Physics will we use?
+
+.pull-left[
+- Nearly all classical, i.e., Newtonian
+- linear and angular
+
+.center[
+```{r,echo=FALSE,out.width=150}
+knitr::include_graphics("https://useruploads.socratic.org/cEoiMUubQWGFHjA0wFhd_Torque.jpg")
+```
+]
+
+]
+
+.pull-right[
+$$F=MA$$ $$A=\frac{M}{F}$$
+$$A = \alpha r$$ 
+
+
+]
+
+
+
+
+---
+class: top
+# What sort of physics will we use?
+
+Really just a case of applying mathematical models
+.pull-left[
+
+
+```{r,echo=FALSE,out.width=250}
+knitr::include_graphics("mantis.png")
+```
+
+.body[
+If $\alpha=6\cdot 10^6$ rad $\cdot s^{-2}$
+
+and r=8 cm
+
+and M=1 g
+
+How much strike force does the appendage (dactylus) generate?
+
+```{r,echo=FALSE}
+F=2*10^7*0.08*0.001
+print(F)
+
+#of a bullet 4.4 x 10^5 m/s2
+```
+-- 
+]
+
+]
+
+
+
+.pull-right[
+$$F=MA$$ $$A=\frac{M}{F}$$
+$$A = \alpha r$$ 
+
+
+.center[
+```{r,echo=FALSE,out.width=300}
+knitr::include_graphics("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgaAd07tXZhRC3b7BMpPzPsGIEsiM9jNrsMA&usqp=CAU")
+```
+]
+
+]
+
+
+
+---
+class: top
+# What sort of scripting will we use?
+
+.pull-left[Is this a reasonable prediction? 1600 N?! A typical bullet is ~500N
+
+Let's first see how the max changes with merus length (L), a standard measurement for the group. 
+
+]
+
+.pull-right[
+```{r,echo=FALSE,out.width=200}
+knitr::include_graphics("mantis2.png")
+```
+]
+
+Establish a function of the linear form:
+
+$$F(m)=a+Lb$$
+with coefficents from Blanco and Patek (2014) where $a=-4.4$ and $2.1$. So the functions takes the form
+
+```{r}
+force <-function(x){-4.4+x*2.2}  
+```
+
+ .footnote[Blanco, M.M. and Patek, S.N., 2014. Muscle trade‐offs in a power‐amplified prey capture system. Evolution, 68(5), pp.1399-1414.]
+ 
+---
+class: top
+# What sort of scripting will we use?
+
+Now, establish a length range (8-16 cm) and predict merus length?
+
+```{r}
+L=seq(8,40,0.1)
+merus.pred <- force(L)
+```
+
+Now let's plot to relationship.
+
+
+```{r,dev='svg',fig.show="hold", out.width="30%",out.height="10%",fig.height=6}
+qplot(L,merus.pred)+theme_classic(30)+ylab("Force (N)")
+knitr::include_graphics("merus.png")
+
+```
+
+.center[
+Looks pretty good.
+]
+
+---
+class: top
+
+# What sort of scripting will we use?
+
+Back to our question?
+
+Is this way too much?
+
+```{r,dev='svg',fig.show="hold", out.width="50%",out.height="20%",fig.height=6}
+qplot(L,merus.pred)+theme_classic(30)+ylab("Force (N)")+geom_point(aes(x=15,y=1600),col="red")
+knitr::include_graphics("mantis.png")
+
+```
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
