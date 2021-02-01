@@ -8,7 +8,7 @@ output:
     toc: true # adds a table of contents
     toc_float: true
     number_sections: FALSE
-    css: style.css
+    css: "style.css"
 navbar: 
   title: "BIOL 5380"
   left: 
@@ -21,19 +21,16 @@ navbar:
       - text: "Mini-Projects Overview"
         href: mini_projects.html
       - text: "MP1 Description"
-        href: MP1.html
       - text: "MP2 Description"
-        href: MP2.html
       - text: "MP3 Description"
-        href: MP3.html
       - text: "MP4 Description"
-        href: MP4.html
       - text: "MP3 Description"
-        href: MP5.html
     - text: "Final Project"
       menu:
       - text: "FP Overview"
         href: final_project.html
+    - text: "Discussion Board"
+      href: https://github.com/orgs/bcbiomech/teams/biol-5380
     - text: "Course Canvas Page"
       href: https://bostoncollege.instructure.com/courses/1615104
       
