@@ -77,7 +77,7 @@ office hours in Higgins 415/535 (by appointment) or over Zoom
 ---
 class: 
 
-# Meet and Potatoes
+# Meet and potatoes
 
 
 
@@ -96,7 +96,7 @@ kbl(g)%>%row_spec(row = 1:nrow(g),background = "white")%>%kable_styling()
 
 ---
 
-# Course Text
+# Course text
 
 .pull-left[
 
@@ -117,7 +117,7 @@ Vogel, S. 2013. Comparative Biomechanics: Life's Physical World. 2nd Ed.
 
 ---
 
-# Course Software
+# Course software
 
 .pull-left[
 ```{r,echo=FALSE,out.width=100}
@@ -133,6 +133,8 @@ knitr::include_graphics("rlogo.png")
 IDE: Integrated Development Environment
 
 ]
+
+**ANY COMMERCIAL SOFTWARE IS STRICTLY FORBIDDEN**
 
 
 ---
@@ -170,7 +172,7 @@ class:  top
 
 .pull-right[
 
-## Mini-Projects
+## Mini-projects
 
 - MP descriptions release before Friday meetings
 - 2-3 weeks to finish MP
@@ -187,7 +189,7 @@ class:  top
 
 ---
 class:  top
-# Final Project
+# Final project
 
 .pull-left[
 
@@ -221,7 +223,7 @@ class:  top
 
 ---
 
-# Starting UP
+# Starting up
 
 .pull-left[
 How comfortable are you with physics?
@@ -233,11 +235,11 @@ How comfortable are you with scripting?
 
 .pull-right[
 
-```{r, echo=FALSE,warning=FALSE}
+```{r, echo=FALSE,warning=FALSE,dev='svg'}
 res <- read.csv("results.csv")
 colnames(res) <- c("time","physics","scripting")
 res%>%pivot_longer(cols=c("physics","scripting"),values_to = "resp")%>%
-  ggplot(aes(name,resp))+geom_boxplot()+ggtitle("How comportable are you with . . . ")+theme_classic(20)+xlab("")
+  ggplot()+geom_histogram(aes(x=resp),bins=5)+facet_wrap(name~.,ncol=1)+ggtitle("How comportable are you with . . . ")+theme_classic(20)+xlab("")
 
 ```
 
@@ -246,7 +248,7 @@ res%>%pivot_longer(cols=c("physics","scripting"),values_to = "resp")%>%
 
 ---
 
-# What sort of Physics will we use?
+# What sort of physics will we use?
 
 .pull-left[
 - Nearly all classical, i.e., Newtonian
@@ -291,14 +293,15 @@ and M=1 g
 
 How much strike force does the appendage (dactylus) generate?
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,eval=FALSE}
 F=2*10^7*0.08*0.001
 print(F)
 
 #of a bullet 4.4 x 10^5 m/s2
 ```
--- 
+
 ]
+
 
 ]
 
@@ -318,6 +321,9 @@ knitr::include_graphics("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ
 ]
 
 
+--
+- 1600 N
+
 
 ---
 class: top
@@ -325,7 +331,7 @@ class: top
 
 .pull-left[Is this a reasonable prediction? 1600 N?! A typical bullet is ~500N
 
-Let's first see how the max changes with merus length (L), a standard measurement for the group. 
+Let's first see how the $F_{max}$ changes with merus length (L), a standard measurement for the group. 
 
 ]
 
@@ -350,7 +356,7 @@ force <-function(x){-4.4+x*2.2}
 class: top
 # What sort of scripting will we use?
 
-Now, establish a length range (8-16 cm) and predict merus length?
+Now, establish a length range (8-40 cm) for merus length and predict force?
 
 ```{r}
 L=seq(8,40,0.1)
