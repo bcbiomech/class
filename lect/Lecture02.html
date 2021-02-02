@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 2</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Christopher Kenaley" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Lecture 2
+## Terrestrial Locomotion I
+### Dr. Christopher Kenaley
+### Boston College
+### 2021/2/3
+
+---
+
+class: inverse, top
+# Terrestrial locomotion
+
+
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"&gt;
+
+
+.pull-left[
+Today we'll ....
+
+
+- Consider how we characterize terrestrial walking with legs
+
+- Focus on bipedal locomotion
+
+- Apply the inverted pendulum model to bipedalism
+
+- Discuss the predictions of the model	
+
+]
+
+
+.pull-right[
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1038%2Fsrep13636/MediaObjects/41598_2015_Article_BFsrep13636_Fig6_HTML.jpg)
+]
+
+---
+
+class: top
+
+# Some ground rules and metrics
+
+
+.pull-left[
+## Important definitions
+
+- **Kinematics:** Position over space and time (2D or 3D).
+
+- **Kinetics:** Forces moving masses.
+
+- **Dynamics:** Changes in properties like forces, mass, energy, etc. over space and time (i.e. stability).
+
+- **Power:** How quickly work is done (i.e., energetics).
+
+
+]
+
+
+.pull-right[
+
+## Some examples
+
+.center[
+&lt;video width="500" controls&gt;
+&lt;source src="img/eel.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+]
+
+
+]
+
+---
+
+class: top
+
+# Some ground rules and metrics
+
+
+.pull-left[
+## Important definitions
+
+- **Kinematics:** Position over space and time (2D or 3D).
+
+- **Kinetics:** Forces moving masses.
+
+- **Dynamics:** Changes in properties like forces, mass, energy, etc. over space and time (i.e. stability).
+
+- **Power:** How quickly work is done (i.e., energetics).
+
+
+]
+
+
+.pull-right[
+
+## Some examples
+
+.center[
+![](https://science.sciencemag.org/content/sci/288/5463/100/F3.large.jpg)
+]
+
+
+]
+
+
+---
+
+class: top
+
+# Some ground rules and metrics
+
+
+.pull-left[
+## Important definitions
+
+- **Kinematics:** Position over space and time (2D or 3D).
+
+- **Kinetics:** Forces moving masses.
+
+- **Dynamics:** Changes in properties like forces, mass, energy, etc. over space and time (i.e. stability).
+
+- **Power:** How quickly work is done (i.e., energetics).
+
+
+]
+
+
+.pull-right[
+
+## Some examples
+
+.center[
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Lengthtension.jpg/400px-Lengthtension.jpg)
+]
+
+
+]
+
+
+---
+
+class: top
+
+# Some ground rules and metrics
+
+
+.pull-left[
+## Important definitions
+
+- **Kinematics:** Position over space and time (2D or 3D).
+
+- **Kinetics:** Forces moving masses.
+
+- **Dynamics:** Changes in properties like forces, mass, energy, etc. over space and time (i.e. stability).
+
+- **Power:** How quickly work is done (i.e., energetics).
+
+
+]
+
+
+.pull-right[
+
+## Some examples
+
+.center[
+![](https://ars.els-cdn.com/content/image/1-s2.0-S0960982212004770-gr1.jpg)
+]
+
+
+]
+
+$$\textrm{Watt}= \textrm{kg}\cdot \textrm{m}^2\cdot \textrm{s}^{-3} $$
+
+`$$1 \textrm{Watt} \approx \textrm{10.5 mL O}_2 \textrm{ min}^{-1}$$`
+
+
+
+
+---
+class: top
+# Some ground rules and metrics
+
+.pull-left[
+
+- **Stride length:** Distance between consecutive footfalls of the same foot (in m)
+
+- **Stride frequency:** number of strides per time (if s, in Hz)
+
+- **Duty factor:** fraction of stride time that a foot is on the ground (non-dimensional)
+ 
+  + e.g.,human walking = 0.5 - 0.6, running = 0.35).
+ 
+  + Gaits with duty factors less than 0.5 imply airborne phases, i.e., running
+
+- **Relative Phase:** Point in time a foot touches as a fraction of the stride time (non dimensional or in `\(^o\)`, often).
+
+
+
+]
+
+
+.pull-right[
+
+&lt;img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRk6lEBWg4QHMBQqBjpOaMKXk5oRgxIjo5JkQ&amp;usqp=CAU" width="250" /&gt;&lt;img src="https://www.researchgate.net/profile/Thomas_Moeslund/publication/221908232/figure/fig2/AS:305169892954113@1449769580296/Illustration-of-the-duty-factor-The-duration-of-a-gait-cycle-where-each-foot-is-on-the.png" width="250" /&gt;
+
+
+
+]
+
+---
+class: top
+&lt;!-- slide 1 --&gt;
+# Up first: Walking
+
+## First, a question
+
+Say you're on Mars. Do you walk faster or slower than you do on Earth?
+
+.pull-left[
+   
+![](https://mars.nasa.gov/internal_resources/491)
+
+
+
+]
+
+.pull-right[
+
+1/3 the gravity as Earth
+]
+
+---
+class: top
+&lt;!-- slide 1 --&gt;
+# Up first: Walking
+
+## Modeling walking as an inverted pendulum
+
+.pull-left[
+   
+![](img/pend.png)
+.center[
+&lt;img src="img/centrip.png" width="150" /&gt;
+]
+]
+
+.pull-right[
+
+![](img/ip.gif)
+]
+
+
+---
+class: top
+
+# What are the predictions of such a model?
+
+
+.pull-left[
+   
+![](img/pend.png)
+.center[
+&lt;img src="img/centrip.png" width="150" /&gt;
+]
+]
+
+.pull-right[
+
+- Velocity?
+
+- Kinetic energy?
+
+- COM oscillations (kinetics, kinematics)?
+
+]
+
+
+---
+class: top
+&lt;!-- slide 1 --&gt;
+# What are the predictions of such a model?
+
+
+.pull-left[
+   
+![](img/pend.png)
+.center[
+&lt;img src="img/centrip.png" width="150" /&gt;
+`$$F_c=ma_c=\frac{mv^2}{r}$$`
+]
+]
+
+.pull-right[
+
+Acceleration toward the pivot (center) can be expressed as 
+
+`$$a_c=\frac{v^2}{r}$$` [why?]
+
+Which means that  `\(v^2=a_cr\)`, or, if `\(L=r\)`
+
+`$$v^2 \leq gL$$`
+
+[why?]
+
+
+]
+
+
+---
+class: top
+&lt;!-- slide 1 --&gt;
+# Back to the questions
+
+Say you're on Mars. Do you walk faster or slower than you do on Earth?
+
+.pull-left[
+
+![](img/pend.png)
+
+![](https://mars.nasa.gov/internal_resources/491)
+
+]
+
+.pull-right[
+.center[
+
+If
+
+`$$v^2 \leq gL$$`
+
+then
+
+`$$v\leq \sqrt{gL}$$`
+]
+]
+
+
+
+---
+class: 
+
+# How well does the model do?
+
+Or, How well do our iverted pendula do?
+
+
+`$$Fr =\frac{centripetal force}{gravitational force}=\frac{\frac{mv^2}{L}}{mg}=\frac{v^{2}}{gL}$$`
+or
+
+`$$Fr=\frac{realized force}{predicted force}$$`
+
+.center[
+&lt;img src="img/froudegait.jpg" width="550" /&gt;
+
+]
+
+---
+class: top
+&lt;!-- slide 1 --&gt;
+# What can change speed under this model?
+
+
+
+.pull-left[
+
+.center[L, right?]
+
+  - Lumbar flexion
+  - Pelvic rotation
+  - Pelvic tilt (in transverse, frontal planes)
+  - Plantar flexion
+  
+  More on this later . . .
+  
+&lt;img src="img/pelvicwalk.png" width="200" /&gt;
+]
+
+  
+.pull.right[
+
+
+&lt;img src="img/pelvictilt.jpg" width="300" /&gt;
+
+&lt;img src="https://anatomypubs.onlinelibrary.wiley.com/cms/asset/9d091d74-842a-46b7-b722-8010fe918ebb/ar23552-fig-0002-m.jpg" width="200" /&gt;
+
+]
+        
+
+---
+
+# For lab on Friday
+
+.pull-left[
+&lt;img src="rlogo.png" width="100" /&gt;
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSmBcLYF8uP0grceY4RGQz-AKoWSGxME5yBbw&amp;usqp=CAU)
+]
+.pull-right[
+
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJGsX9sltpgeyrY5wI-LVcckPgYXPHCO18Aw&amp;usqp=CAU)
+
+IDE: Integrated Development Environment
+
+]
+
+- Download R first
+
+- Download R Studio second
+
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

@@ -154,7 +154,21 @@ IDE: Integrated Development Environment
 .pull-right[
 ![](https://memegenerator.net/img/instances/81812046.jpg)
 ]
+---
+# Discussion
 
+.pull-left[
+
+- 1/week
+- On github board
+- Question and answer
+- Lab and lecture both
+
+]
+
+.pull-right[
+![](https://memegenerator.net/img/instances/81812046.jpg)
+]
 ---
 class:  top
 # Labs
@@ -294,7 +308,7 @@ and M=1 g
 How much strike force does the appendage (dactylus) generate?
 
 ```{r,echo=FALSE,eval=FALSE}
-F=2*10^7*0.08*0.001
+F=6*10^6*0.08*0.001
 print(F)
 
 #of a bullet 4.4 x 10^5 m/s2
@@ -329,7 +343,7 @@ knitr::include_graphics("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ
 class: top
 # What sort of scripting will we use?
 
-.pull-left[Is this a reasonable prediction? 1600 N?! A typical bullet is ~500N
+.pull-left[Is this a reasonable prediction? 480 N?! A typical bullet is ~500N
 
 Let's first see how the $F_{max}$ changes with merus length (L), a standard measurement for the group. 
 
@@ -344,7 +358,7 @@ knitr::include_graphics("mantis2.png")
 Establish a function of the linear form:
 
 $$F(m)=a+Lb$$
-with coefficents from Blanco and Patek (2014) where $a=-4.4$ and $2.1$. So the functions takes the form
+with coefficients from Blanco and Patek (2014) where $a=-4.4$ and $2.1$. So the functions takes the form
 
 ```{r}
 force <-function(x){-4.4+x*2.2}  
@@ -386,7 +400,7 @@ Back to our question?
 Is this way too much?
 
 ```{r,dev='svg',fig.show="hold", out.width="50%",out.height="20%",fig.height=6}
-qplot(L,merus.pred)+theme_classic(30)+ylab("Force (N)")+geom_point(aes(x=15,y=1600),col="red")
+qplot(L,merus.pred)+theme_classic(30)+ylab("Force (N)")+geom_point(aes(x=15,y=480),col="red")
 knitr::include_graphics("mantis.png")
 
 ```
