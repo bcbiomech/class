@@ -11,7 +11,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 --------|--------|-------- |-------- |-------- 
  | Monday, Feb 1 | [Welcome and Introduction  (1)](lect/Lecture1.html) | [Classical Physics Wiki page](https://en.wikipedia.org/wiki/Classical_mechanics#:~:text=Classical%20mechanics%20is%20a%20physical,%2C%20planets%2C%20stars%20and%20galaxies.); V Ch. 1 & 2, Append. 1 &2; [Vogel (2007)](Vogel_2007.pdf)|
  | Wednesday, Feb 3 | [Moving on Land I: Walking (2)](lect/Lecture02.html)||
- | Friday, Feb 5   | Mini-Project I: Open Sourcery  | |[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
+ | Friday, Feb 5   | [Mini-Project I: Open Sourcery](MP1.html)  | |[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 ## Week 2 Schedule
 
