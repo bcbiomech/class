@@ -21,6 +21,7 @@ navbar:
       - text: "Mini-Projects Overview"
         href: mini_projects.html
       - text: "MP1 Description"
+        href: MP1.html
       - text: "MP2 Description"
       - text: "MP3 Description"
       - text: "MP4 Description"

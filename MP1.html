@@ -11,7 +11,7 @@
 
 
 
-<title>Miniproject 1: Open Sourcery</title>
+<title>Mini Project 1: Open Sourcery</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -487,11 +487,12 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Miniproject 1: Open Sourcery</h1>
+<h1 class="title toc-ignore">Mini Project 1: Open Sourcery</h1>
 
 </div>
 
 
+<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"></p>
 <div id="introduction" class="section level1">
 <h1>Introduction</h1>
 <p>Welcome to the first Mini Project of BIOL 5380. The focus of this MP will be learn the basics of simple scripting and report writing. For our scripting work, we’ll learn how to load, organize and summarize data, and produce simple figures. While we learn some ins and outs of simple data operations, we’ll also learn how one can organize, share, and communicate results and ideas.</p>
@@ -503,50 +504,58 @@ div.tocify {
 <li>Add graphics (i.e., figures), to an R Markdown document.</li>
 <li>Render (i.e., knit) this R Markdown into HTML documents.</li>
 </ol>
+We’ll take on these tasks as we try to answer a very simple (yet important!!!) question in human biomechanics:
+<center>
+<strong>Which of Prof. Kenaley’s two children jumps highest?</strong>
+</center>
 <div id="buckle-up" class="section level2">
 <h2>Buckle Up!</h2>
 <p>I’ll be honest, for many of us just getting into this sort of thing, the learning curve is steep (see below). You’ll be on the ascending limb of this curve for a while, but once you get over the hump, you’ll be on its descending limb. I promise that eventually the time you invest in learning how to work in R will decrease your overall effort compared to where you started. So, just sit back, take it all in and rest assured you’re making a great investment.</p>
-<pre><code>## ── Attaching packages ─────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
-## ✓ tibble  3.0.3     ✓ dplyr   1.0.2
-## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
-## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
-<pre><code>## 
-## Attaching package: &#39;scales&#39;</code></pre>
-<pre><code>## The following object is masked from &#39;package:purrr&#39;:
-## 
-##     discard</code></pre>
-<pre><code>## The following object is masked from &#39;package:readr&#39;:
-## 
-##     col_factor</code></pre>
+<center>
 <div class="figure">
 <img src="MP1_files/figure-html/unnamed-chunk-1-1.png" alt="The R coding learning curve." width="672" />
 <p class="caption">
 The R coding learning curve.
 </p>
 </div>
+<br>
+</center>
 </div>
-<div id="first-principles" class="section level2">
-<h2>First Principles</h2>
-<p>R Studio’s <a href="https://rmarkdown.rstudio.com/">markdown tutorial</a> [Read Introduction to Output Formats]</p>
-<p>As you learn more about R Markdown, you may want to reference the following online resources:</p>
+<div id="helpfu-resources" class="section level2">
+<h2>Helpfu Resources</h2>
+<p>As you work through this project description, you may find it helpful to reference the following online resources.</p>
 <ul>
-<li>A rather <a href="https://github.com/rstudio/bookdown">complete guide to R Markdown by Yikui Xie</a></li>
-<li>R Markdown <a href="https://rmarkdown.rstudio.com/lesson-15.html">Cheatsheets</a></li>
+<li><p><strong>R Studio’s <a href="https://rmarkdown.rstudio.com/">markdown tutorial</a>.</strong> Read the sections that include and are between “Introduction” and “Output Formats”.</p></li>
+<li><p><strong>A rather <a href="https://github.com/rstudio/bookdown">complete guide to R Markdown by Yikui Xie</a></strong></p></li>
+<li><p><strong>R Markdown <a href="https://rmarkdown.rstudio.com/lesson-15.html">Cheatsheets</a></strong></p></li>
 </ul>
+<p><br></p>
 </div>
 </div>
-<div id="part-i-establishing-a-work-space" class="section level1">
-<h1>Part I: Establishing a Work Space</h1>
+<div id="part-i-your-workspace" class="section level1">
+<h1>Part I: Your Workspace</h1>
 <div id="working-in-directories" class="section level2">
 <h2>Working in Directories</h2>
 <p>Before we set up our workspace in R Studio, let’s discuss where we’ll store important files you’ll need for this project. This will establish a framework for other Mini Projects in the course.</p>
 <p>First, we should establish a directory (i.e., folder) where we intend to store these files. Go ahead and do that, perhaps with the logical title “MP1”. When we start work in R Studio and create a Markdown, we’ll store the Markdown document in this folder. For each project, we’ll use a single R Markdown file to save and execute code and generate a slick report. The code in a Markdown looks to the directory in which it is stored when that code requires input (e.g., data) or outputs (e.g., save plots and reports). In more technical parlance, the working directory is the parent directory of the Markdown document.</p>
 <p>This has several important implications. First, this means that, unlike a simple script, you never have to tell R where to look for files or where to store them (i.e., set the working directory). This also means if you want your code in a Markdown to analyze data stored as a text file, you should make sure that this file is in the same directory as the Markdown document.</p>
-<p>For this project, we’ll be working with jumping data from Prof. Kenaley’s two children. You can download these files by clicking <a href="data/OZ_jumping.zip">here</a>. ## The R Studio IDE</p>
+<p>For this project, we’ll be working with jumping data from Prof. Kenaley’s two children. You can download these files by clicking <a href="data/OZ_jumping.zip">here</a>. This will be downloaded as a “.zip” compressed directory. Unzip it and then copy the files to your “MP1” directory.</p>
+<br>
+<div class="green">
+<div class="row">
+<div class="col-sm-2">
+<a class="far fa-sticky-note fa-5x" style="color:#D3D8DD"></a> <!-- regular style -->
+</div>
+<div class="col-sm-9">
+<p>Note that these files are CSV files (they end in “.csv”). This is a common table-like arrangement of data based on a simple text file in which a row of data is contained in each line of the file and columns are separated by comas (thus the name). This and other text representations of data are lingua franca in science, that is, this is how data are stored in files. Using this simple text format has several advantages. First, programs in scripting languages like R can parse the values easily. In addition, these files don’t take up a lot of space as opposed to the rather bloated file size associated with most GUI formats like Excel.</p>
+<p>A program like Excel can also read data in text files, however, don’t do it before you plan on using those data in R. Excel has the nasty habit of often adding junk to text files that leave them unparsable through typical means in R.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+</div>
+<div id="the-r-studio-ide" class="section level2">
+<h2>The R Studio IDE</h2>
 <p>R Studio is an Integrative Development Environment (IDE), that is, software that puts all that R can do on one screen. It is worth noting that <strong>R Studio is not R</strong>. In other words, R Studio helps you run R and see it’s outputs and inputs. When you first start R Studio, you must have R installed.</p>
 <p>Open R Studio and have a look at the arrangement of the windows. By default, there are four of these (see below):</p>
 <ol style="list-style-type: decimal">
@@ -555,29 +564,32 @@ The R coding learning curve.
 <li>Workspace and Environment: Tabs in this window describe what variables have been created and the history of the operations passed to the console.</li>
 <li>Plots, files, and help: Tabs in this window show the graphics that are produced from plotting commands, the files in a local directory (i.e., folder), packages (i.e., groups of functions) that are loaded, and help files that describe R functions.</li>
 </ol>
+<center>
 <div class="figure">
-<img src="https://lh3.googleusercontent.com/proxy/0obSbSp9iXrPYsLwkro-vWJidhrJdKRPK1btUG9A3FOtz_-bLKO3t1664zvhYmLk297PZbbhtFyTG76AIw9kDaaXN6hg5fn5AHQ" alt="R Studio window arrangement." width="550" />
+<img src="http://www.sthda.com/sthda/RDoc/images/rstudio.png" alt="R Studio window arrangement." width="550" />
 <p class="caption">
 R Studio window arrangement.
 </p>
 </div>
-<p>To get a sense of how this windows work together, open a new R script file with “File-&gt;New-&gt;”R script“. There may be one loaded when you open R Studio. If so, ignore this step. You’ll see a tab in the editor window titled”Untitled.R". This file is a simple text file where you can store commands.</p>
+</center>
+<p><br></p>
+<p>To get a sense of how this windows work together, open a new R script file with <strong>“File-&gt;New-&gt;R script”</strong>. There may be one loaded when you open R Studio. If so, ignore this step. You’ll see a tab in the editor window titled ’’Untitled.R". This file is a simple text file where you can store commands.</p>
 <p>Now, type in the following text:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">data</span>(<span class="st">&quot;cars&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">data</span>(<span class="st">&quot;cars&quot;</span>)</span></code></pre></div>
 <p>Then, put your cursor at the end of the line or select the entire line and punch in <strong>cmd+return</strong> on a Mac or <strong>ctrl+enter</strong> on a PC. <strong>This will run this line of code</strong>*. Now look at the history tab in the upper right and the console tab in the lower left. You should see <code>data("cars")</code>. This means that you’ve told R to load the data set <code>cars</code>, data for the speed of cars and the distances taken to stop that are buried in all R installs.</p>
 <p>Now type in the following <strong>in the console</strong>.</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>?cars</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>?cars</span></code></pre></div>
 <p>Notice that a documentation entry pops up in the help tab in the lower right. Help pages like this are enormously helpful when you want to know more about any function, data set, or package loaded into R. Be sure to use this resource early and often.</p>
 <p>Do something similar to find out what the <code>plot()</code> function is all about. Type this into the console.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>?<span class="kw">plot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>?<span class="kw">plot</span>()</span></code></pre></div>
 <p>Notice you get a few topics in the help tab. Click on “Generic X-Y Plotting” to see what this function in base R requires and can do.</p>
 <p>Next, go ahead and add this line to the R script:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">print</span>(cars)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">print</span>(cars)</span></code></pre></div>
 <p>Notice how the <code>cars</code> data frame is printed to the console. There are two columns, <code>speed</code> and <code>dist</code>. Let’s now plot <code>dist</code> vs. <code>speed</code> using <code>plot()</code>. So now add the following to script and run this new line:</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">plot</span>(cars<span class="op">$</span>speed,cars<span class="op">$</span>dist)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">plot</span>(cars<span class="op">$</span>speed,cars<span class="op">$</span>dist)</span></code></pre></div>
 <p><img src="MP1_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
 <p>You’ll see a plot identical to the one above in the “Plots” tab. As we’ll learn in a bit, data frames with named columns (and other variable types with named vectors) can be subsetted with <code>$</code>. Go over to the upper right window and click on the “Environment” tab. Under “Data”, you’ll see the variable “cars” described. Click on it and this will pass a <code>View()</code> command to the R console which, in turn, will add a tab in the upper left with the tittle “cars”. This tab contains a row-by-column representation of the data.</p>
-<p>So far, you’ve run the commands in each line by selecting and punching in *cmd+return<strong> or </strong>ctrl+enter** key strokes. This is a handy way to run each line as you add it to your code. You can also run all the code at once by selecting all the text and keying in *cmd+return<strong> or </strong>ctrl+enter**. Every operation encoded in these lines will unfold in order.</p>
+<p>So far, you’ve run the commands in each line by selecting and punching in <strong>cmd+return</strong> or <strong>ctrl+enter</strong> key strokes. This is a handy way to run each line as you add it to your code. You can also run all the code at once by selecting all the text and keying in <strong>cmd+return</strong> or <strong>ctrl+enter</strong>. Every operation encoded in these lines will unfold in order.</p>
 <p>From this quick exploration of how R works in R Studio, we should note few important things:</p>
 <ol style="list-style-type: decimal">
 <li>Commands for R to process are stored in text files that appear in the editor window.</li>
@@ -592,7 +604,7 @@ R Studio window arrangement.
 <p>Although we’ve just learned how commands are passed through R in R Studio by using a script file, we won’t use these simple files in the class. They contain only code. While they may produce important things like plots and the results of calculations, they’re not very easy to read and don’t provide any narrative. As an alternative to writing code in one place and about the results of the code in another, we’ll combine our code and narratives in one document: an R Markdown (or .Rmd file). That is, you can use a single R Markdown file to both save and execute code and generate high quality reports that can be shared with an audience.</p>
 <p>So let’s begin our Markdown odyssey with opening a new .Rmd file with “File-&gt;New-&gt;R Markdown”.</p>
 <p><img src="img/newRmd.png" width="550" /></p>
-<p>In the title box, enter “MP1” and your name in the author box, then click ok. You’ll see and untitled .Rmd appear in the upper left window. Save this to yout “MP1” diectory. Let’s now have a look at what’s in this text file.</p>
+<p>In the title box, enter “MP1” and your name in the author box, then click ok. You’ll see an untitled .Rmd appear in the upper left window. Save this to yout “MP1” diectory. Let’s now have a look at what’s in this text file.</p>
 </div>
 <div id="the-yaml-header" class="section level2">
 <h2>The YAML Header</h2>
@@ -611,7 +623,7 @@ output: html_document
 <p>Notice the following components:</p>
 <ul>
 <li>Headers: Text marked with <code>#</code>’s that indicate sections.</li>
-<li>Code chunks: code text wrapped in "**``<code>**", the fist instance of which is appended with</code>{r…}`. These sections run the code within them.</li>
+<li>Code chunks: code text wrapped in ``` ,the fist instance of which is appended with <code>{r...}</code>. These sections run the code within them.</li>
 </ul>
 </div>
 <div id="headers" class="section level2">
@@ -629,15 +641,16 @@ Text under Header 2
 
 Text under Header 3
 </code></pre>
-<p>will produce this: <img src="img/headers.png" width="550" /></p>
+<p>will produce this:</p>
+<p><img src="img/headers.png" width="550" /></p>
 <p>In your future project reports, you’ll always want to include sections for an introduction, methods, results, discussion, author contributions, and references. We’ll organize the .Rmd accordingly, so please add those sections to your .Rmd. with a high-level header <code>#</code>. You can add nested subsections and text as needed later.</p>
 </div>
 <div id="adding-and-running-code-with-chunks" class="section level2">
 <h2>Adding and Running Code with Chunks</h2>
 <p>Code you include in your .Rmd should be written in sections enclosed by three backwards apostrophes (```). These sections are known as code chunks and look like this:</p>
 <p><img src="img/chunk.png" width="550" /></p>
-<p>You can insert code chunks by selecting the “insert” icon at the top of the the tab, by keying in <strong>cmd+opt+i</strong>, or simply typing those “```”.</p>
-<p>To run the chunk, your can click on “run” icon at the top of R studio and select “Run Current Chunk”. Alternatively, you can click on the green icon that looks like a play button/tringle (see below) or insert your cursor in the chunk and key in <strong>cmd+shift+return</strong>.</p>
+<p>You can insert code chunksby selecting the “insert” icon at the top of the the tab, by keying in <strong>cmd+opt+i</strong>, or simply typing those ```.</p>
+<p>To run the chunk, your can click on “run” icon at the top of R studio and select “Run Current Chunk”. Alternatively, you can click on the green icon that looks like a play button/triangle (see below) or insert your cursor in the chunk and key in <strong>cmd+shift+return</strong>.</p>
 <p><img src="img/runchunk.png" width="550" /></p>
 <p>The content inside the curly brackets (<code>{}</code>) controls the behavior of code chunk. In this case, we’re telling R markdown that the code inside the chunk is to be interpreted with R. This is a handy place to control the output of the code chunk. Let’s jump right into how you would include code in chunks in the context of this simple project.</p>
 <p>At first, you’ll want to include a chunk that loads the libraries you intend to use in the .Rmd. Libraries are stored as packages and only a few are included in the R install. We’ll use several packages that need to be downloaded and installed. Fortunately, they’re all wrapped in one superpackage, <code>tidyverse</code>. Go to the “Packages” tab in the lower right window and click on the “install” tab. When you do that, you’ll see a prompt appear like the one below.</p>
@@ -649,77 +662,91 @@ library(tidyverse) #always
 ```</code> </pre>
 <p>Run this chunk to load <code>tidyverse</code>.</p>
 <p>Notice here that we included a behavior to the chunk, specifically <code>include=FALSE</code>. This prevents the code, and the results from appearing in the finished file. Have a look at <a href="https://rmarkdown.rstudio.com/lesson-3.html">this page</a> to familiarize yourself with handy and often used chunk options.</p>
-<p>With a few exceptions, the logical place to include the code that produces analyses or figures is in the results sections. This is where the first output of the code will likely be relevant. So, under the results section, insert the following code chunks that establish the data we need in the next section.</p>
-<pre><code>```{r, "load the data"}
-anole <- read_csv("anole.dat.csv")
-anole.eco <- read_csv("anole.eco.csv")
-anole.tree <- read.tree("anole.tre")
-```</code> </pre>
-</div>
-<div id="section-on-running-code" class="section level2">
-<h2>Section on running code</h2>
-<ul>
-<li>line by line</li>
-<li>knit</li>
-<li>they are sequential</li>
-</ul>
-</div>
-<div id="got-to-data-carpentry-after-my-intro." class="section level2">
-<h2>Got to data carpentry after my intro.</h2>
-<p>dont’ worry about section on saving data. Run the examples in R chunks. <a href="https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html" class="uri">https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html</a> # Part I: R Coding Basics</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="co">#on a mac</span></span>
-<span id="cb14-2"><a href="#cb14-2"></a><span class="kw">setwd</span>(<span class="st">&quot;~/Documents/BC/5380.s.2018/MP1&quot;</span>)</span>
-<span id="cb14-3"><a href="#cb14-3"></a></span>
-<span id="cb14-4"><a href="#cb14-4"></a><span class="co">#on a pc</span></span>
-<span id="cb14-5"><a href="#cb14-5"></a><span class="co">#setwd(&quot;C:\\Users\\user\\Documents\\BC\\5380.s.2018\\MP1&quot;)</span></span></code></pre></div>
-<p>Note, this is unique to each user. You can pull up the file info with your operating system and copy the directory and paste it within quotes of the <code>setwd()</code> command. Select the line and run the the <code>setwd()</code> command.</p>
-<p>Now, let’s load the data and check that it read with (remember, <code>&lt;-</code> is R speak for pass the stuff to the right to a variable name on the left):</p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>dat &lt;-<span class="st"> </span><span class="kw">read.csv</span>(<span class="st">&quot;OZ_jumping_1.csv&quot;</span>) <span class="co">#read the data from the comma-separated file </span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="kw">head</span> (dat) <span class="co">#print the first few rows to the monitor</span></span></code></pre></div>
-<p>OK, data loaded. Congrats! The <code>head()</code> command prints the first few rows, showing that the data include <code>o</code> for Ollie’s data and <code>z</code> for Zoe’s vertical displacement and <code>t</code> for time in milliseconds (ms), Now, let’s plot some of the data, say for Zoe, with the simple graphics packages and <code>with()</code> command loaded with R. The <code>with()</code> call says, “R, with the data <code>dat</code>, plot a scatterplot of <code>z</code> versus <code>t</code>.”</p>
-<p>Splenid! But what about poor Ollie?!? We could add his points with the following <code>points()</code> call. The color parameter (<code>col</code>) is added with <code>red</code> to distinguish the two jumpers.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="kw">with</span>(dat,<span class="kw">plot</span>(t,z))</span>
-<span id="cb16-2"><a href="#cb16-2"></a><span class="kw">with</span>(dat,<span class="kw">points</span>(t,o,<span class="dt">col=</span><span class="st">&quot;purple&quot;</span>))</span></code></pre></div>
-<p>Even better! OK, but don’t we want to know more about this experiment, like say who jumped highest? How would we answer that? Well, perhaps something like this would help:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>max.o &lt;-<span class="st"> </span><span class="kw">max</span>(dat<span class="op">$</span>o)</span>
-<span id="cb17-2"><a href="#cb17-2"></a>max.z &lt;-<span class="st"> </span><span class="kw">max</span>(dat<span class="op">$</span>z)</span>
-<span id="cb17-3"><a href="#cb17-3"></a></span>
-<span id="cb17-4"><a href="#cb17-4"></a>max.jump &lt;-<span class="st"> </span><span class="kw">c</span>(max.o,max.z)</span>
-<span id="cb17-5"><a href="#cb17-5"></a><span class="kw">names</span>(max.jump) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;o&quot;</span>,<span class="st">&quot;z&quot;</span>)</span>
-<span id="cb17-6"><a href="#cb17-6"></a><span class="kw">print</span>(max.jump)</span></code></pre></div>
-<p><code>print()</code> prints something to the terminal and the <code>c()</code> command combines two or more things and the <code>names()</code> command gives a vector (a one-dimensional series) its names (notice the two must be the same length)</p>
-<p>So that’s all well and good. It looks like Zoe jumped a littler higher. But, by how much? That’s simple to calculate. To do this, we’ll make turn these summary statistics into a two-dimensional data frame (like a spreadsheet), with the <code>data.frame()</code> function.</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>oz.stats &lt;-<span class="st"> </span><span class="kw">data.frame</span>(<span class="dt">o=</span>max.o,<span class="dt">z=</span>max.z)</span>
-<span id="cb18-2"><a href="#cb18-2"></a>oz.stats<span class="op">$</span>diff &lt;-<span class="st"> </span><span class="kw">abs</span>(oz.stats[,<span class="st">&quot;o&quot;</span>]<span class="op">-</span>oz.stats[,<span class="st">&quot;z&quot;</span>])</span>
-<span id="cb18-3"><a href="#cb18-3"></a><span class="kw">print</span>(oz.stats)</span></code></pre></div>
-<p>Notice how we are able to subset the data by column name with brackets. Within the brackets, anything to the right of a comma references columns and anything to the left rows. So we select columns that equal <code>o</code> and <code>z</code> and then take the absolute value of one subracted from the other with the <code>abs()</code> call.</p>
 </div>
 </div>
-<div id="whole-nutha-level" class="section level1">
-<h1>Whole ’nutha level</h1>
-<p>Spectacular! However, it’s a little cumbersome. There is, indeed, a little more streamlined way to do this with slightly more sophisticated data maniplulation and plotting that produces much more pleasing results and a workflow that can be manipulated with ease. Let’s first install and then load some packages that make for easy data manipulation and wonderful plot making.</p>
-<p>Let’s go back to the original data and melt it, that is, rather than have seperate columns for the vertical displacement data for <code>o</code> and <code>z</code>, let’s have them in one and identify in another column to whom the data belong. This is super easy with the <code>melt()</code> function from <code>reshape2</code>. Then we can use the amazingly simple and beautiful plotting commands from <code>ggplot</code> to plot the data with a color according to the variable (which kiddo).</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>dat.m &lt;-<span class="st"> </span><span class="kw">melt</span>(dat,<span class="dt">id=</span> <span class="st">&quot;t&quot;</span>)</span>
-<span id="cb19-2"><a href="#cb19-2"></a><span class="kw">head</span>(dat.m)</span>
-<span id="cb19-3"><a href="#cb19-3"></a><span class="kw">tail</span>(dat.m)</span>
-<span id="cb19-4"><a href="#cb19-4"></a></span>
-<span id="cb19-5"><a href="#cb19-5"></a><span class="kw">qplot</span>(<span class="dt">x=</span>t,<span class="dt">y=</span>value,<span class="dt">dat=</span>dat.m,<span class="dt">col=</span>variable) <span class="co">#a quick plot with ggplot</span></span></code></pre></div>
-<p>Super easy and concise. What about those summary statistics? Just as easy with the <code>ddply</code> function in the <code>plyr</code> package . . .</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>dat.sum &lt;-<span class="st"> </span><span class="kw">ddply</span>(dat.m,.(variable),summarize,<span class="dt">max=</span><span class="kw">max</span>(value),<span class="dt">min=</span><span class="kw">min</span>(value),<span class="dt">max=</span><span class="kw">max</span>(value),<span class="dt">n=</span><span class="kw">length</span>(value))</span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="kw">head</span>(dat.sum)</span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="kw">tail</span>(dat.sum)</span>
-<span id="cb20-4"><a href="#cb20-4"></a></span>
-<span id="cb20-5"><a href="#cb20-5"></a><span class="kw">qplot</span>(<span class="dt">x=</span>variable,<span class="dt">y=</span>max,<span class="dt">dat=</span>dat.sum,<span class="dt">col=</span>variable,<span class="dt">size=</span><span class="dv">4</span>)</span></code></pre></div>
+<div id="part-ii-code-to-joy" class="section level1">
+<h1>Part II: Code to Joy</h1>
+<p>Now that we have the .Rmd set up, let’s add some code chunks that demonstrate the power of scripting and will be important in answering our question: Who jumps higher, Ollie or Zo?</p>
+<p>With a few exceptions, the logical place to include the code that produces analyses or figures is in the results sections. This is where the first output of the code will likely be relevant. Let’s first add some code that will read in our data files we downloaded earlier. Under the results section, insert the following in a chunk of code. This will read in one of the CSV files with the <code>tidy</code> function <code>read_csv</code> and with the <code>&lt;-</code> symbol saved it to the variable named <code>o</code>. Any value or function that returns a result can be stored as a variable. This is best accomplished by using the arrow convention, that is “variable <code>&lt;-</code> thing you want to store”.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>o &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;O_jumping_1.csv&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="kw">head</span>(o)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 2
+##      cm    ms
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1 10.8     10
+## 2  8.34    20
+## 3  7.46    30
+## 4  6.12    40
+## 5  6.68    50
+## 6  5.21    60</code></pre>
+<p>OK, data loaded. Congrats! The <code>read_csv()</code> function from the <code>readr</code> package that’s loaded with <code>tidyverse</code> reads—you guessed it—CSV data from a file with the name “O_jumping_1.csv” and stored it to <code>o</code> with <code>&lt;-</code> as a tibble. A tibble is a particular type of data frame that super easy to work with and will be a data type that is featured often in our projectS. Also note that this file is one of the 10 files you downloaded and placed in the “MP1” directory. The name described by the text string passed to <code>read_csv()</code> has to match the name of this file exactly. Try loading data with a bad file name like “O_Jumping_1.csv” (notice the capital “J”) and see what happens. You’ll get an error.</p>
+<p>The <code>head()</code> command prints the first few rows, showing that the Ollie’s data, including <code>cm</code> (his shin height off above the ground) and <code>ms</code>, the time in milliseconds. Also notice that the output from this chunk doesn’t appear in the console, where you might have expected it based on the code we ran above in the R script. Anything that results from running an R chunk in a Markdown document (printing data, plotting, etc.) is shown directly below the chunk as a preview of what the final document will look like.</p>
+<p>Now, let’s plot the data with the simple plot command (add this to the last chunk):</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="kw">plot</span>(o<span class="op">$</span>ms,o<span class="op">$</span>cm)</span></code></pre></div>
+<p><img src="MP1_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Great! We now have Ollie’s jump plotted! Notice how we subsetted his data with <code>$</code>, invoking this convention on the names of the columns. Now, let’s jump ahead and use a more sophisticate method of passing data to a function using a pipe (i.e., <code>%&gt;%</code>). Go ahead and replace your <code>plot()</code> command with following and run the chunk.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>o<span class="op">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>ms,<span class="dt">y=</span>cm))<span class="op">+</span><span class="kw">geom_point</span>()</span></code></pre></div>
+<p><img src="MP1_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Notice we get a much less vanilla plot. More on this later. Let’s talk about that pipe, the <code>%&gt;%</code> symbol.</p>
+<div id="the-pipe" class="section level2">
+<h2>The Pipe (<code>%&gt;%</code>)</h2>
+<p>Streamlining data operations in R is important. For the sake of time, it’s best write the fewest lines of code as possible. Fortunately, several succinct methods and operations for working with data exist in several popular packages. Perhaps the most widely used are those curated in <code>tidyverse</code>, a data science R package you loaded above. <code>tidyverse</code> includes the <code>dplyr</code> package, a super helpful library of functions for data analysis. When loaded with <code>library(tidyverse)</code>, the pipe convention (<code>%&gt;%</code>) is available. Put simply, the <code>%&gt;%</code> passes results from left to right (the direction of the caret). So, in the code above, the data in <code>o</code> are passed to the <code>ggplot2</code> function <code>ggplot()</code>.</p>
 </div>
-<div id="loop-if-you-can" class="section level1">
-<h1>Loop <code>if</code> you can</h1>
-<p>One of the most magical aspects of command-line computing (i.e., what you’re doing right now) is that one can automate the mundane. Imagine that instead of just one jumping experiment, you ran 5 separate jumping expirements with these two goofballs and had digitized data from each. Now that’s 5 replicates and worthy of some comprehensive analysis. For the record, 5 is generally seen as the magic minimum number of replicates in biomechanics. Assuming all the replicates result in the same raw data—vertical displacement of <code>o</code> and <code>z</code> and <code>t</code> in milliseconds, this should be relatively straigtforward. Think for a moment about how you would go about this. Would you somehow get these data into Excel and add another column column indicating the replicate? You could do that, but that’s slow and, as with so many manual operations in computing, often results in errors. Due to these factors and, as importantly, the ethos of BIOL5380, let’s avoid using commercial software with all its limitations. But where to begin? Enter the <code>for</code> loop.</p>
-<p>What is a <code>for</code> loop you ask? It’s a command that runs while a condition is satisfied. For example, how ’bout we print a count down thusly:</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>cnt &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">:</span><span class="dv">1</span> <span class="co">#store some numbers</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a></span>
-<span id="cb21-3"><a href="#cb21-3"></a><span class="cf">for</span>(i <span class="cf">in</span> cnt){</span>
-<span id="cb21-4"><a href="#cb21-4"></a>  <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;It&#39;s now&quot;</span>, i))</span>
-<span id="cb21-5"><a href="#cb21-5"></a>}</span></code></pre></div>
+<div id="plotting-with-ggplot2" class="section level2">
+<h2>Plotting with <code>ggplot2</code></h2>
+<p>The pipe is used to combine data with a whole slew of functions, including those in another package loaded with <code>tidyverse</code>, the <code>ggplot2</code> package. <code>ggplot2</code> is the plotting framework for most data scientists using R and this is what we’ll use in the course. The plotting functions in <code>ggplot2</code> are built around what’s called an aesthetic, or what you want the plot to look like. In this case, we want the plot to reflect x=ms, the time, and y=cm, the height, so we define the plot aesthetic with <code>aes(x=ms,y=cm)</code> within <code>ggplot()</code>. This just establishes the aesthetic, but doesn’t add any type of plotting mechanism (e.g., a scatter or bar plot), also known as a geometry in the parlance of <code>ggplot2</code>. To produce a scatter plot of points, we then added <code>+geom_point()</code> to <code>ggplot(aes(x=ms,y=cm))</code>. We could have just as easily added another geometry like lines, which connects all the x-y points with a line . . .</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>o<span class="op">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>ms,<span class="dt">y=</span>cm))<span class="op">+</span><span class="kw">geom_line</span>()</span></code></pre></div>
+<p><img src="MP1_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
+<p>We can even keep adding geometries, say for for our scatter plot, we could add a red smoothed line:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>o<span class="op">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>ms,<span class="dt">y=</span>cm))<span class="op">+</span><span class="kw">geom_point</span>()<span class="op">+</span><span class="kw">geom_smooth</span>(<span class="dt">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula &#39;y ~ x&#39;</code></pre>
+<p><img src="MP1_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>As you can see, in a sense, the <code>ggplot2</code> framework is layered:</p>
+<br>
+<center>
+<strong>establish a plot + geometry 1 + geometry 2 . . . + geometry i</strong>
+</center>
+<p><br></p>
+<div id="loops-and-combining-data" class="section level3">
+<h3>Loops and Combining Data</h3>
+<p>Plotting data for one of Ollie’s jumps is all well and good. But, as I’m sure you noticed, there are 9 other files. In answering the question <strong>Who jumps higher?</strong>, we probably want to look at the rest of Ollie’s data and all of Zo’s data. How should we go about this? You could open all the data files in Excel and combine them with cut and paste operations, but that’s a waste of time and, more importantly, how do you keep track of which data belong to which twin? And, what about future projects for which you might have dozens of file. Not easy in Excel, so let’s not even consider that. Let’s use the power of a scripting language to combine all this data.</p>
+<p>So where to start? A logical place might be to repeat for all the files what we did with Ollie’s first file. That is:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>o1 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;O_jumping_1.csv&quot;</span>)</span>
+<span id="cb15-2"><a href="#cb15-2"></a>o2 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;O_jumping_1.csv&quot;</span>)</span>
+<span id="cb15-3"><a href="#cb15-3"></a>o3 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;O_jumping_1.csv&quot;</span>)</span>
+<span id="cb15-4"><a href="#cb15-4"></a>o4 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;O_jumping_1.csv&quot;</span>)</span>
+<span id="cb15-5"><a href="#cb15-5"></a>o5 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;O_jumping_1.csv&quot;</span>)</span>
+<span id="cb15-6"><a href="#cb15-6"></a></span>
+<span id="cb15-7"><a href="#cb15-7"></a>z1 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;Z_jumping_1.csv&quot;</span>)</span>
+<span id="cb15-8"><a href="#cb15-8"></a>z2 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;Z_jumping_1.csv&quot;</span>)</span>
+<span id="cb15-9"><a href="#cb15-9"></a>z3 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;Z_jumping_1.csv&quot;</span>)</span>
+<span id="cb15-10"><a href="#cb15-10"></a>z4 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;Z_jumping_1.csv&quot;</span>)</span>
+<span id="cb15-11"><a href="#cb15-11"></a>z5 &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="st">&quot;Z_jumping_1.csv&quot;</span>)</span></code></pre></div>
+<p>Ooooooh kaaaaaaaay. That worked, but now we have 10 different variables reflecting 10 different tibbles. Could we combine them? Sure! But it’s laborious . . .</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>dat &lt;-<span class="st"> </span><span class="kw">rbind</span>(o1,o2,o3,o3,o4,o5,z1,z2,z3,z3,z4,z5)</span></code></pre></div>
+<p>Here we used the <code>rbind()</code> function to bind (or stack) all the rows of the tibbles together. Now, let’s plot the new <code>dat</code> variable (a tibble of all the tibbles, if you will) to see what we got.</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>dat<span class="op">%&gt;%</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>ms,<span class="dt">y=</span>cm))<span class="op">+</span><span class="kw">geom_point</span>()</span></code></pre></div>
+<p><img src="MP1_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>Who is who? Which jump was it? No way to tell! Let’s rethink this. What if we could combine the data in one big tibble and add a few column to this tibble that reflects from whom the data came and which jump do the data reflect? Notice that in each file name, we have that information in the form of “Z” and “O” and a number. I show you this . . .</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">list.files</span>(<span class="dt">pattern =</span> <span class="st">&quot;.csv&quot;</span>)</span></code></pre></div>
+<pre><code>##  [1] &quot;O_jumping_1.csv&quot; &quot;O_jumping_2.csv&quot; &quot;O_jumping_3.csv&quot; &quot;O_jumping_4.csv&quot;
+##  [5] &quot;O_jumping_5.csv&quot; &quot;Z_jumping_1.csv&quot; &quot;Z_jumping_2.csv&quot; &quot;Z_jumping_3.csv&quot;
+##  [9] &quot;Z_jumping_4.csv&quot; &quot;Z_jumping_5.csv&quot;</code></pre>
+<p>Here, I just asked R to list the files in the working directory (where our .Rmd resides) to list the files that match the pattern “.csv”, that is, the files ending in “.csv”. Each one has “O” and “Z” and a number in it. When scientist save data in files, they give those files a predictable and consistent structure to the file name. In this case, for each file, the first bit of text separated by an underscore ("_") is the subject or who (Ollie or Zo) and the last bit is the jump number, or replicate. In other words, we have stored data about the data in the file name. <strong>We call data about the data metadata.</strong> Thus, if we could read in each file of a certain name and strip the important metadata from the that and then add it to the to the data, we’d be in business. But how? Enter the <code>for</code> loop.</p>
+</div>
+</div>
+<div id="loop-when-you-can" class="section level2">
+<h2>Loop When You Can</h2>
+<p>What is a <code>for</code> loop you ask? It’s a command that runs while a condition is satisfied. For example, how ’bout we print a count down:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a>cnt &lt;-<span class="st"> </span><span class="dv">10</span><span class="op">:</span><span class="dv">1</span> <span class="co">#store some numbers</span></span>
+<span id="cb20-2"><a href="#cb20-2"></a></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="cf">for</span>(i <span class="cf">in</span> cnt){</span>
+<span id="cb20-4"><a href="#cb20-4"></a>  <span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;It&#39;s now&quot;</span>, i))</span>
+<span id="cb20-5"><a href="#cb20-5"></a>}</span></code></pre></div>
 <pre><code>## [1] &quot;It&#39;s now 10&quot;
 ## [1] &quot;It&#39;s now 9&quot;
 ## [1] &quot;It&#39;s now 8&quot;
@@ -730,67 +757,149 @@ anole.tree <- read.tree("anole.tre")
 ## [1] &quot;It&#39;s now 3&quot;
 ## [1] &quot;It&#39;s now 2&quot;
 ## [1] &quot;It&#39;s now 1&quot;</code></pre>
-<p>The operations contained in the <code>for</code> command (within the <code>"{ }"</code>) are repeated through the series defined by <code>cnt</code>. Specifically, for each value in <code>i</code>, <code>paste()</code> together <code>"It's now"</code> and <code>i</code> and <code>print()</code> it.</p>
-<p>Now that we have a basic understanding of how this works, let’s apply it to our problem: automating the combining of a bunch of data. The crux here is that each of our 5 jumping trials are contained in their own files. Go ahead and download the remaining files and move them to your working directory:</p>
-<p><a href="http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_2.csv" class="uri">http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_2.csv</a></p>
-<p><a href="http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_3.csv" class="uri">http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_3.csv</a></p>
-<p><a href="http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_4.csv" class="uri">http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_4.csv</a></p>
-<p><a href="http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_5.csv" class="uri">http://www2.bc.edu/christopher-kenaley/bio5380/MP1/OZ_jumping_5.csv</a></p>
-<p>Now have a look at your files in the directory with this:</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="kw">list.files</span>()</span></code></pre></div>
-<pre><code>##  [1] &quot;_site.yml&quot;           &quot;bg.png&quot;              &quot;class.Rproj&quot;        
-##  [4] &quot;Common_mistakes.pdf&quot; &quot;data&quot;                &quot;final_project.html&quot; 
-##  [7] &quot;final_project.Rmd&quot;   &quot;img&quot;                 &quot;index.html&quot;         
-## [10] &quot;index.Rmd&quot;           &quot;Intro_files&quot;         &quot;KuoWalking.pdf&quot;     
-## [13] &quot;lect&quot;                &quot;mini_projects.html&quot;  &quot;mini_projects.Rmd&quot;  
-## [16] &quot;MP1_files&quot;           &quot;MP1.Rmd&quot;             &quot;schedule.html&quot;      
-## [19] &quot;schedule.Rmd&quot;        &quot;site_libs&quot;           &quot;style.css&quot;          
-## [22] &quot;test_files&quot;          &quot;test.html&quot;           &quot;test.Rmd&quot;           
-## [25] &quot;Vogel_2007.pdf&quot;</code></pre>
-<p>Notice something about the file name structure? They are all named with a simple convention, that is, they all end in <code>_number.csv.</code> This number indicates the replicate (1 was the first, 5 was the last). With a standard convention like this, we can use a <code>for</code> loop to read in each file and extract from the file name from what replicate the data come. Let’s walk through it. First, store the file names of interest:</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>dat.files &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="dt">pattern=</span><span class="st">&quot;.csv&quot;</span>)</span></code></pre></div>
-<p>This saves the names of all the files with the pattern <code>.csv</code> to the variable name <code>dat.files</code>. Now, let’s use the for loop to read each file and save it to a list of data frames.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a>all.dat &lt;-<span class="st"> </span><span class="kw">list</span>() <span class="co">#establish an empty list</span></span>
-<span id="cb26-2"><a href="#cb26-2"></a><span class="cf">for</span> (i <span class="cf">in</span> dat.files ){</span>
-<span id="cb26-3"><a href="#cb26-3"></a>  meta.dat &lt;-<span class="st"> </span><span class="kw">strsplit</span>(i,<span class="st">&quot;_&quot;</span>)[[<span class="dv">1</span>]] <span class="co">#store the metadata by splitting the file name</span></span>
-<span id="cb26-4"><a href="#cb26-4"></a>  <span class="cf">if</span>(<span class="kw">grepl</span>(<span class="st">&quot;OZ&quot;</span>,i)) <span class="kw">print</span>(<span class="st">&quot;YES&quot;</span>) </span>
-<span id="cb26-5"><a href="#cb26-5"></a>  rep &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;.csv&quot;</span>,<span class="st">&quot;&quot;</span>,meta.dat[<span class="dv">3</span>]) <span class="co">#use grep commands to remove the &quot;.csv&quot; at the end</span></span>
-<span id="cb26-6"><a href="#cb26-6"></a>  dat.i &lt;-<span class="st"> </span><span class="kw">read.csv</span>(i) <span class="co">#read in the data</span></span>
-<span id="cb26-7"><a href="#cb26-7"></a>  all.dat[[i]] &lt;-<span class="st"> </span><span class="kw">data.frame</span>(dat.i, <span class="dt">rep=</span>rep) <span class="co">#combine the data withe replicate number in a data frame and stor it in our list under the file name i</span></span>
-<span id="cb26-8"><a href="#cb26-8"></a>}</span></code></pre></div>
-<p>Phew, that was a lot, let’s unpack it. The first line establishes a list named <code>all.dat</code> to receive our data. Then, the guts of <code>for</code> ensues. For all the <code>dat.files</code>, first retrieve the meta data, i.e., the data that explains your data, in this case the replicate number. We do this with the <code>strsplit()</code> command. It splits a text string by seperator, a <code>"_"</code> in this case. Notice that the command <code>strsplit(i,"_")</code> outputs a list itself. The tell here is the <code>[[1]]</code>, a “1” with the double brackets indicating such.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a><span class="kw">strsplit</span>(i,<span class="st">&quot;_&quot;</span>)</span></code></pre></div>
-<p>There’s only one element in this list, but we still have to identify that’s the one we want. Thus the <code>[[1]]</code> added to the <code>strsplit(i,"_")</code> command. Notice the third element in this is what we want, the replicate number. However, it has the unsightly “<code>.csv</code>” stuck to it. Let’s zap that with a <code>gsub()</code> command. <code>gsub()</code> is one of a series of search commands common to all computing languages. These commands use general regular expressions, or <code>regex</code>, in algorithms to find text. It’s really powerful, but any in-depth explanation of how they work is way beyond the scope of this MP and the course (however, you can learn more <a href="https://en.wikipedia.org/wiki/Regular_expression">here</a>. <code>gsub()</code> finds a string and substitutes it with another. In our case, we want to find <code>".csv"</code> and replace it with <code>""</code>, that is, nothing. With <code>gsub(".csv","",meta.dat[3])</code> we do just this and store the result in <code>rep</code>.</p>
-<p>Next, we read in the data and pass it to the variable <code>dat.i</code>. Then, we combine the data in a data frame with a new column called <code>rep</code> with the <code>rep</code> meta data. This gets passed to an item in the list <code>all.dat</code> with the name <code>i</code>. This proceeds for all the items in the <code>dat.files</code> variable. Viola! Now we have a list of named data frames. Have a look by typing <code>all.dat</code> into the terminal. Caution: R tries to print it all.</p>
+<p>The operations contained in the <code>for</code> command (within the <code>{ }</code>) are repeated through the series defined by <code>cnt</code>. Specifically, for each value in <code>i</code>, <code>paste()</code> together <code>"It's now"</code> and <code>i</code> and <code>print()</code> it.</p>
+<p>Now that we have a basic understanding of how this works, let’s apply it to our problem: automating the combining of a bunch of data. The crux here is that each of our 10 jumping trials are contained in their own files. If we apply a loop that loads each file, strips the “O” or “Z”, and stores that “O” or “Z” with those data, we could combine the data into one big tibble. First let’s establish a vector or where each iteration of the loop can be stored. For this, we’ll establish and empty list. A list, or <code>list()</code>, can be a vector of any type: numeric values, figures, tables, tibbles, etc. Then we’ll commence with the the loop and store the results of each iteration in the list.</p>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a> dat &lt;-<span class="st"> </span><span class="kw">list</span>() <span class="co">#an empty list</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a></span>
+<span id="cb22-3"><a href="#cb22-3"></a>f &lt;-<span class="st"> </span><span class="kw">list.files</span>(<span class="dt">pattern=</span><span class="st">&quot;.csv&quot;</span>) <span class="co">#store the file names</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a></span>
+<span id="cb22-5"><a href="#cb22-5"></a><span class="cf">for</span>(i <span class="cf">in</span> f){</span>
+<span id="cb22-6"><a href="#cb22-6"></a>  m &lt;-<span class="st"> </span><span class="kw">unlist</span>(<span class="kw">strsplit</span>(i,<span class="st">&quot;_&quot;</span>))</span>
+<span id="cb22-7"><a href="#cb22-7"></a>  who &lt;-<span class="st"> </span>m[<span class="dv">1</span>]</span>
+<span id="cb22-8"><a href="#cb22-8"></a>  rep &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;.csv&quot;</span>,<span class="st">&quot;&quot;</span>,m[<span class="dv">3</span>])</span>
+<span id="cb22-9"><a href="#cb22-9"></a>  dat.i &lt;-<span class="st"> </span><span class="kw">read_csv</span>(i)<span class="op">%&gt;%</span></span>
+<span id="cb22-10"><a href="#cb22-10"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">who=</span>who,<span class="dt">rep=</span>rep)</span>
+<span id="cb22-11"><a href="#cb22-11"></a>  dat[[i]] &lt;-<span class="st"> </span>dat.i</span>
+<span id="cb22-12"><a href="#cb22-12"></a>}</span></code></pre></div>
+<p>Phew, that was a lot, let’s unpack it. The first line establishes a list named <code>dat</code> to receive our data. Next, we stored the file names of our data files in <code>f</code>. Then, the guts of <code>for</code> ensues. For all the data files, <code>f</code>, first retrieve the meta data, i.e., the data that explains your data, in this case which child and the replicate/jump number. We do this with the <code>strsplit()</code> command. It splits a text string by a separator, the <code>"_"</code> in this case. Notice that the command <code>strsplit(i,"_")</code> outputs a list itself, so we have to unlist it with the <code>unlist()</code> function so we can easily subset it with numerical values, <code>m[1]</code> and <code>m[3]</code>.</p>
+<p>The fist element in the metada, <code>m[1]</code> reflects “O” or “Z” and is passes to the <code>who</code> vector.</p>
+<p>Notice the third element, <code>m[3]</code> in the metadata is the replicate number. However, it has the unsightly “<code>.csv</code>” stuck to it. Let’s zap that with a <code>gsub()</code> command. <code>gsub()</code> is one of a series of search commands common to all computing languages. These commands use general regular expressions, or <code>regex</code>, in algorithms to find text. It’s really powerful, but any in-depth explanation of how they work is way beyond the scope of this MP and the course (however, you can learn more <a href="https://en.wikipedia.org/wiki/Regular_expression">here</a>. <code>gsub()</code> finds a string and substitutes it with another. In our case, we want to find <code>".csv"</code> and replace it with <code>""</code>, that is, nothing. With <code>gsub(".csv","",m[3])</code> we do just this and store the result in <code>rep</code>.</p>
+<p>Next, we read in the data and pass it to the variable <code>dat.i</code>. Then, we used the pipe and a <code>dlyr</code> function, <code>mutate()</code>, that is used to add two new columns <code>who</code> and <code>rep</code> that equal our <code>who</code> and <code>rep</code> variables we established above. Lastly, this gets passed to an item in the list <code>dat</code> with the name <code>i</code>. This proceeds for all the items in the <code>f</code> variable. Viola! Now we have a list of named data frames. Have a look by typing <code>dat</code> into the terminal. Caution: R tries to print it all.</p>
 <p>What’s left is to simply combine all the data frames into a single data frame.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>all.dat &lt;-<span class="st"> </span><span class="kw">do.call</span>(rbind,all.dat)</span></code></pre></div>
-<p>What we did here is apply a function to all items in our list with the <code>do.call()</code> command. This says, “Bind the rows of all the data frames in the <code>all.dat</code> list with the command <code>rbind</code>.” Double viola!! Have a look by printing the first few and last few rows of the new comprehensive data frame.</p>
-<div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="kw">head</span>(all.dat)</span>
-<span id="cb29-2"><a href="#cb29-2"></a><span class="kw">tail</span>(all.dat)</span></code></pre></div>
-<p>Wow, all our data from the five replicates in one spot. Now, we can apply some of the manipulation techniques we learned above to derive some summary statistics. So say we want to know the minimum, maximum, and number of data for each trial and for each kiddo:</p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>all.m &lt;-<span class="st"> </span><span class="kw">melt</span>(all.dat,<span class="dt">id=</span><span class="kw">c</span>(<span class="st">&quot;rep&quot;</span>,<span class="st">&quot;t&quot;</span>)) <span class="co">#first melt the data frame</span></span>
-<span id="cb30-2"><a href="#cb30-2"></a>all.sum &lt;-<span class="st"> </span><span class="kw">ddply</span>(all.m,.(rep,variable),summarize,<span class="dt">min=</span><span class="kw">min</span>(value),<span class="dt">max=</span><span class="kw">max</span>(value),<span class="dt">n=</span><span class="kw">length</span>(value)) <span class="co">#summarize the data by rep and variable (kiddo) and extract the min, max, and length (n)</span></span></code></pre></div>
-<p>Sweet! Easy peasy. Let’s plot our results—the max vertical displacement—but this time save the plot itself to a variable <code>p</code>.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>p &lt;-<span class="st"> </span><span class="kw">qplot</span>(<span class="dt">x=</span>rep,<span class="dt">y=</span>max,<span class="dt">dat=</span>all.sum,<span class="dt">col=</span>variable)</span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="kw">print</span>(p) <span class="co">#print p to see it</span></span></code></pre></div>
-<p>After saving the plot, we can add aspects to it using the <code>ggplot</code> language. For example, change the x- and y-axis labels and give the plot a clean, classic look with 20 pt font. Then, save the plot as a PDF:</p>
-<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>p &lt;-<span class="st"> </span>p<span class="op">+</span><span class="kw">ylab</span>(<span class="st">&quot;y displacement (cm)&quot;</span>)<span class="op">+</span><span class="kw">xlab</span>(<span class="st">&quot;time (ms)&quot;</span>)<span class="op">+</span><span class="kw">theme_classic</span>(<span class="dv">20</span>)</span>
-<span id="cb32-2"><a href="#cb32-2"></a></span>
-<span id="cb32-3"><a href="#cb32-3"></a><span class="kw">pdf</span>(<span class="st">&quot;y_disp_vs_t.pdf&quot;</span>) <span class="co">#open a pdf</span></span>
-<span id="cb32-4"><a href="#cb32-4"></a><span class="kw">print</span>(p) <span class="co">#print a plot to it</span></span>
-<span id="cb32-5"><a href="#cb32-5"></a><span class="kw">dev.off</span>() <span class="co">#shut it down</span></span></code></pre></div>
-<p>Holy smokes, that looks spectacular! You’re now armed with some kick-arse scripting and plotting skills to analyze and visualize data, biomechanical or otherwise.</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>all.dat &lt;-<span class="st"> </span><span class="kw">do.call</span>(rbind,dat)</span></code></pre></div>
+<p>What we did here is apply a function to all items in our list with the <code>do.call()</code> command. This says, “Bind the rows of all the data frames in the <code>all.dat</code> list with the command <code>rbind</code>.” Double viola!! Have a look by printing the first few and last few rows of the new comprehensive tibble.</p>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="kw">head</span>(all.dat)</span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="kw">tail</span>(all.dat)</span></code></pre></div>
+<p>Wow, all our data from the two kids and each of their five replicates in one spot. Now, we can apply manipulation techniques to derive some summary statistics.</p>
 </div>
-<div id="your-mission-and-you-have-to-accept-it" class="section level1">
-<h1>Your mission (and you have to accept it)</h1>
-<p>Now that you have some R skills, lets put them to the test. You’re tasked with writing a markdown document using <code>knitr</code> in much the same way this document was produced. Yes, I’m throwing you to the wolves, but that’s often what makes this stuff stick. You can start with details on using R Markdown at <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a> <strong>and</strong> inspecting the contents of this file. This’ll help, too: <a href="https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf" class="uri">https://www.rstudio.com/wp-content/uploads/2015/02/rmarkdown-cheatsheet.pdf</a></p>
+<div id="summarizing-data" class="section level2">
+<h2>Summarizing Data</h2>
+<p>To answer the question of who jumped highest, we want to know the maximum height (“cm”) for each trial and for each kiddo. This requires summarizing the data we’ve just assembled according to <code>who</code> and <code>rep</code>. Fortunately, <code>dplyr</code> is built for this.</p>
+<p>Let’s use its <code>summarise()</code> and <code>group_by()</code> functions and pipe convention (<code>%&gt;%</code>) to find the max height for each replicate for each kiddo. The <code>summarise()</code> function creates variables that summarize the data according to variables of interest. We set these variables of interest using <code>group_by()</code>. The pipe, <code>%&gt;%</code>, is used to combine data with these functions.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>all.dat <span class="op">%&gt;%</span></span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="st">  </span><span class="kw">group_by</span>(who,rep) <span class="op">%&gt;%</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">max =</span> <span class="kw">max</span>(cm))</span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;who&#39; (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 10 x 3
+## # Groups:   who [2]
+##    who   rep     max
+##    &lt;chr&gt; &lt;chr&gt; &lt;dbl&gt;
+##  1 O     1      20.1
+##  2 O     2      20.8
+##  3 O     3      24.1
+##  4 O     4      20.6
+##  5 O     5      22.2
+##  6 Z     1      25.2
+##  7 Z     2      18.9
+##  8 Z     3      24.1
+##  9 Z     4      23.5
+## 10 Z     5      20.7</code></pre>
+<p>What this code essentially means is *pass the data through the function <code>group_by()</code>, grouping it by the “who” and “rep” columns, and summarize it according the max of each group with the function <code>max()*. Notice we have 10 rows of data, each reflecting the maximum cm value for each group, that is, each unique combination of</code>who<code>and</code>rep`.</p>
+<p>Of course, we can save these results of such an operation to a variable for subsequent exploration.</p>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a>max.dat &lt;-<span class="st"> </span>all.dat <span class="op">%&gt;%</span></span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="st">  </span><span class="kw">group_by</span>(who,rep) <span class="op">%&gt;%</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">max =</span> <span class="kw">max</span>(cm))</span></code></pre></div>
+<pre><code>## `summarise()` regrouping output by &#39;who&#39; (override with `.groups` argument)</code></pre>
+</div>
+<div id="answering-the-question" class="section level2">
+<h2>Answering the Question</h2>
+<p>To answer who jumped highest we can take two approaches: one visual and the other quantitative. To visualize who jumped highest we can produce a classic boxplot of the maximum jump heights according to the subject, Ollie and Zo. A boxplot represents the median as a bar, the lower and upper hinges correspond to the first and third quartiles (the 25th and 75th percentiles), and whiskers for 1.5 times the interquartile range (lots of jargon here; simply put, it quickly summarizes the data). We’ll do this with our recently aquried <code>max.dat</code> variable and out <code>ggplot2</code> framework:</p>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a>max.dat<span class="op">%&gt;%</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(<span class="dt">x=</span>who,<span class="dt">y=</span>max))<span class="op">+</span><span class="kw">geom_boxplot</span>()</span></code></pre></div>
+<p><img src="MP1_files/figure-html/unnamed-chunk-27-1.png" width="672" /></p>
+<p>Holy smokes, that looks spectacular! It’s a very nice visual representation comparing the max jump heights between kiddos. Now, how can we quantitatively compare max jump heights? Easy. We’ll continue on, summarizing the max data with the mean of the max heights for each kid, dropping the <code>rep</code> group in <code>group_by()</code>.</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>max.dat<span class="op">%&gt;%</span></span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="st">  </span><span class="kw">group_by</span>(who)<span class="op">%&gt;%</span></span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean.max=</span><span class="kw">mean</span>(max))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 2 x 2
+##   who   mean.max
+##   &lt;chr&gt;    &lt;dbl&gt;
+## 1 O         21.6
+## 2 Z         22.5</code></pre>
+<p>Wonderful. Looks like the mean of Zoe’s jumps was about 1 cm higher than Ollie’s. If we want to assess how much each kid’s jumps deviated from their mean, we could compute standard deviation with the function <code>sd()</code>. Let’s add that to the summarizing operation:</p>
+<div class="sourceCode" id="cb34"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1"></a>max.dat<span class="op">%&gt;%</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a><span class="st">  </span><span class="kw">group_by</span>(who)<span class="op">%&gt;%</span></span>
+<span id="cb34-3"><a href="#cb34-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean.max=</span><span class="kw">mean</span>(max),<span class="dt">sd.max=</span><span class="kw">sd</span>(max))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 2 x 3
+##   who   mean.max sd.max
+##   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;
+## 1 O         21.6   1.60
+## 2 Z         22.5   2.57</code></pre>
+<p>Looks like Zo’s jumps were a little bit more variable. Often, biomechanists like to report the standard error of the mean (SEM, see below). Oddly enough, there’s no function of SEM in the base R packages, however we can easily create a function of our own.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a>se &lt;-<span class="st"> </span><span class="cf">function</span>(x){<span class="kw">sd</span>(x)<span class="op">/</span><span class="kw">sqrt</span>(<span class="kw">length</span>(x))}</span></code></pre></div>
+<p>SEM is computed by dividing the standard deviation by the square root of the number of observations in the sample. Above, we defined a function with <code>function()</code> to work on some parameter (i.e., input) <code>x</code>. The function is defined within the <code>{}</code> by the <code>sd()</code> of <code>x</code> divided by the <code>sqrt()</code> of the <code>length()</code> of <code>x</code>.</p>
+<p>Let’s now put this new function to use.</p>
+<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1"></a>max.dat<span class="op">%&gt;%</span></span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="st">  </span><span class="kw">group_by</span>(who)<span class="op">%&gt;%</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean.max=</span><span class="kw">mean</span>(max),<span class="dt">sd.max=</span><span class="kw">sd</span>(max),<span class="dt">se.max=</span><span class="kw">se</span>(max))</span></code></pre></div>
+<pre><code>## `summarise()` ungrouping output (override with `.groups` argument)</code></pre>
+<pre><code>## # A tibble: 2 x 4
+##   who   mean.max sd.max se.max
+##   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+## 1 O         21.6   1.60  0.713
+## 2 Z         22.5   2.57  1.15</code></pre>
+<p>Looks like both SEMs are small, but the lower value for Ollie indicates that his sample mean is probably a better estimate.</p>
+<br>
+<div class="green">
+<div class="row">
+<div class="col-sm-2">
+<a class="far fa-sticky-note fa-5x" style="color:#D3D8DD"></a> <!-- regular style -->
+</div>
+<div class="col-sm-9">
+<p>Why compute the standard error of the mean? Often, scientists like to report standard deviation, the degree to which individuals within the sample differ from the sample mean. But, when reporting sample means, it’s nice to report how well that mean is likely to reflect the population mean. This is where SE comes in. It represents an estimate of how far the sample mean is likely to be from the population mean.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+</div>
+</div>
+<div id="your-mission" class="section level1">
+<h1>Your mission</h1>
+<p><strong>And you have to accept it</strong></p>
+<p>Yikes! That was a lot! But, you’re now armed with some kick-arse scripting and plotting skills to analyze and visualize data, biomechanical or otherwise.</p>
+<p>Lets now put soem of these new skills to the test. You’re tasked with writing a markdown document using <code>knitr</code> in much the same way this document was produced. Yes, I’m throwing you to the wolves, but that’s often what makes this stuff stick.</p>
 <p>The markdown must contain the following:</p>
-<ol style="list-style-type: decimal">
-<li>A plot of the mean maximum for each kiddo across all replicates. It must contain or be accompanied with: + properly labelled axes + different colors for each subject + error bars that correspond to 1± standard error of the mean (s.e.) + a simple ANOVA test of results (with alpha of 0.05). <a href="https://www.statmethods.net/stats/anova.html">This’ll help.</a> + a brief paragraph summarizing the differences and any inferences of why they are</li>
-<li>A plot of the maximum vertical displacement for each kiddo versus replicate with a trend line. This must also be accompanied: + a table and summary of a two-way ANOVA (i.e., analysis of covariance) that tests the differences between subjects as they vary with replicate. <a href="https://rexplorations.wordpress.com/2015/09/07/two-way-anova-in-r/">This’ll help.</a> + a brief paragraph summarizing the differences and any inferences of why they are</li>
-</ol>
-<p>The <code>knitr</code> markdown file is due on January 29th at 11:00 Am. You should submit the file to this <a href="https://drive.google.com/drive/folders/1XnpBl1sx1DJFnEq_ngMZIdUmEySCa-nZ?usp=sharing">google directory</a> by the start of class.</p>
-<p><b>Good luck!</b></p>
+<ul>
+<li><p>A plot of the mean maximum for each kiddo across all replicates. It must contain or be accompanied with:</p>
+<ul>
+<li><p>properly labeled axes (<code>?ylab()</code>, anyone?).</p></li>
+<li><p>Different colors for each subject (<code>aes(col=who)</code>, anyone?)</p></li>
+<li><p>error bars that correspond to 1± standard error of the mean (SEM; <code>?geom_errorbar()</code>, anyone?)</p></li>
+<li><p>a simple ANOVA test of results (with alpha of 0.05). <a href="https://www.statmethods.net/stats/anova.html">This’ll help.</a></p></li>
+<li><p>a brief paragraph summarizing the differences between kiddos and any inferences of why they are</p></li>
+</ul></li>
+<li><p>A plot of the maximum vertical displacement for each kiddo versus replicate with a trend line. This must also be accompanied:</p>
+<ul>
+<li>lines and points that vary in color according to who’s doing the jumping (again, <code>aes(col=who)</code>, anyone?)</li>
+<li>a brief paragraph summarizing the differences and any inferences of why they are</li>
+</ul></li>
+</ul>
+<p>The <code>knitr</code> markdown file and all the associated files (see below) are due on Wednesday February 17th by 11:59 PM. Please email them to Prof. Kenaley.</p>
+<br>
+<div class="green">
+<div class="row">
+<div class="col-sm-2">
+<a class="far fa-sticky-note fa-5x" style="color:#D3D8DD"></a> <!-- regular style -->
+</div>
+<p><strong>SUPER IMPORTANT NOTE</strong> When submitting any .Rmd for your projects, always include the .Rmd file and <strong>ANY AND ALL DATA</strong> or other files that the .Rmd refers to. I’ll be knitting your .Rmd and will need these files to do so.</p>
+</div>
+</div>
+</div>
+<p><br></p>
+<p>As you put together your .Rmd, have a look at our <a href="mini_projects.html">Mini-Project guidelines</a> to get a sense of how these reports will be assessed.</p>
+<p><strong>Good luck!</strong></p>
 </div>
 
 
