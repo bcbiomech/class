@@ -1,0 +1,384 @@
+---
+title: "Lecture 3"
+subtitle: "Terrestrial Locomotion II"
+author: "Dr. Christopher Kenaley"
+institute: "Boston College"
+date: "2021/2/8"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, top
+# Terrestrial locomotion
+
+```{r,echo=FALSE,message=FALSE}
+library(tidyverse)
+library(kableExtra)
+```
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+
+.pull-left[
+Today we'll ....
+
+
+- Consider other terrestrial gaits (jumping, running)
+
+- Flow of energy in terrestrial gaits
+
+- Postural considerations
+
+]
+
+
+.pull-right[
+![](https://www.acs.psu.edu/drussell/Demos/SHO/damp.gif)
+]
+---
+
+class: top
+
+# Jumping
+
+
+.pull-left[
+
+- Animals move by exerting forces on a medium of substrate (eg., ground, water, plants, air)
+
+$$\Sigma F=m\cdot a$$
+
+Where on the body to we measure acceleration?
+
+- if we consider the body as an infinite number of particles
+
+$$x_{com}=\frac{1}{m}\int_{0}^{m}xdm$$
+$$y_{com}=\frac{1}{m}\int_{0}^{m}ydm$$
+
+
+
+]
+
+
+
+.pull-right[
+![](img/jumpcom.png)
+
+.footnote[
+**Upshot:** COM is a function of shape
+]
+]
+
+
+---
+
+class: top
+
+# Jumping
+
+
+.pull-left[
+
+- Animals move by exerting forces on a medium of substrate (eg., ground, water, plants, air)
+
+$$\Sigma F=m\cdot a$$
+
+Where on the body to we measure acceleration?
+
+- if we consider the body as an infinite number of particles
+
+$$x_{com}=\frac{1}{m}\int_{0}^{m}xdm$$
+$$y_{com}=\frac{1}{m}\int_{0}^{m}ydm$$
+
+
+]
+
+
+
+.pull-right[
+
+![](https://i1.wp.com/gmsciencein.com/wp-content/uploads/2018/02/fosbury_flop_2.jpg?w=797&ssl=1)
+
+.footnote[
+**Upshot:** COM is a function of shape
+]
+]
+
+---
+
+class: top
+
+# Jumping
+
+
+.pull-left[
+
+- Animals move by exerting forces on a medium of substrate (eg., ground, water, plants, air)
+
+$$\Sigma F=m\cdot a$$
+
+Where on the body to we measure acceleration?
+
+- if we consider the body as an infinite number of particles
+
+$$x_{com}=\frac{1}{m}\int_{0}^{m}xdm$$
+$$y_{com}=\frac{1}{m}\int_{0}^{m}ydm$$
+
+
+]
+
+
+
+.pull-right[
+
+
+![](https://opsveda.com/wp-content/uploads/2019/07/Fosbury-Flop-OpsVeda-1.png)
+.footnote[
+**Upshot:** COM is a function of shape
+]
+]
+
+
+
+---
+
+class: top
+
+# What happens in transition?
+
+.center[
+```{r,echo=FALSE,out.width=550}
+#stride length
+knitr::include_graphics("img/froudegait.jpg")
+
+```
+
+]
+
+
+---
+
+class: top
+
+# What happens in transition?
+
+
+.pull-left[
+
+.center[
+```{r,echo=FALSE,out.width=450}
+#stride length
+knitr::include_graphics("img/pend.png")
+
+```
+]
+
+
+]
+
+
+.pull-right[
+
+.center[
+
+```{r,echo=FALSE,out.width=450}
+#stride length
+knitr::include_graphics("img/springmass.jpg")
+
+```
+
+]
+
+
+]
+
+
+---
+
+class: top
+
+# Running mechanics and dynamics
+.center[
+![](img/springlegs.jpg)  ]
+
+---
+
+class: top
+
+# Running mechanics and dynamics
+.center[
+![](img/runningphase.jpg)  ]
+
+---
+class: top
+
+# Running mechanics and dynamics
+
+.righ-column[ 
+
+.right[
+```{r,echo=FALSE,out.width=500}
+#stride length
+knitr::include_graphics("img/energycomp.png")
+
+```
+]
+]
+
+
+---
+class: top
+
+# Running mechanics and dynamics
+
+.left-column[ 
+.center[
+$$KE=\frac{1}{2}mv^2$$
+
+$$PE=mgh$$
+
+$$U=\frac{1}{2}kx^2$$
+]
+]
+
+.righ-column[ 
+
+.right[
+```{r,echo=FALSE,out.width=500}
+#stride length
+knitr::include_graphics("img/energycomp.png")
+
+```
+]
+]
+
+
+---
+
+class: top
+
+# Running mechanics and dynamics
+
+Energy transfer
+
+![](img/musclesprings.jpg)  
+
+
+
+---
+
+class: top
+
+# Energy transfer and damping
+
+
+.center[
+
+```{r,echo=FALSE,out.width=500}
+#stride length
+knitr::include_graphics("img/musclesprings.jpg")
+
+```
+]
+
+
+.pull-left[
+
+
+![](https://www.acs.psu.edu/drussell/Demos/SHO/damp.gif)
+
+
+]
+
+.pull-right[
+
+.footnote[Tendons are viscoelastic]
+
+```{r,echo=FALSE,out.width=225}
+#stride length
+knitr::include_graphics("https://www.physio-pedia.com/images/thumb/d/db/Hysteresis_curve_intechopen.jpeg/357px-Hysteresis_curve_intechopen.jpeg")
+
+
+```
+
+]
+
+---
+
+class: top
+
+# Energy transfer and posture
+
+
+
+
+.pull-left[
+
+
+![](http://barefootrunning.fas.harvard.edu/BF%20HS%201%20Contact.jpg)
+
+![](http://barefootrunning.fas.harvard.edu/BF%20HS%202%20Foot%20Flat.jpg)
+
+[http://barefootrunning.fas.harvard.edu/](http://barefootrunning.fas.harvard.edu/)
+
+]
+
+.pull-right[
+
+```{r,echo=FALSE,out.width=300}
+#stride length
+knitr::include_graphics("https://www.physio-pedia.com/images/thumb/d/db/Hysteresis_curve_intechopen.jpeg/357px-Hysteresis_curve_intechopen.jpeg")
+
+```
+
+**What's the problem here?**
+
+]
+
+
+---
+
+class: top
+
+# Energy transfer and posture
+
+
+
+
+.pull-left[
+
+
+![](http://barefootrunning.fas.harvard.edu/BF%20RS%201%20Contact.jpg)
+
+![](http://barefootrunning.fas.harvard.edu/BF%20RS%202%20Foot%20Flat.jpg)
+
+[http://barefootrunning.fas.harvard.edu/](http://barefootrunning.fas.harvard.edu/)
+]
+
+.pull-right[
+
+```{r,echo=FALSE,out.width=300}
+#stride length
+knitr::include_graphics("https://www.physio-pedia.com/images/thumb/d/db/Hysteresis_curve_intechopen.jpeg/357px-Hysteresis_curve_intechopen.jpeg")
+
+```
+
+**How does this better facilitate energy transfer?**
+
+]
+
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
