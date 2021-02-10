@@ -18,7 +18,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Monday, Feb 8 | [Moving on Land II: Running et al.(3)](lect/Lecture03.html) | [Kuo (2007)](KuoWalking.pdf)| Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Wednesday, Feb 10 | Moving on Land III:Scaling (4)||
+ | Wednesday, Feb 10 | [Moving on Land III:Scaling (4)](lect/Lecture04.html)||
  | Friday, Feb 12   | Mini-Project I: Open Sourcery Cont'd  | | [Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 
