@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture6</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Christopher Kenaley" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Lecture6
+## Coarse Materials I
+### Dr. Christopher Kenaley
+### Boston College
+### 2021/2/17
+
+---
+
+class: inverse, top
+# Joints, Levers, and Linkages
+
+
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"&gt;
+
+
+.pull-left[
+Today we'll ....
+
+- Wrap up with linkages
+
+- What is stress, strain?
+
+- Define stiffness and other material properties
+
+]
+
+
+.pull-right[
+![](https://upload.orthobullets.com/topic/9062/images/Basic%20Stress%20Strain%20Curve_moved.jpg)
+]
+
+
+---
+class: top
+
+# Levers are part of a postural system
+
+
+.center[
+
+
+
+&lt;img src="https://jeb.biologists.org/content/jexbio/208/9/1665/F2.large.jpg" width="250" /&gt;
+ ]
+ 
+ .footnote[
+ `$$EMA=r/R$$`
+ ]
+ 
+ 
+---
+class: top
+
+# Linkages
+
+## 4-bar linkage
+
+.pull-left[
+
+### Can predict KE and ME based on morphology:
+
+- Force amplification = `\(r/q\)`
+- Speed ampflication = `\(q/r\)`
+]
+
+.pull-right[
+![](img/4bar2.png)
+]
+
+---
+class: top
+
+# Linkages
+
+.center[
+
+### Famous 4-bar from fish
+
+
+&lt;img src="img/fish4bar.jpg" width="550" /&gt;
+]
+
+---
+class: top
+
+# Material and structures
+
+.pull-left[ 
+
+- Loads and deformations -- basic concepts
+- Stress: the distribution of force over an area
+- Strain: a dimensionless measure of deformation
+- Stiffness: a measure of how materials respond to stress (or strain)
+- Loads: the relationship between stress and strain
+- Strength: the stress at breaking
+	
+
+	
+]
+
+.pull-right[
+![](img/stressbone.jpg)
+]
+        
+   
+---
+class: top
+
+# Material and structures
+
+.pull-left[ 
+ 
+- All (biological) materials respond to external forces by deforming
+- We seek a way to understand and characterize these responses
+- Material behavior as separate from structural behavior
+- We will formalize the relationships between force and deformation	
+
+
+]
+
+.pull-right[
+![](img/stressbone.jpg)
+
+]
+   
+ 
+---
+class: top
+
+# Material properties 
+
+## Types of deformation
+
+.center[
+
+]
+
+.center[ 
+
+
+             
+![](img/loads.png)
+        
+ 
+        ]
+
+
+
+ 
+---
+class: top
+
+# Material properties
+
+## Types of deformation
+
+.pull-left[
+
+Stress: `$$\sigma=\frac{F}{A}$$`
+
+`\(Pa=N\cdot m^2\)`
+           
+Strain `$$\varepsilon=\frac{L-L_o}{L_o}$$`
+
+Units?
+
+
+]
+
+.pull-right[
+
+
+
+&lt;img src="img/loads.png" width="350" /&gt;
+
+
+]
+
+  
+---
+class: top
+
+# Material properties 
+  
+  
+.pull-left[
+
+`$$stress(\sigma)=\frac{F}{A}$$`
+
+&lt;img src="img/strainarrows.png" width="350" /&gt;
+
+   Young's modulus: `\(E=\frac{\sigma}{\varepsilon}\)`
+   
+   What are units of `\(E\)`?
+   
+]
+
+ 
+.pull-right[
+
+ `\(strain(\varepsilon)=\frac{L-L_o}{L_o}\)`
+ 
+ Hook's law: `\(F=K\Delta L\)`
+ 
+&lt;img src="img/stressstrainstiff.png" width="350" /&gt;
+             
+              
+]
+
+---
+class: top
+
+# Material properties 
+  
+  
+.pull-left[
+
+`\(\sigma\)`: distribution of force over and area
+
+`\(\varepsilon\)`: dimensionless measure of length of change
+
+stiffness (E): change in stress relative to strain (slope of stress-strain curve)
+
+
+&lt;img src="img/tendoncurve.png" width="250" /&gt;
+
+]
+
+ 
+.pull-right[
+
+Most biological materials are non-linearly elastic
+
+&lt;img src="img/bonehaircurve.png" width="250" /&gt;
+             
+
+
+
+]
+
+---
+class: top
+
+# Material properties 
+  
+  
+.pull-left[
+
+`\(\sigma\)`: distribution of force over and area
+
+`\(\varepsilon\)`: dimensionless measure of length of change
+
+stiffness (E): change in stress relative to strain (slope of stress-strain curve)
+
+
+&lt;img src="img/tendoncurve.png" width="250" /&gt;
+
+]
+
+ 
+.pull-right[
+
+Most biological materials are non-linearly elastic
+
+&lt;img src="img/failuretable.png" width="250" /&gt;
+             
+
+
+
+]
+
+---
+class: top
+
+# Material properties 
+  
+  
+.pull-left[
+
+`\(\sigma\)`: distribution of force over and area
+
+`\(\varepsilon\)`: dimensionless measure of length of change
+
+stiffness (E): change in stress relative to strain (slope of stress-strain curve)
+
+
+&lt;img src="img/stressstraincurve.jpg" width="350" /&gt;
+
+]
+
+ 
+.pull-right[
+
+Most biological materials are non-linearly elastic
+
+&lt;img src="img/failuretable.png" width="250" /&gt;
+             
+
+
+
+]
+
+
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
