@@ -42,7 +42,7 @@ qplot(xfit, yfit)+theme_classic(20)+xlab("time")+ylab("% effort")+ylim(c(0,100))
 <br>
 </center>
 
-## Helpfu Resources
+## Helpful Resources
 
 As you work through this project description, you may find it helpful to reference the following online resources.
 
@@ -358,8 +358,12 @@ dat%>%
 
 Who is who? Which jump was it? No way to tell! Let's rethink this. What if we could combine the data in one big tibble and add a few column to this tibble that reflects from whom the data came and which jump do the data reflect? Notice that in each file name, we have that information in the form of "Z" and "O" and a number. I show you this . . .
 
-```{r}
+```{r,eval=FALSE}
 list.files(pattern = ".csv")
+```
+
+```{r,echo=FALSE}
+list.files(pattern = "jumping")
 ```
 
 Here, I just asked R to list the files in the working directory (where our .Rmd resides) to list the files that match the pattern ".csv", that is, the files ending in ".csv". Each one has "O" and "Z" and a number in it. When scientist save data in files, they give those files a predictable and consistent structure to the file name. In this case, for each file, the first bit of text separated by an underscore ("_") is the subject or who (Ollie or Zo) and the last bit is the jump number, or replicate. In other words, we have stored data about the data in the file name. **We call data about the data metadata.** Thus, if we could read in each file of a certain name and strip the important metadata from the that and then add it to the to the data, we'd be in business. But how? Enter the `for` loop.
@@ -383,7 +387,23 @@ Now that we have a basic understanding of how this works, let's apply it to our 
 
 
 
-```{r,message=FALSE}
+```{r,echo=FALSE,message=FALSE}
+ dat <- list() #an empty list
+
+f <- list.files(pattern="jumping") #store the file names
+
+for(i in f){
+  m <- unlist(strsplit(i,"_"))
+  who <- m[1]
+  rep <- gsub(".csv","",m[3])
+  dat.i <- read_csv(i)%>%
+    mutate(who=who,rep=rep)
+  dat[[i]] <- dat.i
+}
+
+```
+
+```{r,eval=FALSE}
  dat <- list() #an empty list
 
 f <- list.files(pattern=".csv") #store the file names

@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Mini Project 1: Get Ur Gait On</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css" data-origin="pandoc">
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f8f8f8; }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #c4a000; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+</style>
+<script>
+// apply pandoc div.sourceCode style to pre.sourceCode instead
+(function() {
+  var sheets = document.styleSheets;
+  for (var i = 0; i < sheets.length; i++) {
+    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
+    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
+    for (var j = 0; j < rules.length; j++) {
+      var rule = rules[j];
+      // check if there is a div.sourceCode rule
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      var style = rule.style.cssText;
+      // check if color or background-color is set
+      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      // replace div.sourceCode by a pre.sourceCode rule
+      sheets[i].deleteRule(j);
+      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
+    }
+  }
+})();
+</script>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">BIOL 5380</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Schedule</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Mini-Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="mini_projects.html">Mini-Projects Overview</a>
+    </li>
+    <li>
+      <a href="MP1.html">MP1 Description</a>
+    </li>
+    <li class="dropdown-header">MP2 Description</li>
+    <li class="dropdown-header">MP3 Description</li>
+    <li class="dropdown-header">MP4 Description</li>
+    <li class="dropdown-header">MP3 Description</li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Final Project
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="final_project.html">FP Overview</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">Discussion Board</a>
+</li>
+<li>
+  <a href="https://bostoncollege.instructure.com/courses/1615104">Course Canvas Page</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Mini Project 1: Get Ur Gait On</h1>
+
+</div>
+
+
+<div id="introduction" class="section level3">
+<h3>Introduction</h3>
+<p>Our second Miniproject explores several topics in the biomechanical basis of terrestrial locomotion. In particular, we’ll focus on how well the inverted pendulum model applies in predicting the maximum speed of walking humans and to what extent some kinematic variables, like pelvic tilt, contribute to differences in speed. We’ll also look at how these kinematic variables vary by size and sex. Our general goals are to:</p>
+<ul>
+<li>Use imageJ to perform kinematic analysis</li>
+<li>Use simple mathematical models to predict maximum limb walking speed</li>
+<li>Test predictions of walking speed with measurements and observations</li>
+<li>Evaluate the effects sex and size (scaling!) on your observations</li>
+</ul>
+<div class="figure" style="text-align: center">
+<img src="pend.png" alt="The inverted pendulum model of bipedal locomotion" width="332" />
+<p class="caption">
+The inverted pendulum model of bipedal locomotion
+</p>
+</div>
+</div>
+<div id="conceptual-basis" class="section level3">
+<h3>Conceptual basis</h3>
+<p>As we’ve learned, the inverted pendulum (IP) is rather simple model for understanding how we walk. Under the IP model, the leg forms the radius of an arc through which your center of mass (COM) travels. Thus, we can use concepts surrounding centripetal forces to estimate how fast we walk. So far, we’ve ignored air resistance and the inertial effects of other moving parts (e.g., arms) and assumed the leg is rigid and rotates about the ground at a single point of contact. Under these conditions, we can make predictions as to the maximum linear velocity of our COM. The force associated with this swinging pendulum can be described as</p>
+<p><span class="math display">\[
+F =ma_c=\frac {mv^2}{R} 
+\]</span></p>
+<p>where <span class="math inline">\(a_c\)</span> the acceleration due to gravity and <span class="math inline">\(R\)</span> is the leg length, or the radius of the inverted pendulum. From this we see that the maximum velocity of the rotating mass is never greater than the square root of the product of gravity and the radius, or, in biomechanical terms</p>
+<p><span class="math display">\[
+v_{max}^2 =gl
+\]</span> <span class="math display">\[
+v_{max} =\sqrt{ gl}
+\]</span></p>
+<p>where <span class="math inline">\(g\)</span> is gravity and <span class="math inline">\(l\)</span> the leg length. Thus, as we have learned in class, the Froude efficiency for walking is:</p>
+<p><span class="math display">\[
+Fr =\frac {v^2}{\sqrt{gL}}&lt;=1 
+\]</span></p>
+<p>where <span class="math inline">\(v\)</span> and any walking velocity is less or equal to than <span class="math inline">\(v_{max}\)</span>.</p>
+<p>As has become clear in our class discussions and demonstrations, the leg length is the radius and any increase in this length will result in a greater velocity. In addition, any biomechanical mechanism that increases the leg length during otherwise lower phases of the arc (e.g., pelvic tilt, that is lifting the plant-leg side of the pelvis, ) will keep the COM higher and increase the velocity.</p>
+<div class="figure" style="text-align: center">
+<img src="pelvictilt.jpg" alt="A walker tilting its pelvis" width="306" />
+<p class="caption">
+A walker tilting its pelvis
+</p>
+</div>
+</div>
+<div id="methods" class="section level3">
+<h3>Methods</h3>
+<p>There are two parts to this MP: (1) predicting and testing predictions of maximum walking speed and (2) comparisons of pendulum walking and normal walking at comfortable speeds. For both parts of this MP, it is important that you walk and not run. That means a duty factor of &gt;0.5, i.e., you’ll always have a foot on the ground. Lab partners, police your colleagues to ensure this.</p>
+</div>
+<div id="max-out-your-pendulum" class="section level3">
+<h3>Max out your pendulum</h3>
+<p>For this part of the MP you will compare a predicted maximum walking velocity (<span class="math inline">\(v_{max}\)</span>) to observed maximum walking speed. First things first: mark off a distance of 5 meters on level ground (e.g., in the hall, atrium, etc.).</p>
+<p>With your knees locked and your hands by your side and not swinging, walk on your heels as fast as you can across the the marked distance. Concentrate on not using any movement in your pelvis or knees. This may require some practice. You may, if you’re careful, have a lab partner push you gently to get you going at the start of the 5-m field. With a phone or watch, record the time it takes to traverse the 5-m distance.</p>
+<p>Using these data, compute the velocity (in m s<span class="math inline">\(^{-1}\)</span>) and compare this to your calculated <span class="math inline">\(v_{max}\)</span>. Please entere these data <a href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing">here</a>. They can be accessed here for later analysis as well.</p>
+</div>
+<div id="full-tilt-walking" class="section level3">
+<h3>Full-tilt walking</h3>
+<p>The radius of your rotating mass can be effectively increased by subtle changes in posture, including active alterations in pelvic position. Pelvic tilt is one such mechanism and the angle of tilt can be measured using ImageJ. While pelvic tilt results in a lengthening of the plant-leg, there are other postural consequences.</p>
+<p>Start with donning the markers and the yardstick with markers attached at its end as in the figure below. Attach one small marker low on the front of your shin. Attach the yardstick with clamps or by wrapping the bungie cord around your waist. Be sure that the yard stick rests right above your anterior superior illiac spines (those bony points on the front of your hip). This apparatus will amplify your pelvic motions and make data recording much easier. Have a project partner record video (in normal video mode) of your walk as you walk toward her/him over the 5-m course from the earlier experiment. Be careful that the full width of the yardstick in the frame at all times. You’ll perform two trials per partner: (1) walking normally at a comfortable speed and (2) walking normally but as quickly as possible. For both trials, use ImageJ and the MtrackJ plugin to track the markers on your body. From these data, you should compute two things: pelvic tilt angle (i.e. the difference between the maximum and minimum tilt angle) and the angle of the leg relative to the COM (the point below the navel. Please also enter these data <a href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing">here</a>. Remember, these data can be accessed for analysis from this directory. Also notice there are data from previous interations of the class. Be sure to use all of these in your analysis.</p>
+<p>To analyze your videos in ImageJ, you’ll need to convert them to an image sequence and have the MtrackJ plugin installed (see class site under “links”). Videos can be rendered into image sequences by using—you guessed it—free and open source tools like MPEG Streamclip (also available from the class site under “links”). Once the image sequence is stored in a directory, open it with ImageJ (File<span class="math inline">\(\rightarrow\)</span> Import <span class="math inline">\(\rightarrow\)</span> Image Sequence). Launch the MtrackJ plugin (Plugins <span class="math inline">\(\rightarrow\)</span> MtrackJ) and follow the directions from the online <a href="http://www.imagescience.org/meijering/software/mtrackj/quickstart/">manual</a>. The goal here is to track four positions and calculate your two kinematic values.</p>
+<div class="figure" style="text-align: center">
+<img src="walkfront.png" alt="You lookin' all marked and stuff" width="258" />
+<p class="caption">
+You lookin’ all marked and stuff
+</p>
+</div>
+</div>
+<div id="what-to-address-in-report" class="section level3">
+<h3>What to address in report</h3>
+<ol style="list-style-type: decimal">
+<li>State an hypothesis as to how pelvic tilt will change with increased walking speeds. What is the biomechanical basis for this?</li>
+<li>State an hypothesis as to how pelvic tilt will change other aspects of hip posture. What other mechanisms associated with gait might address this?</li>
+<li>State an hypothesis as to how pelvic tilt will change with human size in terms of mass and height and sex. Do your data support this?</li>
+<li>State an hypothesis as to how pendulum walking speed (<span class="math inline">\(v_{max}\)</span>) will vary with human size and sex. Do your data support this?</li>
+<li>How did class-wide <span class="math inline">\(v_{max}\)</span> compare to actual class-wide walking speed? What is the biomechanical basis for this?</li>
+</ol>
+<p>Please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our <a href="https://www2.bc.edu/christopher-kenaley/bio5380/assignments.html">assignments page</a>. Reports and any data files reference by them are due Monday, March 9th. They can be uploaded to <a href="https://drive.google.com/drive/folders/10xW1d6jjWkrxDKbPoER_4Uy3wGUsL6ml?usp=sharing">this google directory</a>.</p>
+</div>
+<div id="a-kick-start" class="section level3">
+<h3>A kick start</h3>
+<p>To answer these questions, you’ll have to concatenate a bunch of data. Fortunately, we’ve been doing a lot of this lately. However, for it to proceed smoothly, you might need some guidance, especially dealing with the data from the MTrackJ analysis. Let’s assume you produced 4 files for two teammates that each walked fast and slowly. If we had our data filenames begin with “walk” and end in “.txt”, we could use a handy <code>grep</code> search to find all the files we want to analyze in the directory.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>walk.files &lt;-<span class="st"> </span><span class="kw">list.files</span>()[<span class="kw">grep</span>(<span class="st">&quot;walk_.*.txt&quot;</span>,<span class="kw">list.files</span>())]</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">print</span>(walk.files)</span></code></pre></div>
+<pre><code>## [1] &quot;walk_fast_me.txt&quot;  &quot;walk_fast_you.txt&quot; &quot;walk_slow_me.txt&quot; 
+## [4] &quot;walk_slow_you.txt&quot;</code></pre>
+<p>Notice how they are similarly named “walk_speed_subject.txt”. That makes it easy to extract metadata from the filenames. Now, as we have a few times before in other projects, let’s concatenate all the data into one data frame for subsequent plotting and analysis.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>walk.dat &lt;-<span class="st"> </span><span class="kw">list</span>() <span class="co">#make a list for storing</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="cf">for</span>(i <span class="cf">in</span> walk.files){</span>
+<span id="cb3-3"><a href="#cb3-3"></a>  walk.i &lt;-<span class="st"> </span><span class="kw">read.csv</span>(i,<span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>) <span class="co">#read data</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  met.dat &lt;-<span class="st"> </span><span class="kw">unlist</span>(<span class="kw">strsplit</span>(i,<span class="st">&quot;_&quot;</span>)) <span class="co">#split i for metadata and unlist it</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>  speed &lt;-<span class="st"> </span>met.dat[<span class="dv">2</span>] <span class="co">#get speed</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>  subject &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;.txt&quot;</span>,<span class="st">&quot;&quot;</span>,met.dat[<span class="dv">3</span>]) <span class="co">#remove &quot;.txt&quot; </span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>  walk.dat[[i]] &lt;-<span class="st"> </span><span class="kw">data.frame</span>(walk.i,<span class="dt">speed=</span>speed,<span class="dt">subject=</span>subject)</span>
+<span id="cb3-8"><a href="#cb3-8"></a>}</span>
+<span id="cb3-9"><a href="#cb3-9"></a>walk.dat &lt;-<span class="st"> </span><span class="kw">do.call</span>(rbind,walk.dat)</span>
+<span id="cb3-10"><a href="#cb3-10"></a></span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="kw">head</span>(walk.dat)</span></code></pre></div>
+<pre><code>##                    Nr TID PID x..pixel. y..pixel. t..sec. I..val. Len..pixel.
+## walk_fast_me.txt.1  1   1   1   200.116   252.459       0     255       0.000
+## walk_fast_me.txt.2  2   1   2   199.891   252.672       0     255       0.310
+## walk_fast_me.txt.3  3   1   3   199.699   252.875       0     251       0.589
+## walk_fast_me.txt.4  4   1   4   199.504   253.130       0     246       0.910
+## walk_fast_me.txt.5  5   1   5   199.354   253.337       0     241       1.166
+## walk_fast_me.txt.6  6   1   6   199.196   253.529       0     255       1.415
+##                    D2S..pixel. D2R..pixel. D2P..pixel. v..pixel.sec. X...deg.
+## walk_fast_me.txt.1       0.000          NA          NA            NA       NA
+## walk_fast_me.txt.2       0.310          NA       0.310            NA  136.585
+## walk_fast_me.txt.3       0.589          NA       0.279            NA  133.375
+## walk_fast_me.txt.4       0.908          NA       0.321            NA  127.226
+## walk_fast_me.txt.5       1.163          NA       0.256            NA  126.165
+## walk_fast_me.txt.6       1.411          NA       0.249            NA  129.456
+##                    X....deg. speed subject
+## walk_fast_me.txt.1        NA  fast      me
+## walk_fast_me.txt.2        NA  fast      me
+## walk_fast_me.txt.3    -3.210  fast      me
+## walk_fast_me.txt.4    -6.149  fast      me
+## walk_fast_me.txt.5    -1.061  fast      me
+## walk_fast_me.txt.6     3.291  fast      me</code></pre>
+<p>Sweet. But, notice that the column names given to the data are gobblygook with all those periods. Let’s change them for easy referencing with a <code>gsub</code> (a grep substitution) operation . . .</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">colnames</span>(walk.dat) &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="kw">colnames</span>(walk.dat))</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">head</span>(walk.dat)</span></code></pre></div>
+<pre><code>##                    Nr TID PID  xpixel  ypixel tsec Ival Lenpixel D2Spixel
+## walk_fast_me.txt.1  1   1   1 200.116 252.459    0  255    0.000    0.000
+## walk_fast_me.txt.2  2   1   2 199.891 252.672    0  255    0.310    0.310
+## walk_fast_me.txt.3  3   1   3 199.699 252.875    0  251    0.589    0.589
+## walk_fast_me.txt.4  4   1   4 199.504 253.130    0  246    0.910    0.908
+## walk_fast_me.txt.5  5   1   5 199.354 253.337    0  241    1.166    1.163
+## walk_fast_me.txt.6  6   1   6 199.196 253.529    0  255    1.415    1.411
+##                    D2Rpixel D2Ppixel vpixelsec    Xdeg   Xdeg speed subject
+## walk_fast_me.txt.1       NA       NA        NA      NA     NA  fast      me
+## walk_fast_me.txt.2       NA    0.310        NA 136.585     NA  fast      me
+## walk_fast_me.txt.3       NA    0.279        NA 133.375 -3.210  fast      me
+## walk_fast_me.txt.4       NA    0.321        NA 127.226 -6.149  fast      me
+## walk_fast_me.txt.5       NA    0.256        NA 126.165 -1.061  fast      me
+## walk_fast_me.txt.6       NA    0.249        NA 129.456  3.291  fast      me</code></pre>
+<p>That’s better. Now, let’s pare down the data to those columns we actually care about, “xpixel” and “ypixel”, the x and y positions of the points, “subject”, and “speed”. Also notice that the MTrackJ file contains a “TID” and “PID” column identifying to what track (which dot in the image) and point (the series of positions) the x and y positions belong. This makes analysis pretty zippy. So let’s keep these columns, too, then dump the others, and give it a quick plot with ggplot.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">library</span>(ggplot2)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>walk.dat2 &lt;-<span class="st"> </span>walk.dat[,<span class="kw">c</span>(<span class="st">&quot;TID&quot;</span>,<span class="st">&quot;PID&quot;</span>,<span class="st">&quot;xpixel&quot;</span>,<span class="st">&quot;ypixel&quot;</span>,<span class="st">&quot;subject&quot;</span>,<span class="st">&quot;speed&quot;</span>)]</span>
+<span id="cb7-3"><a href="#cb7-3"></a></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="kw">qplot</span>(<span class="dt">dat=</span>walk.dat2,<span class="dt">x=</span>xpixel,<span class="dt">y=</span>ypixel,<span class="dt">col=</span>speed)<span class="op">+</span><span class="kw">facet_grid</span>(subject<span class="op">~</span>.)</span></code></pre></div>
+<p><img src="MP2_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p>Notice that our leg point (TID=3) is higher than the hip. That’s odd! Well, not really. Convention holds that pixel 0,0 is the upper left of the image, so that means the coordinates are flipped vertically in our images. So let’s flip them back by finding the absolution value each y value minus the maximum y position (the image height).</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>walk.dat2<span class="op">$</span>ypixel &lt;-<span class="st"> </span><span class="kw">abs</span>(walk.dat2<span class="op">$</span>ypixel<span class="op">-</span><span class="kw">max</span>(walk.dat2<span class="op">$</span>ypixel))</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="co">#plot again</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="kw">qplot</span>(<span class="dt">dat=</span>walk.dat2,<span class="dt">x=</span>xpixel,<span class="dt">y=</span>ypixel,<span class="dt">col=</span>subject)<span class="op">+</span><span class="kw">facet_grid</span>(.<span class="op">~</span>speed,<span class="dt">scales=</span><span class="st">&quot;free_y&quot;</span>)<span class="co">#grid it with columns = to speed</span></span></code></pre></div>
+<p><img src="MP2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p>OK, all well in good. But does it make sense to identify our tracked points by “TID”, that is 1, 2, and 3? Wouldn’t it be better to change this to some character description like “hipL”, “hipR”, and “legR”, for left hip, right hip, and right leg, respectively. Let’s do it by changing TID to these strings using a for loop. (if you do this, confirm the order is correct!)</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>pt.names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;hipR&quot;</span>, <span class="st">&quot;hipL&quot;</span>, <span class="st">&quot;legR&quot;</span>)</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>){</span>
+<span id="cb9-3"><a href="#cb9-3"></a>walk.dat2<span class="op">$</span>TID[walk.dat2<span class="op">$</span>TID<span class="op">==</span>i] &lt;-<span class="st"> </span>pt.names[i]</span>
+<span id="cb9-4"><a href="#cb9-4"></a>}</span>
+<span id="cb9-5"><a href="#cb9-5"></a></span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="kw">head</span>(walk.dat2<span class="op">$</span>TID)</span></code></pre></div>
+<pre><code>## [1] &quot;hipR&quot; &quot;hipR&quot; &quot;hipR&quot; &quot;hipR&quot; &quot;hipR&quot; &quot;hipR&quot;</code></pre>
+<p>Now it’ll be easier to keep track of which track we intend to reference in any plotting or analysis.</p>
+<p>Now that we have data loaded, think about what sort of data you need to produce from this data set. You need angle, right? Hmmm, that should be easy to compute for each hip point with some simple trigonometry. Good luck!!!</p>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
