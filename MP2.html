@@ -453,7 +453,9 @@ div.tocify {
     <li>
       <a href="MP1.html">MP1 Description</a>
     </li>
-    <li class="dropdown-header">MP2 Description</li>
+    <li>
+      <a href="MP2.html">MP2 Description</a>
+    </li>
     <li class="dropdown-header">MP3 Description</li>
     <li class="dropdown-header">MP4 Description</li>
     <li class="dropdown-header">MP3 Description</li>
@@ -494,8 +496,8 @@ div.tocify {
 </div>
 
 
-<div id="introduction" class="section level3">
-<h3>Introduction</h3>
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
 <p>Our second Miniproject explores several topics in the biomechanical basis of terrestrial locomotion. In particular, we’ll focus on how well the inverted pendulum model applies in predicting the maximum speed of walking humans and to what extent some kinematic variables, like pelvic tilt, contribute to differences in speed. We’ll also look at how these kinematic variables vary by size and sex. Our general goals are to:</p>
 <ul>
 <li>Use imageJ to perform kinematic analysis</li>
@@ -509,7 +511,6 @@ div.tocify {
 The inverted pendulum model of bipedal locomotion
 </p>
 </div>
-</div>
 <div id="conceptual-basis" class="section level3">
 <h3>Conceptual basis</h3>
 <p>As we’ve learned, the inverted pendulum (IP) is rather simple model for understanding how we walk. Under the IP model, the leg forms the radius of an arc through which your center of mass (COM) travels. Thus, we can use concepts surrounding centripetal forces to estimate how fast we walk. So far, we’ve ignored air resistance and the inertial effects of other moving parts (e.g., arms) and assumed the leg is rigid and rotates about the ground at a single point of contact. Under these conditions, we can make predictions as to the maximum linear velocity of our COM. The force associated with this swinging pendulum can be described as</p>
@@ -518,9 +519,9 @@ F =ma_c=\frac {mv^2}{R}
 \]</span></p>
 <p>where <span class="math inline">\(a_c\)</span> the acceleration due to gravity and <span class="math inline">\(R\)</span> is the leg length, or the radius of the inverted pendulum. From this we see that the maximum velocity of the rotating mass is never greater than the square root of the product of gravity and the radius, or, in biomechanical terms</p>
 <p><span class="math display">\[
-v_{max}^2 =gl
+v_{max}^2 \leq gl
 \]</span> <span class="math display">\[
-v_{max} =\sqrt{ gl}
+v_{max} \leq\sqrt{ gl}
 \]</span></p>
 <p>where <span class="math inline">\(g\)</span> is gravity and <span class="math inline">\(l\)</span> the leg length. Thus, as we have learned in class, the Froude efficiency for walking is:</p>
 <p><span class="math display">\[
@@ -535,9 +536,14 @@ A walker tilting its pelvis
 </p>
 </div>
 </div>
-<div id="methods" class="section level3">
-<h3>Methods</h3>
+</div>
+<div id="methods" class="section level2">
+<h2>Methods</h2>
 <p>There are two parts to this MP: (1) predicting and testing predictions of maximum walking speed and (2) comparisons of pendulum walking and normal walking at comfortable speeds. For both parts of this MP, it is important that you walk and not run. That means a duty factor of &gt;0.5, i.e., you’ll always have a foot on the ground. Lab partners, police your colleagues to ensure this.</p>
+<div id="sofware-essentials" class="section level3">
+<h3>Sofware essentials</h3>
+<p>We’ll need a few pieces of software to analyze the kinematics of walking. First, <a href="https://imagej.nih.gov/ij/download.html">download and install imageJ</a>, a free image analysis package that just about everyone in the natural sciences uses at one point in their career. Second, download the following two plugin jar-files: <a href="https://imagescience.org/meijering/software/download/MTrackJ_.jar">MTrackJ_.jar (version 1.5.1)</a> and <a href="https://imagescience.org/meijering/software/download/imagescience.jar">imagescience.jar (version 3.0.0)</a>. Then install them to imageJ by selecting “Plugins” <span class="math inline">\(\rightarrow\)</span> “Install” and navigating to these jar files and selecting “open”. MTrackJ is a simple tracking plugin that allows users to track points across video frames.</p>
+<p>We’ll be working with video data captured with our phones. The file types associated with videos shot by phones are often unworkable in imageJ. We need a way of converting your phone videos to AVI format, a file type that imageJ can open. Videos can be rendered into AVI files using—you guessed it—free and open source tools like MPEG Streamclip, which <a href="http://www.squared5.com/">can be downloaded here</a></p>
 </div>
 <div id="max-out-your-pendulum" class="section level3">
 <h3>Max out your pendulum</h3>
@@ -548,8 +554,8 @@ A walker tilting its pelvis
 <div id="full-tilt-walking" class="section level3">
 <h3>Full-tilt walking</h3>
 <p>The radius of your rotating mass can be effectively increased by subtle changes in posture, including active alterations in pelvic position. Pelvic tilt is one such mechanism and the angle of tilt can be measured using ImageJ. While pelvic tilt results in a lengthening of the plant-leg, there are other postural consequences.</p>
-<p>Start with donning the markers and the yardstick with markers attached at its end as in the figure below. Attach one small marker low on the front of your shin. Attach the yardstick with clamps or by wrapping the bungie cord around your waist. Be sure that the yard stick rests right above your anterior superior illiac spines (those bony points on the front of your hip). This apparatus will amplify your pelvic motions and make data recording much easier. Have a project partner record video (in normal video mode) of your walk as you walk toward her/him over the 5-m course from the earlier experiment. Be careful that the full width of the yardstick in the frame at all times. You’ll perform two trials per partner: (1) walking normally at a comfortable speed and (2) walking normally but as quickly as possible. For both trials, use ImageJ and the MtrackJ plugin to track the markers on your body. From these data, you should compute two things: pelvic tilt angle (i.e. the difference between the maximum and minimum tilt angle) and the angle of the leg relative to the COM (the point below the navel. Please also enter these data <a href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing">here</a>. Remember, these data can be accessed for analysis from this directory. Also notice there are data from previous interations of the class. Be sure to use all of these in your analysis.</p>
-<p>To analyze your videos in ImageJ, you’ll need to convert them to an image sequence and have the MtrackJ plugin installed (see class site under “links”). Videos can be rendered into image sequences by using—you guessed it—free and open source tools like MPEG Streamclip (also available from the class site under “links”). Once the image sequence is stored in a directory, open it with ImageJ (File<span class="math inline">\(\rightarrow\)</span> Import <span class="math inline">\(\rightarrow\)</span> Image Sequence). Launch the MtrackJ plugin (Plugins <span class="math inline">\(\rightarrow\)</span> MtrackJ) and follow the directions from the online <a href="http://www.imagescience.org/meijering/software/mtrackj/quickstart/">manual</a>. The goal here is to track four positions and calculate your two kinematic values.</p>
+<p>Start with donning the markers and the yardstick with markers attached at its end as in the figure below. Attach one small marker low on the front of your shin. Attach the yardstick with binder clips to your pantwaist. Be sure that the yard stick rests right above your anterior superior illiac spines (those bony points on the front of your hip). This apparatus will amplify your pelvic motions and make data recording much easier. Have a project partner record video (in normal video mode) of your walk as you walk toward her/him over the 5-m course from the earlier experiment. Be careful that the full width of the yardstick in the frame at all times. You’ll perform two trials per partner: (1) walking normally at a comfortable speed and (2) walking normally but as quickly as possible. For both trials, use ImageJ and the MTrackJ plugin to track the markers on your body. From these data, you should compute two things: pelvic tilt angle (i.e. the difference between the maximum and minimum tilt angle) and the angle of the leg relative to the COM (the point below the navel. Please also enter these data <a href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing">here</a>. Remember, these data can be accessed for analysis from this directory. Also notice there are data from previous iterations of the class. Be sure to use all of these in your analysis.</p>
+<p>To analyze your videos in ImageJ, you’ll need to convert them to and AVI file and have the MtrackJ plugin installed (see above). Once the AVI file is stored in a directory, open it with ImageJ (File<span class="math inline">\(\rightarrow\)</span> Import <span class="math inline">\(\rightarrow\)</span> AVI . . .). Launch the MTrackJ plugin (Plugins <span class="math inline">\(\rightarrow\)</span> MtrackJ) and follow the directions from the online <a href="http://www.imagescience.org/meijering/software/mtrackj/quickstart/">manual</a>. The goal here is to track four positions and calculate your two kinematic values: pelvic tilt and leg angle.</p>
 <div class="figure" style="text-align: center">
 <img src="walkfront.png" alt="You lookin' all marked and stuff" width="258" />
 <p class="caption">
@@ -557,93 +563,173 @@ You lookin’ all marked and stuff
 </p>
 </div>
 </div>
-<div id="what-to-address-in-report" class="section level3">
-<h3>What to address in report</h3>
+</div>
+<div id="what-to-address-in-the-report" class="section level2">
+<h2>What to address in the report</h2>
 <ol style="list-style-type: decimal">
 <li>State an hypothesis as to how pelvic tilt will change with increased walking speeds. What is the biomechanical basis for this?</li>
-<li>State an hypothesis as to how pelvic tilt will change other aspects of hip posture. What other mechanisms associated with gait might address this?</li>
 <li>State an hypothesis as to how pelvic tilt will change with human size in terms of mass and height and sex. Do your data support this?</li>
 <li>State an hypothesis as to how pendulum walking speed (<span class="math inline">\(v_{max}\)</span>) will vary with human size and sex. Do your data support this?</li>
 <li>How did class-wide <span class="math inline">\(v_{max}\)</span> compare to actual class-wide walking speed? What is the biomechanical basis for this?</li>
 </ol>
-<p>Please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our <a href="https://www2.bc.edu/christopher-kenaley/bio5380/assignments.html">assignments page</a>. Reports and any data files reference by them are due Monday, March 9th. They can be uploaded to <a href="https://drive.google.com/drive/folders/10xW1d6jjWkrxDKbPoER_4Uy3wGUsL6ml?usp=sharing">this google directory</a>.</p>
+<p>As a group, please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our <a href="mini_projects.html">Min-projects page</a>. Reports and any data files reference by them are due Thursday, March 4th, by 11:59 PM. They can should be sent to Prof. Kenaley in a zipped directory over email.</p>
 </div>
-<div id="a-kick-start" class="section level3">
-<h3>A kick start</h3>
-<p>To answer these questions, you’ll have to concatenate a bunch of data. Fortunately, we’ve been doing a lot of this lately. However, for it to proceed smoothly, you might need some guidance, especially dealing with the data from the MTrackJ analysis. Let’s assume you produced 4 files for two teammates that each walked fast and slowly. If we had our data filenames begin with “walk” and end in “.txt”, we could use a handy <code>grep</code> search to find all the files we want to analyze in the directory.</p>
+<div id="a-kick-start" class="section level2">
+<h2>A kick start</h2>
+<p>To answer these questions, you’ll have to concatenate a bunch of data. Fortunately, we’ve learned how to do this lately. However, for it to proceed smoothly, you might need some guidance, especially dealing with the data from the MTrackJ analysis. Let’s assume you produced 4 files for two teammates that each walked fast and slowly. If we had our data file names begin with “walk” and end in “.txt”, we could use a handy <code>grep</code> search to find all the files we want to analyze in the directory.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>walk.files &lt;-<span class="st"> </span><span class="kw">list.files</span>()[<span class="kw">grep</span>(<span class="st">&quot;walk_.*.txt&quot;</span>,<span class="kw">list.files</span>())]</span>
 <span id="cb1-2"><a href="#cb1-2"></a><span class="kw">print</span>(walk.files)</span></code></pre></div>
 <pre><code>## [1] &quot;walk_fast_me.txt&quot;  &quot;walk_fast_you.txt&quot; &quot;walk_slow_me.txt&quot; 
 ## [4] &quot;walk_slow_you.txt&quot;</code></pre>
-<p>Notice how they are similarly named “walk_speed_subject.txt”. That makes it easy to extract metadata from the filenames. Now, as we have a few times before in other projects, let’s concatenate all the data into one data frame for subsequent plotting and analysis.</p>
+<p>Notice how they are similarly named “walk_speed_subject.txt”. That makes it easy to extract metadata from the file names. Now, as we did in the first , let’s concatenate all the data into one data frame for subsequent plotting and analysis.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>walk.dat &lt;-<span class="st"> </span><span class="kw">list</span>() <span class="co">#make a list for storing</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="cf">for</span>(i <span class="cf">in</span> walk.files){</span>
-<span id="cb3-3"><a href="#cb3-3"></a>  walk.i &lt;-<span class="st"> </span><span class="kw">read.csv</span>(i,<span class="dt">sep=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>) <span class="co">#read data</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a>  walk.i &lt;-<span class="st"> </span><span class="kw">read_delim</span>(i,<span class="dt">delim=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>) <span class="co">#read data as a tibble</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a>  met.dat &lt;-<span class="st"> </span><span class="kw">unlist</span>(<span class="kw">strsplit</span>(i,<span class="st">&quot;_&quot;</span>)) <span class="co">#split i for metadata and unlist it</span></span>
 <span id="cb3-5"><a href="#cb3-5"></a>  speed &lt;-<span class="st"> </span>met.dat[<span class="dv">2</span>] <span class="co">#get speed</span></span>
 <span id="cb3-6"><a href="#cb3-6"></a>  subject &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;.txt&quot;</span>,<span class="st">&quot;&quot;</span>,met.dat[<span class="dv">3</span>]) <span class="co">#remove &quot;.txt&quot; </span></span>
-<span id="cb3-7"><a href="#cb3-7"></a>  walk.dat[[i]] &lt;-<span class="st"> </span><span class="kw">data.frame</span>(walk.i,<span class="dt">speed=</span>speed,<span class="dt">subject=</span>subject)</span>
-<span id="cb3-8"><a href="#cb3-8"></a>}</span>
-<span id="cb3-9"><a href="#cb3-9"></a>walk.dat &lt;-<span class="st"> </span><span class="kw">do.call</span>(rbind,walk.dat)</span>
-<span id="cb3-10"><a href="#cb3-10"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a><span class="kw">head</span>(walk.dat)</span></code></pre></div>
-<pre><code>##                    Nr TID PID x..pixel. y..pixel. t..sec. I..val. Len..pixel.
-## walk_fast_me.txt.1  1   1   1   200.116   252.459       0     255       0.000
-## walk_fast_me.txt.2  2   1   2   199.891   252.672       0     255       0.310
-## walk_fast_me.txt.3  3   1   3   199.699   252.875       0     251       0.589
-## walk_fast_me.txt.4  4   1   4   199.504   253.130       0     246       0.910
-## walk_fast_me.txt.5  5   1   5   199.354   253.337       0     241       1.166
-## walk_fast_me.txt.6  6   1   6   199.196   253.529       0     255       1.415
-##                    D2S..pixel. D2R..pixel. D2P..pixel. v..pixel.sec. X...deg.
-## walk_fast_me.txt.1       0.000          NA          NA            NA       NA
-## walk_fast_me.txt.2       0.310          NA       0.310            NA  136.585
-## walk_fast_me.txt.3       0.589          NA       0.279            NA  133.375
-## walk_fast_me.txt.4       0.908          NA       0.321            NA  127.226
-## walk_fast_me.txt.5       1.163          NA       0.256            NA  126.165
-## walk_fast_me.txt.6       1.411          NA       0.249            NA  129.456
-##                    X....deg. speed subject
-## walk_fast_me.txt.1        NA  fast      me
-## walk_fast_me.txt.2        NA  fast      me
-## walk_fast_me.txt.3    -3.210  fast      me
-## walk_fast_me.txt.4    -6.149  fast      me
-## walk_fast_me.txt.5    -1.061  fast      me
-## walk_fast_me.txt.6     3.291  fast      me</code></pre>
-<p>Sweet. But, notice that the column names given to the data are gobblygook with all those periods. Let’s change them for easy referencing with a <code>gsub</code> (a grep substitution) operation . . .</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">colnames</span>(walk.dat) &lt;-<span class="st"> </span><span class="kw">gsub</span>(<span class="st">&quot;</span><span class="ch">\\</span><span class="st">.&quot;</span>,<span class="st">&quot;&quot;</span>,<span class="kw">colnames</span>(walk.dat))</span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">head</span>(walk.dat)</span></code></pre></div>
-<pre><code>##                    Nr TID PID  xpixel  ypixel tsec Ival Lenpixel D2Spixel
-## walk_fast_me.txt.1  1   1   1 200.116 252.459    0  255    0.000    0.000
-## walk_fast_me.txt.2  2   1   2 199.891 252.672    0  255    0.310    0.310
-## walk_fast_me.txt.3  3   1   3 199.699 252.875    0  251    0.589    0.589
-## walk_fast_me.txt.4  4   1   4 199.504 253.130    0  246    0.910    0.908
-## walk_fast_me.txt.5  5   1   5 199.354 253.337    0  241    1.166    1.163
-## walk_fast_me.txt.6  6   1   6 199.196 253.529    0  255    1.415    1.411
-##                    D2Rpixel D2Ppixel vpixelsec    Xdeg   Xdeg speed subject
-## walk_fast_me.txt.1       NA       NA        NA      NA     NA  fast      me
-## walk_fast_me.txt.2       NA    0.310        NA 136.585     NA  fast      me
-## walk_fast_me.txt.3       NA    0.279        NA 133.375 -3.210  fast      me
-## walk_fast_me.txt.4       NA    0.321        NA 127.226 -6.149  fast      me
-## walk_fast_me.txt.5       NA    0.256        NA 126.165 -1.061  fast      me
-## walk_fast_me.txt.6       NA    0.249        NA 129.456  3.291  fast      me</code></pre>
-<p>That’s better. Now, let’s pare down the data to those columns we actually care about, “xpixel” and “ypixel”, the x and y positions of the points, “subject”, and “speed”. Also notice that the MTrackJ file contains a “TID” and “PID” column identifying to what track (which dot in the image) and point (the series of positions) the x and y positions belong. This makes analysis pretty zippy. So let’s keep these columns, too, then dump the others, and give it a quick plot with ggplot.</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">library</span>(ggplot2)</span>
-<span id="cb7-2"><a href="#cb7-2"></a>walk.dat2 &lt;-<span class="st"> </span>walk.dat[,<span class="kw">c</span>(<span class="st">&quot;TID&quot;</span>,<span class="st">&quot;PID&quot;</span>,<span class="st">&quot;xpixel&quot;</span>,<span class="st">&quot;ypixel&quot;</span>,<span class="st">&quot;subject&quot;</span>,<span class="st">&quot;speed&quot;</span>)]</span>
-<span id="cb7-3"><a href="#cb7-3"></a></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="kw">qplot</span>(<span class="dt">dat=</span>walk.dat2,<span class="dt">x=</span>xpixel,<span class="dt">y=</span>ypixel,<span class="dt">col=</span>speed)<span class="op">+</span><span class="kw">facet_grid</span>(subject<span class="op">~</span>.)</span></code></pre></div>
+<span id="cb3-7"><a href="#cb3-7"></a>  walk.dat[[i]] &lt;-<span class="st"> </span>walk.i<span class="op">%&gt;%</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="st">    </span><span class="kw">mutate</span>(<span class="dt">speed=</span>speed,<span class="dt">subject=</span>subject)</span>
+<span id="cb3-9"><a href="#cb3-9"></a>}</span></code></pre></div>
+<pre><code>## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   Nr = col_double(),
+##   TID = col_double(),
+##   PID = col_double(),
+##   `x [pixel]` = col_double(),
+##   `y [pixel]` = col_double(),
+##   `t [sec]` = col_double(),
+##   `I [val]` = col_double(),
+##   `Len [pixel]` = col_double(),
+##   `D2S [pixel]` = col_double(),
+##   `D2R [pixel]` = col_logical(),
+##   `D2P [pixel]` = col_double(),
+##   `v [pixel/sec]` = col_logical(),
+##   `? [deg]` = col_double(),
+##   `?? [deg]` = col_double()
+## )
+## 
+## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   Nr = col_double(),
+##   TID = col_double(),
+##   PID = col_double(),
+##   `x [pixel]` = col_double(),
+##   `y [pixel]` = col_double(),
+##   `t [sec]` = col_double(),
+##   `I [val]` = col_double(),
+##   `Len [pixel]` = col_double(),
+##   `D2S [pixel]` = col_double(),
+##   `D2R [pixel]` = col_logical(),
+##   `D2P [pixel]` = col_double(),
+##   `v [pixel/sec]` = col_logical(),
+##   `? [deg]` = col_double(),
+##   `?? [deg]` = col_double()
+## )
+## 
+## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   Nr = col_double(),
+##   TID = col_double(),
+##   PID = col_double(),
+##   `x [pixel]` = col_double(),
+##   `y [pixel]` = col_double(),
+##   `t [sec]` = col_double(),
+##   `I [val]` = col_double(),
+##   `Len [pixel]` = col_double(),
+##   `D2S [pixel]` = col_double(),
+##   `D2R [pixel]` = col_logical(),
+##   `D2P [pixel]` = col_double(),
+##   `v [pixel/sec]` = col_logical(),
+##   `? [deg]` = col_double(),
+##   `?? [deg]` = col_double()
+## )
+## 
+## 
+## ── Column specification ────────────────────────────────────────────────────────
+## cols(
+##   Nr = col_double(),
+##   TID = col_double(),
+##   PID = col_double(),
+##   `x [pixel]` = col_double(),
+##   `y [pixel]` = col_double(),
+##   `t [sec]` = col_double(),
+##   `I [val]` = col_double(),
+##   `Len [pixel]` = col_double(),
+##   `D2S [pixel]` = col_double(),
+##   `D2R [pixel]` = col_logical(),
+##   `D2P [pixel]` = col_double(),
+##   `v [pixel/sec]` = col_logical(),
+##   `? [deg]` = col_double(),
+##   `?? [deg]` = col_double()
+## )</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>walk.dat &lt;-<span class="st"> </span><span class="kw">do.call</span>(rbind,walk.dat)</span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="kw">head</span>(walk.dat)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 16
+##      Nr   TID   PID `x [pixel]` `y [pixel]` `t [sec]` `I [val]` `Len [pixel]`
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;
+## 1     1     1     1        200.        252.         0       255         0    
+## 2     2     1     2        200.        253.         0       255         0.31 
+## 3     3     1     3        200.        253.         0       251         0.589
+## 4     4     1     4        200.        253.         0       246         0.91 
+## 5     5     1     5        199.        253.         0       241         1.17 
+## 6     6     1     6        199.        254.         0       255         1.42 
+## # … with 8 more variables: `D2S [pixel]` &lt;dbl&gt;, `D2R [pixel]` &lt;lgl&gt;, `D2P
+## #   [pixel]` &lt;dbl&gt;, `v [pixel/sec]` &lt;lgl&gt;, `? [deg]` &lt;dbl&gt;, `?? [deg]` &lt;dbl&gt;,
+## #   speed &lt;chr&gt;, subject &lt;chr&gt;</code></pre>
+<p>Sweet. But, notice that the column names given to the data are gobblygook with all those spaces in and “[pixel]” and “[sec]” in there. Let’s change them for easy referencing with a <code>str_remove()</code> (remove string) operation from the<code>stringr</code> package loaded with <code>tidyverse</code> . . .</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">colnames</span>(walk.dat) &lt;-<span class="st"> </span><span class="kw">str_remove</span>(<span class="kw">colnames</span>(walk.dat),<span class="st">&quot; </span><span class="ch">\\</span><span class="st">[pixel</span><span class="ch">\\</span><span class="st">]| </span><span class="ch">\\</span><span class="st">[sec</span><span class="ch">\\</span><span class="st">]&quot;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="kw">head</span>(walk.dat)</span></code></pre></div>
+<pre><code>## # A tibble: 6 x 16
+##      Nr   TID   PID     x     y     t `I [val]`   Len   D2S D2R      D2P
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;  &lt;dbl&gt;
+## 1     1     1     1  200.  252.     0       255 0     0     NA    NA    
+## 2     2     1     2  200.  253.     0       255 0.31  0.31  NA     0.31 
+## 3     3     1     3  200.  253.     0       251 0.589 0.589 NA     0.279
+## 4     4     1     4  200.  253.     0       246 0.91  0.908 NA     0.321
+## 5     5     1     5  199.  253.     0       241 1.17  1.16  NA     0.256
+## 6     6     1     6  199.  254.     0       255 1.42  1.41  NA     0.249
+## # … with 5 more variables: `v [pixel/sec]` &lt;lgl&gt;, `? [deg]` &lt;dbl&gt;, `??
+## #   [deg]` &lt;dbl&gt;, speed &lt;chr&gt;, subject &lt;chr&gt;</code></pre>
+<p>That’s better. Now, let’s pare down the data to those columns we actually care about, “x” and “y”, the x and y positions of the points, “subject”, and “speed”. Also notice that the MTrackJ file contains a “TID” and “PID” column identifying to what track (which dot in the image) and point (the series of positions) to which the x and y positions belong. So let’s keep these columns, too, then dump the others, and give it a quick plot with ggplot.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>walk.dat2 &lt;-<span class="st"> </span>walk.dat<span class="op">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="st">  </span><span class="kw">select</span>(TID,PID,x,y,subject,speed)</span>
+<span id="cb9-3"><a href="#cb9-3"></a></span>
+<span id="cb9-4"><a href="#cb9-4"></a>walk.dat2<span class="op">%&gt;%</span></span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(x,y,<span class="dt">col=</span>speed))<span class="op">+</span><span class="kw">geom_point</span>()<span class="op">+</span><span class="kw">facet_grid</span>(subject<span class="op">~</span>.)</span></code></pre></div>
 <p><img src="MP2_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Notice that our leg point (TID=3) is higher than the hip. That’s odd! Well, not really. Convention holds that pixel 0,0 is the upper left of the image, so that means the coordinates are flipped vertically in our images. So let’s flip them back by finding the absolution value each y value minus the maximum y position (the image height).</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>walk.dat2<span class="op">$</span>ypixel &lt;-<span class="st"> </span><span class="kw">abs</span>(walk.dat2<span class="op">$</span>ypixel<span class="op">-</span><span class="kw">max</span>(walk.dat2<span class="op">$</span>ypixel))</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="co">#plot again</span></span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="kw">qplot</span>(<span class="dt">dat=</span>walk.dat2,<span class="dt">x=</span>xpixel,<span class="dt">y=</span>ypixel,<span class="dt">col=</span>subject)<span class="op">+</span><span class="kw">facet_grid</span>(.<span class="op">~</span>speed,<span class="dt">scales=</span><span class="st">&quot;free_y&quot;</span>)<span class="co">#grid it with columns = to speed</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>walk.dat2 &lt;-<span class="st"> </span>walk.dat2<span class="op">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="st">  </span><span class="kw">group_by</span>(speed,subject)<span class="op">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">y=</span><span class="kw">abs</span>(y<span class="op">-</span><span class="kw">max</span>(y)))</span>
+<span id="cb10-4"><a href="#cb10-4"></a></span>
+<span id="cb10-5"><a href="#cb10-5"></a>walk.dat2<span class="op">%&gt;%</span></span>
+<span id="cb10-6"><a href="#cb10-6"></a><span class="st">  </span><span class="kw">ggplot</span>(<span class="kw">aes</span>(x,y,<span class="dt">col=</span>speed))<span class="op">+</span><span class="kw">geom_point</span>()<span class="op">+</span><span class="kw">facet_grid</span>(subject<span class="op">~</span>.)<span class="co">#grid it with columns = to speed</span></span></code></pre></div>
 <p><img src="MP2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>OK, all well in good. But does it make sense to identify our tracked points by “TID”, that is 1, 2, and 3? Wouldn’t it be better to change this to some character description like “hipL”, “hipR”, and “legR”, for left hip, right hip, and right leg, respectively. Let’s do it by changing TID to these strings using a for loop. (if you do this, confirm the order is correct!)</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>pt.names &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;hipR&quot;</span>, <span class="st">&quot;hipL&quot;</span>, <span class="st">&quot;legR&quot;</span>)</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="op">:</span><span class="dv">3</span>){</span>
-<span id="cb9-3"><a href="#cb9-3"></a>walk.dat2<span class="op">$</span>TID[walk.dat2<span class="op">$</span>TID<span class="op">==</span>i] &lt;-<span class="st"> </span>pt.names[i]</span>
-<span id="cb9-4"><a href="#cb9-4"></a>}</span>
-<span id="cb9-5"><a href="#cb9-5"></a></span>
-<span id="cb9-6"><a href="#cb9-6"></a><span class="kw">head</span>(walk.dat2<span class="op">$</span>TID)</span></code></pre></div>
-<pre><code>## [1] &quot;hipR&quot; &quot;hipR&quot; &quot;hipR&quot; &quot;hipR&quot; &quot;hipR&quot; &quot;hipR&quot;</code></pre>
+<p>OK, all well ’n good. But does it make sense to identify our tracked points by “TID”, that is 1, 2, and 3? Wouldn’t it be better to change this to some character description like “hipL”, “hipR”, and “legR”, for left hip, right hip, and right leg, respectively. Let’s do it by changing TID to these strings using a series of mutate operations that replace each TID value. (if you do this, confirm the order is correct!)</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>walk.dat2<span class="op">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">TID=</span><span class="kw">replace</span>(TID, TID<span class="op">==</span><span class="dv">1</span>, <span class="st">&quot;hipR&quot;</span>))<span class="op">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">TID=</span><span class="kw">replace</span>(TID, TID<span class="op">==</span><span class="dv">2</span>, <span class="st">&quot;hipL&quot;</span>))<span class="op">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">TID=</span><span class="kw">replace</span>(TID, TID<span class="op">==</span><span class="dv">3</span>, <span class="st">&quot;legR&quot;</span>))</span></code></pre></div>
+<pre><code>## # A tibble: 600 x 6
+## # Groups:   speed, subject [4]
+##    TID     PID     x     y subject speed
+##    &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;
+##  1 hipR      1  200.  178. me      fast 
+##  2 hipR      2  200.  178. me      fast 
+##  3 hipR      3  200.  178. me      fast 
+##  4 hipR      4  200.  178. me      fast 
+##  5 hipR      5  199.  177. me      fast 
+##  6 hipR      6  199.  177. me      fast 
+##  7 hipR      7  199.  177. me      fast 
+##  8 hipR      8  199.  177. me      fast 
+##  9 hipR      9  199.  176. me      fast 
+## 10 hipR     10  199.  176. me      fast 
+## # … with 590 more rows</code></pre>
 <p>Now it’ll be easier to keep track of which track we intend to reference in any plotting or analysis.</p>
 <p>Now that we have data loaded, think about what sort of data you need to produce from this data set. You need angle, right? Hmmm, that should be easy to compute for each hip point with some simple trigonometry. Good luck!!!</p>
 </div>

@@ -4,10 +4,11 @@ title: 'Mini Project 1: Get Ur Gait On'
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
 ```
 
 
-### Introduction
+## Introduction
 Our second Miniproject explores several topics in the biomechanical basis of terrestrial locomotion. In particular, we'll focus on how well the inverted pendulum model applies in predicting the maximum speed of walking humans and to what extent some kinematic variables, like pelvic tilt, contribute to differences in speed. We'll also look at how these kinematic variables vary by size and sex. Our general goals are to:
 
 + Use imageJ to perform kinematic analysis
@@ -32,10 +33,10 @@ $$
 where $a_c$ the acceleration due to gravity and $R$ is the leg length, or the radius of the inverted pendulum. From this we see that the maximum velocity of the rotating mass is never greater than the square root of the product of gravity and the radius, or, in biomechanical terms 
 
 $$
-v_{max}^2 =gl
+v_{max}^2 \leq gl
 $$
 $$
-v_{max} =\sqrt{ gl}
+v_{max} \leq\sqrt{ gl}
 $$
 
 where $g$ is gravity and $l$ the leg length. Thus, as we have learned in class, the Froude efficiency for walking is:
@@ -56,8 +57,15 @@ knitr::include_graphics(c("pelvictilt.jpg"))
 
  
 
-### Methods
+## Methods
 There are two parts to this MP: (1) predicting and testing predictions of maximum walking speed and (2) comparisons of pendulum walking and normal walking at comfortable speeds. For both parts of this MP, it is important that you walk and not run. That means a duty factor of >0.5, i.e., you'll always have a foot on the ground. Lab partners, police your colleagues to ensure this.
+
+### Sofware essentials
+
+We'll need a few pieces of software to analyze the kinematics of walking. First, [download and install imageJ](https://imagej.nih.gov/ij/download.html), a free image analysis package that just about everyone in the natural sciences uses at one point in their career. Second, download the following two plugin jar-files: [MTrackJ_.jar (version 1.5.1)](https://imagescience.org/meijering/software/download/MTrackJ_.jar) and [imagescience.jar (version 3.0.0)](https://imagescience.org/meijering/software/download/imagescience.jar). Then install them to imageJ by selecting "Plugins" $\rightarrow$ "Install" and navigating to these jar files and selecting "open". MTrackJ is a simple tracking plugin that allows users to track points across video frames.
+
+We'll be working with video data captured with our phones. The file types associated with videos shot by phones are often unworkable in imageJ. We need a way of converting your phone videos to AVI format, a file type that imageJ can open. Videos can be rendered into AVI files using---you guessed it---free and open source tools like MPEG Streamclip, which [can be downloaded here](http://www.squared5.com/)
+
 
 
 ### Max out your pendulum
@@ -70,11 +78,10 @@ Using these data, compute the velocity (in m s$^{-1}$) and compare this to your 
 ### Full-tilt walking
 The radius of your rotating mass can be effectively increased by subtle changes in posture, including active alterations in pelvic position. Pelvic tilt is one such mechanism and the angle of tilt can be measured using ImageJ. While pelvic tilt results in a lengthening of the plant-leg, there are other postural consequences. 
 
-Start with donning the markers and the yardstick with markers attached at its end as in the figure below. Attach one small marker low on the front of your shin. Attach the yardstick with clamps or by wrapping the bungie cord around your waist. Be sure that the yard stick rests right above your anterior superior illiac spines (those bony points on the front of your hip). This apparatus will amplify your pelvic motions and make data recording much easier. Have a project partner record video (in normal video mode) of your walk as you walk toward her/him over the 5-m course from the earlier experiment. Be careful that the full width of the yardstick in the frame at all times. You'll perform two trials per partner: (1) walking normally at a comfortable speed and (2) walking normally but as quickly as possible. For both trials, use ImageJ and the MtrackJ plugin to track the markers on your body. From these data, you should compute two things: pelvic tilt angle (i.e. the difference between the maximum and minimum tilt angle) and the angle of the leg relative to the COM (the point below the navel.  Please also enter these data [here](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). Remember, these data can be accessed for analysis from this directory. Also notice there are data from previous interations of the class. Be sure to use all of these in your analysis.
+Start with donning the markers and the yardstick with markers attached at its end as in the figure below. Attach one small marker low on the front of your shin. Attach the yardstick with binder clips to your pantwaist. Be sure that the yard stick rests right above your anterior superior illiac spines (those bony points on the front of your hip). This apparatus will amplify your pelvic motions and make data recording much easier. Have a project partner record video (in normal video mode) of your walk as you walk toward her/him over the 5-m course from the earlier experiment. Be careful that the full width of the yardstick in the frame at all times. You'll perform two trials per partner: (1) walking normally at a comfortable speed and (2) walking normally but as quickly as possible. For both trials, use ImageJ and the MTrackJ plugin to track the markers on your body. From these data, you should compute two things: pelvic tilt angle (i.e. the difference between the maximum and minimum tilt angle) and the angle of the leg relative to the COM (the point below the navel.  Please also enter these data [here](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). Remember, these data can be accessed for analysis from this directory. Also notice there are data from previous iterations of the class. Be sure to use all of these in your analysis.
 
 
-To analyze your videos in ImageJ, you'll need to convert them to an image sequence and have the MtrackJ plugin installed (see class site under "links"). Videos can be rendered into image sequences by using---you guessed it---free and open source tools like MPEG Streamclip (also available from the class site under "links"). Once the image sequence is stored in a directory, open it with ImageJ (File$\rightarrow$ Import $\rightarrow$ Image Sequence). Launch the MtrackJ plugin (Plugins $\rightarrow$ MtrackJ) and follow the directions from the online [manual](http://www.imagescience.org/meijering/software/mtrackj/quickstart/). The goal here is to track four positions and calculate your two kinematic values.
-
+To analyze your videos in ImageJ, you'll need to convert them to and AVI file and have the MtrackJ plugin installed (see above). Once the AVI file is stored in a directory, open it with ImageJ (File$\rightarrow$ Import $\rightarrow$ AVI . . .). Launch the MTrackJ plugin (Plugins $\rightarrow$ MtrackJ) and follow the directions from the online [manual](http://www.imagescience.org/meijering/software/mtrackj/quickstart/). The goal here is to track four positions and calculate your two kinematic values: pelvic tilt and leg angle.
 
 
 ```{r walk,echo=F,fig.cap=c("You lookin' all marked and stuff"),fig.align = 'center'}
@@ -84,76 +91,82 @@ knitr::include_graphics(c("walkfront.png"))
 
 
 
-### What to address in report
+## What to address in the report
 
 1. State an hypothesis as to how pelvic tilt will change with increased walking speeds. What is the biomechanical basis for this?
-2. State an hypothesis as to how pelvic tilt will change other aspects of hip posture. What other mechanisms associated with gait might address this?
-3. State an hypothesis as to how pelvic tilt will change with human size in terms of mass and height and sex. Do your data support this?
+2. State an hypothesis as to how pelvic tilt will change with human size in terms of mass and height and sex. Do your data support this?
 4. State an hypothesis as to how pendulum walking speed ($v_{max}$) will vary with human size and sex. Do your data support this?
 5. How did class-wide $v_{max}$ compare to actual class-wide walking speed? What is the biomechanical basis for this?
 
-Please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our [assignments page](https://www2.bc.edu/christopher-kenaley/bio5380/assignments.html). Reports and any data files reference by them are due Monday, March 9th. They can be uploaded to [this google directory](https://drive.google.com/drive/folders/10xW1d6jjWkrxDKbPoER_4Uy3wGUsL6ml?usp=sharing).
+As a group, please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports and any data files reference by them are due Thursday, March 4th, by 11:59 PM. They can should be sent to Prof. Kenaley in a zipped directory over email.
 
 
-### A kick start
+## A kick start
 
-To answer these questions, you'll have to concatenate a bunch of data. Fortunately, we've been doing a lot of this lately. However, for it to proceed smoothly, you might need some guidance, especially dealing with the data from the MTrackJ analysis. Let's assume you produced 4 files for two teammates that each walked fast and slowly. If we had our data filenames begin with "walk" and end in ".txt", we could use a handy `grep` search to find all the files we want to analyze in the directory.
+To answer these questions, you'll have to concatenate a bunch of data. Fortunately, we've learned how to do this lately. However, for it to proceed smoothly, you might need some guidance, especially dealing with the data from the MTrackJ analysis. Let's assume you produced 4 files for two teammates that each walked fast and slowly. If we had our data file names begin with "walk" and end in ".txt", we could use a handy `grep` search to find all the files we want to analyze in the directory.
 
 ```{r}
 walk.files <- list.files()[grep("walk_.*.txt",list.files())]
 print(walk.files)
 ```
 
-Notice how they are similarly named "walk_speed_subject.txt". That makes it easy to extract metadata from the filenames. Now, as we have a few times before in other projects, let's concatenate all the data into one data frame for subsequent plotting and analysis. 
+Notice how they are similarly named "walk_speed_subject.txt". That makes it easy to extract metadata from the file names. Now, as we did in the first , let's concatenate all the data into one data frame for subsequent plotting and analysis. 
 
 ```{r}
 walk.dat <- list() #make a list for storing
 for(i in walk.files){
-  walk.i <- read.csv(i,sep="\t") #read data
+  walk.i <- read_delim(i,delim="\t") #read data as a tibble
   met.dat <- unlist(strsplit(i,"_")) #split i for metadata and unlist it
   speed <- met.dat[2] #get speed
   subject <- gsub(".txt","",met.dat[3]) #remove ".txt" 
-  walk.dat[[i]] <- data.frame(walk.i,speed=speed,subject=subject)
+  walk.dat[[i]] <- walk.i%>%
+    mutate(speed=speed,subject=subject)
 }
 walk.dat <- do.call(rbind,walk.dat)
 
 head(walk.dat)
 ```
 
-Sweet. But, notice that the column names given to the data are gobblygook with all those periods. Let's change them for easy referencing with a `gsub` (a grep substitution) operation . . . 
+Sweet. But, notice that the column names given to the data are gobblygook with all those spaces in and "[pixel]" and "[sec]" in there. Let's change them for easy referencing with a `str_remove()` (remove string) operation from the`stringr` package loaded with `tidyverse` . . . 
 
 
 ```{r}
-colnames(walk.dat) <- gsub("\\.","",colnames(walk.dat))
+
+colnames(walk.dat) <- str_remove(colnames(walk.dat)," \\[pixel\\]| \\[sec\\]")
 head(walk.dat)
 ```
 
-That's better. Now, let's pare down the data to those columns we actually care about, "xpixel" and "ypixel", the x and y positions of the points, "subject", and "speed". Also notice that the MTrackJ file contains a "TID" and "PID" column identifying to what track (which dot in the image) and point (the series of positions) the x and y positions belong. This makes analysis pretty zippy. So let's keep these columns, too, then dump the others, and give it a quick plot with ggplot.
+That's better. Now, let's pare down the data to those columns we actually care about, "x" and "y", the x and y positions of the points, "subject", and "speed". Also notice that the MTrackJ file contains a "TID" and "PID" column identifying to what track (which dot in the image) and point (the series of positions) to which the x and y positions belong. So let's keep these columns, too, then dump the others, and give it a quick plot with ggplot.
 
 ```{r}
-library(ggplot2)
-walk.dat2 <- walk.dat[,c("TID","PID","xpixel","ypixel","subject","speed")]
 
-qplot(dat=walk.dat2,x=xpixel,y=ypixel,col=speed)+facet_grid(subject~.)
+walk.dat2 <- walk.dat%>%
+  select(TID,PID,x,y,subject,speed)
+
+walk.dat2%>%
+  ggplot(aes(x,y,col=speed))+geom_point()+facet_grid(subject~.)
 ```
 
 Notice that our leg point (TID=3) is higher than the hip. That's odd! Well, not really. Convention holds that pixel 0,0 is the upper left of the image, so that means the coordinates are flipped vertically in our images. So let's flip them back by finding the absolution value each y value minus the maximum y position (the image height).
 
 ```{r}
-walk.dat2$ypixel <- abs(walk.dat2$ypixel-max(walk.dat2$ypixel))
-#plot again
-qplot(dat=walk.dat2,x=xpixel,y=ypixel,col=subject)+facet_grid(.~speed,scales="free_y")#grid it with columns = to speed
+walk.dat2 <- walk.dat2%>%
+  group_by(speed,subject)%>%
+  mutate(y=abs(y-max(y)))
+
+walk.dat2%>%
+  ggplot(aes(x,y,col=speed))+geom_point()+facet_grid(subject~.)#grid it with columns = to speed
 ```
 
-OK, all well in good. But does it make sense to identify our tracked points by "TID", that is 1, 2, and 3? Wouldn't it be better to change this to some character description like "hipL", "hipR", and "legR", for left hip, right hip, and right leg, respectively. Let's do it by changing TID to these strings using a for loop. (if you do this, confirm the order is correct!)
+OK, all well 'n good. But does it make sense to identify our tracked points by "TID", that is 1, 2, and 3? Wouldn't it be better to change this to some character description like "hipL", "hipR", and "legR", for left hip, right hip, and right leg, respectively. Let's do it by changing TID to these strings using a series of mutate operations that replace each TID value. (if you do this, confirm the order is correct!)
 
 ```{r}
-pt.names <- c("hipR", "hipL", "legR")
-for(i in 1:3){
-walk.dat2$TID[walk.dat2$TID==i] <- pt.names[i]
-}
 
-head(walk.dat2$TID)
+walk.dat2%>%
+  mutate(TID=replace(TID, TID==1, "hipR"))%>%
+  mutate(TID=replace(TID, TID==2, "hipL"))%>%
+  mutate(TID=replace(TID, TID==3, "legR"))
+  
 ```
 
 Now it'll be easier to keep track of which track we intend to reference in any plotting or analysis. 

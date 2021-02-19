@@ -29,7 +29,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 --------|--------|-------- |-------- |-------- 
  | Monday, Feb 15 | [Joints, Levers, and Linkages (5)](lect/Lecture05.html) | V Ch. 20 |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
  | Wednesday, Feb 17 | [Coarse Materials I (6)](lect/Lecture06.html) | V pp. 286--306 | MP1 report due 
- | Friday, Feb 19   | Mini-Project II: Get Ur Gait On!  | | [Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
+ | Friday, Feb 19   | [Mini-Project II: Get Ur Gait On!](MP2.html)  | | [Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 ## Week 4 Schedule
 
@@ -37,7 +37,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 --------|--------|-------- |-------- |-------- 
  | Monday, Feb 22 | Coarse Materials II (7) | V Ch. 16, 17 |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
  | Wednesday, Feb 24 | Coarse Materials III (8) |  V Ch. 18|
- | Friday, Feb 26   | Mini-Project II: Get Ur Gait On! (Cont'd)  ||[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
+ | Friday, Feb 26   | [Mini-Project II: Get Ur Gait On! (Cont'd)](MP2.html)  ||[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 ## Week 5 Schedule
 

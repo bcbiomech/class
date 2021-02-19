@@ -23,6 +23,7 @@ navbar:
       - text: "MP1 Description"
         href: MP1.html
       - text: "MP2 Description"
+        href: MP2.html
       - text: "MP3 Description"
       - text: "MP4 Description"
       - text: "MP3 Description"
