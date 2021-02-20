@@ -11,7 +11,7 @@
 
 
 
-<title>Mini Project 1: Get Ur Gait On</title>
+<title>Mini Project 2: Get Ur Gait On</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -491,7 +491,7 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Mini Project 1: Get Ur Gait On</h1>
+<h1 class="title toc-ignore">Mini Project 2: Get Ur Gait On</h1>
 
 </div>
 
@@ -539,7 +539,7 @@ A walker tilting its pelvis
 </div>
 <div id="methods" class="section level2">
 <h2>Methods</h2>
-<p>There are two parts to this MP: (1) predicting and testing predictions of maximum walking speed and (2) comparisons of pendulum walking and normal walking at comfortable speeds. For both parts of this MP, it is important that you walk and not run. That means a duty factor of &gt;0.5, i.e., you’ll always have a foot on the ground. Lab partners, police your colleagues to ensure this.</p>
+<p>There are two parts to this MP: (1) predicting and testing predictions of maximum walking speed and (2) an analysis of pelvic tilt as it varies between normal walking at comfortable speeds and fast speeds. For both parts of this MP, it is important that you walk and not run. That means a duty factor of &gt;0.5, i.e., you’ll always have a foot on the ground. Lab partners, police your colleagues to ensure this.</p>
 <div id="sofware-essentials" class="section level3">
 <h3>Sofware essentials</h3>
 <p>We’ll need a few pieces of software to analyze the kinematics of walking. First, <a href="https://imagej.nih.gov/ij/download.html">download and install imageJ</a>, a free image analysis package that just about everyone in the natural sciences uses at one point in their career. Second, download the following two plugin jar-files: <a href="https://imagescience.org/meijering/software/download/MTrackJ_.jar">MTrackJ_.jar (version 1.5.1)</a> and <a href="https://imagescience.org/meijering/software/download/imagescience.jar">imagescience.jar (version 3.0.0)</a>. Then install them to imageJ by selecting “Plugins” <span class="math inline">\(\rightarrow\)</span> “Install” and navigating to these jar files and selecting “open”. MTrackJ is a simple tracking plugin that allows users to track points across video frames.</p>
@@ -549,7 +549,7 @@ A walker tilting its pelvis
 <h3>Max out your pendulum</h3>
 <p>For this part of the MP you will compare a predicted maximum walking velocity (<span class="math inline">\(v_{max}\)</span>) to observed maximum walking speed. First things first: mark off a distance of 5 meters on level ground (e.g., in the hall, atrium, etc.).</p>
 <p>With your knees locked and your hands by your side and not swinging, walk on your heels as fast as you can across the the marked distance. Concentrate on not using any movement in your pelvis or knees. This may require some practice. You may, if you’re careful, have a lab partner push you gently to get you going at the start of the 5-m field. With a phone or watch, record the time it takes to traverse the 5-m distance.</p>
-<p>Using these data, compute the velocity (in m s<span class="math inline">\(^{-1}\)</span>) and compare this to your calculated <span class="math inline">\(v_{max}\)</span>. Please entere these data <a href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing">here</a>. They can be accessed here for later analysis as well.</p>
+<p>Using these data, compute the velocity (in m s<span class="math inline">\(^{-1}\)</span>) and compare this to your calculated <span class="math inline">\(v_{max}\)</span>. Please enter these data <a href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing"><strong>HERE</strong></a>. They can be accessed here for later analysis as well.</p>
 </div>
 <div id="full-tilt-walking" class="section level3">
 <h3>Full-tilt walking</h3>
@@ -567,10 +567,10 @@ You lookin’ all marked and stuff
 <div id="what-to-address-in-the-report" class="section level2">
 <h2>What to address in the report</h2>
 <ol style="list-style-type: decimal">
-<li>State an hypothesis as to how pelvic tilt will change with increased walking speeds. What is the biomechanical basis for this?</li>
-<li>State an hypothesis as to how pelvic tilt will change with human size in terms of mass and height and sex. Do your data support this?</li>
-<li>State an hypothesis as to how pendulum walking speed (<span class="math inline">\(v_{max}\)</span>) will vary with human size and sex. Do your data support this?</li>
-<li>How did class-wide <span class="math inline">\(v_{max}\)</span> compare to actual class-wide walking speed? What is the biomechanical basis for this?</li>
+<li>How did class-wide <span class="math inline">\(v_{max}\)</span> compare to actual class-wide walking speed? Were any patterns related to this revealed by calculating the Froude number?</li>
+<li>How does pendulum walking speed (<span class="math inline">\(v_{max}\)</span>) vary with human size and sex?</li>
+<li>How does pelvic tilt change with increased walking speeds. What is the biomechanical basis for this?</li>
+<li>Does pelvic tilt at comfortable walking speeds vary with human size (i.e., mass and height) and sex?</li>
 </ol>
 <p>As a group, please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our <a href="mini_projects.html">Min-projects page</a>. Reports and any data files reference by them are due Thursday, March 4th, by 11:59 PM. They can should be sent to Prof. Kenaley in a zipped directory over email.</p>
 </div>
@@ -581,7 +581,7 @@ You lookin’ all marked and stuff
 <span id="cb1-2"><a href="#cb1-2"></a><span class="kw">print</span>(walk.files)</span></code></pre></div>
 <pre><code>## [1] &quot;walk_fast_me.txt&quot;  &quot;walk_fast_you.txt&quot; &quot;walk_slow_me.txt&quot; 
 ## [4] &quot;walk_slow_you.txt&quot;</code></pre>
-<p>Notice how they are similarly named “walk_speed_subject.txt”. That makes it easy to extract metadata from the file names. Now, as we did in the first , let’s concatenate all the data into one data frame for subsequent plotting and analysis.</p>
+<p>Notice how they are similarly named “walk_speed_subject.txt”. That familiar convention of adding metadata to the filename makes it easy to extract “data about the data” from the file names. Now, as we did in the first , let’s concatenate all the data into one data frame for subsequent plotting and analysis.</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>walk.dat &lt;-<span class="st"> </span><span class="kw">list</span>() <span class="co">#make a list for storing</span></span>
 <span id="cb3-2"><a href="#cb3-2"></a><span class="cf">for</span>(i <span class="cf">in</span> walk.files){</span>
 <span id="cb3-3"><a href="#cb3-3"></a>  walk.i &lt;-<span class="st"> </span><span class="kw">read_delim</span>(i,<span class="dt">delim=</span><span class="st">&quot;</span><span class="ch">\t</span><span class="st">&quot;</span>) <span class="co">#read data as a tibble</span></span>

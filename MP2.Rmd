@@ -1,5 +1,5 @@
 ---
-title: 'Mini Project 1: Get Ur Gait On'
+title: 'Mini Project 2: Get Ur Gait On'
 ---
 
 ```{r setup, include=FALSE}
@@ -58,7 +58,7 @@ knitr::include_graphics(c("pelvictilt.jpg"))
  
 
 ## Methods
-There are two parts to this MP: (1) predicting and testing predictions of maximum walking speed and (2) comparisons of pendulum walking and normal walking at comfortable speeds. For both parts of this MP, it is important that you walk and not run. That means a duty factor of >0.5, i.e., you'll always have a foot on the ground. Lab partners, police your colleagues to ensure this.
+There are two parts to this MP: (1) predicting and testing predictions of maximum walking speed and (2) an analysis of pelvic tilt as it varies between normal walking at comfortable speeds and fast speeds. For both parts of this MP, it is important that you walk and not run. That means a duty factor of >0.5, i.e., you'll always have a foot on the ground. Lab partners, police your colleagues to ensure this.
 
 ### Sofware essentials
 
@@ -73,7 +73,7 @@ For this part of the MP you will compare a predicted maximum walking velocity ($
 
 With your knees locked and your hands by your side and not swinging, walk on your heels as fast as you can across the the marked distance. Concentrate on not using any movement in your pelvis or knees. This may require some practice. You may, if you're careful, have a lab partner push you gently to get you going at the start of the 5-m field. With a phone or watch, record the time it takes to traverse the 5-m distance. 
 
-Using these data, compute the velocity (in m s$^{-1}$) and compare this to your calculated $v_{max}$. Please entere these data [here](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). They can be accessed here for later analysis as well.
+Using these data, compute the velocity (in m s$^{-1}$) and compare this to your calculated $v_{max}$. Please enter these data [**HERE**](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). They can be accessed here for later analysis as well.
 
 ### Full-tilt walking
 The radius of your rotating mass can be effectively increased by subtle changes in posture, including active alterations in pelvic position. Pelvic tilt is one such mechanism and the angle of tilt can be measured using ImageJ. While pelvic tilt results in a lengthening of the plant-leg, there are other postural consequences. 
@@ -93,10 +93,10 @@ knitr::include_graphics(c("walkfront.png"))
 
 ## What to address in the report
 
-1. State an hypothesis as to how pelvic tilt will change with increased walking speeds. What is the biomechanical basis for this?
-2. State an hypothesis as to how pelvic tilt will change with human size in terms of mass and height and sex. Do your data support this?
-4. State an hypothesis as to how pendulum walking speed ($v_{max}$) will vary with human size and sex. Do your data support this?
-5. How did class-wide $v_{max}$ compare to actual class-wide walking speed? What is the biomechanical basis for this?
+1. How did class-wide $v_{max}$ compare to actual class-wide walking speed? Were any patterns related to this revealed by calculating the Froude number?
+2. How does  pendulum walking speed ($v_{max}$) vary with human size and sex?
+3. How does pelvic tilt change with increased walking speeds. What is the biomechanical basis for this?
+4. Does pelvic tilt at comfortable walking speeds vary with human size (i.e., mass and height) and sex? 
 
 As a group, please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports and any data files reference by them are due Thursday, March 4th, by 11:59 PM. They can should be sent to Prof. Kenaley in a zipped directory over email.
 
@@ -110,7 +110,7 @@ walk.files <- list.files()[grep("walk_.*.txt",list.files())]
 print(walk.files)
 ```
 
-Notice how they are similarly named "walk_speed_subject.txt". That makes it easy to extract metadata from the file names. Now, as we did in the first , let's concatenate all the data into one data frame for subsequent plotting and analysis. 
+Notice how they are similarly named "walk_speed_subject.txt". That familiar convention of adding metadata to the filename makes it easy to extract "data about the data" from the file names. Now, as we did in the first , let's concatenate all the data into one data frame for subsequent plotting and analysis. 
 
 ```{r}
 walk.dat <- list() #make a list for storing
