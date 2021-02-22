@@ -1,0 +1,289 @@
+---
+title: "Lecture 7"
+subtitle: "Coarse Materials II"
+author: "Dr. Christopher Kenaley"
+institute: "Boston College"
+date: "2021/2/22"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, top
+# Material Properies of the Dead, Toughness, and Resilience
+
+```{r,echo=FALSE,message=FALSE}
+library(tidyverse)
+library(kableExtra)
+```
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+
+.pull-left[
+Today we'll ....
+
+- Consider material properties going way back
+
+- Consider toughness
+
+- Considier resilience
+
+]
+
+
+.pull-right[
+![](https://upload.wikimedia.org/wikipedia/commons/3/34/Longest_dinosaurs2.svg)
+
+![](https://upload.wikimedia.org/wikipedia/commons/2/2f/Patagotitan_vs_Mammals_Scale_Diagram_SVG_Steveoc86.svg)
+]
+
+
+---
+class: top
+
+# A comparison of E across domains
+
+
+.center[
+
+
+
+```{r,echo=FALSE,out.width=500}
+#stride length
+knitr::include_graphics("https://d3i71xaburhd42.cloudfront.net/1eb86e8732a38a0753510236e5c023b5decd5340/7-Figure7-1.png")
+
+```
+ ]
+ 
+---
+class: top
+
+# Materials and the largest among us
+
+
+
+.center[
+
+### Are land animals constrained by the strength of bone?
+
+```{r,echo=FALSE,out.width=700}
+#stride length
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/3/34/Longest_dinosaurs2.svg")
+
+```
+ ]
+ 
+ 
+
+---
+class: top
+
+# Materials and the largest among us
+
+.center[
+
+```{r,echo=FALSE,out.width=700}
+#stride length
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/2/2f/Patagotitan_vs_Mammals_Scale_Diagram_SVG_Steveoc86.svg")
+
+```
+ ]
+
+.pull-left[
+ Baluchitherium weighed about 30 Tons (27000 kg)
+ 
+- Could the foot bones support its weight?
+- $\theta_{max} =  \textrm{100 MPa } (10^{6}  \textrm{ Pa})$
+- Diameter = 14 cm
+- $\textrm{CSA} = \textrm{151 10}^{-4} \textrm{ m}^2$
+
+]
+
+.pull-right[
+
+```{r,echo=FALSE,out.width=150}
+#stride length
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Indricotherium_transouralicum_hind_foot.jpg/170px-Indricotherium_transouralicum_hind_foot.jpg")
+
+```
+
+
+]
+
+---
+class: top
+
+# Materials and the largest among us
+
+.center[
+
+```{r,echo=FALSE,out.width=700}
+#stride length
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/2/2f/Patagotitan_vs_Mammals_Scale_Diagram_SVG_Steveoc86.svg")
+
+```
+ ]
+
+.pull-left[
+ Baluchitherium weighed about 30 Tons (27000 kg)
+ 
+- Could the foot bones support its weight?
+- $\theta_{max} =  \textrm{100 MPa } (10^{6}  \textrm{ Pa})$
+- Diameter = 14 cm
+- $\textrm{CSA} = \textrm{151 10}^{-4} \textrm{ m}^2$
+
+]
+
+.pull-right[
+
+```{r,echo=FALSE,out.width=150}
+
+# stress=f/a
+
+#100*10^6=(9.8*27000)/(151*10^-4)
+
+#(9.8*27000)/(151*10^-4)
+
+
+```
+
+$\theta_{max} \geq  \frac{9.8\cdot27000}{151\cdot10^{-4}}$
+
+$\theta_{max} \geq  \textrm{= 17 MPa}$
+]
+
+---
+class: top
+
+# Materials and the largest among us
+
+
+
+.center[
+
+### But what about these guys?
+
+```{r,echo=FALSE,out.width=700}
+#stride length
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/3/34/Longest_dinosaurs2.svg")
+
+```
+```{r,echo=FALSE,out.width=400}
+#stride length
+knitr::include_graphics("https://static.scientificamerican.com/blogs/cache/file/23C1EE59-CC6F-4542-A5EAACB8E6336F06_source.jpg?w=590&h=800&D6BDF76C-BA43-435B-A12E3263F71F10FF")
+
+```
+ ]
+ 
+
+ 
+---
+class: top
+
+# Toughness
+
+.center[
+
+### The energy imparted is the **mechanical strain energy** that can be returned or be so great as to break the material
+
+]
+
+.pull-left[
+.center[
+$U=\int\sigma d\varepsilon$
+]
+
+```{r,echo=FALSE,out.width=350}
+#stride length
+knitr::include_graphics("img/toughness.png")
+
+```
+]
+
+.pull-right[
+$T=\int\sigma d\varepsilon$
+
+**Toughness:** the energy per unit volume required to break a material
+
+]
+
+---
+class: top
+
+# Toughness
+
+.center[
+
+### Some (but not necessarily all) of the mechanical energy can be returned
+
+]
+
+.pull-left[
+.center[
+$U=\int\sigma d\varepsilon$
+]
+
+```{r,echo=FALSE,out.width=350}
+#stride length
+knitr::include_graphics("https://static.cambridge.org/binary/version/id/urn:cambridge.org:id:binary:20191021053530314-0709:9781108686624:72215fig26_6b.png?pub-status=live")
+
+```
+]
+
+.pull-right[
+
+**Resilience (R)**=
+
+$$\frac{\textrm{strain energy returned}}{\textrm{strain energy absorbed}}$$
+
+```{r,echo=FALSE}
+
+R <- data.frame(material=c("Silk","Elastin","Abductin","Collagen (tendon)","Resilin (wing hinge)"),
+           R=c("35%","76%","80%","93%","97%"))
+
+knitr::kable(R, format = 'html')
+```
+]
+
+---
+class: top
+
+# Resilience in the vertebrate body
+
+### The cardiovascular system?
+
+
+
+
+---
+class: top
+
+# Resilience in the vertebrate body
+
+### The cardiovascular system?
+
+.center[ 
+
+```{r,echo=FALSE,out.width=400}
+#stride length
+knitr::include_graphics("https://lh3.googleusercontent.com/proxy/524hUkGsmumnh-wrqPhfXNSEAOHU-C6WYhceUYCP4T8x1W6zwB8l-o2UN9dpSptR319fU0ICJvD1YwViC0IqlooPGz5-kRrwiCMSTaQWgLirZM0rItBibUFsE8_TLA6nw-SB-orz6hcW35PhNbQuGlDr-XmOAzBMN1wrDzOnQAjm5uem17xRS8Cf-nyNd5Q")
+
+```
+]
+
+
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
