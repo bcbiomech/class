@@ -36,7 +36,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Monday, Feb 22 | [Coarse Materials II (7)](lect/Lecture07.html) | V Ch. 16, 17 |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Wednesday, Feb 24 | Coarse Materials III (8) |  V Ch. 18|
+ | Wednesday, Feb 24 | [Coarse Materials III (8)](lect/Lecture08.html) |  V Ch. 18|
  | Friday, Feb 26   | [Mini-Project II: Get Ur Gait On! (Cont'd)](MP2.html)  ||[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 ## Week 5 Schedule
