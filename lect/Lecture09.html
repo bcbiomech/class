@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 9</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Christopher Kenaley" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Lecture 9
+## Coarse Structure
+### Dr. Christopher Kenaley
+### Boston College
+### 2021/03/01
+
+---
+
+class: top
+# Material Properies of the Dead, Toughness, and Resilience
+
+
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"&gt;
+
+
+.pull-left[
+Today we'll ....
+
+- Consider safety factors
+
+- Consider how structures fail
+
+- Consider how structures resist bending
+
+]
+
+
+.pull-right[
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXL4A1lCI63p7w9qJwAPua5vytkoEB5x8rjw&amp;usqp=CAU)
+
+
+]
+
+
+---
+class: top
+
+# A comparison of SF 
+
+.center[
+`\(\textrm{Safety factor: n} = \sigma_{br}/\sigma_{ex}\)`
+]
+.pull-left[
+
+Compression safety factor during locomotion
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; species &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; SF &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dog jumping &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 2.8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Kangaroo hopping &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3.2 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Possum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Elephant running &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1-1.7 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Man weightlifting &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 6 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+.center[
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+Alexander, R.McN. 1981. Sci. Prog. Oxf. 67:109-120
+
+
+ ]
+ ]
+
+.pull-right[
+
+Mean bending safety factor during running
+
+&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; species &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; SF &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Bullfrog &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Salamanders &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Possum &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 5.1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Eutherians &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Iguana &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10.8 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Turtles &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Crocs &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 6.3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Birds &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 3.3 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+.center[
+
+Blob, R.W. et al. 2014. Int. &amp; Comp. Biol., 54 (6):1058–1071
+
+
+ ]
+ ]
+ 
+---
+class: top
+
+# A comparison of SF 
+
+.center[
+`\(\textrm{Safety factor: n} = \sigma_{br}/\sigma_{ex}\)`
+]
+
+.body[
+These are SF from experiments: the real world is different. Loads (direction, scale) vary and so does the capacity to withstand them. Geometry and structural arrangement is important!]
+
+![](Lecture09_files/figure-html/unnamed-chunk-4-1.svg)&lt;!-- --&gt;
+
+&lt;br&gt;
+.pull-left[
+.footnote[
+`\(\textrm{0.0004 yr}^{-1} \textrm{ human humerus}\)`
+
+`\(\textrm{0.0006 yr}^{-1} \textrm{ human femur}\)`
+]
+]
+
+.pull-right[
+.footnote[
+`\(\textrm{0.4 life}^{-1} \textrm{gibbons}\)`
+
+`\(\textrm{0.5 life}^{-1} \textrm{ deer antler/spider webs}\)`
+]
+]
+
+---
+class: top
+
+# Shape matters
+
+
+
+.center[
+
+&lt;img src="img/buckling.png" width="250" /&gt;
+ ]
+ 
+
+.pull-left[
+
+.center[
+
+local buckling
+
+`\(\sigma_{cr}  = kEt/D\)`
+
+(k ~ 0.7) 
+]
+]
+
+.pull-right[
+
+.center[
+
+Euler buckling
+
+`\(\sigma_{cr}={\frac {\pi ^{2}EI}{(KL)^{2}}}\)`
+
+
+(k ~ 0.5) 
+]
+]
+
+.center[
+
+k = column effective length factor
+]
+
+---
+class: top
+
+# Shape matters
+
+.pull-left[
+
+EI: Flexural stiffness of a structure
+
+I = second moment of area: a measure of how shape affects stress distribution in a structure
+
+]
+
+.pull-right[
+.center[
+
+&lt;img src="img/buckling3.png" width="120" /&gt;
+
+Euler buckling
+
+`\(\sigma_{cr}={\frac {\pi ^{2}EI}{(KL)^{2}}}\)`
+
+ ]
+]
+
+---
+class: top
+
+# Shape matters
+
+
+
+EI: Flexural stiffness of a structure
+
+I = second moment of area: a measure of how shape affects stress distribution in a structure
+
+
+
+.center[
+
+&lt;img src="https://images.slideplayer.com/20/6231365/slides/slide_6.jpg" width="450" /&gt;
+
+
+
+`\(g=\frac {m}{EI}\)`
+
+ ]
+
+---
+class: top
+
+# Shape matters
+
+
+
+EI: Flexural stiffness of a structure
+
+I = second moment of area: a measure of how shape affects stress distribution in a structure
+
+
+
+.center[
+
+&lt;img src="img/secondmomentlist.png" width="550" /&gt;
+
+
+
+
+
+ ]
+
+---
+class: top
+
+# Shape matters
+
+
+
+Where are hip fractures most common? Where will hip most likely fail?
+
+.center[
+
+&lt;img src="https://comportho.com/wp-content/uploads/2017/12/hipfx-1080x675.jpg" width="550" /&gt;
+
+
+
+
+
+ ]
+
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
