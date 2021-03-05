@@ -28,11 +28,14 @@ where $F$ is the applied force, $A$ is the cross-sectional area over which that 
 
 In addition to nonlinear and anisotropic behaviors, many biomaterials are viscoelastic (as we have discussed in lecture), demonstrating a time-dependence in their response to loads. There are a host of methods available for quantifying time-dependent properties including creep tests (applying a constant force, i.e., an isotonic load) or applying a load at variable speeds. We'll take this latter approach. 
 
-Lastly, we will learned that loads are not applied in simple tensile or compressive modes. Say, in bending a beam, the load is [compressive and tensile at the same time](#bendstres). How a biomaterial responds under bending (e.g., amount of strain, load at failure, etc.) is of a particular interests to biomechanists both to understand organismal design from an evolutionary perspective and what materials may be capable or incapable of in nature. To understand this structural response to a bending load, we may borrow a bag of tricks from material engineers: the three-point bending test. 
+Lastly, we will learned that loads are not applied in simple tensile or compressive modes. Say, in bending a beam, the load is compressive and tensile at the same time (see below). How a biomaterial responds under bending (e.g., amount of strain, load at failure, etc.) is of a particular interests to biomechanists both to understand organismal design from an evolutionary perspective and what materials may be capable or incapable of in nature. To understand this structural response to a bending load, we may borrow a bag of tricks from material engineers: the three-point bending test. 
 
 <center>
 ![bendstress](img/bendstress.jpg){#bendstress}
+<br>
+A beam subject to bending.
 </center>
+
 <br>
 
 As we'll learn from lecture, the two-dimensional shape of a beam determines its strain relationship to a bending stress or its deformation. So, how much it will deform under a stress is given by the flexural stiffness ($M$): 
@@ -50,6 +53,7 @@ where d is the deflection, $F$ is the applied force, l is the length of the beam
 We, as biomechanists, can measure measure forces (i.e., loads) in several ways, some direct, some simple, and some more sophisticated. For instance, to apply a load to a material, one may simply add a mass and, because we're on Earth, we know that mass's acceleration, and thus can estimate force. In another manner, we can rely on transducers to convert  (i.e., -transduce-) signals from one type of energy to another. For this method of measuring changes in force, say a signal stored as mechanical energy, we must convert this mechanical energy to electrical energy using a force transducer. Such a device outputs a change in voltage that is proportional to the force that was applied to them. One of the most common elements used in force transducers is a compression-extension load cell, which is what you will be using in this lab. These devices contain elements that, when a load is applied, strains (in this case, shortens or lengthens) a metal foil which is linearly elastic or Hookean. A voltage is passed through the Hookean foil, and, when the cell is loaded, the cylinder changes length and, thus, changes the resistance. This change in resistance changes the voltage.  This voltage can be passed to an amplifier and microcontroller (computer) for analysis.
 
 ## Methods
+
 There are two parts to this lab: (1) investigating material properties (stress-strain relationships and anisotropy) and (2) instigating structural properties (beam loading and viscoelasticity). In the former, you will use a simple loading technique, measure the resultant strain, examine stiffness, and the extent to which the material is anisotropic.
 
 In the latter part, you will use 3-point bending tests to determine structural properties and flexural stiffness of wood. You'll also examine how time-dependency varies according to the viscoelastic nature of wood (i.e, how moist it is).
@@ -84,7 +88,7 @@ For this set of experiments, we'll be meeting in Prof. Kenaley's lab (Higgins 53
 
 For this part of the lab, you will be three-point bending a biomaterial (wood . . . birch, methinks). You will apply an increasing load to piece of wood spanning a know distance and record the deformation. Break a piece in half. Wet one of the broken halfs materials under water for 5 minutes.
 
-#### Measuring load and deformation
+### Measuring load and deformation
 
 For each half, place the specimen in the three point tester under the load cell. Prof. Kenaley will help you initiate the program that reads the voltage data from the load cell system. The program will apply depress a cylinder against the span of the wood beam while measuring the distance and load. We will impose 5 cycles of depression and retraction (load and unloading) at two speeds, fast and slow.
 
