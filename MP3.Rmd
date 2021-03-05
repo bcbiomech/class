@@ -14,7 +14,7 @@ Our third Mini Project explores experimental methods for quantifying the materia
 5. Combine your recently gathered skills in R programming with a proficiency with RMarkdown to write a short 2-page report outlining your results and conclusions.
 
 ## Conceptual basis
-In lecture recenlty we explored the concepts of stress ($\sigma$), strain ($\varepsilon$), stiffness ($E$, Young's modulus) and strength ($\sigma_{max}$). These are all material properties and represent mechanical means to characterize biomaterials. These physical quantities are summarized here:
+In lecture recentlty we explored the concepts of stress ($\sigma$), strain ($\varepsilon$), and stiffness ($E$, Young's modulus). These are all material properties and represent mechanical means to characterize biomaterials. These physical quantities are summarized here:
 
 
 $$\sigma =\frac {F}{A} $$
@@ -28,7 +28,7 @@ where $F$ is the applied force, $A$ is the cross-sectional area over which that 
 
 In addition to nonlinear and anisotropic behaviors, many biomaterials are viscoelastic (as we have discussed in lecture), demonstrating a time-dependence in their response to loads. There are a host of methods available for quantifying time-dependent properties including creep tests (applying a constant force, i.e., an isotonic load) or applying a load at variable speeds. We'll take this latter approach. 
 
-Lastly, we will learned that loads are not applied in simple tensile or compressive modes. Say, in bending a beam, the load is compressive and tensile at the same time  Figure](#bendstres). How a biomaterial responds under bending (e.g., amount of strain, load at failure, etc.) is of a particular interests to biomechanists both to understand organismal design from an evolutionary perspective and what materials may be capable or incapable of in nature. To understand this structural response to a bending load, we may borrow a bag of tricks from material engineers: the three-point bending test. 
+Lastly, we will learned that loads are not applied in simple tensile or compressive modes. Say, in bending a beam, the load is [compressive and tensile at the same time](#bendstres). How a biomaterial responds under bending (e.g., amount of strain, load at failure, etc.) is of a particular interests to biomechanists both to understand organismal design from an evolutionary perspective and what materials may be capable or incapable of in nature. To understand this structural response to a bending load, we may borrow a bag of tricks from material engineers: the three-point bending test. 
 
 <center>
 ![bendstress](img/bendstress.jpg){#bendstress}
@@ -44,7 +44,7 @@ where $E$ is the Young's modulus and $I$ is the second moment area, which is ess
 
 $$d=\frac{Fl^3}{3EI}$$
 
-where d is the deflection, $F$ is the applied force, l is the length of the beam, and $EI$ is the flexural stiffness. Using \autoref{eq:stress}, if we measure the deflection of a beam of length $l$ under a known load F, we can derive an estimate for the flexural stiffness of the beam, $EI$.
+where d is the deflection, $F$ is the applied force, l is the length of the beam, and $EI$ is the flexural stiffness. Using this, if we measure the deflection of a beam of length $l$ under a known load F, we can derive an estimate for the flexural stiffness of the beam, $EI$.
 
 ## Measuring forces
 We, as biomechanists, can measure measure forces (i.e., loads) in several ways, some direct, some simple, and some more sophisticated. For instance, to apply a load to a material, one may simply add a mass and, because we're on Earth, we know that mass's acceleration, and thus can estimate force. In another manner, we can rely on transducers to convert  (i.e., -transduce-) signals from one type of energy to another. For this method of measuring changes in force, say a signal stored as mechanical energy, we must convert this mechanical energy to electrical energy using a force transducer. Such a device outputs a change in voltage that is proportional to the force that was applied to them. One of the most common elements used in force transducers is a compression-extension load cell, which is what you will be using in this lab. These devices contain elements that, when a load is applied, strains (in this case, shortens or lengthens) a metal foil which is linearly elastic or Hookean. A voltage is passed through the Hookean foil, and, when the cell is loaded, the cylinder changes length and, thus, changes the resistance. This change in resistance changes the voltage.  This voltage can be passed to an amplifier and microcontroller (computer) for analysis.
@@ -69,18 +69,23 @@ These experiments will be done on your own with your team. Come by Higgins 535 t
 For this part of the lab you will use a spring clamp to mount a piece of animal tissue to a table. The animal tissue we will be using is pig intestine, which is an extremely thin and stretchy material typically used as sausage casing. We will measure the stress-strain relationship of pig intestine by cutting a small strip of the material and stretching it by applying a force to one end. This force will create stress within the material and cause it to elongate (strain). As you modulate the amount of stress applied to the material, you will measure its deformation and thereby derive its stress-strain relationship.
 
 ### Preparing your sample
+
 The pig intestine was obtained from a local butcher. The material is difficult to work with once it starts to desiccate, so you will want to do as much preparation of the sample as possible before cutting your piece and beginning your experiments. First, cut a piece and  the material along the axial or circumferential direction---you will test the gut in both directions for this lab, so the order doesn't matter. Measure all three of its dimensions to the nearest mm with the supplied ruler. Next, find a clean section of the intestine and clamp it a table. Once you have the material bound, cut away material so that you are left with a thin strip about 5--8 cm long and 1 cm wide. Tie a short section of dental floss to the free end and then tie a hook to the free end of the floss fashioned from a paperclip. 
 
 ### Measuring stress and strain 
+
 In this section, you will obtain a stress-strain relationship for your sample by stretching your sample with known weights. Next, you hang weights from the free end of the sample to apply a known stress. Our weights in this case are 3/8-16 nuts, which each weigh 12.5 g, and you will suspend these from your sample using a hooked paperclip weighing 0.2 g. As you add more mass to the free end of the sample, measure the extension of the sample with a ruler. Measure strain under 5 different loads and then remove them, one by one and measure the strain again. Record your results on this worksheet for both an axially-loaded sample and a circumferentially-loaded sample.
 
 ## Bend the twig
 
 For this set of experiments, we'll be meeting in Prof. Kenaley's lab (Higgins 535).
+
 ### Preparing your sample
+
 For this part of the lab, you will be three-point bending a biomaterial (wood . . . birch, methinks). You will apply an increasing load to piece of wood spanning a know distance and record the deformation. Break a piece in half. Wet one of the broken halfs materials under water for 5 minutes.
 
 #### Measuring load and deformation
+
 For each half, place the specimen in the three point tester under the load cell. Prof. Kenaley will help you initiate the program that reads the voltage data from the load cell system. The program will apply depress a cylinder against the span of the wood beam while measuring the distance and load. We will impose 5 cycles of depression and retraction (load and unloading) at two speeds, fast and slow.
 
 Repeat the procedure, but now flip both the dry and wet pieces 90$^\textrm{o}$ to load the deep dimension on the thin face.
