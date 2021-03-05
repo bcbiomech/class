@@ -13,7 +13,7 @@ output:
       countIncrementalSlides: false
 ---
 class: top
-# Material Properies of the Dead, Toughness, and Resilience
+# Structural properties
 
 ```{r,echo=FALSE,message=FALSE}
 library(tidyverse)

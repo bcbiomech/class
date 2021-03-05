@@ -45,7 +45,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 --------|--------|-------- |-------- |-------- 
  | Monday, Mar 1 | [Coarse Structures (9)](lect/Lecture09.html)  |  V Ch. 19     |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
  | Thursday, Mar 4* | Adhesion (10) |  V pp. 425-436        | MP2 report due 
- | Friday, Mar 5  | Mini-Project III: It Puts the Motion in the Skin  | |[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
+ | Friday, Mar 5  | [Mini-Project III: Stretch the Pig, Bend the Twig](MP3.html)  | |[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 *Note that Thursday, Mar 4 is a Wednesday schedule
  
@@ -54,7 +54,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 --------|--------|-------- |-------- |-------- 
  | Monday, Mar 8 | Micro-motors | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
  | Wednesday, Mar 10 | Muscles: Micro Predicts Macro ||
- | Friday, Mar 12  | Mini-Project III: It Puts the Motion in the Skin (Cont'd)  | |[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
+ | Friday, Mar 12  | [Mini-Project III: Stretch the Pig, Bend the Twig (Cont'd)](MP3.html)  | |[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 ## Week 7 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>

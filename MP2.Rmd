@@ -1,14 +1,11 @@
 ---
 title: 'Mini Project 2: Get Ur Gait On'
-bibliography: BIOL5380.bib
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 ```
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
 
 ## Introduction
@@ -36,11 +33,10 @@ $$
 where $a_c$ the acceleration due to gravity and $R$ is the leg length, or the radius of the inverted pendulum. From this we see that the maximum velocity of the rotating mass is never greater than the square root of the product of gravity and the radius, or, in biomechanical terms 
 
 $$
-v_{max}^2 \leq gl
+v_{max}^2 \leq gL
 $$
-
 $$
-v_{max} \leq\sqrt{ gl}
+v_{max} \leq\sqrt{ gLL}
 $$
 
 where $g$ is gravity and $l$ the leg length. Thus, as we have learned in class, the Froude efficiency for walking is:
@@ -162,135 +158,17 @@ walk.dat2%>%
   ggplot(aes(x,y,col=speed))+geom_point()+facet_grid(subject~.)#grid it with columns = to speed
 ```
 
-OK, all well 'n good. But does it make sense to identify our tracked points by "TID", that is 1, 2, and 3? Wouldn't it be better to change this to some character description like "hipR", "hipC", and "legR", for right hip, center of the hip, and right leg, respectively. Let's do it by changing TID to these strings using a series of mutate operations that replace each TID value. (if you do this, confirm the order is correct!)
+OK, all well 'n good. But does it make sense to identify our tracked points by "TID", that is 1, 2, and 3? Wouldn't it be better to change this to some character description like "hipL", "hipR", and "legR", for left hip, right hip, and right leg, respectively. Let's do it by changing TID to these strings using a series of mutate operations that replace each TID value. (if you do this, confirm the order is correct!)
 
 ```{r}
 
-walk.dat2 <- walk.dat2%>%
+walk.dat2%>%
   mutate(TID=replace(TID, TID==1, "hipR"))%>%
-  mutate(TID=replace(TID, TID==2, "hipC"))%>%
+  mutate(TID=replace(TID, TID==2, "hipL"))%>%
   mutate(TID=replace(TID, TID==3, "legR"))
-
-head(walk.dat2)
   
 ```
 
 Now it'll be easier to keep track of which track we intend to reference in any plotting or analysis. 
 
-With the data loaded, let's think about what sort of operations you need to produce on this data set. You need angle for pelvic tilt, right? The angle subtended by the tip of the of our meter-stick amplifiers and the center of the pelvis ($\theta$) can be described in the following: 
-
-```{r tiltcacl, echo=F, fig.align='center', fig.cap=c("A look at the coordinates of the amplified pelvic positions")}
-knitr::include_graphics("img/tiltcalc.png")
-
-``` 
-
-where points $x_1y_1$, $x_2y_2$, and $x_2y_1$ respectively describe the coordinates of the pelvic center, the tip of the pelvic amplifier, and a theoretical point that represents a vertex horizontally aligned with the pelvis and vertically aligned with the hip amplifier. In other words, $x_1y_1$ describes the coordinates of "hipC"  and $x_2y_2$ describes the coordinates of "hipR" in x and y pixels in the data above. So arranged, we have a right triangle with vertices described by the x and y pixels we have digitized with MTrackJ. With simple trigonometry, we can calculate $\theta$. So please **think about how to do this with calculations in R**.
-
-The goal here is to calculate $\theta$ over every frame. But we have a problem. Notice that the data, as presented above, don't have the x and y pixels for each point aligned in unique rows according to each frame ("PID"). That is, the data are in a "long" format where the column "TID" (the point name) describes "PID" (the frame). Put another way, x and y pixel data are repeated in succession *down* the table for each point name. This makes calculations for frame-specific $\theta$, which will presumably require using the x and y coordinates for three points, very cumbersome. 
-
-Not to worry, however. Data wonks are accustomed to this problem and we can simply transform the table to a "wide" format. By wide, we mean that, for each frame, we'll have sepqrate x and y columns for each point name, making frame-specific calculations based on these points easy peasy.
-
-Here's how it's done:
-
-```{r}
-
-walk.wide <- walk.dat2%>%
-  pivot_wider(names_from=TID,values_from=c("x","y"))
-
-head(walk.wide)
-```
-Notice that we now have columns that are named as "x_" and "y_" with a point name suffix, i.e., we have taken the x and y column and made new ones based the point they describe. We have several new columns and fewer rows of course. For this we used `dplyr`'s `pivot_wider()` functions that, well, pivots long data to wide data. We told `pivot_wider()` to take the names from "TID" (the point names) to form the new columns with values from the columns named "x" and "y". We could now compute $\theta$ for each PID (i.e., frame) based on the coordinates of each point.
-
-
-
-## Adding references
-
-As we take on the rest of the mini-projexts, including this one, we'll be reading scientific papers so that we can place our results in context. In addition, as scientists, we always want to support our statements of fact with references. For this,  we'll need to cite and include these papers in a bibliography. 
-
-[Adding reference to an .Rmd](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) is pretty straight forward. First we'll need to establish a .bib file that will reside in the same directory as your .Rmd file. To do this, select "File->New File->Text File." A new tab will appear with the name "Untitled1.txt". Save this file as "BIOL5380.bib" (note the ".bib" extension) in the same directory as your .Rmd file. This .bib file will be referenced by your .Rmd when inserting citations. 
-
-The framework for citations and references in .Rmd is formulated around [BibTex](https://en.wikipedia.org/wiki/BibTeX). BibTex is handy because you can find BibTex formatted citations in all your typical outlets (see note below). This system of citation uses a .bib file that contains text describing published works. Each work or potential reference in the .bib file is identified with a unique tag at the top of its entry and this entry contains the important bibliographic information. For instance, a .bib file containing a reference to the following paper
-
-Usherwood, J.R., 2005. Why not walk faster?. Biology Letters, 1(3), pp.338-341.
-
-would have the following text:
-
-```
-@article{usherwood2005not,
-  title={Why not walk faster?},
-  author={Usherwood, James Richard},
-  journal={Biology Letters},
-  volume={1},
-  number={3},
-  pages={338--341},
-  year={2005}
-}
-
-```
-
-Notice we have a tag `&#64;article{usherwood2005not,". This identifies the entry as a journal article (as apposed to a book or manual, etc.) and contains a key that is unique among all the other references in the .bib file. After this, the entry then goes on to identify the important bibliographic pieces: title, author, journal, etc.). Go ahead and add this BibTex reference to your BIOL5380.bib file and save it. 
-
-For .Rmd to reference this .bib file, we need to specify a bibliography file in the YAML header. So now alter your YAML header at the top of the .Rmd so that it contains `bibliography: BIOL5380.bib". The YAML header should now look something like this:
-
-
-```
----
-title: "Mini-Project 2"
-author: The Inverted Pendula
-date: 26/Feb/2021
-output: html_document
-bibliography: BIOL5380.bib
----
-```
-
-With a .bib file now in place, we can use the reference keys to cite works listed in the .bib file. For this, we simply add the key label to the text with '@'. For instance, `@usherwood2005not` will produce @usherwood2005not. 
-
-When citing published works in text, we often follow certain formatting conventions. To be honest, your professor couldn't care less about which format gets used in your .Rmds. Fortunately, R Markdown uses a familiar [Harvard-like](https://www.citethisforme.com/harvard-referencing) format by default and he recommends plowing ahead with it. In a Harvard-like format, a reference in a sentence used in an explicit manner includes the reference year in parentheses. For instance, if we were to express that these authors studied the the Froude number in humans, we would write, "Underwood (2005) studied the Froude number in human walking." The reference `usherwood2005not` is just inserted at the beginning of the sentence as in the following:
-
-```
-@usherwood2005not studied the Froude number in human walking.
-```
-
-However, Harvard-like convention follows that if we aren't explicit about the study, we include the entire reference in parentheses. For instance, if we wanted to write, "A recent study considered the Froude number in human walking. [@usherwood2005not]." we would include the following:
-
-```
-A recent study considered the Froude number in human walking. [@usherwood2005not].
-
-```
-Note that `usherwood2005not` is wrapped in `[]`.
-
-In R Markdown, bibliographies will be placed at the end of the document (see below). Normally, this means you want to end your document with the header "References". This will anchor the bibliography in this section.
-
-
-Note that this .bib file can be used in all your .Rmd documents, not just this one. As long as all the BibTex entries have unique keys, this .bib file can serve as a reference database for all your .Rmd citations.
-
-
-<div class = "green">
-<div class="row">
-  <div class="col-sm-2"><a class="far fa-sticky-note fa-5x" style="color:#939681"></a> <!-- regular style --></div>
-  <div class="col-sm-9">
-
-You may be wondering where you can find BibTex citations. Like so much of our lives, the answer points to Google, specifically Google Scholar. As an example, go to [Google Scholar](http://scholar.google.com/) and search for the @usherwood2005not paper. The entry under scholar will look like the following:
-
-![](img/scholar1.png)
-<br>
-
-Click on the big `"` at the bottom of the entry. This will bring you to a pop-up window that contains different citation formats for the entry. 
-
-
-![](img/scholar2.png)
-<br>
-
-Now click on the "BibTex" link at the bottom of the window. This will lead you to a text file of the BibTex format. Simply copy and paste this to your .bib file. Voila.
-
-</div>
-</div>
-</div>
-<br>
-
-## References
-
-
-
-
-
+Now that we have data loaded, think about what sort of data you need to produce from this data set. You need angle, right? Hmmm, that should be easy to compute for each hip point with some simple trigonometry. Good luck!!!

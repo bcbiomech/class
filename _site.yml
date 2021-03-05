@@ -25,6 +25,7 @@ navbar:
       - text: "MP2 Description"
         href: MP2.html
       - text: "MP3 Description"
+        href: MP3.html
       - text: "MP4 Description"
       - text: "MP3 Description"
     - text: "Final Project"

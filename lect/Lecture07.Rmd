@@ -12,7 +12,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 ---
-class: top
+class: inverse, top
 # Material Properies of the Dead, Toughness, and Resilience
 
 ```{r,echo=FALSE,message=FALSE}
