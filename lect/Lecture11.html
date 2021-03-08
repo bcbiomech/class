@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 11</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Christopher Kenaley" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <script src="libs/kePrint-0.0.1/kePrint.js"></script>
+    <link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Lecture 11
+## Adhesion
+### Dr. Christopher Kenaley
+### Boston College
+### 2021/03/08
+
+---
+
+class: top
+# Adhesion and Micro-motors
+
+
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"&gt;
+
+
+.pull-left[
+Today we'll consider ....
+
+- Mechanical adhesion mechanisms
+
+- Molecular adhesion mechanisms
+
+- Multiple mechanisms in biological systems
+
+]
+
+
+.pull-right[
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs00360-008-0310-8/MediaObjects/360_2008_310_Fig1_HTML.jpg)
+
+
+]
+
+
+---
+class: top
+
+# Types of adhesion mechanisms
+ 
+
+.pull-left[
+- Claws and hooks
+- Suction
+- Stefan adhesion
+- Capillary adhesion
+- Molecular adhesion
+- All of the above
+
+&lt;img src="img/treefrogtoes.jpg" width="300" /&gt;
+]
+
+.pull-right[
+
+&lt;img src="img/slothtoes.jpg" width="250" /&gt;&lt;img src="img/geckotoes.jpg" width="250" /&gt;
+
+
+]
+
+
+---
+class: top
+
+# Claws
+
+.pull-left[
+- Require rough surface/irregularities (a.k.a, asperities)
+
+- Hook acts as a cantilever beam
+
+&lt;img src="img/hopper.jpg" width="250" /&gt;&lt;img src="https://www.civilclick.com/wp-content/uploads/2020/05/Cantilever-load-pic.jpg" width="250" /&gt;
+]
+
+.pull.right[
+
+&lt;img src="img/tarsus.jpg" width="300" /&gt;&lt;img src="https://www.icaboston.org/sites/default/files/styles/original_crop_height/public/2015-08aug-ica-first-fridays-63.jpg?itok=TZUkTMDx" width="300" /&gt;
+]
+
+---
+class: top
+
+# Suction
+
+.pull-left[
+- Structures that generate seal separating regions of fluid
+- Animal can change volume 
+
+- `\(\rightarrow \textrm{huge } \Delta \textrm{ pressure}\)`
+
+&lt;img src="img/octopus.jpg" width="500" /&gt;
+]
+
+.pull.right[
+
+`$$F_1=P_{out}A_{out}-P_{in}A_{in}$$`
+
+
+
+&lt;img src="https://www.jsme-fed.org/experiment-e/2015_10/images/002/fig.gif" width="350" /&gt;
+
+]
+
+---
+class: top
+
+# Stefan adhesion
+
+.pull-left[
+- Fluid between two structures
+- Stress of fluid shear resists expansion 
+- Viscosity important 
+
+`$$F\sim\mu\frac{dx}{dt}$$`
+
+&lt;img src="img/stefan.png" width="500" /&gt;
+]
+
+.pull.right[
+
+
+
+For two discs of radius *R*
+
+`$$F=\mu\frac{3\pi R^4}{2h^3}\frac{dh}{dt}$$`
+
+
+&lt;img src="img/limpet.jpg" width="300" /&gt;
+
+]
+
+---
+class: top
+
+# Capillary adhesion
+
+.pull-left[
+- Fluid between two structures
+- Energy at fluid boundary resists displacement  
+
+for discs of radius r
+
+`$$\Delta p=\gamma \Big(\frac{1}{r}-\frac{2}{x}\Big)$$`
+`\(\gamma  \textrm{ = surface tension (N/m)}\)`
+
+&lt;img src="img/capillary.png" width="600" /&gt;
+]
+
+.pull.right[
+
+
+
+&lt;img src="img/toepad.jpg" width="300" /&gt;&lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
+&lt;caption&gt;Surface tenion of various fluids&lt;/caption&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; fluid &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; `\(^o\)`C &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; `\(\gamma\)` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Blood &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 55.89 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Water &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 100 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 58.85 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Water &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 67.91 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Water &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 71.97 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Water &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 75.64 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Sucrose (55%) + water &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 76.45 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Mercury &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 15 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 487.00 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+
+]
+
+---
+class: top
+
+# Molecular mechanisms
+
+.pull-left[
+- Glue
+- van der Waal's forces 
+
+for spheres of radius r and distance d
+
+`$$F_{vdW}=\frac{Hr}{6d^2}$$`
+
+*H* is Hamaker constant
+&lt;img src="img/toepads.jpg" width="600" /&gt;
+]
+
+.pull.right[
+
+
+
+&lt;img src="img/verderwaals.png" width="300" /&gt;
+
+
+
+]
+
+---
+class: top
+
+# Multiple Mechanisms
+.pull-left[
+- Suction
+- Cantiliver
+
+&lt;img src="img/lam.png" width="350" /&gt;
+
+
+]
+
+.pull.right[
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+
+
+&lt;iframe width="370" height="208" src="https://www.youtube.com/embed/hl20GmqhfE0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe
+]
+
+
+      
+
+
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
