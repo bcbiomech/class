@@ -5,8 +5,6 @@ title: "BIOL 5380"
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
-div.green { background-color:#8BB9D8; border-radius: 7px; padding: 20px;}
-
 
 Welcome to BIOL 5380, Topics in Biomechanics!!! 
 
