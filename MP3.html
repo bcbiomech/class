@@ -24,6 +24,8 @@
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -471,132 +473,279 @@ div.tocify {
 <p>For this set of experiments, we’ll be meeting in Prof. Kenaley’s lab (Higgins 535).</p>
 <div id="preparing-your-sample-1" class="section level3">
 <h3>Preparing your sample</h3>
-<p>For this part of the lab, you will be three-point bending a biomaterial (wood . . . birch, methinks). You will apply an increasing load to piece of wood spanning a know distance and record the deformation. Break a piece in half. Wet one of the broken halfs materials under water for 5 minutes.</p>
+<p>For this part of the lab, you will be three-point bending a biomaterial (wood . . . birch, methinks). You will deflect a piece a known distance (1 mm) of wood spanning two supports separated by 20 mm. To begin, record the width and thickness or your piece of wood (in the middle is fine).</p>
+<p>Next, break the stirrer in half. Immerse one of the broken halve under water for 5 minutes.</p>
 </div>
 <div id="measuring-load-and-deformation" class="section level3">
 <h3>Measuring load and deformation</h3>
-<p>For each half, place the specimen in the three point tester under the load cell. Prof. Kenaley will help you initiate the program that reads the voltage data from the load cell system. The program will apply depress a cylinder against the span of the wood beam while measuring the distance and load. We will impose 5 cycles of depression and retraction (load and unloading) at two speeds, fast and slow.</p>
-<p>Repeat the procedure, but now flip both the dry and wet pieces 90<span class="math inline">\(^\textrm{o}\)</span> to load the deep dimension on the thin face.</p>
-<p>All the data will be recorded in a text file and placed in <a href="https://drive.google.com/drive/folders/12XoBssxGBwXlfpXBXX-Syw_mxc5aBpwN?usp=sharing">this directory</a>.</p>
+<p>Prof. Kenaley will help you initiate the program that reads the load data from the load cell system. The program will depress a cylinder against the span of the wooden beam at a slow speed while it reads the load in grams. We will bend the dry piece with the wide side flat against the supports (“flat”, left in the figure below) and then flip it 90<span class="math inline">\(^\textrm{o}\)</span> so that the thin side rests against the supports (“flipped”, right in the figure below).</p>
 <center>
+<p><img src="img/wood.png" alt="drawing" width="400"/></p>
+<br> Two orientations of the wood stirrer.
+</center>
+<p><br></p>
+<p>Repeat the bending procedure twice for the wet piece, both with the broad side against the supports (i.e., “flat”), but once at a slow speed and once more at a fast speed.</p>
+<p>In total, we will have preformed 4 experiments:</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+moisture
+</th>
+<th style="text-align:left;">
+orientation
+</th>
+<th style="text-align:left;">
+speed
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+dry
+</td>
+<td style="text-align:left;">
+flat
+</td>
+<td style="text-align:left;">
+slow
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dry
+</td>
+<td style="text-align:left;">
+flipped
+</td>
+<td style="text-align:left;">
+slow
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+wet
+</td>
+<td style="text-align:left;">
+flat
+</td>
+<td style="text-align:left;">
+fast
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+wet
+</td>
+<td style="text-align:left;">
+flat
+</td>
+<td style="text-align:left;">
+slow
+</td>
+</tr>
+</tbody>
+</table>
+<p>All the data will be recorded in a text file and placed in <a href="https://drive.google.com/drive/folders/12XoBssxGBwXlfpXBXX-Syw_mxc5aBpwN?usp=sharing">this directory</a>.</p>
 </div>
 </div>
 <div id="data-sheet" class="section level2">
 <h2>Data sheet</h2>
 <div id="guts" class="section level3">
 <h3>Guts</h3>
-<table>
-<caption>Material Data</caption>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Material Data
+</caption>
 <thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Longitudinal</th>
-<th align="left">Circumferential</th>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Longitudinal
+</th>
+<th style="text-align:left;">
+Circumferential
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Length (m)</td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Length (m)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">Thickness (m)</td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Thickness (m)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Width (m)</td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Width (m)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">Cross-sectional area m<span class="math inline">\(^2\)</span></td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Cross-sectional area m<span class="math inline">\(^2\)</span>
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="stress-strain-data" class="section level3">
 <h3>Stress-strain data</h3>
-<table>
-<caption>Intestine Data</caption>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Intestine Data
+</caption>
 <thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Loading</th>
-<th align="left">Unloading</th>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Loading
+</th>
+<th style="text-align:left;">
+Unloading
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">1.</td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">2.</td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">3.</td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal">
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">4.</td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal">
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">5.</td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal">
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
 </tbody>
-</table>
+</table></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
 </div>
 <div id="beams" class="section level3">
 <h3>Beams</h3>
-<table>
-<caption>Material Data</caption>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Material Data
+</caption>
 <thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Value</th>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Value
+</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
-<td align="left">Length (m)</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Length (m)
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">Thickness (m)</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Thickness (m)
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Width (m)</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Width (m)
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left">Cross-sectional area m<span class="math inline">\(^2\)</span></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Cross-sectional area m<span class="math inline">\(^2\)</span>
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Three-point span</td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+Three-point span
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
-<tr class="even">
-<td align="left"></td>
-<td align="left"></td>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
 </tr>
 </tbody>
 </table>
@@ -606,11 +755,11 @@ div.tocify {
 <h2>Questions to address in your report</h2>
 <ol style="list-style-type: decimal">
 <li>What is the stiffness of the intestine in longitudinal and axial loading? How does the stiffness in these two directions compare?</li>
-<li>What evidence do you have that intestinal lining is anisotropic?</li>
-<li>What do you think the function of anisotropy is in the function of an intestine?</li>
-<li>In your beam analysis, did you find any evidence of viscoelasticity?</li>
-<li>Did beam orientation result in different deformation and different flexural stiffness?</li>
+<li>What evidence do you have that an intestinal tube is anisotropic?</li>
+<li>What do you think the function of anisotropy is in the intestine?</li>
+<li>Did beam orientation result in different flexural stiffness?</li>
 <li>How would this be important in loads applied to a human skeletal element?</li>
+<li>In your beam analysis, did you find any evidence of viscoelasticity?</li>
 </ol>
 <p>You can find explicit detail concerning the organization of an MP report <a href="https://bcbiomech.github.io/class/mini_projects.html">here</a>.</p>
 </div>

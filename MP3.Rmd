@@ -86,32 +86,52 @@ For this set of experiments, we'll be meeting in Prof. Kenaley's lab (Higgins 53
 
 ### Preparing your sample
 
-For this part of the lab, you will be three-point bending a biomaterial (wood . . . birch, methinks). You will apply an increasing load to piece of wood spanning a know distance and record the deformation. Break a piece in half. Wet one of the broken halfs materials under water for 5 minutes.
+For this part of the lab, you will be three-point bending a biomaterial (wood . . . birch, methinks). You will deflect a piece a known distance (1 mm) of wood spanning two supports separated by 20 mm. To begin, record the width and thickness or your piece of wood (in the middle is fine).
+
+Next, break the stirrer in half. Immerse one of the broken halve under water for 5 minutes.
 
 ### Measuring load and deformation
 
-For each half, place the specimen in the three point tester under the load cell. Prof. Kenaley will help you initiate the program that reads the voltage data from the load cell system. The program will apply depress a cylinder against the span of the wood beam while measuring the distance and load. We will impose 5 cycles of depression and retraction (load and unloading) at two speeds, fast and slow.
+Prof. Kenaley will help you initiate the program that reads the load data from the load cell system. The program will depress a cylinder against the span of the wooden beam at a slow speed while it reads the load in grams. We will bend the dry piece with the wide side flat against the supports ("flat", left in the figure below) and then flip it 90$^\textrm{o}$ so that the thin side rests against the supports ("flipped", right in the figure below). 
 
-Repeat the procedure, but now flip both the dry and wet pieces 90$^\textrm{o}$ to load the deep dimension on the thin face.
+<center>
+
+<img src="img/wood.png" alt="drawing" width="400"/>
+
+<br>
+Two orientations of the wood stirrer.
+</center>
+<br>
+
+Repeat the bending procedure twice for the wet piece, both with the broad side against the supports (i.e., "flat"), but once at a slow speed and once more at a fast speed.
+
+In total, we will have preformed 4 experiments:
+
+```{r,echo=FALSE,message=FALSE}
+
+library(tidyverse)
+data.frame(d=c("dry","dry","wet","wet"),o=c("flat","flipped","flat","flat"),s=c("slow","slow","fast","slow")
+)%>%knitr::kable(col.names=c("moisture","orientation","speed"))%>%
+  kableExtra::kable_styling()
+```
 
 
 All the data will be recorded in a text file and placed in [this directory](https://drive.google.com/drive/folders/12XoBssxGBwXlfpXBXX-Syw_mxc5aBpwN?usp=sharing).
 
 
 
-<center>
+
 
 ## Data sheet
 
 ### Guts
 
-```{r echo = FALSE, results = 'asis'}
-library(knitr)
+```{r echo = FALSE }
 
 mat.data <- matrix("",nrow=4, ncol=2)
 colnames(mat.data) <- c("Longitudinal","Circumferential")
 row.names(mat.data) <- c("Length (m)",	"Thickness (m)"	,	"Width (m)",	"Cross-sectional area m$^2$")
-kable(mat.data, caption = "Material Data")
+knitr::kable(mat.data, caption = "Material Data")%>%kableExtra::kable_styling()
 ```
 
 
@@ -124,7 +144,8 @@ mat.data <- matrix("",nrow=6, ncol=2)
 colnames(mat.data) <- c("Loading","Unloading")
 row.names(mat.data) <- c(paste0(1:5,"."),"")
 
-kable(mat.data, caption = "Intestine Data")
+
+knitr::kable(mat.data, caption = "Intestine Data")%>%kableExtra::kable_styling()
 
 ```
 
@@ -135,7 +156,7 @@ kable(mat.data, caption = "Intestine Data")
 mat.data <- matrix("",nrow=6, ncol=1)
 colnames(mat.data) <- c("Value")
 row.names(mat.data) <- c("Length (m)",	"Thickness (m)"	,	"Width (m)",	"Cross-sectional area m$^2$","Three-point span","")
-kable(mat.data, caption = "Material Data")
+knitr::kable(mat.data, caption = "Material Data")%>%kableExtra::kable_styling()
 
 ```
 
@@ -144,11 +165,13 @@ kable(mat.data, caption = "Material Data")
 ## Questions to address in your report
 
 1. What is the stiffness of the intestine in longitudinal and axial loading? How does the stiffness in these two directions compare?
-1. What evidence do you have that intestinal lining is anisotropic? 
-2. What do you think the function of anisotropy is in the function of an intestine? 
-3. In your beam analysis, did you find any evidence of viscoelasticity?
-4. Did beam orientation result in different deformation and different flexural stiffness? 
+2. What evidence do you have that an intestinal tube is anisotropic? 
+3. What do you think the function of anisotropy is in the intestine? 
+4. Did beam orientation result in different flexural stiffness?
 5. How would this be important in loads applied to a human skeletal element?
+6. In your beam analysis, did you find any evidence of viscoelasticity?
+
+
 
 You can find explicit detail concerning the organization of an MP report [here](https://bcbiomech.github.io/class/mini_projects.html).
 
