@@ -92,7 +92,7 @@ Next, break the stirrer in half. Immerse one of the broken halve under water for
 
 ### Measuring load and deformation
 
-Prof. Kenaley will help you initiate the program that reads the load data from the load cell system. The program will depress a cylinder against the span of the wooden beam at a slow speed while it reads the load in grams. We will bend the dry piece with the wide side flat against the supports ("flat", left in the figure below) and then flip it 90$^\textrm{o}$ so that the thin side rests against the supports ("flipped", right in the figure below). 
+Prof. Kenaley will help you initiate the program that reads the load data from the load cell system. The program will depress a cylinder against the span of the wooden beam at either a slow or fast speed while it reads the load in grams. We will bend the dry piece with the wide side flat against the supports ("flat", left in the figure below) at both slow and fast speeds and then flip it 90$^\textrm{o}$ so that the thin side rests against the supports ("flipped", right in the figure below) and load it at a slow speed. 
 
 <center>
 
@@ -105,12 +105,12 @@ Two orientations of the wood stirrer.
 
 Repeat the bending procedure twice for the wet piece, both with the broad side against the supports (i.e., "flat"), but once at a slow speed and once more at a fast speed.
 
-In total, we will have preformed 4 experiments:
+In total, we will have preformed 5 experiments:
 
 ```{r,echo=FALSE,message=FALSE}
 
 library(tidyverse)
-data.frame(d=c("dry","dry","wet","wet"),o=c("flat","flipped","flat","flat"),s=c("slow","slow","fast","slow")
+data.frame(d=c("dry","dry","dry","wet","wet"),o=c("flat","flat","flipped","flat","flat"),s=c("slow","fast","slow","fast","slow")
 )%>%knitr::kable(col.names=c("moisture","orientation","speed"))%>%
   kableExtra::kable_styling()
 ```
