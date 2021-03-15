@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 13</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Christopher Kenaley" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Lecture 13
+## Fluids Around <br> An Introduction
+### Dr. Christopher Kenaley
+### Boston College
+### 2021/03/15
+
+---
+
+class: top
+# Fluids
+
+
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"&gt;
+
+
+.pull-left[
+Today we'll ....
+
+- Define fluids
+
+- Define the conditions under which we can predict flows
+
+- Viscosity in the real (biological) world
+
+]
+
+
+.pull-right[
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu8Q1BMuE5U5YHxpAbDwTfJiD7wGFoWG2UIg&amp;usqp=CAU)
+
+
+]
+
+
+
+---
+class: top
+
+# Metrics of muscle function
+
+## Generate mechanical work and power
+
+.pull-left[
+- Work = `\(F\cdot\Delta L\)` (Joules)
+- Power = Work/time (Joles/s = Watts)
+- Power = Work x Frequency (Joules/s = Watts)
+- Power = F x V (Joules/s = Watts)
+
+&lt;br&gt;
+
+
+
+]
+
+.pull-right[
+    
+&lt;br&gt;
+&lt;img src="img/musclework.png" width="250" /&gt;
+.footnote[
+
+]
+
+
+]
+
+---
+class: top
+
+# Metrics of muscle function
+
+## The work loop technique
+
+.pull-left[
+- Work = `\(F\cdot\Delta L\)` (Joules)
+- Power = Work/time (Joles/s = Watts)
+- Power = Work x Frequency (Joules/s = Watts)
+- Power = F x V (Joules/s = Watts)
+
+.center[
+&lt;img src="img/muscletest.png" width="60" /&gt;
+]
+
+]
+
+.pull-right[
+    
+&lt;br&gt;
+&lt;img src="img/workloop.png" width="200" /&gt;
+.footnote[
+
+]
+
+ 
+]
+
+---
+class: top
+
+# Metrics of muscle function
+
+
+
+.center[
+
+&lt;img src="img/motorbreakstrut.png" width="600" /&gt;
+]
+
+
+     
+---
+class: top
+
+# Where We've Been, Where We're Goings
+ 
+Solid and structural mechanics: stress and strain distributions, movements of bodies, their parts in response to muscle forces and gravity.
+
+Now on to . . . 
+
+Fluid dynamics and mechanics. These govern . . . 
+
+- Internal flows (blood and respiratory flow)
+- External flows (swimming and  flying)
+- Dispersal (particles, seeds, aerosols)
+- Transport of nutrients to and from biological surfaces (CO2, H2O, O2, etc).
+
+---
+class: top
+
+# Fluid Properties
+
+The **continuum hypothesis** explains so much.
+
+Roughly put, fluids can be treated as continuous, even though, on a microscopic scale, they are composed of molecules. So at our scales density, temperature, momentum, energy all vary continuously and these state variations are responsible for flow. 
+
+
+
+---
+class: top
+
+# Defining a Fluid
+
+A fluid (gas or liquid) deforms continuously under an applied stress
+
+ 
+.center[
+&lt;img src="img/shear2.png" width="400" /&gt;
+
+`\(F\sim \Delta L/\Delta t\)`
+
+`\(\sigma\sim d\varepsilon/dt\)`
+
+`\(\sigma \sim d\mu \varepsilon/dt\)`
+
+`\(\mu=\textrm{viscosity}\)`
+
+Newton's third law
+]
+
+---
+class: top
+
+# Defining How a Fluid Flows: Two Conditions
+
+.pull-left[
+
+`$$\tau=\mu \frac{du}{dy}=v\frac{d(\rho u)}{dy}$$`
+
+
+
+
+&lt;img src="img/shearvelocity.png" width="400" /&gt;
+ ]
+ 
+.pull-right[
+
+No-slip condition (fluids adhere to surfaces) 
+
+&lt;img src="img/noslip.png" width="400" /&gt;
+}    
+]
+
+
+
+---
+
+class: top
+
+# What Determines Viscosity?
+
+.pull-left[
+- Temperature
+
+- Concentration of dissolved (solutes) or suspended entities
+
+- **Shear rate**
+
+]
+
+
+.pull-right[
+&lt;img src="https://www.cradle-cfd.com/dcms_media/image/en_columnsic02_a0317.png" width="300" /&gt;
+]
+
+.center[
+&lt;img src="https://www.pumpfundamentals.com/images/visc_vs_strain.jpg" width="650" /&gt;
+]
+
+
+
+
+---
+
+class: top
+
+# non-Newtonian Fluids
+
+.pull-left[
+
+&lt;img src="https://www.researchgate.net/profile/Helmut-Baumert/publication/290789681/figure/fig1/AS:318865641885696@1453034901545/The-effective-kinematic-viscosity-in-shear-thickening-green-shear-thinning-red-and.png" width="400" /&gt;
+
+
+.foonote[ `\(\mu=\frac{\tau}{\frac{du}{dy}}\)` or
+
+slope of `\(\tau\)` vs `\(\frac{du}{dy}\)`
+]
+
+]
+
+
+.pull-right[
+
+&lt;img src="https://www.researchgate.net/profile/Claude-Vigneron-2/publication/13358433/figure/fig2/AS:771539007971333@1560960642865/Plot-of-whole-blood-viscosity-mPa-s-vs-shear-rate-s-1-determined-in-rabbit-blood.pbm
+" width="400" /&gt;
+
+.foonote[gradient of velocity change changes (shear rate) with shear stress 
+
+`$$S=\frac{du}{dy}$$`
+Functional significance?
+
+]
+
+]
+
+---
+
+class: top
+
+# What Determines Viscosity?
+
+
+- **Temperature**
+
+- Concentration of dissolved (solutes) or suspended entities
+
+- Shear rate
+
+.center[
+
+&lt;img src="https://lh3.googleusercontent.com/proxy/tr4gKAcmQNbOCu9QDoIPzl0kamqJaKXflj19NPaEDJzPcGHvnugy6NKCnhRD2MmvfvBMvLHtDa_9YOK9cWfpZmXi-r3bC4U7UVIXLLQOJr7Y6sENvHJszSC-k9AdMvM" width="400" /&gt;
+
+
+]
+
+---
+class: top
+
+# What Determines Viscosity?
+
+
+- Temperature
+
+- **Concentration of dissolved (solutes) or suspended entities**
+
+- Shear rate
+
+.center[
+
+&lt;img src="img/sugarblood.png" width="700" /&gt;
+
+
+]
+
+---
+class: top
+
+# A coevolutionary process: Why do plants produce dilute nectars?
+
+
+.center[
+
+&lt;img src="img/butterflycoev.png" width="700" /&gt;
+
+.footnote[Tom Daniel, UW]
+
+]
+
+
+---
+class: top
+
+# A coevolutionary process: Why do plants produce dilute nectars?
+
+
+.center[
+
+&lt;img src="https://lh3.googleusercontent.com/proxy/iqh529TPyZn0VLdTaVJ5QWBjoOlotIr_J6E4Goy8sOebIjCTO1p5GYj0kBQOHHKPI3b9tgtK_o51wwtQofFiSCf8NyQv7fmlsGJh9LliTYE" width="700" /&gt;
+
+
+]
+
+
+---
+class: top
+
+# A coevolutionary process: Why do plants produce dilute nectars?
+
+
+.center[
+
+
+&lt;img src="img/butterflyenergy.png" width="700" /&gt;
+
+]
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

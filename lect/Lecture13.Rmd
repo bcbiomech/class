@@ -1,0 +1,411 @@
+---
+title: "Lecture 13"
+subtitle: "Fluids Around <br> An Introduction"
+author: "Dr. Christopher Kenaley"
+institute: "Boston College"
+date: "2021/03/15"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: top
+# Fluids
+
+```{r,echo=FALSE,message=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(scales)
+```
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+
+.pull-left[
+Today we'll ....
+
+- Define fluids
+
+- Define the conditions under which we can predict flows
+
+- Viscosity in the real (biological) world
+
+]
+
+
+.pull-right[
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu8Q1BMuE5U5YHxpAbDwTfJiD7wGFoWG2UIg&usqp=CAU)
+
+
+]
+
+
+
+---
+class: top
+
+# Metrics of muscle function
+
+## Generate mechanical work and power
+
+.pull-left[
+- Work = $F\cdot\Delta L$ (Joules)
+- Power = Work/time (Joles/s = Watts)
+- Power = Work x Frequency (Joules/s = Watts)
+- Power = F x V (Joules/s = Watts)
+
+<br>
+
+
+
+]
+
+.pull-right[
+    
+<br>
+```{r,echo=FALSE,out.width=250}
+#stride length
+knitr::include_graphics("img/musclework.png")
+
+```
+.footnote[
+
+]
+
+
+]
+
+---
+class: top
+
+# Metrics of muscle function
+
+## The work loop technique
+
+.pull-left[
+- Work = $F\cdot\Delta L$ (Joules)
+- Power = Work/time (Joles/s = Watts)
+- Power = Work x Frequency (Joules/s = Watts)
+- Power = F x V (Joules/s = Watts)
+
+.center[
+```{r,echo=FALSE,out.width=60}
+#stride length
+
+knitr::include_graphics("img/muscletest.png")
+
+```
+]
+
+]
+
+.pull-right[
+    
+<br>
+```{r,echo=FALSE,out.width=200}
+#stride length
+knitr::include_graphics("img/workloop.png")
+
+```
+.footnote[
+
+]
+
+ 
+]
+
+---
+class: top
+
+# Metrics of muscle function
+
+
+
+.center[
+
+```{r,echo=FALSE,out.width=600}
+#stride length
+
+knitr::include_graphics("img/motorbreakstrut.png")
+
+```
+]
+
+
+     
+---
+class: top
+
+# Where We've Been, Where We're Goings
+ 
+Solid and structural mechanics: stress and strain distributions, movements of bodies, their parts in response to muscle forces and gravity.
+
+Now on to . . . 
+
+Fluid dynamics and mechanics. These govern . . . 
+
+- Internal flows (blood and respiratory flow)
+- External flows (swimming and  flying)
+- Dispersal (particles, seeds, aerosols)
+- Transport of nutrients to and from biological surfaces (CO2, H2O, O2, etc).
+
+---
+class: top
+
+# Fluid Properties
+
+The **continuum hypothesis** explains so much.
+
+Roughly put, fluids can be treated as continuous, even though, on a microscopic scale, they are composed of molecules. So at our scales density, temperature, momentum, energy all vary continuously and these state variations are responsible for flow. 
+
+
+
+---
+class: top
+
+# Defining a Fluid
+
+A fluid (gas or liquid) deforms continuously under an applied stress
+
+ 
+.center[
+```{r,echo=FALSE,out.width=400}
+#stride length
+knitr::include_graphics("img/shear2.png")
+
+```
+
+$F\sim \Delta L/\Delta t$
+
+$\sigma\sim d\varepsilon/dt$
+
+$\sigma \sim d\mu \varepsilon/dt$
+
+$\mu=\textrm{viscosity}$
+
+Newton's third law
+]
+
+---
+class: top
+
+# Defining How a Fluid Flows: Two Conditions
+
+.pull-left[
+
+$$\tau=\mu \frac{du}{dy}=v\frac{d(\rho u)}{dy}$$
+
+
+
+
+```{r,echo=FALSE,out.width=400}
+#stride length
+knitr::include_graphics("img/shearvelocity.png")
+
+```
+ ]
+ 
+.pull-right[
+
+No-slip condition (fluids adhere to surfaces) 
+
+```{r,echo=FALSE,out.width=400}
+#stride length
+knitr::include_graphics("img/noslip.png")
+
+```
+}    
+]
+
+
+
+---
+
+class: top
+
+# What Determines Viscosity?
+
+.pull-left[
+- Temperature
+
+- Concentration of dissolved (solutes) or suspended entities
+
+- **Shear rate**
+
+]
+
+
+.pull-right[
+```{r,echo=FALSE,out.width=300}
+#stride length
+knitr::include_graphics("https://www.cradle-cfd.com/dcms_media/image/en_columnsic02_a0317.png")
+
+```
+]
+
+.center[
+```{r,echo=FALSE,out.width=650}
+#stride length
+knitr::include_graphics("https://www.pumpfundamentals.com/images/visc_vs_strain.jpg")
+
+```
+]
+
+
+
+
+---
+
+class: top
+
+# non-Newtonian Fluids
+
+.pull-left[
+
+```{r,echo=FALSE,out.width=400}
+#stride length
+knitr::include_graphics("https://www.researchgate.net/profile/Helmut-Baumert/publication/290789681/figure/fig1/AS:318865641885696@1453034901545/The-effective-kinematic-viscosity-in-shear-thickening-green-shear-thinning-red-and.png")
+
+```
+
+
+.foonote[ $\mu=\frac{\tau}{\frac{du}{dy}}$ or
+
+slope of $\tau$ vs $\frac{du}{dy}$
+]
+
+]
+
+
+.pull-right[
+
+```{r,echo=FALSE,out.width=400}
+#stride length
+knitr::include_graphics("https://www.researchgate.net/profile/Claude-Vigneron-2/publication/13358433/figure/fig2/AS:771539007971333@1560960642865/Plot-of-whole-blood-viscosity-mPa-s-vs-shear-rate-s-1-determined-in-rabbit-blood.pbm
+")
+
+```
+
+.foonote[gradient of velocity change changes (shear rate) with shear stress 
+
+$$S=\frac{du}{dy}$$
+Functional significance?
+
+]
+
+]
+
+---
+
+class: top
+
+# What Determines Viscosity?
+
+
+- **Temperature**
+
+- Concentration of dissolved (solutes) or suspended entities
+
+- Shear rate
+
+.center[
+
+```{r,echo=FALSE,out.width=400}
+#stride length
+knitr::include_graphics("https://lh3.googleusercontent.com/proxy/tr4gKAcmQNbOCu9QDoIPzl0kamqJaKXflj19NPaEDJzPcGHvnugy6NKCnhRD2MmvfvBMvLHtDa_9YOK9cWfpZmXi-r3bC4U7UVIXLLQOJr7Y6sENvHJszSC-k9AdMvM")
+
+```
+
+
+]
+
+---
+class: top
+
+# What Determines Viscosity?
+
+
+- Temperature
+
+- **Concentration of dissolved (solutes) or suspended entities**
+
+- Shear rate
+
+.center[
+
+```{r,echo=FALSE,out.width=700}
+#stride length
+knitr::include_graphics("img/sugarblood.png")
+
+```
+
+
+]
+
+---
+class: top
+
+# A coevolutionary process: Why do plants produce dilute nectars?
+
+
+.center[
+
+```{r,echo=FALSE,out.width=700}
+#stride length
+knitr::include_graphics("img/butterflycoev.png")
+
+```
+
+.footnote[Tom Daniel, UW]
+
+]
+
+
+---
+class: top
+
+# A coevolutionary process: Why do plants produce dilute nectars?
+
+
+.center[
+
+```{r,echo=FALSE,out.width=700}
+#stride length
+knitr::include_graphics("https://lh3.googleusercontent.com/proxy/iqh529TPyZn0VLdTaVJ5QWBjoOlotIr_J6E4Goy8sOebIjCTO1p5GYj0kBQOHHKPI3b9tgtK_o51wwtQofFiSCf8NyQv7fmlsGJh9LliTYE")
+
+```
+
+
+]
+
+
+---
+class: top
+
+# A coevolutionary process: Why do plants produce dilute nectars?
+
+
+.center[
+
+
+```{r,echo=FALSE,out.width=700}
+#stride length
+knitr::include_graphics("img/butterflyenergy.png")
+
+```
+
+]
+
+
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
