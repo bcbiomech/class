@@ -140,7 +140,7 @@ knitr::include_graphics("img/motorbreakstrut.png")
 ---
 class: top
 
-# Where We've Been, Where We're Goings
+# Where We've Been, Where We're Going
  
 Solid and structural mechanics: stress and strain distributions, movements of bodies, their parts in response to muscle forces and gravity.
 

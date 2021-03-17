@@ -62,7 +62,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Monday, Mar 15 | [Fluid Motions Around: An Introduction (13)](lect/Lecture13.html) | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Wednesday, Mar 17 | Fluid Motions Around: Bernoulli | |
+ | Wednesday, Mar 17 | [Fluid Motions Around: Bernoulli](lect/Lecture14.html) | |
  | Friday, Mar 19  | Mini-Project III: It Puts the Motion in the Skin (Cont'd)  | |[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156) 
  
 ## Week 8 Schedule

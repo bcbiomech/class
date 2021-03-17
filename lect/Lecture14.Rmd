@@ -1,0 +1,357 @@
+---
+title: "Lecture 14"
+subtitle: "Fluids Around <br> Bernoulli"
+author: "Dr. Christopher Kenaley"
+institute: "Boston College"
+date: "2021/03/17"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: top
+# Fluids
+
+```{r,echo=FALSE,message=FALSE}
+library(tidyverse)
+library(kableExtra)
+library(scales)
+```
+
+<!-- Add icon library -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+
+.pull-left[
+Today we'll ....
+
+- Consider Mass
+
+- Consider Energy
+
+]
+
+
+.pull-right[
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu8Q1BMuE5U5YHxpAbDwTfJiD7wGFoWG2UIg&usqp=CAU)
+
+
+]
+
+
+---
+class: top
+
+# What Determines Viscosity?
+
+
+- Temperature
+
+- **Concentration of dissolved (solutes) or suspended entities**
+
+- Shear rate
+
+.center[
+
+```{r,echo=FALSE,out.width=700}
+#stride length
+knitr::include_graphics("img/sugarblood.png")
+
+```
+
+
+]
+
+---
+class: top
+
+# A Coevolutionary process: Why do plants produce dilute nectars?
+
+
+.center[
+
+```{r,echo=FALSE,out.width=700}
+#stride length
+knitr::include_graphics("img/butterflycoev.png")
+
+```
+
+.footnote[Tom Daniel, UW]
+
+]
+
+
+---
+class: top
+
+# A coevolutionary process: Why do plants produce dilute nectars?
+
+
+.center[
+
+```{r,echo=FALSE,out.width=500}
+#stride length
+knitr::include_graphics("https://image.slidesharecdn.com/morphology1-171211090600/95/insect-mouthparts-24-638.jpg?cb=1512983248")
+
+```
+
+
+]
+
+
+---
+class: top
+
+# A coevolutionary process: Why do plants produce dilute nectars?
+
+
+.center[
+
+```{r,echo=FALSE,out.width=700}
+#stride length
+knitr::include_graphics("img/butterflyenergy.png")
+
+```
+
+]
+
+
+---
+class: top
+
+# Two Important Conditions
+
+.pull-left[
+
+$$\tau=\mu \frac{du}{dy}=v\frac{d(\rho u)}{dy}$$
+
+
+
+
+```{r,echo=FALSE,out.width=400}
+
+knitr::include_graphics("img/shearvelocity.png")
+
+```
+ ]
+ 
+.pull-right[
+
+No-slip condition (fluids adhere to surfaces) 
+
+```{r,echo=FALSE,out.width=400}
+#stride length
+knitr::include_graphics("img/noslip.png")
+
+```
+  
+]
+
+---
+class: top
+
+#  Two More Important Conditions . . . Laws Really
+
+.pull-left[
+- Conservation of mass, a.k.a., the Principle of Continuity
+
+- Conservation of energy, a.k.a., Bernoulli's Principle     
+]
+ 
+.pull-right[
+
+
+
+```{r,echo=FALSE,out.width=400}
+#stride length
+knitr::include_graphics("img/Bernoullipic.jpeg")
+
+```
+    
+]
+---
+
+class: top
+
+# Conservation of Mass: Principle of Continuity
+
+.pull-left[
+
+Rate of mass flow in must equal rate of mass flow out (water is incompressible)
+
+$\frac{v_{out}}{t}=\frac{v_{in}}{t}$
+
+ $u_{out}A_{out}=u_{in}A_{in}$
+
+
+```{r,echo=FALSE,out.width=300}
+#stride length
+knitr::include_graphics("img/facet.jpeg")
+
+
+```
+
+]
+
+
+.pull-right[
+
+
+```{r,echo=FALSE,out.width=500}
+#stride length
+knitr::include_graphics("img/FluidContinuity.png")
+
+```
+]
+
+---
+
+class: top
+
+# Conservation of Mass: Principle of Continuity
+
+.pull-left[
+Rate of mass flow in must equal rate of mass flow out (water is incompressible)
+
+$\frac{v_{out}}{t}=\frac{v_{in}}{t}$
+
+$u_{out}A_{out}=u_{in}A_{in}$
+ 
+$\Sigma u_{in}A_{in}=\Sigma u_{out}A_{out}$
+
+
+]
+
+
+.center[
+
+```{r,echo=FALSE,out.width=650}
+#stride length
+knitr::include_graphics("img/continflow.png")
+
+```
+]
+
+---
+
+class: top
+
+# Conservation of Mass: Principle of Continuity
+
+.pull-left[
+Rate of mass flow in must equal rate of mass flow out (water is incompressible)
+
+$\frac{v_{out}}{t}=\frac{v_{in}}{t}$
+
+$u_{out}A_{out}=u_{in}A_{in}$
+ 
+$\Sigma u_{in}A_{in}=\Sigma u_{out}A_{out}$
+
+
+]
+
+
+.pull-right[
+
+```{r,echo=FALSE,out.width=450}
+#stride length
+knitr::include_graphics("img/bloodvel.jpg")
+
+```
+]
+
+ 
+---
+
+class: top
+
+# Conservation of Energy: Bernoulli
+
+.pull-left[
+
+What is the relationship between fluid motion and pressure?
+
+- Flow is steady
+
+- Fluid is incompressible
+
+- Fluid is inviscid . . .
+
+$\mu=0$
+
+
+]
+
+
+.center[
+
+```{r,echo=FALSE,out.width=650}
+#stride length
+knitr::include_graphics("img/contenergy.png")
+
+```
+]
+
+---
+
+class: top
+
+# Conservation of Energy: Bernoulli
+
+.pull-left[
+
+What is the relationship between fluid motion and pressure?
+
+- Potential energy (PE=mgh)
+
+- Kinetic energy ....
+$KE =mu^2/2$
+
+- Mechanical work (W=Fd=PAd)
+
+- Along a streamline PE + KE + W = constant
+
+
+]
+
+
+.pull-right[
+
+ $(P_2-P_1)/\rho+(u_2^2-u_1^2)/2=0$
+ 
+```{r,echo=FALSE,out.width=650}
+#stride length
+knitr::include_graphics("img/contenergy.png")
+
+```
+]
+
+---
+
+class: top
+
+# Conservation of Mass and Energy
+
+Putting it all together
+
+
+.center[
+
+ 
+```{r,echo=FALSE,out.width=500}
+knitr::include_graphics("https://www.neuromon.eu/images/vasculardiameter.jpg")
+
+```
+]
+   
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
