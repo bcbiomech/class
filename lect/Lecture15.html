@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lecture 15</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Dr. Christopher Kenaley" />
+    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
+    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Lecture 15
+## Re: Drag
+### Dr. Christopher Kenaley
+### Boston College
+### 2021/03/22
+
+---
+
+class: top
+# Re: Drag
+
+
+
+&lt;!-- Add icon library --&gt;
+&lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"&gt;
+
+
+.pull-left[
+Today we'll ....
+
+- A paradox explained by viscocity
+
+- One drag, now two
+
+- Silly example
+
+]
+
+
+.pull-right[
+
+&lt;img src="https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F200731130539-human-sperm-stock.jpg" width="200" /&gt;
+
+&lt;img src="https://www.active.com/Assets/Triathlon/460x345/Swim+Efficiency.jpg" width="350" /&gt;
+
+
+
+]
+
+
+---
+
+class: top
+
+# Conservation of Energy: Bernoulli
+
+.pull-left[
+
+What is the relationship between fluid motion and pressure?
+
+- Potential energy (PE=mgh)
+
+- Kinetic energy ....
+`\(KE =mu^2/2\)`
+
+- Mechanical work (W=Fd=PAd)
+
+- Along a streamline PE + KE + W = constant
+
+
+]
+
+
+.pull-right[
+
+ `\((P_2-P_1)/\rho+(u_2^2-u_1^2)/2=0\)`
+ 
+&lt;img src="img/contenergy.png" width="650" /&gt;
+]
+
+
+---
+
+class: top
+
+# D'Alembert's Paradox
+
+.pull-left[
+
+What is the relationship between fluid motion and pressure?
+
+
+Along a streamline PE + KE + W = constant
+
+- steady
+- incompressible
+- inviscid*
+
+]
+
+
+.pull-right[
+
+ `\((P_2-P_1)/\rho+(u_2^2-u_1^2)/2=0\)`
+ 
+&lt;img src="img/paradox.png" width="650" /&gt;
+
+No net force?
+]
+
+
+
+
+---
+
+class: top
+
+# D'Alembert's Paradox
+
+.pull-left[
+
+What is the relationship between fluid motion and pressure?
+
+Along a streamline PE + KE + W = constant
+
+- steady
+- incompressible
+- inviscid*
+
+
+]
+
+
+.pull-right[
+
+ `\((P_2-P_1)/\rho+(u_2^2-u_1^2)/2=0\)`
+ 
+&lt;img src="img/paradox2.png" width="650" /&gt;
+
+No net force? Not when `\(\mu\neq0\)`
+]
+
+---
+
+class: top
+
+# D'Alembert's Paradox
+
+.pull-left[
+
+What is the relationship between fluid motion and pressure?
+
+Along a streamline PE + KE + W = constant
+
+- steady
+- incompressible
+- inviscid*
+
+Viscosity robs fluid of its momentum. There is a shear stress exerted on the sphere and energy is dissipated by viscosity 
+
+]
+
+
+.pull-right[
+
+ `\((P_2-P_1)/\rho+(u_2^2-u_1^2)/2=0\)`
+ 
+&lt;img src="img/boundary3.png" width="650" /&gt;
+
+No net force? Not when `\(\mu\neq0\)`
+]
+
+
+---
+
+class: top
+
+# D'Alembert's Paradox
+
+.pull-left[
+
+What is the relationship between fluid motion and pressure?
+
+Along a streamline PE + KE + W = constant
+
+- steady
+- incompressible
+- inviscid*
+
+Becomes even more apparent when we consider a shape the results in lots of flow changing velocities quickly (i.e., shape matters!).
+
+
+]
+
+
+.pull-right[
+
+ `\((P_2-P_1)/\rho+(u_2^2-u_1^2)/2=0\)`
+ 
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Form_drag.svg/1200px-Form_drag.svg.png" width="650" /&gt;
+
+No net force? Not when `\(\mu\neq0\)`
+]
+
+
+---
+
+class: top
+
+# D'Alembert's Paradox
+
+.pull-left[
+
+What is the relationship between fluid motion and pressure?
+
+Along a streamline PE + KE + W = constant
+
+- steady
+- incompressible
+- inviscid*
+
+What happens when `\(P_a&lt;P_p\)`?
+
+]
+
+
+.pull-right[
+
+ `\((P_2-P_1)/\rho+(u_2^2-u_1^2)/2=0\)`
+ 
+&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Form_drag.svg/1200px-Form_drag.svg.png" width="650" /&gt;
+
+
+]
+
+
+
+---
+
+class: top
+
+# Consequences of D'Alembert's Paradox
+
+.pull-left[
+
+Flow separation
+
+ 
+&lt;img src="https://i.pinimg.com/originals/47/e9/e9/47e9e968ed6cede17a46faff1cdc1f3b.jpg" width="350" /&gt;
+
+Where we would always have "skin" drag, with `\(\mu\neq 0\)`, we now have "pressure" drag.
+
+
+]
+
+
+.pull-right[
+
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;img src="img/fishdrag.png" width="500" /&gt;
+
+&lt;img src="img/boundary3.png" width="650" /&gt;
+
+]
+
+---
+
+class: top
+
+# Consequences of D'Alembert's Paradox
+
+.pull-left[
+
+Viscosity robs fluid of its momentum. There is a shear stress exerted on the sphere and energy is dissipated by viscosity.
+
+Because of viscosity, velocity cannot increase as
+much as in the inviscid case. 
+
+New stagnation point where the flow separates
+
+**Reynolds number:** Ratio of inertial forces to viscous forces within a fluid which is subjected to relative internal movement due to different fluid velocities.
+
+
+]
+
+
+.pull-right[
+
+How much does it seprate?
+
+`$$\small{\frac{\text{Pressure stress}}{\text{Shear stress}} \rightarrow \frac{P}{\tau} \rightarrow \frac{\rho u^2}{\mu u/L} \rightarrow Re= \frac{\rho uL}{\mu}}$$`
+
+ 
+&lt;img src="img/paradox2.png" width="650" /&gt;
+
+
+]
+
+
+
+
+
+---
+
+class: top
+
+# Re across size and velocity scales
+
+
+
+.pull-left[
+
+.footnote[
+`\(10^{-5}\)` ~ Bacteria
+
+`\(10^{-4}\)` ~ Spermatozoa
+
+`\(10^{-1}\)` ~ Ciliate 
+
+1~Smallest Fish
+
+`\(10^2\)` ~ Blood flow in brain
+
+`\(10^3\)` ~ Blood flow in aorta 
+
+`\(10^4\)` ~ Birds flying 1  
+
+`\(2  \textrm{x} 10^5\)` ~ Typical pitch in Major League Baseball
+
+`\(4 \textrm{x} 10^6\)` ~ Human Swimming
+
+`\(10^6\)` ~ Fastest Fish
+
+`\(3 \textrm{x} 10^8\)` ~Blue Whale
+
+`\(5 \textrm{x} 10^9\)` ~A large ship (RMS Queen Elizabeth 2) 
+
+]
+]
+
+.pull-right[
+
+`$$\small{\frac{\text{Pressure stress}}{\text{Shear stress}} = Re= \frac{\rho uL}{\mu}}$$`
+.center[
+&lt;img src="https://www.researchgate.net/profile/David-Kimmel-2/publication/230049116/figure/fig9/AS:668284278038541@1536342796949/Size-and-Reynolds-number-of-multiple-trophic-levels-The-viscous-world-Reynolds-number.png" width="175" /&gt;
+]
+]
+
+---
+
+class: top
+
+# Re across size and velocity scales
+
+
+
+.pull-left[
+
+The Re measures the relative importance of inertial vs viscous stresses in determining the flow. Conservation of Re implies identical flow patterns
+
+.footnote[
+
+`\(10^{-4}\)` ~ Spermatozoa
+
+`\(4 \textrm{x} 10^6\)` ~ Human Swimming
+
+&lt;img src="https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F200731130539-human-sperm-stock.jpg" width="150" /&gt;
+
+]
+
+What would it feel like to swim like a sperm?
+
+How would you induce flow conditions to experience this?
+]
+
+.pull-right[
+
+`$$\small{\frac{\text{Pressure stress}}{\text{Shear stress}} = Re= \frac{\rho uL}{\mu}}$$`
+.center[
+&lt;img src="img/reflows.png" width="300" /&gt;
+
+&lt;img src="https://www.active.com/Assets/Triathlon/460x345/Swim+Efficiency.jpg" width="200" /&gt;
+
+]
+]
+---
+
+class: center, middle
+
+# Thanks!
+
+Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
