@@ -69,7 +69,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Monday, Mar 22 | [Re: Drag (15)](lect/Lecture15.html) | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Wednesday, Mar 24 | Re: Shape | |MP3 report due 
+ | Wednesday, Mar 24 | [Re: Shape (16)](lect/Lecture16.html) | |MP3 report due 
  | Friday, Mar 26  | Mini-Project IV: Birds of Feather  | | [Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 ## Week 9 Schedule

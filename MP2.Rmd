@@ -95,7 +95,8 @@ knitr::include_graphics(c("walkfront.png"))
 ## What to address in the report
 
 1. How did class-wide $v_{max}$ compare to actual class-wide walking speed? Were any patterns related to this revealed by calculating the Froude number?
-2. How does  pendulum walking speed ($v_{max}$) vary with human size and sex?
+2. How does pendulum walking speed ($v_{max}$) vary with human size and sex? 
+<!-- for future . . . How does actual recorded maximum pendulum walking speed ($v_{max}$) vary with human size and sex?  -->
 3. How does pelvic tilt change with increased walking speeds. What is the biomechanical basis for this?
 4. Does pelvic tilt at comfortable walking speeds vary with human size (i.e., mass and height) and sex? 
 
