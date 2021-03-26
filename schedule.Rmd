@@ -70,14 +70,14 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 --------|--------|-------- |-------- |-------- 
  | Monday, Mar 22 | [Re: Drag (15)](lect/Lecture15.html) | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
  | Wednesday, Mar 24 | [Re: Shape (16)](lect/Lecture16.html) | |MP3 report due 
- | Friday, Mar 26  | Mini-Project IV: Birds of Feather  | | [Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
+ | Friday, Mar 26  | [Mini-Project IV: Birds of Feather](MP4.html)  | | [Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 ## Week 9 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=350/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |--------  
  | Monday, Mar 29 | Lift for a Living | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
  | Wednesday, Mar 31 | Gliding into D = m$\cdot g\cdot$ cos($\theta$)||
- | Friday, Apr 2*  | Mini-Project IV: Birds of Feather (Cont'd)  | | no lab Zoom meeting 
+ | Friday, Apr 2*  | [Mini-Project IV: Birds of Feather (Cont'd)](MP4.html)  | | no lab Zoom meeting 
  
  
  *Note: Good Friday and no class, however, we should continue on with MP IV through the week
@@ -87,7 +87,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 --------|--------|-------- |-------- |-------- 
  | Monday, Apr 5 | Powered Flights of Fancy  | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
  | Wednesday, Apr 7 | The Flow Within ||
- | Friday, Apr 9  | Mini-Project IV: Birds of Feather (Cont'd)  | |[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
+ | Friday, Apr 9  | [Mini-Project IV: Birds of Feather (Cont'd)](MP4.html) | |[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 ## Week 11 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>

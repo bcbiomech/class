@@ -27,6 +27,7 @@ navbar:
       - text: "MP3 Description"
         href: MP3.html
       - text: "MP4 Description"
+        href: MP4.html
       - text: "MP3 Description"
     - text: "Final Project"
       menu:
