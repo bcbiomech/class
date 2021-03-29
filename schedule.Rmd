@@ -75,7 +75,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 ## Week 9 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=350/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |--------  
- | Monday, Mar 29 | [Lift for a Living (17)](llect/Lecture17.html) | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
+ | Monday, Mar 29 | [Lift for a Living (17)](lect/Lecture17.html) | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
  | Wednesday, Mar 31 | Gliding into D = m$\cdot g\cdot$ cos($\theta$)||
  | Friday, Apr 2*  | [Mini-Project IV: Birds of Feather (Cont'd)](MP4.html)  | | no lab Zoom meeting 
  
