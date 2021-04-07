@@ -4,9 +4,9 @@ bibliography: BIOL5380.bib
 ---
 
 ## Introduction
-Our fourth Miniproject explores how wing shape contributes to the forces associated with foils moving in a fluid medium. In particular, we'll focus on how wing shape affects lift and drag forces. We'll also consider how these lift and drag components may be used to predict the flight behavior of birds. Our general goals are to:
+Our fourth Mini Project explores how wing shape contributes to the forces associated with foils moving in a fluid medium. In particular, we'll focus on how wing shape affects lift and drag forces. We'll also consider how these lift and drag components may be used to predict the flight behavior of birds. Our general goals are to:
 
-1. Use CAD software and 3D printing technology to fabricate two bioinspired wings with designs that reflect a diversity of bird-wing morphology.
+1. Use CAD software and 3D printing technology to fabricate two biomiometic wings with designs that reflect a diversity of bird-wing morphology.
 2. Measure drag and lift forces of these wings using a water-tunnel system equipped with strain gauges monitored by an Arduino data acquisition system.
 3. Based on these data, establish what flight characteristics the wings impart to a bird.
 

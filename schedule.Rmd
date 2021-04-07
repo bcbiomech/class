@@ -86,7 +86,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Monday, Apr 5 | Powered Flights of Fancy  | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Wednesday, Apr 7 | The Flow Within ||
+ | Wednesday, Apr 7 | [Fish Swimming](lect/Lecture20.html) ||
  | Friday, Apr 9  | [Mini-Project IV: Birds of Feather (Cont'd)](MP4.html) | |[Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
  
 ## Week 11 Schedule
