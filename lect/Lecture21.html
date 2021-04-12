@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Lecture 20</title>
+    <title>Lecture 21</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Christopher Kenaley" />
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
@@ -11,16 +11,16 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Lecture 20
-## Fish Swimming
+# Lecture 21
+## There Will Be Blood
 ### Dr. Christopher Kenaley
 ### Boston College
-### 2021/04/07
+### 2021/04/12
 
 ---
 
 class: top
-# Powered flight
+# There will be blood
 
 
 
@@ -31,9 +31,11 @@ class: top
 .pull-left[
 Today we'll introduce
 
-- Fish swimming basics (thrust, modes, etc.)
+- Hagen-Poiseuille law
 
-- Efficiency
+- Violation of H-P (how it really works)
+
+- Laundry list of other important laws/models
 
 
 ]
@@ -41,120 +43,12 @@ Today we'll introduce
 
 .pull-right[
 
-&lt;iframe width="400" height="200" src="https://www.youtube.com/embed/Mz7fuqJ8sKY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe width="400" height="200" src="https://www.youtube.com/embed/pwmlP1hLJf0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
 
 
 ]
 
 
-
----
-
-class: top
-
-# Swimming basics
-
-.pull-left[
-
-
-&lt;img src="img/sharkmove1.jpg" width="650" /&gt;
-]
-
-.pull-right[
-&lt;img src="img/lift.jpg" width="650" /&gt;
-
-]
-
-
----
-
-class: top
-
-# Swimming basics
-
-
-.center[
-&lt;img src="img/swimmingtypes.jpg" width="550" /&gt;
-
-]
-
-
----
-
-class: top
-
-# Swimming basics
-
-
-.center[
-
-Elongate Body Theory
-
-&lt;img src="img/undswim.jpg" width="4550" /&gt;
-
-]
-
----
-
-class: top
-
-# Efficient swimming
-
-`\(\textrm{Strouhal number, S}t=\frac{fA}{U}\)`
-
-.center[
-&lt;img src="img/strouhal.jpg" width="450" /&gt;
-
-
-&lt;img src="img/strouhalnums.jpg" width="500" /&gt;
-
-]
-
-.center[
-Propulsive efficiency peaks when the kinematics result in maximum amplification of the shed vortices in the wake and an average velocity profile equivalent to a jet
-]
-
----
-
-class: top
-
-# Efficient swimming
-
-`\(\textrm{Froude number, Fr}=\frac{2U_f}{U_f+U_j}\)`
-
-
-.center[
-&lt;img src="img/froudefish.jpg" width="500" /&gt;
-
-
-Propulsive efficiency peaks when the kinematics result in maximum amplification of the shed vortices in the wake and an average velocity profile equivalent to a jet
-]
-                         
-    
----
-
-class: top
-
-# Swimming modes in fishes
-
-
-.pull-left[
-&lt;img src="https://www.researchgate.net/profile/Fotis-Sotiropoulos/publication/47809555/figure/fig4/AS:277256258768897@1443114451095/Simulated-swimming-modes-and-body-shapes-A-Midline-tracings-of-carangiform-and.png" width="650" /&gt;
-
-Once characterized by Amplitude and body "stiffness".
-
-Now being reassessed, but generally a continuum according to where thrust is produced.
-
-]
-
-.pull-right[
-
-
-&lt;iframe width="400" height="200" src="https://www.youtube.com/embed/wamEGOZXG3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;iframe width="400" height="200" src="https://www.youtube.com/embed/Mz7fuqJ8sKY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-
-]
 
 ---
 
@@ -242,7 +136,195 @@ class: top
 ]
 
 
+---
 
+class: top
+
+# Flow in tubes (inside you!)
+
+Cardiovascular system and elsewhere, too? Where?
+
+.center[
+
+&lt;img src="https://www.cvphysiology.com/uploads/images/h006-laminar-flow.png" width="600" /&gt;
+
+
+
+]
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+.center[
+
+&lt;img src="img/tubeflow.png" width="600" /&gt;
+
+`$$\Delta p={\frac{8\mu LQ}{\pi R^{4}}}={\frac{8\pi \mu LQ}{A^{2}}}$$`
+
+]
+
+- The tube is stiff, straight, and uniform
+
+- Blood is Newtonian , i.e., viscosity is constant
+
+- The flow is unifor, laminar and steady, not pulsatile, and the velocity at the wall is zero (no slip at the wall)
+
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+.center[
+
+&lt;img src="img/tubeflow.png" width="600" /&gt;
+
+`$$Q=\frac{R^4\Delta P}{8\mu L}$$`
+Hagen-Poiseuille law
+
+Valid until the flow is turbulent!
+(Re &gt; ~ 2000)
+]
+
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+.center[
+
+&lt;img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2013/11/15/17/35/ds00525_-ds01120_-ds00064_-ds00178_-ds01052_-ds00537_-ds01179_im00642_ww5r236t_jpg.jpg
+" width="300" /&gt;
+
+`$$Q=\frac{R^4\Delta P}{8\mu L}$$`
+Hagen-Poiseuille law
+
+Effects of ateriosclerosis?
+]
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+.center[
+
+&lt;img src="https://lh3.googleusercontent.com/proxy/JsiIFErKCtAKtXZSCA4qIhIUR47xjH0eJlYhJvAy4IED-u_Acihr89KOek6jNup9G4S7El6wHo-Pnx0THBkDEOBHkISm9ihTv9EahcSkYfJOvuE
+" width="400" /&gt;
+
+`$$Q=\frac{R^4\Delta P}{8\mu L}$$`
+Hagen-Poiseuille law
+
+Non-linear effects of vasodialation and vasoconstriction?
+]
+
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+.pull-left[
+
+Flow profile is altered by branches:
+
+- Flow entering a side branch results in skewed profile. 
+- It takes a certain inlet length before the velocity develops into a parabolic profile again.....
+
+
+]
+
+.pull-right[
+
+&lt;img src="img/branch.png" width="400" /&gt;
+
+`\(\frac{l_{inlet}}{D}\approx 0.6Re\)`
+
+`\(l_{inlet}\approx 0.6ReD\)`
+
+
+]
+
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+.pull-left[
+
+ Flow profile is altered by branches (non-uniform):
+
+- Aorta mean blood flow is about 6 l/min
+- D=3 cm
+- Mean velocity is ~ 15 cm/s
+- Re~1350
+
+
+
+]
+
+.pull-right[
+
+&lt;img src="img/aorta.jpg" width="400" /&gt;
+
+`\(\frac{l_{inlet}}{D}\approx 0.6Re\)`
+
+`\(l_{inlet}\approx 0.6ReD\)`
+
+
+]
+
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+Flow is pulsatile, but not everywhere.
+
+.center[
+
+&lt;img src="https://www.researchgate.net/publication/343487724/figure/fig2/AS:921709901271042@1596764173575/Windkessel-model-a-schematic-diagram-of-the-windkessel-effect-redrawn-based-on.ppm" width="400" /&gt;
+
+
+
+]
+
+
+---
+
+class: top
+
+#  Poiseuille, Bernoulli, Leplace, etc. in design
+
+.pull-left[
+
+- Number of capillaries (Fick's Law for diffusion)
+- Diameter of capillaries (Peclet number for balancing diffusion and convection)
+- Relative diameter of other vessels (Murray's law for minimizing circulatory work)
+- Relative thickness of vessel walls (Leplace's law for how size sets pressure versus wall tension)
+- Relative size of capillaries and alveoli (Diffusion coefficients of O2 in air and water.)
+- Concentration of RBCs (cell density vs. viscosity and Poiseuille pressure drop)
+
+]
+
+.pull-right[
+
+&lt;img src="img/circsystem.jpg" width="400" /&gt;
+
+
+]
 
 ---
 
