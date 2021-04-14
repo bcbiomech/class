@@ -93,7 +93,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Monday, Apr 12 | [There Will Be Blood (21)](lect/Lecture21.html)  | | Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Wednesday, Apr 14 | $Re$: The Tiny | |MP4 report due 
+ | Wednesday, Apr 14 | [$Re$: The Tiny](lect/Lecture22.html) | |MP4 report due 
  | Friday, Apr 16  | Mini-Project V: It's Snot Rocket Science || [Lab Zoom meeting @ 1:00 or 2:00](https://bccte.zoom.us/j/9533582156)
 
 ## Week 12 Schedule
