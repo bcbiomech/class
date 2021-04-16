@@ -462,7 +462,9 @@ div.tocify {
     <li>
       <a href="MP4.html">MP4 Description</a>
     </li>
-    <li class="dropdown-header">MP3 Description</li>
+    <li>
+      <a href="MP5.html">MP5 Description</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -831,7 +833,7 @@ library(tidyverse) #always
 <span id="cb31-3"><a href="#cb31-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean.max=</span><span class="kw">mean</span>(max))</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 2
 ##   who   mean.max
-## * &lt;chr&gt;    &lt;dbl&gt;
+##   &lt;chr&gt;    &lt;dbl&gt;
 ## 1 O         21.6
 ## 2 Z         22.5</code></pre>
 <p>Wonderful. Looks like the mean of Zoe’s jumps was about 1 cm higher than Ollie’s. If we want to assess how much each kid’s jumps deviated from their mean, we could compute standard deviation with the function <code>sd()</code>. Let’s add that to the summarizing operation:</p>
@@ -840,7 +842,7 @@ library(tidyverse) #always
 <span id="cb33-3"><a href="#cb33-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean.max=</span><span class="kw">mean</span>(max),<span class="dt">sd.max=</span><span class="kw">sd</span>(max))</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 3
 ##   who   mean.max sd.max
-## * &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;
+##   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;
 ## 1 O         21.6   1.60
 ## 2 Z         22.5   2.57</code></pre>
 <p>Looks like Zo’s jumps were a little bit more variable. Often, biomechanists like to report the standard error of the mean (SEM, see below). Oddly enough, there’s no function of SEM in the base R packages, however we can easily create a function of our own.</p>
@@ -852,7 +854,7 @@ library(tidyverse) #always
 <span id="cb36-3"><a href="#cb36-3"></a><span class="st">  </span><span class="kw">summarise</span>(<span class="dt">mean.max=</span><span class="kw">mean</span>(max),<span class="dt">sd.max=</span><span class="kw">sd</span>(max),<span class="dt">se.max=</span><span class="kw">se</span>(max))</span></code></pre></div>
 <pre><code>## # A tibble: 2 x 4
 ##   who   mean.max sd.max se.max
-## * &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
+##   &lt;chr&gt;    &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
 ## 1 O         21.6   1.60  0.713
 ## 2 Z         22.5   2.57  1.15</code></pre>
 <p>Looks like both SEMs are small, but the lower value for Ollie indicates that his sample mean is probably a better estimate.</p>

@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Mini Project 5: Snot Rocket Science</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 61px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h2 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h3 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h4 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h5 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.section h6 {
+  padding-top: 66px;
+  margin-top: -66px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+@media print {
+.toc-content {
+  /* see https://github.com/w3c/csswg-drafts/issues/4434 */
+  float: right;
+}
+}
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-default  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">BIOL 5380</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">Home</a>
+</li>
+<li>
+  <a href="schedule.html">Schedule</a>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Mini-Projects
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="mini_projects.html">Mini-Projects Overview</a>
+    </li>
+    <li>
+      <a href="MP1.html">MP1 Description</a>
+    </li>
+    <li>
+      <a href="MP2.html">MP2 Description</a>
+    </li>
+    <li>
+      <a href="MP3.html">MP3 Description</a>
+    </li>
+    <li>
+      <a href="MP4.html">MP4 Description</a>
+    </li>
+    <li>
+      <a href="MP5.html">MP5 Description</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Final Project
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="final_project.html">FP Overview</a>
+    </li>
+  </ul>
+</li>
+<li>
+  <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">Discussion Board</a>
+</li>
+<li>
+  <a href="https://bostoncollege.instructure.com/courses/1615104">Course Canvas Page</a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Mini Project 5: Snot Rocket Science</h1>
+
+</div>
+
+
+<div id="introduction" class="section level2">
+<h2>Introduction</h2>
+<p>In this last Mini-project, we’ll explore the role of size in fluid dynamics, especially how small things behave much differently than their large counter parts. This difference in behavior between the relatively small and large is critically important to so many aspects of biology (e.g., locomotion, material transport, etc.), but perhaps no issue related to size is more important in these times than the size of respiratory droplets and how this affects the risk of infection from SARS-CoV-2, the virus that causes CoVid.</p>
+<p>We humans and other tetrapods spew respiratory droplets as we talk, sing, cough, and sneeze. Because respiratory droplets come from a wet pharynx, they are of course mostly water. Thus, they tend to desiccate once outside the damp pharynx and therefore change in size once they leave your body. How much they dessiccate depends on a number of factors and the most important of these is the humidity of the environment into which they are ejected</p>
+<p>The goals of this project are to:</p>
+<ol style="list-style-type: decimal">
+<li>Predict how relative humidity of the external environment effects the size of repsiratory droplets.</li>
+<li>Predict how long droplet containing SARS-CoV-2 remain airborne under different conditions of relative humidity.</li>
+</ol>
+</div>
+<div id="conceptual-basis" class="section level2">
+<h2>Conceptual basis</h2>
+<p>Human respiratory droplets are mostly water (∼90 to 99%), with a little bit of inorganic ions, sugars, proteins, lipids, DNA, and, in our case pathogens thrown in. This means that any droplet that is not purely water can only shrink due to evaporation to a minimum size. This minimum size (the radius, <span class="math inline">\(R_f\)</span>), can be estimated if we know the relative composition of the non-water content. While the exact composition depends on many factors, the typical proportion of non-water content (<span class="math inline">\(\phi_o\)</span>) in a droplet is around 5%. We can follow (<span class="citation">Netz (2020)</span>) and assume this process happens very quickly (&lt;5 s) to predict the final size (<span class="math inline">\(R_f\)</span>) of a completely dried-out droplet devoid of water with the following:</p>
+<p><span class="math display">\[R_f=R_o(\frac{\phi_o}{1-RH})^{1/3},\]</span> where <span class="math inline">\(R_o\)</span> is the original droplet size and <span class="math inline">\(RH\)</span> is the relative humidity.</p>
+<p>A relative humidity value of <span class="math inline">\(RH\)</span> = 0.5 is typical for a living or bedroom, but it can vary a lot within enclosed environments and exterior spaces, too. Kitchens, gyms, and bathrooms tend to be wetter places and the weather only needs to change a little bit to change the <span class="math inline">\(RH\)</span> outside. The following figure demonstrates the effect of varying <span class="math inline">\(RH\)</span> on final droplet size.</p>
+<p><img src="MP5_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+<p>The original size of a respiratory droplet (<span class="math inline">\(R_o\)</span>) expelled during exhalation varies considerably and the consequences of this has stimulated a lot of speculation as to the modes of transmission for SARS-CoV-2. Whether small or large, we know that transmission is most likely to occur when someone is close to the infectious person, generally within about 6 feet. However, airborne transmission remains possible through exposure to those virus-containing respiratory effluent comprised of smaller droplets and particles that can remain suspended in the air over long distances (usually greater than 6 feet) and time (typically hours).</p>
+<p><img src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10867-020-09562-5/MediaObjects/10867_2020_9562_Fig3_HTML.png?as=webp" /></p>
+<p>The reason smaller droplets remain airborne for longer periods of time relates to in an important principle in small particle fluid dynamics: Stokes Law. This principle states that the frictional force (the viscous drag force) that is exerted on spherical objects with very small Reynolds numbers in a viscous fluid is quite large compared to the gravitation force.</p>
+<p>Stokes Law can be expressed this way. The viscous drag force on a sphere of radius <span class="math inline">\(R\)</span> moving with a velocity <span class="math inline">\(V\)</span> in a fluid of viscosity <span class="math inline">\(\mu\)</span> is given by:</p>
+<p><span class="math display">\[F=6\pi \mu Rv\]</span> <img src="https://www.concepts-of-physics.com/mechanics/media/stokes-law-and-terminal-velocity.svg" /></p>
+<p>Consider a spherical particle of radius <span class="math inline">\(R\)</span> and density <span class="math inline">\(\rho_p\)</span> moving with a velocity <span class="math inline">\(v\)</span> in a fluid of density <span class="math inline">\(\rho_f\)</span> and viscosity <span class="math inline">\(\mu\)</span>. The forces acting on the sphere are the viscous drag force (from Stokes, <span class="math inline">\(F_d=6\pi \mu Rv\)</span>), gravitational force (<span class="math inline">\(F_g=\frac{4}{3}\pi R^3\rho{_s} g\)</span>) and buoyant force (<span class="math inline">\(F_b=\frac{4}{3}\pi R^3\rho{_f} g\)</span>). The sphere accelerates until the drag force adjusts itself to make net force on the sphere zero. After this, the sphere moves with a constant velocity called the terminal or settling velocity. That is:</p>
+<p><span class="math display">\[F_d+F_b=F_g.\]</span> When we solve for <span class="math inline">\(v\)</span>, we get the terminal velocity, <span class="math inline">\(v_t\)</span></p>
+<p><span class="math display">\[v_t={\frac {2}{9}}{\frac {\left(\rho _{p}-\rho _{f}\right)}{\mu }}g\,R^{2}\]</span> It’s worth noting that since the excess force (<span class="math inline">\(F_g\)</span>) increases as <span class="math inline">\(R^3\)</span> and Stokes’ drag (<span class="math inline">\(F_d\)</span>) increases as <span class="math inline">\(R\)</span>, the terminal velocity increases as <span class="math inline">\(R^2\)</span> and therefore <span class="math inline">\(v_t\)</span> varies enormously with particle or droplet size.</p>
+</div>
+<div id="methods" class="section level2">
+<h2>Methods</h2>
+<p>Begin your modeling project by finding a range of respiratory particle size from the literature. You may choose to focus on particle size as it varies with different behaviors (coughing, singing, sneezing, talking, etc.). Or, you may choose to focus on the size variability of droplets that result from any one of these behaviors. <strong>Pick at least 5 sizes to study.</strong> This will establish <span class="math inline">\(R_o\)</span>. Be sure to cite where you got these values!</p>
+<p>While <span class="math inline">\(R_o\)</span> represents the size of particles that may come out of the body, consider the effect of <span class="math inline">\(RH\)</span> on altering size. To predict final size that will be subject to Stokes Law, you will have to implement the equation for <span class="math inline">\(R_f\)</span> above in your model. For this part of your model, find the typical <span class="math inline">\(RH\)</span> of various environments or conditions. For example, consider variation in <span class="math inline">\(RH\)</span> between rooms in a home, different types of buildings, outside according season, between geographic locality, etc. Whatever your underlying factors, <strong>choose no fewer than four <span class="math inline">\(RH\)</span> values</strong> to use in your model. As with <span class="math inline">\(R_o\)</span>, be sure to cite where you got these <span class="math inline">\(RH\)</span> values!</p>
+<p>Lastly, find the terminal velocity and suspension time for each of your five particle size classes and <span class="math inline">\(RH\)</span> values using the Stokes-derived formula for <span class="math inline">\(v_t\)</span> above.</p>
+<p>For your model, assume the following:</p>
+<ul>
+<li>The density of your particles is the same as water.</li>
+<li>Air in your chosen environments is stagnant.</li>
+<li><span class="math inline">\(v_t\)</span> is reached instantly after the particles are expelled.</li>
+<li>Particles are exhaled or otherwise ejected from the pharynx of a typically tall human being (say 1.75 m).</li>
+<li>The droplets expelled reach their final size (<span class="math inline">\(RH\)</span>) immediately after they are ejected.</li>
+<li>All other parameters (<span class="math inline">\(\rho_f\)</span>,<span class="math inline">\(g\)</span>,<span class="math inline">\(\mu\)</span>, etc.) take their typical values under the conditions you’re studying.</li>
+</ul>
+</div>
+<div id="what-to-address-in-the-report" class="section level2">
+<h2>What to address in the report</h2>
+<ol style="list-style-type: decimal">
+<li>How does your chosen range of <span class="math inline">\(RH\)</span> effect the final size of the particles?</li>
+<li>Under the assumptions of the model and different <span class="math inline">\(RH\)</span> conditions, how long will particles of your chosen sizes stay suspended?</li>
+<li>What do your model predictions say about the relationship between initial size, <span class="math inline">\(RH\)</span>, and relative risk associated with the behaviors and environmental conditions you’ve studied?</li>
+<li>Include at least three informative figures that represent your model output and seek to answer these questions.</li>
+</ol>
+<p>As a group, please synthesize the results of your model predictions and address these questions in a report in markdown format that follows the structure outlined on our <a href="mini_projects.html">Min-projects page</a>. Reports and any data files reference by them are due Wednesday, April 28th, by 11:59 PM. They should be sent to Prof. Kenaley in a zipped directory over email or pushed to your team’s GitHub repository.</p>
+</div>
+<div id="what-to-pay-attention-to-in-writing-the-report" class="section level2">
+<h2>What to pay attention to in writing the report</h2>
+<ul>
+<li>Data are plural.</li>
+<li>Don’t use <code>print()</code>, <code>head()</code>, etc. commands needlessly . . . we don’t need a large data table of ray data in our reports.</li>
+<li>Better methods for printing tables (eg. <code>pander()</code>, <code>kable</code>+<code>kableExtra</code>, etc.).</li>
+<li>Figures and tables need captions! For figures, use <code>fig.cap</code> parameter in r chunk options. For tables use the <code>caption</code> parameter in <code>kable()</code> or similar.</li>
+<li>Figures should be appropriately sized (check out <code>fig.width</code> and <code>fig.height</code> in r chunk options).</li>
+<li>Figure axes should be labeled appropriately.</li>
+<li><strong>DON’T SET THE WORKING DIRECTORY</strong></li>
+<li>A brief but informative introduction should set the stage by telling the reader what specific questions you are addressing (these will be unique to each group).</li>
+</ul>
+<div id="refs" class="references">
+<div id="ref-netz2020mechanisms">
+<p>Netz, Roland R. 2020. “Mechanisms of Airborne Infection via Evaporating and Sedimenting Droplets Produced by Speaking.” <em>The Journal of Physical Chemistry B</em> 124 (33): 7093–7101.</p>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

@@ -462,7 +462,9 @@ div.tocify {
     <li>
       <a href="MP4.html">MP4 Description</a>
     </li>
-    <li class="dropdown-header">MP3 Description</li>
+    <li>
+      <a href="MP5.html">MP5 Description</a>
+    </li>
   </ul>
 </li>
 <li class="dropdown">
@@ -683,8 +685,8 @@ You lookin’ all marked and stuff
 ## 4     4     1     4        200.        253.         0       246         0.91 
 ## 5     5     1     5        199.        253.         0       241         1.17 
 ## 6     6     1     6        199.        254.         0       255         1.42 
-## # … with 8 more variables: `D2S [pixel]` &lt;dbl&gt;, `D2R [pixel]` &lt;lgl&gt;, `D2P
-## #   [pixel]` &lt;dbl&gt;, `v [pixel/sec]` &lt;lgl&gt;, `? [deg]` &lt;dbl&gt;, `?? [deg]` &lt;dbl&gt;,
+## # … with 8 more variables: D2S [pixel] &lt;dbl&gt;, D2R [pixel] &lt;lgl&gt;,
+## #   D2P [pixel] &lt;dbl&gt;, v [pixel/sec] &lt;lgl&gt;, ? [deg] &lt;dbl&gt;, ?? [deg] &lt;dbl&gt;,
 ## #   speed &lt;chr&gt;, subject &lt;chr&gt;</code></pre>
 <p>Sweet. But, notice that the column names given to the data are gobblygook with all those spaces in and “[pixel]” and “[sec]” in there. Let’s change them for easy referencing with a <code>str_remove()</code> (remove string) operation from the<code>stringr</code> package loaded with <code>tidyverse</code> . . .</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">colnames</span>(walk.dat) &lt;-<span class="st"> </span><span class="kw">str_remove</span>(<span class="kw">colnames</span>(walk.dat),<span class="st">&quot; </span><span class="ch">\\</span><span class="st">[pixel</span><span class="ch">\\</span><span class="st">]| </span><span class="ch">\\</span><span class="st">[sec</span><span class="ch">\\</span><span class="st">]&quot;</span>)</span>
@@ -698,8 +700,8 @@ You lookin’ all marked and stuff
 ## 4     4     1     4  200.  253.     0       246 0.91  0.908 NA     0.321
 ## 5     5     1     5  199.  253.     0       241 1.17  1.16  NA     0.256
 ## 6     6     1     6  199.  254.     0       255 1.42  1.41  NA     0.249
-## # … with 5 more variables: `v [pixel/sec]` &lt;lgl&gt;, `? [deg]` &lt;dbl&gt;, `??
-## #   [deg]` &lt;dbl&gt;, speed &lt;chr&gt;, subject &lt;chr&gt;</code></pre>
+## # … with 5 more variables: v [pixel/sec] &lt;lgl&gt;, ? [deg] &lt;dbl&gt;, ?? [deg] &lt;dbl&gt;,
+## #   speed &lt;chr&gt;, subject &lt;chr&gt;</code></pre>
 <p>That’s better. Now, let’s pare down the data to those columns we actually care about, “x” and “y”, the x and y positions of the points, “subject”, and “speed”. Also notice that the MTrackJ file contains a “TID” and “PID” column identifying to what track (which dot in the image) and point (the series of positions) to which the x and y positions belong. So let’s keep these columns, too, then dump the others, and give it a quick plot with ggplot.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>walk.dat2 &lt;-<span class="st"> </span>walk.dat<span class="op">%&gt;%</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="st">  </span><span class="kw">select</span>(TID,PID,x,y,subject,speed)</span>
@@ -751,9 +753,9 @@ A look at the coordinates of the amplified pelvic positions
 ## 1     1 me      fast    200.   282.   185.   178.   167.  0.381
 ## 2     2 me      fast    200.   282.   186.   178.   168.  0.394
 ## 3     3 me      fast    200.   282.   186.   178.   168.  0.392
-## 4     4 me      fast    200.   282.   186.   178.   168.  0.37 
+## 4     4 me      fast    200.   282.   186.   178.   168.  0.370
 ## 5     5 me      fast    199.   282.   186.   177.   168.  0.331
-## 6     6 me      fast    199.   283.   187.   177.   168.  0.31</code></pre>
+## 6     6 me      fast    199.   283.   187.   177.   168.  0.310</code></pre>
 <p>Notice that we now have columns that are named as “x_” and “y_” with a point name suffix, i.e., we have taken the x and y column and made new ones based the point they describe. We have several new columns and fewer rows of course. For this we used <code>dplyr</code>’s <code>pivot_wider()</code> functions that, well, pivots long data to wide data. We told <code>pivot_wider()</code> to take the names from “TID” (the point names) to form the new columns with values from the columns named “x” and “y”. We could now compute <span class="math inline">\(\theta\)</span> for each PID (i.e., frame) based on the coordinates of each point.</p>
 </div>
 <div id="adding-references" class="section level2">
