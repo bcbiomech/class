@@ -1,0 +1,67 @@
+\documentclass [12 pt]{article} 
+\usepackage[left=2 cm,top=2 cm,right=2 cm,bottom=3 cm,nohead]{geometry}
+\usepackage{textcomp}%for symbols 
+\usepackage{gensymb}
+\usepackage{setspace}
+\usepackage{array,multirow,graphicx}
+\usepackage{wrapfig}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{caption}
+
+
+\usepackage[hidelinks, colorlinks = true, linkcolor = maroon urlcolor  = maroon,citecolor = maroon, anchorcolor =maroon]{hyperref}
+
+\newcommand{\week}[1]{\parbox[b]{3 mm}{\multirow{3}{*}{\rotatebox[origin=c]{90}{week #1}}} }
+
+\newcommand{\lref}[1]{\href{https://www2.bc.edu/christopher-kenaley/bio3030/lectures/3030.f16.#1.pdf}{#1}}
+\newcommand{\rref}[1]{\href{https://www2.bc.edu/christopher-kenaley/bio3030/#1.pdf}{#1}}
+\newcommand{\wolp}[1]{\href{https://www2.bc.edu/christopher-kenaley/bio3030/Wolpert.Ch#1.pdf}{#1}}
+
+\renewcommand{\arraystretch}{1.4}
+
+\newenvironment{midtitle}{\par\vspace{12 pt}}
+
+\setlength{\parindent}{0 pt} % Default is 15pt.
+
+%\usepackage[hidelinks]{hyperref}
+
+\begin{document}  
+
+\section*{Resources available for Final Projects}
+
+\captionof*{table}{Any and all of the following are available for final projects. Please keep in mind that, although much can be done with this equipment, much can be done without it!}
+\small\begin{longtable}{p{2.5cm}|p{4.5cm}|p{5cm}}
+\hline 
+\bf N			 & Item		&	 Possible use		\\ \hline
+
+
+ 1 		& 50-lb pancake transducers 					& 	Measure larger forces, e.g., arm/leg and biting torques \\ \hline
+ 1 		& 250-lb pancake transducers 					& 	Measure really large forces, e.g., running/walking GRFs \\ \hline
+ 4		& 10-lb pancake transducers 					& 	Measure loads on small to medium sized bones \\ \hline
+  2		& 2-lb compression \& extension transducers		& 	Measure small in-line loads during positive and negative strains\\ \hline
+  2-4		& 100-g, 300-g, 1-kg, and 2-kg force transducers	& 	Measure small to loads at a single point\\ \hline
+ 6		&  3 and 6-DOF accelerometer					& 	Measure acceleration/forces on bodies and objects\\ \hline
+   1		& Three-point tester from MP2					& 	Measure beam load and deformation with load capacities according to transducers listed above\\ \hline
+   1		& Tensile compression and extension tester		& 	Measure linear deformation with load capacities according to transducers listed above\\ \hline
+  5		& Arduino Uno microcontrol boards				&	Measure and amplify singles from instruments\\ \hline
+  1		& Digital venier calipers				& 	Measure thickness and width\\ \hline
+   5		& 50-m laser measurer				& 	Measure distance between two points\\ \hline
+  1		& 0-60 m/s anemometer						& 	Measure wind speed up to 60 m/s\\ \hline
+  2 		&150 fps high resolution ice-cube cameras 		&	High-resolution kinematic analysis, perhaps in 3D\\ \hline
+ 1 		&1000 fps high resolution camera				&	High-resolution kinematic analysis\\ \hline
+  1		& Swim tunnel								& 	Measure drag and lift torques on shape, swimming kinematics of fishes\\\hline
+    1		& Laser and bouyant microsphere setup			& 	Qualitative or quantitative assessment of fluid flow in the swim tunnel \\\hline
+  1		& 10-lb linear actuator with position feedback		& 	Move small loads, perhaps to measure strain and stress\\ \hline
+  1		& 240-lb linear actuator with position feedback		& 	Move large loads, perhaps to measure strain and stress\\ \hline
+   many		& Servo motors for rotary motion		& 	Measure torsional loads, angular loads\\ \hline
+     1		& 3D printer with dual extruders		& 	Print shapes in more than one material, models for dynamic analysis in swim tunnel or bending/tensile testing\\ \hline
+          1		& stereo dissecting microscope with camera		& 	Observing small morphologies, imaging experiments at small size scales\\ \hline
+  
+  
+
+
+
+\end{longtable}
+\end{document}
+
