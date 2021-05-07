@@ -114,7 +114,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Monday, May 3 | Final Project Work  | |
- | Wednesday, May 5 | Final Project Work || FP presentation* 
+ | Wednesday, May 5 | Final Project Work || FP report due 
 
 FP presentations can be uploaded to this directory.
 
@@ -122,6 +122,6 @@ FP presentations can be uploaded to this directory.
 
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Wednesday, May 12 | Final Project | | FP report due 
+ | Wednesday, May 12 | Final Project | | FP presentation due* 
  
- FP presentations can be uploaded to this directory.
+ *FP presentations can be uploaded to [this directory](https://drive.google.com/drive/folders/1-2pw3pWQg-F8UPaWoTlbg3FgrQ6jnnbZ).
