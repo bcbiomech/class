@@ -19,9 +19,11 @@ Pursuant to this, you'll engage in class projects that involve reading primary l
 
 # Course Deets
 
-**Delivery:**  Synchronous in-person lectures Monday and Wednesday at 1:00 in Carney Hall 308. Asynchronous lab projects launched on Fridays with a synchronous Zoom meeting.
+**Delivery:**  In-person lectures Tuesday and some Thursdays at 10:30 in Higgins Hall 225. Asynchronous lab projects launched on Thursdays with a synchronous Zoom meeting.
 
-For those who can't make it to class, we'll be [Zooming](https://bccte.zoom.us/j/9533582156) and [recording lectures](https://bostoncollege.instructure.com/courses/1615104/external_tools/109499).
+For those who can't make it to class, we'll be at [Zooming](https://bccte.zoom.us/j/9533582156) 
+
+<!-- and [recording lectures](https://bostoncollege.instructure.com/courses/1615104/external_tools/109499). -->
 
 **Instructor:** Christopher P. Kenaley (Prof. K)
 
@@ -31,7 +33,7 @@ For those who can't make it to class, we'll be [Zooming](https://bccte.zoom.us/j
 
 # Course Materials
 
-## Required Readings, Tools, etc.
+## Readings, Tools, etc.
 
 **Recommended Textbook:** Vogel, S. 2013. [*Comparative Biomechanics: Life's Physical World*.](https://www.amazon.com/Comparative-Biomechanics-Lifes-Physical-Second/dp/0691155666#customerReviews) 2nd ed. Princeton University Press. 
 
@@ -99,7 +101,7 @@ Additional details for the MPs are available on our [Mini-Projects page](mini_pr
 </div>
 <br>
 
-A course of this scope, focusing on so much that is technical, would be administered best in small groups, meeting mostly face-to-face. However, in the context of a global pandemic that has surged again in our corner of the world, I can't in good conscience summon us all to meet in cramped quarters for our lab exercises. Thus, for each lab meeting, we'll first convene over Zoom and, after an introduction to the MP topic, students will move on to perform experiments in pre-assigned teams independently. I will be available for additional discussion and problem solving over Zoom and face-to-face during arranged office hours. 
+<!-- A course of this scope, focusing on so much that is technical, would be administered best in small groups, meeting mostly face-to-face. However, in the context of a global pandemic that has surged again in our corner of the world, I can't in good conscience summon us all to meet in cramped quarters for our lab exercises. Thus, for each lab meeting, we'll first convene over Zoom and, after an introduction to the MP topic, students will move on to perform experiments in pre-assigned teams independently. I will be available for additional discussion and problem solving over Zoom and face-to-face during arranged office hours.  -->
 
 ## Final Project
 
@@ -109,7 +111,7 @@ In addition to a report, you'll be tasked with synthesizing your project in a sh
 
 ## Discussion Board 
 
-Each week on Monday, you will be asked to submit at least one question and answer another on our class [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380). This is hosted on GitHub, just like our course site and will certainly be an important resource as you work through course material. When you post a question, you should:
+Each week on Tuesday, you will be asked to submit at least one question and answer another on our class [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380). This is hosted on GitHub, just like our course site, and will certainly be an important resource as you work through course material. When you post a question, you should:
 
   + Be polite and concise.
   + Ask a question that has not be asked before.

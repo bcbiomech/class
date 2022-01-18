@@ -22,7 +22,7 @@ We'll take on these tasks as we try to answer a very simple (yet important!!!) q
   
 ## Buckle Up!
 
-I'll be honest, for many of us just getting into this sort of thing, the learning curve is steep (see below). You'll be on the ascending limb of this curve for a while, but once you get over the hump, you'll be on its descending limb. I promise that eventually the time you invest in learning how to work in R will decrease your overall effort compared to where you started. So, just sit back, take it all in and rest assured you're making a great investment. 
+I'll be honest, for many of us just getting into this sort of thing, the learning curve is steep (see below). You'll be on the ascending limb of this curve for a while, but once you get over the hump, you'll be on its descending limb. I promise that, eventually, the time you invest in learning how to work in R will decrease your overall effort compared to where you started. So, just sit back, take it all in and rest assured---you're making a great investment. 
 
 <center>
 ```{r,echo=FALSE,fig.cap="The R coding learning curve.",fig.height=3,message=FALSE }
@@ -535,7 +535,6 @@ The markdown must contain the following:
   * A plot of the mean maximum for each kiddo across all replicates. It must contain or be accompanied with:
     
     + properly labeled axes (`?ylab()`, anyone?).
-    
     + Different colors for each subject (`aes(col=who)`, anyone?)
     + error bars that correspond to 1± standard error of the mean (SEM; `?geom_errorbar()`, anyone?)
     + a simple ANOVA test of results (with alpha of 0.05). [This'll help.](https://www.statmethods.net/stats/anova.html)
@@ -546,7 +545,7 @@ The markdown must contain the following:
     + lines and points that vary in color according to who's doing the jumping (again, `aes(col=who)`, anyone?)
     + a brief paragraph summarizing the differences and any inferences of why they are
     
-The `knitr` markdown file and all the associated files (see below) are due on Wednesday February 17th by 11:59 PM. Please email them to Prof. Kenaley.
+The `knitr` markdown file and all the associated files (see below) are due on Thursday, February 3rd by 11:59 PM. Please email them to Prof. Kenaley.
   
   
   <br>

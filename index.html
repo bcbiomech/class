@@ -13,17 +13,26 @@
 
 <title>BIOL 5380</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
+<script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
-<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -37,32 +46,6 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -74,10 +57,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -94,40 +73,13 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 61px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -155,7 +107,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -167,7 +119,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -178,10 +130,23 @@ $(document).ready(function () {
   var menuAnchor = $('a[href="' + href + '"]');
 
   // mark it active
-  menuAnchor.parent().addClass('active');
+  menuAnchor.tab('show');
 
   // if it's got a parent navbar menu mark it active as well
   menuAnchor.closest('li.dropdown').addClass('active');
+
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -193,7 +158,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -319,7 +283,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -401,7 +365,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -418,23 +382,24 @@ div.tocify {
 <p>Pursuant to this, you’ll engage in class projects that involve reading primary literature, data collection and analysis, and the presentation of this work to your peers. These projects will require patience, resilience, and most of all, curiosity (all qualities a scientist—and especially a biomechanist—will find very handy in their career!). You’ll find that one very important aspect of the course is challenging you to be proficient with technology (i.e., software, hardware, instruments, etc.). Biomechanics is a very, <strong>very</strong> technical field. Please rest assured, if you summon your curiosity, patience, and resilience, you’ll find this part of the course very rewarding.</p>
 <div id="course-deets" class="section level1">
 <h1>Course Deets</h1>
-<p><strong>Delivery:</strong> Synchronous in-person lectures Monday and Wednesday at 1:00 in Carney Hall 308. Asynchronous lab projects launched on Fridays with a synchronous Zoom meeting.</p>
-<p>For those who can’t make it to class, we’ll be <a href="https://bccte.zoom.us/j/9533582156">Zooming</a> and <a href="https://bostoncollege.instructure.com/courses/1615104/external_tools/109499">recording lectures</a>.</p>
+<p><strong>Delivery:</strong> In-person lectures Tuesday and some Thursdays at 10:30 in Higgins Hall 225. Asynchronous lab projects launched on Thursdays with a synchronous Zoom meeting.</p>
+<p>For those who can’t make it to class, we’ll be at <a href="https://bccte.zoom.us/j/9533582156">Zooming</a></p>
+<!-- and [recording lectures](https://bostoncollege.instructure.com/courses/1615104/external_tools/109499). -->
 <p><strong>Instructor:</strong> Christopher P. Kenaley (Prof. K)</p>
 <p><strong>email:</strong> kenaley [ahhhht] bc.edu</p>
 <p><strong>office hours:</strong> By appointment, in person or over Zoom <a href="https://bccte.zoom.us/j/9533582156">at this link</a></p>
 </div>
 <div id="course-materials" class="section level1">
 <h1>Course Materials</h1>
-<div id="required-readings-tools-etc." class="section level2">
-<h2>Required Readings, Tools, etc.</h2>
+<div id="readings-tools-etc." class="section level2">
+<h2>Readings, Tools, etc.</h2>
 <p><strong>Recommended Textbook:</strong> Vogel, S. 2013. <a href="https://www.amazon.com/Comparative-Biomechanics-Lifes-Physical-Second/dp/0691155666#customerReviews"><em>Comparative Biomechanics: Life’s Physical World</em>.</a> 2nd ed. Princeton University Press.</p>
 <p><strong>Additional readings and lecture files:</strong> Required readings drawn from the primary literature are available through the class schedule on the course site. They should be read before the class for which they are assigned.</p>
 <p><strong>Technical requirements:</strong> Completing your assignments will require proficiency with non-commercial software, including some amount of low-level programming. Early assignments in the course are meant to bring you up to speed; however, most students in the class will have to rely on their patience and curiosity to transfer these new skills to complete assignments. Prof. Kenaley promises you that scientific computing with free, but powerful software (e.g. R, imageJ, etc.) will be utterly liberating and rewarding!</p>
 </div>
 <div id="github-account" class="section level2">
 <h2>GitHub Account</h2>
-<p>Why a <a href="https://github.com/join">GitHub account</a>? GitHub is a handy place for those developing code and offers free hosting of websites produced and maintained from a desktop (that’s how this site was constructed). Our site is under the ``class" repository (i.e., a space where code resides) within the organization <a href="https://github.com/bcbiomech">bcbiomech</a> on GitHub. To access our organization and use the bcbiomech discussion page, you’ll need an account. Once you have an account, I’ll be able to add you to our <a href="https://github.com/bcbiomech">bcbiomech</a> organization and the class-wide team for discussion purposes.</p>
+<p>Why a <a href="https://github.com/join">GitHub account</a>? GitHub is a handy place for those developing code and offers free hosting of websites produced and maintained from a desktop (that’s how this site was constructed). Our site is under the ``class” repository (i.e., a space where code resides) within the organization <a href="https://github.com/bcbiomech">bcbiomech</a> on GitHub. To access our organization and use the bcbiomech discussion page, you’ll need an account. Once you have an account, I’ll be able to add you to our <a href="https://github.com/bcbiomech">bcbiomech</a> organization and the class-wide team for discussion purposes.</p>
 </div>
 </div>
 <div id="canvas-support" class="section level1">
@@ -488,7 +453,7 @@ div.tocify {
 </div>
 </div>
 <p><br></p>
-<p>A course of this scope, focusing on so much that is technical, would be administered best in small groups, meeting mostly face-to-face. However, in the context of a global pandemic that has surged again in our corner of the world, I can’t in good conscience summon us all to meet in cramped quarters for our lab exercises. Thus, for each lab meeting, we’ll first convene over Zoom and, after an introduction to the MP topic, students will move on to perform experiments in pre-assigned teams independently. I will be available for additional discussion and problem solving over Zoom and face-to-face during arranged office hours.</p>
+<!-- A course of this scope, focusing on so much that is technical, would be administered best in small groups, meeting mostly face-to-face. However, in the context of a global pandemic that has surged again in our corner of the world, I can't in good conscience summon us all to meet in cramped quarters for our lab exercises. Thus, for each lab meeting, we'll first convene over Zoom and, after an introduction to the MP topic, students will move on to perform experiments in pre-assigned teams independently. I will be available for additional discussion and problem solving over Zoom and face-to-face during arranged office hours.  -->
 </div>
 <div id="final-project" class="section level2">
 <h2>Final Project</h2>
@@ -497,11 +462,11 @@ div.tocify {
 </div>
 <div id="discussion-board" class="section level2">
 <h2>Discussion Board</h2>
-<p>Each week on Monday, you will be asked to submit at least one question and answer another on our class <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a>. This is hosted on GitHub, just like our course site and will certainly be an important resource as you work through course material. When you post a question, you should:</p>
+<p>Each week on Tuesday, you will be asked to submit at least one question and answer another on our class <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a>. This is hosted on GitHub, just like our course site, and will certainly be an important resource as you work through course material. When you post a question, you should:</p>
 <ul>
 <li>Be polite and concise.</li>
 <li>Ask a question that has not be asked before.</li>
-<li>Post the question with a short descriptive title (e.g.., ``Problems with temp sensor wiring" )</li>
+<li>Post the question with a short descriptive title (e.g.., ``Problems with temp sensor wiring” )</li>
 </ul>
 <p>When responding to a question, you should:</p>
 <ul>
@@ -663,7 +628,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -672,6 +637,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')
