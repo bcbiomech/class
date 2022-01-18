@@ -18,7 +18,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Jan 25 | [Moving on Land II: Running et al. (3)](lect/Lecture03.html) | [Kuo (2007)](KuoWalking.pdf)| Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Thursday, Jan 27 | [Moving on Land III:Scaling (4)](lect/Lecture04.html)||
+ | Thursday, Jan 27 | [Moving on Land III:Scaling (4)](lect/Lecture04.html)/[Mini-Project I: Open Sourcery](MP1.html)||
  
  
 
@@ -28,8 +28,8 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Feb 1 | [Joints, Levers, and Linkages (5)](lect/Lecture05.html) | V Ch. 20 |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Thursday, Feb 3 | [Coarse Materials I (6)](lect/Lecture06.html) / [Mini-Project II: Get Ur Gait On!](MP2.html) | V pp. 286--306 | MP1 report due 
-
+  | Wednesday, Feb 2 | | | MP1 report due 
+ | Thursday, Feb 3 | [Coarse Materials I (6)](lect/Lecture06.html) / [Mini-Project II: Get Ur Gait On!](MP2.html) | V pp. 286--306 |
  
 ## Week 4 Schedule
 
@@ -113,6 +113,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | TBD | Final Project | | FP presentation due* 
+ | Friday, May 13 | Final Project | | FP Repor due* 
+ | TBD | Final Project | | FP presentention due* 
  
  *FP presentations can be uploaded to [this directory](https://drive.google.com/drive/folders/1-2pw3pWQg-F8UPaWoTlbg3FgrQ6jnnbZ).

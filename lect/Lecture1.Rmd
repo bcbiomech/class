@@ -3,7 +3,7 @@ title: "Welcome and Introduction"
 subtitle: "Setting the Stage"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/2/1"
+date: "2022/18/1"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -50,9 +50,9 @@ class: inverse, top
 
 bcbiomech.github.io/class/
 
-Monday, Wednesday 1:00-1:50 for synchronous lectures
+Tuesday & most Thursdays. 10:30-11:45 for in-person lectures
 
-Friday 1:00 or 2:00 (over zoom) for launch of asynchronous lab activities (i.e, Mini-Projects) 
+Some Thursdays (over zoom/in-person, TBD) for launch of asynchronous lab activities (i.e, Mini-Projects) 
 ]
 
 .pull-right[
@@ -178,7 +178,7 @@ class:  top
 ## Lab logistics
 
 - Huddle and scatter model
-- Meet over Zoom at 1:00 or 2:00 (synchronous)
+- Meet in person over Zoom at 10:30 (synchronous)
 - Scatter with team over 2-3 weeks to complete Mini-Project
 - Check out material from Higgins 535
 
@@ -188,10 +188,10 @@ class:  top
 
 ## Mini-projects
 
-- MP descriptions release before Friday meetings
+- MP descriptions release before Thursday meetings
 - 2-3 weeks to finish MP
 - Reports due on Wednesdays
-- Team-based
+- Team-based, new team each MP
 - Report written in R Markdown (MP1)
 
 
@@ -209,11 +209,11 @@ class:  top
 
 ## Overview
 
-- Team-based
+- Team-based (new team, too)
 - Topic of your choice (build off of MPs)
 - Same report guidelines as MPs (.Rmd, format, etc.)
 - Additional presentation (10 min)
-- Record presentation and deliver to class
+- Record presentation and deliver to class (at a PARTAY!!!!)
 
 ]
 
@@ -223,8 +223,8 @@ class:  top
 
 - ~1 month to develop, execute
 - Start mid April
-- Presentation due 1 week before report (May 5)
-- Report due on scheduled final date (May 12)
+- Report due a few days before presentation (May 13)
+- Presentation submitted and given after report (May 13, 14, 15)
 
 
 ]
@@ -336,7 +336,7 @@ knitr::include_graphics("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ
 
 
 --
-- 1600 N
+- 480 N
 
 
 ---
@@ -358,7 +358,7 @@ knitr::include_graphics("mantis2.png")
 Establish a function of the linear form:
 
 $$F(m)=a+Lb$$
-with coefficients from Blanco and Patek (2014) where $a=-4.4$ and $2.1$. So the functions takes the form
+with coefficients from Blanco and Patek (2014) where $a=-4.4$ and $L=2.1$. So the functions takes the form
 
 ```{r}
 force <-function(x){-4.4+x*2.2}  
@@ -397,7 +397,7 @@ class: top
 
 Back to our question?
 
-Is this way too much?
+Is this way too much? Too little?
 
 ```{r,dev='svg',fig.show="hold", out.width="50%",out.height="20%",fig.height=6}
 qplot(L,merus.pred)+theme_classic(30)+ylab("Force (N)")+geom_point(aes(x=15,y=480),col="red")
