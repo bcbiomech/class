@@ -63,7 +63,7 @@ First, we should establish a directory (i.e., folder) where we intend to store t
 
 This has several important implications. First, this means that, unlike a simple script, you never have to tell R where to look for files or where to store them (i.e., set the working directory). This also means if you want your code in a Markdown to analyze data stored as a text file, you should make sure that this file is in the same directory as the Markdown document. 
 
-For this project, we'll be working with jumping data from Prof. Kenaley's two children. You can download these files by clicking [here](data/OZ_jumping.zip). This will be downloaded as a ".zip" compressed directory. Unzip it and then copy the files to your "MP1" directory.
+For this project, we'll be working with jumping data from Prof. Kenaley's two children. You can download these files by clicking [here](data/OZ_jumping.zip). This will be downloaded as a ".zip" compressed directory. Unzip it and then copy the files to your "MP1" directory. 
 
 
 <br>
@@ -545,7 +545,7 @@ The markdown must contain the following:
     + lines and points that vary in color according to who's doing the jumping (again, `aes(col=who)`, anyone?)
     + a brief paragraph summarizing the differences and any inferences of why they are
     
-The `knitr` markdown file and all the associated files (see below) are due on Thursday, February 3rd by 11:59 PM. Please email them to Prof. Kenaley.
+The `knitr` markdown file and all the associated files (see below) are due on Wednesday, February 3rd by 11:59 PM. Please email them to Prof. Kenaley.
   
   
   <br>

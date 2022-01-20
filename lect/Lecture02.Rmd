@@ -3,7 +3,7 @@ title: "Lecture 2"
 subtitle: "Terrestrial Locomotion I"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/2/3"
+date: "2021/1/20"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -47,7 +47,7 @@ Today we'll ....
 
 class: top
 
-# Some ground rules and metrics
+# But first, some ground rules and metrics
 
 
 .pull-left[
@@ -105,7 +105,7 @@ class: top
 ## Some examples
 
 .center[
-![](https://science.sciencemag.org/content/sci/288/5463/100/F3.large.jpg)
+![](https://www.science.org/cms/10.1126/science.288.5463.100/asset/c515a8df-1d40-4ffc-a08c-a89969f4e991/assets/graphic/se1308425003.jpeg)
 ]
 
 
@@ -428,7 +428,7 @@ knitr::include_graphics("https://anatomypubs.onlinelibrary.wiley.com/cms/asset/9
 
 ---
 
-# For lab on Friday
+# For MP launching MP1 today
 
 .pull-left[
 ```{r,echo=FALSE,out.width=100}
