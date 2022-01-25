@@ -151,7 +151,7 @@ From this quick exploration of how R works in R Studio, we should note few impor
 
 ## Working with R in Markdown
 
-Although we've just learned how commands are passed through R in R Studio by using a script file, we won't use these simple files in the class. They contain only code. While they may produce important things like plots and the results of calculations, they're not very easy to read and don't provide any narrative. As an alternative to writing code in one place and about the results of the code in another, we'll combine our code and narratives in one document: an R Markdown (or .Rmd file). That is, you can use a single R Markdown file to both save and execute code and generate high quality reports that can be shared with an audience.
+Although we've just learned how commands are passed through R in R Studio by using a script file, we won't use these simple files in the class. They contain only code. While they may produce important things like plots and the results of calculations, they're not very easy to read and don't provide any narrative beyond ugly commenting (text preceded by `#`). As an alternative to writing code in one place and about the results of the code in another, we'll combine our code and narratives in one document: an R Markdown (or .Rmd file). That is, you can use a single R Markdown file to both save and execute code and generate high quality reports that can be shared with an audience.
  
 So let's begin our Markdown odyssey with opening a new .Rmd file with "File->New->R Markdown".
 

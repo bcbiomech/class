@@ -12,6 +12,8 @@ output:
       highlightLines: true
       countIncrementalSlides: false
 ---
+
+
 class: inverse, top
 # Terrestrial locomotion
 
@@ -34,12 +36,41 @@ Today we'll ....
 
 - Postural considerations
 
+- Some work on MP1
+
 ]
 
 
 .pull-right[
 ![](https://www.acs.psu.edu/drussell/Demos/SHO/damp.gif)
 ]
+
+---
+
+class: top
+
+# Some administrata
+
+
+.pull-left[
+
+- Fixed site links to discussion: https://github.com/orgs/bcbiomech/teams/biol5380_s22
+
+- Must accept team invite from me (BIOL5380_S22) to login
+
+- Of course, this requires a github account
+
+- Post to discussion board by EOD today
+
+
+
+
+
+]
+
+
+
+
 ---
 
 class: top
@@ -104,40 +135,6 @@ $$y_{com}=\frac{1}{m}\int_{0}^{m}ydm$$
 
 ![](https://i1.wp.com/gmsciencein.com/wp-content/uploads/2018/02/fosbury_flop_2.jpg?w=797&ssl=1)
 
-.footnote[
-**Upshot:** COM is a function of shape
-]
-]
-
----
-
-class: top
-
-# Jumping
-
-
-.pull-left[
-
-- Animals move by exerting forces on a medium of substrate (eg., ground, water, plants, air)
-
-$$\Sigma F=m\cdot a$$
-
-Where on the body to we measure acceleration?
-
-- if we consider the body as an infinite number of particles
-
-$$x_{com}=\frac{1}{m}\int_{0}^{m}xdm$$
-$$y_{com}=\frac{1}{m}\int_{0}^{m}ydm$$
-
-
-]
-
-
-
-.pull-right[
-
-
-![](https://opsveda.com/wp-content/uploads/2019/07/Fosbury-Flop-OpsVeda-1.png)
 .footnote[
 **Upshot:** COM is a function of shape
 ]
