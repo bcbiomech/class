@@ -3,7 +3,7 @@ title: "Lecture 4"
 subtitle: "Terrestrial Locomotion III"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/2/10"
+date: "2022/1/27"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -103,8 +103,7 @@ class: top
 # Scaling in locomotion
 
 .pull-left[
-- Capacity of a bone to support/generate force decreases relative to the increase in mass or
-weight of the animal.
+- Capacity of a bone to support/generate force decreases relative to the increase in mass or weight of the animal.
 
 - Under geometric similarity (isometry), shape remains constant so that expected increase in withstanding increasing  skeletal stress is given by:
 
@@ -124,7 +123,7 @@ knitr::include_graphics("img/bonestress.png")
 ```
 
 
-- But $M^{0.28}$, so some allometry in dimensions
+-  $\frac{F}{A} \propto M^{0.28}$, so some allometry in dimensions
 
 ]
 
