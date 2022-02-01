@@ -3,7 +3,7 @@ title: "Lecture 5"
 subtitle: "Joints, Levers, and Linkages"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/2/15"
+date: "2021/2/1"
 output:
   xaringan::moon_reader:
     lib_dir: libs
