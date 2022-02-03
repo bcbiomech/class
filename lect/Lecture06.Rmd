@@ -3,7 +3,7 @@ title: "Lecture6"
 subtitle: "Coarse Materials I"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/2/17"
+date: "2021/2/3"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -33,6 +33,8 @@ Today we'll ....
 
 - Define stiffness and other material properties
 
+- Start MP2
+
 ]
 
 
@@ -51,16 +53,17 @@ class: top
 
 
 
-```{r,echo=FALSE,out.width=250}
+```{r,echo=FALSE,out.width=350}
 #stride length
-knitr::include_graphics("https://jeb.biologists.org/content/jexbio/208/9/1665/F2.large.jpg")
+knitr::include_graphics("https://d3i71xaburhd42.cloudfront.net/9f2b00f5fc3474ba3ef190c9571a9d934cb561bb/5-Figure3-1.png")
 
 ```
- ]
  
+
+
  .footnote[
- $$EMA=r/R$$
- ]
+ $$EMA=r/R$$ HIGH
+ ]]
  
  
 ---

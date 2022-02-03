@@ -43,7 +43,8 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Feb 15 | [Coarse Structures (9)](lect/Lecture09.html)  |  V Ch. 19     |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Thursday, Feb 17 | Adhesion (10) /  [Mini-Project III: Stretch the Pig, Bend the Twig](MP3.html)|  V pp. 425-436        | MP2 report due 
+   | Wednesday, Feb 16 | | | MP2 report due 
+ | Thursday, Feb 17 | Adhesion (10) /  [Mini-Project III: Stretch the Pig, Bend the Twig](MP3.html)|  V pp. 425-436        | 
 
  
 ## Week 6 Schedule

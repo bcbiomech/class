@@ -50,7 +50,7 @@ $$
  
 where $v$ and any walking velocity is less or equal to than $v_{max}$.
 
-As has become clear in our class discussions and demonstrations, the leg length is the radius and any increase in this length will result in a greater velocity. In addition, any biomechanical mechanism that increases the leg length during otherwise lower phases of the arc (e.g., pelvic tilt, that is lifting the plant-leg side of the pelvis, \autoref{fig:tilt}) will keep the COM higher and increase the velocity.
+As has become clear in our class discussions and demonstrations, the leg length is the radius and any increase in this length will result in a greater velocity. In addition, any biomechanical mechanism that increases the leg length during otherwise lower phases of the arc (e.g., lateral pelvic tilt, that is lifting the plant-leg side of the pelvis, \autoref{fig:tilt}) will keep the COM higher and increase the velocity.
 
 
 ```{r tilt,echo=F,fig.cap=c("A walker tilting its pelvis"),fig.align = 'center'}
@@ -71,14 +71,16 @@ We'll be working with video data captured with our phones. The file types associ
 
 
 ### Max out your pendulum
+
 For this part of the MP you will compare a predicted maximum walking velocity ($v_{max}$) to observed maximum walking speed. First things first: mark off a distance of 5 meters on level ground (e.g., in the hall, atrium, etc.).
 
 With your knees locked and your hands by your side and not swinging, walk on your heels as fast as you can across the the marked distance. Concentrate on not using any movement in your pelvis or knees. This may require some practice. You may, if you're careful, have a lab partner push you gently to get you going at the start of the 5-m field. With a phone or watch, record the time it takes to traverse the 5-m distance. 
 
-Using these data, compute the velocity (in m s$^{-1}$) and compare this to your calculated $v_{max}$. Please enter these data [**HERE**](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). They can be accessed here for later analysis as well.
+Using these data, compute the velocity (in m s$^{-1}$) and compare this to your calculated $v_{max}$ based on theory. Please enter these data [**HERE**](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). They can be accessed here for later analysis as well.
 
 ### Full-tilt walking
-The radius of your rotating mass can be effectively increased by subtle changes in posture, including active alterations in pelvic position. Pelvic tilt is one such mechanism and the angle of tilt can be measured using ImageJ. While pelvic tilt results in a lengthening of the plant-leg, there are other postural consequences. 
+
+The radius of your rotating mass can be effectively increased by subtle changes in posture, including active alterations in pelvic position. Lateral pelvic tilt is one such mechanism and the angle of tilt can be measured using ImageJ. While pelvic tilt results in a lengthening of the plant-leg, there are other postural consequences. 
 
 Start with donning the markers and the yardstick with markers attached at its end as in the figure below. Attach one small marker low on the front of your shin. Attach the yardstick with binder clips to your pantwaist. Be sure that the yard stick rests right above your anterior superior illiac spines (those bony points on the front of your hip). This apparatus will amplify your pelvic motions and make data recording much easier. Have a project partner record video (in normal video mode) of your walk as you walk toward her/him over the 5-m course from the earlier experiment. Be careful that the full width of the yardstick in the frame at all times. You'll perform two trials per partner: (1) walking normally at a comfortable speed and (2) walking normally but as quickly as possible. For both trials, use ImageJ and the MTrackJ plugin to track the markers on your body. From these data, you should compute two things: pelvic tilt angle (i.e. the difference between the maximum and minimum tilt angle) and the angle of the leg relative to the COM (the point below the navel.  Please also enter these data [here](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). Remember, these data can be accessed for analysis from this directory. Also notice there are data from previous iterations of the class. Be sure to use all of these in your analysis.
 
@@ -100,7 +102,7 @@ knitr::include_graphics(c("walkfront.png"))
 3. How does pelvic tilt change with increased walking speeds. What is the biomechanical basis for this?
 4. Does pelvic tilt at comfortable walking speeds vary with human size (i.e., mass and height) and sex? 
 
-As a group, please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports and any data files reference by them are due Thursday, March 4th, by 11:59 PM. They can should be sent to Prof. Kenaley in a zipped directory over email.
+As a group, please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports and any data files reference by them are due Wedneday, February 16th, by 11:59 PM. They can should be sent to Prof. Kenaley in a zipped directory over email.
 
 
 ## A kick start
