@@ -3,7 +3,7 @@ title: "Lecture 7"
 subtitle: "Coarse Materials II"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/2/22"
+date: "2021/2/8"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -98,7 +98,7 @@ knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/2/2f/Pat
  Baluchitherium weighed about 30 Tons (27000 kg)
  
 - Could the foot bones support its weight?
-- $\theta_{max} =  \textrm{100 MPa } (10^{6}  \textrm{ Pa})$
+- $\sigma_{max} =  \textrm{100 MPa } (10^{6}  \textrm{ Pa})$
 - Diameter = 14 cm
 - $\textrm{CSA} = \textrm{151 10}^{-4} \textrm{ m}^2$
 
@@ -133,7 +133,7 @@ knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/2/2f/Pat
  Baluchitherium weighed about 30 Tons (27000 kg)
  
 - Could the foot bones support its weight?
-- $\theta_{max} =  \textrm{100 MPa } (10^{6}  \textrm{ Pa})$
+- $\sigma_{max} =  \textrm{100 MPa } (10^{6}  \textrm{ Pa})$
 - Diameter = 14 cm
 - $\textrm{CSA} = \textrm{151 10}^{-4} \textrm{ m}^2$
 
@@ -152,9 +152,9 @@ knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/2/2f/Pat
 
 ```
 
-$\theta_{max} \geq  \frac{9.8\cdot27000}{151\cdot10^{-4}}$
+$\sigma_{max} \geq  \frac{9.8\cdot27000}{151\cdot10^{-4}}$
 
-$\theta_{max} \geq  \textrm{= 17 MPa}$
+$\sigma_{max} \geq  \textrm{= 17 MPa}$
 ]
 
 ---
@@ -180,7 +180,51 @@ knitr::include_graphics("https://static.scientificamerican.com/blogs/cache/file/
 ```
  ]
  
+---
+class: top
 
+# Materials and the largest among us
+
+.center[
+
+### But what about these guys?
+
+```{r,echo=FALSE,out.width=700}
+#stride length
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/3/34/Longest_dinosaurs2.svg")
+
+```
+
+How agile were they?
+
+Design a comparative research project to assess this
+]
++ What level of agility would imposed larger GRFs?
++ What properties of the bones would you study?
++ What species would be part of your comparative program?
+
+ 
+ 
+---
+class: top
+
+# Materials and the largest among us
+
+
+
+.center[
+
+
+
+```{r,echo=FALSE,out.width=400}
+#stride length
+knitr::include_graphics("largebone.png")
+
+```
+
+
+
+ ]
  
 ---
 class: top
@@ -271,7 +315,7 @@ class: top
 
 ```{r,echo=FALSE,out.width=400}
 #stride length
-knitr::include_graphics("https://lh3.googleusercontent.com/proxy/524hUkGsmumnh-wrqPhfXNSEAOHU-C6WYhceUYCP4T8x1W6zwB8l-o2UN9dpSptR319fU0ICJvD1YwViC0IqlooPGz5-kRrwiCMSTaQWgLirZM0rItBibUFsE8_TLA6nw-SB-orz6hcW35PhNbQuGlDr-XmOAzBMN1wrDzOnQAjm5uem17xRS8Cf-nyNd5Q")
+knitr::include_graphics("https://www.austincc.edu/apreview/NursingPics/VascularPics/Picture8.jpg")
 
 ```
 ]
