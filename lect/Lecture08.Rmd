@@ -3,7 +3,7 @@ title: "Lecture 8"
 subtitle: "Coarse Materials III"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/2/24"
+date: "2021/2/10"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -13,7 +13,7 @@ output:
       countIncrementalSlides: false
 ---
 class: inverse, top
-# Material Properies of the Dead, Toughness, and Resilience
+# Material Properties, Failure, and the Viscous World
 
 ```{r,echo=FALSE,message=FALSE}
 library(tidyverse)
@@ -238,21 +238,44 @@ knitr::include_graphics("img/springdashpot.png")
 ---
 class: top
 
-# Can also apply a creep test
+# Methods to reveal a viscoelastic property
 
+### Creep and stress relaxtion tests
+
+.center[
+```{r,echo=FALSE,out.width=450,eval=FALSE}
+#stride length
+knitr::include_graphics("https://ars.els-cdn.com/content/image/3-s2.0-B9780128098318000052-f05-04-9780128098318.jpg")
+
+```
+
+Apply a constant stress?  
+
+Relax a stress? 
+
+What happens to deformation? Why?
+]
+
+---
+class: top
+
+# Methods to reveal a viscoelastic property
+
+### Creep and stress relaxtion tests
 
 .center[
 ```{r,echo=FALSE,out.width=450}
 #stride length
-knitr::include_graphics("https://lh3.googleusercontent.com/proxy/UoZfpZMY6rw6k5Fb3TWKvvLCLJ8qSS5kSqnJUvci6QHb28PDEuiwmsHIMmFpKfRvXbGdgzKQJ2zEfxLsnzsMM4Y6MhiZ")
+knitr::include_graphics("https://ars.els-cdn.com/content/image/3-s2.0-B9780128098318000052-f05-04-9780128098318.jpg")
 
 ```
 
-Apply a constant stress? 
+Apply a constant stress? (A) 
 
-What happens?
+Relax a stress? (B)
+
+What happens to deformation? Why?
 ]
-
 
 
 ---
