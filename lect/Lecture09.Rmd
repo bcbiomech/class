@@ -1,9 +1,9 @@
 ---
 title: "Lecture 9"
-subtitle: "Coarse Structure"
+subtitle: "Coarse Structures"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/03/01"
+date: "2021/02/15"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -180,7 +180,7 @@ $\sigma_{cr}  = kEt/D$
 
 Euler buckling
 
-$\sigma_{cr}={\frac {\pi ^{2}EI}{(KL)^{2}}}$
+$\sigma_{cr}={\frac {\pi ^{2}EI}{(kL)^{2}}}$
 
 
 (k ~ 0.5) 
@@ -217,38 +217,12 @@ knitr::include_graphics("img/buckling3.png")
 
 Euler buckling
 
-$\sigma_{cr}={\frac {\pi ^{2}EI}{(KL)^{2}}}$
+$\sigma_{cr}={\frac {\pi ^{2}EI}{(kL)^{2}}}$
 
  ]
 ]
 
----
-class: top
 
-# Shape matters
-
-
-
-EI: Flexural stiffness of a structure
-
-I = second moment of area: a measure of how shape affects stress distribution in a structure
-
-
-
-.center[
-
-```{r,echo=FALSE,out.width=450}
-#stride length
-knitr::include_graphics("https://images.slideplayer.com/20/6231365/slides/slide_6.jpg")
-
-
-``` 
-
-
-
-$g=\frac {m}{EI}$
-
- ]
 
 ---
 class: top
