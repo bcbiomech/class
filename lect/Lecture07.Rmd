@@ -199,7 +199,8 @@ How agile were they?
 
 Design a comparative research project to assess this
 ]
-+ What level of agility would imposed larger GRFs?
+
++ What level of agility would impose larger/smaller GRFs and stresses?
 + What properties of the bones would you study?
 + What species would be part of your comparative program?
 

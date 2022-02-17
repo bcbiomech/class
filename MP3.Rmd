@@ -28,7 +28,7 @@ where $F$ is the applied force, $A$ is the cross-sectional area over which that 
 
 In addition to nonlinear and anisotropic behaviors, many biomaterials are viscoelastic (as we have discussed in lecture), demonstrating a time-dependence in their response to loads. There are a host of methods available for quantifying time-dependent properties including creep tests (applying a constant force, i.e., an isotonic load) or applying a load at variable speeds. We'll take this latter approach. 
 
-Lastly, we will learned that loads are not applied in simple tensile or compressive modes. Say, in bending a beam, the load is compressive and tensile at the same time (see below). How a biomaterial responds under bending (e.g., amount of strain, load at failure, etc.) is of a particular interests to biomechanists both to understand organismal design from an evolutionary perspective and what materials may be capable or incapable of in nature. To understand this structural response to a bending load, we may borrow a bag of tricks from material engineers: the three-point bending test. 
+Lastly, we will learn that loads are not applied in simple tensile or compressive modes. Say, in bending a beam, the load is compressive and tensile at the same time (see below). How a biomaterial responds under bending (e.g., amount of strain, load at failure, etc.) is of a particular interests to biomechanists both to understand organismal design from an evolutionary perspective and what materials may be capable or incapable of in nature. To understand this structural response to a bending load, we may borrow a bag of tricks from material engineers: the three-point bending test. 
 
 <center>
 ![bendstress](img/bendstress.jpg){#bendstress}
@@ -116,7 +116,7 @@ data.frame(d=c("dry","dry","dry","wet","wet"),o=c("flat","flat","flipped","flat"
 ```
 
 
-All the data will be recorded in a text file and placed in [this directory](https://drive.google.com/drive/folders/12XoBssxGBwXlfpXBXX-Syw_mxc5aBpwN?usp=sharing).
+All the data will be recorded in a text file and placed in [this directory](https://drive.google.com/drive/folders/1gv6iks_s0OkLmbE6pR8msMHiT1AyalKT?usp=sharing).
 
 
 
@@ -168,7 +168,8 @@ knitr::kable(mat.data, caption = "Material Data")%>%kableExtra::kable_styling()
 2. What evidence do you have that an intestinal tube is anisotropic? 
 3. What do you think the function of anisotropy is in the intestine? 
 4. Did beam orientation result in different flexural stiffness?
-5. How would this be important in loads applied to a human skeletal element?
+5. Did strain rate affect wood flexural stiffness and did this response vary according to how wet the material was?
+6. How would this be important in loads applied to a human skeletal element?
 6. In your beam analysis, did you find any evidence of viscoelasticity?
 
 
