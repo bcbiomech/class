@@ -48,7 +48,7 @@ $$
 Fr =\frac {v^2}{gL}<=1 
 $$
  
-where $v$ and any walking velocity is less or equal to than $v_{max}$.
+where $v$ and any realized walking velocity is less than or equal to $v_{max}$, or $gL$.
 
 As has become clear in our class discussions and demonstrations, the leg length is the radius and any increase in this length will result in a greater velocity. In addition, any biomechanical mechanism that increases the leg length during otherwise lower phases of the arc (e.g., lateral pelvic tilt, that is lifting the plant-leg side of the pelvis, \autoref{fig:tilt}) will keep the COM higher and increase the velocity.
 
@@ -97,8 +97,8 @@ knitr::include_graphics(c("walkfront.png"))
 
 ## What to address in the report
 
-1. How did class-wide $v_{max}$ compare to actual class-wide walking speed? Were any patterns related to this revealed by calculating the Froude number?
-2. How does pendulum walking speed ($v_{max}$) vary with human size and sex? 
+1. How did class-wide $v_{max}$ (the theoretical velocity) compare to actual class-wide walking speed? Were any patterns related to this revealed by calculating the Froude number?
+2. How does actual pendulum walking speed vary with human size and sex? 
 <!-- for future . . . How does actual recorded maximum pendulum walking speed ($v_{max}$) vary with human size and sex?  -->
 3. How does pelvic tilt change with increased walking speeds. What is the biomechanical basis for this?
 4. Does pelvic tilt at comfortable walking speeds vary with human size (i.e., mass and height) and sex? 

@@ -523,7 +523,7 @@ v_{max} \leq\sqrt{ gl}
 <p><span class="math display">\[
 Fr =\frac {v^2}{gL}&lt;=1 
 \]</span></p>
-<p>where <span class="math inline">\(v\)</span> and any walking velocity is less or equal to than <span class="math inline">\(v_{max}\)</span>.</p>
+<p>where <span class="math inline">\(v\)</span> and any realized walking velocity is less than or equal to <span class="math inline">\(v_{max}\)</span>, or <span class="math inline">\(gL\)</span>.</p>
 <p>As has become clear in our class discussions and demonstrations, the leg length is the radius and any increase in this length will result in a greater velocity. In addition, any biomechanical mechanism that increases the leg length during otherwise lower phases of the arc (e.g., lateral pelvic tilt, that is lifting the plant-leg side of the pelvis, ) will keep the COM higher and increase the velocity.</p>
 <div class="figure" style="text-align: center">
 <img src="pelvictilt.jpg" alt="A walker tilting its pelvis" width="306" />
@@ -550,7 +550,7 @@ A walker tilting its pelvis
 <div id="full-tilt-walking" class="section level3">
 <h3>Full-tilt walking</h3>
 <p>The radius of your rotating mass can be effectively increased by subtle changes in posture, including active alterations in pelvic position. Lateral pelvic tilt is one such mechanism and the angle of tilt can be measured using ImageJ. While pelvic tilt results in a lengthening of the plant-leg, there are other postural consequences.</p>
-<p>Start with donning the markers and the yardstick with markers attached at its end as in the figure below. Attach one small marker low on the front of your shin. Attach the yardstick with binder clips to your pantwaist. Be sure that the yard stick rests right above your anterior superior illiac spines (those bony points on the front of your hip). This apparatus will amplify your pelvic motions and make data recording much easier. Have a project partner record video (in normal video mode) of your walk as you walk toward her/him over the 5-m course from the earlier experiment. Be careful that the full width of the yardstick in the frame at all times. You’ll perform two trials per partner: (1) walking normally at a comfortable speed and (2) walking normally but as quickly as possible. For both trials, use ImageJ and the MTrackJ plugin to track the markers on your body. From these data, you should compute two things: pelvic tilt angle (i.e. the difference between the maximum and minimum tilt angle) and the angle of the leg relative to the COM (the point below the navel. Please also enter these data <a href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing">here</a>. Remember, these data can be accessed for analysis from this directory. Also notice there are data from previous iterations of the class. Be sure to use all of these in your analysis.</p>
+<p>Start with donning the markers and the yardstick with markers attached at its end as in the figure below. Attach one small marker low on the front of your shin. Attach the yardstick with binder clips to your pantwaist. Be sure that the yard stick rests right above your anterior superior illiac spines (those bony points on the front of your hip). This apparatus will amplify your pelvic motions and make data recording much easier. Have a project partner record video (in normal video mode) of your walk as you walk toward her/him over the 5-m course from the earlier experiment. Be careful that the full width of the yardstick in the frame at all times. You’ll perform two trials per partner: (1) walking normally at a comfortable speed and (2) walking normally but as quickly as possible. For both trials, use ImageJ and the MTrackJ plugin to track the markers on your body. From these data, you should compute pelvic tilt angle (i.e. the difference between the maximum and minimum tilt angle). Please also enter these data <a href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing">here</a>. Remember, these data can be accessed for analysis from this directory. Also notice there are data from previous iterations of the class. Be sure to use all of these in your analysis.</p>
 <p>To analyze your videos in ImageJ, you’ll need to convert them to and AVI file and have the MtrackJ plugin installed (see above). Once the AVI file is stored in a directory, open it with ImageJ (File<span class="math inline">\(\rightarrow\)</span> Import <span class="math inline">\(\rightarrow\)</span> AVI . . .). Launch the MTrackJ plugin (Plugins <span class="math inline">\(\rightarrow\)</span> MtrackJ) and follow the directions from the online <a href="http://www.imagescience.org/meijering/software/mtrackj/quickstart/">manual</a>. The goal here is to track four positions and calculate your two kinematic values: pelvic tilt and leg angle.</p>
 <div class="figure" style="text-align: center">
 <img src="walkfront.png" alt="You lookin' all marked and stuff" width="258" />
@@ -563,11 +563,12 @@ You lookin’ all marked and stuff
 <div id="what-to-address-in-the-report" class="section level2">
 <h2>What to address in the report</h2>
 <ol style="list-style-type: decimal">
-<li>How did class-wide <span class="math inline">\(v_{max}\)</span> compare to actual class-wide walking speed? Were any patterns related to this revealed by calculating the Froude number?</li>
-<li>How does pendulum walking speed (<span class="math inline">\(v_{max}\)</span>) vary with human size and sex? <!-- for future . . . How does actual recorded maximum pendulum walking speed ($v_{max}$) vary with human size and sex?  --></li>
+<li>How did class-wide <span class="math inline">\(v_{max}\)</span> (the theoretical velocity) compare to actual class-wide walking speed? Were any patterns related to this revealed by calculating the Froude number?</li>
+<li>How does actual pendulum walking speed vary with human size and sex? <!-- for future . . . How does actual recorded maximum pendulum walking speed ($v_{max}$) vary with human size and sex?  --></li>
 <li>How does pelvic tilt change with increased walking speeds. What is the biomechanical basis for this?</li>
 <li>Does pelvic tilt at comfortable walking speeds vary with human size (i.e., mass and height) and sex?</li>
 </ol>
+<p><strong>NOTE:</strong> Make sure you enter your data as soon as possible <a href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing">here</a>. Be sure to use all of these data from past classes in your analysis. Notice we have non for fast tile angle from</p>
 <p>As a group, please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our <a href="mini_projects.html">Min-projects page</a>. Reports and any data files reference by them are due Wedneday, February 16th, by 11:59 PM. They can should be sent to Prof. Kenaley in a zipped directory over email.</p>
 </div>
 <div id="a-kick-start" class="section level2">
@@ -587,40 +588,40 @@ You lookin’ all marked and stuff
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  walk.dat[[i]] <span class="ot">&lt;-</span> walk.i<span class="sc">%&gt;%</span></span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">speed=</span>speed,<span class="at">subject=</span>subject)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
-<pre><code>## Rows: 150 Columns: 14</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+<pre><code>## Rows: 150 Columns: 14
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
-## lgl  (2): D2R [pixel], v [pixel/sec]</code></pre>
-<pre><code>## 
+## lgl  (2): D2R [pixel], v [pixel/sec]
+## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre><code>## Rows: 150 Columns: 14</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+## Rows: 150 Columns: 14
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
-## lgl  (2): D2R [pixel], v [pixel/sec]</code></pre>
-<pre><code>## 
+## lgl  (2): D2R [pixel], v [pixel/sec]
+## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre><code>## Rows: 150 Columns: 14</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+## Rows: 150 Columns: 14
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
-## lgl  (2): D2R [pixel], v [pixel/sec]</code></pre>
-<pre><code>## 
+## lgl  (2): D2R [pixel], v [pixel/sec]
+## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<pre><code>## Rows: 150 Columns: 14</code></pre>
-<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+## Rows: 150 Columns: 14
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
-## lgl  (2): D2R [pixel], v [pixel/sec]</code></pre>
-<pre><code>## 
+## lgl  (2): D2R [pixel], v [pixel/sec]
+## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>walk.dat <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind,walk.dat)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.dat)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>walk.dat <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind,walk.dat)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.dat)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 16
 ##      Nr   TID   PID `x [pixel]` `y [pixel]` `t [sec]` `I [val]` `Len [pixel]`
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;
@@ -634,8 +635,8 @@ You lookin’ all marked and stuff
 ## #   `D2P [pixel]` &lt;dbl&gt;, `v [pixel/sec]` &lt;lgl&gt;, `? [deg]` &lt;dbl&gt;,
 ## #   `?? [deg]` &lt;dbl&gt;, speed &lt;chr&gt;, subject &lt;chr&gt;</code></pre>
 <p>Sweet. But, notice that the column names given to the data are gobblygook with all those spaces in and “[pixel]” and “[sec]” in there. Let’s change them for easy referencing with a <code>str_remove()</code> (remove string) operation from the<code>stringr</code> package loaded with <code>tidyverse</code> . . .</p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(walk.dat) <span class="ot">&lt;-</span> <span class="fu">str_remove</span>(<span class="fu">colnames</span>(walk.dat),<span class="st">&quot; </span><span class="sc">\\</span><span class="st">[pixel</span><span class="sc">\\</span><span class="st">]| </span><span class="sc">\\</span><span class="st">[sec</span><span class="sc">\\</span><span class="st">]&quot;</span>)</span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.dat)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(walk.dat) <span class="ot">&lt;-</span> <span class="fu">str_remove</span>(<span class="fu">colnames</span>(walk.dat),<span class="st">&quot; </span><span class="sc">\\</span><span class="st">[pixel</span><span class="sc">\\</span><span class="st">]| </span><span class="sc">\\</span><span class="st">[sec</span><span class="sc">\\</span><span class="st">]&quot;</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.dat)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 16
 ##      Nr   TID   PID     x     y     t `I [val]`   Len   D2S D2R      D2P
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;  &lt;dbl&gt;
@@ -648,24 +649,24 @@ You lookin’ all marked and stuff
 ## # … with 5 more variables: `v [pixel/sec]` &lt;lgl&gt;, `? [deg]` &lt;dbl&gt;,
 ## #   `?? [deg]` &lt;dbl&gt;, speed &lt;chr&gt;, subject &lt;chr&gt;</code></pre>
 <p>That’s better. Now, let’s pare down the data to those columns we actually care about, “x” and “y,” the x and y positions of the points, “subject,” and “speed.” Also notice that the MTrackJ file contains a “TID” and “PID” column identifying to what track (which dot in the image) and point (the series of positions) to which the x and y positions belong. So let’s keep these columns, too, then dump the others, and give it a quick plot with ggplot.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat<span class="sc">%&gt;%</span></span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(TID,PID,x,y,subject,speed)</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x,y,<span class="at">col=</span>speed))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">facet_grid</span>(subject<span class="sc">~</span>.)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat<span class="sc">%&gt;%</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(TID,PID,x,y,subject,speed)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>walk.dat2<span class="sc">%&gt;%</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x,y,<span class="at">col=</span>speed))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">facet_grid</span>(subject<span class="sc">~</span>.)</span></code></pre></div>
 <p><img src="MP2_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
 <p>Notice that our leg point (TID=3) is higher than the hip. That’s odd! Well, not really. Convention holds that pixel 0,0 is the upper left of the image, so that means the coordinates are flipped vertically in our images. So let’s flip them back by finding the absolution value each y value minus the maximum y position (the image height).</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(speed,subject)<span class="sc">%&gt;%</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y=</span><span class="fu">abs</span>(y<span class="sc">-</span><span class="fu">max</span>(y)))</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x,y,<span class="at">col=</span>speed))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">facet_grid</span>(subject<span class="sc">~</span>.)<span class="co">#grid it with columns = to speed</span></span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(speed,subject)<span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y=</span><span class="fu">abs</span>(y<span class="sc">-</span><span class="fu">max</span>(y)))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>walk.dat2<span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x,y,<span class="at">col=</span>speed))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">facet_grid</span>(subject<span class="sc">~</span>.)<span class="co">#grid it with columns = to speed</span></span></code></pre></div>
 <p><img src="MP2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>OK, all well ’n good. But does it make sense to identify our tracked points by “TID,” that is 1, 2, and 3? Wouldn’t it be better to change this to some character description like “hipR,” “hipC,” and “legR,” for right hip, center of the hip, and right leg, respectively. Let’s do it by changing TID to these strings using a series of mutate operations that replace each TID value. (if you do this, confirm the order is correct!)</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">1</span>, <span class="st">&quot;hipR&quot;</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">2</span>, <span class="st">&quot;hipC&quot;</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">3</span>, <span class="st">&quot;legR&quot;</span>))</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.dat2)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">1</span>, <span class="st">&quot;hipR&quot;</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">2</span>, <span class="st">&quot;hipC&quot;</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">3</span>, <span class="st">&quot;legR&quot;</span>))</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.dat2)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 6
 ## # Groups:   speed, subject [1]
 ##   TID     PID     x     y subject speed
@@ -688,9 +689,9 @@ A look at the coordinates of the amplified pelvic positions
 <p>The goal here is to calculate <span class="math inline">\(\theta\)</span> over every frame. But we have a problem. Notice that the data, as presented above, don’t have the x and y pixels for each point aligned in unique rows according to each frame (“PID”). That is, the data are in a “long” format where the column “TID” (the point name) describes “PID” (the frame). Put another way, x and y pixel data are repeated in succession <em>down</em> the table for each point name. This makes calculations for frame-specific <span class="math inline">\(\theta\)</span>, which will presumably require using the x and y coordinates for three points, very cumbersome.</p>
 <p>Not to worry, however. Data wonks are accustomed to this problem and we can simply transform the table to a “wide” format. By wide, we mean that, for each frame, we’ll have sepqrate x and y columns for each point name, making frame-specific calculations based on these points easy peasy.</p>
 <p>Here’s how it’s done:</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a>walk.wide <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from=</span>TID,<span class="at">values_from=</span><span class="fu">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>))</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.wide)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>walk.wide <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from=</span>TID,<span class="at">values_from=</span><span class="fu">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>))</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.wide)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 9
 ## # Groups:   speed, subject [1]
 ##     PID subject speed x_hipR x_hipC x_legR y_hipR y_hipC y_legR

@@ -120,8 +120,6 @@ All the data will be recorded in a text file and placed in [this directory](http
 
 
 
-
-
 ## Data sheet
 
 ### Guts
@@ -174,7 +172,7 @@ knitr::kable(mat.data, caption = "Material Data")%>%kableExtra::kable_styling()
 
 
 
-You can find explicit detail concerning the organization of an MP report [here](https://bcbiomech.github.io/class/mini_projects.html).
+You can find explicit detail concerning the organization of an MP report [here](https://bcbiomech.github.io/class/mini_projects.html). This repert is due Wednesday, March 16th.
 
 ## What to pay attention to in writing the report
 
