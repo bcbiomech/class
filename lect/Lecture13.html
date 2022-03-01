@@ -4,6 +4,7 @@
     <title>Lecture 13</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Christopher Kenaley" />
+    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -15,7 +16,7 @@ class: center, middle, inverse, title-slide
 ## Fluids Around <br> An Introduction
 ### Dr. Christopher Kenaley
 ### Boston College
-### 2021/03/15
+### 2021/03/01
 
 ---
 
@@ -23,6 +24,9 @@ class: top
 # Fluids
 
 
+```
+## Warning: package 'dplyr' was built under R version 4.0.5
+```
 
 &lt;!-- Add icon library --&gt;
 &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"&gt;
@@ -48,80 +52,7 @@ Today we'll ....
 
 
 
----
-class: top
 
-# Metrics of muscle function
-
-## Generate mechanical work and power
-
-.pull-left[
-- Work = `\(F\cdot\Delta L\)` (Joules)
-- Power = Work/time (Joles/s = Watts)
-- Power = Work x Frequency (Joules/s = Watts)
-- Power = F x V (Joules/s = Watts)
-
-&lt;br&gt;
-
-
-
-]
-
-.pull-right[
-    
-&lt;br&gt;
-&lt;img src="img/musclework.png" width="250" /&gt;
-.footnote[
-
-]
-
-
-]
-
----
-class: top
-
-# Metrics of muscle function
-
-## The work loop technique
-
-.pull-left[
-- Work = `\(F\cdot\Delta L\)` (Joules)
-- Power = Work/time (Joles/s = Watts)
-- Power = Work x Frequency (Joules/s = Watts)
-- Power = F x V (Joules/s = Watts)
-
-.center[
-&lt;img src="img/muscletest.png" width="60" /&gt;
-]
-
-]
-
-.pull-right[
-    
-&lt;br&gt;
-&lt;img src="img/workloop.png" width="200" /&gt;
-.footnote[
-
-]
-
- 
-]
-
----
-class: top
-
-# Metrics of muscle function
-
-
-
-.center[
-
-&lt;img src="img/motorbreakstrut.png" width="600" /&gt;
-]
-
-
-     
 ---
 class: top
 
@@ -138,6 +69,10 @@ Fluid dynamics and mechanics. These govern . . .
 - Dispersal (particles, seeds, aerosols)
 - Transport of nutrients to and from biological surfaces (CO2, H2O, O2, etc).
 
+Lastly . . . 
+
+  - A check in . . . How are you doing?
+
 ---
 class: top
 
@@ -145,7 +80,14 @@ class: top
 
 The **continuum hypothesis** explains so much.
 
-Roughly put, fluids can be treated as continuous, even though, on a microscopic scale, they are composed of molecules. So at our scales density, temperature, momentum, energy all vary continuously and these state variations are responsible for flow. 
+Roughly put, fluids can be treated as continuous, even though, on a microscopic scale, they are composed of molecules. So at our scales:
+
+  - density
+  - temperature
+  - momentum
+  - energy 
+  
+all vary **continuously** and these state variations are responsible for flow. 
 
 
 
@@ -271,10 +213,31 @@ class: top
 
 .center[
 
-&lt;img src="https://lh3.googleusercontent.com/proxy/tr4gKAcmQNbOCu9QDoIPzl0kamqJaKXflj19NPaEDJzPcGHvnugy6NKCnhRD2MmvfvBMvLHtDa_9YOK9cWfpZmXi-r3bC4U7UVIXLLQOJr7Y6sENvHJszSC-k9AdMvM" width="400" /&gt;
+&lt;img src="https://www.heatxperts.com/img/cms/1-viscosity-and-temperature.jpg" width="400" /&gt;
 
 
 ]
+
+---
+
+class: top
+
+# What Determines Viscosity?
+
+
+- **Temperature**
+
+- Concentration of dissolved (solutes) or suspended entities
+
+- Shear rate
+
+.center[
+
+&lt;img src="https://www.engineeringtoolbox.com/docs/documents/596/Water_viscosity_C.jpg" width="400" /&gt;
+
+
+]
+
 
 ---
 class: top
@@ -318,7 +281,7 @@ class: top
 
 .center[
 
-&lt;img src="https://lh3.googleusercontent.com/proxy/iqh529TPyZn0VLdTaVJ5QWBjoOlotIr_J6E4Goy8sOebIjCTO1p5GYj0kBQOHHKPI3b9tgtK_o51wwtQofFiSCf8NyQv7fmlsGJh9LliTYE" width="700" /&gt;
+&lt;img src="https://www.researchgate.net/profile/Harald-Krenn/publication/49642863/figure/fig2/AS:268826830962692@1441104719219/A-Head-of-Eurybia-lycisca-SEM-with-coiled-proboscis-B-Proboscis-tip-with-four.png" width="700" /&gt;
 
 
 ]
@@ -345,6 +308,7 @@ class: center, middle
 # Thanks!
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

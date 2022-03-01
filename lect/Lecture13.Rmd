@@ -3,7 +3,7 @@ title: "Lecture 13"
 subtitle: "Fluids Around <br> An Introduction"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/03/15"
+date: "2021/03/01"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -45,98 +45,7 @@ Today we'll ....
 
 
 
----
-class: top
 
-# Metrics of muscle function
-
-## Generate mechanical work and power
-
-.pull-left[
-- Work = $F\cdot\Delta L$ (Joules)
-- Power = Work/time (Joles/s = Watts)
-- Power = Work x Frequency (Joules/s = Watts)
-- Power = F x V (Joules/s = Watts)
-
-<br>
-
-
-
-]
-
-.pull-right[
-    
-<br>
-```{r,echo=FALSE,out.width=250}
-#stride length
-knitr::include_graphics("img/musclework.png")
-
-```
-.footnote[
-
-]
-
-
-]
-
----
-class: top
-
-# Metrics of muscle function
-
-## The work loop technique
-
-.pull-left[
-- Work = $F\cdot\Delta L$ (Joules)
-- Power = Work/time (Joles/s = Watts)
-- Power = Work x Frequency (Joules/s = Watts)
-- Power = F x V (Joules/s = Watts)
-
-.center[
-```{r,echo=FALSE,out.width=60}
-#stride length
-
-knitr::include_graphics("img/muscletest.png")
-
-```
-]
-
-]
-
-.pull-right[
-    
-<br>
-```{r,echo=FALSE,out.width=200}
-#stride length
-knitr::include_graphics("img/workloop.png")
-
-```
-.footnote[
-
-]
-
- 
-]
-
----
-class: top
-
-# Metrics of muscle function
-
-
-
-.center[
-
-```{r,echo=FALSE,out.width=600}
-#stride length
-
-knitr::include_graphics("img/motorbreakstrut.png")
-
-```
-]
-
-
-     
 ---
 class: top
 
@@ -153,6 +62,10 @@ Fluid dynamics and mechanics. These govern . . .
 - Dispersal (particles, seeds, aerosols)
 - Transport of nutrients to and from biological surfaces (CO2, H2O, O2, etc).
 
+Lastly . . . 
+
+  - A check in . . . How are you doing?
+
 ---
 class: top
 
@@ -160,7 +73,14 @@ class: top
 
 The **continuum hypothesis** explains so much.
 
-Roughly put, fluids can be treated as continuous, even though, on a microscopic scale, they are composed of molecules. So at our scales density, temperature, momentum, energy all vary continuously and these state variations are responsible for flow. 
+Roughly put, fluids can be treated as continuous, even though, on a microscopic scale, they are composed of molecules. So at our scales:
+
+  - density
+  - temperature
+  - momentum
+  - energy 
+  
+all vary **continuously** and these state variations are responsible for flow. 
 
 
 
@@ -316,12 +236,37 @@ class: top
 
 ```{r,echo=FALSE,out.width=400}
 #stride length
-knitr::include_graphics("https://lh3.googleusercontent.com/proxy/tr4gKAcmQNbOCu9QDoIPzl0kamqJaKXflj19NPaEDJzPcGHvnugy6NKCnhRD2MmvfvBMvLHtDa_9YOK9cWfpZmXi-r3bC4U7UVIXLLQOJr7Y6sENvHJszSC-k9AdMvM")
+knitr::include_graphics("https://www.heatxperts.com/img/cms/1-viscosity-and-temperature.jpg")
 
 ```
 
 
 ]
+
+---
+
+class: top
+
+# What Determines Viscosity?
+
+
+- **Temperature**
+
+- Concentration of dissolved (solutes) or suspended entities
+
+- Shear rate
+
+.center[
+
+```{r,echo=FALSE,out.width=400}
+#stride length
+knitr::include_graphics("https://www.engineeringtoolbox.com/docs/documents/596/Water_viscosity_C.jpg")
+
+```
+
+
+]
+
 
 ---
 class: top
@@ -375,7 +320,7 @@ class: top
 
 ```{r,echo=FALSE,out.width=700}
 #stride length
-knitr::include_graphics("https://lh3.googleusercontent.com/proxy/iqh529TPyZn0VLdTaVJ5QWBjoOlotIr_J6E4Goy8sOebIjCTO1p5GYj0kBQOHHKPI3b9tgtK_o51wwtQofFiSCf8NyQv7fmlsGJh9LliTYE")
+knitr::include_graphics("https://www.researchgate.net/profile/Harald-Krenn/publication/49642863/figure/fig2/AS:268826830962692@1441104719219/A-Head-of-Eurybia-lycisca-SEM-with-coiled-proboscis-B-Proboscis-tip-with-four.png")
 
 ```
 
