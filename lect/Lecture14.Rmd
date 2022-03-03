@@ -3,7 +3,7 @@ title: "Lecture 14"
 subtitle: "Fluids Around <br> Bernoulli"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/03/17"
+date: "2021/03/03"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -15,7 +15,7 @@ output:
 class: top
 # Fluids
 
-```{r,echo=FALSE,message=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
 library(tidyverse)
 library(kableExtra)
 library(scales)
@@ -32,88 +32,15 @@ Today we'll ....
 
 - Consider Energy
 
+- MP3 questions
+
 ]
 
 
 .pull-right[
-![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu8Q1BMuE5U5YHxpAbDwTfJiD7wGFoWG2UIg&usqp=CAU)
 
-
-]
-
-
----
-class: top
-
-# What Determines Viscosity?
-
-
-- Temperature
-
-- **Concentration of dissolved (solutes) or suspended entities**
-
-- Shear rate
-
-.center[
-
-```{r,echo=FALSE,out.width=700}
-#stride length
-knitr::include_graphics("img/sugarblood.png")
-
-```
-
-
-]
-
----
-class: top
-
-# A Coevolutionary process: Why do plants produce dilute nectars?
-
-
-.center[
-
-```{r,echo=FALSE,out.width=700}
-#stride length
-knitr::include_graphics("img/butterflycoev.png")
-
-```
-
-.footnote[Tom Daniel, UW]
-
-]
-
-
----
-class: top
-
-# A coevolutionary process: Why do plants produce dilute nectars?
-
-
-.center[
-
-```{r,echo=FALSE,out.width=500}
-#stride length
-knitr::include_graphics("https://image.slidesharecdn.com/morphology1-171211090600/95/insect-mouthparts-24-638.jpg?cb=1512983248")
-
-```
-
-
-]
-
-
----
-class: top
-
-# A coevolutionary process: Why do plants produce dilute nectars?
-
-
-.center[
-
-```{r,echo=FALSE,out.width=700}
-#stride length
-knitr::include_graphics("img/butterflyenergy.png")
-
+```{r,echo=FALSE}
+knitr::include_graphics("https://www.neuromon.eu/images/vasculardiameter.jpg")
 ```
 
 ]
@@ -328,6 +255,54 @@ knitr::include_graphics("img/contenergy.png")
 
 ```
 ]
+
+---
+
+class: top
+
+# Conservation of Energy: Bernoulli
+
+.pull-left[
+
+What is the relationship between fluid motion and pressure?
+
+- Potential energy (PE=mgh)
+
+- Kinetic energy ....
+$KE =mu^2/2$
+
+- Mechanical work (W=Fd=PAd)
+
+- Along a streamline PE + KE + W = constant
+
+
+]
+
+
+.pull-right[
+
+Written another way
+ 
+```{r,echo=FALSE,out.width=650}
+#stride length
+knitr::include_graphics("http://hyperphysics.phy-astr.gsu.edu/hbase/imgmec/bernoul.gif")
+
+```
+]
+
+
+
+---
+
+class: top
+
+# Conservation of Mass and Energy
+
+Putting it all together
+
+Predict the pressure of blood along the length of the vascular system
+
+
 
 ---
 
