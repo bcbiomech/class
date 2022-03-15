@@ -4,6 +4,7 @@
     <title>Lecture 15</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Christopher Kenaley" />
+    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -15,7 +16,7 @@ class: center, middle, inverse, title-slide
 ## Re: Drag
 ### Dr. Christopher Kenaley
 ### Boston College
-### 2021/03/22
+### 2021/03/15
 
 ---
 
@@ -23,6 +24,13 @@ class: top
 # Re: Drag
 
 
+```
+## Warning: package 'tidyr' was built under R version 4.0.5
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.0.5
+```
 
 &lt;!-- Add icon library --&gt;
 &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"&gt;
@@ -31,7 +39,7 @@ class: top
 .pull-left[
 Today we'll ....
 
-- A paradox explained by viscosity
+- Explore a paradox explained by viscosity
 
 - One drag, now two
 
@@ -109,6 +117,8 @@ Along a streamline PE + KE + W = constant
 &lt;img src="img/paradox.png" width="650" /&gt;
 
 No net force?
+
+What can you say intuitively about this situation?
 ]
 
 
@@ -190,7 +200,7 @@ Along a streamline PE + KE + W = constant
 - incompressible
 - inviscid*
 
-Becomes even more apparent when we consider a shape the results in lots of flow changing velocities quickly (i.e., shape matters!).
+Becomes even more apparent when we consider a shape that results in lots of flow changing velocity quickly (i.e., shape matters!).
 
 
 ]
@@ -283,7 +293,7 @@ much as in the inviscid case.
 
 New stagnation point where the flow separates
 
-**Reynolds number:** Ratio of inertial forces to viscous forces within a fluid which is subjected to relative internal movement due to different fluid velocities.
+**Reynolds number:** Ratio of inertial (pressure) forces to viscous (shear) forces within a fluid which is subjected to relative internal movement due to different fluid velocities.
 
 
 ]
@@ -291,7 +301,7 @@ New stagnation point where the flow separates
 
 .pull-right[
 
-How much does it seprate?
+How much does it separate?
 
 `$$\small{\frac{\text{Pressure stress}}{\text{Shear stress}} \rightarrow \frac{P}{\tau} \rightarrow \frac{\rho u^2}{\mu u/L} \rightarrow Re= \frac{\rho uL}{\mu}}$$`
 
@@ -395,6 +405,7 @@ class: center, middle
 # Thanks!
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

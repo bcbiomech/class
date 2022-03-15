@@ -3,7 +3,7 @@ title: "Lecture 15"
 subtitle: "Re: Drag"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/03/22"
+date: "2021/03/15"
 output:
   xaringan::moon_reader:
     mathjax: "https://cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_HTMLorMML"
@@ -29,7 +29,7 @@ library(scales)
 .pull-left[
 Today we'll ....
 
-- A paradox explained by viscosity
+- Explore a paradox explained by viscosity
 
 - One drag, now two
 
@@ -121,6 +121,8 @@ knitr::include_graphics("img/paradox.png")
 ```
 
 No net force?
+
+What can you say intuitively about this situation?
 ]
 
 
@@ -210,7 +212,7 @@ Along a streamline PE + KE + W = constant
 - incompressible
 - inviscid*
 
-Becomes even more apparent when we consider a shape the results in lots of flow changing velocities quickly (i.e., shape matters!).
+Becomes even more apparent when we consider a shape that results in lots of flow changing velocity quickly (i.e., shape matters!).
 
 
 ]
@@ -323,7 +325,7 @@ much as in the inviscid case.
 
 New stagnation point where the flow separates
 
-**Reynolds number:** Ratio of inertial forces to viscous forces within a fluid which is subjected to relative internal movement due to different fluid velocities.
+**Reynolds number:** Ratio of inertial (pressure) forces to viscous (shear) forces within a fluid which is subjected to relative internal movement due to different fluid velocities.
 
 
 ]
@@ -331,7 +333,7 @@ New stagnation point where the flow separates
 
 .pull-right[
 
-How much does it seprate?
+How much does it separate?
 
 $$\small{\frac{\text{Pressure stress}}{\text{Shear stress}} \rightarrow \frac{P}{\tau} \rightarrow \frac{\rho u^2}{\mu u/L} \rightarrow Re= \frac{\rho uL}{\mu}}$$
 
