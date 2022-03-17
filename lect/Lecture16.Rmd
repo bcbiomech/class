@@ -112,7 +112,6 @@ class: top
 knitr::include_graphics("https://www.tec-science.com/wp-content/uploads/2021/04/en-gases-liquids-fluid-mechanics-boundary-layer-flow-separation-cylinder-turbulent.jpg")
 
 ```
-
 ]
 
 ---
