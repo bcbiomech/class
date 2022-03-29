@@ -505,10 +505,15 @@ C_L=\large \frac{F_L}{\frac{1}{2}\rho u^2 A}\hspace{12 pt},
 </div>
 <div id="part-3-flow-viz" class="section level2">
 <h2>Part 3: Flow Viz</h2>
-<p>The magnitude of induced drag of a foil generating lift is proportional to the vorticity at the wing tip. Vorticity describes the spinning motion of a fluid in some local area and is therefore a measure of it’s rotation. Vorticity is defined quantitatively as the curving of velocity vectors. Thus to calculate vorticity, one needs to quantify local patterns of volocity.</p>
-<p>Particle image velocimetry (PIV) is an optical method of flow visualization used in education[1] and research. It is used to obtain instantaneous velocity measurements and related properties in fluids.</p>
-<iframe width="560" height="315" src="https://youtu.be/JGqju-sVTZ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-</iframe>
+<p>The magnitude of induced drag of a foil generating lift is proportional to the vorticity at the wing tip. Vorticity describes the spinning motion of a fluid in some local area and is therefore a measure of it’s rotation. Vorticity is defined quantitatively as the curving of velocity vectors. Thus, to calculate vorticity, one needs to quantify local patterns of velocity.</p>
+<p>Particle image velocimetry (PIV) is an optical method of flow visualization and is often used to obtain instantaneous velocity measurements. This technique relies on visually tracking neutrally buoyant particles suspended in the fluid that follow its motion. Particles are often illuminated and fluoresced with a thin laser light field. In the animation below, small glass spheres are suspened in water as if flow past a 3D-printed wing. It’s important to note that this thin sheet of light only captures the flow field in this vary narrow plane (the horizontal-vertical or x,y plane in this case).</p>
+<center>
+<img src="img/piv.gif" style="width:70.0%" />
+</center>
+<p><br></p>
+<p>To derive velocity vectors from moving particles in a field, researchers rely on sophisticated algorithms applied in various software packages, some free and some much more than free. To qualitatively assess the vorticity at the wings’ tips, we’ll be using a free Java-base package, <a href="https://eguvep.github.io/jpiv">jPIV</a>. This is a limited GUI version of <a href="https://eguvep.github.io/jpiv/download.html">openPIV</a>, a very popular command-line interface for PIV.</p>
+<p>To used jPIV, you’ll have to <a href="https://eguvep.github.io/jpiv/download.html">download the executable files</a> first.</p>
+<p>We’ll track particles and calculate velocity and vorticity vectors using video shots of over the wing tips. For this, we’ll use a phone from one of the group members shooting in slow motion. From the vidoes <strong>pICK two good frames</strong>. You’ll need to extract the frames from the videos just as you did for MP1.</p>
 </div>
 <div id="what-to-address-in-your-report" class="section level2">
 <h2>What to address in your report</h2>

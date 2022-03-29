@@ -70,13 +70,13 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=350/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |--------  
  | Tuesday, Mar 22 | [Lift for a Living (17)](lect/Lecture17.html) | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
- | Thursday, Mar 24 | [Gliding into D = m$\cdot g\cdot$ cos($\theta$)](lect/Lecture18.html)||
+ | Thursday, Mar 24 | No Class :( ||
  
  
 ## Week 10 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Mar 29 | Powered Flights of Fancy  | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
+ | Tuesday, Mar 29 | [Gliding into D = m$\cdot g\cdot$ cos($\theta$)](lect/Lecture18.html)  | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol-5380)
  | Wednesday, Mar 31 | [Fish Swimming](lect/Lecture20.html) | [Sfakiotakis et al, 2009](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=757275&casa_token=I48yhmyTDY0AAAAA:hlx2Coqp-NuyrzmiV6VvSFZdWkf2Xd-d7DNJEMa1V-e2hJStcLdoQ_D14rlu-fanh21gf_kO&tag=1)|
  
 ## Week 11 Schedule

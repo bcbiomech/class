@@ -127,12 +127,29 @@ Turn on the swim tunnel to the preset velocity (determined by Prof. K and report
 
 ## Part 3: Flow Viz
 
-The magnitude of induced drag of a foil generating lift is proportional to the vorticity at the wing tip. Vorticity describes the spinning motion of a fluid in some local area and is therefore a measure of it's rotation. Vorticity is defined quantitatively as the curving of velocity vectors. Thus to calculate vorticity, one needs to quantify local patterns of volocity.  
+The magnitude of induced drag of a foil generating lift is proportional to the vorticity at the wing tip. Vorticity describes the spinning motion of a fluid in some local area and is therefore a measure of it's rotation. Vorticity is defined quantitatively as the curving of velocity vectors. Thus, to calculate vorticity, one needs to quantify local patterns of velocity.  
 
-Particle image velocimetry (PIV) is an optical method of flow visualization used in education[1] and research. It is used to obtain instantaneous velocity measurements and related properties in fluids.
+Particle image velocimetry (PIV) is an optical method of flow visualization and is often used to obtain instantaneous velocity measurements. This technique relies on visually tracking neutrally buoyant particles suspended in the fluid that follow its motion. Particles are often illuminated and fluoresced with a thin laser light field. In the animation below, small glass spheres are suspened in water as if flow past a 3D-printed wing. It's important to note that this thin sheet of light only captures the flow field in this vary narrow plane (the horizontal-vertical or x,y plane in this case).
 
-<iframe width="560" height="315" src="https://youtu.be/JGqju-sVTZ8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<center>
+![](img/piv.gif){ width=70% }
+</center> <br>
 
+To derive velocity vectors from moving particles in a field, researchers rely on sophisticated algorithms applied in various software packages, some free and some much more than free. To qualitatively assess the vorticity at the wings' tips, we'll be using a free Java-base package, [jPIV](https://eguvep.github.io/jpiv). This is a limited GUI version of [openPIV](https://eguvep.github.io/jpiv/download.html), a very popular command-line interface for PIV. 
+
+To use jPIV, you'll have to [download the executable files](https://eguvep.github.io/jpiv/download.html) first. 
+
+We'll track particles and calculate velocity and vorticity vectors using video shots of over the wing tips. For this, we'll use a phone from one of the group members shooting in slow motion. From the videos,  **pick two good consecutive frames** that have lots of particles over the region of interest. You'll need to extract the frames from the videos just as you did for MP1. 
+
+To begin PIV analysis, double click on the "JPIV.jar" file. This will start the program. Extracting vorticity from a pair of images includes three steps:
+
+1. Load the images. From the File menu, select "choose files". In the folder window, navigate to where your files are stored and select the two consecutive images you'd like to analyze. Then click "open". These image files will appear as a list to the right of the screen.
+
+2. Change parameter settings. Under the "PIV" folder on the left of the screen, open the "General" tab and make sure "Consecutive" is selected. Then go to the "Interrogation Window" tab and under "Between passes" make sure "Normalize median test" and "3x3 median filter" boxes are selected. Deselect the others. These filters produce more accurate vectors for velocity. In the "Preferences folder", click on the "Vector Plot" tab and change "Zoom f..." to 0.75 from 1. This will make the plots smaller and printable.
+
+3. PIV analysis. In the files list at the right of the screen, select the two images. Then, under the PIV tab at the top, select "run PIV image analysis". A file menu will appear. Pick a logical name, like "piv". Click save. This will commence PIV analysis and compute the velocity vectors. When it's finished, a file with the extension ".jvc" will appear in the file list. 
+
+4. Visualize the results. Click on the last file ending in ".jvc". This file contains the velocity vectors and when clicked upon, a plot of these vectors appears on the screen as a new window. It seems the functions to save plots is disable of bugged, so simple save this plot with a screen capture.
 
 ## What to address in your report
 

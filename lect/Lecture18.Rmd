@@ -3,7 +3,7 @@ title: "Lecture 18"
 subtitle: "Gliding into D = m x g cos(theta)"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/03/31"
+date: "2022/03/29"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -84,6 +84,7 @@ class: top
 knitr::include_graphics("https://www.scienceabc.com/wp-content/uploads/ext-www.scienceabc.com/wp-content/uploads/2016/04/Lift-2.jpg-.jpg")
 
 ```
+
 They don't have props or engines.
 
 ]
@@ -134,9 +135,9 @@ class: top
 
 Powered flight, i.e., flapping
 
-```{r,echo=FALSE,out.width=500}
+```{r,echo=FALSE,out.width=400}
 #stride length
-knitr::include_graphics("https://lh3.googleusercontent.com/proxy/xwK9xWzYp4bIWJt2wEit2jL3R29yB4Cpu7MDG7YAKgZNfno9lM8U-Z1SrOH7Yirq81Xk1QRpUqkux5Ibx428dfiBc3la48eNl_TwkwfevrHzHqJv2K5Yb0hyZyZgxFNiDtDSyTh4zOjQJS_zbt3yVomFpQ53dmc")
+knitr::include_graphics("https://www.flight-mechanic.com/wp-content/uploads/2017/07/2-35.jpg")
 
 ```
 
@@ -252,6 +253,29 @@ Why somewhere in the middle?
 
 
 
+
+
+
+---
+
+class: top
+
+# Evolution of bird flight
+
+  * Ostrom's Bug-net Theory
+
+.center[
+
+```{r,echo=FALSE,out.width=500}
+#stride length
+knitr::include_graphics("http://4.bp.blogspot.com/-4LE4fIp5TqU/T2TQpDLL9sI/AAAAAAAABKk/WjGqtjK75vk/s1600/Dino.jpg")
+
+```
+
+REJECTED
+
+]
+
 ---
 
 class: top
@@ -260,6 +284,29 @@ class: top
 
   * Top-down (arboreal - began gliding from trees)
   * Bottom-up (cursorial - running take-off)
+  * WAC (Wing-Assisted climbing) 
+  * WAIR (Wing-Assisted Incline Running) 
+
+.center[
+
+```{r,echo=FALSE,out.width=250}
+#stride length
+knitr::include_graphics("https://www.researchgate.net/profile/Sankar-Chatterjee/publication/278708131/figure/fig3/AS:267540194656302@1440797961634/Four-models-for-the-origin-of-avian-flight-a-Running-for-the-cursorial-model-a.png
+")
+
+```
+]
+
+
+---
+
+class: top
+
+# Evolution of bird flight
+
+  * Top-down (arboreal - began gliding from trees)
+  * Bottom-up (cursorial - running take-off)
+  * WAC (Wing-Assisted climbing) 
   * WAIR (Wing-Assisted Incline Running) 
 
 .center[
