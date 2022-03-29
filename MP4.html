@@ -511,21 +511,32 @@ C_L=\large \frac{F_L}{\frac{1}{2}\rho u^2 A}\hspace{12 pt},
 <img src="img/piv.gif" style="width:70.0%" />
 </center>
 <p><br></p>
-<p>To derive velocity vectors from moving particles in a field, researchers rely on sophisticated algorithms applied in various software packages, some free and some much more than free. To qualitatively assess the vorticity at the wings’ tips, we’ll be using a free Java-base package, <a href="https://eguvep.github.io/jpiv">jPIV</a>. This is a limited GUI version of <a href="https://eguvep.github.io/jpiv/download.html">openPIV</a>, a very popular command-line interface for PIV.</p>
-<p>To used jPIV, you’ll have to <a href="https://eguvep.github.io/jpiv/download.html">download the executable files</a> first.</p>
-<p>We’ll track particles and calculate velocity and vorticity vectors using video shots of over the wing tips. For this, we’ll use a phone from one of the group members shooting in slow motion. From the vidoes <strong>pICK two good frames</strong>. You’ll need to extract the frames from the videos just as you did for MP1.</p>
+<p>To derive velocity vectors from moving particles in a field, researchers rely on sophisticated algorithms applied in various software packages, some free and some much more than free. To qualitatively assess the velocity vectors at the wings’ tips, we’ll be using a free Java-base package, <a href="https://eguvep.github.io/jpiv">jPIV</a>. This is a limited GUI version of <a href="https://eguvep.github.io/jpiv/download.html">openPIV</a>, a very popular command-line interface for PIV.</p>
+<p>To use jPIV, you’ll have to <a href="https://eguvep.github.io/jpiv/download.html">download the executable files</a> first.</p>
+<p>We’ll track particles and calculate velocity and vorticity vectors using video shots of over the wing tips. For this, we’ll use a phone from one of the group members shooting in slow motion. From the videos, <strong>pick two good consecutive frames</strong> that have lots of particles over the region of interest. You’ll need to extract the frames from the videos just as you did for MP1.</p>
+<p>To begin PIV analysis, double click on the “JPIV.jar” file. This will start the program. Extracting velocity vectors from a pair of images includes three steps:</p>
+<ol style="list-style-type: decimal">
+<li><p><strong>Load the images.</strong> From the File menu, select “choose files.” In the folder window, navigate to where your files are stored and select the two consecutive images you’d like to analyze. Then click “open.” These image files will appear as a list to the right of the screen.</p></li>
+<li><p><strong>Change parameter settings.</strong> Under the “PIV” folder on the left of the screen, open the “General” tab and make sure “Consecutive” is selected. Then go to the “Interrogation Window” tab and under “Between passes” make sure “Normalize median test” and “3x3 median filter” boxes are selected. Deselect the others. These filters produce more accurate vectors for velocity. In the “Preferences folder,” click on the “Vector Plot” tab and change “Zoom f…” to 0.75 from 1. This will make the plots smaller and printable.</p></li>
+<li><p><strong>PIV analysis.</strong> In the files list at the right of the screen, select the two images. Then, under the PIV tab at the top, select “run PIV image analysis.” A file menu will appear. Pick a logical name, like “piv.” Click save. This will commence PIV analysis and compute the velocity vectors. When it’s finished, a file with the extension “.jvc” will appear in the file list.</p></li>
+<li><p><strong>Visualize the results.</strong> Click on the last file ending in “.jvc.” This file contains the velocity vectors and when clicked upon, a plot of these vectors appears on the screen as a new window. It seems the functions to save plots is disable or bugged, so simply save this plot with a screen capture.</p></li>
+</ol>
 </div>
 <div id="what-to-address-in-your-report" class="section level2">
 <h2>What to address in your report</h2>
 <p>When the avian dinosaurs split from the non-avian theropods, flight was a huge advantage. For the birds, their world became much more three dimensional, permitting the exploitation of new resources. This undoubtedly led to their evolutionary success. The origin of flight was associated with rapid evolutionary change in the shape of the bird arm as well as specializations in the body (Did you know a bird resorbs nearly all of its reproductive anatomy after breeding? Why?). These specializations can be viewed as adaptations to optimize flight aerodynamics according to a bird’s habitat.</p>
-<p>As you formulate your report and consider the evolution of the bird wing in the context of the behavioral diversity of bird flight, begin by generating <strong>an hypothesis as to how wing AR will affect the lift ratio</strong>. In addition, be sure to outline the fluid mechanic basis for your hypothesis.</p>
+<p>As you formulate your report and consider the evolution of the bird wing in the context of the behavioral diversity of bird flight, begin by generating <strong>an hypothesis as to how wing AR will affect the lift-to-drag ratio</strong>. In addition, be sure to outline the fluid mechanic basis for your hypothesis.</p>
 <p>Using data acquired from the entire class evaluate your hypothesis by considering the following:</p>
 <ol style="list-style-type: decimal">
-<li>What is the relationship between AR and lift ratio? Is there any clear pattern within the class data?</li>
-<li>Which birds belonging to the entire class’ biomimetic wings are likely to soar long periods? That is, which is most likely to glide? Which are unable to soar for long periods?</li>
+<li>What is the relationship between AR and lift-to-drag ratio? Is there any clear pattern across the class data?</li>
+<li>Which birds that inspired the biomimetic wings are likely to soar long periods? That is, which are most likely to glide? Which are unable to soar for long periods?</li>
 <li>What tradeoffs can you identify with the ability or inability to soar easily? Related to this, in what type of environment do you suppose each of the birds we’ve explored lives?</li>
 <li>Consider the lift forces generated by your biomimetic wings. What other adaptations associated with the body would optimize lift resulting from the wing?</li>
 <li>Are your results with respect to AR and lift ratio supported by previous studies? If not, consider why.</li>
+</ol>
+<p>Lastly, using the images of velocity vectors for each of your groups wings, address the following:</p>
+<ol start="6" style="list-style-type: decimal">
+<li>Were the flow patterns at the wing tip different between your two models? If so, how would these difference be implicated in difference between their lift-to-drag ratios?</li>
 </ol>
 <p>Please synthesize the results of your experiments and address these questions in a report that follows the structure outlined <a href="https://bcbiomech.github.io/class/mini_projects.html">here</a>. Reports are due Wednesday, April 6th at 11:59 pm. Your Rmd files (<strong>with all the associated data!!!</strong>) should be sent to Prof. K via email before then.</p>
 <div id="requirements-for-submission" class="section level3">
