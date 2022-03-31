@@ -167,7 +167,7 @@ Using data acquired from the entire class evaluate your hypothesis by considerin
 
 Lastly, using the images of velocity vectors for each of your groups wings, address the following:
 
-  6. Were the flow patterns at the wing tip different between your two models? If so, how would these difference be implicated in difference between their lift-to-drag ratios?
+  6. Were the flow patterns at the wing tip different between your two models? If so, how do these differences relate to their lift-to-drag ratios?
   
 
 
