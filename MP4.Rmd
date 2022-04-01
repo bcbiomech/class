@@ -91,7 +91,7 @@ To design your wing models in SketchUp, you may find it easiest to work in milli
 
 It will probably be easiest to design your wing models directly from the images. Fortunately, you can insert a locally saved image directly into the app and trace the wing. You can then use the rescaling tool in SketchUp to incopoorate the following properties:
   
-  * A 80 mm span 
+  * A 60 mm span 
   * The same chord length in proportion to the span as the wings in your chosen species
   * A wing thickness of 2.5 mm (using the extrude tool)
   
@@ -118,7 +118,7 @@ When you're finished with AR calculations, you should duplicate the wings (birds
 
 We'll place your biomimetic wings and gull model in the flume and anchor it to a "sting" (see figure below) to measure lift and drag forces. To understand how this works, you'll have to withstand a bit of engineering wonk. We'll use two binocular Wheatstone bridge load cells to simultaneously measure lift and drag (see figure below). These instruments report a force based on how much shear strain occurs when a load is placed at the end of a cantilevered beam of aluminum. Because of the design of the sting, the input arms of our cantilevered sensor systems are longer and amplify the load. But we'll ignore this and assume it doesn't bias one load cell or the other.
 
-Turn on the swim tunnel to the preset velocity (determined by Prof. K and reported at the start of the experiment). "Swim"" the bird for 30 s at this predetermine speed. Lift and drag forces will be recorded on a PC and place in [**THIS DIRECTORY**](https://drive.google.com/drive/folders/1Cl2X11emzJNgJ8EbmhzcbRzRhKnmP0-c?usp=sharing) that you can access later.
+Turn on the swim tunnel to the preset velocity (determined by Prof. K and reported at the start of the experiment). "Swim"" the bird for 30 s at this predetermine speed. Lift and drag forces will be recorded on a PC and place in [**THIS DIRECTORY**](https://drive.google.com/drive/folders/15kbeHiL2ksA9ZgsGe5Q2lpLl5cEaAsIj?usp=sharing) that you can access later.
 
 <center>
 ![](bird.setup.png){ width=50% }
