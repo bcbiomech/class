@@ -3,7 +3,7 @@ title: "Lecture 21"
 subtitle: "There Will Be Blood"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/04/12"
+date: "2022/04/05"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -15,7 +15,7 @@ output:
 class: top
 # There will be blood
 
-```{r,echo=FALSE,message=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE}
 library(tidyverse)
 library(kableExtra)
 library(scales)
@@ -47,106 +47,6 @@ Today we'll introduce
 
 
 
----
-
-
-
-class: top
-
-# Back to efficiency
-
-
-
-.center[
-
-```{r,echo=FALSE,out.width=500}
-#stride length
-knitr::include_graphics("https://images.newscientist.com/wp-content/uploads/2016/03/mg30651001.jpg?width=800")
-
-```
-
-
-
-]
-
----
-
-
-
-class: top
-
-# Back to efficiency
-
-
-
-.center[
-
-```{r,echo=FALSE,out.width=500}
-#stride length
-knitr::include_graphics("img/eeltable.png")
-
-```
-
-
-
-]
-
-
-
----
-
-class: top
-
-# Using vortices
-
-
-
-.center[
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/GtuHgl35TT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-
-]
----
-
-
-
-class: top
-
-# Using vortices
-
-
-
-.center[
-
-```{r,echo=FALSE,out.width=300}
-#stride length
-knitr::include_graphics("https://science.sciencemag.org/content/sci/302/5650/1511/F1.medium.gif")
-
-```
-
-
-
-]
----
-
-class: top
-
-# Using vortices
-
-
-
-.center[
-
-```{r,echo=FALSE,out.width=300}
-#stride length
-knitr::include_graphics("img/karmangait.png")
-
-```
-
-
-
-]
 
 
 ---
@@ -191,7 +91,7 @@ $$\Delta p={\frac{8\mu LQ}{\pi R^{4}}}={\frac{8\pi \mu LQ}{A^{2}}}$$
 
 - Blood is Newtonian , i.e., viscosity is constant
 
-- The flow is unifor, laminar and steady, not pulsatile, and the velocity at the wall is zero (no slip at the wall)
+- The flow is uniform, laminar and steady, not pulsatile, and the velocity at the wall is zero (no slip at the wall)
 
 
 ---
@@ -247,7 +147,7 @@ class: top
 
 ```{r,echo=FALSE,out.width=400}
 #stride length
-knitr::include_graphics("https://lh3.googleusercontent.com/proxy/JsiIFErKCtAKtXZSCA4qIhIUR47xjH0eJlYhJvAy4IED-u_Acihr89KOek6jNup9G4S7El6wHo-Pnx0THBkDEOBHkISm9ihTv9EahcSkYfJOvuE
+knitr::include_graphics("https://i1.wp.com/www.differencebetween.com/wp-content/uploads/2017/07/Difference-Between-Vasoconstriction-and-Vasodilation-3.png?w=800&ssl=1
 ")
 
 ```

@@ -171,13 +171,13 @@ Lastly, using the images of velocity vectors for each of your groups wings, addr
   
 
 
-Please synthesize the results of your experiments and address these questions in a report that follows the structure outlined [here](https://bcbiomech.github.io/class/mini_projects.html). Reports are due Wednesday, April 6th at 11:59 pm. Your Rmd files (**with all the associated data!!!**) should be sent to Prof. K via email before then. 
+Please synthesize the results of your experiments and address these questions in a report that follows the structure outlined [here](https://bcbiomech.github.io/class/mini_projects.html). Reports are due Friday, April 8th at 11:59 pm. Your Rmd files (**with all the associated data!!!**) should be sent to Prof. K via email before then. 
 
 ### Requirements for submission
 
-Like a few other past MPs, important analyses depend on timely submission of each team's data. So, please submit the following data by 11:59 pm on April 7th in [**THIS SPREADSHEET**](https://docs.google.com/spreadsheets/d/1nzo3Qb067LA5CPNkcXndM-C8LJg7EqNFvGgHB4qBI0k/edit?usp=sharing): 
+Like a few other past MPs, importantl analyses depend on timely submission of each team's data. So, please submit the following data by 11:59 pm on Monday 4th in [**THIS SPREADSHEET**](https://docs.google.com/spreadsheets/d/1nzo3Qb067LA5CPNkcXndM-C8LJg7EqNFvGgHB4qBI0k/edit?usp=sharing): 
 
-  * wing model file name
+  * wing file name for lift and drag data
   * span and chord length (in mm) 	
   * wetted area ($S$ in mm$^2$)
   * AR 
