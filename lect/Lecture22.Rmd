@@ -1,9 +1,9 @@
 ---
-title: "Lecture 21"
+title: "Lecture 22"
 subtitle: "Re: The tiny"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/04/14"
+date: "2022/04/7"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -53,61 +53,11 @@ Today we'll consider
 
 class: top
 
-# Flow in tubes (inside you!)
-
-Flow is pulsatile, but not everywhere.
-
-.center[
-
-```{r,echo=FALSE,out.width=400}
-#stride length
-knitr::include_graphics("https://www.researchgate.net/publication/343487724/figure/fig2/AS:921709901271042@1596764173575/Windkessel-model-a-schematic-diagram-of-the-windkessel-effect-redrawn-based-on.ppm")
-
-```
-
-
-
-]
-
-
----
-
-class: top
-
-#  Poiseuille, Bernoulli, Leplace, etc. in design
-
-.pull-left[
-
-- Number of capillaries (Fick's Law for diffusion)
-- Diameter of capillaries (Peclet number for balancing diffusion and convection)
-- Relative diameter of other vessels (Murray's law for minimizing circulatory work)
-- Relative thickness of vessel walls (Leplace's law for how size sets pressure versus wall tension)
-- Relative size of capillaries and alveoli (Diffusion coefficients of O2 in air and water.)
-- Concentration of RBCs (cell density vs. viscosity and Poiseuille pressure drop)
-
-]
-
-.pull-right[
-
-```{r,echo=FALSE,out.width=400}
-#stride length
-knitr::include_graphics("img/circsystem.jpg")
-
-```
-
-
-]
-
-
----
-
-class: top
-
 #  Life at low Re
 
 .pull-left[
 
-- disturbances are manifest over huge relative distances.
+- disturbances are manifest over huge relative distances
 (boundaries are all important)
 - inertia is negligible
 -  shape matters considerably less (no wakes)

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Lecture 21</title>
+    <title>Lecture 22</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Christopher Kenaley" />
+    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -11,11 +12,11 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Lecture 21
+# Lecture 22
 ## Re: The tiny
 ### Dr. Christopher Kenaley
 ### Boston College
-### 2021/04/14
+### 2022/04/7
 
 ---
 
@@ -23,6 +24,13 @@ class: top
 # There will be blood
 
 
+```
+## Warning: package 'tidyr' was built under R version 4.0.5
+```
+
+```
+## Warning: package 'dplyr' was built under R version 4.0.5
+```
 
 &lt;!-- Add icon library --&gt;
 &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"&gt;
@@ -56,53 +64,11 @@ Today we'll consider
 
 class: top
 
-# Flow in tubes (inside you!)
-
-Flow is pulsatile, but not everywhere.
-
-.center[
-
-&lt;img src="https://www.researchgate.net/publication/343487724/figure/fig2/AS:921709901271042@1596764173575/Windkessel-model-a-schematic-diagram-of-the-windkessel-effect-redrawn-based-on.ppm" width="400" /&gt;
-
-
-
-]
-
-
----
-
-class: top
-
-#  Poiseuille, Bernoulli, Leplace, etc. in design
-
-.pull-left[
-
-- Number of capillaries (Fick's Law for diffusion)
-- Diameter of capillaries (Peclet number for balancing diffusion and convection)
-- Relative diameter of other vessels (Murray's law for minimizing circulatory work)
-- Relative thickness of vessel walls (Leplace's law for how size sets pressure versus wall tension)
-- Relative size of capillaries and alveoli (Diffusion coefficients of O2 in air and water.)
-- Concentration of RBCs (cell density vs. viscosity and Poiseuille pressure drop)
-
-]
-
-.pull-right[
-
-&lt;img src="img/circsystem.jpg" width="400" /&gt;
-
-
-]
-
-
----
-
-class: top
-
 #  Life at low Re
 
 .pull-left[
 
-- disturbances are manifest over huge relative distances.
+- disturbances are manifest over huge relative distances
 (boundaries are all important)
 - inertia is negligible
 -  shape matters considerably less (no wakes)
@@ -242,7 +208,7 @@ p1 &lt;- qplot(t,log(Ut))+theme_classic(20)+ylab("U (m/s)")+xlab("t (s)")
 print(p1)
 ```
 
-&lt;img src="Lecture22_files/figure-html/unnamed-chunk-8-1.png" height="250" /&gt;
+&lt;img src="Lecture22_files/figure-html/unnamed-chunk-6-1.png" height="250" /&gt;
 
 
 ]
@@ -263,14 +229,14 @@ class: top
 
 .pull-left[
 
-&lt;img src="Lecture22_files/figure-html/unnamed-chunk-9-1.png" height="300" /&gt;
+&lt;img src="Lecture22_files/figure-html/unnamed-chunk-7-1.png" height="300" /&gt;
 
 ]
 
 .pull-right[
 
 
-&lt;img src="Lecture22_files/figure-html/unnamed-chunk-10-1.png" height="300" /&gt;
+&lt;img src="Lecture22_files/figure-html/unnamed-chunk-8-1.png" height="300" /&gt;
 
 dist=U x t
 
@@ -286,14 +252,14 @@ class: top
 How far will it go?
 .pull-left[
 
-&lt;img src="Lecture22_files/figure-html/unnamed-chunk-11-1.png" height="300" /&gt;
+&lt;img src="Lecture22_files/figure-html/unnamed-chunk-9-1.png" height="300" /&gt;
 
 ]
 
 .pull-right[
 
 
-&lt;img src="Lecture22_files/figure-html/unnamed-chunk-12-1.png" height="300" /&gt;
+&lt;img src="Lecture22_files/figure-html/unnamed-chunk-10-1.png" height="300" /&gt;
 
 ```
 ## [1] 4e-08
@@ -381,7 +347,7 @@ dx &lt;- cumsum(Ux*0.001)
 qplot(dx,dy)+ylab("dY (m)")+xlab("dX (m)")+theme_classic(20)
 ```
 
-&lt;img src="Lecture22_files/figure-html/unnamed-chunk-14-1.png" width="200" /&gt;
+&lt;img src="Lecture22_files/figure-html/unnamed-chunk-12-1.png" width="200" /&gt;
 
 
 ]
@@ -396,6 +362,7 @@ class: center, middle
 # Thanks!
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
