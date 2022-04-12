@@ -7,7 +7,7 @@ bibliography: BIOL5380.bib
 
 In this last Mini-project, we'll explore the role of size in fluid dynamics, especially how small things behave much differently than their large counter parts. This difference in behavior between the relatively small and large is critically important to so many aspects of biology (e.g., locomotion, material transport, etc.), but perhaps no issue related to size is more important in these times than the size of respiratory droplets and how this affects the risk of infection from SARS-CoV-2, the virus that causes CoVid. 
 
-We humans and other tetrapods spew respiratory droplets as we talk, sing, cough, and sneeze. Because respiratory droplets come from a wet pharynx, they are of course mostly water. Thus,  they tend to desiccate once outside the damp pharynx and therefore change in size once they leave your body. How much they dessiccate depends on a number of factors and the most important of these is the humidity of the environment into which they are ejected 
+We humans and other tetrapods spew respiratory droplets as we talk, sing, cough, and sneeze. Because respiratory droplets come from a wet pharynx, they are of course mostly water. Thus, they tend to desiccate once outside the damp pharynx and therefore change in size once they leave your body. How much they desiccate depends on a number of factors and the most important of these is the humidity of the environment into which they are ejected.
 
 The goals of this project are to:
 
@@ -17,7 +17,7 @@ The goals of this project are to:
 
 ## Conceptual basis
 
-Human respiratory droplets are mostly water (∼90 to 99%), with a little bit of inorganic ions, sugars, proteins, lipids, DNA, and, in our case pathogens thrown in. This means that any droplet that is not purely water can only shrink due to evaporation to a minimum size. This minimum size (the radius, $R_f$), can be estimated if we know the relative composition of the non-water content. While the exact composition depends on many factors, the typical proportion of non-water content ($\phi_o$) in a droplet is around 5%. We can follow (@netz2020mechanisms) and assume this process happens very quickly (<5 s) to predict the final size ($R_f$) of a completely dried-out droplet devoid of water with the following:
+Human respiratory droplets are mostly water (∼90 to 99%), with a little bit of inorganic ions, sugars, proteins, lipids, DNA, and, in our case pathogens thrown in. This means that any droplet that is not purely water can only shrink due to evaporation to a minimum size. This minimum size (the radius, $R_f$), can be estimated if we know the relative composition of the non-water content. While the exact composition depends on many factors, the typical proportion of non-water content ($\phi_o$) in a droplet is around 5%. We can follow @netz2020mechanisms and assume this process happens very quickly (<5 s) to predict the final size ($R_f$) of a completely dried-out droplet devoid of water with the following:
 
 $$R_f=R_o(\frac{\phi_o}{1-RH})^{1/3},$$
 where $R_o$ is the original droplet size and $RH$ is the relative humidity.
@@ -54,9 +54,9 @@ tibble(Ro=Ro)%>%
 
 
 
-The original size of a respiratory droplet ($R_o$) expelled during exhalation varies considerably and the consequences of this has stimulated a lot of speculation as to the modes of transmission for SARS-CoV-2. Whether small or large, we know that transmission is most likely to occur when someone is close to the infectious person, generally within about 6 feet. However, airborne transmission remains possible through exposure to those virus-containing respiratory effluent comprised of smaller droplets and particles that can remain suspended in the air over long distances (usually greater than 6 feet) and time (typically hours). 
+The original size of a respiratory droplet ($R_o$) expelled during exhalation varies considerably and the consequences of this stimulated a lot of speculation as to the modes of transmission for SARS-CoV-2 in the early days of the pandemic. Whether small or large, we know that transmission is most likely to occur when someone is close to the infectious person, generally within about 6 feet. However, airborne transmission remains possible through exposure to the virus-containing respiratory effluent comprised of smaller droplets and particles that can remain suspended in the air over long distances (usually greater than 6 feet) and time (typically hours). 
 
-![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10867-020-09562-5/MediaObjects/10867_2020_9562_Fig3_HTML.png?as=webp)
+![](https://media.springernature.com/lw685/springer-static/image/art%3A10.1007%2Fs10867-020-09562-5/MediaObjects/10867_2020_9562_Fig3_HTML.png)
 
 
 The reason smaller droplets remain airborne for longer periods of time relates to in an important principle in small particle fluid dynamics: Stokes Law. This principle states that the frictional force (the viscous drag force) that is exerted on spherical objects with very small Reynolds numbers in a viscous fluid is quite large compared to the gravitation force. 
@@ -72,14 +72,14 @@ $$F_d+F_b=F_g.$$
 When we solve for $v$, we get the terminal velocity, $v_t$
 
 $$v_t={\frac {2}{9}}{\frac {\left(\rho _{p}-\rho _{f}\right)}{\mu }}g\,R^{2}$$
-It's worth noting that since the excess force ($F_g$) increases as $R^3$ and Stokes' drag ($F_d$) increases as $R$, the terminal velocity increases as $R^2$ and therefore $v_t$ varies enormously with particle or droplet size.
+It's worth noting that since the excess force ($F_g$) increases at $R^3$ and Stokes' drag ($F_d$) increases as $R$, the terminal velocity increases as $R^2$ and therefore $v_t$ varies enormously with particle or droplet size.
 
 
 ## Methods
 
 Begin your modeling project by finding a range of respiratory particle size from the literature. You may choose to focus on particle size as it varies with different behaviors (coughing, singing, sneezing, talking, etc.). Or, you may choose to focus on the size variability of droplets that result from any one of these behaviors. **Pick at least 5 sizes to study.** This will establish $R_o$. Be sure to cite where you got these values! 
 
-While $R_o$ represents the size of particles that may come out of the body, consider the effect of $RH$ on altering size. To predict final size that will be subject to Stokes Law, you will have to implement the equation for $R_f$ above in your model. For this part of your model, find the typical $RH$ of various environments or conditions. For example, consider variation in $RH$ between rooms in a home, different types of buildings,  outside according season, between geographic locality, etc. Whatever your underlying factors,  **choose no fewer than four $RH$ values** to use in your model. As with $R_o$, be sure to cite where you got these $RH$ values! 
+While $R_o$ represents the size of particles that may come out of the body, consider the effect of $RH$ on altering size. To predict final size that will be subject to Stokes Law, you will have to implement the equation for $R_f$ above in your model. For this part of your model, find the typical $RH$ of various environments or conditions. For example, consider variation in $RH$ between rooms in a home, different types of buildings, outside according season, between geographic locality, etc. Whatever your underlying factors,  **choose no fewer than four $RH$ values** to use in your model. As with $R_o$, be sure to cite where you got these $RH$ values! 
 
 Lastly, find the terminal velocity and suspension time for each of your five particle size classes and $RH$ values using the Stokes-derived formula for $v_t$ above. 
 
@@ -100,7 +100,7 @@ For your model, assume the following:
 4. Include at least three informative figures that represent your model output and seek to answer these questions.
 
 
-As a group, please synthesize the results of your model predictions and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports and any data files reference by them are due Wednesday, April 28th, by 11:59 PM. They should be sent to Prof. Kenaley in a zipped directory over email or pushed to your team's GitHub repository.
+As a group, please synthesize the results of your model predictions and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports and any data files reference by them are due Wednesday, April 27th, by 11:59 PM. They should be sent to Prof. Kenaley in a zipped directory over email or pushed to your team's GitHub repository.
 
 
 ## What to pay attention to in writing the report
