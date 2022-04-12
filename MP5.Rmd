@@ -100,7 +100,7 @@ For your model, assume the following:
 4. Include at least three informative figures that represent your model output and seek to answer these questions.
 
 
-As a group, please synthesize the results of your model predictions and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports and any data files reference by them are due Wednesday, April 27th, by 11:59 PM. They should be sent to Prof. Kenaley in a zipped directory over email or pushed to your team's GitHub repository.
+As a group, please synthesize the results of your model predictions and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports and any data files reference by them are due Wednesday, April 27th, by 11:59 PM. They should be sent to Prof. Kenaley in a zipped directory over email.
 
 
 ## What to pay attention to in writing the report
