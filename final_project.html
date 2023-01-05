@@ -13,8 +13,8 @@
 
 <title>Final Project</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -48,6 +48,7 @@
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -72,6 +73,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -129,11 +133,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -297,7 +305,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -313,7 +321,7 @@ div.tocify {
   <a href="schedule.html">Schedule</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Mini-Projects
      
     <span class="caret"></span>
@@ -340,7 +348,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Final Project
      
     <span class="caret"></span>
@@ -352,10 +360,10 @@ div.tocify {
   </ul>
 </li>
 <li>
-  <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s22/discussions">Discussion Board</a>
+  <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">Discussion Board</a>
 </li>
 <li>
-  <a href="https://bostoncollege.instructure.com/courses/1627355">Course Canvas Page</a>
+  <a href="https://bostoncollege.instructure.com/courses/1640270">Course Canvas Page</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -374,40 +382,112 @@ div.tocify {
 </div>
 
 
-<p>The last part of the course is devoted to a single team-based independent project that combines the conceptual knowledge from lecture with the data analysis and report-writing skills from the 5 MPs. Your team should work with Prof. K to develop an interesting question with a reasonable scope to answer with your Final Project. There are two assignments associated with the final project: A report and short presentation.</p>
+<p>The last part of the course is devoted to a single team-based
+independent project that combines the conceptual knowledge from lecture
+with the data analysis and report-writing skills from the 5 MPs. Your
+team should work with Prof. K to develop an interesting question with a
+reasonable scope to answer with your Final Project. There are two
+assignments associated with the final project: A report and short
+presentation.</p>
 <div id="project-guidelines" class="section level1">
 <h1>Project Guidelines</h1>
 <div id="general-advice" class="section level2">
 <h2>General Advice</h2>
-<p>The most important point to consider while undertaking your FP is this: pose an informed question (i.e., an hypothesis) and address it quantitatively with the data you collect. Beyond this, you must also explain why you asked the question you have, that is, establish what about this question is relevant about to the biology and physics underlying your hypothesis. To successfully pose a manageable question and realize its importance, it is critical to choose a topic or problem that is tidy and focused. In doing so, you can address it in enough detail in your report and presentation.</p>
-<p>To understand what is important about your question and, just as importantly, establish how you’ll get your data (i.e., design your experiment), you must evaluate how similar questions have been answered and what the answers were. In other words, you must review the literature. The introductory and discussion material of your reports and presentations should include information gathered from the literature that address why the work is important and how your work contributes to new knowledge. Prof. K will work with you to review the appropriate literature.</p>
-<p>Once you have a good idea of how to approach your problem and in what context it might land, you’re now ready to do some science. Your experimental subjects need not be human, but they must permit easy data acquisition—you only have a few days to collect these. Experiments should leverage the skills and technical knowledge you obtained in class, including biomechanical modeling in R, kinematic analysis in imageJ, and data acquisition with Arduino. Of course, critical to your choice of methodologies is the instrumentation you can access: wind tunnel, three-point tester, force transducers, calipers, iPhones and all the software used with these. In choosing what instrumentation and software to use, you must understand what data you want to gather. Therein, as the Bard would say, lies the rub. Think critically about this and consider how your data will perform in answering your question. A list of resources available to you can be found <a href="5380.resources.pdf"><strong>here</strong></a>.</p>
+<p>The most important point to consider while undertaking your FP is
+this: pose an informed question (i.e., an hypothesis) and address it
+quantitatively with the data you collect. Beyond this, you must also
+explain why you asked the question you have, that is, establish what
+about this question is relevant about to the biology and physics
+underlying your hypothesis. To successfully pose a manageable question
+and realize its importance, it is critical to choose a topic or problem
+that is tidy and focused. In doing so, you can address it in enough
+detail in your report and presentation.</p>
+<p>To understand what is important about your question and, just as
+importantly, establish how you’ll get your data (i.e., design your
+experiment), you must evaluate how similar questions have been answered
+and what the answers were. In other words, you must review the
+literature. The introductory and discussion material of your reports and
+presentations should include information gathered from the literature
+that address why the work is important and how your work contributes to
+new knowledge. Prof. K will work with you to review the appropriate
+literature.</p>
+<p>Once you have a good idea of how to approach your problem and in what
+context it might land, you’re now ready to do some science. Your
+experimental subjects need not be human, but they must permit easy data
+acquisition—you only have a few days to collect these. Experiments
+should leverage the skills and technical knowledge you obtained in
+class, including biomechanical modeling in R, kinematic analysis in
+imageJ, and data acquisition with Arduino. Of course, critical to your
+choice of methodologies is the instrumentation you can access: wind
+tunnel, three-point tester, force transducers, calipers, iPhones and all
+the software used with these. In choosing what instrumentation and
+software to use, you must understand what data you want to gather.
+Therein, as the Bard would say, lies the rub. Think critically about
+this and consider how your data will perform in answering your question.
+A list of resources available to you can be found <a
+href="5380.resources.pdf"><strong>here</strong></a>.</p>
 </div>
 <div id="project-timeline" class="section level2">
 <h2>Project Timeline</h2>
-<p>We’ll break from lecture activities in late April to begin thinking about the final project. On Wednesday, April 21st, and Friday, April 23rd, we’ll hold a round table to discuss potential projects, including their scope and logistics. After this, you’ll have approximately three weeks to complete the project and submit your presentation and another week after that to complete and submit the project report. Please have a look at our <a href="schedule.html">schedule</a> page for more details.</p>
-<p>After the round tables, each team will be required to schedule at least one meeting with Prof. K to discuss relevant literature and perhaps collaborate on experiments.</p>
+<p>We’ll break from lecture activities in late April to begin thinking
+about the final project. On Wednesday, April 21st, and Friday, April
+23rd, we’ll hold a round table to discuss potential projects, including
+their scope and logistics. After this, you’ll have approximately three
+weeks to complete the project and submit your presentation and another
+week after that to complete and submit the project report. Please have a
+look at our <a href="schedule.html">schedule</a> page for more
+details.</p>
+<p>After the round tables, each team will be required to schedule at
+least one meeting with Prof. K to discuss relevant literature and
+perhaps collaborate on experiments.</p>
 </div>
 </div>
 <div id="final-project-report" class="section level1">
 <h1>Final Project Report</h1>
 <div id="report-guidelines" class="section level2">
 <h2>Report Guidelines</h2>
-<p>Just like the MPs, the Final Project report should resemble a short manuscript that models a scientific paper. By this, we mean that it should contain appropriate headings or sections framing the question, how it was answered, the results, and how these results relate to the question and similar work that has been done. Like the <a href="mini_projects.html#ReportGuidelines">MP reports</a>, these sections include:</p>
+<p>Just like the MPs, the Final Project report should resemble a short
+manuscript that models a scientific paper. By this, we mean that it
+should contain appropriate headings or sections framing the question,
+how it was answered, the results, and how these results relate to the
+question and similar work that has been done. Like the <a
+href="mini_projects.html#ReportGuidelines">MP reports</a>, these
+sections include:</p>
 <ul>
-<li>Introduction: One or two paragraphs that proclaim the motivation for the work and prepares readers for the structure and outcomes described in the report.</li>
-<li>Methods: One or two paragraphs that detail how the question was answered and how one could reproduce the experiments presented in the report.</li>
-<li>Results: One or two paragraphs that summarize the results. This section should reference at least one figure produced through your analysis in R.</li>
-<li>Discussion: Once or two paragraphs that briefly discuss the importance of the results (i.e., how they relate to the main question and the field in a broader context).</li>
-<li>Author Contributions: A paragraph that briefly state the contributions made by each team member to the project.</li>
-<li>References: A bibliography section that includes the works cited in the text.</li>
+<li>Introduction: One or two paragraphs that proclaim the motivation for
+the work and prepares readers for the structure and outcomes described
+in the report.</li>
+<li>Methods: One or two paragraphs that detail how the question was
+answered and how one could reproduce the experiments presented in the
+report.</li>
+<li>Results: One or two paragraphs that summarize the results. This
+section should reference at least one figure produced through your
+analysis in R.</li>
+<li>Discussion: Once or two paragraphs that briefly discuss the
+importance of the results (i.e., how they relate to the main question
+and the field in a broader context).</li>
+<li>Author Contributions: A paragraph that briefly state the
+contributions made by each team member to the project.</li>
+<li>References: A bibliography section that includes the works cited in
+the text.</li>
 </ul>
-<p>Please synthesize your results into a report 5 pages long using R markdown. Each group should submit on document containing the markdown code and a second document rendered in R markdown. These should be emailed to Professor Kenaley. The R markdown document should look something like a scientific paper, perhaps like one you read in your literature review. It should include the following sections and their associated content:</p>
-<p>The very prestigious Nature publishing group has released a series of articles on their “Scitable” site devoted to writing in science. You may find <a href="https://www.nature.com/scitable/ebooks/english-communication-for-scientists-14053993/118519636#bookContentViewAreaDivID">this article</a> helpful in writing your report.</p>
+<p>Please synthesize your results into a report 5 pages long using R
+markdown. Each group should submit on document containing the markdown
+code and a second document rendered in R markdown. These should be
+emailed to Professor Kenaley. The R markdown document should look
+something like a scientific paper, perhaps like one you read in your
+literature review. It should include the following sections and their
+associated content:</p>
+<p>The very prestigious Nature publishing group has released a series of
+articles on their “Scitable” site devoted to writing in science. You may
+find <a
+href="https://www.nature.com/scitable/ebooks/english-communication-for-scientists-14053993/118519636#bookContentViewAreaDivID">this
+article</a> helpful in writing your report.</p>
 </div>
 <div id="report-rubric" class="section level2">
 <h2>Report Rubric</h2>
-<p>The FP report is worth a total of 100 points toward your final grade. The following rubric describes how it will be evaluated.</p>
+<p>The FP report is worth a total of 100 points toward your final grade.
+The following rubric describes how it will be evaluated.</p>
 <table>
 <colgroup>
 <col width="25%" />
@@ -426,51 +506,94 @@ div.tocify {
 <tbody>
 <tr class="odd">
 <td>Tasks and Outputs</td>
-<td>Completes all tasks fully; submits all required outputs and materials on time, including those scheduled before the final deadline. <br><strong>(15 pts)</strong></td>
-<td>Completes a majority but not all tasks fully; final submission meets the deadline but some preliminary deadlines may have been missed <br><strong>( 8 pts)</strong></td>
-<td>Completes few required tasks or submits few required materials; most submissions miss their respective deadlines <br><strong>(3 pts)</strong></td>
+<td>Completes all tasks fully; submits all required outputs and
+materials on time, including those scheduled before the final deadline.
+<br><strong>(15 pts)</strong></td>
+<td>Completes a majority but not all tasks fully; final submission meets
+the deadline but some preliminary deadlines may have been missed
+<br><strong>( 8 pts)</strong></td>
+<td>Completes few required tasks or submits few required materials; most
+submissions miss their respective deadlines <br><strong>(3
+pts)</strong></td>
 </tr>
 <tr class="even">
 <td>Scientific Rigor</td>
-<td>The project approaches an important question in organismal biology with a reasonable scope using tools and techniques used in the course <br><strong>(15 pts)</strong></td>
-<td>The project question is well defined, but perhaps trivial, or the project scope is too narrow or ambitious <br><strong>(8 pts)</strong></td>
-<td>The question is trivial and the scope unreasonable. <br><strong>(3 pts)</strong></td>
+<td>The project approaches an important question in organismal biology
+with a reasonable scope using tools and techniques used in the course
+<br><strong>(15 pts)</strong></td>
+<td>The project question is well defined, but perhaps trivial, or the
+project scope is too narrow or ambitious <br><strong>(8
+pts)</strong></td>
+<td>The question is trivial and the scope unreasonable. <br><strong>(3
+pts)</strong></td>
 </tr>
 <tr class="odd">
 <td>Effort and Engagement</td>
-<td>The individual or team pursues help from the instructor, ask questions and/or seeks help regularly <br><strong>(15 pts)</strong></td>
-<td>Individual or team asks questions or seek help sometimes, but not regularly <br><strong>(8 pts)</strong></td>
-<td>Individual or team does not seem help <br><strong>(3 pts)</strong></td>
+<td>The individual or team pursues help from the instructor, ask
+questions and/or seeks help regularly <br><strong>(15 pts)</strong></td>
+<td>Individual or team asks questions or seek help sometimes, but not
+regularly <br><strong>(8 pts)</strong></td>
+<td>Individual or team does not seem help <br><strong>(3
+pts)</strong></td>
 </tr>
 <tr class="even">
 <td>Report Format</td>
-<td>Report contains all the appropriate headings and components (including a bibliography) <br><strong>(10 pts)</strong></td>
-<td>Report contains most of the appropriate headings and components (including a bibliography) <br><strong>(6 pts)</strong></td>
-<td>Report contains few of the appropriate headings and components <br><strong>(2 pt)</strong></td>
+<td>Report contains all the appropriate headings and components
+(including a bibliography) <br><strong>(10 pts)</strong></td>
+<td>Report contains most of the appropriate headings and components
+(including a bibliography) <br><strong>(6 pts)</strong></td>
+<td>Report contains few of the appropriate headings and components
+<br><strong>(2 pt)</strong></td>
 </tr>
 <tr class="odd">
 <td>Analysis and Code</td>
-<td>Report contains concisely written code chunks within the results or methods sections that produce creative analyses, figures, and/or tables that have clear implications for the project’s question <br><strong>(15 pts)</strong></td>
-<td>One or a few code chunks are unneeded or produce analyses, figures, and/or tables that do not have clear implication for to the project goals <br><strong>(8 pts)</strong></td>
-<td>No code chunks contained in report or all code chunks are unneeded or produce analyses, figures, and/or tables not directly related to the project goals <br><strong>(3 pts)</strong></td>
+<td>Report contains concisely written code chunks within the results or
+methods sections that produce creative analyses, figures, and/or tables
+that have clear implications for the project’s question <br><strong>(15
+pts)</strong></td>
+<td>One or a few code chunks are unneeded or produce analyses, figures,
+and/or tables that do not have clear implication for to the project
+goals <br><strong>(8 pts)</strong></td>
+<td>No code chunks contained in report or all code chunks are unneeded
+or produce analyses, figures, and/or tables not directly related to the
+project goals <br><strong>(3 pts)</strong></td>
 </tr>
 <tr class="even">
 <td>Graphics and Tables</td>
-<td>Figures, tables, and images are clear, add much to the results in analysis, and have concise but descriptive captions <br><strong>(10 pts)</strong></td>
-<td>One or a few figures, tables, and images are unneeded or inappropriate or they lack captions that are concise or descriptive <br><strong>(6 pts)</strong></td>
-<td>All figures, tables, and images are unneeded or inappropriate <br><strong>(2 pt)</strong></td>
+<td>Figures, tables, and images are clear, add much to the results in
+analysis, and have concise but descriptive captions <br><strong>(10
+pts)</strong></td>
+<td>One or a few figures, tables, and images are unneeded or
+inappropriate or they lack captions that are concise or descriptive
+<br><strong>(6 pts)</strong></td>
+<td>All figures, tables, and images are unneeded or inappropriate
+<br><strong>(2 pt)</strong></td>
 </tr>
 <tr class="odd">
 <td>Writing and Style</td>
-<td>The writing is concise, clear, avoids passive constructions, and is in the past tense; grammar is appropriate <br><strong>(10 pts)</strong></td>
-<td>The writing is unclear or rambling in spots or uses passive constructions and future tense; grammar is shaky in spots <br><strong>(6 pts)</strong></td>
-<td>The writing is unclear, and/or uses passive constructions or future tense throughout; grammar is shaky for the most part <br><strong>(2 pt)</strong></td>
+<td>The writing is concise, clear, avoids passive constructions, and is
+in the past tense; grammar is appropriate <br><strong>(10
+pts)</strong></td>
+<td>The writing is unclear or rambling in spots or uses passive
+constructions and future tense; grammar is shaky in spots <br><strong>(6
+pts)</strong></td>
+<td>The writing is unclear, and/or uses passive constructions or future
+tense throughout; grammar is shaky for the most part <br><strong>(2
+pt)</strong></td>
 </tr>
 <tr class="even">
 <td>Sources and References</td>
-<td>The report contains 3 references to primary research pieces that support statements of fact; references are contained in a <a href="mod4_proj.html#Inserting_References">BibTex bibliography and inserted with <code>@</code> tags</a> <br><strong>(10 pts)</strong></td>
-<td>Report contains fewer than 3 references; some statements of scientific findings and fact are not supported by references; some references are not contained in a BibTex bibliography or inserted with <code>@</code> tags <br><strong>(6 pts)</strong></td>
-<td>Most statements of scientific findings and fact are not supported by references; references are not contained in a BibTex bibliography nor inserted with <code>@</code> tags <br><strong>(2 pt)</strong></td>
+<td>The report contains 3 references to primary research pieces that
+support statements of fact; references are contained in a <a
+href="mod4_proj.html#Inserting_References">BibTex bibliography and
+inserted with <code>@</code> tags</a> <br><strong>(10 pts)</strong></td>
+<td>Report contains fewer than 3 references; some statements of
+scientific findings and fact are not supported by references; some
+references are not contained in a BibTex bibliography or inserted with
+<code>@</code> tags <br><strong>(6 pts)</strong></td>
+<td>Most statements of scientific findings and fact are not supported by
+references; references are not contained in a BibTex bibliography nor
+inserted with <code>@</code> tags <br><strong>(2 pt)</strong></td>
 </tr>
 <tr class="odd">
 <td></td>
@@ -483,22 +606,48 @@ div.tocify {
 </div>
 <div id="writing-advice" class="section level2">
 <h2>Writing Advice</h2>
-<p>Like with the MPs, you may find <a href="https://www.nature.com/scitable/ebooks/english-communication-for-scientists-14053993/118519636#bookContentViewAreaDivID">this article</a> helpful in writing your FP report. Likewise, advice concerning [how to avoid common writing mistakes]Common_mistakes.pdf)) may also be helpful.</p>
+<p>Like with the MPs, you may find <a
+href="https://www.nature.com/scitable/ebooks/english-communication-for-scientists-14053993/118519636#bookContentViewAreaDivID">this
+article</a> helpful in writing your FP report. Likewise, advice
+concerning [how to avoid common writing mistakes]Common_mistakes.pdf))
+may also be helpful.</p>
 </div>
 </div>
 <div id="final-project-presentation" class="section level1">
 <h1>Final Project Presentation</h1>
-<p>Each team will make a 10-minute presentation using the software of their choice. The content of the presentation should be a distillation of project paper, however, it should be visually pleasing and not just a bunch of text. More specific guidelines and advice for composing the presentation can be found at this nifty <a href="https://www.nature.com/scitable/ebooks/english-communication-for-scientists-14053993/118520778/">post on Nature’s Scitable site</a>.</p>
-<p>The presentation should include 8 minutes for sharing your project and 2 minutes for questions. This time allotment will be strictly enforced. Each member of your group must present at least one slide. Questions will be addressed to the group as a whole.</p>
+<p>Each team will make a 10-minute presentation using the software of
+their choice. The content of the presentation should be a distillation
+of project paper, however, it should be visually pleasing and not just a
+bunch of text. More specific guidelines and advice for composing the
+presentation can be found at this nifty <a
+href="https://www.nature.com/scitable/ebooks/english-communication-for-scientists-14053993/118520778/">post
+on Nature’s Scitable site</a>.</p>
+<p>The presentation should include 8 minutes for sharing your project
+and 2 minutes for questions. This time allotment will be strictly
+enforced. Each member of your group must present at least one slide.
+Questions will be addressed to the group as a whole.</p>
 <div id="presentation-guidelines" class="section level2">
 <h2>Presentation Guidelines</h2>
-<p>The presentation should be <a href="https://www.youtube.com/watch?v=lZHSAMd89JE">recorded in Zoom</a> or some other software that can record video and a screen simultaneously. Each team member should record their part of the presentation for the team to <a href="https://www.youtube.com/watch?v=WTTDR8nEncY">assemble into the final presentation</a>. Presentations should be uploaded to this directory with a file name in the following format “TEAMNAME_final_presentation.mp4”.</p>
-<p>The class will convene over Zoom at some point over finals period to watch the pre-recorded presentations and ask questions of each team.</p>
-<p>Please upload you presentation to <a href="https://drive.google.com/drive/folders/1-2pw3pWQg-F8UPaWoTlbg3FgrQ6jnnbZ">this directory</a></p>
+<p>The presentation should be <a
+href="https://www.youtube.com/watch?v=lZHSAMd89JE">recorded in Zoom</a>
+or some other software that can record video and a screen
+simultaneously. Each team member should record their part of the
+presentation for the team to <a
+href="https://www.youtube.com/watch?v=WTTDR8nEncY">assemble into the
+final presentation</a>. Presentations should be uploaded to this
+directory with a file name in the following format
+“TEAMNAME_final_presentation.mp4”.</p>
+<p>The class will convene over Zoom at some point over finals period to
+watch the pre-recorded presentations and ask questions of each team.</p>
+<p>Please upload you presentation to <a
+href="https://drive.google.com/drive/folders/1-2pw3pWQg-F8UPaWoTlbg3FgrQ6jnnbZ">this
+directory</a></p>
 </div>
 <div id="presentation-rubric" class="section level2">
 <h2>Presentation Rubric</h2>
-<p>The FP presentation is worth a total of 50 points toward your final grade. The following rubric describes how this presentation will be evaluated.</p>
+<p>The FP presentation is worth a total of 50 points toward your final
+grade. The following rubric describes how this presentation will be
+evaluated.</p>
 <table>
 <colgroup>
 <col width="25%" />
@@ -517,33 +666,59 @@ div.tocify {
 <tbody>
 <tr class="odd">
 <td>Communication and content delivery</td>
-<td>The topic was communicated effectively; language and graphics were clear, concise <br><strong>(10 pts)</strong></td>
-<td>Communication of the topic was unclear in some parts; some graphics and language may have been confusing <br><strong>(6 pts)</strong></td>
-<td>Communication of the topic was unclear throughout; most or all graphics and language were confusing <br><strong>(2 pts)</strong></td>
+<td>The topic was communicated effectively; language and graphics were
+clear, concise <br><strong>(10 pts)</strong></td>
+<td>Communication of the topic was unclear in some parts; some graphics
+and language may have been confusing <br><strong>(6 pts)</strong></td>
+<td>Communication of the topic was unclear throughout; most or all
+graphics and language were confusing <br><strong>(2 pts)</strong></td>
 </tr>
 <tr class="even">
 <td>Organization</td>
-<td>Presentation was well organized; presenters introduced the topic clearly, maintained focus throughout, and made logical and relevant conclusions <br><strong>(10 pts)</strong></td>
-<td>Presentation was unorganized in parts; presenters failed to either introduce the topic clearly, maintain focus, or make logical and relevant conclusions <br><strong>(6 pts)</strong></td>
-<td>Presentation was not organized overall; presenters failed to introduce the topic clearly, maintain focus, and make logical and relevant conclusions <br><strong>(2 pts)</strong></td>
+<td>Presentation was well organized; presenters introduced the topic
+clearly, maintained focus throughout, and made logical and relevant
+conclusions <br><strong>(10 pts)</strong></td>
+<td>Presentation was unorganized in parts; presenters failed to either
+introduce the topic clearly, maintain focus, or make logical and
+relevant conclusions <br><strong>(6 pts)</strong></td>
+<td>Presentation was not organized overall; presenters failed to
+introduce the topic clearly, maintain focus, and make logical and
+relevant conclusions <br><strong>(2 pts)</strong></td>
 </tr>
 <tr class="odd">
 <td>Content</td>
-<td>Presenters proposed a logical question, clearly explained the project’s process, its results, and what was learned; presenters combined class concepts with their results to draw new insights <br><strong>(10 pts)</strong></td>
-<td>Presenters failed to propose a logical question or clearly explain the project’s process, its results, and what was learned, or did not combine class concepts with their results to draw new insights <br><strong>(6 pts)</strong></td>
-<td>Presenters failed to propose a logical question, explain the project’s process, its results, and what was learned, and did not combine class concepts with their results to draw new insights <br><strong>(2 pts)</strong></td>
+<td>Presenters proposed a logical question, clearly explained the
+project’s process, its results, and what was learned; presenters
+combined class concepts with their results to draw new insights
+<br><strong>(10 pts)</strong></td>
+<td>Presenters failed to propose a logical question or clearly explain
+the project’s process, its results, and what was learned, or did not
+combine class concepts with their results to draw new insights
+<br><strong>(6 pts)</strong></td>
+<td>Presenters failed to propose a logical question, explain the
+project’s process, its results, and what was learned, and did not
+combine class concepts with their results to draw new insights
+<br><strong>(2 pts)</strong></td>
 </tr>
 <tr class="even">
 <td>Questions and answers</td>
-<td>Presenters demonstrated enough knowledge of the topic to respond to questions with confident, succinct, and insightful answers <br><strong>(10 pts)</strong></td>
-<td>Presenters demonstrated enough knowledge of the topic to respond to most but not all questions with confident, succinct, and insightful answers <br><strong>(6 pts)</strong></td>
-<td>Presenters failed to respond to all questions with confident, succinct, and insightful answers. <br><strong>(2 pt)</strong></td>
+<td>Presenters demonstrated enough knowledge of the topic to respond to
+questions with confident, succinct, and insightful answers
+<br><strong>(10 pts)</strong></td>
+<td>Presenters demonstrated enough knowledge of the topic to respond to
+most but not all questions with confident, succinct, and insightful
+answers <br><strong>(6 pts)</strong></td>
+<td>Presenters failed to respond to all questions with confident,
+succinct, and insightful answers. <br><strong>(2 pt)</strong></td>
 </tr>
 <tr class="odd">
 <td>Individual contribution</td>
-<td>The individual presenter’s contribution was substantial and key to an effective presentation <br><strong>(10 pts)</strong></td>
-<td>The individual presenter’s contribution was obvious but perhaps not pivotal. <br><strong>(6 pts)</strong></td>
-<td>The individual presenter’s contribution was unclear, limited, or not important <br><strong>(2 pts)</strong></td>
+<td>The individual presenter’s contribution was substantial and key to
+an effective presentation <br><strong>(10 pts)</strong></td>
+<td>The individual presenter’s contribution was obvious but perhaps not
+pivotal. <br><strong>(6 pts)</strong></td>
+<td>The individual presenter’s contribution was unclear, limited, or not
+important <br><strong>(2 pts)</strong></td>
 </tr>
 <tr class="even">
 <td></td>

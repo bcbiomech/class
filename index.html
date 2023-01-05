@@ -13,8 +13,8 @@
 
 <title>BIOL 5380</title>
 
-<script src="site_libs/header-attrs-2.11/header-attrs.js"></script>
-<script src="site_libs/jquery-3.5.1/jquery-3.5.1.min.js"></script>
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -48,6 +48,7 @@
 
 
 
+
 <link rel="stylesheet" href="style.css" type="text/css" />
 
 
@@ -72,6 +73,9 @@ button.code-folding-btn:focus {
 }
 summary {
   display: list-item;
+}
+details > summary > p:only-child {
+  display: inline;
 }
 pre code {
   padding: 0;
@@ -129,11 +133,15 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.tab('show');
-
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
   // Navbar adjustments
   var navHeight = $(".navbar").first().height() + 15;
@@ -297,7 +305,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -313,7 +321,7 @@ div.tocify {
   <a href="schedule.html">Schedule</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Mini-Projects
      
     <span class="caret"></span>
@@ -340,7 +348,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Final Project
      
     <span class="caret"></span>
@@ -352,10 +360,10 @@ div.tocify {
   </ul>
 </li>
 <li>
-  <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s22/discussions">Discussion Board</a>
+  <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">Discussion Board</a>
 </li>
 <li>
-  <a href="https://bostoncollege.instructure.com/courses/1627355">Course Canvas Page</a>
+  <a href="https://bostoncollege.instructure.com/courses/1640270">Course Canvas Page</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -376,41 +384,109 @@ div.tocify {
 
 <p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"></p>
 <p>Welcome to BIOL 5380, Topics in Biomechanics!!!</p>
-<p>In BIOL 5380, we’ll explore how physical principles constrain or contribute to biological processes, including movement, feeding, and transport. By drawing on physics and mechanical engineering, the educational goal of the course is to understand how organisms swim, fly, walk, consume resources, and respond to moving fluids as well as how their size affects the design of mechanical systems. Central to all these topics will be investigations of how biological materials (e.g., wood, muscle, bone, skin, etc.) influence the mechanical behavior of complex life forms. The course will prepare students for more in-depth explorations of other related disciplines including biomechanical engineering, ergonomics, orthopedics, kinesiology, and sports medicine.</p>
-<p>A second goal of the course is to engage in the scientific process, that is:</p>
-<p>learn <span class="math inline">\(\rightarrow\)</span> hypothesize <span class="math inline">\(\rightarrow\)</span> experiment <span class="math inline">\(\rightarrow\)</span> analyze <span class="math inline">\(\rightarrow\)</span> communicate</p>
-<p>Pursuant to this, you’ll engage in class projects that involve reading primary literature, data collection and analysis, and the presentation of this work to your peers. These projects will require patience, resilience, and most of all, curiosity (all qualities a scientist—and especially a biomechanist—will find very handy in their career!). You’ll find that one very important aspect of the course is challenging you to be proficient with technology (i.e., software, hardware, instruments, etc.). Biomechanics is a very, <strong>very</strong> technical field. Please rest assured, if you summon your curiosity, patience, and resilience, you’ll find this part of the course very rewarding.</p>
+<p>In BIOL 5380, we’ll explore how physical principles constrain or
+contribute to biological processes, including movement, feeding, and
+transport. By drawing on physics and mechanical engineering, the
+educational goal of the course is to understand how organisms swim, fly,
+walk, consume resources, and respond to moving fluids as well as how
+their size affects the design of mechanical systems. Central to all
+these topics will be investigations of how biological materials (e.g.,
+wood, muscle, bone, skin, etc.) influence the mechanical behavior of
+complex life forms. The course will prepare students for more in-depth
+explorations of other related disciplines including biomechanical
+engineering, ergonomics, orthopedics, kinesiology, and sports
+medicine.</p>
+<p>A second goal of the course is to engage in the scientific process,
+that is:</p>
+<p>learn <span class="math inline">\(\rightarrow\)</span> hypothesize
+<span class="math inline">\(\rightarrow\)</span> experiment <span
+class="math inline">\(\rightarrow\)</span> analyze <span
+class="math inline">\(\rightarrow\)</span> communicate</p>
+<p>Pursuant to this, you’ll engage in class projects that involve
+reading primary literature, data collection and analysis, and the
+presentation of this work to your peers. These projects will require
+patience, resilience, and most of all, curiosity (all qualities a
+scientist—and especially a biomechanist—will find very handy in their
+career!). You’ll find that one very important aspect of the course is
+challenging you to be proficient with technology (i.e., software,
+hardware, instruments, etc.). Biomechanics is a very,
+<strong>very</strong> technical field. Please rest assured, if you
+summon your curiosity, patience, and resilience, you’ll find this part
+of the course very rewarding.</p>
 <div id="course-deets" class="section level1">
 <h1>Course Deets</h1>
-<p><strong>Delivery:</strong> In-person lectures Tuesday and some Thursdays at 10:30 in Higgins Hall 225. Asynchronous lab projects launched on Thursdays with a synchronous Zoom meeting.</p>
-<p>For those who can’t make it to class, we’ll be at <a href="https://bccte.zoom.us/j/9533582156">Zooming</a></p>
+<p><strong>Delivery:</strong> In-person lectures Tuesday and some
+Thursdays at 10:30 in Higgins Hall 225. Asynchronous lab projects
+launched on Thursdays with a synchronous Zoom meeting.</p>
+<p>For those who can’t make it to class, we’ll be <a
+href="https://bccte.zoom.us/j/9533582156">Zooming</a></p>
 <!-- and [recording lectures](https://bostoncollege.instructure.com/courses/1615104/external_tools/109499). -->
-<p><strong>Instructor:</strong> Christopher P. Kenaley (Prof. K)</p>
-<p><strong>email:</strong> kenaley [ahhhht] bc.edu</p>
-<p><strong>office hours:</strong> By appointment, in person or over Zoom <a href="https://bccte.zoom.us/j/9533582156">at this link</a></p>
+<p><strong>Instructor:</strong> <a
+href="https://kenaleylab.com">Christopher P. Kenaley (Prof. K)</a></p>
+<p><a class="far fa-envelope fa-1x" style="color:#D3D8DD"></a> kenaley
+[ahhhht] bc.edu</p>
+<p><strong>Course TA:</strong> Trevor Cameron</p>
+<p><a class="far fa-envelope fa-1x" style="color:#D3D8DD"></a> camerotr
+[ahhhht] bc.edu</p>
+<p><strong>office hours:</strong> By appointment, in person or over Zoom
+<a href="https://bccte.zoom.us/j/9533582156">at this link</a></p>
 </div>
 <div id="course-materials" class="section level1">
 <h1>Course Materials</h1>
 <div id="readings-tools-etc." class="section level2">
 <h2>Readings, Tools, etc.</h2>
-<p><strong>Recommended Textbook:</strong> Vogel, S. 2013. <a href="https://www.amazon.com/Comparative-Biomechanics-Lifes-Physical-Second/dp/0691155666#customerReviews"><em>Comparative Biomechanics: Life’s Physical World</em>.</a> 2nd ed. Princeton University Press.</p>
-<p><strong>Additional readings and lecture files:</strong> Required readings drawn from the primary literature are available through the class schedule on the course site. They should be read before the class for which they are assigned.</p>
-<p><strong>Technical requirements:</strong> Completing your assignments will require proficiency with non-commercial software, including some amount of low-level programming. Early assignments in the course are meant to bring you up to speed; however, most students in the class will have to rely on their patience and curiosity to transfer these new skills to complete assignments. Prof. Kenaley promises you that scientific computing with free, but powerful software (e.g. R, imageJ, etc.) will be utterly liberating and rewarding!</p>
+<p><strong>Recommended Textbook:</strong> Vogel, S. 2013. <a
+href="https://www.amazon.com/Comparative-Biomechanics-Lifes-Physical-Second/dp/0691155666#customerReviews"><em>Comparative
+Biomechanics: Life’s Physical World</em>.</a> 2nd ed. Princeton
+University Press.</p>
+<p><strong>Additional readings and lecture files:</strong> Required
+readings drawn from the primary literature are available through the
+class schedule on the course site. They should be read before the class
+for which they are assigned.</p>
+<p><strong>Technical requirements:</strong> Completing your assignments
+will require proficiency with non-commercial software, including some
+amount of low-level programming. Early assignments in the course are
+meant to bring you up to speed; however, most students in the class will
+have to rely on their patience and curiosity to transfer these new
+skills to complete assignments. Prof. Kenaley promises you that
+scientific computing with free, but powerful software (e.g. R, imageJ,
+etc.) will be utterly liberating and rewarding!</p>
 </div>
 <div id="github-account" class="section level2">
 <h2>GitHub Account</h2>
-<p>Why a <a href="https://github.com/join">GitHub account</a>? GitHub is a handy place for those developing code and offers free hosting of websites produced and maintained from a desktop (that’s how this site was constructed). Our site is under the ``class” repository (i.e., a space where code resides) within the organization <a href="https://github.com/bcbiomech">bcbiomech</a> on GitHub. To access our organization and use the bcbiomech discussion page, you’ll need an account. Once you have an account, I’ll be able to add you to our <a href="https://github.com/bcbiomech">bcbiomech</a> team and the class-wide team for discussion purposes.</p>
+<p>Why a <a href="https://github.com/join">GitHub account</a>? GitHub is
+a handy place for those developing code and offers free hosting of
+websites produced and maintained from a desktop (that’s how this site
+was constructed). Our site is under the ``class” repository (i.e., a
+space where code resides) within the organization <a
+href="https://github.com/bcbiomech">bcbiomech</a> on GitHub. To access
+our organization and use the bcbiomech discussion page, you’ll need an
+account. Once you have an account, I’ll be able to add you to our <a
+href="https://github.com/bcbiomech">bcbiomech</a> team and the
+class-wide team for discussion purposes.</p>
 </div>
 </div>
 <div id="canvas-support" class="section level1">
 <h1>Canvas Support</h1>
-<p>You’ll find nearly everything you need for BIOL 5380 here at this site; however, grades will be posted to our <a href="https://bostoncollege.instructure.com/courses/1615104">class Canvas site</a>.</p>
+<p>You’ll find nearly everything you need for BIOL 5380 here at this
+site; however, grades will be posted to our <a
+href="https://bostoncollege.instructure.com/courses/1615104">class
+Canvas site</a>.</p>
 </div>
 <div id="course-goals-and-objectives" class="section level1">
 <h1>Course Goals and Objectives</h1>
 <div id="learning-goals" class="section level2">
 <h2>Learning Goals</h2>
-<p>This course is structured around the use of physical, mathematical, and engineering concepts to explore a breadth of biological processes that span all scales of biological organization, from cells to ecosystems. The learning goals for BIOL 5380 are based upon the <a href="https://live-visionandchange.pantheonsite.io/wp-content/uploads/2011/03/Revised-Vision-and-Change-Final-Report.pdf">Core Competencies</a> that were identified by the American Association for the Advancement of Science in their <a href="https://live-visionandchange.pantheonsite.io/about-vc-unpacking-a-movement-2018/">Vision and Change in Undergraduate Biology Education initiative</a>. They include the ability to:</p>
+<p>This course is structured around the use of physical, mathematical,
+and engineering concepts to explore a breadth of biological processes
+that span all scales of biological organization, from cells to
+ecosystems. The learning goals for BIOL 5380 are based upon the <a
+href="https://live-visionandchange.pantheonsite.io/wp-content/uploads/2011/03/Revised-Vision-and-Change-Final-Report.pdf">Core
+Competencies</a> that were identified by the American Association for
+the Advancement of Science in their <a
+href="https://live-visionandchange.pantheonsite.io/about-vc-unpacking-a-movement-2018/">Vision
+and Change in Undergraduate Biology Education initiative</a>. They
+include the ability to:</p>
 <ul>
 <li><p>Apply the process of science</p></li>
 <li><p>Use quantitative reasoning</p></li>
@@ -421,34 +497,70 @@ div.tocify {
 </div>
 <div id="learning-objectives" class="section level2">
 <h2>Learning Objectives</h2>
-<p>Within the context of BIOL 5380, these goals can be articulated in the following specific learning objectives:</p>
+<p>Within the context of BIOL 5380, these goals can be articulated in
+the following specific learning objectives:</p>
 <ul>
-<li><p>Develop interesting questions related to how structure relates to function within the integrated systems of organisms.</p></li>
-<li><p>Integrate concepts across disciplines and beyond biology to answer questions in biomechanics.</p></li>
-<li><p>Leverage quantitative skills—including modeling, simulations, and data visualization—to address questions in biomechanics.</p></li>
-<li><p>Communicate answers to questions through clear and concise reports and presentation.</p></li>
+<li><p>Develop interesting questions related to how structure relates to
+function within the integrated systems of organisms.</p></li>
+<li><p>Integrate concepts across disciplines and beyond biology to
+answer questions in biomechanics.</p></li>
+<li><p>Leverage quantitative skills—including modeling, simulations, and
+data visualization—to address questions in biomechanics.</p></li>
+<li><p>Communicate answers to questions through clear and concise
+reports and presentation.</p></li>
 </ul>
-<p>These objectives model the approach taken by a modern biomechanists and thus represent an experience that will prepare students for future work in this and related fields (e.g., orthopedics, sports medicine, physical therapy, bioengineering, etc.).</p>
+<p>These objectives model the approach taken by a modern biomechanists
+and thus represent an experience that will prepare students for future
+work in this and related fields (e.g., orthopedics, sports medicine,
+physical therapy, bioengineering, etc.).</p>
 </div>
 </div>
 <div id="course-format" class="section level1">
 <h1>Course Format</h1>
 <div id="lectures" class="section level2">
 <h2>Lectures</h2>
-<p>Lectures will be a relaxed experience meant to stimulate discussions around the major themes and concepts related to biomechanics. We have no exams or quizzes, but please expect a high level of engagement. That is, lectures will be more than Prof. Kenaley talking and students listening. Pauses for brief illustrative exercises and discussions between all of us will be common and an important part of the lecture experience. Lectures will be posted as PDF on our <a href="schedule.html">schedule page</a>.</p>
+<p>Lectures will be a relaxed experience meant to stimulate discussions
+around the major themes and concepts related to biomechanics. We have no
+exams or quizzes, but please expect a high level of engagement. That is,
+lectures will be more than Prof. Kenaley talking and students listening.
+Pauses for brief illustrative exercises and discussions between all of
+us will be common and an important part of the lecture experience.
+Lectures will be posted as PDF on our <a href="schedule.html">schedule
+page</a>.</p>
 </div>
 <div id="labs" class="section level2">
 <h2>Labs</h2>
-<p>As a course-based research experience (i.e., an AE course), BIOL 5380 is meant to develop and hone research and quantitative skills related to of biomechanics. The thrust of this course will be to leverage core concepts from lecture discussions to explore, quantify, and report on data collected with your own hand and eyes.</p>
-<p>To this end, you will participate in 5 asynchronous lab exercises (i.e., Mini-projects, “MPs”) over the course of the semester. For each MP, you’ll be led out with an MP project description, then perform experiments and collect data. After you’ve completed the experiments and analyzed your data, you’ll be asked to synthesize and contextualize your results in a report. These reports—due on Wednesdays—should be short (&lt;1000 words), contain relevant figures and table, and discuss the importance of the results. Each MP is worth up to 50 points toward your final grade.</p>
-<p>Additional details for the MPs are available on our <a href="mini_projects.html">Mini-Projects page</a>.</p>
+<p>As a course-based research experience (i.e., an AE course), BIOL 5380
+is meant to develop and hone research and quantitative skills related to
+of biomechanics. The thrust of this course will be to leverage core
+concepts from lecture discussions to explore, quantify, and report on
+data collected with your own hand and eyes.</p>
+<p>To this end, you will participate in 5 asynchronous lab exercises
+(i.e., Mini-projects, “MPs”) over the course of the semester. For each
+MP, you’ll be led out with an MP project description, then perform
+experiments and collect data. After you’ve completed the experiments and
+analyzed your data, you’ll be asked to synthesize and contextualize your
+results in a report. These reports—due on Wednesdays—should be short
+(&lt;1000 words), contain relevant figures and table, and discuss the
+importance of the results. Each MP is worth up to 50 points toward your
+final grade.</p>
+<p>Additional details for the MPs are available on our <a
+href="mini_projects.html">Mini-Projects page</a>.</p>
 <div class="green">
 <div class="row">
 <div class="col-sm-2">
-<a class="far fa-sticky-note fa-5x" style="color:#D3D8DD"></a> <!-- regular style -->
+<a class="far fa-sticky-note fa-5x" style="color:#D3D8DD"></a>
+<!-- regular style -->
 </div>
 <div class="col-sm-9">
-<p>Because of the integrative and technical nature of this course, students will often feel adrift, unsure of how to proceed. This is by design and a model of how work in the multi-disciplinary field of biomechanics unfolds. Nonetheless, students may worry about their grade in the course and how to do well when challenges emerge at every turn. Fear not! For each assignment in the course (e.g.,project reports) student or team engagement and effort will be assessed just as much as how well objective questions have been answered.</p>
+<p>Because of the integrative and technical nature of this course,
+students will often feel adrift, unsure of how to proceed. This is by
+design and a model of how work in the multi-disciplinary field of
+biomechanics unfolds. Nonetheless, students may worry about their grade
+in the course and how to do well when challenges emerge at every turn.
+Fear not! For each assignment in the course (e.g.,project reports)
+student or team engagement and effort will be assessed just as much as
+how well objective questions have been answered.</p>
 </div>
 </div>
 </div>
@@ -457,30 +569,62 @@ div.tocify {
 </div>
 <div id="final-project" class="section level2">
 <h2>Final Project</h2>
-<p>Toward the end of the course, you’ll take on an independent, team-based project. The goal of this project is the use your quantitative skills and knowledge of biomechanical systems amassed while executing the MPs to address a new question of your choosing. The question should be new within the context of the course and the subjects of your research need not be human. However, consider the cooperability of the non-human subject when choosing what to study. You’ll address your question in a longer ($$5-page) report that should follow the same format and requirements of the MP reports, but with expanded content. The report is worth 100 points toward the final grade.</p>
-<p>In addition to a report, you’ll be tasked with synthesizing your project in a short, 10-minute research presentation. This presentation will be recorded by you and your team using Zoom and uploaded to a directory for Prof. Kenaley and your peers to view and critique. The Final Project presentation is worth 50 points toward the final grade. Additional details for the FP are available on our <a href="final_project.html">Final Project page</a>.</p>
+<p>Toward the end of the course, you’ll take on an independent,
+team-based project. The goal of this project is the use your
+quantitative skills and knowledge of biomechanical systems amassed while
+executing the MPs to address a new question of your choosing. The
+question should be new within the context of the course and the subjects
+of your research need not be human. However, consider the cooperability
+of the non-human subject when choosing what to study. You’ll address
+your question in a longer ($$5-page) report that should follow the same
+format and requirements of the MP reports, but with expanded content.
+The report is worth 100 points toward the final grade.</p>
+<p>In addition to a report, you’ll be tasked with synthesizing your
+project in a short, 10-minute research presentation. This presentation
+will be recorded by you and your team using Zoom and uploaded to a
+directory for Prof. Kenaley and your peers to view and critique. The
+Final Project presentation is worth 50 points toward the final grade.
+Additional details for the FP are available on our <a
+href="final_project.html">Final Project page</a>.</p>
 </div>
 <div id="discussion-board" class="section level2">
 <h2>Discussion Board</h2>
-<p>Each week on Tuesday, you will be asked to submit at least one question and answer another on our class <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s22/discussions">discussion board</a>. This is hosted on GitHub, just like our course site, and will certainly be an important resource as you work through course material. When you post a question, you should:</p>
+<p>Each week on Tuesday, you will be asked to submit at least one
+question and answer another on our class <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a>. This is hosted on GitHub, just like our course site, and will
+certainly be an important resource as you work through course material.
+When you post a question, you should:</p>
 <ul>
 <li>Be polite and concise.</li>
 <li>Ask a question that has not be asked before.</li>
-<li>Post the question with a short descriptive title (e.g.., ``Problems with temp sensor wiring” )</li>
+<li>Post the question with a short descriptive title (e.g.., ``Problems
+with temp sensor wiring” )</li>
 </ul>
 <p>When responding to a question, you should:</p>
 <ul>
 <li>Be polite and concise</li>
 <li>Provide unique feedback rather than a duplicated answer.</li>
 </ul>
-<p>Feel free to post reactions (via the smiley-face icon above the text box), but this won’t count as an answer.</p>
-<p>A student is welcome to add another answer to a question that has already been answered as long as it expands upon the previous answers. I’ll be moderating and commenting myself, issuing feedback at the end of each week.</p>
-<p>The discussion activities are worth 50 points toward the final grade. A complete discussion post includes both a question (2.5 points) and answer (2.5 points), for a subtotal of 5 points. We have 11 discussions posts assigned (weeks 2 to 12), however, you’re required to submit just 10. That is, we’ll drop the lowest of 11 discussion scores and compile 10 of them for the final discussion grade.</p>
+<p>Feel free to post reactions (via the smiley-face icon above the text
+box), but this won’t count as an answer.</p>
+<p>A student is welcome to add another answer to a question that has
+already been answered as long as it expands upon the previous answers.
+I’ll be moderating and occasionally commenting myself, issuing periodic
+feedback.</p>
+<p>The discussion activities are worth 50 points toward the final grade.
+A complete discussion post includes both a question (2.5 points) and
+answer (2.5 points), for a subtotal of 5 points. We have 11 discussions
+posts assigned (weeks 2 to 12), however, you’re required to submit just
+10. That is, we’ll drop the lowest of 11 discussion scores and compile
+10 of them for the final discussion grade.</p>
 </div>
 </div>
 <div id="course-assessment" class="section level1">
 <h1>Course Assessment</h1>
-<p>Your grade will be based on five assignment components: Engagement in class, posting to our discussion board, 5 Mini-Project reports, and one independent Final Project report and presentation.</p>
+<p>Your grade will be based on five assignment components: Engagement in
+class, posting to our discussion board, 5 Mini-Project reports, and one
+independent Final Project report and presentation.</p>
 <hr />
 <div id="grade-breakdown" class="section level3">
 <h3>Grade Breakdown</h3>
@@ -530,14 +674,23 @@ div.tocify {
 </table>
 <hr />
 <p><br></p>
-<p>The class engagement portion of your grade will be calculated qualitatively. All 50 points are on the table, as long as you remain an active participant in class—asking questions, making relevant points, etc.</p>
+<p>The class engagement portion of your grade will be calculated
+qualitatively. All 50 points are on the table, as long as you remain an
+active participant in class—asking questions, making relevant points,
+etc.</p>
 <div class="green">
 <div class="row">
 <div class="col-sm-2">
-<a class="far fa-sticky-note fa-5x" style="color:#939681"></a> <!-- regular style -->
+<a class="far fa-sticky-note fa-5x" style="color:#939681"></a>
+<!-- regular style -->
 </div>
 <div class="col-sm-9">
-<p>Just a note . . . assessment for project reports will incorporate an evaluation of an individual’s or team’s effort and engagement in addition to more objective components (i.e., answers, conclusions, etc.). To do well, the formula is simple: students and their teams should remain persistent, ask for guidance, and make clear conclusions using the skills and tools they learn in the course.</p>
+<p>Just a note . . . assessment for project reports will incorporate an
+evaluation of an individual’s or team’s effort and engagement in
+addition to more objective components (i.e., answers, conclusions,
+etc.). To do well, the formula is simple: students and their teams
+should remain persistent, ask for guidance, and make clear conclusions
+using the skills and tools they learn in the course.</p>
 </div>
 </div>
 </div>
@@ -548,49 +701,94 @@ div.tocify {
 <h1>Responsibilities</h1>
 <div id="expectations-for-students" class="section level2">
 <h2>Expectations for Students</h2>
-<p>This technical course will require sublime concentration and focus. Therefore, we must be clear about our expectations of one another.</p>
+<p>This technical course will require sublime concentration and focus.
+Therefore, we must be clear about our expectations of one another.</p>
 <ul>
-<li>You, the student, are responsible for reading and adhering to all aspects of the course syllabus as outlined here on this site.</li>
-<li>You are responsible for organizing and completing all readings, discussions, exercises, and projects.</li>
-<li>You are responsible for becoming familiar with course-related software (R, RStudio, Zoom, etc.).</li>
+<li>You, the student, are responsible for reading and adhering to all
+aspects of the course syllabus as outlined here on this site.</li>
+<li>You are responsible for organizing and completing all readings,
+discussions, exercises, and projects.</li>
+<li>You are responsible for becoming familiar with course-related
+software (R, RStudio, Zoom, etc.).</li>
 <li>You must be aware of your own progress in the course.</li>
-<li>It is up to you to pursue help and guidance when you feel you need it.</li>
+<li>It is up to you to pursue help and guidance when you feel you need
+it.</li>
 </ul>
 </div>
 <div id="expectations-for-the-instructor" class="section level2">
 <h2>Expectations for the Instructor</h2>
 <ul>
-<li>I will challenge students intellectually to develop data analysis and experimental skills.</li>
-<li>I will make expectations clear in the form of this site, syllabus, and course announcements made here and over email.</li>
+<li>I will challenge students intellectually to develop data analysis
+and experimental skills.</li>
+<li>I will make expectations clear in the form of this site, syllabus,
+and course announcements made here and over email.</li>
 <li>I will be consistent and quick in grading assignments.</li>
-<li>I will be available to help and discuss topics during scheduled class time, arranged office hours, and on our class <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s22/discussions">discussion board</a>.</li>
+<li>I will be available to help and discuss topics during scheduled
+class time, arranged office hours, and on our class <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a>.</li>
 </ul>
 </div>
 </div>
 <div id="accessibility" class="section level1">
 <h1>Accessibility</h1>
-<p>Boston College is committed to providing accommodations to students, faculty, staff and visitors with disabilities. Specific documentation from the appropriate office is required for students seeking accommodation in Woods College courses. Advanced notice and formal registration with the appropriate office is required to facilitate this process. There are two separate offices at BC that coordinate services for students with disabilities:</p>
+<p>Boston College is committed to providing accommodations to students,
+faculty, staff and visitors with disabilities. Specific documentation
+from the appropriate office is required for students seeking
+accommodation in Woods College courses. Advanced notice and formal
+registration with the appropriate office is required to facilitate this
+process. There are two separate offices at BC that coordinate services
+for students with disabilities:</p>
 <ul>
-<li><a href="http://www.bc.edu/libraries/help/tutoring.html">The Connors Family Learning Center (CFLC)</a> coordinates services for students with LD and ADHD.</li>
-<li><a href="http://www.bc.edu/offices/dos/subsidiary_offices/disabilityservices.html">The Disabilities Services Office (DSO)</a> coordinates services for all other disabilities.</li>
+<li><a href="http://www.bc.edu/libraries/help/tutoring.html">The Connors
+Family Learning Center (CFLC)</a> coordinates services for students with
+LD and ADHD.</li>
+<li><a
+href="http://www.bc.edu/offices/dos/subsidiary_offices/disabilityservices.html">The
+Disabilities Services Office (DSO)</a> coordinates services for all
+other disabilities.</li>
 </ul>
-<p>Find out more about BC’s commitment to accessibility at www.bc.edu/sites/accessibility.</p>
+<p>Find out more about BC’s commitment to accessibility at
+www.bc.edu/sites/accessibility.</p>
 </div>
 <div id="academic-integrity" class="section level1">
 <h1>Academic Integrity</h1>
-<p>Students in this course, as all others at BC, must produce original work and cite references appropriately. Failure to cite references is plagiarism. Academic dishonesty includes, but is not necessarily limited to, plagiarism, fabrication, facilitating academic dishonesty, cheating on exams or assignments, or submitting the same material or substantially similar material to meet the requirements of more than one course without seeking permission of all instructors concerned. Scholastic misconduct may also involve, but is not necessarily limited to, acts that violate the rights of other students, such as depriving another student of course materials or interfering with another student’s work. Please see the <a href="https://www.bc.edu/content/bc-web/academics/sites/university-catalog/policies-procedures.html#academic_integrity_policies">Boston College policy on academic integrity</a> for more information.</p>
+<p>Students in this course, as all others at BC, must produce original
+work and cite references appropriately. Failure to cite references is
+plagiarism. Academic dishonesty includes, but is not necessarily limited
+to, plagiarism, fabrication, facilitating academic dishonesty, cheating
+on exams or assignments, or submitting the same material or
+substantially similar material to meet the requirements of more than one
+course without seeking permission of all instructors concerned.
+Scholastic misconduct may also involve, but is not necessarily limited
+to, acts that violate the rights of other students, such as depriving
+another student of course materials or interfering with another
+student’s work. Please see the <a
+href="https://www.bc.edu/content/bc-web/academics/sites/university-catalog/policies-procedures.html#academic_integrity_policies">Boston
+College policy on academic integrity</a> for more information.</p>
 </div>
 <div id="email-and-office-hours-policy" class="section level1">
 <h1>Email and Office Hours Policy</h1>
-<p>If you write Professor Kenaley with a question, he’ll try to get back to you within 24 hours. If you don’t receive a response, it’s likely because the answer to your question is available here or on our discussion site. Rather than write Prof. Kenaley with questions related to course mechanics and expectations, please post these in our <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s22/discussions">discussion board</a>, It’s probably the case that others have the same questions.</p>
-<p>Office hours can be arranged by appointment via email and will take place over Zoom. Office hours may involve more more than student or team, so please come equipped with poignant questions and expect that other students have questions as urgent as yours.</p>
+<p>If you write Professor Kenaley with a question, he’ll try to get back
+to you within 24 hours. If you don’t receive a response, it’s likely
+because the answer to your question is available here or on our
+discussion site. Rather than write Prof. Kenaley with questions related
+to course mechanics and expectations, please post these in our <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a>, It’s probably the case that others have the same
+questions.</p>
+<p>Office hours can be arranged by appointment via email and will take
+place over Zoom. Office hours may involve more more than student or
+team, so please come equipped with poignant questions and expect that
+other students have questions as urgent as yours.</p>
  
 <hr />
 <p style="text-align: center;">
 Cobbled together by <a href="https://kenaleylab.com">Chris Kenaley</a>
 </p>
 <p style="text-align: center;">
-<span style="color: #808080;"><em><a href="mailto:kenaley@bc.edu" class="email">kenaley@bc.edu</a></em></span>
+<span style="color: #808080;"><em><a href="mailto:kenaley@bc.edu"
+class="email">kenaley@bc.edu</a></em></span>
 </p>
 <!-- Add font awesome icons -->
 <p style="text-align: center;">

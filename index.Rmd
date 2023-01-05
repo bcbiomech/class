@@ -21,13 +21,21 @@ Pursuant to this, you'll engage in class projects that involve reading primary l
 
 **Delivery:**  In-person lectures Tuesday and some Thursdays at 10:30 in Higgins Hall 225. Asynchronous lab projects launched on Thursdays with a synchronous Zoom meeting.
 
-For those who can't make it to class, we'll be at [Zooming](https://bccte.zoom.us/j/9533582156) 
+For those who can't make it to class, we'll be [Zooming](https://bccte.zoom.us/j/9533582156) 
 
 <!-- and [recording lectures](https://bostoncollege.instructure.com/courses/1615104/external_tools/109499). -->
 
-**Instructor:** Christopher P. Kenaley (Prof. K)
+**Instructor:** [Christopher P. Kenaley (Prof. K)](https://kenaleylab.com)
 
-**email:** kenaley [ahhhht] bc.edu
+
+<a class="far fa-envelope fa-1x" style="color:#D3D8DD"></a> kenaley [ahhhht] bc.edu
+
+
+**Course TA:** Trevor Cameron
+
+<a class="far fa-envelope fa-1x" style="color:#D3D8DD"></a> camerotr [ahhhht] bc.edu
+
+
 
 **office hours:** By appointment, in person or over Zoom [at this link](https://bccte.zoom.us/j/9533582156)
 
@@ -111,7 +119,7 @@ In addition to a report, you'll be tasked with synthesizing your project in a sh
 
 ## Discussion Board 
 
-Each week on Tuesday, you will be asked to submit at least one question and answer another on our class [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s22/discussions). This is hosted on GitHub, just like our course site, and will certainly be an important resource as you work through course material. When you post a question, you should:
+Each week on Tuesday, you will be asked to submit at least one question and answer another on our class [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions). This is hosted on GitHub, just like our course site, and will certainly be an important resource as you work through course material. When you post a question, you should:
 
   + Be polite and concise.
   + Ask a question that has not be asked before.
@@ -124,7 +132,7 @@ When responding to a question, you should:
   
 Feel free to post reactions (via the smiley-face icon above the text box), but this won't count as an answer.
   
-A student is welcome to add another answer to a question that has already been answered as long as it expands upon the previous answers.  I'll be moderating and commenting myself, issuing feedback at the end of each week. 
+A student is welcome to add another answer to a question that has already been answered as long as it expands upon the previous answers.  I'll be moderating and occasionally commenting myself, issuing periodic feedback. 
 
 The discussion activities are worth 50 points toward the final grade. A complete discussion post includes both a question (2.5 points) and answer (2.5 points), for a subtotal of 5 points.  We have 11 discussions posts assigned (weeks 2 to 12), however, you're required to submit just 10. That is, we'll drop the lowest of 11 discussion scores and compile 10 of them for the final discussion grade.
 
@@ -185,7 +193,7 @@ This technical course will require sublime concentration and focus. Therefore, w
   + I will challenge students intellectually to develop data analysis and experimental skills.
   + I will make expectations clear in the form of this site, syllabus, and course announcements made here and over email.
   + I will be consistent and quick in grading assignments.
-  + I will be available to help and discuss topics during scheduled class time, arranged office hours, and on our class [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s22/discussions).
+  + I will be available to help and discuss topics during scheduled class time, arranged office hours, and on our class [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions).
 
 
 # Accessibility
@@ -203,7 +211,7 @@ Students in this course, as all others at BC, must produce original work and cit
 
 # Email and Office Hours Policy
 
-If you write Professor Kenaley with a question, he’ll try to get back to you within 24 hours. If you don’t receive a response, it’s likely because the answer to your question is available here or on our discussion site. Rather than write Prof. Kenaley with questions related to course mechanics and expectations, please post these in our [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s22/discussions), It’s probably the case that others have the same questions.
+If you write Professor Kenaley with a question, he’ll try to get back to you within 24 hours. If you don’t receive a response, it’s likely because the answer to your question is available here or on our discussion site. Rather than write Prof. Kenaley with questions related to course mechanics and expectations, please post these in our [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions), It’s probably the case that others have the same questions.
 
 Office hours can be arranged by appointment via email and will take place over Zoom. Office hours may involve more more than student or team, so please come equipped with poignant questions and expect that other students have questions as urgent as yours.
 

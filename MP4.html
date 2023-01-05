@@ -13,13 +13,22 @@
 
 <title>Mini Project 4: Come Fly With Me!</title>
 
-<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
@@ -37,32 +46,7 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -74,10 +58,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -94,40 +74,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 61px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -155,7 +111,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -167,7 +123,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -177,11 +133,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -193,7 +166,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -319,7 +291,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -333,7 +305,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -349,7 +321,7 @@ div.tocify {
   <a href="schedule.html">Schedule</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Mini-Projects
      
     <span class="caret"></span>
@@ -376,7 +348,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Final Project
      
     <span class="caret"></span>
@@ -388,10 +360,10 @@ div.tocify {
   </ul>
 </li>
 <li>
-  <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s22/discussions">Discussion Board</a>
+  <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">Discussion Board</a>
 </li>
 <li>
-  <a href="https://bostoncollege.instructure.com/courses/1627355">Course Canvas Page</a>
+  <a href="https://bostoncollege.instructure.com/courses/1640270">Course Canvas Page</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -401,7 +373,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -412,53 +384,131 @@ div.tocify {
 
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>Our fourth Mini Project explores how wing shape contributes to the flow patterns associated with foils moving in a fluid. We’ll also consider how these lift and drag components may be used to predict the flight behavior of birds. Our general goals are to:</p>
+<p>Our fourth Mini Project explores how wing shape contributes to the
+flow patterns associated with foils moving in a fluid. We’ll also
+consider how these lift and drag components may be used to predict the
+flight behavior of birds. Our general goals are to:</p>
 <ol style="list-style-type: decimal">
-<li>Use CAD software and 3D printing technology to fabricate two biomiometic wings with designs that reflect a diversity of bird-wing morphology.</li>
-<li>Measure drag and lift forces of these wings using a water-tunnel system equipped with strain gauges monitored by an Arduino data acquisition system.</li>
+<li>Use CAD software and 3D printing technology to fabricate two
+biomiometic wings with designs that reflect a diversity of bird-wing
+morphology.</li>
+<li>Measure drag and lift forces of these wings using a water-tunnel
+system equipped with strain gauges monitored by an Arduino data
+acquisition system.</li>
 <li>Characterize flow patterns using particle tracking.</li>
-<li>Based on lift, drag, and flow pattern data, establish what flight characteristics the wings impart to a bird.</li>
+<li>Based on lift, drag, and flow pattern data, establish what flight
+characteristics the wings impart to a bird.</li>
 </ol>
 <center>
-<img src="airfoild.png" title="fig:" id="foil" alt="airfoil" />
+<div class="figure">
+<img src="airfoild.png" id="foil" alt="" />
+<p class="caption">airfoil</p>
+</div>
 </center>
 <p><br></p>
 </div>
 <div id="conceptual-basis" class="section level2">
 <h2>Conceptual basis</h2>
-<p>The figures directly above and below show how lift and drag forces are applied to a wing as forces perpendicular and parallel to the airflow. If you follow Bernoulli as your model of lift, as air passes over the top of the wing it accelerates and thus the relative pressure stress decreases above. Lower stress on the top of the wing results in a difference between dorsal and ventral stress and thus lift is generated. Lift is the force that keeps birds aloft and solely responsible for gliding flight. Drag on the other hand, acts in the streamwise direction (parallel to flow) and is generally considered a nuisance.</p>
-<p>We have discussed—or will discuss—two forms of drag associated with foils moving in a fluid medium. Profile drag includes all types of drag that do not depend on the production of lift, i.e., of the skin and pressure variety. Profile drag is a function of fluid speed and density, reference area, and the external shape of the wing or foil. For a three-dimensional wing, there is an additional component of drag called induced drag. This is also a function of fluid speed and density, reference area, and the external shape of the wing, but for this type of drag, there must be lift generated by fluid flow. If lift is generated, fluid is free to move from the region of high pressure below into the region of low pressure above near the tips of the wing. The resulting flow is shown below by the red circular arrow with the arrowhead showing the flow direction. This is called a tip vortex and it induces drag.</p>
+<p>The figures directly above and below show how lift and drag forces
+are applied to a wing as forces perpendicular and parallel to the
+airflow. If you follow Bernoulli as your model of lift, as air passes
+over the top of the wing it accelerates and thus the relative pressure
+stress decreases above. Lower stress on the top of the wing results in a
+difference between dorsal and ventral stress and thus lift is generated.
+Lift is the force that keeps birds aloft and solely responsible for
+gliding flight. Drag on the other hand, acts in the streamwise direction
+(parallel to flow) and is generally considered a nuisance.</p>
+<p>We have discussed—or will discuss—two forms of drag associated with
+foils moving in a fluid medium. Profile drag includes all types of drag
+that do not depend on the production of lift, i.e., of the skin and
+pressure variety. Profile drag is a function of fluid speed and density,
+reference area, and the external shape of the wing or foil. For a
+three-dimensional wing, there is an additional component of drag called
+induced drag. This is also a function of fluid speed and density,
+reference area, and the external shape of the wing, but for this type of
+drag, there must be lift generated by fluid flow. If lift is generated,
+fluid is free to move from the region of high pressure below into the
+region of low pressure above near the tips of the wing. The resulting
+flow is shown below by the red circular arrow with the arrowhead showing
+the flow direction. This is called a tip vortex and it induces drag.</p>
 <center>
 <img src="wingtip.png" width="389" />
 </center>
 <p><br></p>
-<p>So, profile and induced drag (<span class="math inline">\(D_p\)</span> and <span class="math inline">\(D_i\)</span>, respectively) together account for the drag forces. As we’ll also learn, we can use comparisons of lift and drag coefficients (<span class="math inline">\(C_D\)</span> and <span class="math inline">\(C_L\)</span>, respectively) to determine the efficiency of a soaring/gliding wing using the lift ratio:</p>
-<p><span class="math display">\[\frac{C_L}{C_D}\hspace{12 pt}.\]</span> To determine the drag coefficient, we must simultaneously consider the profile and induced drag components, or:</p>
+<p>So, profile and induced drag (<span
+class="math inline">\(D_p\)</span> and <span
+class="math inline">\(D_i\)</span>, respectively) together account for
+the drag forces. As we’ll also learn, we can use comparisons of lift and
+drag coefficients (<span class="math inline">\(C_D\)</span> and <span
+class="math inline">\(C_L\)</span>, respectively) to determine the
+efficiency of a soaring/gliding wing using the lift ratio:</p>
+<p><span class="math display">\[\frac{C_L}{C_D}\hspace{12 pt}.\]</span>
+To determine the drag coefficient, we must simultaneously consider the
+profile and induced drag components, or:</p>
 <p><span class="math display">\[\large C_D =C_{Dp}+C_{Di}\]</span></p>
-<p>To calculate both <span class="math inline">\(C_{Dp}\)</span> and <span class="math inline">\(C_{Di}\)</span>, we would use shape and airflow properties. This is relatively straightforward for profile drag (<span class="math inline">\(C_{Dp}\)</span>). However, it is cumbersome and complicated to compute the induced coefficient, <span class="math inline">\(C_{Di}\)</span>. Fortunately, with a little ingenuity, we can compute the total drag coefficient <span class="math inline">\(C_D\)</span> (and the lift coefficient, <span class="math inline">\(C_L\)</span>, too) empirically by putting the wing models in a fluid tunnel (a water flume, specifically). For the drag coefficient:</p>
+<p>To calculate both <span class="math inline">\(C_{Dp}\)</span> and
+<span class="math inline">\(C_{Di}\)</span>, we would use shape and
+airflow properties. This is relatively straightforward for profile drag
+(<span class="math inline">\(C_{Dp}\)</span>). However, it is cumbersome
+and complicated to compute the induced coefficient, <span
+class="math inline">\(C_{Di}\)</span>. Fortunately, with a little
+ingenuity, we can compute the total drag coefficient <span
+class="math inline">\(C_D\)</span> (and the lift coefficient, <span
+class="math inline">\(C_L\)</span>, too) empirically by putting the wing
+models in a fluid tunnel (a water flume, specifically). For the drag
+coefficient:</p>
 <p><span class="math display">\[
 C_D=\large \frac{F_D}{\frac{1}{2}\rho u^2 A} \hspace{12 pt},
 \]</span></p>
-<p>where <span class="math inline">\(F_D\)</span> is the force generated by drag, <span class="math inline">\(\rho\)</span> fluid density (for water, 1000 kg m<span class="math inline">\(^{-3}\)</span> . . . shockingly), <span class="math inline">\(u\)</span> is the fluid velocity (m s<span class="math inline">\(^{-1}\)</span>), and A is the wing area (m<span class="math inline">\(^2\)</span>). The lift coefficient (<span class="math inline">\(C_L\)</span>) is computed similarly:</p>
+<p>where <span class="math inline">\(F_D\)</span> is the force generated
+by drag, <span class="math inline">\(\rho\)</span> fluid density (for
+water, 1000 kg m<span class="math inline">\(^{-3}\)</span> . . .
+shockingly), <span class="math inline">\(u\)</span> is the fluid
+velocity (m s<span class="math inline">\(^{-1}\)</span>), and A is the
+wing area (m<span class="math inline">\(^2\)</span>). The lift
+coefficient (<span class="math inline">\(C_L\)</span>) is computed
+similarly:</p>
 <p><span class="math display">\[
 C_L=\large \frac{F_L}{\frac{1}{2}\rho u^2 A}\hspace{12 pt},
 \]</span></p>
-<p>where <span class="math inline">\(F_L\)</span> is the force generated by lift. Armed with these coefficients, we can assess how much lift is generated compared to the nuisance drag under certain conditions, including <span class="math inline">\(R_e\)</span> and the inclination of the wing (i.e., angle of attack, <span class="math inline">\(\alpha\)</span>) if we so desired. The angle of attack is the angle between the chord line of the wing and the vector representing the fluid through which it is moving. The angle of attack can be increased to induce more lift, however, this comes at a cost of more drag as upper surface flow is more separated. Thus, a trade off exists between increasing <span class="math inline">\(\alpha\)</span>, increased lift and increased drag. We won’t explore this further in MP4—we’ll keep the angle of attack relatively constant for all our bird wings. However, it would be a great topic for a final project!</p>
+<p>where <span class="math inline">\(F_L\)</span> is the force generated
+by lift. Armed with these coefficients, we can assess how much lift is
+generated compared to the nuisance drag under certain conditions,
+including <span class="math inline">\(R_e\)</span> and the inclination
+of the wing (i.e., angle of attack, <span
+class="math inline">\(\alpha\)</span>) if we so desired. The angle of
+attack is the angle between the chord line of the wing and the vector
+representing the fluid through which it is moving. The angle of attack
+can be increased to induce more lift, however, this comes at a cost of
+more drag as upper surface flow is more separated. Thus, a trade off
+exists between increasing <span class="math inline">\(\alpha\)</span>,
+increased lift and increased drag. We won’t explore this further in
+MP4—we’ll keep the angle of attack relatively constant for all our bird
+wings. However, it would be a great topic for a final project!</p>
 </div>
 <div id="methods" class="section level2">
 <h2>Methods</h2>
 <p>There are three parts to this MP:</p>
 <ol style="list-style-type: decimal">
 <li>Design and 3D print two pairs of biomimetic birds wings.</li>
-<li>Empirically assess the drag and lift coefficients to compute the lift ratio. (<span class="math inline">\(\frac{C_L}{C_D}\)</span>) of two pairs biomimetic bird wings.</li>
-<li>Qualitatively characterize flow patterns at the wing tip to assess vorticity.</li>
+<li>Empirically assess the drag and lift coefficients to compute the
+lift ratio. (<span class="math inline">\(\frac{C_L}{C_D}\)</span>) of
+two pairs biomimetic bird wings.</li>
+<li>Qualitatively characterize flow patterns at the wing tip to assess
+vorticity.</li>
 </ol>
-<p>Based on this analysis, we’ll make inferences as to the flight behavior and ecology of the birds whose wings we’ve studied.</p>
+<p>Based on this analysis, we’ll make inferences as to the flight
+behavior and ecology of the birds whose wings we’ve studied.</p>
 </div>
 <div id="part-1-bird-bird-bird-bird-is-the-word" class="section level2">
-<h2>Part 1: <a href="https://www.youtube.com/watch?v=aPrtFxd9u9Y">“Bird, bird, bird … bird is the word”</a></h2>
-<p>In this part of the MP you will design two pairs of biomimetic bird wings. For this we’ll use a free version of the CAD software <a href="https://app.sketchup.com/">SketchUp</a>. You can sign up for SketchUp’s free web-based using your BC Google credentials.</p>
-<p>First, choose two photographs from an image search on the interwebs. Make sure one is from a family in group 1:</p>
+<h2>Part 1: <a href="https://www.youtube.com/watch?v=aPrtFxd9u9Y">“Bird,
+bird, bird … bird is the word”</a></h2>
+<p>In this part of the MP you will design two pairs of biomimetic bird
+wings. For this we’ll use a free version of the CAD software <a
+href="https://app.sketchup.com/">SketchUp</a>. You can sign up for
+SketchUp’s free web-based using your BC Google credentials.</p>
+<p>First, choose two photographs from an image search on the interwebs.
+Make sure one is from a family in group 1:</p>
 <ul>
 <li>Alcidae</li>
 <li>Parulidae</li>
@@ -474,30 +524,74 @@ C_L=\large \frac{F_L}{\frac{1}{2}\rho u^2 A}\hspace{12 pt},
 <li>Laridae</li>
 <li>Cathartidae</li>
 </ul>
-<p>Also make sure that the image you choose is a good shot of your birds directly from below or above. In addition, <strong>remember to record the common species names</strong> of the two birds you’ve chosen.</p>
-<p>To find out more about your birds, search for “cornell lab of ornithology SPECIES” The Cornell Lab of Ornithology’s <a href="https://www.allaboutbirds.org/">All About Birds site</a> is an exceptional resource for all things avian: taxonomy, occurrence, sounds, life history. You name it, they got it.</p>
-<p>To design your wing models in SketchUp, you may find it easiest to work in millimeters. So open the app and change the default template to “Simple Template-Millimeters” under “App Settings” in the pull-down menu. From here, select “New” from the pull-down menu to start a new model that is measured in mm. Select the default content (usually a person), delete it, and now you’re ready to start your wing design.</p>
-<p>It will probably be easiest to design your wing models directly from the images. Fortunately, you can insert a locally saved image directly into the app and trace the wing. You can then use the rescaling tool in SketchUp to incopoorate the following properties:</p>
+<p>Also make sure that the image you choose is a good shot of your birds
+directly from below or above. In addition, <strong>remember to record
+the common species names</strong> of the two birds you’ve chosen.</p>
+<p>To find out more about your birds, search for “cornell lab of
+ornithology SPECIES” The Cornell Lab of Ornithology’s <a
+href="https://www.allaboutbirds.org/">All About Birds site</a> is an
+exceptional resource for all things avian: taxonomy, occurrence, sounds,
+life history. You name it, they got it.</p>
+<p>To design your wing models in SketchUp, you may find it easiest to
+work in millimeters. So open the app and change the default template to
+“Simple Template-Millimeters” under “App Settings” in the pull-down
+menu. From here, select “New” from the pull-down menu to start a new
+model that is measured in mm. Select the default content (usually a
+person), delete it, and now you’re ready to start your wing design.</p>
+<p>It will probably be easiest to design your wing models directly from
+the images. Fortunately, you can insert a locally saved image directly
+into the app and trace the wing. You can then use the rescaling tool in
+SketchUp to incopoorate the following properties:</p>
 <ul>
 <li>A 60 mm span</li>
-<li>The same chord length in proportion to the span as the wings in your chosen species</li>
+<li>The same chord length in proportion to the span as the wings in your
+chosen species</li>
 <li>A wing thickness of 2.5 mm (using the extrude tool)</li>
 </ul>
-<p>Don’t worry about camber. Producing the right span-chord ratio as your birds is most important.</p>
+<p>Don’t worry about camber. Producing the right span-chord ratio as
+your birds is most important.</p>
 <p>The following describes these important wing dimensions.</p>
 <center>
-<img src="https://www.grc.nasa.gov/www/k-12/VirtualAero/BottleRocket/airplane/Images/geom.gif" style="width:50.0%" />
+<img
+src="https://www.grc.nasa.gov/www/k-12/VirtualAero/BottleRocket/airplane/Images/geom.gif"
+style="width:50.0%" />
 </center>
 <p><br></p>
 <p>From the wing models, calculate the aspect ratio with:</p>
-<p><span class="math display">\[AR=\large \frac{S^2}{A_{w}}\hspace{12 pt},\]</span></p>
-<p>where S is the span and <span class="math inline">\(A_{w}\)</span> is the wetted area of the wing (i.e., surface area of the wing in contact with the air flow). You can use the ruler and shape info features in SketchUp to determine S and <span class="math inline">\(A_{w}\)</span>.</p>
-<p>When you’re finished with AR calculations, you should duplicate the wings (birds have two afterall), <strong>export each as a separate</strong> stereolithography file (.stl), and then load the .stl to <a href="https://drive.google.com/drive/folders/1-3G9Ho0sqVXSSEBd-yVSGPtjhSFmOdF5?usp=sharing">THIS DIRECTORY</a>. With Prof. K’s help, you’ll 3D print each pair and then glue them to a standard 3D-printed body model (a gull . . . there’s no such thing as a seagull).</p>
+<p><span class="math display">\[AR=\large \frac{S^2}{A_{w}}\hspace{12
+pt},\]</span></p>
+<p>where S is the span and <span class="math inline">\(A_{w}\)</span> is
+the wetted area of the wing (i.e., surface area of the wing in contact
+with the air flow). You can use the ruler and shape info features in
+SketchUp to determine S and <span
+class="math inline">\(A_{w}\)</span>.</p>
+<p>When you’re finished with AR calculations, you should duplicate the
+wings (birds have two afterall), <strong>export each as a
+separate</strong> stereolithography file (.stl), and then load the .stl
+to <a
+href="https://drive.google.com/drive/folders/1-3G9Ho0sqVXSSEBd-yVSGPtjhSFmOdF5?usp=sharing">THIS
+DIRECTORY</a>. With Prof. K’s help, you’ll 3D print each pair and then
+glue them to a standard 3D-printed body model (a gull . . . there’s no
+such thing as a seagull).</p>
 </div>
 <div id="part-2-a-fish-back-to-water" class="section level2">
 <h2>Part 2: A fish back to water</h2>
-<p>We’ll place your biomimetic wings and gull model in the flume and anchor it to a “sting” (see figure below) to measure lift and drag forces. To understand how this works, you’ll have to withstand a bit of engineering wonk. We’ll use two binocular Wheatstone bridge load cells to simultaneously measure lift and drag (see figure below). These instruments report a force based on how much shear strain occurs when a load is placed at the end of a cantilevered beam of aluminum. Because of the design of the sting, the input arms of our cantilevered sensor systems are longer and amplify the load. But we’ll ignore this and assume it doesn’t bias one load cell or the other.</p>
-<p>Turn on the swim tunnel to the preset velocity (determined by Prof. K and reported at the start of the experiment). “Swim”" the bird for 30 s at this predetermine speed. Lift and drag forces will be recorded on a PC and place in <a href="https://drive.google.com/drive/folders/15kbeHiL2ksA9ZgsGe5Q2lpLl5cEaAsIj?usp=sharing"><strong>THIS DIRECTORY</strong></a> that you can access later.</p>
+<p>We’ll place your biomimetic wings and gull model in the flume and
+anchor it to a “sting” (see figure below) to measure lift and drag
+forces. To understand how this works, you’ll have to withstand a bit of
+engineering wonk. We’ll use two binocular Wheatstone bridge load cells
+to simultaneously measure lift and drag (see figure below). These
+instruments report a force based on how much shear strain occurs when a
+load is placed at the end of a cantilevered beam of aluminum. Because of
+the design of the sting, the input arms of our cantilevered sensor
+systems are longer and amplify the load. But we’ll ignore this and
+assume it doesn’t bias one load cell or the other.</p>
+<p>Turn on the swim tunnel to the preset velocity (determined by Prof. K
+and reported at the start of the experiment). “Swim”” the bird for 30 s
+at this predetermine speed. Lift and drag forces will be recorded on a
+PC and place in <a
+href="https://drive.google.com/drive/folders/15kbeHiL2ksA9ZgsGe5Q2lpLl5cEaAsIj?usp=sharing"><strong>THIS
+DIRECTORY</strong></a> that you can access later.</p>
 <center>
 <img src="bird.setup.png" style="width:50.0%" />
 </center>
@@ -505,63 +599,162 @@ C_L=\large \frac{F_L}{\frac{1}{2}\rho u^2 A}\hspace{12 pt},
 </div>
 <div id="part-3-flow-viz" class="section level2">
 <h2>Part 3: Flow Viz</h2>
-<p>The magnitude of induced drag of a foil generating lift is proportional to the vorticity at the wing tip. Vorticity describes the spinning motion of a fluid in some local area and is therefore a measure of it’s rotation. Vorticity is defined quantitatively as the curving of velocity vectors. Thus, to calculate vorticity, one needs to quantify local patterns of velocity.</p>
-<p>Particle image velocimetry (PIV) is an optical method of flow visualization and is often used to obtain instantaneous velocity measurements. This technique relies on visually tracking neutrally buoyant particles suspended in the fluid that follow its motion. Particles are often illuminated and fluoresced with a thin laser light field. In the animation below, small glass spheres are suspened in water as if flow past a 3D-printed wing. It’s important to note that this thin sheet of light only captures the flow field in this vary narrow plane (the horizontal-vertical or x,y plane in this case).</p>
+<p>The magnitude of induced drag of a foil generating lift is
+proportional to the vorticity at the wing tip. Vorticity describes the
+spinning motion of a fluid in some local area and is therefore a measure
+of it’s rotation. Vorticity is defined quantitatively as the curving of
+velocity vectors. Thus, to calculate vorticity, one needs to quantify
+local patterns of velocity.</p>
+<p>Particle image velocimetry (PIV) is an optical method of flow
+visualization and is often used to obtain instantaneous velocity
+measurements. This technique relies on visually tracking neutrally
+buoyant particles suspended in the fluid that follow its motion.
+Particles are often illuminated and fluoresced with a thin laser light
+field. In the animation below, small glass spheres are suspened in water
+as if flow past a 3D-printed wing. It’s important to note that this thin
+sheet of light only captures the flow field in this vary narrow plane
+(the horizontal-vertical or x,y plane in this case).</p>
 <center>
 <img src="img/piv.gif" style="width:70.0%" />
 </center>
 <p><br></p>
-<p>To derive velocity vectors from moving particles in a field, researchers rely on sophisticated algorithms applied in various software packages, some free and some much more than free. To qualitatively assess the velocity vectors at the wings’ tips, we’ll be using a free Java-base package, <a href="https://eguvep.github.io/jpiv">jPIV</a>. This is a limited GUI version of <a href="https://eguvep.github.io/jpiv/download.html">openPIV</a>, a very popular command-line interface for PIV.</p>
-<p>To use jPIV, you’ll have to <a href="https://eguvep.github.io/jpiv/download.html">download the executable files</a> first.</p>
-<p>We’ll track particles and calculate velocity and vorticity vectors using video shots of over the wing tips. For this, we’ll use a phone from one of the group members shooting in slow motion. From the videos, <strong>pick two good consecutive frames</strong> that have lots of particles over the region of interest. You’ll need to extract the frames from the videos just as you did for MP1.</p>
-<p>To begin PIV analysis, double click on the “JPIV.jar” file. This will start the program. Extracting velocity vectors from a pair of images includes three steps:</p>
+<p>To derive velocity vectors from moving particles in a field,
+researchers rely on sophisticated algorithms applied in various software
+packages, some free and some much more than free. To qualitatively
+assess the velocity vectors at the wings’ tips, we’ll be using a free
+Java-base package, <a href="https://eguvep.github.io/jpiv">jPIV</a>.
+This is a limited GUI version of <a
+href="https://eguvep.github.io/jpiv/download.html">openPIV</a>, a very
+popular command-line interface for PIV.</p>
+<p>To use jPIV, you’ll have to <a
+href="https://eguvep.github.io/jpiv/download.html">download the
+executable files</a> first.</p>
+<p>We’ll track particles and calculate velocity and vorticity vectors
+using video shots of over the wing tips. For this, we’ll use a phone
+from one of the group members shooting in slow motion. From the videos,
+<strong>pick two good consecutive frames</strong> that have lots of
+particles over the region of interest. You’ll need to extract the frames
+from the videos just as you did for MP1.</p>
+<p>To begin PIV analysis, double click on the “JPIV.jar” file. This will
+start the program. Extracting velocity vectors from a pair of images
+includes three steps:</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Load the images.</strong> From the File menu, select “choose files.” In the folder window, navigate to where your files are stored and select the two consecutive images you’d like to analyze. Then click “open.” These image files will appear as a list to the right of the screen.</p></li>
-<li><p><strong>Change parameter settings.</strong> Under the “PIV” folder on the left of the screen, open the “General” tab and make sure “Consecutive” is selected. Then go to the “Interrogation Window” tab and under “Between passes” make sure “Normalize median test” and “3x3 median filter” boxes are selected. Deselect the others. These filters produce more accurate vectors for velocity. In the “Preferences folder,” click on the “Vector Plot” tab and change “Zoom f…” to 0.75 from 1. This will make the plots smaller and printable.</p></li>
-<li><p><strong>PIV analysis.</strong> In the files list at the right of the screen, select the two images. Then, under the PIV tab at the top, select “run PIV image analysis.” A file menu will appear. Pick a logical name, like “piv.” Click save. This will commence PIV analysis and compute the velocity vectors. When it’s finished, a file with the extension “.jvc” will appear in the file list.</p></li>
-<li><p><strong>Visualize the results.</strong> Click on the last file ending in “.jvc.” This file contains the velocity vectors and when clicked upon, a plot of these vectors appears on the screen as a new window. It seems the functions to save plots is disable or bugged, so simply save this plot with a screen capture.</p></li>
+<li><p><strong>Load the images.</strong> From the File menu, select
+“choose files”. In the folder window, navigate to where your files are
+stored and select the two consecutive images you’d like to analyze. Then
+click “open”. These image files will appear as a list to the right of
+the screen.</p></li>
+<li><p><strong>Change parameter settings.</strong> Under the “PIV”
+folder on the left of the screen, open the “General” tab and make sure
+“Consecutive” is selected. Then go to the “Interrogation Window” tab and
+under “Between passes” make sure “Normalize median test” and “3x3 median
+filter” boxes are selected. Deselect the others. These filters produce
+more accurate vectors for velocity. In the “Preferences folder”, click
+on the “Vector Plot” tab and change “Zoom f…” to 0.75 from 1. This will
+make the plots smaller and printable.</p></li>
+<li><p><strong>PIV analysis.</strong> In the files list at the right of
+the screen, select the two images. Then, under the PIV tab at the top,
+select “run PIV image analysis”. A file menu will appear. Pick a logical
+name, like “piv”. Click save. This will commence PIV analysis and
+compute the velocity vectors. When it’s finished, a file with the
+extension “.jvc” will appear in the file list.</p></li>
+<li><p><strong>Visualize the results.</strong> Click on the last file
+ending in “.jvc”. This file contains the velocity vectors and when
+clicked upon, a plot of these vectors appears on the screen as a new
+window. It seems the functions to save plots is disable or bugged, so
+simply save this plot with a screen capture.</p></li>
 </ol>
 </div>
 <div id="what-to-address-in-your-report" class="section level2">
 <h2>What to address in your report</h2>
-<p>When the avian dinosaurs split from the non-avian theropods, flight was a huge advantage. For the birds, their world became much more three dimensional, permitting the exploitation of new resources. This undoubtedly led to their evolutionary success. The origin of flight was associated with rapid evolutionary change in the shape of the bird arm as well as specializations in the body (Did you know a bird resorbs nearly all of its reproductive anatomy after breeding? Why?). These specializations can be viewed as adaptations to optimize flight aerodynamics according to a bird’s habitat.</p>
-<p>As you formulate your report and consider the evolution of the bird wing in the context of the behavioral diversity of bird flight, begin by generating <strong>an hypothesis as to how wing AR will affect the lift-to-drag ratio</strong>. In addition, be sure to outline the fluid mechanic basis for your hypothesis.</p>
-<p>Using data acquired from the entire class evaluate your hypothesis by considering the following:</p>
+<p>When the avian dinosaurs split from the non-avian theropods, flight
+was a huge advantage. For the birds, their world became much more three
+dimensional, permitting the exploitation of new resources. This
+undoubtedly led to their evolutionary success. The origin of flight was
+associated with rapid evolutionary change in the shape of the bird arm
+as well as specializations in the body (Did you know a bird resorbs
+nearly all of its reproductive anatomy after breeding? Why?). These
+specializations can be viewed as adaptations to optimize flight
+aerodynamics according to a bird’s habitat.</p>
+<p>As you formulate your report and consider the evolution of the bird
+wing in the context of the behavioral diversity of bird flight, begin by
+generating <strong>an hypothesis as to how wing AR will affect the
+lift-to-drag ratio</strong>. In addition, be sure to outline the fluid
+mechanic basis for your hypothesis.</p>
+<p>Using data acquired from the entire class evaluate your hypothesis by
+considering the following:</p>
 <ol style="list-style-type: decimal">
-<li>What is the relationship between AR and lift-to-drag ratio? Is there any clear pattern across the class data?</li>
-<li>Which birds that inspired the biomimetic wings are likely to soar long periods? That is, which are most likely to glide? Which are unable to soar for long periods?</li>
-<li>What tradeoffs can you identify with the ability or inability to soar easily? Related to this, in what type of environment do you suppose each of the birds we’ve explored lives?</li>
-<li>Consider the lift forces generated by your biomimetic wings. What other adaptations associated with the body would optimize lift resulting from the wing?</li>
-<li>Are your results with respect to AR and lift ratio supported by previous studies? If not, consider why.</li>
+<li>What is the relationship between AR and lift-to-drag ratio? Is there
+any clear pattern across the class data?</li>
+<li>Which birds that inspired the biomimetic wings are likely to soar
+long periods? That is, which are most likely to glide? Which are unable
+to soar for long periods?</li>
+<li>What tradeoffs can you identify with the ability or inability to
+soar easily? Related to this, in what type of environment do you suppose
+each of the birds we’ve explored lives?</li>
+<li>Consider the lift forces generated by your biomimetic wings. What
+other adaptations associated with the body would optimize lift resulting
+from the wing?</li>
+<li>Are your results with respect to AR and lift ratio supported by
+previous studies? If not, consider why.</li>
 </ol>
-<p>Lastly, using the images of velocity vectors for each of your groups wings, address the following:</p>
+<p>Lastly, using the images of velocity vectors for each of your groups
+wings, address the following:</p>
 <ol start="6" style="list-style-type: decimal">
-<li>Were the flow patterns at the wing tip different between your two models? If so, how do these differences relate to their lift-to-drag ratios?</li>
+<li>Were the flow patterns at the wing tip different between your two
+models? If so, how do these differences relate to their lift-to-drag
+ratios?</li>
 </ol>
-<p>Please synthesize the results of your experiments and address these questions in a report that follows the structure outlined <a href="https://bcbiomech.github.io/class/mini_projects.html">here</a>. Reports are due Friday, April 8th at 11:59 pm. Your Rmd files (<strong>with all the associated data!!!</strong>) should be sent to Prof. K via email before then.</p>
+<p>Please synthesize the results of your experiments and address these
+questions in a report that follows the structure outlined <a
+href="https://bcbiomech.github.io/class/mini_projects.html">here</a>.
+Reports are due Friday, April 8th at 11:59 pm. Your Rmd files
+(<strong>with all the associated data!!!</strong>) should be sent to
+Prof. K via email before then.</p>
 <div id="requirements-for-submission" class="section level3">
 <h3>Requirements for submission</h3>
-<p>Like a few other past MPs, importantl analyses depend on timely submission of each team’s data. So, please submit the following data by 11:59 pm on Monday 4th in <a href="https://docs.google.com/spreadsheets/d/1nzo3Qb067LA5CPNkcXndM-C8LJg7EqNFvGgHB4qBI0k/edit?usp=sharing"><strong>THIS SPREADSHEET</strong></a>:</p>
+<p>Like a few other past MPs, importantl analyses depend on timely
+submission of each team’s data. So, please submit the following data by
+11:59 pm on Monday 4th in <a
+href="https://docs.google.com/spreadsheets/d/1nzo3Qb067LA5CPNkcXndM-C8LJg7EqNFvGgHB4qBI0k/edit?usp=sharing"><strong>THIS
+SPREADSHEET</strong></a>:</p>
 <ul>
 <li>wing file name for lift and drag data</li>
 <li>span and chord length (in mm)<br />
 </li>
-<li>wetted area (<span class="math inline">\(S\)</span> in mm<span class="math inline">\(^2\)</span>)</li>
+<li>wetted area (<span class="math inline">\(S\)</span> in mm<span
+class="math inline">\(^2\)</span>)</li>
 <li>AR</li>
-<li><span class="math inline">\(C_D\)</span>, <span class="math inline">\(C_L\)</span>, and <span class="math inline">\(\frac{C_L}{C_D}\)</span></li>
+<li><span class="math inline">\(C_D\)</span>, <span
+class="math inline">\(C_L\)</span>, and <span
+class="math inline">\(\frac{C_L}{C_D}\)</span></li>
 </ul>
-<p>This means that each team is responsible for calculating <span class="math inline">\(C_D\)</span>, <span class="math inline">\(C_L\)</span>, and <span class="math inline">\(\frac{C_L}{C_D}\)</span> for their two wing models <strong>well before the report deadline</strong>.</p>
-<p>You can find explicit detail concerning the organization of an MP report <a href="https://bcbiomech.github.io/class/mini_projects.html">here</a>.</p>
+<p>This means that each team is responsible for calculating <span
+class="math inline">\(C_D\)</span>, <span
+class="math inline">\(C_L\)</span>, and <span
+class="math inline">\(\frac{C_L}{C_D}\)</span> for their two wing models
+<strong>well before the report deadline</strong>.</p>
+<p>You can find explicit detail concerning the organization of an MP
+report <a
+href="https://bcbiomech.github.io/class/mini_projects.html">here</a>.</p>
 </div>
 </div>
-<div id="what-to-pay-attention-to-in-writing-the-report" class="section level2">
+<div id="what-to-pay-attention-to-in-writing-the-report"
+class="section level2">
 <h2>What to pay attention to in writing the report</h2>
 <ul>
 <li>Data are plural.</li>
-<li>Don’t use <code>print()</code>, <code>head()</code>, etc. commands needlessly . . . we don’t need a large data table of ray data in our reports.</li>
-<li>Better methods for printing tables (eg. <code>pander()</code>, <code>kable</code>+<code>kableExtra</code>, etc.).</li>
-<li>Figures and tables need captions! For figures, use <code>fig.cap</code> parameter in r chunk options. For tables use the <code>caption</code> parameter in <code>kable()</code> or similar.</li>
-<li>Figures should be appropriately sized (check out <code>fig.width</code> and <code>fig.height</code> in r chunk options).</li>
+<li>Don’t use <code>print()</code>, <code>head()</code>, etc. commands
+needlessly . . . we don’t need a large data table of ray data in our
+reports.</li>
+<li>Better methods for printing tables (eg. <code>pander()</code>,
+<code>kable</code>+<code>kableExtra</code>, etc.).</li>
+<li>Figures and tables need captions! For figures, use
+<code>fig.cap</code> parameter in r chunk options. For tables use the
+<code>caption</code> parameter in <code>kable()</code> or similar.</li>
+<li>Figures should be appropriately sized (check out
+<code>fig.width</code> and <code>fig.height</code> in r chunk
+options).</li>
 <li>Figure axes should be labeled appropriately.</li>
 </ul>
 </div>
@@ -595,7 +788,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -604,6 +797,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')

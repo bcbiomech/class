@@ -13,13 +13,22 @@
 
 <title>Course Schedule</title>
 
-<script src="site_libs/header-attrs-2.6/header-attrs.js"></script>
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
@@ -37,32 +46,7 @@
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 
 <link rel="stylesheet" href="style.css" type="text/css" />
@@ -74,10 +58,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -94,40 +74,16 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+details > summary > p:only-child {
+  display: inline;
+}
+pre code {
+  padding: 0;
+}
 </style>
 
 
 <style type="text/css">
-/* padding for bootstrap navbar */
-body {
-  padding-top: 61px;
-  padding-bottom: 40px;
-}
-/* offset scroll position for anchor links (for fixed navbar)  */
-.section h1 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h2 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h3 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h4 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h5 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
-.section h6 {
-  padding-top: 66px;
-  margin-top: -66px;
-}
 .dropdown-submenu {
   position: relative;
 }
@@ -155,7 +111,7 @@ body {
   margin-right: -10px;
 }
 .dropdown-submenu:hover>a:after {
-  border-left-color: #ffffff;
+  border-left-color: #adb5bd;
 }
 .dropdown-submenu.pull-left {
   float: none;
@@ -167,7 +123,7 @@ body {
 }
 </style>
 
-<script>
+<script type="text/javascript">
 // manage active state of menu based on current page
 $(document).ready(function () {
   // active menu anchor
@@ -177,11 +133,28 @@ $(document).ready(function () {
     href = "index.html";
   var menuAnchor = $('a[href="' + href + '"]');
 
-  // mark it active
-  menuAnchor.parent().addClass('active');
+  // mark the anchor link active (and if it's in a dropdown, also mark that active)
+  var dropdown = menuAnchor.closest('li.dropdown');
+  if (window.bootstrap) { // Bootstrap 4+
+    menuAnchor.addClass('active');
+    dropdown.find('> .dropdown-toggle').addClass('active');
+  } else { // Bootstrap 3
+    menuAnchor.parent().addClass('active');
+    dropdown.addClass('active');
+  }
 
-  // if it's got a parent navbar menu mark it active as well
-  menuAnchor.closest('li.dropdown').addClass('active');
+  // Navbar adjustments
+  var navHeight = $(".navbar").first().height() + 15;
+  var style = document.createElement('style');
+  var pt = "padding-top: " + navHeight + "px; ";
+  var mt = "margin-top: -" + navHeight + "px; ";
+  var css = "";
+  // offset scroll position for anchor links (for fixed navbar)
+  for (var i = 1; i <= 6; i++) {
+    css += ".section h" + i + "{ " + pt + mt + "}\n";
+  }
+  style.innerHTML = "body {" + pt + "padding-bottom: 40px; }\n" + css;
+  document.head.appendChild(style);
 });
 </script>
 
@@ -193,7 +166,6 @@ $(document).ready(function () {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -319,7 +291,7 @@ div.tocify {
 
 
 <!-- setup 3col/9col grid for toc_float and main content  -->
-<div class="row-fluid">
+<div class="row">
 <div class="col-xs-12 col-sm-4 col-md-3">
 <div id="TOC" class="tocify">
 </div>
@@ -333,7 +305,7 @@ div.tocify {
 <div class="navbar navbar-default  navbar-fixed-top" role="navigation">
   <div class="container">
     <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
@@ -349,7 +321,7 @@ div.tocify {
   <a href="schedule.html">Schedule</a>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Mini-Projects
      
     <span class="caret"></span>
@@ -376,7 +348,7 @@ div.tocify {
   </ul>
 </li>
 <li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
     Final Project
      
     <span class="caret"></span>
@@ -388,10 +360,10 @@ div.tocify {
   </ul>
 </li>
 <li>
-  <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s22/discussions">Discussion Board</a>
+  <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">Discussion Board</a>
 </li>
 <li>
-  <a href="https://bostoncollege.instructure.com/courses/1627355">Course Canvas Page</a>
+  <a href="https://bostoncollege.instructure.com/courses/1640270">Course Canvas Page</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -401,7 +373,7 @@ div.tocify {
   </div><!--/.container -->
 </div><!--/.navbar -->
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -410,7 +382,9 @@ div.tocify {
 </div>
 
 
-<p>All assignments are due at 11:59 pm on the specified date. <strong>V</strong>= Vogel, S. Vogel, S. 2013. <em>Comparative Biomechanics: Life’s Physical World</em>.</p>
+<p>All assignments are due at 11:59 pm on the specified date.
+<strong>V</strong>= Vogel, S. Vogel, S. 2013. <em>Comparative
+Biomechanics: Life’s Physical World</em>.</p>
 <div id="week-1-schedule" class="section level2">
 <h2>Week 1 Schedule</h2>
 <table>
@@ -432,17 +406,22 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Jan 18</td>
+<td>Tuesday, Jan 17</td>
 <td><a href="lect/Lecture1.html">Welcome and Introduction (1)</a></td>
-<td><a href="https://en.wikipedia.org/wiki/Classical_mechanics#:~:text=Classical%20mechanics%20is%20a%20physical,%2C%20planets%2C%20stars%20and%20galaxies.">Classical Physics Wiki page</a>; V Ch. 1 &amp; 2, Append. 1 &amp;2; <a href="Vogel_2007.pdf">Vogel (2007)</a></td>
+<td><a
+href="https://en.wikipedia.org/wiki/Classical_mechanics#:~:text=Classical%20mechanics%20is%20a%20physical,%2C%20planets%2C%20stars%20and%20galaxies.">Classical
+Physics Wiki page</a>; V Ch. 1 &amp; 2, Append. 1 &amp;2; <a
+href="Vogel_2007.pdf">Vogel (2007)</a></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Jan 20</td>
-<td><a href="lect/Lecture02.html">Moving on Land I: Walking (2)</a> / <a href="MP1.html">Mini-Project I: Open Sourcery</a></td>
+<td>Thursday, Jan 18</td>
+<td><a href="lect/Lecture02.html">Moving on Land I: Walking (2)</a> / <a
+href="MP1.html">Mini-Project I: Open Sourcery</a></td>
 <td></td>
-<td><a href="https://www.r-project.org/">Download R</a> and <a href="https://www.rstudio.com/products/rstudio/download/">Rstudio</a></td>
+<td><a href="https://www.r-project.org/">Download R</a> and <a
+href="https://www.rstudio.com/products/rstudio/download/">Rstudio</a></td>
 <td></td>
 </tr>
 </tbody>
@@ -469,15 +448,19 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Jan 25</td>
-<td><a href="lect/Lecture03.html">Moving on Land II: Running et al. (3)</a></td>
+<td>Tuesday, Jan 24</td>
+<td><a href="lect/Lecture03.html">Moving on Land II: Running et
+al. (3)</a></td>
 <td><a href="KuoWalking.pdf">Kuo (2007)</a></td>
-<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td>Post to <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Jan 27</td>
-<td><a href="lect/Lecture04.html">Moving on Land III:Scaling (4)</a>/<a href="MP1.html">Mini-Project I: Open Sourcery</a></td>
+<td>Thursday, Jan 26</td>
+<td><a href="lect/Lecture04.html">Moving on Land III:Scaling (4)</a>/<a
+href="MP1.html">Mini-Project I: Open Sourcery</a></td>
 <td></td>
 <td></td>
 <td></td>
@@ -506,10 +489,13 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Feb 1</td>
-<td><a href="lect/Lecture05.html">Joints, Levers, and Linkages (5)</a></td>
+<td>Tuesday, Jan 31</td>
+<td><a href="lect/Lecture05.html">Joints, Levers, and Linkages
+(5)</a></td>
 <td>V Ch. 20</td>
-<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td>Post to <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -520,8 +506,9 @@ div.tocify {
 <td></td>
 </tr>
 <tr class="odd">
-<td>Thursday, Feb 3</td>
-<td><a href="lect/Lecture06.html">Coarse Materials I (6)</a> / <a href="MP2.html">Mini-Project II: Get Ur Gait On!</a></td>
+<td>Thursday, Feb 2</td>
+<td><a href="lect/Lecture06.html">Coarse Materials I (6)</a> / <a
+href="MP2.html">Mini-Project II: Get Ur Gait On!</a></td>
 <td>V pp. 286–306</td>
 <td></td>
 <td></td>
@@ -550,14 +537,16 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Feb 8</td>
+<td>Tuesday, Feb 7</td>
 <td><a href="lect/Lecture07.html">Coarse Materials II (7)</a></td>
 <td>V Ch. 16, 17</td>
-<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td>Post to <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Feb 10</td>
+<td>Thursday, Feb 9</td>
 <td><a href="lect/Lecture08.html">Coarse Materials III (8)</a></td>
 <td>V Ch. 18</td>
 <td></td>
@@ -587,10 +576,12 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Feb 15</td>
+<td>Tuesday, Feb 14</td>
 <td><a href="lect/Lecture09.html">Coarse Structures (9)</a></td>
 <td>V Ch. 19</td>
-<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td>Post to <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -601,8 +592,10 @@ div.tocify {
 <td></td>
 </tr>
 <tr class="odd">
-<td>Thursday, Feb 17</td>
-<td><a href="lect/Lecture10.html">Stretching/Bending</a> <br><a href="MP3.html">Mini-Project III: Stretch the Pig, Bend the Twig</a></td>
+<td>Thursday, Feb 16</td>
+<td><a href="lect/Lecture10.html">Stretching/Bending (10)</a> <br><a
+href="MP3.html">Mini-Project III: Stretch the Pig, Bend the
+Twig</a></td>
 <td>V pp. 425-436</td>
 <td></td>
 <td></td>
@@ -614,6 +607,13 @@ div.tocify {
 <div id="week-6-schedule" class="section level2">
 <h2>Week 6 Schedule</h2>
 <table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th><strong>Date</strong> <img width=200/></th>
@@ -625,15 +625,20 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Feb 22</td>
+<td>Tuesday, Feb 21</td>
 <td><a href="lect/Lecture11.html">Adhesion (11)</a></td>
-<td></td>
-<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td><a
+href="https://academic.oup.com/icb/article/59/1/101/5486592">Russell et
+al. (2019)</a></td>
+<td>Post to <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Feb 24</td>
-<td><a href="lect/Lecture12.html">Muscles: Micro Predicts Macro (12)</a></td>
+<td>Thursday, Feb 23</td>
+<td><a href="lect/Lecture12.html">Muscles: Micro Predicts Macro
+(12)</a></td>
 <td></td>
 <td></td>
 <td></td>
@@ -662,15 +667,19 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Mar 1</td>
-<td><a href="lect/Lecture13.html">Fluid Motions Around: An Introduction (13)</a></td>
+<td>Tuesday, Feb 28</td>
+<td><a href="lect/Lecture13.html">Fluid Motions Around: An Introduction
+(13)</a></td>
 <td></td>
-<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td>Post to <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Mar 3</td>
-<td><a href="lect/Lecture14.html">Fluid Motions Around: Bernoulli (14)</a></td>
+<td>Thursday, Mar 2</td>
+<td><a href="lect/Lecture14.html">Fluid Motions Around: Bernoulli
+(14)</a></td>
 <td></td>
 <td></td>
 <td></td>
@@ -681,6 +690,13 @@ div.tocify {
 <div id="week-8-schedule" class="section level2">
 <h2>Week 8 Schedule</h2>
 <table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th><strong>Date</strong> <img width=200/></th>
@@ -692,10 +708,13 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Mar 15</td>
+<td>Tuesday, Mar 14</td>
 <td><a href="lect/Lecture15.html">Re: Drag (15)</a></td>
-<td></td>
-<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td><a href="https://www.nature.com/articles/ncomms6119">Qui et
+al. (2014)</a></td>
+<td>Post to <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a></td>
 <td></td>
 </tr>
 <tr class="even">
@@ -706,8 +725,9 @@ div.tocify {
 <td></td>
 </tr>
 <tr class="odd">
-<td>Thursday, Mar 17</td>
-<td><a href="lect/Lecture16.html">Re: Shape (16)</a> / <a href="MP4.html">Mini-Project IV: Birds of Feather</a></td>
+<td>Thursday, Mar 16</td>
+<td><a href="lect/Lecture16.html">Re: Shape (16)</a> / <a
+href="MP4.html">Mini-Project IV: Birds of Feather</a></td>
 <td></td>
 <td></td>
 <td></td>
@@ -718,6 +738,13 @@ div.tocify {
 <div id="week-9-schedule" class="section level2">
 <h2>Week 9 Schedule</h2>
 <table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th><strong>Date</strong> <img width=200/></th>
@@ -729,15 +756,17 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Mar 22</td>
-<td><a href="lect/Lecture17.html">Lift for a Living (17)</a></td>
+<td>Tuesday, Mar 21</td>
+<td><a href="lect/Lecture17.html">Lift for a Living I (17)</a></td>
 <td></td>
-<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td>Post to <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Mar 24</td>
-<td>No Class :(</td>
+<td>Thursday, Mar 23</td>
+<td>Lift for a Living II (18)</td>
 <td></td>
 <td></td>
 <td></td>
@@ -766,16 +795,22 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Mar 29</td>
-<td><a href="lect/Lecture18.html">Gliding into D = m<span class="math inline">\(\cdot g\cdot\)</span> cos(<span class="math inline">\(\theta\)</span>)</a></td>
+<td>Tuesday, Mar 28</td>
+<td><a href="lect/Lecture18.html">Gliding into D = m<span
+class="math inline">\(\cdot g\cdot\)</span> cos(<span
+class="math inline">\(\theta\)</span>) (19)</a></td>
 <td></td>
-<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td>Post to <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Wednesday, Mar 31</td>
+<td>Wednesday, Mar 30</td>
 <td><a href="lect/Lecture19.html">Fish Swimming (20)</a></td>
-<td><a href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=757275&amp;casa_token=I48yhmyTDY0AAAAA:hlx2Coqp-NuyrzmiV6VvSFZdWkf2Xd-d7DNJEMa1V-e2hJStcLdoQ_D14rlu-fanh21gf_kO&amp;tag=1">Sfakiotakis et al, 2009</a></td>
+<td><a
+href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=757275&amp;casa_token=I48yhmyTDY0AAAAA:hlx2Coqp-NuyrzmiV6VvSFZdWkf2Xd-d7DNJEMa1V-e2hJStcLdoQ_D14rlu-fanh21gf_kO&amp;tag=1">Sfakiotakis
+et al, 2009</a></td>
 <td></td>
 <td></td>
 </tr>
@@ -803,15 +838,19 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Apr 5</td>
+<td>Tuesday, Apr 4</td>
 <td><a href="lect/Lecture21.html">There Will Be Blood (21)</a></td>
 <td></td>
-<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td>Post to <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursda, Apr 7</td>
-<td><a href="lect/Lecture22.html"><span class="math inline">\(Re\)</span>: The Tiny</a> / <a href="MP5.html">Mini-Project V: It’s Snot Rocket Science</a></td>
+<td>Thursda, Apr 6</td>
+<td>No class, Easter <a href="lect/Lecture22.html"><span
+class="math inline">\(Re\)</span>: The Tiny (22)</a> / <a
+href="MP5.html">Mini-Project V: It’s Snot Rocket Science</a></td>
 <td></td>
 <td>MP4 report due</td>
 <td></td>
@@ -822,6 +861,13 @@ div.tocify {
 <div id="week-12-schedule" class="section level2">
 <h2>Week 12 Schedule</h2>
 <table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th><strong>Date</strong> <img width=200/></th>
@@ -833,14 +879,16 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Apr 12</td>
+<td>Tuesday, Apr 11</td>
 <td>Final Project Discussion</td>
 <td></td>
-<td>Post to <a href="https://github.com/orgs/bcbiomech/teams/biol-5380">discussion board</a></td>
+<td>Post to <a
+href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+board</a></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Apr 14</td>
+<td>Thursday, Apr 13</td>
 <td>No class (Easter)</td>
 <td></td>
 <td></td>
@@ -872,7 +920,7 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Apr 19</td>
+<td>Tuesday, Apr 18</td>
 <td>No class, Monday Schedule</td>
 <td></td>
 <td></td>
@@ -893,6 +941,13 @@ div.tocify {
 <div id="week-14-schedule" class="section level2">
 <h2>Week 14 Schedule</h2>
 <table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th><strong>Date</strong> <img width=200/></th>
@@ -904,14 +959,14 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Apr 26</td>
+<td>Tuesday, Apr 25</td>
 <td>Final Project Work</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Apr 28</td>
+<td>Thursday, Apr 27</td>
 <td>Final Project Work</td>
 <td></td>
 <td></td>
@@ -923,6 +978,13 @@ div.tocify {
 <div id="week-15-schedule" class="section level2">
 <h2>Week 15 Schedule</h2>
 <table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th><strong>Date</strong> <img width=200/></th>
@@ -934,14 +996,14 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, May 3</td>
+<td>Tuesday, May 2</td>
 <td>Final Project Work</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, May 5</td>
+<td>Thursday, May 4</td>
 <td>Final Project Work</td>
 <td></td>
 <td></td>
@@ -953,6 +1015,13 @@ div.tocify {
 <div id="finals-schedule" class="section level2">
 <h2>Finals Schedule</h2>
 <table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
 <thead>
 <tr class="header">
 <th><strong>Date</strong> <img width=200/></th>
@@ -964,10 +1033,10 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td>Friday, May 13</td>
+<td>Friday, May 12</td>
 <td>Final Project</td>
 <td></td>
-<td>FP Repor due*</td>
+<td>FP Report due*</td>
 <td></td>
 </tr>
 <tr class="even">
@@ -979,7 +1048,9 @@ div.tocify {
 </tr>
 </tbody>
 </table>
-<p>*FP presentations can be uploaded to <a href="https://drive.google.com/drive/folders/1-2pw3pWQg-F8UPaWoTlbg3FgrQ6jnnbZ">this directory</a>.</p>
+<p>*FP presentations can be uploaded to <a
+href="https://drive.google.com/drive/folders/1-2pw3pWQg-F8UPaWoTlbg3FgrQ6jnnbZ">this
+directory</a>.</p>
 </div>
 
 
@@ -1011,7 +1082,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
@@ -1020,6 +1091,9 @@ $(document).ready(function () {
 
 <script>
 $(document).ready(function ()  {
+
+    // temporarily add toc-ignore selector to headers for the consistency with Pandoc
+    $('.unlisted.unnumbered').addClass('toc-ignore')
 
     // move toc-ignore selectors from section div to header
     $('div.section.toc-ignore')

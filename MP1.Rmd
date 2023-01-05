@@ -12,7 +12,7 @@ Our tasks will be to:
   1. Familiarize ourselves with the R and R Markdown frameworks.
   2. Author a simple R Markdown.
   3. Run code within an R Markdown document.
-  4. Add graphics (i.e., figures), to an R Markdown document. 
+  4. Add graphics (i.e., figures) to an R Markdown document. 
   5. Render (i.e., knit) this R Markdown into HTML documents.
   
 We'll take on these tasks as we try to answer a very simple (yet important!!!) question in human biomechanics: 
@@ -545,7 +545,7 @@ The markdown must contain the following:
     + lines and points that vary in color according to who's doing the jumping (again, `aes(col=who)`, anyone?)
     + a brief paragraph summarizing the differences and any inferences of why they are
     
-The `knitr` markdown file and all the associated files (see below) are due on Wednesday, February 3rd by 11:59 PM. Please email them to Prof. Kenaley.
+The `knitr` markdown file and all the associated files (see below) are due on Wednesday, February 2nd by 11:59 PM. Please email them to Prof. Kenaley.
   
   
   <br>
