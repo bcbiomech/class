@@ -4,7 +4,7 @@
     <title>Welcome and Introduction</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Christopher Kenaley" />
-    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -14,11 +14,21 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Welcome and Introduction
+]
+.subtitle[
 ## Setting the Stage
+]
+.author[
 ### Dr. Christopher Kenaley
+]
+.institute[
 ### Boston College
+]
+.date[
 ### 2022/18/1
+]
 
 ---
 
@@ -57,9 +67,9 @@ class: inverse, top
 
 bcbiomech.github.io/class/
 
-Tuesday &amp; most Thursdays. 10:30-11:45 for in-person lectures
+Tuesday &amp; most Thursdays. 12:00-13:15 for in-person lectures
 
-Some Thursdays (over zoom/in-person, TBD) for launch of asynchronous lab activities (i.e, Mini-Projects) 
+Some Thursdays (in-person, TBD) for launch of asynchronous lab activities (i.e, Mini-Projects) 
 ]
 
 .pull-right[
@@ -85,8 +95,6 @@ office hours in Higgins 415/535 (by appointment) or over Zoom
 class: 
 
 # Meet and potatoes
-
-
 
 &lt;table class="table" style="margin-left: auto; margin-right: auto;"&gt;
 &lt;tbody&gt;
@@ -184,7 +192,7 @@ IDE: Integrated Development Environment
 ]
 
 .pull-right[
-![](https://memegenerator.net/img/instances/81812046.jpg)
+![](https://st.depositphotos.com/1518767/2573/i/600/depositphotos_25731289-stock-photo-demotivated-students-in-a-lecture.jpg)
 ]
 ---
 # Discussion
@@ -199,7 +207,7 @@ IDE: Integrated Development Environment
 ]
 
 .pull-right[
-![](https://memegenerator.net/img/instances/81812046.jpg)
+![](https://www.codlearningtech.org/wp-content/uploads/2020/07/discussionboard-1.png)
 ]
 ---
 class:  top
@@ -210,7 +218,7 @@ class:  top
 ## Lab logistics
 
 - Huddle and scatter model
-- Meet in person over Zoom at 10:30 (synchronous)
+- Meet to discuss/plan beforehand
 - Scatter with team over 2-3 weeks to complete Mini-Project
 - Check out material from Higgins 535
 
@@ -220,7 +228,7 @@ class:  top
 
 ## Mini-projects
 
-- MP descriptions release before Thursday meetings
+- MP descriptions released before Thursday meetings
 - 2-3 weeks to finish MP
 - Reports due on Wednesdays
 - Team-based, new team each MP
@@ -239,32 +247,29 @@ class:  top
 
 .pull-left[
 
-## Overview
+### Overview
 
 - Team-based (new team, too)
 - Topic of your choice (build off of MPs)
 - Same report guidelines as MPs (.Rmd, format, etc.)
-- Additional presentation (10 min)
-- Record presentation and deliver to class (at a PARTAY!!!!)
+- Additional presentation (10 min, at a PARTAY!!!!)
 
 ]
 
 .pull-right[
 
-## Timeline
+### Timeline
 
-- ~1 month to develop, execute
-- Start mid April
-- Report due a few days before presentation (May 13)
+- ~1 month to develop (start in April), execute
+- Report due a few days before presentation (~May 13)
 - Presentation submitted and given after report (May 13, 14, 15)
 
-
 ]
-
 .center[
-&lt;video width="500"&gt;
+&lt;video width="300"&gt;
 &lt;source src="longjump_project.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
+
 ]
 
 ---
@@ -398,6 +403,13 @@ Now let's plot to relationship.
 
 ```r
 qplot(L,merus.pred)+theme_classic(30)+ylab("Force (N)")
+```
+
+```
+## Warning: `qplot()` was deprecated in ggplot2 3.4.0.
+```
+
+```r
 knitr::include_graphics("merus.png")
 ```
 
@@ -480,6 +492,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

@@ -50,9 +50,9 @@ class: inverse, top
 
 bcbiomech.github.io/class/
 
-Tuesday & most Thursdays. 10:30-11:45 for in-person lectures
+Tuesday & most Thursdays. 12:00-13:15 for in-person lectures
 
-Some Thursdays (over zoom/in-person, TBD) for launch of asynchronous lab activities (i.e, Mini-Projects) 
+Some Thursdays (in-person, TBD) for launch of asynchronous lab activities (i.e, Mini-Projects) 
 ]
 
 .pull-right[
@@ -78,8 +78,6 @@ office hours in Higgins 415/535 (by appointment) or over Zoom
 class: 
 
 # Meet and potatoes
-
-
 
 ```{r,echo=FALSE}
 g <- rbind(c("","","Points"),
@@ -152,7 +150,7 @@ IDE: Integrated Development Environment
 ]
 
 .pull-right[
-![](https://memegenerator.net/img/instances/81812046.jpg)
+![](https://st.depositphotos.com/1518767/2573/i/600/depositphotos_25731289-stock-photo-demotivated-students-in-a-lecture.jpg)
 ]
 ---
 # Discussion
@@ -167,7 +165,7 @@ IDE: Integrated Development Environment
 ]
 
 .pull-right[
-![](https://memegenerator.net/img/instances/81812046.jpg)
+![](https://www.codlearningtech.org/wp-content/uploads/2020/07/discussionboard-1.png)
 ]
 ---
 class:  top
@@ -178,7 +176,7 @@ class:  top
 ## Lab logistics
 
 - Huddle and scatter model
-- Meet in person over Zoom at 10:30 (synchronous)
+- Meet to discuss/plan beforehand
 - Scatter with team over 2-3 weeks to complete Mini-Project
 - Check out material from Higgins 535
 
@@ -188,7 +186,7 @@ class:  top
 
 ## Mini-projects
 
-- MP descriptions release before Thursday meetings
+- MP descriptions released before Thursday meetings
 - 2-3 weeks to finish MP
 - Reports due on Wednesdays
 - Team-based, new team each MP
@@ -207,32 +205,29 @@ class:  top
 
 .pull-left[
 
-## Overview
+### Overview
 
 - Team-based (new team, too)
 - Topic of your choice (build off of MPs)
 - Same report guidelines as MPs (.Rmd, format, etc.)
-- Additional presentation (10 min)
-- Record presentation and deliver to class (at a PARTAY!!!!)
+- Additional presentation (10 min, at a PARTAY!!!!)
 
 ]
 
 .pull-right[
 
-## Timeline
+### Timeline
 
-- ~1 month to develop, execute
-- Start mid April
-- Report due a few days before presentation (May 13)
+- ~1 month to develop (start in April), execute
+- Report due a few days before presentation (~May 13)
 - Presentation submitted and given after report (May 13, 14, 15)
 
-
 ]
-
 .center[
-<video width="500">
+<video width="300">
 <source src="longjump_project.mp4" type="video/mp4">
 </video>
+
 ]
 
 ---
