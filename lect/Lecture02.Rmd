@@ -3,7 +3,7 @@ title: "Lecture 2"
 subtitle: "Terrestrial Locomotion I"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2022/1/20"
+date: "2022/1/19"
 output:
   xaringan::moon_reader:
     lib_dir: libs
