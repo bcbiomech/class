@@ -3,7 +3,7 @@ title: "Lecture 3"
 subtitle: "Terrestrial Locomotion II"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2022/1/25"
+date: "2022/1/24"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -13,6 +13,9 @@ output:
       countIncrementalSlides: false
 ---
 
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
 
 class: inverse, top
 # Terrestrial locomotion
@@ -54,15 +57,13 @@ class: top
 
 .pull-left[
 
-- Fixed site links to discussion: https://github.com/orgs/bcbiomech/teams/biol5380_s22
+- Link to discussion: https://github.com/orgs/bcbiomech/teams/biol5380_s23
 
-- Must accept team invite from me (BIOL5380_S22) to login
+- Must accept team invite from me (BIOL5380_S23) to login
 
 - Of course, this requires a github account
 
 - Post to discussion board by EOD today
-
-
 
 
 
@@ -312,17 +313,12 @@ class: top
 # Energy transfer and posture
 
 
-
-
 .pull-left[
+.center[
 
+[barefoot running](https://www.youtube.com/watch?v=r6YhVN_YIUk)
 
-![](http://barefootrunning.fas.harvard.edu/BF%20HS%201%20Contact.jpg)
-
-![](http://barefootrunning.fas.harvard.edu/BF%20HS%202%20Foot%20Flat.jpg)
-
-[http://barefootrunning.fas.harvard.edu/](http://barefootrunning.fas.harvard.edu/)
-
+]
 ]
 
 .pull-right[
@@ -349,12 +345,8 @@ class: top
 
 .pull-left[
 
+[shod running](https://www.youtube.com/watch?v=zavoQM3727s)
 
-![](http://barefootrunning.fas.harvard.edu/BF%20RS%201%20Contact.jpg)
-
-![](http://barefootrunning.fas.harvard.edu/BF%20RS%202%20Foot%20Flat.jpg)
-
-[http://barefootrunning.fas.harvard.edu/](http://barefootrunning.fas.harvard.edu/)
 ]
 
 .pull-right[
