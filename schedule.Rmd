@@ -18,7 +18,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Jan 24 | [Moving on Land II: Running et al. (3)](lect/Lecture03.html) | [Kuo (2007)](KuoWalking.pdf)| Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Thursday, Jan 26 | [Moving on Land III:Scaling (4)](lect/Lecture04.html)/[Mini-Project I: Open Sourcery](MP1.html)||
+ | Thursday, Jan 26 | No class :(/[Mini-Project I: Open Sourcery](MP1.html)||
  
  
 
@@ -27,7 +27,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Jan 31 | [Joints, Levers, and Linkages (5)](lect/Lecture05.html) | V Ch. 20 |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
+ | Tuesday, Jan 31 | [Moving on Land III:Scaling/Joints, Levers, and Linkages (5)](lect/Lecture05.html) | V Ch. 20 |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
   | Wednesday, Feb 2 | | | MP1 report due 
  | Thursday, Feb 2 | [Coarse Materials I (6)](lect/Lecture06.html) / [Mini-Project II: Get Ur Gait On!](MP2.html) | V pp. 286--306 |
  
