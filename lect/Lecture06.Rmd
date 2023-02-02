@@ -1,9 +1,9 @@
 ---
-title: "Lecture6"
+title: "Lecture 6"
 subtitle: "Coarse Materials I"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/2/3"
+date: "2021/2/2"
 output:
   xaringan::moon_reader:
     lib_dir: libs
