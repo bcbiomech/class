@@ -60,13 +60,14 @@ knitr::include_graphics(c("pelvictilt.jpg"))
  
 
 ## Methods
+
 There are two parts to this MP: (1) predicting and testing predictions of maximum walking speed and (2) an analysis of pelvic tilt as it varies between normal walking at comfortable speeds and fast speeds. For both parts of this MP, it is important that you walk and not run. That means a duty factor of >0.5, i.e., you'll always have a foot on the ground. Lab partners, police your colleagues to ensure this.
 
 ### Sofware essentials
 
 We'll need a few pieces of software to analyze the kinematics of walking. First, [download and install FIJI](https://imagej.net/software/fiji/), a free image analysis package (FIJI is just imageJ) that just about everyone in the natural sciences uses at one point in their career. Second, enable the MTrackJ plugin by following these [directions](https://imagej.net/libs/imagescience) MTrackJ is a simple tracking routine that allows users to track points across video frames.
 
-We'll be working with video data captured with our phones. The file types associated with videos shot by phones are often unworkable in imageJ/FIJI. We need a way of converting your phone videos to AVI format, a file type that imageJ can open. Videos can be rendered into AVI files using---you guessed it---free and open source tools like MPEG Streamclip, which [can be downloaded here](http://www.squared5.com/)
+We'll be working with video data captured with our phones. The file types associated with videos shot by phones are often unworkable in imageJ/FIJI. We need a way of converting your phone videos to AVI format, a file type that imageJ can open. Videos can be rendered into AVI files using---you guessed it---using R. See below
 
 
 
@@ -82,9 +83,9 @@ Using these data, compute the velocity (in m s$^{-1}$) and compare this to your 
 
 The radius of your rotating mass can be effectively increased by subtle changes in posture, including active alterations in pelvic position. Lateral pelvic tilt is one such mechanism and the angle of tilt can be measured using ImageJ. While pelvic tilt results in a lengthening of the plant-leg, there are other postural consequences. 
 
-Start with donning the markers and the yardstick with markers attached at its end as in the figure below. Attach one small marker low on the front of your shin. Attach the yardstick with binder clips to your pantwaist. Be sure that the yard stick rests right above your anterior superior illiac spines (those bony points on the front of your hip). This apparatus will amplify your pelvic motions and make data recording much easier. Have a project partner record video (in normal video mode) of your walk as you walk toward her/him over the 5-m course from the earlier experiment. Be careful that the full width of the yardstick in the frame at all times. You'll perform two trials per partner: (1) walking normally at a comfortable speed and (2) walking normally but as quickly as possible. For both trials, use ImageJ and the MTrackJ plugin to track the markers on your body. From these data, you should compute pelvic tilt angle (i.e. the difference between the maximum and minimum tilt angle). Please also enter these data [here](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). Remember, these data can be accessed for analysis from this directory. Also notice there are data from previous iterations of the class. Be sure to use all of these in your analysis.
+Start with donning the markers and the yardstick with markers attached at its end as in the figure below. Attach one small marker low on the front of your shin. Attach the yardstick with binder clips to your pantwaist. Be sure that the yard stick rests right above your anterior superior illiac spines (those bony points on the front of your hip). This apparatus will amplify your pelvic motions and make data recording much easier. Have a project partner record video (in normal video mode) of your walk as you walk toward them over the 5-m course from the earlier experiment. Be careful that the full width of the yardstick in the frame at all times. You'll perform two trials per partner: (1) walking normally at a comfortable speed and (2) walking normally but as quickly as possible. For both trials, use ImageJ and the MTrackJ plugin to track the markers on your body. From these data, you should compute pelvic tilt angle (i.e. the difference between the maximum and minimum tilt angle). Please also enter these data [here](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). Remember, these data can be accessed for analysis from this directory. Also notice there are data from previous iterations of the class. Be sure to use all of these in your analysis.
 
-To analyze your videos in ImageJ, you'll need to convert them to and AVI file and have the MtrackJ plugin installed (see above). Once the AVI file is stored in a directory, open it with ImageJ (File$\rightarrow$ Import $\rightarrow$ AVI . . .). Launch the MTrackJ plugin (Plugins $\rightarrow$ MtrackJ) and follow the directions from the online [manual](http://www.imagescience.org/meijering/software/mtrackj/quickstart/). The goal here is to track four positions and calculate your two kinematic values: pelvic tilt and leg angle.
+To analyze your videos in ImageJ, you'll need to convert them to and AVI file and have the MtrackJ plugin installed (see below). Once the AVI file is stored in a directory, open it with ImageJ (File$\rightarrow$ Import $\rightarrow$ AVI . . .). Launch the MTrackJ plugin (Plugins $\rightarrow$ MtrackJ) and follow the directions from the online [manual](http://www.imagescience.org/meijering/software/mtrackj/quickstart/). The goal here is to track four positions and calculate your two kinematic values: pelvic tilt and leg angle.
 
 
 
@@ -97,20 +98,51 @@ knitr::include_graphics(c("walkfront.png"))
 
 ## What to address in the report
 
-1. How did class-wide $v_{max}$ (the theoretical velocity) compare to actual class-wide walking speed? Were any patterns related to this revealed by calculating the Froude number?
+1. How did class-wide $v_{max}$ (the theoretical velocity) compare to actual class-wide pendulum-type walking speed? Were any patterns related to this revealed by calculating the Froude number?
 2. How does actual pendulum walking speed vary with human size and sex? 
 <!-- for future . . . How does actual recorded maximum pendulum walking speed ($v_{max}$) vary with human size and sex?  -->
-3. How does pelvic tilt change with increased walking speeds. What is the biomechanical basis for this?
-4. Does pelvic tilt at comfortable walking speeds vary with human size (i.e., mass and height) and sex? 
+3. How does pelvic tilt change with increased normal walking speeds. What is the biomechanical basis for this?
+4. Does pelvic tilt at comfortable normal walking speeds vary with human size (i.e., mass and height) and sex? 
 
-**NOTE:** Make sure you enter your data as soon as possible  [here](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). Be sure to use all of these data from past classes in your analysis. Notice we have none for fast tilt angle from 
+**NOTE:** Make sure you enter your data as soon as possible  [here](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). Be sure to use all of these data from past classes in your analysis. 
 
-As a group, please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports and any data files reference by them are due Wedneday, February 15th, by 11:59 PM. They can should be sent to Prof. Kenaley in a zipped directory over email.
 
 
 ## A kick start
 
-To answer these questions, you'll have to concatenate a bunch of data. Fortunately, we've learned how to do this lately. However, for it to proceed smoothly, you might need some guidance, especially dealing with the data from the MTrackJ analysis. Let's assume you produced 4 files for two teammates that each walked fast and slowly. If we had our data file names begin with "walk" and end in ".txt", we could use a handy `grep` search to find all the files we want to analyze in the directory.
+First, we need a way of converting our phone videos into a format readable by FIJI/imageJ. The AVI format is essentially a stack of raw images that is readable by almost any software. So let's convert our videos to AVI. Fortunately, R can do that for us if we have the `av` package installed.
+
+```{r, eval=FALSE}
+library(av)
+
+#set your working directory
+setwd("some_directory")
+
+#list files ending in MOV, the format stored by iphones
+
+f <- list.files(full.names = T,pattern=".MOV")
+
+#create a place to store images
+dir.create("images")
+
+#for each file, f, breakup the .MOV into the images and build avi files
+for(i in f){
+  if(dir.exists("images")) unlink("images",recursive = T)
+
+  #extract images
+  av_video_images(i,destdir ="images",format="tiff")
+  
+  #list images
+  f.i <- list.files("images",full.names = T)
+  
+  #make the avi from the images from the MOV
+  av_encode_video(f.i,gsub("MOV","avi",basename(i)),codec = "rawvideo")
+}
+
+```
+
+
+After converting your videos, you'll have to assemble a bunch of data from them. Fortunately, we've learned how to do this lately. However, for it to proceed smoothly, you might need some guidance, especially dealing with the data from the MTrackJ analysis. Let's assume you produced 4 files for two teammates that each walked fast and slowly. If we had our data file names begin with "walk" and end in ".txt", we could use a handy `grep` search to find all the files we want to analyze in the directory.
 
 ```{r}
 walk.files <- list.files()[grep("walk_.*.txt",list.files())]

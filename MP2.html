@@ -604,9 +604,7 @@ frames.</p>
 types associated with videos shot by phones are often unworkable in
 imageJ/FIJI. We need a way of converting your phone videos to AVI
 format, a file type that imageJ can open. Videos can be rendered into
-AVI files using—you guessed it—free and open source tools like MPEG
-Streamclip, which <a href="http://www.squared5.com/">can be downloaded
-here</a></p>
+AVI files using—you guessed it—using R. See below</p>
 </div>
 <div id="max-out-your-pendulum" class="section level3">
 <h3>Max out your pendulum</h3>
@@ -642,7 +640,7 @@ your pantwaist. Be sure that the yard stick rests right above your
 anterior superior illiac spines (those bony points on the front of your
 hip). This apparatus will amplify your pelvic motions and make data
 recording much easier. Have a project partner record video (in normal
-video mode) of your walk as you walk toward her/him over the 5-m course
+video mode) of your walk as you walk toward them over the 5-m course
 from the earlier experiment. Be careful that the full width of the
 yardstick in the frame at all times. You’ll perform two trials per
 partner: (1) walking normally at a comfortable speed and (2) walking
@@ -655,7 +653,7 @@ Remember, these data can be accessed for analysis from this directory.
 Also notice there are data from previous iterations of the class. Be
 sure to use all of these in your analysis.</p>
 <p>To analyze your videos in ImageJ, you’ll need to convert them to and
-AVI file and have the MtrackJ plugin installed (see above). Once the AVI
+AVI file and have the MtrackJ plugin installed (see below). Once the AVI
 file is stored in a directory, open it with ImageJ (File<span
 class="math inline">\(\rightarrow\)</span> Import <span
 class="math inline">\(\rightarrow\)</span> AVI . . .). Launch the
@@ -676,40 +674,63 @@ You lookin’ all marked and stuff
 <h2>What to address in the report</h2>
 <ol style="list-style-type: decimal">
 <li>How did class-wide <span class="math inline">\(v_{max}\)</span> (the
-theoretical velocity) compare to actual class-wide walking speed? Were
-any patterns related to this revealed by calculating the Froude
-number?</li>
+theoretical velocity) compare to actual class-wide pendulum-type walking
+speed? Were any patterns related to this revealed by calculating the
+Froude number?</li>
 <li>How does actual pendulum walking speed vary with human size and sex?
 <!-- for future . . . How does actual recorded maximum pendulum walking speed ($v_{max}$) vary with human size and sex?  --></li>
-<li>How does pelvic tilt change with increased walking speeds. What is
-the biomechanical basis for this?</li>
-<li>Does pelvic tilt at comfortable walking speeds vary with human size
-(i.e., mass and height) and sex?</li>
+<li>How does pelvic tilt change with increased normal walking speeds.
+What is the biomechanical basis for this?</li>
+<li>Does pelvic tilt at comfortable normal walking speeds vary with
+human size (i.e., mass and height) and sex?</li>
 </ol>
 <p><strong>NOTE:</strong> Make sure you enter your data as soon as
 possible <a
 href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing">here</a>.
-Be sure to use all of these data from past classes in your analysis.
-Notice we have none for fast tilt angle from</p>
-<p>As a group, please synthesize the results of your experiments and
-address these questions in a report in markdown format that follows the
-structure outlined on our <a href="mini_projects.html">Min-projects
-page</a>. Reports and any data files reference by them are due Wedneday,
-February 15th, by 11:59 PM. They can should be sent to Prof. Kenaley in
-a zipped directory over email.</p>
+Be sure to use all of these data from past classes in your analysis.</p>
 </div>
 <div id="a-kick-start" class="section level2">
 <h2>A kick start</h2>
-<p>To answer these questions, you’ll have to concatenate a bunch of
-data. Fortunately, we’ve learned how to do this lately. However, for it
-to proceed smoothly, you might need some guidance, especially dealing
-with the data from the MTrackJ analysis. Let’s assume you produced 4
-files for two teammates that each walked fast and slowly. If we had our
-data file names begin with “walk” and end in “.txt”, we could use a
-handy <code>grep</code> search to find all the files we want to analyze
-in the directory.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>walk.files <span class="ot">&lt;-</span> <span class="fu">list.files</span>()[<span class="fu">grep</span>(<span class="st">&quot;walk_.*.txt&quot;</span>,<span class="fu">list.files</span>())]</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(walk.files)</span></code></pre></div>
+<p>First, we need a way of converting our phone videos into a format
+readable by FIJI/imageJ. The AVI format is essentially a stack of raw
+images that is readable by almost any software. So let’s convert our
+videos to AVI. Fortunately, R can do that for us if we have the
+<code>av</code> package installed.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(av)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co">#set your working directory</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;some_directory&quot;</span>)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">#list files ending in MOV, the format stored by iphones</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">full.names =</span> T,<span class="at">pattern=</span><span class="st">&quot;.MOV&quot;</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">#create a place to store images</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;images&quot;</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">#for each file, f, breakup the .MOV into the images and build avi files</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> f){</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">dir.exists</span>(<span class="st">&quot;images&quot;</span>)) <span class="fu">unlink</span>(<span class="st">&quot;images&quot;</span>,<span class="at">recursive =</span> T)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="co">#extract images</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">av_video_images</span>(i,<span class="at">destdir =</span><span class="st">&quot;images&quot;</span>,<span class="at">format=</span><span class="st">&quot;tiff&quot;</span>)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="co">#list images</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  f.i <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="st">&quot;images&quot;</span>,<span class="at">full.names =</span> T)</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="co">#make the avi from the images from the MOV</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">av_encode_video</span>(f.i,<span class="fu">gsub</span>(<span class="st">&quot;MOV&quot;</span>,<span class="st">&quot;avi&quot;</span>,<span class="fu">basename</span>(i)),<span class="at">codec =</span> <span class="st">&quot;rawvideo&quot;</span>)</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<p>After converting your videos, you’ll have to assemble a bunch of data
+from them. Fortunately, we’ve learned how to do this lately. However,
+for it to proceed smoothly, you might need some guidance, especially
+dealing with the data from the MTrackJ analysis. Let’s assume you
+produced 4 files for two teammates that each walked fast and slowly. If
+we had our data file names begin with “walk” and end in “.txt”, we could
+use a handy <code>grep</code> search to find all the files we want to
+analyze in the directory.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>walk.files <span class="ot">&lt;-</span> <span class="fu">list.files</span>()[<span class="fu">grep</span>(<span class="st">&quot;walk_.*.txt&quot;</span>,<span class="fu">list.files</span>())]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(walk.files)</span></code></pre></div>
 <pre><code>## [1] &quot;walk_fast_me.txt&quot;  &quot;walk_fast_you.txt&quot; &quot;walk_slow_me.txt&quot; 
 ## [4] &quot;walk_slow_you.txt&quot;</code></pre>
 <p>Notice how they are similarly named “walk_speed_subject.txt”. That
@@ -717,15 +738,15 @@ familiar convention of adding metadata to the filename makes it easy to
 extract “data about the data” from the file names. Now, as we did in the
 first , let’s concatenate all the data into one data frame for
 subsequent plotting and analysis.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>walk.dat <span class="ot">&lt;-</span> <span class="fu">list</span>() <span class="co">#make a list for storing</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> walk.files){</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  walk.i <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(i,<span class="at">delim=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>) <span class="co">#read data as a tibble</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  met.dat <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">strsplit</span>(i,<span class="st">&quot;_&quot;</span>)) <span class="co">#split i for metadata and unlist it</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  speed <span class="ot">&lt;-</span> met.dat[<span class="dv">2</span>] <span class="co">#get speed</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>  subject <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;.txt&quot;</span>,<span class="st">&quot;&quot;</span>,met.dat[<span class="dv">3</span>]) <span class="co">#remove &quot;.txt&quot; </span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>  walk.dat[[i]] <span class="ot">&lt;-</span> walk.i<span class="sc">%&gt;%</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">speed=</span>speed,<span class="at">subject=</span>subject)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>walk.dat <span class="ot">&lt;-</span> <span class="fu">list</span>() <span class="co">#make a list for storing</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> walk.files){</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  walk.i <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(i,<span class="at">delim=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>) <span class="co">#read data as a tibble</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  met.dat <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">strsplit</span>(i,<span class="st">&quot;_&quot;</span>)) <span class="co">#split i for metadata and unlist it</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  speed <span class="ot">&lt;-</span> met.dat[<span class="dv">2</span>] <span class="co">#get speed</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>  subject <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;.txt&quot;</span>,<span class="st">&quot;&quot;</span>,met.dat[<span class="dv">3</span>]) <span class="co">#remove &quot;.txt&quot; </span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>  walk.dat[[i]] <span class="ot">&lt;-</span> walk.i<span class="sc">%&gt;%</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">speed=</span>speed,<span class="at">subject=</span>subject)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## Rows: 150 Columns: 14
 ## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;\t&quot;
@@ -758,8 +779,8 @@ subsequent plotting and analysis.</p>
 ## 
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>walk.dat <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind,walk.dat)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.dat)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>walk.dat <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind,walk.dat)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.dat)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 16
 ##      Nr   TID   PID `x [pixel]` y [pix…¹ t [se…² I [va…³ Len […⁴ D2S […⁵ D2R […⁶
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt; &lt;lgl&gt;  
@@ -778,8 +799,8 @@ gobblygook with all those spaces in and “[pixel]” and “[sec]” in there.
 Let’s change them for easy referencing with a <code>str_remove()</code>
 (remove string) operation from the<code>stringr</code> package loaded
 with <code>tidyverse</code> . . .</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(walk.dat) <span class="ot">&lt;-</span> <span class="fu">str_remove</span>(<span class="fu">colnames</span>(walk.dat),<span class="st">&quot; </span><span class="sc">\\</span><span class="st">[pixel</span><span class="sc">\\</span><span class="st">]| </span><span class="sc">\\</span><span class="st">[sec</span><span class="sc">\\</span><span class="st">]&quot;</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.dat)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(walk.dat) <span class="ot">&lt;-</span> <span class="fu">str_remove</span>(<span class="fu">colnames</span>(walk.dat),<span class="st">&quot; </span><span class="sc">\\</span><span class="st">[pixel</span><span class="sc">\\</span><span class="st">]| </span><span class="sc">\\</span><span class="st">[sec</span><span class="sc">\\</span><span class="st">]&quot;</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.dat)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 16
 ##      Nr   TID   PID     x     y     t `I [val]`   Len   D2S D2R      D2P v [pi…¹
 ##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;  &lt;dbl&gt; &lt;lgl&gt;  
@@ -798,22 +819,22 @@ actually care about, “x” and “y”, the x and y positions of the points,
 image) and point (the series of positions) to which the x and y
 positions belong. So let’s keep these columns, too, then dump the
 others, and give it a quick plot with ggplot.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat<span class="sc">%&gt;%</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(TID,PID,x,y,subject,speed)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x,y,<span class="at">col=</span>speed))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">facet_grid</span>(subject<span class="sc">~</span>.)</span></code></pre></div>
-<p><img src="MP2_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat<span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(TID,PID,x,y,subject,speed)</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>walk.dat2<span class="sc">%&gt;%</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x,y,<span class="at">col=</span>speed))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">facet_grid</span>(subject<span class="sc">~</span>.)</span></code></pre></div>
+<p><img src="MP2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
 <p>Notice that our leg point (TID=3) is higher than the hip. That’s odd!
 Well, not really. Convention holds that pixel 0,0 is the upper left of
 the image, so that means the coordinates are flipped vertically in our
 images. So let’s flip them back by finding the absolution value each y
 value minus the maximum y position (the image height).</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(speed,subject)<span class="sc">%&gt;%</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y=</span><span class="fu">abs</span>(y<span class="sc">-</span><span class="fu">max</span>(y)))</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x,y,<span class="at">col=</span>speed))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">facet_grid</span>(subject<span class="sc">~</span>.)<span class="co">#grid it with columns = to speed</span></span></code></pre></div>
-<p><img src="MP2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(speed,subject)<span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y=</span><span class="fu">abs</span>(y<span class="sc">-</span><span class="fu">max</span>(y)))</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>walk.dat2<span class="sc">%&gt;%</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x,y,<span class="at">col=</span>speed))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">facet_grid</span>(subject<span class="sc">~</span>.)<span class="co">#grid it with columns = to speed</span></span></code></pre></div>
+<p><img src="MP2_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
 <p>OK, all well ’n good. But does it make sense to identify our tracked
 points by “TID”, that is 1, 2, and 3? Wouldn’t it be better to change
 this to some character description like “hipR”, “hipC”, and “legR”, for
@@ -821,11 +842,11 @@ right hip, center of the hip, and right leg, respectively. Let’s do it
 by changing TID to these strings using a series of mutate operations
 that replace each TID value. (if you do this, confirm the order is
 correct!)</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">1</span>, <span class="st">&quot;hipR&quot;</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">2</span>, <span class="st">&quot;hipC&quot;</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">3</span>, <span class="st">&quot;legR&quot;</span>))</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.dat2)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">1</span>, <span class="st">&quot;hipR&quot;</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">2</span>, <span class="st">&quot;hipC&quot;</span>))<span class="sc">%&gt;%</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">3</span>, <span class="st">&quot;legR&quot;</span>))</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.dat2)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 6
 ## # Groups:   speed, subject [1]
 ##   TID     PID     x     y subject speed
@@ -878,9 +899,9 @@ that, for each frame, we’ll have sepqrate x and y columns for each point
 name, making frame-specific calculations based on these points easy
 peasy.</p>
 <p>Here’s how it’s done:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>walk.wide <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from=</span>TID,<span class="at">values_from=</span><span class="fu">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>))</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.wide)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>walk.wide <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from=</span>TID,<span class="at">values_from=</span><span class="fu">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>))</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(walk.wide)</span></code></pre></div>
 <pre><code>## # A tibble: 6 × 9
 ## # Groups:   speed, subject [1]
 ##     PID subject speed x_hipR x_hipC x_legR y_hipR y_hipC y_legR
