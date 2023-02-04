@@ -520,7 +520,7 @@ kinematic variables vary by size and sex. Our general goals are to:</p>
 speed</li>
 <li>Test predictions of walking speed with measurements and
 observations</li>
-<li>Evaluate the effects sex and size (scaling!) on your
+<li>Evaluate the effects of sex and size (scaling!) on your
 observations</li>
 </ul>
 <div class="figure" style="text-align: center">
@@ -567,11 +567,12 @@ velocity is less than or equal to <span
 class="math inline">\(v_{max}\)</span>, or <span
 class="math inline">\(gL\)</span>.</p>
 <p>As has become clear in our class discussions and demonstrations, the
-leg length is the radius and any increase in this length will result in
-a greater velocity. In addition, any biomechanical mechanism that
-increases the leg length during otherwise lower phases of the arc (e.g.,
-lateral pelvic tilt, that is lifting the plant-leg side of the pelvis, )
-will keep the COM higher and increase the velocity.</p>
+characteristic length of the pendulum (i.e., the radius) is the leg
+length and any increase in this length will result in a greater
+velocity. In addition, any biomechanical mechanism that increases the
+leg length during otherwise lower phases of the arc (e.g., lateral
+pelvic tilt, that is lifting the plant-leg side of the pelvis, ) will
+keep the COM higher and increase the velocity.</p>
 <div class="figure" style="text-align: center">
 <img src="pelvictilt.jpg" alt="A walker tilting its pelvis" width="306" />
 <p class="caption">
@@ -592,25 +593,20 @@ this.</p>
 <div id="sofware-essentials" class="section level3">
 <h3>Sofware essentials</h3>
 <p>We’ll need a few pieces of software to analyze the kinematics of
-walking. First, <a
-href="https://imagej.nih.gov/ij/download.html">download and install
-imageJ</a>, a free image analysis package that just about everyone in
-the natural sciences uses at one point in their career. Second, download
-the following two plugin jar-files: <a
-href="https://imagescience.org/meijering/software/download/MTrackJ_.jar">MTrackJ_.jar
-(version 1.5.1)</a> and <a
-href="https://imagescience.org/meijering/software/download/imagescience.jar">imagescience.jar
-(version 3.0.0)</a>. Then install them to imageJ by selecting “Plugins”
-<span class="math inline">\(\rightarrow\)</span> “Install” and
-navigating to these jar files and selecting “open”. MTrackJ is a simple
-tracking plugin that allows users to track points across video
+walking. First, <a href="https://imagej.net/software/fiji/">download and
+install FIJI</a>, a free image analysis package (FIJI is just imageJ)
+that just about everyone in the natural sciences uses at one point in
+their career. Second, enable the MTrackJ plugin by following these <a
+href="https://imagej.net/libs/imagescience">directions</a> MTrackJ is a
+simple tracking routine that allows users to track points across video
 frames.</p>
 <p>We’ll be working with video data captured with our phones. The file
 types associated with videos shot by phones are often unworkable in
-imageJ. We need a way of converting your phone videos to AVI format, a
-file type that imageJ can open. Videos can be rendered into AVI files
-using—you guessed it—free and open source tools like MPEG Streamclip,
-which <a href="http://www.squared5.com/">can be downloaded here</a></p>
+imageJ/FIJI. We need a way of converting your phone videos to AVI
+format, a file type that imageJ can open. Videos can be rendered into
+AVI files using—you guessed it—free and open source tools like MPEG
+Streamclip, which <a href="http://www.squared5.com/">can be downloaded
+here</a></p>
 </div>
 <div id="max-out-your-pendulum" class="section level3">
 <h3>Max out your pendulum</h3>
@@ -694,12 +690,12 @@ the biomechanical basis for this?</li>
 possible <a
 href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing">here</a>.
 Be sure to use all of these data from past classes in your analysis.
-Notice we have non for fast tile angle from</p>
+Notice we have none for fast tilt angle from</p>
 <p>As a group, please synthesize the results of your experiments and
 address these questions in a report in markdown format that follows the
 structure outlined on our <a href="mini_projects.html">Min-projects
 page</a>. Reports and any data files reference by them are due Wedneday,
-February 16th, by 11:59 PM. They can should be sent to Prof. Kenaley in
+February 15th, by 11:59 PM. They can should be sent to Prof. Kenaley in
 a zipped directory over email.</p>
 </div>
 <div id="a-kick-start" class="section level2">
@@ -731,7 +727,7 @@ subsequent plotting and analysis.</p>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">speed=</span>speed,<span class="at">subject=</span>subject)</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## Rows: 150 Columns: 14
-## ── Column specification ─────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
 ## lgl  (2): D2R [pixel], v [pixel/sec]
@@ -739,7 +735,7 @@ subsequent plotting and analysis.</p>
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ## Rows: 150 Columns: 14
-## ── Column specification ─────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
 ## lgl  (2): D2R [pixel], v [pixel/sec]
@@ -747,7 +743,7 @@ subsequent plotting and analysis.</p>
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ## Rows: 150 Columns: 14
-## ── Column specification ─────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
 ## lgl  (2): D2R [pixel], v [pixel/sec]
@@ -755,7 +751,7 @@ subsequent plotting and analysis.</p>
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ## Rows: 150 Columns: 14
-## ── Column specification ─────────────────────────────
+## ── Column specification ────────────────────────────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
 ## lgl  (2): D2R [pixel], v [pixel/sec]

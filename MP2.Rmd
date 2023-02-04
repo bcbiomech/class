@@ -17,7 +17,7 @@ Our second Miniproject explores several topics in the biomechanical basis of ter
 + Use imageJ to perform kinematic analysis
 + Use simple mathematical models to predict maximum limb walking speed
 + Test predictions of walking speed with measurements and observations
-+ Evaluate the effects sex and size (scaling!) on your observations
++ Evaluate the effects of sex and size (scaling!) on your observations
 
 
 ```{r pend,echo=F,fig.cap=c("The inverted pendulum model of bipedal locomotion"),fig.align = 'center'}
@@ -50,7 +50,7 @@ $$
  
 where $v$ and any realized walking velocity is less than or equal to $v_{max}$, or $gL$.
 
-As has become clear in our class discussions and demonstrations, the leg length is the radius and any increase in this length will result in a greater velocity. In addition, any biomechanical mechanism that increases the leg length during otherwise lower phases of the arc (e.g., lateral pelvic tilt, that is lifting the plant-leg side of the pelvis, \autoref{fig:tilt}) will keep the COM higher and increase the velocity.
+As has become clear in our class discussions and demonstrations, the characteristic length of the pendulum (i.e., the radius) is the leg length and any increase in this length will result in a greater velocity. In addition, any biomechanical mechanism that increases the leg length during otherwise lower phases of the arc (e.g., lateral pelvic tilt, that is lifting the plant-leg side of the pelvis, \autoref{fig:tilt}) will keep the COM higher and increase the velocity.
 
 
 ```{r tilt,echo=F,fig.cap=c("A walker tilting its pelvis"),fig.align = 'center'}
@@ -64,9 +64,9 @@ There are two parts to this MP: (1) predicting and testing predictions of maximu
 
 ### Sofware essentials
 
-We'll need a few pieces of software to analyze the kinematics of walking. First, [download and install imageJ](https://imagej.nih.gov/ij/download.html), a free image analysis package that just about everyone in the natural sciences uses at one point in their career. Second, download the following two plugin jar-files: [MTrackJ_.jar (version 1.5.1)](https://imagescience.org/meijering/software/download/MTrackJ_.jar) and [imagescience.jar (version 3.0.0)](https://imagescience.org/meijering/software/download/imagescience.jar). Then install them to imageJ by selecting "Plugins" $\rightarrow$ "Install" and navigating to these jar files and selecting "open". MTrackJ is a simple tracking plugin that allows users to track points across video frames.
+We'll need a few pieces of software to analyze the kinematics of walking. First, [download and install FIJI](https://imagej.net/software/fiji/), a free image analysis package (FIJI is just imageJ) that just about everyone in the natural sciences uses at one point in their career. Second, enable the MTrackJ plugin by following these [directions](https://imagej.net/libs/imagescience) MTrackJ is a simple tracking routine that allows users to track points across video frames.
 
-We'll be working with video data captured with our phones. The file types associated with videos shot by phones are often unworkable in imageJ. We need a way of converting your phone videos to AVI format, a file type that imageJ can open. Videos can be rendered into AVI files using---you guessed it---free and open source tools like MPEG Streamclip, which [can be downloaded here](http://www.squared5.com/)
+We'll be working with video data captured with our phones. The file types associated with videos shot by phones are often unworkable in imageJ/FIJI. We need a way of converting your phone videos to AVI format, a file type that imageJ can open. Videos can be rendered into AVI files using---you guessed it---free and open source tools like MPEG Streamclip, which [can be downloaded here](http://www.squared5.com/)
 
 
 
@@ -103,9 +103,9 @@ knitr::include_graphics(c("walkfront.png"))
 3. How does pelvic tilt change with increased walking speeds. What is the biomechanical basis for this?
 4. Does pelvic tilt at comfortable walking speeds vary with human size (i.e., mass and height) and sex? 
 
-**NOTE:** Make sure you enter your data as soon as possible  [here](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). Be sure to use all of these data from past classes in your analysis. Notice we have non for fast tile angle from 
+**NOTE:** Make sure you enter your data as soon as possible  [here](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). Be sure to use all of these data from past classes in your analysis. Notice we have none for fast tilt angle from 
 
-As a group, please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports and any data files reference by them are due Wedneday, February 16th, by 11:59 PM. They can should be sent to Prof. Kenaley in a zipped directory over email.
+As a group, please synthesize the results of your experiments and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports and any data files reference by them are due Wedneday, February 15th, by 11:59 PM. They can should be sent to Prof. Kenaley in a zipped directory over email.
 
 
 ## A kick start
