@@ -3,7 +3,7 @@ title: "Lecture 7"
 subtitle: "Coarse Materials II"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/2/8"
+date: "2021/2/7"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -13,7 +13,7 @@ output:
       countIncrementalSlides: false
 ---
 class: inverse, top
-# Material Properies of the Dead, Toughness, and Resilience
+# Material Properties of the Dead, Toughness, and Resilience
 
 ```{r,echo=FALSE,message=FALSE}
 library(tidyverse)
