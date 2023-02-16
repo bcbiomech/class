@@ -3,7 +3,7 @@ title: "Lecture 10"
 subtitle: "Streching and Bending"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/2/17"
+date: "2021/2/16"
 output:
   xaringan::moon_reader:
     lib_dir: libs
