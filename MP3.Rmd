@@ -6,7 +6,6 @@ title: 'Mini Project 3: Stretch the Pig, Bend the Twig'
 
 Our third Mini Project explores experimental methods for quantifying the material and structural properties of biological tissue (e.g., wood and intestine). Please recall that material properties (the inherent ones) are independent of structural properties (i.e.,size and shape). The goals of this MP are to:
 
-
 1. Learn how to measure force and displacement so that you can construct a stress-strain curve.
 2. Use a homemade three-point bender to estimate flexural stiffness of biomaterials.
 3. Understand data acquisition using a computer and an Arduino.
@@ -116,7 +115,7 @@ data.frame(d=c("dry","dry","dry","wet","wet"),o=c("flat","flat","flipped","flat"
 ```
 
 
-All the data will be recorded in a text file and placed in [this directory](https://drive.google.com/drive/folders/1gv6iks_s0OkLmbE6pR8msMHiT1AyalKT?usp=sharing).
+All the data will be recorded in a text file and placed in [this directory](https://drive.google.com/drive/folders/1XgXdvIO2iOC7NwMiAc4Z7CXpJAX4PWvC?usp=sharing).
 
 
 
@@ -172,7 +171,7 @@ knitr::kable(mat.data, caption = "Material Data")%>%kableExtra::kable_styling()
 
 
 
-You can find explicit detail concerning the organization of an MP report [here](https://bcbiomech.github.io/class/mini_projects.html). This repert is due Wednesday, March 16th.
+You can find explicit detail concerning the organization of an MP report [here](https://bcbiomech.github.io/class/mini_projects.html). This report is due Wednesday, March 15th.
 
 ## What to pay attention to in writing the report
 

@@ -43,7 +43,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Feb 14 | [Coarse Structures (9)](lect/Lecture09.html)  |  V Ch. 19     |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
-   | Wednesday, Feb 16 | | | MP2 report due 
+   | Wednesday, Feb 15 | | | MP2 report due 
  | Thursday, Feb 16 |  [Stretching/Bending (10)](lect/Lecture10.html) <br>[Mini-Project III: Stretch the Pig, Bend the Twig](MP3.html)|  V pp. 425-436        | 
 .
  
@@ -63,7 +63,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Mar 14 | [Re: Drag (15)](lect/Lecture15.html) | [Qui et al. (2014)](https://www.nature.com/articles/ncomms6119) |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Wednesday, Mar 16 | | | MP3 report due
+ | Wednesday, Mar 15 | | | MP3 report due
  | Thursday, Mar 16 | [Re: Shape (16)](lect/Lecture16.html) / [Mini-Project IV: Birds of Feather](MP4.html) | | 
 
 ## Week 9 Schedule
@@ -77,7 +77,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Mar 28 | [Gliding into D = m$\cdot g\cdot$ cos($\theta$) (19)](lect/Lecture18.html)  | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Wednesday, Mar 30 | [Fish Swimming (20)](lect/Lecture19.html) | [Sfakiotakis et al, 2009](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=757275&casa_token=I48yhmyTDY0AAAAA:hlx2Coqp-NuyrzmiV6VvSFZdWkf2Xd-d7DNJEMa1V-e2hJStcLdoQ_D14rlu-fanh21gf_kO&tag=1)|
+ | Wednesday, Mar 29 | [Fish Swimming (20)](lect/Lecture19.html) | [Sfakiotakis et al, 2009](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=757275&casa_token=I48yhmyTDY0AAAAA:hlx2Coqp-NuyrzmiV6VvSFZdWkf2Xd-d7DNJEMa1V-e2hJStcLdoQ_D14rlu-fanh21gf_kO&tag=1)|
  
 ## Week 11 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
