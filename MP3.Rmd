@@ -65,7 +65,6 @@ These experiments will be done on your own with your team. Come by Higgins 535 t
 + Ruler
 + Nuts
 + Floss
-+ Paper clip
 + Clamp
 + Intestine
 
@@ -73,11 +72,11 @@ For this part of the lab you will use a spring clamp to mount a piece of animal 
 
 ### Preparing your sample
 
-The pig intestine was obtained from a local butcher. The material is difficult to work with once it starts to desiccate, so you will want to do as much preparation of the sample as possible before cutting your piece and beginning your experiments. First, cut a piece and  the material along the axial or circumferential direction---you will test the gut in both directions for this lab, so the order doesn't matter. Measure all three of its dimensions to the nearest mm with the supplied ruler. Next, find a clean section of the intestine and clamp it a table. Once you have the material bound, cut away material so that you are left with a thin strip about 5--8 cm long and 1 cm wide. Tie a short section of dental floss to the free end and then tie a hook to the free end of the floss fashioned from a paperclip. 
+The pig intestine was obtained from a local butcher. The material is difficult to work with once it starts to desiccate, so you will want to do as much preparation of the sample as possible before cutting your piece and beginning your experiments. First, cut a piece and  the material along the axial or circumferential direction---you will test the gut in both directions for this lab, so the order doesn't matter. Measure all three of its dimensions to the nearest mm with the supplied ruler. Next, find a clean section of the intestine and clamp it a table. Once you have the material bound, cut away material so that you are left with a thin strip about 5--8 cm long and 1 cm wide. Tie a short section of dental floss to the free end and then tie a hook to the free end of the floss fashioned from a paperclipl. 
 
 ### Measuring stress and strain 
 
-In this section, you will obtain a stress-strain relationship for your sample by stretching your sample with known weights. Next, you hang weights from the free end of the sample to apply a known stress. Our weights in this case are 3/8-16 nuts, which each weigh 12.5 g, and you will suspend these from your sample using a hooked paperclip weighing 0.2 g. As you add more mass to the free end of the sample, measure the extension of the sample with a ruler. Measure strain under 5 different loads and then remove them, one by one and measure the strain again. Record your results on this worksheet for both an axially-loaded sample and a circumferentially-loaded sample.
+In this section, you will obtain a stress-strain relationship for your sample by stretching your sample with known weights. Next, you hang weights from the free end of the sample to apply a known stress. Our weights in this case are 1/4-20 nuts, which each weigh 3.2 g, and you will suspend these from your sample using a paperclip or some other negligibly small item. As you add more mass to the free end of the sample, measure the extension of the sample with a ruler. Measure strain under 5 different loads, each representing the addition of two 1/4-20 nuts, and then remove them, one pair by one pair and measure the strain again. Record your results on  worksheet below for both an axially loaded sample and a circumferentially loaded sample.
 
 ## Bend the twig
 

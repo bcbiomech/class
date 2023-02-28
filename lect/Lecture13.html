@@ -4,7 +4,7 @@
     <title>Lecture 13</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Christopher Kenaley" />
-    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -12,11 +12,21 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Lecture 13
+]
+.subtitle[
 ## Fluids Around <br> An Introduction
+]
+.author[
 ### Dr. Christopher Kenaley
+]
+.institute[
 ### Boston College
+]
+.date[
 ### 2021/03/01
+]
 
 ---
 
@@ -24,9 +34,6 @@ class: top
 # Fluids
 
 
-```
-## Warning: package 'dplyr' was built under R version 4.0.5
-```
 
 &lt;!-- Add icon library --&gt;
 &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"&gt;
@@ -34,6 +41,8 @@ class: top
 
 .pull-left[
 Today we'll ....
+
+- Finish off muscles
 
 - Define fluids
 
@@ -51,7 +60,102 @@ Today we'll ....
 ]
 
 
+---
+class: top
 
+# Metrics of muscle function
+
+## The work loop technique
+
+.pull-left[
+- Work = `\(F\cdot\Delta L\)` (Joules)
+- Power = Work/time (Joles/s = Watts)
+- Power = Work x Frequency (Joules/s = Watts)
+- Power = F x V (Joules/s = Watts)
+
+.center[
+&lt;img src="img/muscletest.png" width="60" /&gt;
+]
+
+]
+
+.pull-right[
+    
+&lt;br&gt;
+&lt;img src="img/workloop.png" width="200" /&gt;
+.footnote[
+
+]
+
+ 
+]
+
+---
+class: top
+
+# Metrics of muscle function
+
+
+
+.center[
+
+&lt;img src="img/motorbreakstrut.png" width="600" /&gt;
+]
+
+
+
+---
+
+class: top
+
+# Lots more to study
+
+
+We know we don't know a lot about muscles
+
+.center[
+
+&lt;img src="https://s3-eu-west-1.amazonaws.com/s3-euw1-ap-pe-ws4-cws-documents.ri-prod/9780367190811/central/musclefuels/images/gastrocnemius.jpg" width="400" /&gt;
+Doublet potentiation
+
+]
+
+
+---
+
+class: top
+
+# Lots more to study
+
+
+We know we don't know a lot about muscles
+
+.center[
+
+&lt;img src="https://journals.physiology.org/cms/10.1152/jappl.1997.82.4.1219/asset/images/large/japp0542801.jpeg" width="400" /&gt;
+Doublet potentiation
+
+]
+
+
+
+
+
+---
+
+class: top
+
+# Lots more to study
+
+
+We know we don't know a lot about muscles
+
+.center[
+
+&lt;img src="https://www.researchgate.net/profile/Stanley-Salmons/publication/11155153/figure/fig5/AS:276867023163394@1443021650100/Mean-nFTIpP-n-6-for-doublets-lower-surface-triplets-intermediate-surface-and.png" width="400" /&gt;
+
+]
+    
 
 ---
 class: top
@@ -356,6 +460,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
