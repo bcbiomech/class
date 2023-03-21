@@ -3,7 +3,7 @@ title: "Lecture 17"
 subtitle: "Lift for a Living"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2022/03/22"
+date: "2022/03/21"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -200,7 +200,7 @@ knitr::include_graphics("img/circflow.png")
 ```
 
 With the mean subtracted, there is an effective
-circulation ( Γ )about the wing. Greater Γ implies a
+circulation ( Γ ) about the wing. Greater Γ implies a
 greater velocity difference 
 ]
 
