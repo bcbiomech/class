@@ -28,6 +28,8 @@ library(scales)
 .pull-left[
 Today we'll talk about ....
 
+- The Eyes have it
+
 - Theories for lift
 
 - Problems (i.e., tradeoffs) with lift

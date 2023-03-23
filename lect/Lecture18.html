@@ -4,7 +4,7 @@
     <title>Lecture 18</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Christopher Kenaley" />
-    <script src="libs/header-attrs-2.6/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -12,11 +12,21 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # Lecture 18
+]
+.subtitle[
 ## Gliding into D = m x g cos(theta)
+]
+.author[
 ### Dr. Christopher Kenaley
+]
+.institute[
 ### Boston College
-### 2022/03/29
+]
+.date[
+### 2022/03/23
+]
 
 ---
 
@@ -24,13 +34,6 @@ class: top
 # Powered flight
 
 
-```
-## Warning: package 'tidyr' was built under R version 4.0.5
-```
-
-```
-## Warning: package 'dplyr' was built under R version 4.0.5
-```
 
 &lt;!-- Add icon library --&gt;
 &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"&gt;
@@ -130,7 +133,7 @@ class: top
 
 Powered flight, i.e., flapping
 
-&lt;img src="https://www.flight-mechanic.com/wp-content/uploads/2017/07/2-35.jpg" width="400" /&gt;
+&lt;img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIYVDqOKzFCLZcyR56k5dMze3wWKOJtINAEqWVKgHmHmEL95lREg7fI0a3tkCssV3XB-y2r8ODClb7Y_BDR-qbQQ8_3zddueY70UdXsQXykdyw_IeTn5iyQjSTIDQ0mA4WLf25Y8kpSTLvzKHcQ-OrFo_E-IuauJlYAruoeENndrWDBxByYevutZFj/s535/31.webp" width="400" /&gt;
 
 Helicopters have to pitch the rotors to produce forward thrust
 ]
@@ -366,6 +369,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

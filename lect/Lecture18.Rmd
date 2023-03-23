@@ -3,7 +3,7 @@ title: "Lecture 18"
 subtitle: "Gliding into D = m x g cos(theta)"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2022/03/29"
+date: "2022/03/23"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -137,7 +137,7 @@ Powered flight, i.e., flapping
 
 ```{r,echo=FALSE,out.width=400}
 #stride length
-knitr::include_graphics("https://www.flight-mechanic.com/wp-content/uploads/2017/07/2-35.jpg")
+knitr::include_graphics("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgIYVDqOKzFCLZcyR56k5dMze3wWKOJtINAEqWVKgHmHmEL95lREg7fI0a3tkCssV3XB-y2r8ODClb7Y_BDR-qbQQ8_3zddueY70UdXsQXykdyw_IeTn5iyQjSTIDQ0mA4WLf25Y8kpSTLvzKHcQ-OrFo_E-IuauJlYAruoeENndrWDBxByYevutZFj/s535/31.webp")
 
 ```
 
