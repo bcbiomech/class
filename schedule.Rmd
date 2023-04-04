@@ -83,13 +83,13 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Apr 4 | [There Will Be Blood (21)](lect/Lecture21.html)  | | Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Thursda, Apr 6 | No class, Easter [$Re$: The Tiny (22)](lect/Lecture22.html) / [Mini-Project V: It's Snot Rocket Science](MP5.html)  | |MP4 report due 
+ | Thursday, Apr 6 | No class, Easter  | |
  
 ## Week 12 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |--------  
- | Tuesday, Apr 11 | Final Project Discussion  | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Thursday, Apr 13 | No class (Easter) || 
+ | Tuesday, Apr 11 | [$Re$: The Tiny (22)](lect/Lecture22.html) / [Mini-Project V: It's Snot Rocket Science](MP5.html)  | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
+ | Thursday, Apr 13 |Final Project discussion ||MP4 report due  
 
 ## Week 13 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
