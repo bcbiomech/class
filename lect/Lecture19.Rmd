@@ -3,7 +3,7 @@ title: "Lecture 19"
 subtitle: "Fish Swimming"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2022/03/31"
+date: "2022/03/28"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -99,7 +99,7 @@ class: top
 
 Elongate Body Theory
 
-```{r,echo=FALSE,out.width=4550}
+```{r,echo=FALSE,out.width=450}
 #stride length
 knitr::include_graphics("img/undswim.jpg")
 
@@ -116,14 +116,14 @@ class: top
 $\textrm{Strouhal number, S}t=\frac{fA}{U}$
 
 .center[
-```{r,echo=FALSE,out.width=450}
+```{r,echo=FALSE,out.width=400}
 #stride length
 knitr::include_graphics("img/strouhal.jpg")
 
 ```
 
 
-```{r,echo=FALSE,out.width=500}
+```{r,echo=FALSE,out.width=400}
 #stride length
 knitr::include_graphics("img/strouhalnums.jpg")
 
@@ -145,7 +145,7 @@ $\textrm{Froude number, Fr}=\frac{2U_f}{U_f+U_j}$
 
 
 .center[
-```{r,echo=FALSE,out.width=500}
+```{r,echo=FALSE,out.width=400}
 #stride length
 knitr::include_graphics("img/froudefish.jpg")
 
