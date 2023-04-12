@@ -145,9 +145,9 @@ To peform PIV analysis, double select `Analyze` $\rightarrow$ `Optic flow` $\rig
 
 1. **Chose the window size.** This will change how large of an area the analysis looks for moving particles between two frames. Too large, and many particles may not escape the window between the two frames and no velocities will be inferred. Too small, and the velocities and their vectors are really noisy. Try several, getting progressively smaller and see what you get.
 
-2. **Do the analysis** Click `OK` and the analysis will kick off. When done, FIJI will produce a series of windows and the most important (the "Flow Direction" window) will look like the one in the image below. 
+2. **Do the analysis.** Click `OK` and the analysis will kick off. When done, FIJI will produce a series of windows and the most important (the "Flow Direction" window) will look like the one in the image below. 
 
-2. **Interpret the velocity vectors** Place the cursor over the flow direction window. Notice how the FIJI menu part is now reporting the velocity in px/fram and direction in degrees. Note the 0$^o$ represents a horizontal, left-right direction and 90$^o$ a vertical up-down direction. Use the values over the flow direction window to qualitatively assess the magnitude and direction of volcities and how they vary spatially over the field. Also compare and contrast this pattern between the results for the two bird-wing models.
+3. **Interpret the velocity vectors.** Place the cursor over the flow direction window. Notice how the FIJI menu part is now reporting the velocity in px/fram and direction in degrees. Note the 0$^o$ represents a horizontal, left-right direction and 90$^o$ a vertical up-down direction. Use the values over the flow direction window to qualitatively assess the magnitude and direction of volcities and how they vary spatially over the field. Also compare and contrast this pattern between the results for the two bird-wing models.
 
 
 
