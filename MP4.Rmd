@@ -129,27 +129,32 @@ Turn on the swim tunnel to the preset velocity (determined by Prof. K and report
 
 The magnitude of induced drag of a foil generating lift is proportional to the vorticity at the wing tip. Vorticity describes the spinning motion of a fluid in some local area and is therefore a measure of it's rotation. Vorticity is defined quantitatively as the curving of velocity vectors. Thus, to calculate vorticity, one needs to quantify local patterns of velocity.  
 
-Particle image velocimetry (PIV) is an optical method of flow visualization and is often used to obtain instantaneous velocity measurements. This technique relies on visually tracking neutrally buoyant particles suspended in the fluid that follow its motion. Particles are often illuminated and fluoresced with a thin laser light field. In the animation below, small glass spheres are suspened in water as if flow past a 3D-printed wing. It's important to note that this thin sheet of light only captures the flow field in this vary narrow plane (the horizontal-vertical or x,y plane in this case).
+Particle image velocimetry (PIV) is an optical method of flow visualization and is often used to obtain instantaneous velocity measurements. This technique relies on visually tracking neutrally buoyant particles suspended in the fluid that follow its motion. Particles are often illuminated and fluoresced with a thin laser light field. In the animation below, small glass spheres are suspeneded in water as if flow past a 3D-printed wing. It's important to note that this thin sheet of light only captures the flow field in this vary narrow plane (the horizontal-vertical or x,y plane in this case).
 
 <center>
 ![](img/piv.gif){ width=70% }
 </center> <br>
 
-To derive velocity vectors from moving particles in a field, researchers rely on sophisticated algorithms applied in various software packages, some free and some much more than free. To qualitatively assess the velocity vectors at the wings' tips, we'll be using a free Java-base package, [jPIV](https://eguvep.github.io/jpiv). This is a limited GUI version of [openPIV](https://eguvep.github.io/jpiv/download.html), a very popular command-line interface for PIV. 
+To derive velocity vectors from moving particles in a field, researchers rely on sophisticated algorithms applied in various software packages, some free and some much more than free. ~~To qualitatively assess the velocity vectors at the wings' tips, we'll be using a free Java-base package, [jPIV](https://eguvep.github.io/jpiv). This is a limited GUI version of [openPIV](https://eguvep.github.io/jpiv/download.html), a very popular command-line interface for PIV.~~
 
-To use jPIV, you'll have to [download the executable files](https://eguvep.github.io/jpiv/download.html) first. 
+To qualitatively assess the velocity vectors at the wings' tips, we'll turn to FIJI again and use one of it's preloaded plugins, "Optic Flow".
 
-We'll track particles and calculate velocity and vorticity vectors using video shots of over the wing tips. For this, we'll use a phone from one of the group members shooting in slow motion. From the videos,  **pick two good consecutive frames** that have lots of particles over the region of interest. You'll need to extract the frames from the videos just as you did for MP1. 
+To use FIJI's optic flow tool, you'll have to prepare your two videos first, one for each bird. Like we did in the [second MP](MP2.html#A_kick_start), convert your videos to AVI format. From each, load them in FIJI as a virtual stack. Then find two **consecutive** images/frames where you see interesting and clear movements of particles behind the wing. Record the frame numbers. Then, create a substack of these two images (`Image` $\rightarrow$ `Stacks` $\rightarrow$ `Tools` $\rightarrow$ `Make substack`). In the dialog box that opens up, punch in the two frame numbers. Next, convert the substack to 8-bit grayscale images (`Image` $\rightarrow$ `Type` $\rightarrow$ `8-bit`). Now crop the image to include the area behind the wing and interesting particles (select the area with the rectangle tool, then `Image` $\rightarrow$ `Crop`). You may also want to adjust the brightness (`Image` $\rightarrow$ `Adjust` $\rightarrow$ `Brightness/Contrast`) to increase the brightness of the particles.
 
-To begin PIV analysis, double click on the "JPIV.jar" file. This will start the program. Extracting velocity vectors from a pair of images includes three steps:
+To peform PIV analysis, double select `Analyze` $\rightarrow$ `Optic flow` $\rightarrow$ `PIV analysis` and follow these steps
 
-1. **Load the images.** From the File menu, select "choose files". In the folder window, navigate to where your files are stored and select the two consecutive images you'd like to analyze. Then click "open". These image files will appear as a list to the right of the screen.
+1. **Chose the window size.** This will change how large of an area the analysis looks for moving particles between two frames. Too large, and many particles may not escape the window between the two frames and no velocities will be inferred. Too small, and the velocities and their vectors are really noisy. Try several, getting progressively smaller and see what you get.
 
-2. **Change parameter settings.** Under the "PIV" folder on the left of the screen, open the "General" tab and make sure "Consecutive" is selected. Then go to the "Interrogation Window" tab and under "Between passes" make sure "Normalize median test" and "3x3 median filter" boxes are selected. Deselect the others. These filters produce more accurate vectors for velocity. In the "Preferences folder", click on the "Vector Plot" tab and change "Zoom f..." to 0.75 from 1. This will make the plots smaller and printable.
+2. **Do the analysis** Click `OK` and the analysis will kick off. When done, FIJI will produce a series of windows and the most important (the "Flow Direction" window) will look like the one in the image below. 
 
-3. **PIV analysis.** In the files list at the right of the screen, select the two images. Then, under the PIV tab at the top, select "run PIV image analysis". A file menu will appear. Pick a logical name, like "piv". Click save. This will commence PIV analysis and compute the velocity vectors. When it's finished, a file with the extension ".jvc" will appear in the file list. 
+2. **Interpret the velocity vectors** Place the cursor over the flow direction window. Notice how the FIJI menu part is now reporting the velocity in px/fram and direction in degrees. Note the 0$^o$ represents a horizontal, left-right direction and 90$^o$ a vertical up-down direction. Use the values over the flow direction window to qualitatively assess the magnitude and direction of volcities and how they vary spatially over the field. Also compare and contrast this pattern between the results for the two bird-wing models.
 
-4. **Visualize the results.** Click on the last file ending in ".jvc". This file contains the velocity vectors and when clicked upon, a plot of these vectors appears on the screen as a new window. It seems the functions to save plots is disable or bugged, so simply save this plot with a screen capture.
+
+
+<center>
+![](FIJIPIV.png){ width=50% }
+</center>
+<br>
 
 ## What to address in your report
 
@@ -171,7 +176,7 @@ Lastly, using the images of velocity vectors for each of your groups wings, addr
   
 
 
-Please synthesize the results of your experiments and address these questions in a report that follows the structure outlined [here](https://bcbiomech.github.io/class/mini_projects.html). Reports are due Friday, April 7 th at 11:59 pm. Your Rmd files (**with all the associated data!!!**) should be sent to Prof. K via email before then. 
+Please synthesize the results of your experiments and address these questions in a report that follows the structure outlined [here](https://bcbiomech.github.io/class/mini_projects.html). Reports are due Sunday, April 16th th at 11:59 pm. Your Rmd files (**with all the associated data!!!**) should be sent to Prof. K via email before then. 
 
 ### Requirements for submission
 

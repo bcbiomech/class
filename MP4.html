@@ -610,60 +610,76 @@ visualization and is often used to obtain instantaneous velocity
 measurements. This technique relies on visually tracking neutrally
 buoyant particles suspended in the fluid that follow its motion.
 Particles are often illuminated and fluoresced with a thin laser light
-field. In the animation below, small glass spheres are suspened in water
-as if flow past a 3D-printed wing. It’s important to note that this thin
-sheet of light only captures the flow field in this vary narrow plane
-(the horizontal-vertical or x,y plane in this case).</p>
+field. In the animation below, small glass spheres are suspeneded in
+water as if flow past a 3D-printed wing. It’s important to note that
+this thin sheet of light only captures the flow field in this vary
+narrow plane (the horizontal-vertical or x,y plane in this case).</p>
 <center>
 <img src="img/piv.gif" style="width:70.0%" />
 </center>
 <p><br></p>
 <p>To derive velocity vectors from moving particles in a field,
 researchers rely on sophisticated algorithms applied in various software
-packages, some free and some much more than free. To qualitatively
+packages, some free and some much more than free. <del>To qualitatively
 assess the velocity vectors at the wings’ tips, we’ll be using a free
 Java-base package, <a href="https://eguvep.github.io/jpiv">jPIV</a>.
 This is a limited GUI version of <a
 href="https://eguvep.github.io/jpiv/download.html">openPIV</a>, a very
-popular command-line interface for PIV.</p>
-<p>To use jPIV, you’ll have to <a
-href="https://eguvep.github.io/jpiv/download.html">download the
-executable files</a> first.</p>
-<p>We’ll track particles and calculate velocity and vorticity vectors
-using video shots of over the wing tips. For this, we’ll use a phone
-from one of the group members shooting in slow motion. From the videos,
-<strong>pick two good consecutive frames</strong> that have lots of
-particles over the region of interest. You’ll need to extract the frames
-from the videos just as you did for MP1.</p>
-<p>To begin PIV analysis, double click on the “JPIV.jar” file. This will
-start the program. Extracting velocity vectors from a pair of images
-includes three steps:</p>
+popular command-line interface for PIV.</del></p>
+<p>To qualitatively assess the velocity vectors at the wings’ tips,
+we’ll turn to FIJI again and use one of it’s preloaded plugins, “Optic
+Flow”.</p>
+<p>To use FIJI’s optic flow tool, you’ll have to prepare your two videos
+first, one for each bird. Like we did in the <a
+href="MP2.html#A_kick_start">second MP</a>, convert your videos to AVI
+format. From each, load them in FIJI as a virtual stack. Then find two
+<strong>consecutive</strong> images/frames where you see interesting and
+clear movements of particles behind the wing. Record the frame numbers.
+Then, create a substack of these two images (<code>Image</code> <span
+class="math inline">\(\rightarrow\)</span> <code>Stacks</code> <span
+class="math inline">\(\rightarrow\)</span> <code>Tools</code> <span
+class="math inline">\(\rightarrow\)</span> <code>Make substack</code>).
+In the dialog box that opens up, punch in the two frame numbers. Next,
+convert the substack to 8-bit grayscale images (<code>Image</code> <span
+class="math inline">\(\rightarrow\)</span> <code>Type</code> <span
+class="math inline">\(\rightarrow\)</span> <code>8-bit</code>). Now crop
+the image to include the area behind the wing and interesting particles
+(select the area with the rectangle tool, then <code>Image</code> <span
+class="math inline">\(\rightarrow\)</span> <code>Crop</code>). You may
+also want to adjust the brightness (<code>Image</code> <span
+class="math inline">\(\rightarrow\)</span> <code>Adjust</code> <span
+class="math inline">\(\rightarrow\)</span>
+<code>Brightness/Contrast</code>) to increase the brightness of the
+particles.</p>
+<p>To peform PIV analysis, double select <code>Analyze</code> <span
+class="math inline">\(\rightarrow\)</span> <code>Optic flow</code> <span
+class="math inline">\(\rightarrow\)</span> <code>PIV analysis</code> and
+follow these steps</p>
 <ol style="list-style-type: decimal">
-<li><p><strong>Load the images.</strong> From the File menu, select
-“choose files”. In the folder window, navigate to where your files are
-stored and select the two consecutive images you’d like to analyze. Then
-click “open”. These image files will appear as a list to the right of
-the screen.</p></li>
-<li><p><strong>Change parameter settings.</strong> Under the “PIV”
-folder on the left of the screen, open the “General” tab and make sure
-“Consecutive” is selected. Then go to the “Interrogation Window” tab and
-under “Between passes” make sure “Normalize median test” and “3x3 median
-filter” boxes are selected. Deselect the others. These filters produce
-more accurate vectors for velocity. In the “Preferences folder”, click
-on the “Vector Plot” tab and change “Zoom f…” to 0.75 from 1. This will
-make the plots smaller and printable.</p></li>
-<li><p><strong>PIV analysis.</strong> In the files list at the right of
-the screen, select the two images. Then, under the PIV tab at the top,
-select “run PIV image analysis”. A file menu will appear. Pick a logical
-name, like “piv”. Click save. This will commence PIV analysis and
-compute the velocity vectors. When it’s finished, a file with the
-extension “.jvc” will appear in the file list.</p></li>
-<li><p><strong>Visualize the results.</strong> Click on the last file
-ending in “.jvc”. This file contains the velocity vectors and when
-clicked upon, a plot of these vectors appears on the screen as a new
-window. It seems the functions to save plots is disable or bugged, so
-simply save this plot with a screen capture.</p></li>
+<li><p><strong>Chose the window size.</strong> This will change how
+large of an area the analysis looks for moving particles between two
+frames. Too large, and many particles may not escape the window between
+the two frames and no velocities will be inferred. Too small, and the
+velocities and their vectors are really noisy. Try several, getting
+progressively smaller and see what you get.</p></li>
+<li><p><strong>Do the analysis</strong> Click <code>OK</code> and the
+analysis will kick off. When done, FIJI will produce a series of windows
+and the most important (the “Flow Direction” window) will look like the
+one in the image below.</p></li>
+<li><p><strong>Interpret the velocity vectors</strong> Place the cursor
+over the flow direction window. Notice how the FIJI menu part is now
+reporting the velocity in px/fram and direction in degrees. Note the
+0<span class="math inline">\(^o\)</span> represents a horizontal,
+left-right direction and 90<span class="math inline">\(^o\)</span> a
+vertical up-down direction. Use the values over the flow direction
+window to qualitatively assess the magnitude and direction of volcities
+and how they vary spatially over the field. Also compare and contrast
+this pattern between the results for the two bird-wing models.</p></li>
 </ol>
+<center>
+<img src="FIJIPIV.png" style="width:50.0%" />
+</center>
+<p><br></p>
 </div>
 <div id="what-to-address-in-your-report" class="section level2">
 <h2>What to address in your report</h2>
@@ -708,7 +724,7 @@ ratios?</li>
 <p>Please synthesize the results of your experiments and address these
 questions in a report that follows the structure outlined <a
 href="https://bcbiomech.github.io/class/mini_projects.html">here</a>.
-Reports are due Friday, April 7 th at 11:59 pm. Your Rmd files
+Reports are due Sunday, April 16th th at 11:59 pm. Your Rmd files
 (<strong>with all the associated data!!!</strong>) should be sent to
 Prof. K via email before then.</p>
 <div id="requirements-for-submission" class="section level3">
