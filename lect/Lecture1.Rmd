@@ -158,7 +158,7 @@ IDE: Integrated Development Environment
 .pull-left[
 
 - 1/week
-- On github board
+- On slack 
 - Question and answer
 - Lab and lecture both
 

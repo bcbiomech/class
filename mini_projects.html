@@ -13,7 +13,7 @@
 
 <title>Mini-Projects</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
@@ -29,7 +29,7 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
@@ -170,8 +170,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -179,16 +179,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -322,48 +315,90 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Mini-Projects
+    Assignments
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="mini_projects.html">Mini-Projects Overview</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">AMEs</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="AME_guidelines.html">AME Guidelines</a>
+        </li>
+        <li>
+          <a href="AMEs/AME1.html">AME1</a>
+        </li>
+        <li>
+          <a href="AME2.html">AME2</a>
+        </li>
+        <li>
+          <a href="AME3.html">AME3</a>
+        </li>
+        <li>
+          <a href="AME4.html">AME4</a>
+        </li>
+        <li>
+          <a href="AME5.html">AME5</a>
+        </li>
+        <li>
+          <a href="AME6.html">AME6</a>
+        </li>
+      </ul>
     </li>
-    <li>
-      <a href="MP1.html">MP1 Description</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mini-Projects</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="mini_projects.html">Mini-Projects Overview</a>
+        </li>
+        <li>
+          <a href="MP1.html">MP1 Description</a>
+        </li>
+        <li>
+          <a href="MP2.html">MP2 Description</a>
+        </li>
+        <li>
+          <a href="MP3.html">MP3 Description</a>
+        </li>
+        <li>
+          <a href="MP4.html">MP4 Description</a>
+        </li>
+        <li>
+          <a href="MP5.html">MP5 Description</a>
+        </li>
+      </ul>
     </li>
-    <li>
-      <a href="MP2.html">MP2 Description</a>
-    </li>
-    <li>
-      <a href="MP3.html">MP3 Description</a>
-    </li>
-    <li>
-      <a href="MP4.html">MP4 Description</a>
-    </li>
-    <li>
-      <a href="MP5.html">MP5 Description</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Final Project</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="final_project.html">FP Overview</a>
+        </li>
+      </ul>
     </li>
   </ul>
+</li>
+<li>
+  <a href="https://topicsinbiomechanics.slack.com/">Discussion Board</a>
+</li>
+<li>
+  <a href="https://bostoncollege.instructure.com/courses/1652556">Course Canvas Page</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Final Project
+    Author Contribution Evaluations
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="final_project.html">FP Overview</a>
+      <a href="author_contributions.html">Author Contribution Evaluation Guidelines</a>
+    </li>
+    <li>
+      <a href="https://forms.gle/1CMXtch2feruGxoX9">Author Contribution Evaluation Form</a>
     </li>
   </ul>
-</li>
-<li>
-  <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">Discussion Board</a>
-</li>
-<li>
-  <a href="https://bostoncollege.instructure.com/courses/1640270">Course Canvas Page</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -383,18 +418,19 @@ div.tocify {
 
 
 <p>We’ll engage in 5 team-based asynchronous lab exercises or
-Mini-projects that span 2-3 weeks of class. Teams will be assigned the
-first week of class.</p>
-<p>Fridays are set aside for MP work, but you and your team can meet to
-complete MP work when it suits you. New MPs will be released on Fridays
-with an MP project description (see links above under and our <a
-href="schedule.html">schedule</a> page). These project descriptions
-begin with some background, a survey of some of the important concepts
-from class that we’ll invoke in the MP, and the question we’ll seek to
-answer. From there, you’ll move on to performing experiments or
-simulations and collect data to answer the MP’s question.</p>
+Mini-projects that span 2-3 weeks of class. Teams will be randomly
+assigned before the beginning of each MP.</p>
+<p>New MPs will be released on Thursdays with an MP project description
+(see links above under and our <a href="schedule.html">schedule</a>
+page). These project descriptions begin with some background, a survey
+of some of the important concepts from class that we’ll invoke in the
+MP, and the question we’ll seek to answer. From there, you’ll move on to
+performing experiments or simulations and collect data to answer the
+MP’s question.</p>
 <div id="report-guidelines" class="section level1">
 <h1>Report Guidelines</h1>
+<div id="report-content" class="section level2">
+<h2>Report Content</h2>
 <p>After you’ve completed the experiments for an MP, you’ll be asked to
 analyze data and synthesize and contextualize your results in a report.
 The reports should be short (&lt;1000 words), contain relevant figures
@@ -403,10 +439,10 @@ should be uploaded to a directory specified in the MP description. The
 submission should include the markdown file (an .Rmd) and <strong>all
 the data</strong> associated with the analysis. Each MP is worth up to
 50 points toward your final grade.</p>
-<p>In the first MP, we’ll explore how to analyze data using R and how to
-synthesize analysis and text into a reproducible Markdown document. The
-following must be included in your .Rmd. How to implement each of these
-requirements will be discussed in MP1.</p>
+<p>In the first AME, we’ll explore how to analyze data using R and how
+to synthesize analysis and text into a reproducible Markdown document.
+The following must be included in your .Rmd. How to implement each of
+these requirements will be discussed in AME1.</p>
 <ol style="list-style-type: decimal">
 <li>A YAML header that specifies the author, title, date, output, and
 bibliography file.</li>
@@ -423,7 +459,7 @@ answered.</li>
 they relate to the main question and the field in a broader
 context).</li>
 <li>Author Contributions: Briefly state the contributions made by each
-team member to the project.</li>
+team member to the project.*</li>
 <li>References: Populate a bibliography section that includes the works
 cited in the text.</li>
 </ul></li>
@@ -432,11 +468,30 @@ cited in the text.</li>
 be included as code chunks.</li>
 <li>Citations to at least 2 relevant peer-reviewed papers.</li>
 </ol>
+<p>*Author contributions statements are now almost universal in
+scientific publications. In fact, when submitting manuscripts, authors
+are often asked to list the contributions of each coauthor BEFORE the
+manuscritpt is considered by the the journal.</p>
 </div>
-<div id="rubric" class="section level1">
-<h1>Rubric</h1>
-<p>The following rubric describes how each MP report will be
-evaluated.</p>
+<div id="author-contribution-evaluations" class="section level2">
+<h2>Author Contribution Evaluations</h2>
+<p>Before the deadline for each MP, <strong>EVERY</strong> group member
+of each team must submit an evaluation of their own and their teammates’
+contributions to the project. These evaluations can be made using <a
+href="https://forms.gle/1CMXtch2feruGxoX9">this form</a>. Please check
+out our <a href="author_contributions.html">Author Contribution
+Evaluation</a> page for more information.</p>
+<p><strong>Note:</strong> Team members who do not submit their peer
+evaluations before the deadline will be subject to a 5-point penalty for
+each 24-hour period the assessment is not submitted. For example, if an
+evaluation is submitted 12 hours late, this will mean a 5-point penalty;
+for one that is 36 hours late, this will mean a 10-point penalty.</p>
+</div>
+</div>
+<div id="content-rubric" class="section level1">
+<h1>Content Rubric</h1>
+<p>The following rubric describes how the content of each MP report will
+be evaluated.</p>
 <table>
 <colgroup>
 <col width="25%" />
@@ -551,6 +606,13 @@ sections and relevant text and figures, the writing must be clear and
 free of distracting usage errors and spelling mistakes. Here’s some <a
 href="Common_mistakes.pdf">writing advice</a> you might find helpful,
 complements of Prof. Kenaley’s graduate school advisor.</p>
+</div>
+<div id="report-assessment" class="section level1">
+<h1>Report Assessment</h1>
+<p>All team members will receive a preliminary grade for each report
+according to the content rubric. Prof. K will then review the author
+contribution evaluations and adjust the preliminary grade
+accordingly.</p>
 </div>
 
 

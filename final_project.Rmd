@@ -38,6 +38,13 @@ Please synthesize your results into a report 5 pages long using R markdown. Each
 
 The very prestigious Nature publishing group has released a series of articles on their "Scitable" site devoted to writing in science. You may find [this article](https://www.nature.com/scitable/ebooks/english-communication-for-scientists-14053993/118519636#bookContentViewAreaDivID) helpful in writing your report.
 
+## Author Contribution Evaluations
+
+As with the mini-projects, **EVERY** group member of each team must submit an evaluation of their teammates' contributions to the final project. These evaluations can be made using [this form](https://forms.gle/1CMXtch2feruGxoX9). 
+
+**Note:** Team members who do not submit their peer evaluations before the deadline will be subject to a 5-point penalty for each 24-hour period the assessment is not submitted. For example, if an evaluation is submitted 12 hours late, this will mean a 5-point penalty; for one that is 36 hours late, this will mean a 10-point penalty.
+
+
 ## Report Rubric
 
 The FP report is worth a total of 100 points toward your final grade. The following rubric describes how it will be evaluated. 
@@ -68,9 +75,7 @@ The presentation should include 8 minutes for sharing your project and 2 minutes
 
 The presentation should be [recorded in Zoom](https://www.youtube.com/watch?v=lZHSAMd89JE) or some other software that can record video and a screen simultaneously. Each team member should record their part of the presentation for the team to [assemble into the final presentation](https://www.youtube.com/watch?v=WTTDR8nEncY). Presentations should be uploaded to this directory with a file name in the following format "TEAMNAME_final_presentation.mp4". 
 
-The class will convene over Zoom at some point over finals period to watch the pre-recorded presentations and ask questions of each team. 
-
-Please upload you presentation to [this directory](https://drive.google.com/drive/folders/1-2pw3pWQg-F8UPaWoTlbg3FgrQ6jnnbZ)
+The class will convene at Prof. K's home at some point over finals period to watch the pre-recorded presentations and ask questions of each team. 
 
 ## Presentation Rubric
 
@@ -84,6 +89,10 @@ The FP presentation is worth a total of 50 points toward your final grade. The f
 | Questions and answers | Presenters demonstrated enough knowledge of the topic to respond to questions with confident, succinct, and insightful answers <br>**(10 pts)**|  Presenters demonstrated enough knowledge of the topic to respond to most but not all questions with confident, succinct, and insightful answers <br>**(6 pts)** |  Presenters failed to respond to all questions with confident, succinct, and insightful answers. <br>**(2 pt)**
 | Individual contribution | The individual presenter's contribution was substantial and key to an effective presentation <br>**(10 pts)**| The individual presenter's contribution was obvious but perhaps not pivotal. <br>**(6 pts)**| The individual presenter's contribution was unclear, limited, or not important <br>**(2 pts)**
 ||||
+
+# Final Report and Presentation submission
+
+Please upload your report and presentation using [this form](https://forms.gle/rbauqaApP7xvzPwJA).
 
 
 

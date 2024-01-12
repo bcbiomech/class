@@ -1,0 +1,60 @@
+---
+title: "AME Example"
+output: html_document
+---
+
+## Set up
+
+Say we were studying the bite force of the eastern gray squirrel (*Sciurus carolinensis*).
+
+<center>
+![The study species, *Sciurus carolinensis*. Image by grendel|khan, CC BY-SA 3.0](https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Squirrel_closeup_profile.gk.jpg/500px-Squirrel_closeup_profile.gk.jpg)
+</center>
+<br>
+
+Assume that you collected the following data, a table that contains the maximum bite force at the larger, aneteriormost incisor of the lower jaw, mass, and sex of 20 specimens.
+
+```{r,include=F}
+library(tidyverse)
+library(kableExtra)
+dat <- tibble(
+  mass=rnorm(20,1.4,0.5) %>% round(.,2),
+  sex=rep(c("Male","Female"),10)
+) %>%
+  mutate(m=ifelse(sex=="Male",1,0.7)) %>% 
+  mutate(Fmax=mass*2*runif(20,m-0.1,m+0.1)^0.8 %>% round(.,2))
+
+dat %>% 
+  ggplot(aes(mass,Fmax,col=sex))+geom_point()
+
+write_csv(dat %>% select(-m),"/Users/biology/Dropbox/Documents/bc (1)/5380.s24/class/data/bite_force.csv")
+```
+
+```{r,echo=F}
+dat %>% 
+  select(-m) %>% 
+  kable(caption = "Table 1: Bite force data for 20 squirrels. Mass is given in kg, bite force ('Fmax') is given in N") %>% 
+  kable_minimal()
+```
+
+## Objectives
+
+1. Open, save, and establish an R markdown document that includes a YAML header with your name, title, date and output as an html [1]. 
+
+NB: Name and save your Rmd as "Lastname_Firstname_AME0.Rmd" [-1 if not]
+
+2. Include an R chunk that loads `tidyverse` [1].
+
+3. Please download the data you see above by accessing [this link](data/bite_force.csv). Read it in as CSV data and save it to an object named `dat`. [3]
+
+4. Produce an illustrative visualization of the relationship between squirrel maximum bite force and mass and how this relationship may vary by sex. [3]
+
+
+## Interpretation
+
+Please briefly comment on the evolutionary or ecological basis of any relationships your visualization reveals. [2]
+
+## Upload
+
+Upload your AEM submission using this link.
+

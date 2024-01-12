@@ -19,9 +19,9 @@ Pursuant to this, you'll engage in class projects that involve reading primary l
 
 # Course Deets
 
-**Delivery:**  In-person lectures Tuesday and some Thursdays at 10:30 in Higgins Hall 225. Asynchronous lab projects launched on Thursdays with a synchronous Zoom meeting.
+**Delivery:**  In-person lectures Tuesday and some Thursdays from noon--1:15 in Higgins Hall 225. Asynchronous lab projects launched on Thursdays.
 
-For those who can't make it to class, we'll be [Zooming](https://bccte.zoom.us/j/9533582156) 
+<!-- For those who can't make it to class, we'll be [Zooming](https://bccte.zoom.us/j/9533582156)  -->
 
 <!-- and [recording lectures](https://bostoncollege.instructure.com/courses/1615104/external_tools/109499). -->
 
@@ -31,16 +31,16 @@ For those who can't make it to class, we'll be [Zooming](https://bccte.zoom.us/j
 <a class="far fa-envelope fa-1x" style="color:#D3D8DD"></a> kenaley [ahhhht] bc.edu
 
 
-**Course TA:** Trevor Cameron
+<!-- **Course TA:** Trevor Cameron -->
 
-<a class="far fa-envelope fa-1x" style="color:#D3D8DD"></a> camerotr [ahhhht] bc.edu
+<!-- <a class="far fa-envelope fa-1x" style="color:#D3D8DD"></a> camerotr [ahhhht] bc.edu -->
 
 
 
 **office hours with Prof. Kenaley:** By appointment, in person or over Zoom [at this link](https://bccte.zoom.us/j/9533582156)
 
 
-**office hours with Trevor:** Wednesdays, 1:00-3:00 in person (Higgins 535) and Fridays 1:00-3:00 over Zoom [at this link](https://bccte.zoom.us/j/6907654693?pwd=TU5YelZnS1VLUnNJMnVSWFkwV3RUdz09)
+<!-- **office hours with Trevor:** Wednesdays, 1:00-3:00 in person (Higgins 535) and Fridays 1:00-3:00 over Zoom [at this link](https://bccte.zoom.us/j/6907654693?pwd=TU5YelZnS1VLUnNJMnVSWFkwV3RUdz09) -->
 
 # Course Materials
 
@@ -48,18 +48,20 @@ For those who can't make it to class, we'll be [Zooming](https://bccte.zoom.us/j
 
 **Recommended Textbook:** Vogel, S. 2013. [*Comparative Biomechanics: Life's Physical World*.](https://www.amazon.com/Comparative-Biomechanics-Lifes-Physical-Second/dp/0691155666#customerReviews) 2nd ed. Princeton University Press. 
 
-**Additional readings and lecture files:** Required readings drawn from the primary literature are available through the class schedule on the course site. They should be read before the class for which they are assigned. 
+**Additional readings and lecture files:** Recommended readings drawn from the primary literature are available through the class schedule on the course site. Readinfg these are meant to: (1) give students a sense of the current and influential topics in biomechanics and (2) serve as a model for effective scientific communication, that is, models for our reports.
 
-**Technical requirements:**  Completing your assignments will require proficiency with non-commercial software, including some amount of low-level programming. Early assignments in the course are meant to bring you up to speed; however, most students in the class will have to rely on their patience and curiosity to transfer these new skills to complete assignments. Prof. Kenaley promises you that scientific computing with free, but powerful software (e.g. R, imageJ, etc.) will be utterly liberating and rewarding! 
+**Technical requirements:**  Completing your assignments will require proficiency with non-commercial software, including some amount of low-level programming. Early assignments in the course are meant to bring you up to speed; however, most students in the class will have to rely on their patience and curiosity to transfer these new skills to complete assignments. Prof. K promises you that scientific computing with free, but powerful software (e.g. R, imageJ, etc.) will be utterly liberating and rewarding! 
 
-## GitHub Account
+## Slack Account
 
-Why a [GitHub account](https://github.com/join)? GitHub is a handy place for those developing code and offers free hosting of websites produced and maintained from a desktop (that's how this site was constructed). Our site is under the ``class" repository (i.e., a space where code resides) within the organization [bcbiomech](https://github.com/bcbiomech) on GitHub. To access our organization and use the bcbiomech discussion page, you'll need an account. Once you have an account, I'll be able to add you to our [bcbiomech](https://github.com/bcbiomech) team and the class-wide team for discussion purposes.
+Why a [Slack account](https://slack.com/)? Slack is a handy place for those working as a team in a project-based environment. That's us! In the first week of class, Prof. K will invite you to our [Slack team](https://topicsinbiomechanics.slack.com/).
+
+<!-- Our site is under the ``class" repository (i.e., a space where code resides) within the organization [bcbiomech](https://github.com/bcbiomech) on GitHub. To access our organization and use the bcbiomech discussion page, you'll need an account. Once you have an account, I'll be able to add you to our [bcbiomech](https://github.com/bcbiomech) team and the class-wide team for discussion purposes. -->
 
 
 # Canvas Support
 
-You'll find nearly everything you need for BIOL 5380 here at this site; however, grades will be posted to our [class Canvas site](https://bostoncollege.instructure.com/courses/1615104). 
+You'll find nearly everything you need for BIOL 5380 here at this site; however, grades will be posted to our [class Canvas site](https://bostoncollege.instructure.com/courses/1652556). 
 
 
 # Course Goals and Objectives
@@ -120,20 +122,33 @@ Toward the end of the course, you'll take on an independent, team-based project.
 
 In addition to a report, you'll be tasked with synthesizing your project in a short, 10-minute research presentation. This presentation will be recorded by you and your team using Zoom and uploaded to a directory for Prof. Kenaley and your peers to view and critique.  The Final Project presentation is worth 50 points toward the final grade. Additional details for the FP are available on our [Final Project page](final_project.html).
 
+## Analysis and Modeling Excercises
+
+We'll engage in 5 analysis and modeling exercises (AMEs). These exercises address a major goal of the course: developing skills in quantitative inference in the context biological sciences.
+
+Every 2-3 weeks or so, we'll introduce the concepts and task taken up by each AME. Unlike the mini-projects, AMEs are focused mainly on quantitative approaches to biomechanical research, not the bio-physical concepts that we explore elsewhere.
+
+AMEs will take about a week to complete. At least initially, these exercises will be self-assessed. That is, after completion and submission of each AME, solutions will be issued and students will have about another week to compare their submitted work to the solution and resubmit a revised AEM with a self-assessed preliminary score. The original submission, revised submission, and self-assessed score will then be review by Prof. K, who will, in short order, return the self-assessed AEM with some feedback and a final score. 
+
+The AMEs are worth 50 points toward the final grade. Students will be assigned 5 AMEs worth 10 points apiece.
+
+More information about AMEs can be found at [this link](AME_guidelines.html).
+
+
 ## Discussion Board 
 
-Each week on Tuesday, you will be asked to submit at least one question and answer another on our class [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions). This is hosted on GitHub, just like our course site, and will certainly be an important resource as you work through course material. When you post a question, you should:
+Each week on Tuesday, you will be asked to submit at least one question and, on Thursday, answer another on our class [discussion board](https://topicsinbiomechanics.slack.com/). This is hosted on slack and will certainly be an important resource as you work through course material. When you post a question, you should:
 
   + Be polite and concise.
   + Ask a question that has not be asked before.
-  + Post the question with a short descriptive title (e.g.., ``Problems with temp sensor wiring" )
+  + Post the question under descriptive channel (e.g.., ``AMEs", ``MPs", etc. )
   
 When responding to a question, you should:
 
   + Be polite and concise
   + Provide unique feedback rather than a duplicated answer.
   
-Feel free to post reactions (via the smiley-face icon above the text box), but this won't count as an answer.
+Feel free to post reactions (via the smiley-face icon below the text box), but this won't count as an answer.
   
 A student is welcome to add another answer to a question that has already been answered as long as it expands upon the previous answers.  I'll be moderating and occasionally commenting myself, issuing periodic feedback. 
 
@@ -141,7 +156,7 @@ The discussion activities are worth 50 points toward the final grade. A complete
 
 # Course Assessment
 
-Your grade will be based on five assignment components: Engagement in class, posting to our discussion board, 5 Mini-Project reports, and one independent Final Project report and presentation. 
+Your grade will be based on five assignment components: 5 AME assignments, posting to our discussion board, 5 Mini-Project reports, and one independent Final Project report and presentation. 
 
 ***
 
@@ -149,7 +164,7 @@ Your grade will be based on five assignment components: Engagement in class, pos
 -----------------------------------  ----------  --------------------    
                                                      **Points**            
      
-Class participation and engagement                     50
+AMEs                                                  5x10
 
 Discussion Board                                      10x5 
   
@@ -166,18 +181,18 @@ Final Project Presentation                              1x50
 
 <br>
 
-The class engagement portion of your grade will be calculated qualitatively. All 50 points are on the table, as long as you remain an active participant in class---asking questions, making relevant points, etc.
+<!-- The class engagement portion of your grade will be calculated qualitatively. All 50 points are on the table, as long as you remain an active participant in class---asking questions, making relevant points, etc. -->
 
 
 
-<div class = "green">
-<div class="row">
-  <div class="col-sm-2"><a class="far fa-sticky-note fa-5x" style="color:#939681"></a> <!-- regular style --></div>
-  <div class="col-sm-9">Just a note . . . assessment for project reports will incorporate an evaluation of an individual's or team's effort and engagement in addition to more objective components (i.e., answers, conclusions, etc.). To do well, the formula is simple: students and their teams should remain persistent, ask for guidance, and make clear conclusions using the skills and tools they learn in the course.
-</div>
-</div>
-</div>
-<br>
+<!-- <div class = "green"> -->
+<!-- <div class="row"> -->
+<!--   <div class="col-sm-2"><a class="far fa-sticky-note fa-5x" style="color:#939681"></a> <!-- regular style </div> -->
+<!--   <div class="col-sm-9">Just a note . . . assessment for project reports will incorporate an evaluation of an individual's or team's effort and engagement in addition to more objective components (i.e., answers, conclusions, etc.). To do well, the formula is simple: students and their teams should remain persistent, ask for guidance, and make clear conclusions using the skills and tools they learn in the course. -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- <br> -->
 
 
 # Responsibilities
@@ -188,7 +203,7 @@ This technical course will require sublime concentration and focus. Therefore, w
 
   + You, the student, are responsible for reading and adhering to all aspects of the course syllabus as outlined here on this site.
   + You are responsible for organizing and completing all readings, discussions, exercises, and projects.
-  + You are responsible for becoming familiar with course-related software (R, RStudio, Zoom, etc.).
+  + You are responsible for becoming familiar with course-related software (R, RStudio, Slack, etc.).
   + You must be aware of your own progress in the course.
   + It is up to you to pursue help and guidance when you feel you need it.
 
@@ -196,7 +211,7 @@ This technical course will require sublime concentration and focus. Therefore, w
   + I will challenge students intellectually to develop data analysis and experimental skills.
   + I will make expectations clear in the form of this site, syllabus, and course announcements made here and over email.
   + I will be consistent and quick in grading assignments.
-  + I will be available to help and discuss topics during scheduled class time, arranged office hours, and on our class [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions).
+  + I will be available to help and discuss topics during scheduled class time, arranged office hours, and on our class [discussion board](https://topicsinbiomechanics.slack.com/).
 
 
 # Accessibility
@@ -214,9 +229,9 @@ Students in this course, as all others at BC, must produce original work and cit
 
 # Email and Office Hours Policy
 
-If you write Professor Kenaley with a question, he’ll try to get back to you within 24 hours. If you don’t receive a response, it’s likely because the answer to your question is available here or on our discussion site. Rather than write Prof. Kenaley with questions related to course mechanics and expectations, please post these in our [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions), It’s probably the case that others have the same questions.
+If you write Professor Kenaley with a question, he’ll try to get back to you within 24 hours. Rather than write Prof. Kenaley with questions related to course mechanics and expectations, please post these in our [discussion board](https://topicsinbiomechanics.slack.com/), It’s probably the case that others have the same questions.
 
-Office hours can be arranged by appointment via email and will take place over Zoom. Office hours may involve more more than student or team, so please come equipped with poignant questions and expect that other students have questions as urgent as yours.
+Office hours, either in person on via Zoom, can be arranged by appointment via email so Slack. Office hours may involve more more than student or team, so please come equipped with poignant questions and expect that other students have questions as urgent as yours.
 
 
 

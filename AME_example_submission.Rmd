@@ -1,0 +1,41 @@
+---
+title: "AME Example"
+author: "A. Stew Dant"
+date: '`r Sys.Date()`'
+output: html_document
+---
+
+## Objectives
+
+1. Open, save, and establish an R markdown document that includes a YAML header with your name, title, date and output as an html [1]. 
+
+2. Include an R chunk that loads `tidyverse` [1].
+
+```{r r objective 2, include=FALSE}
+library(tidyverse)
+```
+
+3. Please download the data you see above by accessing [this link](data/bite_force.csv). Read it in as CSV data and save it to an object named `dat`. [3]
+
+```{r objective 3}
+dat <- read_csv("data/bite_force.csv")
+```
+
+
+4. Produce an illustrative visualization of the relationship between squirrel maximum bite force and mass and how this relationship may vary by sex. [3]
+
+```{r}
+dat_F <- dat %>% filter(sex=="Female")
+dat_M <- dat %>% filter(sex=="Male")
+dat_F %>% 
+  ggplot(aes(mass,Fmax))+geom_point()
+dat_M %>% 
+  ggplot(aes(mass,Fmax))+geom_point()
+
+```
+
+## Interpretation
+
+The relationship between bite force and mass is similar between males and females.
+
+

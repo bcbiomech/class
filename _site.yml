@@ -16,28 +16,54 @@ navbar:
       href: index.html
     - text: "Schedule"
       href: schedule.html
-    - text: "Mini-Projects"
+    - text: "Assignments" 
       menu:
-      - text: "Mini-Projects Overview"
-        href: mini_projects.html
-      - text: "MP1 Description"
-        href: MP1.html
-      - text: "MP2 Description"
-        href: MP2.html
-      - text: "MP3 Description"
-        href: MP3.html
-      - text: "MP4 Description"
-        href: MP4.html
-      - text: "MP5 Description"
-        href: MP5.html
-    - text: "Final Project"
-      menu:
-      - text: "FP Overview"
-        href: final_project.html
+      - text: "AMEs"
+        menu:
+        - text: "AME Guidelines"
+          href: AME_guidelines.html
+        - text: "AME1"
+          href: AMEs/AME1.html
+        - text: "AME2"
+          href: AME2.html
+        - text: "AME3"
+          href: AME3.html
+        - text: "AME4"
+          href: AME4.html
+        - text: "AME5"
+          href: AME5.html
+        - text: "AME6"
+          href: AME6.html
+      - text: "Mini-Projects"
+        menu:
+        - text: "Mini-Projects Overview"
+          href: mini_projects.html
+        - text: "MP1 Description"
+          href: MP1.html
+        - text: "MP2 Description"
+          href: MP2.html
+        - text: "MP3 Description"
+          href: MP3.html
+        - text: "MP4 Description"
+          href: MP4.html
+        - text: "MP5 Description"
+          href: MP5.html
+      - text: "Final Project"
+        menu:
+        - text: "FP Overview"
+          href: final_project.html
     - text: "Discussion Board"
-      href: https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions
+      href: https://topicsinbiomechanics.slack.com/
     - text: "Course Canvas Page"
-      href: https://bostoncollege.instructure.com/courses/1640270
+      href: https://bostoncollege.instructure.com/courses/1652556
+    - text: "Author Contribution Evaluations"
+      menu:
+      - text: "Author Contribution Evaluation Guidelines"
+        href: author_contributions.html
+      - text: "Author Contribution Evaluation Form"
+        href: https://forms.gle/1CMXtch2feruGxoX9
+      
+   
       
     
  

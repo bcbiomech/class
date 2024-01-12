@@ -13,7 +13,7 @@
 
 <title>Course Schedule</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
@@ -29,7 +29,7 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
@@ -170,8 +170,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -179,16 +179,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -322,48 +315,90 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Mini-Projects
+    Assignments
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="mini_projects.html">Mini-Projects Overview</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">AMEs</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="AME_guidelines.html">AME Guidelines</a>
+        </li>
+        <li>
+          <a href="AMEs/AME1.html">AME1</a>
+        </li>
+        <li>
+          <a href="AME2.html">AME2</a>
+        </li>
+        <li>
+          <a href="AME3.html">AME3</a>
+        </li>
+        <li>
+          <a href="AME4.html">AME4</a>
+        </li>
+        <li>
+          <a href="AME5.html">AME5</a>
+        </li>
+        <li>
+          <a href="AME6.html">AME6</a>
+        </li>
+      </ul>
     </li>
-    <li>
-      <a href="MP1.html">MP1 Description</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mini-Projects</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="mini_projects.html">Mini-Projects Overview</a>
+        </li>
+        <li>
+          <a href="MP1.html">MP1 Description</a>
+        </li>
+        <li>
+          <a href="MP2.html">MP2 Description</a>
+        </li>
+        <li>
+          <a href="MP3.html">MP3 Description</a>
+        </li>
+        <li>
+          <a href="MP4.html">MP4 Description</a>
+        </li>
+        <li>
+          <a href="MP5.html">MP5 Description</a>
+        </li>
+      </ul>
     </li>
-    <li>
-      <a href="MP2.html">MP2 Description</a>
-    </li>
-    <li>
-      <a href="MP3.html">MP3 Description</a>
-    </li>
-    <li>
-      <a href="MP4.html">MP4 Description</a>
-    </li>
-    <li>
-      <a href="MP5.html">MP5 Description</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Final Project</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="final_project.html">FP Overview</a>
+        </li>
+      </ul>
     </li>
   </ul>
+</li>
+<li>
+  <a href="https://topicsinbiomechanics.slack.com/">Discussion Board</a>
+</li>
+<li>
+  <a href="https://bostoncollege.instructure.com/courses/1652556">Course Canvas Page</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Final Project
+    Author Contribution Evaluations
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="final_project.html">FP Overview</a>
+      <a href="author_contributions.html">Author Contribution Evaluation Guidelines</a>
+    </li>
+    <li>
+      <a href="https://forms.gle/1CMXtch2feruGxoX9">Author Contribution Evaluation Form</a>
     </li>
   </ul>
-</li>
-<li>
-  <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">Discussion Board</a>
-</li>
-<li>
-  <a href="https://bostoncollege.instructure.com/courses/1640270">Course Canvas Page</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -406,7 +441,7 @@ Biomechanics: Life’s Physical World</em>.</p>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Jan 17</td>
+<td>Tuesday, Jan 16</td>
 <td><a href="lect/Lecture1.html">Welcome and Introduction (1)</a></td>
 <td><a
 href="https://en.wikipedia.org/wiki/Classical_mechanics#:~:text=Classical%20mechanics%20is%20a%20physical,%2C%20planets%2C%20stars%20and%20galaxies.">Classical
@@ -448,17 +483,16 @@ href="https://www.rstudio.com/products/rstudio/download/">Rstudio</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Jan 24</td>
+<td>Tuesday, Jan 23</td>
 <td><a href="lect/Lecture03.html">Moving on Land II: Running et
 al. (3)</a></td>
 <td><a href="KuoWalking.pdf">Kuo (2007)</a></td>
-<td>Post to <a
-href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
-board</a></td>
+<td>Post to <a href="https://topicsinbiomechanics.slack.com/">discussion
+board</a> <br> <br><a href="AMEs/AME1.html">AEM1</a> due</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Jan 26</td>
+<td>Thursday, Jan 25</td>
 <td>No class :(/<a href="MP1.html">Mini-Project I: Open
 Sourcery</a></td>
 <td></td>
@@ -489,24 +523,23 @@ Sourcery</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Jan 31</td>
+<td>Tuesday, Jan 30</td>
 <td><a href="lect/Lecture05.html">Moving on Land III:Scaling/Joints,
 Levers, and Linkages (5)</a></td>
 <td>V Ch. 20</td>
-<td>Post to <a
-href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
-board</a></td>
+<td>Post to <a href="https://topicsinbiomechanics.slack.com/">discussion
+board</a> <br><br> AME1 assessment/revisions due</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Wednesday, Feb 2</td>
+<td>Wednesday, Jan 31</td>
 <td></td>
 <td></td>
 <td>MP1 report due</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>Thursday, Feb 2</td>
+<td>Thursday, Feb 1</td>
 <td><a href="lect/Lecture06.html">Coarse Materials I (6)</a> / <a
 href="MP2.html">Mini-Project II: Get Ur Gait On!</a></td>
 <td>V pp. 286–306</td>
@@ -537,16 +570,15 @@ href="MP2.html">Mini-Project II: Get Ur Gait On!</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Feb 7</td>
+<td>Tuesday, Feb 6</td>
 <td><a href="lect/Lecture07.html">Coarse Materials II (7)</a></td>
 <td>V Ch. 16, 17</td>
-<td>Post to <a
-href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
-board</a></td>
+<td>Post to <a href="https://topicsinbiomechanics.slack.com/">discussion
+board</a><br><br> <a href="AMEs/AME2.html">AEM2</a> due</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Feb 9</td>
+<td>Thursday, Feb 8</td>
 <td><a href="lect/Lecture08.html">Coarse Materials III (8)</a></td>
 <td>V Ch. 18</td>
 <td></td>
@@ -576,23 +608,22 @@ board</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Feb 14</td>
+<td>Tuesday, Feb 13</td>
 <td><a href="lect/Lecture09.html">Coarse Structures (9)</a></td>
 <td>V Ch. 19</td>
-<td>Post to <a
-href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
-board</a></td>
+<td>Post to <a href="https://topicsinbiomechanics.slack.com/">discussion
+board</a><br><br> AME2 assessment/revisions due</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Wednesday, Feb 15</td>
+<td>Wednesday, Feb 14</td>
 <td></td>
 <td></td>
 <td>MP2 report due</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>Thursday, Feb 16</td>
+<td>Thursday, Feb 15</td>
 <td><a href="lect/Lecture10.html">Stretching/Bending (10)</a> <br><a
 href="MP3.html">Mini-Project III: Stretch the Pig, Bend the
 Twig</a></td>
@@ -625,18 +656,17 @@ Twig</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Feb 21</td>
+<td>Tuesday, Feb 20</td>
 <td><a href="lect/Lecture11.html">Adhesion (11)</a></td>
 <td><a
 href="https://academic.oup.com/icb/article/59/1/101/5486592">Russell et
 al. (2019)</a></td>
-<td>Post to <a
-href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
-board</a></td>
+<td>Post to <a href="https://topicsinbiomechanics.slack.com/">discussion
+board</a> <br><br> <a href="AMEs/AME3.html">AEM3</a> due</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Feb 23</td>
+<td>Thursday, Feb 22</td>
 <td><a href="lect/Lecture12.html">Muscles: Micro Predicts Macro
 (12)</a></td>
 <td></td>
@@ -667,19 +697,55 @@ board</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Feb 28</td>
+<td>Tuesday, Feb 27</td>
 <td><a href="lect/Lecture13.html">Fluid Motions Around: An Introduction
 (13)</a></td>
 <td></td>
-<td>Post to <a
-href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
-board</a></td>
+<td>Post to <a href="https://topicsinbiomechanics.slack.com/">discussion
+board</a> <br><br> AME3 assessment/revisions due</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Mar 2</td>
+<td>Thursday, Feb 29</td>
 <td><a href="lect/Lecture14.html">Fluid Motions Around: Bernoulli
 (14)</a></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="spring-break" class="section level2">
+<h2>Spring Break</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Date</strong> <img width=200/></th>
+<th><strong>Topic (Lecture)</strong> <img width=200/></th>
+<th><strong>Reading</strong> <img width=200/></th>
+<th><strong>Assignment</strong><img width=200/></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Tuesday, Mar 4</td>
+<td>No class</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Thursday, Mar 6</td>
+<td>No class</td>
 <td></td>
 <td></td>
 <td></td>
@@ -708,24 +774,23 @@ board</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Mar 14</td>
+<td>Tuesday, Mar 12</td>
 <td><a href="lect/Lecture15.html">Re: Drag (15)</a></td>
 <td><a href="https://www.nature.com/articles/ncomms6119">Qui et
 al. (2014)</a></td>
-<td>Post to <a
-href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+<td>Post to <a href="https://topicsinbiomechanics.slack.com/">discussion
 board</a></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Wednesday, Mar 15</td>
+<td>Wednesday, Mar 13</td>
 <td></td>
 <td></td>
 <td>MP3 report due</td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>Thursday, Mar 16</td>
+<td>Thursday, Mar 14</td>
 <td><a href="lect/Lecture16.html">Re: Shape (16)</a> / <a
 href="MP4.html">Mini-Project IV: Birds of Feather</a></td>
 <td></td>
@@ -756,17 +821,16 @@ href="MP4.html">Mini-Project IV: Birds of Feather</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Mar 21</td>
+<td>Tuesday, Mar 19</td>
 <td><a href="lect/Lecture17.html">Lift for a Living I (17)</a></td>
 <td></td>
-<td>Post to <a
-href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
+<td>Post to <a href="https://topicsinbiomechanics.slack.com/">discussion
 board</a></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Mar 23</td>
-<td>Lift for a Living II (18)</td>
+<td>Thursday, Mar 21</td>
+<td><a href="lect/Lecture18.html">Lift for a Living II (18)</a></td>
 <td></td>
 <td></td>
 <td></td>
@@ -795,22 +859,19 @@ board</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Mar 28</td>
-<td><a href="lect/Lecture18.html">Gliding into D = m<span
+<td>Tuesday, Mar 26</td>
+<td><a href="lect/Lecture19.html">Gliding into D = m<span
 class="math inline">\(\cdot g\cdot\)</span> cos(<span
 class="math inline">\(\theta\)</span>) (19)</a></td>
 <td></td>
-<td>Post to <a
-href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
-board</a></td>
+<td>Post to <a href="https://topicsinbiomechanics.slack.com/">discussion
+board</a> <br><br> <a href="AMEs/AME4.html">AEM4</a> due</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Wednesday, Mar 29</td>
-<td><a href="lect/Lecture19.html">Fish Swimming (20)</a></td>
-<td><a
-href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=757275&amp;casa_token=I48yhmyTDY0AAAAA:hlx2Coqp-NuyrzmiV6VvSFZdWkf2Xd-d7DNJEMa1V-e2hJStcLdoQ_D14rlu-fanh21gf_kO&amp;tag=1">Sfakiotakis
-et al, 2009</a></td>
+<td>Thursday, Mar 28</td>
+<td>No class (Easter)</td>
+<td></td>
 <td></td>
 <td></td>
 </tr>
@@ -838,17 +899,18 @@ et al, 2009</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Apr 4</td>
-<td><a href="lect/Lecture21.html">There Will Be Blood (21)</a></td>
-<td></td>
-<td>Post to <a
-href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
-board</a></td>
+<td>Tuesday, Apr 2</td>
+<td><a href="lect/Lecture20.html">Fish Swimming (20)</a></td>
+<td><a
+href="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=757275&amp;casa_token=I48yhmyTDY0AAAAA:hlx2Coqp-NuyrzmiV6VvSFZdWkf2Xd-d7DNJEMa1V-e2hJStcLdoQ_D14rlu-fanh21gf_kO&amp;tag=1">Sfakiotakis
+et al, 2009</a></td>
+<td>Post to <a href="https://topicsinbiomechanics.slack.com/">discussion
+board</a> <br><br> AME4 assessment/revisions due</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Apr 6</td>
-<td>No class, Easter</td>
+<td>Thursday, Apr 4</td>
+<td><a href="lect/Lecture21.html">There Will Be Blood (21)</a></td>
 <td></td>
 <td></td>
 <td></td>
@@ -877,18 +939,17 @@ board</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Apr 11</td>
+<td>Tuesday, Apr 9</td>
 <td><a href="lect/Lecture22.html"><span
 class="math inline">\(Re\)</span>: The Tiny (22)</a> / <a
 href="MP5.html">Mini-Project V: It’s Snot Rocket Science</a></td>
 <td></td>
-<td>Post to <a
-href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">discussion
-board</a></td>
+<td>Post to <a href="https://topicsinbiomechanics.slack.com/">discussion
+board</a> <br><br><a href="AMEs/AME5.html">AEM5</a> due</td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Apr 13</td>
+<td>Thursday, Apr 11</td>
 <td>Final Project discussion</td>
 <td></td>
 <td>MP4 report due</td>
@@ -920,15 +981,15 @@ board</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Apr 18</td>
+<td>Tuesday, Apr 16</td>
 <td>No class, Monday Schedule</td>
 <td></td>
-<td></td>
+<td>AME5 assessment/revisions due</td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Apr 21</td>
+<td>Thursday, Apr 18</td>
 <td>Final Project Round Table</td>
 <td></td>
 <td>MP5 report due, Team meetings with Prof. K</td>
@@ -959,14 +1020,14 @@ board</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, Apr 25</td>
+<td>Tuesday, Apr 23</td>
 <td>Final Project Work</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, Apr 27</td>
+<td>Thursday, Apr 25</td>
 <td>Final Project Work</td>
 <td></td>
 <td></td>
@@ -996,14 +1057,14 @@ board</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Tuesday, May 2</td>
+<td>Tuesday, Apr 30</td>
 <td>Final Project Work</td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>Thursday, May 4</td>
+<td>Thursday, May 2</td>
 <td>Final Project Work</td>
 <td></td>
 <td></td>
@@ -1033,7 +1094,7 @@ board</a></td>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Friday, May 12</td>
+<td>Friday, May 10</td>
 <td>Final Project</td>
 <td></td>
 <td>FP Report due*</td>
@@ -1043,14 +1104,15 @@ board</a></td>
 <td>TBD</td>
 <td>Final Project</td>
 <td></td>
-<td>FP presentention due*</td>
+<td>FP presentation due**</td>
 <td></td>
 </tr>
 </tbody>
 </table>
-<p>*FP presentations can be uploaded to <a
-href="https://drive.google.com/drive/folders/1-2pw3pWQg-F8UPaWoTlbg3FgrQ6jnnbZ">this
-directory</a>.</p>
+<p>*FP reports can be uploaded via <a
+href="https://forms.gle/Cn4DNrhfhDb1cP6u5">this form</a>. **FP
+presentations can be uploaded via <a
+href="https://forms.gle/Cn4DNrhfhDb1cP6u5">this form</a>.</p>
 </div>
 
 

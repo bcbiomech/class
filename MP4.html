@@ -13,7 +13,7 @@
 
 <title>Mini Project 4: Come Fly With Me!</title>
 
-<script src="site_libs/header-attrs-2.16/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
@@ -29,7 +29,7 @@
        h6 {font-size: 12px;}
        code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
        pre:not([class]) { background-color: white }</style>
-<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<script src="site_libs/jqueryui-1.13.2/jquery-ui.min.js"></script>
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
@@ -170,8 +170,8 @@ $(document).ready(function () {
   border-radius: 4px;
 }
 
-.tabset-dropdown > .nav-tabs > li.active:before {
-  content: "";
+.tabset-dropdown > .nav-tabs > li.active:before, .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "\e259";
   font-family: 'Glyphicons Halflings';
   display: inline-block;
   padding: 10px;
@@ -179,16 +179,9 @@ $(document).ready(function () {
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
-  content: "&#xe258;";
-  border: none;
-}
-
-.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
-  content: "";
+  content: "\e258";
   font-family: 'Glyphicons Halflings';
-  display: inline-block;
-  padding: 10px;
-  border-right: 1px solid #ddd;
+  border: none;
 }
 
 .tabset-dropdown > .nav-tabs > li.active {
@@ -322,48 +315,90 @@ div.tocify {
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Mini-Projects
+    Assignments
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="mini_projects.html">Mini-Projects Overview</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">AMEs</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="AME_guidelines.html">AME Guidelines</a>
+        </li>
+        <li>
+          <a href="AMEs/AME1.html">AME1</a>
+        </li>
+        <li>
+          <a href="AME2.html">AME2</a>
+        </li>
+        <li>
+          <a href="AME3.html">AME3</a>
+        </li>
+        <li>
+          <a href="AME4.html">AME4</a>
+        </li>
+        <li>
+          <a href="AME5.html">AME5</a>
+        </li>
+        <li>
+          <a href="AME6.html">AME6</a>
+        </li>
+      </ul>
     </li>
-    <li>
-      <a href="MP1.html">MP1 Description</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Mini-Projects</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="mini_projects.html">Mini-Projects Overview</a>
+        </li>
+        <li>
+          <a href="MP1.html">MP1 Description</a>
+        </li>
+        <li>
+          <a href="MP2.html">MP2 Description</a>
+        </li>
+        <li>
+          <a href="MP3.html">MP3 Description</a>
+        </li>
+        <li>
+          <a href="MP4.html">MP4 Description</a>
+        </li>
+        <li>
+          <a href="MP5.html">MP5 Description</a>
+        </li>
+      </ul>
     </li>
-    <li>
-      <a href="MP2.html">MP2 Description</a>
-    </li>
-    <li>
-      <a href="MP3.html">MP3 Description</a>
-    </li>
-    <li>
-      <a href="MP4.html">MP4 Description</a>
-    </li>
-    <li>
-      <a href="MP5.html">MP5 Description</a>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Final Project</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="final_project.html">FP Overview</a>
+        </li>
+      </ul>
     </li>
   </ul>
+</li>
+<li>
+  <a href="https://topicsinbiomechanics.slack.com/">Discussion Board</a>
+</li>
+<li>
+  <a href="https://bostoncollege.instructure.com/courses/1652556">Course Canvas Page</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Final Project
+    Author Contribution Evaluations
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="final_project.html">FP Overview</a>
+      <a href="author_contributions.html">Author Contribution Evaluation Guidelines</a>
+    </li>
+    <li>
+      <a href="https://forms.gle/1CMXtch2feruGxoX9">Author Contribution Evaluation Form</a>
     </li>
   </ul>
-</li>
-<li>
-  <a href="https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions">Discussion Board</a>
-</li>
-<li>
-  <a href="https://bostoncollege.instructure.com/courses/1640270">Course Canvas Page</a>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -400,9 +435,9 @@ acquisition system.</li>
 characteristics the wings impart to a bird.</li>
 </ol>
 <center>
-<div class="figure">
-<img src="airfoild.png" id="foil" alt="" />
-<p class="caption">airfoil</p>
+<div class="float" id="foil">
+<img src="airfoild.png" alt="airfoil" />
+<div class="figcaption">airfoil</div>
 </div>
 </center>
 <p><br></p>

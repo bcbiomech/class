@@ -9,7 +9,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Jan 17 | [Welcome and Introduction  (1)](lect/Lecture1.html) | [Classical Physics Wiki page](https://en.wikipedia.org/wiki/Classical_mechanics#:~:text=Classical%20mechanics%20is%20a%20physical,%2C%20planets%2C%20stars%20and%20galaxies.); V Ch. 1 & 2, Append. 1 &2; [Vogel (2007)](Vogel_2007.pdf)|
+ | Tuesday, Jan 16 | [Welcome and Introduction  (1)](lect/Lecture1.html) | [Classical Physics Wiki page](https://en.wikipedia.org/wiki/Classical_mechanics#:~:text=Classical%20mechanics%20is%20a%20physical,%2C%20planets%2C%20stars%20and%20galaxies.); V Ch. 1 & 2, Append. 1 &2; [Vogel (2007)](Vogel_2007.pdf)|
  | Thursday, Jan 18 | [Moving on Land I: Walking (2)](lect/Lecture02.html) / [Mini-Project I: Open Sourcery](MP1.html)|| [Download R](https://www.r-project.org/) and [Rstudio](https://www.rstudio.com/products/rstudio/download/)
 
  
@@ -17,105 +17,113 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Jan 24 | [Moving on Land II: Running et al. (3)](lect/Lecture03.html) | [Kuo (2007)](KuoWalking.pdf)| Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Thursday, Jan 26 | No class :(/[Mini-Project I: Open Sourcery](MP1.html)||
+ | Tuesday, Jan 23 | [Moving on Land II: Running et al. (3)](lect/Lecture03.html) | [Kuo (2007)](KuoWalking.pdf)| Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br> <br>[AEM1](AMEs/AME1.html) due
+ | Thursday, Jan 25 | No class :(/[Mini-Project I: Open Sourcery](MP1.html)||
  
- 
-
  
 ## Week 3 Schedule
 
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Jan 31 | [Moving on Land III:Scaling/Joints, Levers, and Linkages (5)](lect/Lecture05.html) | V Ch. 20 |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
-  | Wednesday, Feb 2 | | | MP1 report due 
- | Thursday, Feb 2 | [Coarse Materials I (6)](lect/Lecture06.html) / [Mini-Project II: Get Ur Gait On!](MP2.html) | V pp. 286--306 |
+ | Tuesday, Jan 30 | [Moving on Land III:Scaling/Joints, Levers, and Linkages (5)](lect/Lecture05.html) | V Ch. 20 |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> AME1 assessment/revisions due
+  | Wednesday, Jan 31 | | | MP1 report due 
+ | Thursday, Feb 1 | [Coarse Materials I (6)](lect/Lecture06.html) / [Mini-Project II: Get Ur Gait On!](MP2.html) | V pp. 286--306 |
  
 ## Week 4 Schedule
 
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Feb 7 | [Coarse Materials II (7)](lect/Lecture07.html) | V Ch. 16, 17 |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Thursday, Feb 9 | [Coarse Materials III (8)](lect/Lecture08.html) |  V Ch. 18|
+ | Tuesday, Feb 6 | [Coarse Materials II (7)](lect/Lecture07.html) | V Ch. 16, 17 |Post to [discussion board](https://topicsinbiomechanics.slack.com/)<br><br> [AEM2](AMEs/AME2.html) due
+ | Thursday, Feb 8 | [Coarse Materials III (8)](lect/Lecture08.html) |  V Ch. 18|
  
 ## Week 5 Schedule
 
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Feb 14 | [Coarse Structures (9)](lect/Lecture09.html)  |  V Ch. 19     |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
-   | Wednesday, Feb 15 | | | MP2 report due 
- | Thursday, Feb 16 |  [Stretching/Bending (10)](lect/Lecture10.html) <br>[Mini-Project III: Stretch the Pig, Bend the Twig](MP3.html)|  V pp. 425-436        | 
+ | Tuesday, Feb 13 | [Coarse Structures (9)](lect/Lecture09.html)  |  V Ch. 19     |Post to [discussion board](https://topicsinbiomechanics.slack.com/)<br><br> AME2 assessment/revisions due
+   | Wednesday, Feb 14 | | | MP2 report due 
+ | Thursday, Feb 15 |  [Stretching/Bending (10)](lect/Lecture10.html) <br>[Mini-Project III: Stretch the Pig, Bend the Twig](MP3.html)|  V pp. 425-436        | 
 .
  
 ## Week 6 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Feb 21 | [Adhesion (11)](lect/Lecture11.html) | [Russell et al. (2019)](https://academic.oup.com/icb/article/59/1/101/5486592)|Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Thursday, Feb 23 | [Muscles: Micro Predicts Macro (12)](lect/Lecture12.html) | |
+ | Tuesday, Feb 20 | [Adhesion (11)](lect/Lecture11.html) | [Russell et al. (2019)](https://academic.oup.com/icb/article/59/1/101/5486592)|Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> [AEM3](AMEs/AME3.html) due
+ | Thursday, Feb 22 | [Muscles: Micro Predicts Macro (12)](lect/Lecture12.html) | |
  
 ## Week 7 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Feb 28 | [Fluid Motions Around: An Introduction (13)](lect/Lecture13.html) | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Thursday, Mar 2 | [Fluid Motions Around: Bernoulli (14)](lect/Lecture14.html) | |
+ | Tuesday, Feb 27 | [Fluid Motions Around: An Introduction (13)](lect/Lecture13.html) | |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> AME3 assessment/revisions due
+ | Thursday, Feb 29 | [Fluid Motions Around: Bernoulli (14)](lect/Lecture14.html) | |
+
+## Spring Break
+| **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
+--------|--------|-------- |-------- |-------- 
+ | Tuesday, Mar 4 | No class  | |
+ | Thursday, Mar 6 | No class | | 
  
 ## Week 8 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Mar 14 | [Re: Drag (15)](lect/Lecture15.html) | [Qui et al. (2014)](https://www.nature.com/articles/ncomms6119) |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Wednesday, Mar 15 | | | MP3 report due
- | Thursday, Mar 16 | [Re: Shape (16)](lect/Lecture16.html) / [Mini-Project IV: Birds of Feather](MP4.html) | | 
+ | Tuesday, Mar 12 | [Re: Drag (15)](lect/Lecture15.html) | [Qui et al. (2014)](https://www.nature.com/articles/ncomms6119) |Post to [discussion board](https://topicsinbiomechanics.slack.com/)
+ | Wednesday, Mar 13 | | | MP3 report due
+ | Thursday, Mar 14 | [Re: Shape (16)](lect/Lecture16.html) / [Mini-Project IV: Birds of Feather](MP4.html) | | 
 
 ## Week 9 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=350/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |--------  
- | Tuesday, Mar 21 | [Lift for a Living I (17)](lect/Lecture17.html) | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Thursday, Mar 23 | Lift for a Living II (18) ||
+ | Tuesday, Mar 19 | [Lift for a Living I (17)](lect/Lecture17.html) | |Post to [discussion board](https://topicsinbiomechanics.slack.com/)
+ | Thursday, Mar 21 | [Lift for a Living II (18)](lect/Lecture18.html) ||
  
  
 ## Week 10 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Mar 28 | [Gliding into D = m$\cdot g\cdot$ cos($\theta$) (19)](lect/Lecture18.html)  | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Wednesday, Mar 29 | [Fish Swimming (20)](lect/Lecture19.html) | [Sfakiotakis et al, 2009](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=757275&casa_token=I48yhmyTDY0AAAAA:hlx2Coqp-NuyrzmiV6VvSFZdWkf2Xd-d7DNJEMa1V-e2hJStcLdoQ_D14rlu-fanh21gf_kO&tag=1)|
+ | Tuesday, Mar 26 | [Gliding into D = m$\cdot g\cdot$ cos($\theta$) (19)](lect/Lecture19.html)  | |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> [AEM4](AMEs/AME4.html) due
+  | Thursday, Mar 28 | No class (Easter) ||
  
+
 ## Week 11 Schedule
+ 
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Apr 4 | [There Will Be Blood (21)](lect/Lecture21.html)  | | Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Thursday, Apr 6 | No class, Easter  | |
+ | Tuesday, Apr 2 | [Fish Swimming (20)](lect/Lecture20.html) | [Sfakiotakis et al, 2009](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=757275&casa_token=I48yhmyTDY0AAAAA:hlx2Coqp-NuyrzmiV6VvSFZdWkf2Xd-d7DNJEMa1V-e2hJStcLdoQ_D14rlu-fanh21gf_kO&tag=1)| Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> AME4 assessment/revisions due
+ | Thursday, Apr 4 | [There Will Be Blood (21)](lect/Lecture21.html)  | | 
+
  
 ## Week 12 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |--------  
- | Tuesday, Apr 11 | [$Re$: The Tiny (22)](lect/Lecture22.html) / [Mini-Project V: It's Snot Rocket Science](MP5.html)  | |Post to [discussion board](https://github.com/orgs/bcbiomech/teams/biol5380_s23/discussions)
- | Thursday, Apr 13 |Final Project discussion ||MP4 report due  
+ | Tuesday, Apr 9 | [$Re$: The Tiny (22)](lect/Lecture22.html) / [Mini-Project V: It's Snot Rocket Science](MP5.html)  | |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br>[AEM5](AMEs/AME5.html) due
+ | Thursday, Apr 11 |Final Project discussion ||MP4 report due  
 
 ## Week 13 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- |--------
- | Tuesday, Apr 18 | No class, Monday Schedule || 
- | Thursday, Apr 21 | Final Project Round Table | |MP5 report due, Team meetings with Prof. K 
+ | Tuesday, Apr 16 | No class, Monday Schedule || AME5 assessment/revisions due
+ | Thursday, Apr 18 | Final Project Round Table | |MP5 report due, Team meetings with Prof. K 
 
 
 ## Week 14 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Apr 25 | Final Project Work  | |
- | Thursday, Apr 27 | Final Project Work || 
+ | Tuesday, Apr 23 | Final Project Work  | |
+ | Thursday, Apr 25 | Final Project Work || 
 
 ## Week 15 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, May 2 | Final Project Work  | |
- | Thursday, May 4 | Final Project Work || 
+ | Tuesday, Apr 30 | Final Project Work  | |
+ | Thursday, May 2 | Final Project Work || 
  
 
 ## Finals Schedule
 
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Friday, May 12 | Final Project | | FP Report due* 
- | TBD | Final Project | | FP presentention due* 
+ | Friday, May 10 | Final Project | | FP Report due* 
+ | TBD | Final Project | | FP presentation due** 
  
- *FP presentations can be uploaded to [this directory](https://drive.google.com/drive/folders/1-2pw3pWQg-F8UPaWoTlbg3FgrQ6jnnbZ).
+ *FP reports can be uploaded via [this form](https://forms.gle/Cn4DNrhfhDb1cP6u5).
+ **FP presentations can be uploaded via [this form](https://forms.gle/Cn4DNrhfhDb1cP6u5).
