@@ -1,313 +1,182 @@
 ---
-title: 'Mini Project 2: Get Ur Gait On'
-bibliography: BIOL5380.bib
+title: 'Mini Project 3: Stretch the Pig, Bend the Twig'
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-library(tidyverse)
-```
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
-
-
 ## Introduction
-Our second Miniproject explores several topics in the biomechanical basis of terrestrial locomotion. In particular, we'll focus on how well the inverted pendulum model applies in predicting the maximum speed of walking humans and to what extent some kinematic variables, like pelvic tilt, contribute to differences in speed. We'll also look at how these kinematic variables vary by size and sex. Our general goals are to:
 
-+ Use imageJ to perform kinematic analysis
-+ Use simple mathematical models to predict maximum limb walking speed
-+ Test predictions of walking speed with measurements and observations
-+ Evaluate the effects of sex and size (scaling!) on your observations
+Our third Mini Project explores experimental methods for quantifying the material and structural properties of biological tissue (e.g., wood and intestine). Please recall that material properties (the inherent ones) are independent of structural properties (i.e.,size and shape). The goals of this MP are to:
+
+1. Learn how to measure force and displacement so that you can construct a stress-strain curve.
+2. Use a homemade three-point bender to estimate flexural stiffness of biomaterials.
+3. Understand data acquisition using a computer and an Arduino.
+4. Explore the concept of anisotropy
+5. Combine your recently gathered skills in R programming with a proficiency with RMarkdown to write a short 2-page report outlining your results and conclusions.
+
+## Conceptual basis
+In lecture recentlty we explored the concepts of stress ($\sigma$), strain ($\varepsilon$), and stiffness ($E$, Young's modulus). These are all material properties and represent mechanical means to characterize biomaterials. These physical quantities are summarized here:
 
 
-```{r pend,echo=F,fig.cap=c("The inverted pendulum model of bipedal locomotion"),fig.align = 'center'}
-knitr::include_graphics(c("pend.png"))
-``` 
+$$\sigma =\frac {F}{A} $$
 
+$$\varepsilon =\frac {\Delta L}{L_o} $$
 
-### Conceptual basis
-As we've learned, the inverted pendulum (IP) is rather simple model for understanding how we walk. Under the IP model, the leg forms the radius of an arc through which your center of mass (COM) travels. Thus, we can use concepts surrounding centripetal forces to estimate how fast we walk. So far, we've ignored air resistance and the inertial effects of other moving parts (e.g., arms) and assumed the leg is rigid and rotates about the ground at a single point of contact. Under these conditions, we can make predictions as to the maximum linear velocity of our COM. The force associated with this swinging pendulum can be described as
-
-$$
-F =ma_c=\frac {mv^2}{R} 
-$$
-
-where $a_c$ the acceleration due to gravity and $R$ is the leg length, or the radius of the inverted pendulum. From this we see that the maximum velocity of the rotating mass is never greater than the square root of the product of gravity and the radius, or, in biomechanical terms 
-
-$$
-v_{max}^2 \leq gl
-$$
-
-$$
-v_{max} \leq\sqrt{ gl}
-$$
-
-where $g$ is gravity and $l$ the leg length. Thus, as we have learned in class, the Froude efficiency for walking is:
-
-$$
-Fr =\frac {v^2}{gL}<=1 
-$$
+$$\varepsilon =\frac{d \sigma}{d \varepsilon}$$ 
  
-where $v$ and any realized walking velocity is less than or equal to $v_{max}$, or $gL$.
 
-As has become clear in our class discussions and demonstrations, the characteristic length of the pendulum (i.e., the radius) is the leg length and any increase in this length will result in a greater velocity. In addition, any biomechanical mechanism that increases the leg length during otherwise lower phases of the arc (e.g., lateral pelvic tilt, that is lifting the plant-leg side of the pelvis, \autoref{fig:tilt}) will keep the COM higher and increase the velocity.
+where $F$ is the applied force, $A$ is the cross-sectional area over which that force is applied, $\Delta L$ is the change in length in response to $F$, and $L_o$ is the initial length of the specimen. Young`s modulus ($E$) is the slope of the stress-strain curve and is constant for Hookean materials (i.e., they obey Hooke's Law and are completely spring like). As you may discover in this MP (and we have discussed in class), many biological materials are non-Hookean and the relationship between stress and strain is not linear. In addition, many biological materials may also demonstrate -anisotropic- behavior: the relationship between the stress and strain depends on the direction in which the stress is applied. For example, any biomaterial containing fibers of axial orientation (that is, parallel fibers) will show some degree of anisotropy. Examples of biomaterials with fibers include skin, intestine, wood, plant stems, etc.
 
+In addition to nonlinear and anisotropic behaviors, many biomaterials are viscoelastic (as we have discussed in lecture), demonstrating a time-dependence in their response to loads. There are a host of methods available for quantifying time-dependent properties including creep tests (applying a constant force, i.e., an isotonic load) or applying a load at variable speeds. We'll take this latter approach. 
 
-```{r tilt,echo=F,fig.cap=c("A walker tilting its pelvis"),fig.align = 'center'}
-knitr::include_graphics(c("pelvictilt.jpg"))
-``` 
+Lastly, we will learn that loads are not applied in simple tensile or compressive modes. Say, in bending a beam, the load is compressive and tensile at the same time (see below). How a biomaterial responds under bending (e.g., amount of strain, load at failure, etc.) is of a particular interests to biomechanists both to understand organismal design from an evolutionary perspective and what materials may be capable or incapable of in nature. To understand this structural response to a bending load, we may borrow a bag of tricks from material engineers: the three-point bending test. 
 
+<center>
+![bendstress](img/bendstress.jpg){#bendstress}
+<br>
+A beam subject to bending.
+</center>
+
+<br>
+
+As we'll learn from lecture, the two-dimensional shape of a beam determines its strain relationship to a bending stress or its deformation. So, how much it will deform under a stress is given by the flexural stiffness ($M$): 
+
+$$ M=EI $$
  
+
+where $E$ is the Young's modulus and $I$ is the second moment area, which is essentially the distribution of that stiffness (i.e., area) through the shape with reference to the axis along which a load is applied. Thus, to understand the deformation that will result from a load and vice-versa, we must incorporate information about the shape. So, for a  beam under a symmetrical bending load, the deflection is given by:
+
+$$d=\frac{Fl^3}{3EI}$$
+
+where d is the deflection, $F$ is the applied force, l is the length of the beam, and $EI$ is the flexural stiffness. Using this, if we measure the deflection of a beam of length $l$ under a known load F, we can derive an estimate for the flexural stiffness of the beam, $EI$.
+
+## Measuring forces
+We, as biomechanists, can measure measure forces (i.e., loads) in several ways, some direct, some simple, and some more sophisticated. For instance, to apply a load to a material, one may simply add a mass and, because we're on Earth, we know that mass's acceleration, and thus can estimate force. In another manner, we can rely on transducers to convert  (i.e., -transduce-) signals from one type of energy to another. For this method of measuring changes in force, say a signal stored as mechanical energy, we must convert this mechanical energy to electrical energy using a force transducer. Such a device outputs a change in voltage that is proportional to the force that was applied to them. One of the most common elements used in force transducers is a compression-extension load cell, which is what you will be using in this lab. These devices contain elements that, when a load is applied, strains (in this case, shortens or lengthens) a metal foil which is linearly elastic or Hookean. A voltage is passed through the Hookean foil, and, when the cell is loaded, the cylinder changes length and, thus, changes the resistance. This change in resistance changes the voltage.  This voltage can be passed to an amplifier and microcontroller (computer) for analysis.
 
 ## Methods
 
-There are two parts to this MP: (1) predicting and testing predictions of maximum walking speed and (2) an analysis of pelvic tilt as it varies between normal walking at comfortable speeds and fast speeds. For both parts of this MP, it is important that you walk and not run. That means a duty factor of >0.5, i.e., you'll always have a foot on the ground. Lab partners, police your colleagues to ensure this.
+There are two parts to this lab: (1) investigating material properties (stress-strain relationships and anisotropy) and (2) instigating structural properties (beam loading and viscoelasticity). In the former, you will use a simple loading technique, measure the resultant strain, examine stiffness, and the extent to which the material is anisotropic.
 
-### Sofware essentials
+In the latter part, you will use 3-point bending tests to determine structural properties and flexural stiffness of wood. You'll also examine how time-dependency varies according to the viscoelastic nature of wood (i.e, how moist it is).
 
-We'll need a few pieces of software to analyze the kinematics of walking. First, [download and install FIJI](https://imagej.net/software/fiji/), a free image analysis package (FIJI is just imageJ) that just about everyone in the natural sciences uses at one point in their career. Second, enable the MTrackJ plugin by following these [directions](https://imagej.net/libs/imagescience) MTrackJ is a simple tracking routine that allows users to track points across video frames.
 
-We'll be working with video data captured with our phones. The file types associated with videos shot by phones are often unworkable in imageJ/FIJI. We need a way of converting your phone videos to AVI format, a file type that imageJ can open. Videos can be rendered into AVI files using---you guessed it---using R. See below
+## Stretch the pig
 
+These experiments will be done on your own with your team. Come by Higgins 535 to pick up the materials you need:
 
++ Ruler
++ Nuts
++ Floss
++ Clamp
++ Intestine
 
-### Max out your pendulum
+For this part of the lab you will use a spring clamp to mount a piece of animal tissue to a table. The animal tissue we will be using is pig intestine, which is an extremely thin and stretchy material typically used as sausage casing. We will measure the stress-strain relationship of pig intestine by cutting a small strip of the material and stretching it by applying a force to one end. This force will create stress within the material and cause it to elongate (strain). As you modulate the amount of stress applied to the material, you will measure its deformation and thereby derive its stress-strain relationship.
 
-For this part of the MP you will compare a predicted maximum walking velocity ($v_{max}$) to observed maximum walking speed. First things first: mark off a distance of 5 meters on level ground (e.g., in the hall, atrium, etc.).
+### Preparing your sample
 
-With your knees locked and your hands by your side and not swinging, walk on your heels as fast as you can across the the marked distance. Concentrate on not using any movement in your pelvis or knees. This may require some practice. You may, if you're careful, have a lab partner push you gently to get you going at the start of the 5-m field. With a phone or watch, record the time it takes to traverse the 5-m distance. 
+The pig intestine was obtained from a local butcher. The material is difficult to work with once it starts to desiccate, so you will want to do as much preparation of the sample as possible before cutting your piece and beginning your experiments. First, cut a piece and  the material along the axial or circumferential direction---you will test the gut in both directions for this lab, so the order doesn't matter. Measure all three of its dimensions to the nearest mm with the supplied ruler. Next, find a clean section of the intestine and clamp it a table. Once you have the material bound, cut away material so that you are left with a thin strip about 5--8 cm long and 1 cm wide. Tie a short section of dental floss to the free end and then tie a hook to the free end of the floss fashioned from a paperclipl. 
 
-Using these data, compute the velocity (in m s$^{-1}$) and compare this to your calculated $v_{max}$ based on theory. Please enter these data [**HERE**](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). They can be accessed here for later analysis as well.
+### Measuring stress and strain 
 
-### Full-tilt walking
+In this section, you will obtain a stress-strain relationship for your sample by stretching your sample with known weights. Next, you hang weights from the free end of the sample to apply a known stress. Our weights in this case are 1/4-20 nuts, which each weigh 3.2 g, and you will suspend these from your sample using a paperclip or some other negligibly small item. As you add more mass to the free end of the sample, measure the extension of the sample with a ruler. Measure strain under 5 different loads, each representing the addition of two 1/4-20 nuts, and then remove them, one pair by one pair and measure the strain again. Record your results on  worksheet below for both an axially loaded sample and a circumferentially loaded sample.
 
-The radius of your rotating mass can be effectively increased by subtle changes in posture, including active alterations in pelvic position. Lateral pelvic tilt is one such mechanism and the angle of tilt can be measured using ImageJ. While pelvic tilt results in a lengthening of the plant-leg, there are other postural consequences. 
+## Bend the twig
 
-Start with donning the markers and the yardstick with markers attached at its end as in the figure below. Attach one small marker low on the front of your shin. Attach the yardstick with binder clips to your pantwaist. Be sure that the yard stick rests right above your anterior superior illiac spines (those bony points on the front of your hip). This apparatus will amplify your pelvic motions and make data recording much easier. Have a project partner record video (in normal video mode) of your walk as you walk toward them over the 5-m course from the earlier experiment. Be careful that the full width of the yardstick in the frame at all times. You'll perform two trials per partner: (1) walking normally at a comfortable speed and (2) walking normally but as quickly as possible. For both trials, use ImageJ and the MTrackJ plugin to track the markers on your body. From these data, you should compute pelvic tilt angle (i.e. the difference between the maximum and minimum tilt angle). Please also enter these data [here](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). Remember, these data can be accessed for analysis from this directory. Also notice there are data from previous iterations of the class. Be sure to use all of these in your analysis.
+For this set of experiments, we'll be meeting in Prof. Kenaley's lab (Higgins 535).
 
-To analyze your videos in ImageJ, you'll need to convert them to and AVI file and have the MtrackJ plugin installed (see below). Once the AVI file is stored in a directory, open it with ImageJ (File$\rightarrow$ Import $\rightarrow$ AVI . . .). Launch the MTrackJ plugin (Plugins $\rightarrow$ MtrackJ) and follow the directions from the online [manual](http://www.imagescience.org/meijering/software/mtrackj/quickstart/). The goal here is to track four positions and calculate your two kinematic values: pelvic tilt and leg angle.
+### Preparing your sample
 
+For this part of the lab, you will be three-point bending a biomaterial (wood . . . birch, methinks). You will deflect a piece a known distance (1 mm) of wood spanning two supports separated by 20 mm. To begin, record the width and thickness or your piece of wood (in the middle is fine).
 
+Next, break the stirrer in half. Immerse one of the broken halve under water for 5 minutes.
 
+### Measuring load and deformation
 
-```{r walk,echo=F,fig.cap=c("You lookin' all marked and stuff"),fig.align = 'center'}
-knitr::include_graphics(c("walkfront.png"))
-``` 
+Prof. Kenaley will help you initiate the program that reads the load data from the load cell system. The program will depress a cylinder against the span of the wooden beam at either a slow or fast speed while it reads the load in grams. We will bend the dry piece with the wide side flat against the supports ("flat", left in the figure below) at both slow and fast speeds and then flip it 90$^\textrm{o}$ so that the thin side rests against the supports ("flipped", right in the figure below) and load it at a slow speed. 
 
+<center>
 
+<img src="img/wood.png" alt="drawing" width="400"/>
 
-## What to address in the report
-
-1. How did class-wide $v_{max}$ (the theoretical velocity) compare to actual class-wide pendulum-type walking speed? Were any patterns related to this revealed by calculating the Froude number?
-2. How does actual pendulum walking speed vary with human size and sex? 
-<!-- for future . . . How does actual recorded maximum pendulum walking speed ($v_{max}$) vary with human size and sex?  -->
-3. How does pelvic tilt change with increased normal walking speeds. What is the biomechanical basis for this?
-4. Does pelvic tilt at comfortable normal walking speeds vary with human size (i.e., mass and height) and sex? 
-
-**NOTE:** Make sure you enter your data as soon as possible  [here](https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing). Be sure to use all of these data from past classes in your analysis. 
-
-
-
-## A kick start
-
-First, we need a way of converting our phone videos into a format readable by FIJI/imageJ. The AVI format is essentially a stack of raw images that is readable by almost any software. So let's convert our videos to AVI. Fortunately, R can do that for us if we have the `av` package installed.
-
-```{r, eval=FALSE}
-library(av)
-
-#set your working directory
-setwd("some_directory")
-
-#list files ending in MOV, the format stored by iphones
-
-f <- list.files(full.names = T,pattern=".MOV")
-
-#create a place to store images
-dir.create("images")
-
-#for each file, f, breakup the .MOV into the images and build avi files
-for(i in f){
-  if(dir.exists("images")) unlink("images",recursive = T)
-
-  #extract images
-  av_video_images(i,destdir ="images",format="tiff")
-  
-  #list images
-  f.i <- list.files("images",full.names = T)
-  
-  #make the avi from the images from the MOV
-  av_encode_video(f.i,gsub("MOV","avi",basename(i)),codec = "rawvideo")
-}
-
-```
-
-
-After converting your videos, you'll have to assemble a bunch of data from them. Fortunately, we've learned how to do this lately. However, for it to proceed smoothly, you might need some guidance, especially dealing with the data from the MTrackJ analysis. Let's assume you produced 4 files for two teammates that each walked fast and slowly. If we had our data file names begin with "walk" and end in ".txt", we could use a handy `grep` search to find all the files we want to analyze in the directory.
-
-```{r}
-walk.files <- list.files()[grep("walk_.*.txt",list.files())]
-print(walk.files)
-```
-
-Notice how they are similarly named "walk_speed_subject.txt". That familiar convention of adding metadata to the filename makes it easy to extract "data about the data" from the file names. Now, as we did in the first , let's concatenate all the data into one data frame for subsequent plotting and analysis. 
-
-```{r}
-walk.dat <- list() #make a list for storing
-for(i in walk.files){
-  walk.i <- read_delim(i,delim="\t") #read data as a tibble
-  met.dat <- unlist(strsplit(i,"_")) #split i for metadata and unlist it
-  speed <- met.dat[2] #get speed
-  subject <- gsub(".txt","",met.dat[3]) #remove ".txt" 
-  walk.dat[[i]] <- walk.i%>%
-    mutate(speed=speed,subject=subject)
-}
-walk.dat <- do.call(rbind,walk.dat)
-head(walk.dat)
-```
-
-Sweet. But, notice that the column names given to the data are gobblygook with all those spaces in and "[pixel]" and "[sec]" in there. Let's change them for easy referencing with a `str_remove()` (remove string) operation from the`stringr` package loaded with `tidyverse` . . . 
-
-
-```{r}
-colnames(walk.dat) <- str_remove(colnames(walk.dat)," \\[pixel\\]| \\[sec\\]")
-head(walk.dat)
-```
-
-That's better. Now, let's pare down the data to those columns we actually care about, "x" and "y", the x and y positions of the points, "subject", and "speed". Also notice that the MTrackJ file contains a "TID" and "PID" column identifying to what track (which dot in the image) and point (the series of positions) to which the x and y positions belong. So let's keep these columns, too, then dump the others, and give it a quick plot with ggplot.
-
-```{r}
-walk.dat2 <- walk.dat%>%
-  select(TID,PID,x,y,subject,speed)
-walk.dat2%>%
-  ggplot(aes(x,y,col=speed))+geom_point()+facet_grid(subject~.)
-```
-
-Notice that our leg point (TID=3) is higher than the hip. That's odd! Well, not really. Convention holds that pixel 0,0 is the upper left of the image, so that means the coordinates are flipped vertically in our images. So let's flip them back by finding the absolution value each y value minus the maximum y position (the image height).
-
-```{r}
-walk.dat2 <- walk.dat2%>%
-  group_by(speed,subject)%>%
-  mutate(y=abs(y-max(y)))
-walk.dat2%>%
-  ggplot(aes(x,y,col=speed))+geom_point()+facet_grid(subject~.)#grid it with columns = to speed
-```
-
-OK, all well 'n good. But does it make sense to identify our tracked points by "TID", that is 1, 2, and 3? Wouldn't it be better to change this to some character description like "hipR", "hipC", and "legR", for right hip, center of the hip, and right leg, respectively. Let's do it by changing TID to these strings using a series of mutate operations that replace each TID value. (if you do this, confirm the order is correct!)
-
-```{r}
-walk.dat2 <- walk.dat2%>%
-  mutate(TID=replace(TID, TID==1, "hipR"))%>%
-  mutate(TID=replace(TID, TID==2, "hipC"))%>%
-  mutate(TID=replace(TID, TID==3, "legR"))
-head(walk.dat2)
-  
-```
-
-Now it'll be easier to keep track of which track we intend to reference in any plotting or analysis. 
-
-With the data loaded, let's think about what sort of operations you need to produce on this data set. You need angle for pelvic tilt, right? The angle subtended by the tip of the of our meter-stick amplifiers and the center of the pelvis ($\theta$) can be described in the following: 
-
-```{r tiltcacl, echo=F, fig.align='center', fig.cap=c("A look at the coordinates of the amplified pelvic positions")}
-knitr::include_graphics("img/tiltcalc.png")
-``` 
-
-where points $x_1y_1$, $x_2y_2$, and $x_2y_1$ respectively describe the coordinates of the pelvic center, the tip of the pelvic amplifier, and a theoretical point that represents a vertex horizontally aligned with the pelvis and vertically aligned with the hip amplifier. In other words, $x_1y_1$ describes the coordinates of "hipC"  and $x_2y_2$ describes the coordinates of "hipR" in x and y pixels in the data above. So arranged, we have a right triangle with vertices described by the x and y pixels we have digitized with MTrackJ. With simple trigonometry, we can calculate $\theta$. So please **think about how to do this with calculations in R**.
-
-The goal here is to calculate $\theta$ over every frame. But we have a problem. Notice that the data, as presented above, don't have the x and y pixels for each point aligned in unique rows according to each frame ("PID"). That is, the data are in a "long" format where the column "TID" (the point name) describes "PID" (the frame). Put another way, x and y pixel data are repeated in succession *down* the table for each point name. This makes calculations for frame-specific $\theta$, which will presumably require using the x and y coordinates for three points, very cumbersome. 
-
-Not to worry, however. Data wonks are accustomed to this problem and we can simply transform the table to a "wide" format. By wide, we mean that, for each frame, we'll have sepqrate x and y columns for each point name, making frame-specific calculations based on these points easy peasy.
-
-Here's how it's done:
-
-```{r}
-walk.wide <- walk.dat2%>%
-  pivot_wider(names_from=TID,values_from=c("x","y"))
-head(walk.wide)
-```
-Notice that we now have columns that are named as "x_" and "y_" with a point name suffix, i.e., we have taken the x and y column and made new ones based the point they describe. We have several new columns and fewer rows of course. For this we used `dplyr`'s `pivot_wider()` functions that, well, pivots long data to wide data. We told `pivot_wider()` to take the names from "TID" (the point names) to form the new columns with values from the columns named "x" and "y". We could now compute $\theta$ for each PID (i.e., frame) based on the coordinates of each point.
-
-
-
-## Adding references
-
-As we take on the rest of the mini-projexts, including this one, we'll be reading scientific papers so that we can place our results in context. In addition, as scientists, we always want to support our statements of fact with references. For this,  we'll need to cite and include these papers in a bibliography. 
-
-[Adding reference to an .Rmd](https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html) is pretty straight forward. First we'll need to establish a .bib file that will reside in the same directory as your .Rmd file. To do this, select "File->New File->Text File." A new tab will appear with the name "Untitled1.txt". Save this file as "BIOL5380.bib" (note the ".bib" extension) in the same directory as your .Rmd file. This .bib file will be referenced by your .Rmd when inserting citations. 
-
-The framework for citations and references in .Rmd is formulated around [BibTex](https://en.wikipedia.org/wiki/BibTeX). BibTex is handy because you can find BibTex formatted citations in all your typical outlets (see note below). This system of citation uses a .bib file that contains text describing published works. Each work or potential reference in the .bib file is identified with a unique tag at the top of its entry and this entry contains the important bibliographic information. For instance, a .bib file containing a reference to the following paper
-
-Usherwood, J.R., 2005. Why not walk faster?. Biology Letters, 1(3), pp.338-341.
-
-would have the following text:
-
-```
-@article{usherwood2005not,
-  title={Why not walk faster?},
-  author={Usherwood, James Richard},
-  journal={Biology Letters},
-  volume={1},
-  number={3},
-  pages={338--341},
-  year={2005}
-}
-```
-
-Notice we have a tag "&#64;article{usherwood2005not,". This identifies the entry as a journal article (as apposed to a book or manual, etc.) and contains a key that is unique among all the other references in the .bib file. After this, the entry then goes on to identify the important bibliographic pieces: title, author, journal, etc.). Go ahead and add this BibTex reference to your BIOL5380.bib file and save it. 
-For .Rmd to reference this .bib file, we need to specify a bibliography file in the YAML header. So now alter your YAML header at the top of the .Rmd so that it contains `bibliography: BIOL5380.bib". The YAML header should now look something like this:
-
-
-```
----
-title: "Mini-Project 2"
-author: The Inverted Pendula
-date: 26/Feb/2021
-output: html_document
-bibliography: BIOL5380.bib
----
-```
-
-With a .bib file now in place, we can use the reference keys to cite works listed in the .bib file. For this, we simply add the key label to the text with '@'. For instance, `@usherwood2005not` will produce @usherwood2005not. 
-
-When citing published works in text, we often follow certain formatting conventions. To be honest, your professor couldn't care less about which format gets used in your .Rmds. Fortunately, R Markdown uses a familiar [Harvard-like](https://www.citethisforme.com/harvard-referencing) format by default and he recommends plowing ahead with it. In a Harvard-like format, a reference in a sentence used in an explicit manner includes the reference year in parentheses. For instance, if we were to express that these authors studied the the Froude number in humans, we would write, "Underwood (2005) studied the Froude number in human walking." The reference `usherwood2005not` is just inserted at the beginning of the sentence as in the following:
-
-```
-@usherwood2005not studied the Froude number in human walking.
-```
-
-However, Harvard-like convention follows that if we aren't explicit about the study, we include the entire reference in parentheses. For instance, if we wanted to write, "A recent study considered the Froude number in human walking. [@usherwood2005not]." we would include the following:
-
-```
-A recent study considered the Froude number in human walking. [@usherwood2005not].
-```
-Note that `usherwood2005not` is wrapped in `[]`.
-
-In R Markdown, bibliographies will be placed at the end of the document (see below). Normally, this means you want to end your document with the header "References". This will anchor the bibliography in this section.
-
-
-Note that this .bib file can be used in all your .Rmd documents, not just this one. As long as all the BibTex entries have unique keys, this .bib file can serve as a reference database for all your .Rmd citations.
-
-
-<div class = "green">
-<div class="row">
-  <div class="col-sm-2"><a class="far fa-sticky-note fa-5x" style="color:#939681"></a> <!-- regular style --></div>
-  <div class="col-sm-9">
-
-You may be wondering where you can find BibTex citations. Like so much of our lives, the answer points to Google, specifically Google Scholar. As an example, go to [Google Scholar](http://scholar.google.com/) and search for the @usherwood2005not paper. The entry under scholar will look like the following:
-
-![](img/scholar1.png)
+<br>
+Two orientations of the wood stirrer.
+</center>
 <br>
 
-Click on the big `"` at the bottom of the entry. This will bring you to a pop-up window that contains different citation formats for the entry. 
+Repeat the bending procedure twice for the wet piece, both with the broad side against the supports (i.e., "flat"), but once at a slow speed and once more at a fast speed.
+
+In total, we will have preformed 5 experiments:
+
+```{r,echo=FALSE,message=FALSE}
+
+library(tidyverse)
+data.frame(d=c("dry","dry","dry","wet","wet"),o=c("flat","flat","flipped","flat","flat"),s=c("slow","fast","slow","fast","slow")
+)%>%knitr::kable(col.names=c("moisture","orientation","speed"))%>%
+  kableExtra::kable_styling()
+```
 
 
-![](img/scholar2.png)
-<br>
+All the data will be recorded in a text file and placed in [this directory](https://drive.google.com/drive/folders/1XgXdvIO2iOC7NwMiAc4Z7CXpJAX4PWvC?usp=sharing).
 
-Now click on the "BibTex" link at the bottom of the window. This will lead you to a text file of the BibTex format. Simply copy and paste this to your .bib file. Voila.
 
-</div>
-</div>
-</div>
-<br>
 
-## References
+## Data sheet
+
+### Guts
+
+```{r echo = FALSE }
+
+mat.data <- matrix("",nrow=4, ncol=2)
+colnames(mat.data) <- c("Longitudinal","Circumferential")
+row.names(mat.data) <- c("Length (m)",	"Thickness (m)"	,	"Width (m)",	"Cross-sectional area m$^2$")
+knitr::kable(mat.data, caption = "Material Data")%>%kableExtra::kable_styling()
+```
+
+
+### Stress-strain data 
+
+
+```{r echo = FALSE, results = 'asis'}
+
+mat.data <- matrix("",nrow=6, ncol=2)
+colnames(mat.data) <- c("Loading","Unloading")
+row.names(mat.data) <- c(paste0(1:5,"."),"")
+
+
+knitr::kable(mat.data, caption = "Intestine Data")%>%kableExtra::kable_styling()
+
+```
+
+### Beams
+
+```{r echo = FALSE, results = 'asis'}
+
+mat.data <- matrix("",nrow=6, ncol=1)
+colnames(mat.data) <- c("Value")
+row.names(mat.data) <- c("Length (m)",	"Thickness (m)"	,	"Width (m)",	"Cross-sectional area m$^2$","Three-point span","")
+knitr::kable(mat.data, caption = "Material Data")%>%kableExtra::kable_styling()
+
+```
+
+
+
+## Questions to address in your report
+
+1. What is the stiffness of the intestine in longitudinal and axial loading? How does the stiffness in these two directions compare?
+2. What evidence do you have that an intestinal tube is anisotropic? 
+3. What do you think the function of anisotropy is in the intestine? 
+4. Did beam orientation result in different flexural stiffness?
+5. Did strain rate affect wood flexural stiffness and did this response vary according to how wet the material was?
+6. How would this be important in loads applied to a human skeletal element?
+6. In your beam analysis, did you find any evidence of viscoelasticity?
+
+
+
+You can find explicit detail concerning the organization of an MP report [here](https://bcbiomech.github.io/class/mini_projects.html). This report is due Wednesday, March 17th.
+
+## What to pay attention to in writing the report
+
++ Data are plural.
++ Don't use `print()`, `head()`, etc. commands needlessly . . . we don't need a large data table in our reports.
++ Better methods for printing tables (eg. `pander()`, `kable`+`kableExtra`, etc.).
++ Figures and tables need captions! For figures, use `fig.cap` parameter in r chunk options. For tables use the `caption` parameter in `kable()` or similar.
++ Figures should be appropriately sized (check out `fig.width` and `fig.height` in r chunk options).
++ Figure axes should be labeled appropriately.

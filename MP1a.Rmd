@@ -1,0 +1,567 @@
+---
+title: 'Mini Project 1: Open Sourcery'
+---
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+
+# Introduction 
+
+Welcome to the first Mini Project of BIOL 5380. The focus of this MP will be learn the basics of simple scripting and report writing. For our scripting work, we'll learn how to load, organize and summarize data, and produce simple figures. While we learn some ins and outs of simple data operations, we'll also learn how one can organize, share, and communicate results and ideas. 
+
+Our tasks will be to:
+
+  1. Familiarize ourselves with the R and R Markdown frameworks.
+  2. Author a simple R Markdown.
+  3. Run code within an R Markdown document.
+  4. Add graphics (i.e., figures) to an R Markdown document. 
+  5. Render (i.e., knit) this R Markdown into HTML documents.
+  
+We'll take on these tasks as we try to answer a very simple (yet important!!!) question in human biomechanics: 
+<center>
+**Which of Prof. Kenaley's two children jumps highest?**
+</center>
+  
+## Buckle Up!
+
+I'll be honest, for many of us just getting into this sort of thing, the learning curve is steep (see below). You'll be on the ascending limb of this curve for a while, but once you get over the hump, you'll be on its descending limb. I promise that, eventually, the time you invest in learning how to work in R will decrease your overall effort compared to where you started. So, just sit back, take it all in and rest assured---you're making a great investment. 
+
+<center>
+```{r,echo=FALSE,fig.cap="The R coding learning curve.",fig.height=3,message=FALSE }
+library(tidyverse)
+library(scales)
+
+x <- seq(0, 1, length = 1000)
+t <- rbeta(1000,shape1=3,shape2=5)
+h <- hist(t,plot = F)
+xfit<-seq(min(t),max(t),length=1000)
+yfit<-dbeta(xfit,2,5)
+yfit <- rescale(yfit*diff(h$mids[1:2])*length(t),to=c(10,100))
+qplot(xfit, yfit)+theme_classic(20)+xlab("time")+ylab("% effort")+ylim(c(0,100))+theme(axis.text.x = element_blank())
+
+```
+
+<br>
+</center>
+
+## Helpful Resources
+
+As you work through this project description, you may find it helpful to reference the following online resources.
+
+  + **R Studio's [markdown tutorial](https://rmarkdown.rstudio.com/).** Read the sections that include and are between "Introduction" and "Output Formats".
+
+  + **A rather [complete guide to R Markdown by Yikui Xie](https://github.com/rstudio/bookdown)**
+  + **R Markdown [Cheatsheets](https://rmarkdown.rstudio.com/lesson-15.html)**
+
+<br>
+
+# Part I: Your Workspace
+
+## Working in Directories
+
+Before we set up our workspace in R Studio, let's discuss where we'll store important files you'll need for this project. This will establish a framework for other Mini Projects in the course.
+
+First, we should establish a directory (i.e., folder) where we intend to store these files. Go ahead and do that, perhaps with the logical title "MP1". When we start work in R Studio and create a Markdown, we'll store the Markdown document in this folder. For each project, we'll use a single R Markdown file to save and execute code and generate a slick report. The code in a Markdown looks to the directory in which it is stored when that code requires input (e.g., data) or outputs (e.g., save plots and reports). In more technical parlance, the working directory is the parent directory of the Markdown document.
+
+This has several important implications. First, this means that, unlike a simple script, you never have to tell R where to look for files or where to store them (i.e., set the working directory). This also means if you want your code in a Markdown to analyze data stored as a text file, you should make sure that this file is in the same directory as the Markdown document. 
+
+For this project, we'll be working with jumping data from Prof. Kenaley's two children. You can download these files by clicking [here](data/OZ_jumping.zip). This will be downloaded as a ".zip" compressed directory. Unzip it and then copy the files to your "MP1" directory. 
+
+
+<br>
+<div class = "green">
+<div class="row">
+  <div class="col-sm-2"><a class="far fa-sticky-note fa-5x" style="color:#D3D8DD"></a> <!-- regular style --></div>
+  <div class="col-sm-9">Note that these files are CSV files (they end in ".csv"). This is a common table-like arrangement of data based on a simple text file in which a row of data is contained in each line of the file and columns are separated by comas (thus the name). This and other text representations of data are lingua franca in science, that is, this is how data are stored in files. Using this simple text format has several advantages. First, programs in scripting languages like R can parse the values easily. In addition, these files don't take up a lot of space as opposed to the rather bloated file size associated with most GUI formats like Excel.
+  
+A program like Excel can also read data in text files, however, don't do it before you plan on using those data in R. Excel has the nasty habit of often adding junk to text files that leave them unparsable through typical means in R. 
+
+</div>
+</div>
+</div>
+<br>
+
+## The R Studio IDE
+
+R Studio is an Integrative Development Environment (IDE), that is, software that puts all that R can do on one screen. It is worth noting that **R Studio is not R**. In other words, R Studio helps you run R and see it's outputs and inputs. When you first start R Studio, you must have R installed.
+
+Open R Studio and have a look at the arrangement of the windows. By default, there are four of these (see below):
+
+  1. Code editor: This is where one edits code (a script, Markdown document, etc., i.e., where you store your R commands).
+  2. The console (also terminal and R Markdown monitor): This is where you see the what's passed to R when your run code in the editor.
+  3. Workspace and Environment: Tabs in this window describe what variables have been created and the history of the operations passed to the console.
+  4. Plots, files, and help: Tabs in this window show the graphics that are produced from plotting commands, the files in a local directory (i.e., folder), packages (i.e., groups of functions) that are loaded, and help files that describe R functions.
+
+<center>
+```{r,echo=FALSE,out.width=550, fig.cap="R Studio window arrangement."}
+#stride length
+knitr::include_graphics("http://www.sthda.com/sthda/RDoc/images/rstudio.png")
+
+```
+</center>
+<br>
+
+To get a sense of how this windows work together, open a new R script file with **"File->New->R script"**. There may be one loaded when you open R Studio. If so, ignore this step. You'll see a tab in the editor window titled ''Untitled.R". This file is a simple text file where you can store commands. 
+
+Now, type in the following text:
+
+```{r,eval=FALSE}
+data("cars")
+```
+
+Then, put your cursor at the end of the line or select the entire line and punch in **cmd+return** on a Mac or **ctrl+enter** on a PC. **This will run this line of code***. Now look at the history tab in the upper right and the console tab in the lower left. You should see `data("cars")`. This means that you've told R to load the data set `cars`, data for the speed of cars and the distances taken to stop that are buried in all R installs.
+
+Now type in the following **in the console**. 
+```{r,eval=FALSE}
+?cars
+```
+
+Notice that a documentation entry pops up in the help tab in the lower right. Help pages like this are enormously helpful when you want to know more about any function, data set, or package loaded into R. Be sure to use this resource early and often.
+
+Do something similar to find out what the `plot()` function is all about. Type this into the console.
+
+```{r,eval=FALSE}
+?plot()
+```
+
+Notice you get a few topics in the help tab. Click on "Generic X-Y Plotting" to see what this function in base R requires and can do. 
+
+Next, go ahead and add this line to the R script:
+
+```{r,eval=FALSE}
+print(cars)
+```
+Notice how the `cars` data frame is printed to the console. There are two columns, `speed` and `dist`. Let's now plot `dist` vs. `speed` using `plot()`. So now add the following to script and run this new line: 
+
+```{r}
+plot(cars$speed,cars$dist)
+```
+
+You'll see a plot identical to the one above in the "Plots" tab. As we'll learn in a bit, data frames with named columns (and other variable types with named vectors) can be subsetted with `$`. Go over to the upper right window and click on the "Environment" tab. Under "Data", you'll see the variable "cars" described. Click on it and this will pass a `View()` command to the R console which, in turn, will add a tab in the upper left with the tittle "cars". This tab contains a row-by-column representation of the data.
+
+So far, you've run the commands in each line by selecting and punching in **cmd+return** or **ctrl+enter** key strokes. This is a handy way to run each line as you add it to your code. You can also run all the code at once by selecting all the text and keying in **cmd+return** or **ctrl+enter**. Every operation encoded in these lines will unfold in order. 
+
+From this quick exploration of how R works in R Studio, we should note few important things:
+
+  1. Commands for R to process are stored in text files that appear in the editor window.
+  2. The console shows what's been run by R.
+  3. Commands can be run in the console, but aren't saved in the script file.
+  4. The "Help" and "Environment" tabs are useful resources for seeing what's under the hood of your R environment.
+  5. Plots and other graphics appear in the "Plots" tab.
+
+
+
+## Working with R in Markdown
+
+Although we've just learned how commands are passed through R in R Studio by using a script file, we won't use these simple files in the class. They contain only code. While they may produce important things like plots and the results of calculations, they're not very easy to read and don't provide any narrative beyond ugly commenting (text preceded by `#`). As an alternative to writing code in one place and about the results of the code in another, we'll combine our code and narratives in one document: an R Markdown (or .Rmd file). That is, you can use a single R Markdown file to both save and execute code and generate high quality reports that can be shared with an audience.
+ 
+So let's begin our Markdown odyssey with opening a new .Rmd file with "File->New->R Markdown".
+
+
+```{r,echo=FALSE,out.width=550}
+#stride length
+knitr::include_graphics("img/newRmd.png")
+
+```
+
+In the title box, enter "MP1" and your name in the author box, then click ok. You'll see an untitled .Rmd appear in the upper left window. Save this to yout "MP1" diectory. Let's now have a look at what's in this text file. 
+
+## The YAML Header
+
+You'll see at the top of your new ".Rmd" file a header contained between two lines (`---`). This is the YAML header that specifies the attributes of the markdown, all of which are inherited from the dialog your answered when opening the new .Rmd. By default it includes a title, author, date, and type of file for your output. These are but a few of the formatting options and settings that could apply to the whole document. For now, let's leave it as is. So it should look like this:
+
+```
+---
+title: "MP1"
+author: Your Name
+date: 5/Feb/2021
+output: html_document
+---
+```
+
+Below the YAML header is the space where you'll include text, code, etc. 
+
+## knitting Cozy Reports
+
+In the .Rmd before us, we have a template with some marked up text. This is the file that will be interpreted by the Markdown language to produce a document. To do so, you must "knit" the .Rmd. You can do this by selecting the "knit" icon at the top of the file panel or keying in **cmd+shift+k**. Go ahead and do either and see what happens. You'll get an HTML rendering of your document. You may end up doing this often as you add new pieces and markup to the text. Notice that there's now an .html file saved to the same directory (i.e., folder) containing the .Rmd file. You can see this in the "Files" tab in the lower right window.
+
+Notice the following components:
+
+  + Headers: Text marked with `#`'s that indicate sections.
+  + Code chunks: code text wrapped in \`\`\` ,the fist instance of which is appended with `{r...}`.
+These sections run the code within them.
+
+## Headers
+
+When you start putting together the content of an .Rmd, you should consider adding sections almost immediately. This can serve as an outline for the document. Headers provide a way of hierarchically organizing the document into sections that reflect an outline. These are identified in the markdown by using one or several `#`. The more you use, the smaller the text and, presumably the less inclusive the header. That is, `#` is the biggest header and `##` is typically nested within a `#` header, and `###` is nested within a `##` header. For instance, this 
+
+```
+# Header 1
+
+Text under Header 1
+
+## Header 2
+
+Text under Header 2
+
+### Header 3
+
+Text under Header 3
+
+```
+will produce this:
+
+```{r,echo=FALSE,out.width=550}
+#stride length
+knitr::include_graphics("img/headers.png")
+
+```
+
+
+In your future project reports, you'll always want to include sections for an introduction, methods, results, discussion, author contributions, and references. We'll organize the .Rmd accordingly, so please add those sections to your .Rmd. with a high-level header `#`.  You can add  nested subsections and text as needed later.  
+
+## Adding and Running Code with Chunks
+
+Code you include in your .Rmd should be written in sections enclosed by three backwards apostrophes (\`\`\`). These sections are known as code chunks and look like this:
+
+```{r,echo=FALSE,out.width=550}
+#stride length
+knitr::include_graphics("img/chunk.png")
+
+```
+
+
+You can insert code chunksby selecting the "insert" icon at the top of the the tab, by keying in **cmd+opt+i**, or simply typing those \`\`\`.
+
+To run the chunk, your can  click on "run" icon at the top of R studio and select "Run Current Chunk". Alternatively, you can click on the green icon that looks like a play button/triangle (see below) or insert your cursor in the chunk and key in **cmd+shift+return**. 
+
+```{r,echo=FALSE,out.width=550}
+#stride length
+knitr::include_graphics("img/runchunk.png")
+
+```
+
+The content inside the curly brackets (`{}`) controls the behavior of code chunk. In this case, we're telling R markdown that the code inside the chunk is to be interpreted with R. This is a handy place to control the output of the code chunk. Let's jump right into how you would include code in chunks in the context of this simple project. 
+
+At first, you'll want to include a chunk that loads the libraries you intend to use in the .Rmd. Libraries are stored as packages and only a few are included in the R install. We'll use several packages that need to be downloaded and installed. Fortunately, they're all wrapped in one superpackage, `tidyverse`. Go to the "Packages" tab in the lower right window and click on the "install" tab. When you do that, you'll see a prompt appear like the one below.
+
+
+```{r,echo=FALSE,out.width=350}
+#stride length
+knitr::include_graphics("img/install.png")
+
+```
+
+In the "packages" field, type in "tidyverse" and click "install". You'll see a bunch of red text appear in the console, indicating that the packages in `tidyverse` are being installed.
+
+
+No you can add the following to the very top of the document:
+
+<pre><code>```{r,include=FALSE}
+library(tidyverse) #always
+```</code> </pre>
+
+Run this chunk to load `tidyverse`.
+
+Notice here that we included a behavior to the chunk, specifically  `include=FALSE`. This prevents the code, and the results from appearing in the finished file. Have a look at [this page](https://rmarkdown.rstudio.com/lesson-3.html) to familiarize yourself with handy and often used chunk options.
+
+# Part II: Code to Joy
+
+Now that we have the .Rmd set up, let's add some code chunks that demonstrate the power of scripting and will be important in answering our question: Who jumps higher, Ollie or Zo?
+
+With a few exceptions, the logical place to include the code that produces analyses or figures is in the results sections. This is where the first output of the code will likely be relevant. Let's first add some code that will read in our data files we downloaded earlier. Under the results section, insert the following in a chunk of code. This will read in one of the CSV files with the `tidy` function `read_csv` and with the `<-` symbol saved it to the variable named `o`. Any value or function that returns a result can be stored as a variable. This is best accomplished by using the arrow convention, that is "variable `<-` thing you want to store".
+
+
+```{r, "load the data",message=FALSE}
+o <- read_csv("O_jumping_1.csv")
+head(o)
+```
+
+OK, data loaded. Congrats! The `read_csv()` function from the `readr` package that's loaded with `tidyverse` reads---you guessed it---CSV data from a file with the name "O_jumping_1.csv" and stored it to `o` with `<-` as a tibble. A tibble is a particular type of data frame that super easy to work with and will be a data type that is featured often in our projectS.  Also note that this file is one of the 10 files you downloaded and placed in the "MP1" directory. The name described by the text string passed to `read_csv()` has to match the name of this file exactly. Try loading data with a bad file name like "O_Jumping_1.csv" (notice the capital "J") and see what happens. You'll get an error.
+
+The `head()` command prints the first few rows, showing that the Ollie's data, including `cm` (his shin height off above the ground) and `ms`, the time in milliseconds. Also notice that the output from this chunk doesn't appear in the console, where you might have expected it based on the code we ran above in the R script. Anything that results from running an R chunk in a Markdown document (printing data, plotting, etc.) is shown directly below the chunk as a preview of what the final document will look like. 
+
+
+
+Now, let's plot the data with the simple plot command (add this to the last chunk):
+
+```{r}
+plot(o$ms,o$cm)
+```
+
+Great! We now have Ollie's jump plotted! Notice how we subsetted his data with `$`, invoking this convention on the names of the columns. Now, let's jump ahead and use a more sophisticate method of passing data to a function using a pipe (i.e., `%>%`). Go ahead and replace your `plot()` command with following and run the chunk.
+
+```{r}
+o%>%
+  ggplot(aes(x=ms,y=cm))+geom_point()
+```
+
+Notice we get a much less vanilla plot. More on this later. Let's talk about that pipe, the `%>%` symbol.
+
+## The Pipe (`%>%`)
+
+Streamlining data operations in R is important. For the sake of time, it's best write the fewest lines of code as possible.  Fortunately, several succinct methods and operations for working with data exist in several popular packages. Perhaps the most widely used are those curated in `tidyverse`, a data science R package you loaded above. `tidyverse` includes the `dplyr` package, a super helpful library of functions for data analysis. When loaded with `library(tidyverse)`, the pipe convention (`%>%`) is available. Put simply, the `%>%` passes results from left to right (the direction of the caret). So, in the code above, the data in `o` are passed to the `ggplot2` function `ggplot()`.
+
+## Plotting with `ggplot2`
+
+The pipe is used to combine data with a whole slew of functions, including those in another package loaded with `tidyverse`, the `ggplot2` package. `ggplot2` is the plotting framework for most data scientists using R and this is what we'll use in the course. The plotting functions in `ggplot2` are built around what's called an aesthetic, or what you want the plot to look like. In this case, we want the plot to reflect x=ms, the time, and y=cm, the height, so we define the plot aesthetic with `aes(x=ms,y=cm)` within `ggplot()`. This just establishes the aesthetic, but doesn't add any type of plotting mechanism (e.g., a scatter or bar plot), also known as a geometry in the parlance of `ggplot2`. To produce a scatter plot of points, we then added `+geom_point()` to `ggplot(aes(x=ms,y=cm))`. We could have just as easily added another geometry like lines, which connects all the x-y points with a line . . . 
+
+```{r}
+o%>%
+  ggplot(aes(x=ms,y=cm))+geom_line()
+```
+
+We can even keep adding geometries, say for for our scatter plot, we could add a red smoothed line:
+
+```{r}
+o%>%
+  ggplot(aes(x=ms,y=cm))+geom_point()+geom_smooth(col="red")
+```
+
+As you can see, in a sense, the `ggplot2` framework is layered:
+
+<br>
+<center>
+**establish a plot + geometry 1 + geometry 2 . . . + geometry i**
+</center>
+<br>
+
+### Loops and Combining Data
+
+Plotting data for one of Ollie's jumps is all well and good. But, as I'm sure you noticed, there are 9 other files. In answering the question **Who jumps higher?**, we probably want to look at the rest of Ollie's data and all of Zo's data. How should we go about this? You could open all the data files in Excel and combine them with cut and paste operations, but that's a waste of time and, more importantly, how do you keep track of which data belong to which twin? And, what about future projects for which you might have dozens of file. Not easy in Excel, so let's not even consider that. Let's use the power of a scripting language to combine all this data. 
+
+So where to start? A logical place might be to repeat for all the files what we did with Ollie's first file. That is:
+
+```{r, message=FALSE}
+o1 <- read_csv("O_jumping_1.csv")
+o2 <- read_csv("O_jumping_1.csv")
+o3 <- read_csv("O_jumping_1.csv")
+o4 <- read_csv("O_jumping_1.csv")
+o5 <- read_csv("O_jumping_1.csv")
+
+z1 <- read_csv("Z_jumping_1.csv")
+z2 <- read_csv("Z_jumping_1.csv")
+z3 <- read_csv("Z_jumping_1.csv")
+z4 <- read_csv("Z_jumping_1.csv")
+z5 <- read_csv("Z_jumping_1.csv")
+```
+
+Ooooooh kaaaaaaaay. That worked, but now we have 10 different variables reflecting 10 different tibbles. Could we combine them? Sure! But it's laborious . . . 
+
+```{r}
+dat <- rbind(o1,o2,o3,o3,o4,o5,z1,z2,z3,z3,z4,z5)
+```
+
+Here we used the `rbind()` function to bind (or stack) all the rows of the tibbles together. Now, let's plot the new `dat` variable (a tibble of all the tibbles, if you will) to see what we got.
+```{r}
+dat%>%
+  ggplot(aes(x=ms,y=cm))+geom_point()
+```
+
+Who is who? Which jump was it? No way to tell! Let's rethink this. What if we could combine the data in one big tibble and add a few column to this tibble that reflects from whom the data came and which jump do the data reflect? Notice that in each file name, we have that information in the form of "Z" and "O" and a number. I show you this . . .
+
+```{r,eval=FALSE}
+list.files(pattern = ".csv")
+```
+
+```{r,echo=FALSE}
+list.files(pattern = "jumping")
+```
+
+Here, I just asked R to list the files in the working directory (where our .Rmd resides) to list the files that match the pattern ".csv", that is, the files ending in ".csv". Each one has "O" and "Z" and a number in it. When scientist save data in files, they give those files a predictable and consistent structure to the file name. In this case, for each file, the first bit of text separated by an underscore ("_") is the subject or who (Ollie or Zo) and the last bit is the jump number, or replicate. In other words, we have stored data about the data in the file name. **We call data about the data metadata.** Thus, if we could read in each file of a certain name and strip the important metadata from the that and then add it to the to the data, we'd be in business. But how? Enter the `for` loop.
+
+## Loop When You Can
+
+What is a `for` loop you ask? It's a command that runs while a condition is satisfied. For example, how 'bout we print a count down:
+
+```{r}
+cnt <- 10:1 #store some numbers
+
+for(i in cnt){
+  print(paste("It's now", i))
+}
+
+```
+
+The operations contained in the `for` command (within the `{ }`) are repeated through the series defined by `cnt`. Specifically, for each value in `i`, `paste()` together `"It's now"` and `i` and `print()` it.
+
+Now that we have a basic understanding of how this works, let's apply it to our problem: automating the combining of a bunch of data. The crux here is that each of our 10 jumping trials are contained in their own files. If we apply a loop that loads each file, strips the "O" or "Z", and stores that "O" or "Z" with those data, we could combine the data into one big tibble. First let's establish a vector or where each iteration of the loop can be stored. For this, we'll establish and empty list. A list, or `list()`, can be a vector of any type: numeric values, figures, tables, tibbles, etc. Then we'll commence with the the loop and store the results of each iteration in the list.   
+
+
+
+```{r,echo=FALSE,message=FALSE}
+ dat <- list() #an empty list
+
+f <- list.files(pattern="jumping") #store the file names
+
+for(i in f){
+  m <- unlist(strsplit(i,"_"))
+  who <- m[1]
+  rep <- gsub(".csv","",m[3])
+  dat.i <- read_csv(i)%>%
+    mutate(who=who,rep=rep)
+  dat[[i]] <- dat.i
+}
+
+```
+
+```{r,eval=FALSE}
+ dat <- list() #an empty list
+
+f <- list.files(pattern=".csv") #store the file names
+
+for(i in f){
+  m <- unlist(strsplit(i,"_"))
+  who <- m[1]
+  rep <- gsub(".csv","",m[3])
+  dat.i <- read_csv(i)%>%
+    mutate(who=who,rep=rep)
+  dat[[i]] <- dat.i
+}
+
+```
+
+Phew, that was a lot, let's unpack it. The first line establishes a list named `dat` to receive our data. Next, we stored the file names of our data files in `f`. Then, the guts of `for` ensues. For all the data files, `f`, first retrieve the meta data, i.e., the data that explains your data, in this case which child and the replicate/jump number. We do this with the `strsplit()` command. It splits a text string by a separator, the `"_"` in this case. Notice that the command `strsplit(i,"_")` outputs a list itself, so we have to unlist it with the `unlist()` function so we can easily subset it with numerical values, `m[1]` and `m[3]`.
+
+The fist element in the metada, `m[1]` reflects "O" or "Z" and is passes to the `who` vector.
+
+Notice the third element, `m[3]` in the metadata is the replicate number. However, it has the unsightly "`.csv`" stuck to it. Let's zap that with a `gsub()` command. `gsub()` is one of a series of search commands common to all computing languages. These commands use  general regular expressions, or `regex`, in algorithms to find text. It's really powerful, but any in-depth explanation of how they work is way beyond the scope of this MP and the course (however, you can learn more [here](https://en.wikipedia.org/wiki/Regular_expression). `gsub()` finds a string and substitutes it with another. In our case, we want to find `".csv"` and replace it with `""`, that is, nothing. With `gsub(".csv","",m[3])` we do just this and store the result in `rep`.
+
+Next, we read in the data and pass it to the variable `dat.i`. Then, we used the pipe and a `dlyr` function, `mutate()`, that is used to add two new columns `who` and `rep` that equal our `who` and `rep` variables we established above. Lastly, this gets passed to an item in the list `dat` with the name `i`. This proceeds for all the items in the `f` variable. Viola! Now we have a list of named data frames. Have a look by typing `dat` into the terminal. Caution: R tries to print it all.
+
+
+
+What's left is to simply combine all the data frames into a single data frame.
+
+```{r}
+all.dat <- do.call(rbind,dat)
+```
+
+What we did here is apply a function to all items in our list with the `do.call()` command. This says, "Bind the rows of all the data frames in the `all.dat` list with the command `rbind`." Double viola!! Have a look by printing the first few and last few rows of the new comprehensive tibble.
+
+```{r,eval=FALSE}
+head(all.dat)
+tail(all.dat)
+```
+
+Wow, all our data from the two kids and each of their five replicates in one spot. Now, we can apply  manipulation techniques to derive some summary statistics. 
+
+## Summarizing Data
+
+To answer the question of who jumped highest, we want to know the maximum height ("cm") for each trial and for each kiddo. This requires summarizing the data we've just assembled according to `who` and `rep`. Fortunately, `dplyr` is built for this. 
+
+Let's use its `summarise()` and `group_by()` functions and pipe convention (`%>%`) to find the max height for each replicate for each kiddo. The `summarise()` function creates variables that summarize the data according to variables of interest. We set these variables of interest using `group_by()`. The pipe, `%>%`, is used to combine data with these functions. 
+
+```{r}
+all.dat %>%
+  group_by(who,rep) %>%
+  summarise(max = max(cm))
+```
+
+What this code essentially means is *pass the data through the function `group_by()`, grouping it by the "who" and "rep" columns, and summarize it according the max of each group with the function `max()*. Notice we have 10 rows of data, each reflecting the maximum cm value for each group, that is, each unique combination of `who` and `rep`.
+
+Of course, we can save these results of such an operation to a variable for subsequent exploration.
+
+```{r}
+max.dat <- all.dat %>%
+  group_by(who,rep) %>%
+  summarise(max = max(cm))
+```
+
+## Answering the Question
+
+To answer who jumped highest we can take two approaches: one visual and the other quantitative. To visualize who jumped highest we can produce a classic boxplot of the maximum jump heights according to the subject, Ollie and Zo. A boxplot represents the median as a bar, the lower and upper hinges correspond to the first and third quartiles (the 25th and 75th percentiles), and whiskers for 1.5 times the interquartile range (lots of jargon here; simply put, it quickly summarizes the data).  We'll do this with our recently aquried `max.dat` variable and out `ggplot2` framework:
+
+```{r}
+max.dat%>%
+  ggplot(aes(x=who,y=max))+geom_boxplot()
+```
+
+Holy smokes, that looks spectacular! It's a very nice visual representation comparing the max jump heights between kiddos. Now, how can we quantitatively compare max jump heights? Easy. We'll continue on, summarizing the max data with the mean of the max heights for each kid, dropping the `rep` group in `group_by()`.
+
+```{r}
+max.dat%>%
+  group_by(who)%>%
+  summarise(mean.max=mean(max))
+```
+
+Wonderful. Looks like the mean of Zoe's jumps was about 1 cm higher than Ollie's. If we want to assess how much each kid's jumps deviated from their mean, we could compute standard deviation with the function `sd()`. Let's add that to the summarizing operation:
+
+```{r}
+max.dat%>%
+  group_by(who)%>%
+  summarise(mean.max=mean(max),sd.max=sd(max))
+```
+
+
+Looks like Zo's jumps were a little bit more variable. Often, biomechanists like to report the standard error of the mean (SEM, see below). Oddly enough, there's no function of SEM in the base R packages, however we can easily create a function of our own. 
+
+```{r}
+se <- function(x){sd(x)/sqrt(length(x))}
+```
+
+SEM is computed by dividing the standard deviation by the square root of the number of observations in the sample. Above, we defined a function with `function()` to work on some parameter (i.e., input) `x`. The function is defined within the `{}` by the `sd()` of `x` divided by the `sqrt()` of the `length()` of `x`. 
+
+Let's now put this new function to use.
+
+```{r}
+max.dat%>%
+  group_by(who)%>%
+  summarise(mean.max=mean(max),sd.max=sd(max),se.max=se(max))
+```
+
+Looks like both SEMs are small, but the lower value for Ollie indicates that his sample mean is probably a better estimate.
+
+
+<br>
+<div class = "green">
+<div class="row">
+  <div class="col-sm-2"><a class="far fa-sticky-note fa-5x" style="color:#D3D8DD"></a> <!-- regular style --></div>
+  <div class="col-sm-9"> Why compute the standard error of the mean? Often, scientists like to report standard deviation, the degree to which individuals within the sample differ from the sample mean. But, when reporting sample means, it’s nice to report how well that mean is likely to reflect the population mean. This is where SE comes in. It represents an estimate of how far the sample mean is likely to be from the population mean. 
+
+</div>
+</div>
+</div>
+<br>
+
+# Your mission 
+
+**And you have to accept it**
+
+Yikes! That was a lot! But, you're now armed with some kick-arse scripting and plotting skills to analyze and visualize data, biomechanical or otherwise.
+
+Lets now put soem of these new skills to the test. You're tasked with writing a markdown document using `knitr` in much the same way this document was produced. Yes, I'm throwing you to the wolves, but that's often what makes this stuff stick. 
+
+The markdown must contain the following:
+
+  * A plot of the mean maximum for each kiddo across all replicates. It must contain or be accompanied with:
+    
+    + properly labeled axes (`?ylab()`, anyone?).
+    + Different colors for each subject (`aes(col=who)`, anyone?)
+    + error bars that correspond to 1± standard error of the mean (SEM; `?geom_errorbar()`, anyone?)
+    + a simple ANOVA test of results (with alpha of 0.05). [This'll help.](https://www.statmethods.net/stats/anova.html)
+    + a brief paragraph summarizing the differences between kiddos and any inferences of why they are
+    
+  * A plot of the maximum vertical displacement for each kiddo versus replicate with a trend line. This must also be accompanied: 
+    
+    + lines and points that vary in color according to who's doing the jumping (again, `aes(col=who)`, anyone?)
+    + a brief paragraph summarizing the differences and any inferences of why they are
+    
+The `knitr` markdown file and all the associated files (see below) are due on Wednesday, February 2nd by 11:59 PM. Please email them to Prof. Kenaley.
+  
+  
+  <br>
+<div class = "green">
+<div class="row">
+  <div class="col-sm-2"><a class="far fa-sticky-note fa-5x" style="color:#D3D8DD"></a> <!-- regular style --></div>
+ **SUPER IMPORTANT NOTE** When submitting any .Rmd for your projects, always include the .Rmd file and **ANY AND ALL DATA** or other files that the .Rmd refers to. I'll be knitting your .Rmd and will need these files to do so.
+</div>
+</div>
+</div>
+<br>
+
+
+As you put together your .Rmd, have a look at our [Mini-Project guidelines](mini_projects.html) to get a sense of how these reports will be assessed.
+
+  **Good luck!**
+
+
+

@@ -454,9 +454,9 @@ section in each AEM will be worth 1–2 points.</p>
 topics relevant to our experimental work. Initial submissions should
 should be contained in an R markdown file and follow this format:</p>
 <ol style="list-style-type: decimal">
-<li>The following subsection headers that organize your submission.
+<li>The following section headers that organize your submission.
 <ul>
-<li><p>Objectives: A list of objectives and the relevant anlsysis to
+<li><p>Analysis: A list of objectives and the relevant analysis to
 address them. This section can be established from pasting the
 objectives put forth in AME assignment description. Each objective
 should be accompanied by a code chunk that meets that specific
@@ -469,7 +469,7 @@ with reference to the objectives. This should be no longer than three
 short sentences.</p></li>
 </ul></li>
 </ol>
-<p>Initial AME markdowns should be submitted through a google form, the
+<p>Initial AME markdowns should be submitted through a Google form, the
 link to which will be provided in the AME assignment description.</p>
 <p><a href="AME_example_submission.html">This link</a> leads to a
 hypothetical submission for our <a href="AME_example.html">hypothetical
@@ -495,14 +495,13 @@ students should consider the following:</p>
 <ol style="list-style-type: decimal">
 <li>Does the submission address the objective?</li>
 <li>Is it concise?</li>
-<li>Is the chunk named?</li>
 </ol>
 <p>In self-assessing the interpretation section, students should
 consider if their submission—as compared to the solution—was a
 good-faith effort to contextualized the questions or points raised by
 the objective.</p>
 <p>The following rubric codifies this advice and should be used to
-assess points for each objective and the interpretation section.</p>
+assess points for each objectived and the interpretation section.</p>
 <table>
 <colgroup>
 <col width="25%" />
@@ -512,7 +511,7 @@ assess points for each objective and the interpretation section.</p>
 </colgroup>
 <thead>
 <tr class="header">
-<th>Component</th>
+<th>Componnt</th>
 <th><strong>Full points</strong></th>
 <th><strong>Partial points</strong><span
 class="math inline">\(^*\)</span></th>
@@ -521,26 +520,30 @@ class="math inline">\(^*\)</span></th>
 </thead>
 <tbody>
 <tr class="odd">
-<td>For each objective</td>
+<td>For each objective in the Analysis section</td>
 <td>Addresses or completes all aspects of the objective as outlined. If
 this requires a code chunk, the code within it is concise, avoiding
-unneeded operations, runs successfully, and is appropriately named</td>
+unneeded operations, and runs successfully</td>
 <td>Addresses or completes some, but not all, parts of the objective. If
 this requires a code chunk, the chunk contains code that may not be
-concise nor runs successfully, or the chunk is inappropriately
-named</td>
-<td>Assesses or completesw few questions or required tasks or submits
-few required materials. Code doesn’t run, nor is the chunk appropriately
-named</td>
+concise nor runs successfully.</td>
+<td></td>
 </tr>
 <tr class="even">
-<td>Interpretation</td>
-<td>Makes a good-faith effort to address each point or question raised
-by the AME interpretation section</td>
+<td>Assesses or completes few questions or required tasks or submits few
+required materials. Code doesn’t run.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Interpretation section</td>
+<td>Makes a good-faith effort to address the objectives in the context
+of the the outcomes of the analysis</td>
 <td>Addresses some, but not all of these points or questions</td>
 <td>Addresses none of the points or questions</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td></td>
 <td></td>
 <td></td>
@@ -554,7 +557,7 @@ and two aspects of the objective were completed fully. The self-assessed
 score for this objective should be 2 points. Some subjectivity may be
 involved, especially if an objective partially met. Please use your
 discretion and award points in increments of 0.5.</p>
-<p>Sum all the points for the Objectives and Interpretation sections to
+<p>Sum all the points for the Analysis and Interpretation sections to
 give yourself a final score.</p>
 <p>Prof. K will evaluate each self-assessment and, if needed, adjust the
 individual marks, either up or down.</p>
@@ -566,12 +569,12 @@ submissions and include this revision by uploading it through the
 self-assessment Google form. The revised AEM submission should include
 the following:</p>
 <ol style="list-style-type: decimal">
-<li><p>For each objective which full marks were not given, a revised
-code chunk or chunks that integrate the solution and original
-submission. This integration must include comments as to the differences
-between the initial and solution code. See below for an example. If an
-objective did receive full marks, please include it just the
-same.</p></li>
+<li><p>For each objective in the analysis section which full marks were
+not given, a revised code chunk or chunks that integrate the solution
+and original submission. This integration must include comments as to
+the differences between the initial and solution code. See below for an
+example. If an objective did receive full marks, please include it just
+the same.</p></li>
 <li><p>For an interpretation section that did not receive full marks or
 for one where it must change given the solution, provide a brief
 statement as to how the original interpretation has changed once the
@@ -583,10 +586,14 @@ modified, then the student earns half of the missing points back. For
 example, if a student gave themselves a score of 7 and Prof. K agreed
 with this score, then the revised score would be an 8.5.</p>
 </div>
-<div id="asssement-and-revision-example" class="section level3">
-<h3>Asssement and Revision Example</h3>
-<p>For an example revision, we’ll compare the hypothetical submission to
-a <a href="AME_example_solution.html">hyopthetical solution</a>.</p>
+</div>
+<div id="asssement-and-revision-example" class="section level2">
+<h2>Asssement and Revision Example</h2>
+<div id="assemment-example" class="section level3">
+<h3>Assemment Example</h3>
+<p>As we run through and assessment and revision, let’s compare the
+hypothetical submission to a <a
+href="AME_example_solution.html">hyopthetical solution</a>.</p>
 <p>If you recall from our hypothetical AME, we’re studying the bite
 force of the eastern gray squirrel (<em>Sciurus carolinensis</em>).</p>
 <center>
@@ -639,8 +646,9 @@ the objective it satisfies. So, according to our rubric, the objective
 was fully met: the code ran, the object <code>dat</code> contains the
 data, and the chunk has the correct name. Thus, this student should
 award themselves all three points.</p>
-<p>Let’s now look at a submission that should receive partial marks. For
-objective 4, students were asked to do the following:</p>
+<p>Let’s now look at <a href="AME_example_submission.html">a
+submission</a> that should receive partial marks. For objective 4,
+students were asked to do the following:</p>
 <ol start="4" style="list-style-type: decimal">
 <li>Produce an illustrative visualization of the relationship between
 squirrel maximum bite force and mass and how this relationship may vary
@@ -662,7 +670,7 @@ dat %>%
 <p>For this, the hypothetical student included the following in their
 submission (output also included):</p>
 <pre>
-<code>```{r}
+<code>```{r objective 4}
 dat_F <- dat %>% filter(sex=="Female")
 dat_M <- dat %>% filter(sex=="Male")
 dat_F %>% 
@@ -675,20 +683,84 @@ dat_M %>%
 <p><img src="AME_guidelines_files/figure-html/objective_ex2%204-1.png" width="672" /><img src="AME_guidelines_files/figure-html/objective_ex2%204-2.png" width="672" /></p>
 <p>This part of the submission does well in that the code to address the
 objective runs successfully. But, note that this part of the submission
-misses the mark with regards to three important rubric metrics:</p>
+misses the mark with regards to two important rubric metrics:</p>
 <ol style="list-style-type: decimal">
 <li>Does it address the objective?</li>
 <li>Is it concise?</li>
-<li>Is the chunk named?</li>
 </ol>
 <p>In assessing whether this submission addresses the objective, we see
 that two separate plots are produced and, thus, it’s hard to compare the
-sexes. This addresses the objective only partially. Filtering by sex and
-producing two separate plots is not concise and there is no name given
-to the chunk. So, as compared to the solution, the submission does not
-fully address the objective, isn’t as concise, and the chunk isn’t
-named. This sits squarely in the partial-points column according to our
-rubric. A fair score for this submission might be 1.5.</p>
+sexes. This addresses the objective only partially. In addition,
+filtering by sex and producing two separate plots is not concise. So, as
+compared to the solution, the submission does not fully address the
+objective, isn’t as concise. This sits squarely in the partial-points
+column according to our rubric. A fair score for this part of a
+submission might be 1.5.</p>
+</div>
+<div id="revision-example" class="section level3">
+<h3>Revision Example</h3>
+<p>Now the we have a framework for self-assessment, let’s turn to
+revising the original submission. For this, we’ll rely on the same
+example directly above. As mentioned earlier, a revised AEM submission
+should include an integration of the solution with the original
+submission. For code chunks, this must include comments as to the
+differences between the initial and solution co de. Likewise, for an
+interpretation section that did not receive full marks or for one where
+it must change given the solution, provide a brief statement as to how
+the original interpretation has changed once the solution is
+integrated.</p>
+<p>Let’s focus on the same hypothetical submission that recieved partial
+points as a result of the self assessments. As a reminder, the student
+submitted the following . . .</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Produce an illustrative visualization of the relationship between
+squirrel maximum bite force and mass and how this relationship may vary
+by sex. [3]</li>
+</ol>
+<pre>
+<code>```{r objective 4}
+dat_F <- dat %>% filter(sex=="Female")
+dat_M <- dat %>% filter(sex=="Male")
+dat_F %>% 
+  ggplot(aes(mass,Fmax))+geom_point()
+dat_M %>% 
+  ggplot(aes(mass,Fmax))+geom_point()
+
+```</code>
+</pre>
+<p>And the solution included . . .</p>
+<ol start="4" style="list-style-type: decimal">
+<li>Produce an illustrative visualization of the relationship between
+squirrel maximum bite force and mass and how this relationship may vary
+by sex. [3]</li>
+</ol>
+<pre>
+<code>```{r objective 4}
+dat %>% 
+  ggplot(aes(mass,Fmax,col=sex))+geom_point()
+```</code>
+</pre>
+<p>Using comments (i.e., <code>#</code>) in the code chunk, a revised
+submission might look something like this.</p>
+<pre>
+<code>```{r objective 4}
+#Remove the redundant filtering that splits the data and the plot that plots males and females separately
+#dat_F <- dat %>% filter(sex=="Female") 
+#dat_M <- dat %>% filter(sex=="Male")
+#dat_F %>% 
+  #ggplot(aes(mass,Fmax))+geom_point()
+#dat_M %>% 
+ # ggplot(aes(mass,Fmax))+geom_point()
+
+#plot with all data and color by sex
+dat %>% 
+  ggplot(aes(mass,Fmax,col=sex))+geom_point()
+
+```</code>
+</pre>
+<p>Note the use of the <code>#</code> to ``turn off” the code we don’t
+want and to add descriptive comments on how the chunk addresses the
+objective.</p>
 </div>
 </div>
 

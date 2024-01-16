@@ -49,7 +49,6 @@ NB: Name and save your Rmd as "Lastname_Firstname_AME0.Rmd" [-1 if not]
 
 4. Produce an illustrative visualization of the relationship between squirrel maximum bite force and mass and how this relationship may vary by sex. [3]
 
-
 ## Interpretation
 
 Please briefly comment on the evolutionary or ecological basis of any relationships your visualization reveals. [2]

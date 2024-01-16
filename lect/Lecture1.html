@@ -4,7 +4,7 @@
     <title>Welcome and Introduction</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Christopher Kenaley" />
-    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.22/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ### Boston College
 ]
 .date[
-### 2023/17/1
+### 2024/16/1
 ]
 
 ---
@@ -36,6 +36,9 @@ class: inverse, top
 # Hello! 
 
 
+```
+## Warning: package 'ggplot2' was built under R version 4.3.1
+```
 
 &lt;!-- Add icon library --&gt;
 &lt;link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"&gt;
@@ -104,9 +107,9 @@ class:
    &lt;td style="text-align:left;background-color: white !important;"&gt; Points &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:left;background-color: white !important;"&gt; Class participation and engagement &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; AMEs &lt;/td&gt;
    &lt;td style="text-align:left;background-color: white !important;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;background-color: white !important;"&gt; 50 &lt;/td&gt;
+   &lt;td style="text-align:left;background-color: white !important;"&gt; 5x10 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:left;background-color: white !important;"&gt; Discussion Board &lt;/td&gt;
@@ -184,8 +187,7 @@ IDE: Integrated Development Environment
 
 - Discussion-based (I can only talk so much)
 - Interrupt me!
-- No exams, no quizzes
-- Engagement contributes 10% to grade!
+- No exams, no quizzes, but AMEs
 - Read assignments **before** class
 
 
@@ -200,7 +202,7 @@ IDE: Integrated Development Environment
 .pull-left[
 
 - 1/week
-- On github board
+- On slack 
 - Question and answer
 - Lab and lecture both
 
@@ -232,7 +234,7 @@ class:  top
 - 2-3 weeks to finish MP
 - Reports due on Wednesdays
 - Team-based, new team each MP
-- Report written in R Markdown (MP1)
+- Report written in R Markdown (AME1)
 
 
 ]
@@ -240,6 +242,26 @@ class:  top
 .center[
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUZ9X79kkxuv-FIjlepNqHArJ31_ns7Fb9Eg&amp;usqp=CAU)
 ]
+
+
+---
+class:  top
+
+## Analysis and Modeling Execises
+
+- Posted online on Tuesdays
+- 2-3 weeks to finish AME
+- Self-Assessment (usually) due on following Tuesday
+- Revisions (usually) due second Tuesday after release
+- Individual submissions
+- Written in R Markdown (AME1)
+
+
+
+.center[
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUZ9X79kkxuv-FIjlepNqHArJ31_ns7Fb9Eg&amp;usqp=CAU)
+]
+
 
 ---
 class:  top
@@ -261,8 +283,8 @@ class:  top
 ### Timeline
 
 - ~1 month to develop (start in April), execute
-- Report due a few days before presentation (~May 13)
-- Presentation submitted and given after report (May 13, 14, 15)
+- Report due a few days before presentation (~May 10)
+- Presentation submitted and given after report (~May 15)
 
 ]
 .center[
@@ -403,13 +425,6 @@ Now let's plot to relationship.
 
 ```r
 qplot(L,merus.pred)+theme_classic(30)+ylab("Force (N)")
-```
-
-```
-## Warning: `qplot()` was deprecated in ggplot2 3.4.0.
-```
-
-```r
 knitr::include_graphics("merus.png")
 ```
 

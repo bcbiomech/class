@@ -3,7 +3,7 @@ title: "Welcome and Introduction"
 subtitle: "Setting the Stage"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2023/17/1"
+date: "2024/16/1"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -81,7 +81,7 @@ class:
 
 ```{r,echo=FALSE}
 g <- rbind(c("","","Points"),
-  c("Class participation and engagement","",50),
+  c("AMEs","","5x10"),
 c("Discussion Board ","","10x5"), 
 c("Mini-Project Reports ","","5x50"),
 c("Final Project Report","", "1x100"),
@@ -142,8 +142,7 @@ IDE: Integrated Development Environment
 
 - Discussion-based (I can only talk so much)
 - Interrupt me!
-- No exams, no quizzes
-- Engagement contributes 10% to grade!
+- No exams, no quizzes, but AMEs
 - Read assignments **before** class
 
 
@@ -190,7 +189,7 @@ class:  top
 - 2-3 weeks to finish MP
 - Reports due on Wednesdays
 - Team-based, new team each MP
-- Report written in R Markdown (MP1)
+- Report written in R Markdown (AME1)
 
 
 ]
@@ -198,6 +197,26 @@ class:  top
 .center[
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUZ9X79kkxuv-FIjlepNqHArJ31_ns7Fb9Eg&usqp=CAU)
 ]
+
+
+---
+class:  top
+
+## Analysis and Modeling Execises
+
+- Posted online on Tuesdays
+- 2-3 weeks to finish AME
+- Self-Assessment (usually) due on following Tuesday
+- Revisions (usually) due second Tuesday after release
+- Individual submissions
+- Written in R Markdown (AME1)
+
+
+
+.center[
+![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUZ9X79kkxuv-FIjlepNqHArJ31_ns7Fb9Eg&usqp=CAU)
+]
+
 
 ---
 class:  top
@@ -219,8 +238,8 @@ class:  top
 ### Timeline
 
 - ~1 month to develop (start in April), execute
-- Report due a few days before presentation (~May 13)
-- Presentation submitted and given after report (May 13, 14, 15)
+- Report due a few days before presentation (~May 10)
+- Presentation submitted and given after report (~May 15)
 
 ]
 .center[
@@ -375,7 +394,7 @@ merus.pred <- force(L)
 Now let's plot to relationship.
 
 
-```{r,dev='svg',fig.show="hold", out.width="30%",out.height="10%",fig.height=6}
+```{r,dev='svg',fig.show="hold", out.width="30%",out.height="10%",fig.height=6,message=F,warning=F}
 qplot(L,merus.pred)+theme_classic(30)+ylab("Force (N)")
 knitr::include_graphics("merus.png")
 
@@ -394,7 +413,7 @@ Back to our question?
 
 Is this way too much? Too little?
 
-```{r,dev='svg',fig.show="hold", out.width="50%",out.height="20%",fig.height=6}
+```{r,dev='svg',fig.show="hold", out.width="50%",out.height="20%",fig.height=6,warning=F}
 qplot(L,merus.pred)+theme_classic(30)+ylab("Force (N)")+geom_point(aes(x=15,y=480),col="red")
 knitr::include_graphics("mantis.png")
 

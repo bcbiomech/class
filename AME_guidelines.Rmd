@@ -26,12 +26,12 @@ AMEs will be released on **Tuesdays** and are due the **following Tuesday**. Eac
 
 AMEs are meant to be short, concise explorations of quantitative topics relevant to our experimental work. Initial submissions should should be contained in an R markdown file and follow this format:
 
-  1. The following subsection headers that organize your submission.
-      + Objectives: A list of objectives and the relevant anlsysis to address them. This section can be established from pasting the objectives put forth in AME assignment description. Each objective should be accompanied by a code chunk that meets that specific objective. This may include, among other things, loading data, implementing models, and producing illuminating visualizations. **NB:** Each code chunk must be given a name that corresponds its objective, e.g., "objective 1".
+  1. The following section headers that organize your submission.
+      + Analysis: A list of objectives and the relevant analysis to address them. This section can be established from pasting the objectives put forth in AME assignment description. Each objective should be accompanied by a code chunk that meets that specific objective. This may include, among other things, loading data, implementing models, and producing illuminating visualizations. **NB:** Each code chunk must be given a name that corresponds its objective, e.g., "objective 1".
 
       + Interpretation: A brief statement as to what the analysis means with reference to the objectives. This should be no longer than three short sentences.
  
-Initial AME markdowns should be submitted through a google form, the link to which will be provided in the AME assignment description.
+Initial AME markdowns should be submitted through a Google form, the link to which will be provided in the AME assignment description.
 
 [This link](AME_example_submission.html) leads to a hypothetical submission for our [hypothetical AME](AME_example.html). 
 
@@ -51,21 +51,21 @@ Compared to the solution . . .
 
   1. Does the submission address the objective?
   2. Is it concise?
-  3. Is the chunk named?
 
 In self-assessing the interpretation section, students should consider if their submission---as compared to the solution---was a good-faith effort to contextualized the questions or points raised by the objective.
 
 
-The following rubric codifies this advice and should be used to assess points for each objective and the interpretation section.
+The following rubric codifies this advice and should be used to assess points for each objectived and the interpretation section.
 
- |Component| **Full points** |  **Partial points**$^*$ | **0 points**  
+ |Componnt| **Full points** |  **Partial points**$^*$ | **0 points**  
 |--------|-------- |-------- |--------
-| For each objective | Addresses or completes all aspects of the objective as outlined. If this requires a code chunk, the code within it is concise, avoiding unneeded operations, runs successfully, and is appropriately named | Addresses or completes some, but not all, parts of the objective. If this requires a code chunk, the chunk contains code that may not be concise nor runs successfully, or the chunk is inappropriately named | Assesses or completesw few questions or required tasks or submits few required materials. Code doesn't run, nor is the chunk appropriately named
-| Interpretation |  Makes a good-faith effort to address each point or question raised by the AME interpretation section  | Addresses some, but not all of these points or questions | Addresses none of the points or questions
+| For each objective in the Analysis section| Addresses or completes all aspects of the objective as outlined. If this requires a code chunk, the code within it is concise, avoiding unneeded operations, and runs successfully | Addresses or completes some, but not all, parts of the objective. If this requires a code chunk, the chunk contains code that may not be concise nor runs successfully.
+| Assesses or completes few questions or required tasks or submits few required materials. Code doesn't run.
+| Interpretation section|  Makes a good-faith effort to address the objectives in the context of the the outcomes of the analysis  | Addresses some, but not all of these points or questions | Addresses none of the points or questions
 ||||
 $^*$Partial points should be awarded proportionally. For example, say an objective is worth 3 points and two aspects of the objective were completed fully.  The self-assessed score for this objective should be 2 points. Some subjectivity may be involved, especially if an objective partially met. Please use your discretion and award points in increments of 0.5.
 
-Sum all the points for the Objectives and Interpretation sections to give yourself a final score.
+Sum all the points for the Analysis and Interpretation sections to give yourself a final score.
 
 Prof. K will evaluate each self-assessment and, if needed, adjust the individual marks, either up or down.
 
@@ -73,15 +73,16 @@ Prof. K will evaluate each self-assessment and, if needed, adjust the individual
 
 Students will have the opportunity to revise their initial AEM submissions and include this revision by uploading it through the self-assessment Google form. The revised AEM submission should include the following:
 
-  1. For each objective which full marks were not given, a revised code chunk or chunks that integrate the solution and original submission. This integration must include comments as to the differences between the initial and solution code. See below for an example. If an objective did receive full marks, please include it just the same.
+  1. For each objective in the analysis section which full marks were not given, a revised code chunk or chunks that integrate the solution and original submission. This integration must include comments as to the differences between the initial and solution code. See below for an example. If an objective did receive full marks, please include it just the same.
 
   2. For an interpretation section that did not receive full marks or for one where it must change given the solution, provide a brief statement as to how the original interpretation has changed once the solution is integrated. 
 
 If the revised objective sections produce the same results as the solution and, if needed, the interpretation section is sufficiently modified, then the student earns half of the missing points back. For example, if a student gave themselves a score of 7 and Prof. K agreed with this score, then the revised score would be an 8.5. 
 
-### Asssement and Revision Example
+## Asssement and Revision Example
 
-For an example revision, we'll compare the hypothetical submission to a [hyopthetical solution](AME_example_solution.html).
+### Assemment Example
+As we run through and assessment and revision, let's compare the hypothetical submission to a [hyopthetical solution](AME_example_solution.html).
 
 If you recall from our hypothetical AME, we're studying the bite force of the eastern gray squirrel (*Sciurus carolinensis*).
 
@@ -117,7 +118,7 @@ dat <- read_csv("data/bite_force.csv")
 
 Note here that the student produced what is identical to the solution. They used the appropriate functions to load the data, and assuming the code chunk ran successfully (i.e., the data were downloaded and placed the in same directory as the .Rmd), it was saved to the object `dat`. In addition, the name of this chunk reflects the objective it satisfies. So, according to our rubric, the objective was fully met: the code ran, the object `dat` contains the data, and the chunk has the correct name. Thus, this student should award themselves all three points.
 
-Let's now look at a submission that should receive partial marks. For objective 4, students were asked to do the following:
+Let's now look at [a submission](AME_example_submission.html) that should receive partial marks. For objective 4, students were asked to do the following:
 
 4. Produce an illustrative visualization of the relationship between squirrel maximum bite force and mass and how this relationship may vary by sex. [3]
 
@@ -142,7 +143,7 @@ dat %>%
 For this, the hypothetical student included the following in their submission (output also included):
 
 <pre>
-<code>```{r}
+<code>```{r objective 4}
 dat_F <- dat %>% filter(sex=="Female")
 dat_M <- dat %>% filter(sex=="Male")
 dat_F %>% 
@@ -163,15 +164,68 @@ dat_M %>%
   ggplot(aes(mass,Fmax))+geom_point()
 ```
 
-This part of the submission does well in that the code to address the objective runs successfully. But, note that this part of the submission misses the mark with regards to three important rubric metrics:
+This part of the submission does well in that the code to address the objective runs successfully. But, note that this part of the submission misses the mark with regards to two important rubric metrics:
   
   1. Does it address the objective?
   2. Is it concise?
-  3. Is the chunk named?
 
-In assessing whether this submission addresses the objective, we see that two separate plots are produced and, thus, it's hard to compare the sexes. This addresses the objective only partially. Filtering by  sex and producing two separate plots is not concise and there is no name given to the chunk. So, as compared to the solution, the submission does not fully address the objective, isn't as concise, and the chunk isn't named. This sits squarely in the partial-points column according to our rubric. A fair score for this submission might be 1.5.
-
+In assessing whether this submission addresses the objective, we see that two separate plots are produced and, thus, it's hard to compare the sexes. This addresses the objective only partially. In addition, filtering by sex and producing two separate plots is not concise. So, as compared to the solution, the submission does not fully address the objective, isn't as concise. This sits squarely in the partial-points column according to our rubric. A fair score for this part of a submission might be 1.5.
 
 
 
+### Revision Example
+
+Now the we have a framework for self-assessment, let's turn to revising the original submission.As mentioned earlier, a revised AEM submission should include an integration of the solution with the original submission. For code chunks, this must include comments as to the differences between the initial and solution co de. Likewise, for an interpretation section that did not receive full marks or for one where it must change given the solution, provide a brief statement as to how the original interpretation has changed once the solution is integrated. 
+
+
+Let's focus on the same hypothetical submission that received partial points as a result of the self assessments. As a reminder, the student submitted the following . . . 
+
+4. Produce an illustrative visualization of the relationship between squirrel maximum bite force and mass and how this relationship may vary by sex. [3]
+
+<pre>
+<code>```{r objective 4}
+dat_F <- dat %>% filter(sex=="Female")
+dat_M <- dat %>% filter(sex=="Male")
+dat_F %>% 
+  ggplot(aes(mass,Fmax))+geom_point()
+dat_M %>% 
+  ggplot(aes(mass,Fmax))+geom_point()
+
+```</code>
+</pre>
+
+And the solution included . . . 
+
+4. Produce an illustrative visualization of the relationship between squirrel maximum bite force and mass and how this relationship may vary by sex. [3]
+
+
+<pre>
+<code>```{r objective 4}
+dat %>% 
+  ggplot(aes(mass,Fmax,col=sex))+geom_point()
+```</code>
+</pre>
+
+Using comments (i.e., `#`) in the code chunk, a revised submission might look something like this.
+
+
+<pre>
+<code>```{r objective 4}
+#Remove the redundant filtering that splits the data and the plot that plots males and females separately
+#dat_F <- dat %>% filter(sex=="Female") 
+#dat_M <- dat %>% filter(sex=="Male")
+#dat_F %>% 
+  #ggplot(aes(mass,Fmax))+geom_point()
+#dat_M %>% 
+ # ggplot(aes(mass,Fmax))+geom_point()
+
+#plot with all data and color by sex
+dat %>% 
+  ggplot(aes(mass,Fmax,col=sex))+geom_point()
+
+```</code>
+</pre>
+
+
+Note the use of the `#` to "turn off" the code we don't want and to add descriptive comments on how the chunk addresses the objective.
 
