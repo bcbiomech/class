@@ -11,7 +11,7 @@
 
 
 
-<title>Mini Project 2: Get Ur Gait On</title>
+<title>Mini Project 3: Stretch the Pig, Bend the Twig</title>
 
 <script src="site_libs/header-attrs-2.22/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -33,6 +33,8 @@
 <link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
+<script src="site_libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="site_libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -45,132 +47,9 @@
 
 
 
-<style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
-</style>
-<style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  background-color: #f8f8f8; }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #204a87; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #8f5902; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #204a87; font-weight: bold; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    var j = 0;
-    while (j < rules.length) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
-        j++;
-        continue;
-      }
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') {
-        j++;
-        continue;
-      }
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 
 
 
-<style type="text/css">
-/* for pandoc --citeproc since 2.11 */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 
@@ -535,549 +414,540 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Mini Project 2: Get Ur Gait On</h1>
+<h1 class="title toc-ignore">Mini Project 3: Stretch the Pig, Bend the
+Twig</h1>
 
 </div>
 
 
-<p><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"></p>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
-<p>Our second Miniproject explores several topics in the biomechanical
-basis of terrestrial locomotion. In particular, we’ll focus on how well
-the inverted pendulum model applies in predicting the maximum speed of
-walking humans and to what extent some kinematic variables, like pelvic
-tilt, contribute to differences in speed. We’ll also look at how these
-kinematic variables vary by size and sex. Our general goals are to:</p>
-<ul>
-<li>Use imageJ to perform kinematic analysis</li>
-<li>Use simple mathematical models to predict maximum limb walking
-speed</li>
-<li>Test predictions of walking speed with measurements and
-observations</li>
-<li>Evaluate the effects of sex and size (scaling!) on your
-observations</li>
-</ul>
-<div class="figure" style="text-align: center">
-<img src="pend.png" alt="The inverted pendulum model of bipedal locomotion" width="332" />
-<p class="caption">
-The inverted pendulum model of bipedal locomotion
-</p>
+<p>Our third Mini Project explores experimental methods for quantifying
+the material and structural properties of biological tissue (e.g., wood
+and intestine). Please recall that material properties (the inherent
+ones) are independent of structural properties (i.e.,size and shape).
+The goals of this MP are to:</p>
+<ol style="list-style-type: decimal">
+<li>Learn how to measure force and displacement so that you can
+construct a stress-strain curve.</li>
+<li>Use a homemade three-point bender to estimate flexural stiffness of
+biomaterials.</li>
+<li>Understand data acquisition using a computer and an Arduino.</li>
+<li>Explore the concept of anisotropy</li>
+<li>Combine your recently gathered skills in R programming with a
+proficiency with RMarkdown to write a short 2-page report outlining your
+results and conclusions.</li>
+</ol>
 </div>
-<div id="conceptual-basis" class="section level3">
-<h3>Conceptual basis</h3>
-<p>As we’ve learned, the inverted pendulum (IP) is rather simple model
-for understanding how we walk. Under the IP model, the leg forms the
-radius of an arc through which your center of mass (COM) travels. Thus,
-we can use concepts surrounding centripetal forces to estimate how fast
-we walk. So far, we’ve ignored air resistance and the inertial effects
-of other moving parts (e.g., arms) and assumed the leg is rigid and
-rotates about the ground at a single point of contact. Under these
-conditions, we can make predictions as to the maximum linear velocity of
-our COM. The force associated with this swinging pendulum can be
-described as</p>
-<p><span class="math display">\[
-F =ma_c=\frac {mv^2}{R}
+<div id="conceptual-basis" class="section level2">
+<h2>Conceptual basis</h2>
+<p>In lecture recentlty we explored the concepts of stress (<span
+class="math inline">\(\sigma\)</span>), strain (<span
+class="math inline">\(\varepsilon\)</span>), and stiffness (<span
+class="math inline">\(E\)</span>, Young’s modulus). These are all
+material properties and represent mechanical means to characterize
+biomaterials. These physical quantities are summarized here:</p>
+<p><span class="math display">\[\sigma =\frac {F}{A} \]</span></p>
+<p><span class="math display">\[\varepsilon =\frac {\Delta L}{L_o}
 \]</span></p>
-<p>where <span class="math inline">\(a_c\)</span> the acceleration due
-to gravity and <span class="math inline">\(R\)</span> is the leg length,
-or the radius of the inverted pendulum. From this we see that the
-maximum velocity of the rotating mass is never greater than the square
-root of the product of gravity and the radius, or, in biomechanical
-terms</p>
-<p><span class="math display">\[
-v_{max}^2 \leq gl
-\]</span></p>
-<p><span class="math display">\[
-v_{max} \leq\sqrt{ gl}
-\]</span></p>
-<p>where <span class="math inline">\(g\)</span> is gravity and <span
-class="math inline">\(l\)</span> the leg length. Thus, as we have
-learned in class, the Froude efficiency for walking is:</p>
-<p><span class="math display">\[
-Fr =\frac {v^2}{gL}&lt;=1
-\]</span></p>
-<p>where <span class="math inline">\(v\)</span> and any realized walking
-velocity is less than or equal to <span
-class="math inline">\(v_{max}\)</span>, or <span
-class="math inline">\(gL\)</span>.</p>
-<p>As has become clear in our class discussions and demonstrations, the
-characteristic length of the pendulum (i.e., the radius) is the leg
-length and any increase in this length will result in a greater
-velocity. In addition, any biomechanical mechanism that increases the
-leg length during otherwise lower phases of the arc (e.g., lateral
-pelvic tilt, that is lifting the plant-leg side of the pelvis, ) will
-keep the COM higher and increase the velocity.</p>
-<div class="figure" style="text-align: center">
-<img src="pelvictilt.jpg" alt="A walker tilting its pelvis" width="306" />
-<p class="caption">
-A walker tilting its pelvis
-</p>
+<p><span class="math display">\[\varepsilon =\frac{d \sigma}{d
+\varepsilon}\]</span></p>
+<p>where <span class="math inline">\(F\)</span> is the applied force,
+<span class="math inline">\(A\)</span> is the cross-sectional area over
+which that force is applied, <span class="math inline">\(\Delta
+L\)</span> is the change in length in response to <span
+class="math inline">\(F\)</span>, and <span
+class="math inline">\(L_o\)</span> is the initial length of the
+specimen. Young`s modulus (<span class="math inline">\(E\)</span>) is
+the slope of the stress-strain curve and is constant for Hookean
+materials (i.e., they obey Hooke’s Law and are completely spring like).
+As you may discover in this MP (and we have discussed in class), many
+biological materials are non-Hookean and the relationship between stress
+and strain is not linear. In addition, many biological materials may
+also demonstrate -anisotropic- behavior: the relationship between the
+stress and strain depends on the direction in which the stress is
+applied. For example, any biomaterial containing fibers of axial
+orientation (that is, parallel fibers) will show some degree of
+anisotropy. Examples of biomaterials with fibers include skin,
+intestine, wood, plant stems, etc.</p>
+<p>In addition to nonlinear and anisotropic behaviors, many biomaterials
+are viscoelastic (as we have discussed in lecture), demonstrating a
+time-dependence in their response to loads. There are a host of methods
+available for quantifying time-dependent properties including creep
+tests (applying a constant force, i.e., an isotonic load) or applying a
+load at variable speeds. We’ll take this latter approach.</p>
+<p>Lastly, we will learn that loads are not applied in simple tensile or
+compressive modes. Say, in bending a beam, the load is compressive and
+tensile at the same time (see below). How a biomaterial responds under
+bending (e.g., amount of strain, load at failure, etc.) is of a
+particular interests to biomechanists both to understand organismal
+design from an evolutionary perspective and what materials may be
+capable or incapable of in nature. To understand this structural
+response to a bending load, we may borrow a bag of tricks from material
+engineers: the three-point bending test.</p>
+<center>
+<img src="img/bendstress.jpg" id="bendstress" alt="bendstress" /> <br> A
+beam subject to bending.
+</center>
+<p><br></p>
+<p>As we’ll learn from lecture, the two-dimensional shape of a beam
+determines its strain relationship to a bending stress or its
+deformation. So, how much it will deform under a stress is given by the
+flexural stiffness (<span class="math inline">\(M\)</span>):</p>
+<p><span class="math display">\[ M=EI \]</span></p>
+<p>where <span class="math inline">\(E\)</span> is the Young’s modulus
+and <span class="math inline">\(I\)</span> is the second moment area,
+which is essentially the distribution of that stiffness (i.e., area)
+through the shape with reference to the axis along which a load is
+applied. Thus, to understand the deformation that will result from a
+load and vice-versa, we must incorporate information about the shape.
+So, for a beam under a symmetrical bending load, the deflection is given
+by:</p>
+<p><span class="math display">\[d=\frac{Fl^3}{3EI}\]</span></p>
+<p>where d is the deflection, <span class="math inline">\(F\)</span> is
+the applied force, l is the length of the beam, and <span
+class="math inline">\(EI\)</span> is the flexural stiffness. Using this,
+if we measure the deflection of a beam of length <span
+class="math inline">\(l\)</span> under a known load F, we can derive an
+estimate for the flexural stiffness of the beam, <span
+class="math inline">\(EI\)</span>.</p>
 </div>
-</div>
+<div id="measuring-forces" class="section level2">
+<h2>Measuring forces</h2>
+<p>We, as biomechanists, can measure measure forces (i.e., loads) in
+several ways, some direct, some simple, and some more sophisticated. For
+instance, to apply a load to a material, one may simply add a mass and,
+because we’re on Earth, we know that mass’s acceleration, and thus can
+estimate force. In another manner, we can rely on transducers to convert
+(i.e., -transduce-) signals from one type of energy to another. For this
+method of measuring changes in force, say a signal stored as mechanical
+energy, we must convert this mechanical energy to electrical energy
+using a force transducer. Such a device outputs a change in voltage that
+is proportional to the force that was applied to them. One of the most
+common elements used in force transducers is a compression-extension
+load cell, which is what you will be using in this lab. These devices
+contain elements that, when a load is applied, strains (in this case,
+shortens or lengthens) a metal foil which is linearly elastic or
+Hookean. A voltage is passed through the Hookean foil, and, when the
+cell is loaded, the cylinder changes length and, thus, changes the
+resistance. This change in resistance changes the voltage. This voltage
+can be passed to an amplifier and microcontroller (computer) for
+analysis.</p>
 </div>
 <div id="methods" class="section level2">
 <h2>Methods</h2>
-<p>There are two parts to this MP: (1) predicting and testing
-predictions of maximum walking speed and (2) an analysis of pelvic tilt
-as it varies between normal walking at comfortable speeds and fast
-speeds. For both parts of this MP, it is important that you walk and not
-run. That means a duty factor of &gt;0.5, i.e., you’ll always have a
-foot on the ground. Lab partners, police your colleagues to ensure
-this.</p>
-<div id="sofware-essentials" class="section level3">
-<h3>Sofware essentials</h3>
-<p>We’ll need a few pieces of software to analyze the kinematics of
-walking. First, <a href="https://imagej.net/software/fiji/">download and
-install FIJI</a>, a free image analysis package (FIJI is just imageJ)
-that just about everyone in the natural sciences uses at one point in
-their career. Second, enable the MTrackJ plugin by following these <a
-href="https://imagej.net/libs/imagescience">directions</a> MTrackJ is a
-simple tracking routine that allows users to track points across video
-frames.</p>
-<p>We’ll be working with video data captured with our phones. The file
-types associated with videos shot by phones are often unworkable in
-imageJ/FIJI. We need a way of converting your phone videos to AVI
-format, a file type that imageJ can open. Videos can be rendered into
-AVI files using—you guessed it—using R. See below</p>
+<p>There are two parts to this lab: (1) investigating material
+properties (stress-strain relationships and anisotropy) and (2)
+instigating structural properties (beam loading and viscoelasticity). In
+the former, you will use a simple loading technique, measure the
+resultant strain, examine stiffness, and the extent to which the
+material is anisotropic.</p>
+<p>In the latter part, you will use 3-point bending tests to determine
+structural properties and flexural stiffness of wood. You’ll also
+examine how time-dependency varies according to the viscoelastic nature
+of wood (i.e, how moist it is).</p>
 </div>
-<div id="max-out-your-pendulum" class="section level3">
-<h3>Max out your pendulum</h3>
-<p>For this part of the MP you will compare a predicted maximum walking
-velocity (<span class="math inline">\(v_{max}\)</span>) to observed
-maximum walking speed. First things first: mark off a distance of 5
-meters on level ground (e.g., in the hall, atrium, etc.).</p>
-<p>With your knees locked and your hands by your side and not swinging,
-walk on your heels as fast as you can across the the marked distance.
-Concentrate on not using any movement in your pelvis or knees. This may
-require some practice. You may, if you’re careful, have a lab partner
-push you gently to get you going at the start of the 5-m field. With a
-phone or watch, record the time it takes to traverse the 5-m
-distance.</p>
-<p>Using these data, compute the velocity (in m s<span
-class="math inline">\(^{-1}\)</span>) and compare this to your
-calculated <span class="math inline">\(v_{max}\)</span> based on theory.
-Please enter these data <a
-href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing"><strong>HERE</strong></a>.
-They can be accessed here for later analysis as well.</p>
+<div id="stretch-the-pig" class="section level2">
+<h2>Stretch the pig</h2>
+<p>These experiments will be done on your own with your team. Come by
+Higgins 535 to pick up the materials you need:</p>
+<ul>
+<li>Ruler</li>
+<li>Nuts</li>
+<li>Floss</li>
+<li>Clamp</li>
+<li>Intestine</li>
+</ul>
+<p>For this part of the lab you will use a spring clamp to mount a piece
+of animal tissue to a table. The animal tissue we will be using is pig
+intestine, which is an extremely thin and stretchy material typically
+used as sausage casing. We will measure the stress-strain relationship
+of pig intestine by cutting a small strip of the material and stretching
+it by applying a force to one end. This force will create stress within
+the material and cause it to elongate (strain). As you modulate the
+amount of stress applied to the material, you will measure its
+deformation and thereby derive its stress-strain relationship.</p>
+<div id="preparing-your-sample" class="section level3">
+<h3>Preparing your sample</h3>
+<p>The pig intestine was obtained from a local butcher. The material is
+difficult to work with once it starts to desiccate, so you will want to
+do as much preparation of the sample as possible before cutting your
+piece and beginning your experiments. First, cut a piece and the
+material along the axial or circumferential direction—you will test the
+gut in both directions for this lab, so the order doesn’t matter.
+Measure all three of its dimensions to the nearest mm with the supplied
+ruler. Next, find a clean section of the intestine and clamp it a table.
+Once you have the material bound, cut away material so that you are left
+with a thin strip about 5–8 cm long and 1 cm wide. Tie a short section
+of dental floss to the free end and then tie a hook to the free end of
+the floss fashioned from a paperclipl.</p>
 </div>
-<div id="full-tilt-walking" class="section level3">
-<h3>Full-tilt walking</h3>
-<p>The radius of your rotating mass can be effectively increased by
-subtle changes in posture, including active alterations in pelvic
-position. Lateral pelvic tilt is one such mechanism and the angle of
-tilt can be measured using ImageJ. While pelvic tilt results in a
-lengthening of the plant-leg, there are other postural consequences.</p>
-<p>Start with donning the markers and the yardstick with markers
-attached at its end as in the figure below. Attach one small marker low
-on the front of your shin. Attach the yardstick with binder clips to
-your pantwaist. Be sure that the yard stick rests right above your
-anterior superior illiac spines (those bony points on the front of your
-hip). This apparatus will amplify your pelvic motions and make data
-recording much easier. Have a project partner record video (in normal
-video mode) of your walk as you walk toward them over the 5-m course
-from the earlier experiment. Be careful that the full width of the
-yardstick in the frame at all times. You’ll perform two trials per
-partner: (1) walking normally at a comfortable speed and (2) walking
-normally but as quickly as possible. For both trials, use ImageJ and the
-MTrackJ plugin to track the markers on your body. From these data, you
-should compute pelvic tilt angle (i.e. the difference between the
-maximum and minimum tilt angle). Please also enter these data <a
-href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing">here</a>.
-Remember, these data can be accessed for analysis from this directory.
-Also notice there are data from previous iterations of the class. Be
-sure to use all of these in your analysis.</p>
-<p>To analyze your videos in ImageJ, you’ll need to convert them to and
-AVI file and have the MtrackJ plugin installed (see below). Once the AVI
-file is stored in a directory, open it with ImageJ (File<span
-class="math inline">\(\rightarrow\)</span> Import <span
-class="math inline">\(\rightarrow\)</span> AVI . . .). Launch the
-MTrackJ plugin (Plugins <span class="math inline">\(\rightarrow\)</span>
-MtrackJ) and follow the directions from the online <a
-href="http://www.imagescience.org/meijering/software/mtrackj/quickstart/">manual</a>.
-The goal here is to track four positions and calculate your two
-kinematic values: pelvic tilt and leg angle.</p>
-<div class="figure" style="text-align: center">
-<img src="walkfront.png" alt="You lookin' all marked and stuff" width="258" />
-<p class="caption">
-You lookin’ all marked and stuff
-</p>
+<div id="measuring-stress-and-strain" class="section level3">
+<h3>Measuring stress and strain</h3>
+<p>In this section, you will obtain a stress-strain relationship for
+your sample by stretching your sample with known weights. Next, you hang
+weights from the free end of the sample to apply a known stress. Our
+weights in this case are 1/4-20 nuts, which each weigh 3.2 g, and you
+will suspend these from your sample using a paperclip or some other
+negligibly small item. As you add more mass to the free end of the
+sample, measure the extension of the sample with a ruler. Measure strain
+under 5 different loads, each representing the addition of two 1/4-20
+nuts, and then remove them, one pair by one pair and measure the strain
+again. Record your results on worksheet below for both an axially loaded
+sample and a circumferentially loaded sample.</p>
 </div>
 </div>
+<div id="bend-the-twig" class="section level2">
+<h2>Bend the twig</h2>
+<p>For this set of experiments, we’ll be meeting in Prof. Kenaley’s lab
+(Higgins 535).</p>
+<div id="preparing-your-sample-1" class="section level3">
+<h3>Preparing your sample</h3>
+<p>For this part of the lab, you will be three-point bending a
+biomaterial (wood . . . birch, methinks). You will deflect a piece a
+known distance (1 mm) of wood spanning two supports separated by 20 mm.
+To begin, record the width and thickness or your piece of wood (in the
+middle is fine).</p>
+<p>Next, break the stirrer in half. Immerse one of the broken halve
+under water for 5 minutes.</p>
 </div>
-<div id="what-to-address-in-the-report" class="section level2">
-<h2>What to address in the report</h2>
-<ol style="list-style-type: decimal">
-<li>How did class-wide <span class="math inline">\(v_{max}\)</span> (the
-theoretical velocity) compare to actual class-wide pendulum-type walking
-speed? Were any patterns related to this revealed by calculating the
-Froude number?</li>
-<li>How does actual pendulum walking speed vary with human size and sex?
-<!-- for future . . . How does actual recorded maximum pendulum walking speed ($v_{max}$) vary with human size and sex?  --></li>
-<li>How does pelvic tilt change with increased normal walking speeds.
-What is the biomechanical basis for this?</li>
-<li>Does pelvic tilt at comfortable normal walking speeds vary with
-human size (i.e., mass and height) and sex?</li>
-</ol>
-<p><strong>NOTE:</strong> Make sure you enter your data as soon as
-possible <a
-href="https://docs.google.com/spreadsheets/d/13_dIyeWHcFt_7bKkLkgFhfY0IRjRBRmlI9y5xj2Juhc/edit?usp=sharing">here</a>.
-Be sure to use all of these data from past classes in your analysis.</p>
-</div>
-<div id="a-kick-start" class="section level2">
-<h2>A kick start</h2>
-<p>First, we need a way of converting our phone videos into a format
-readable by FIJI/imageJ. The AVI format is essentially a stack of raw
-images that is readable by almost any software. So let’s convert our
-videos to AVI. Fortunately, R can do that for us if we have the
-<code>av</code> package installed.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(av)</span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="co">#set your working directory</span></span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">&quot;some_directory&quot;</span>)</span>
-<span id="cb1-5"><a href="#cb1-5" tabindex="-1"></a></span>
-<span id="cb1-6"><a href="#cb1-6" tabindex="-1"></a><span class="co">#list files ending in MOV, the format stored by iphones</span></span>
-<span id="cb1-7"><a href="#cb1-7" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="at">full.names =</span> T,<span class="at">pattern=</span><span class="st">&quot;.MOV&quot;</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" tabindex="-1"></a><span class="co">#create a place to store images</span></span>
-<span id="cb1-11"><a href="#cb1-11" tabindex="-1"></a><span class="fu">dir.create</span>(<span class="st">&quot;images&quot;</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" tabindex="-1"></a><span class="co">#for each file, f, breakup the .MOV into the images and build avi files</span></span>
-<span id="cb1-14"><a href="#cb1-14" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> f){</span>
-<span id="cb1-15"><a href="#cb1-15" tabindex="-1"></a>  <span class="cf">if</span>(<span class="fu">dir.exists</span>(<span class="st">&quot;images&quot;</span>)) <span class="fu">unlink</span>(<span class="st">&quot;images&quot;</span>,<span class="at">recursive =</span> T)</span>
-<span id="cb1-16"><a href="#cb1-16" tabindex="-1"></a></span>
-<span id="cb1-17"><a href="#cb1-17" tabindex="-1"></a>  <span class="co">#extract images</span></span>
-<span id="cb1-18"><a href="#cb1-18" tabindex="-1"></a>  <span class="fu">av_video_images</span>(i,<span class="at">destdir =</span><span class="st">&quot;images&quot;</span>,<span class="at">format=</span><span class="st">&quot;tiff&quot;</span>)</span>
-<span id="cb1-19"><a href="#cb1-19" tabindex="-1"></a>  </span>
-<span id="cb1-20"><a href="#cb1-20" tabindex="-1"></a>  <span class="co">#list images</span></span>
-<span id="cb1-21"><a href="#cb1-21" tabindex="-1"></a>  f.i <span class="ot">&lt;-</span> <span class="fu">list.files</span>(<span class="st">&quot;images&quot;</span>,<span class="at">full.names =</span> T)</span>
-<span id="cb1-22"><a href="#cb1-22" tabindex="-1"></a>  </span>
-<span id="cb1-23"><a href="#cb1-23" tabindex="-1"></a>  <span class="co">#make the avi from the images from the MOV</span></span>
-<span id="cb1-24"><a href="#cb1-24" tabindex="-1"></a>  <span class="fu">av_encode_video</span>(f.i,<span class="fu">gsub</span>(<span class="st">&quot;MOV&quot;</span>,<span class="st">&quot;avi&quot;</span>,<span class="fu">basename</span>(i)),<span class="at">codec =</span> <span class="st">&quot;rawvideo&quot;</span>)</span>
-<span id="cb1-25"><a href="#cb1-25" tabindex="-1"></a>}</span></code></pre></div>
-<p>After converting your videos, you’ll have to assemble a bunch of data
-from them. Fortunately, we’ve learned how to do this lately. However,
-for it to proceed smoothly, you might need some guidance, especially
-dealing with the data from the MTrackJ analysis. Let’s assume you
-produced 4 files for two teammates that each walked fast and slowly. If
-we had our data file names begin with “walk” and end in “.txt”, we could
-use a handy <code>grep</code> search to find all the files we want to
-analyze in the directory.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>walk.files <span class="ot">&lt;-</span> <span class="fu">list.files</span>()[<span class="fu">grep</span>(<span class="st">&quot;walk_.*.txt&quot;</span>,<span class="fu">list.files</span>())]</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">print</span>(walk.files)</span></code></pre></div>
-<pre><code>## [1] &quot;walk_fast_me.txt&quot;  &quot;walk_fast_you.txt&quot; &quot;walk_slow_me.txt&quot; 
-## [4] &quot;walk_slow_you.txt&quot;</code></pre>
-<p>Notice how they are similarly named “walk_speed_subject.txt”. That
-familiar convention of adding metadata to the filename makes it easy to
-extract “data about the data” from the file names. Now, as we did in the
-first , let’s concatenate all the data into one data frame for
-subsequent plotting and analysis.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a>walk.dat <span class="ot">&lt;-</span> <span class="fu">list</span>() <span class="co">#make a list for storing</span></span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="cf">for</span>(i <span class="cf">in</span> walk.files){</span>
-<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a>  walk.i <span class="ot">&lt;-</span> <span class="fu">read_delim</span>(i,<span class="at">delim=</span><span class="st">&quot;</span><span class="sc">\t</span><span class="st">&quot;</span>) <span class="co">#read data as a tibble</span></span>
-<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a>  met.dat <span class="ot">&lt;-</span> <span class="fu">unlist</span>(<span class="fu">strsplit</span>(i,<span class="st">&quot;_&quot;</span>)) <span class="co">#split i for metadata and unlist it</span></span>
-<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a>  speed <span class="ot">&lt;-</span> met.dat[<span class="dv">2</span>] <span class="co">#get speed</span></span>
-<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a>  subject <span class="ot">&lt;-</span> <span class="fu">gsub</span>(<span class="st">&quot;.txt&quot;</span>,<span class="st">&quot;&quot;</span>,met.dat[<span class="dv">3</span>]) <span class="co">#remove &quot;.txt&quot; </span></span>
-<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a>  walk.dat[[i]] <span class="ot">&lt;-</span> walk.i<span class="sc">%&gt;%</span></span>
-<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">speed=</span>speed,<span class="at">subject=</span>subject)</span>
-<span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>}</span></code></pre></div>
-<pre><code>## Rows: 150 Columns: 14
-## ── Column specification ───────────────────────
-## Delimiter: &quot;\t&quot;
-## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
-## lgl  (2): D2R [pixel], v [pixel/sec]
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-## Rows: 150 Columns: 14
-## ── Column specification ───────────────────────
-## Delimiter: &quot;\t&quot;
-## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
-## lgl  (2): D2R [pixel], v [pixel/sec]
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-## Rows: 150 Columns: 14
-## ── Column specification ───────────────────────
-## Delimiter: &quot;\t&quot;
-## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
-## lgl  (2): D2R [pixel], v [pixel/sec]
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-## Rows: 150 Columns: 14
-## ── Column specification ───────────────────────
-## Delimiter: &quot;\t&quot;
-## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
-## lgl  (2): D2R [pixel], v [pixel/sec]
-## 
-## ℹ Use `spec()` to retrieve the full column specification for this data.
-## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>walk.dat <span class="ot">&lt;-</span> <span class="fu">do.call</span>(rbind,walk.dat)</span>
-<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="fu">head</span>(walk.dat)</span></code></pre></div>
-<pre><code>## # A tibble: 6 × 16
-##      Nr   TID   PID `x [pixel]` `y [pixel]` `t [sec]` `I [val]` `Len [pixel]`
-##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;     &lt;dbl&gt;     &lt;dbl&gt;         &lt;dbl&gt;
-## 1     1     1     1        200.        252.         0       255         0    
-## 2     2     1     2        200.        253.         0       255         0.31 
-## 3     3     1     3        200.        253.         0       251         0.589
-## 4     4     1     4        200.        253.         0       246         0.91 
-## 5     5     1     5        199.        253.         0       241         1.17 
-## 6     6     1     6        199.        254.         0       255         1.42 
-## # ℹ 8 more variables: `D2S [pixel]` &lt;dbl&gt;, `D2R [pixel]` &lt;lgl&gt;,
-## #   `D2P [pixel]` &lt;dbl&gt;, `v [pixel/sec]` &lt;lgl&gt;, `? [deg]` &lt;dbl&gt;,
-## #   `?? [deg]` &lt;dbl&gt;, speed &lt;chr&gt;, subject &lt;chr&gt;</code></pre>
-<p>Sweet. But, notice that the column names given to the data are
-gobblygook with all those spaces in and “[pixel]” and “[sec]” in there.
-Let’s change them for easy referencing with a <code>str_remove()</code>
-(remove string) operation from the<code>stringr</code> package loaded
-with <code>tidyverse</code> . . .</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="fu">colnames</span>(walk.dat) <span class="ot">&lt;-</span> <span class="fu">str_remove</span>(<span class="fu">colnames</span>(walk.dat),<span class="st">&quot; </span><span class="sc">\\</span><span class="st">[pixel</span><span class="sc">\\</span><span class="st">]| </span><span class="sc">\\</span><span class="st">[sec</span><span class="sc">\\</span><span class="st">]&quot;</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="fu">head</span>(walk.dat)</span></code></pre></div>
-<pre><code>## # A tibble: 6 × 16
-##      Nr   TID   PID     x     y     t `I [val]`   Len   D2S D2R      D2P
-##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;lgl&gt;  &lt;dbl&gt;
-## 1     1     1     1  200.  252.     0       255 0     0     NA    NA    
-## 2     2     1     2  200.  253.     0       255 0.31  0.31  NA     0.31 
-## 3     3     1     3  200.  253.     0       251 0.589 0.589 NA     0.279
-## 4     4     1     4  200.  253.     0       246 0.91  0.908 NA     0.321
-## 5     5     1     5  199.  253.     0       241 1.17  1.16  NA     0.256
-## 6     6     1     6  199.  254.     0       255 1.42  1.41  NA     0.249
-## # ℹ 5 more variables: `v [pixel/sec]` &lt;lgl&gt;, `? [deg]` &lt;dbl&gt;, `?? [deg]` &lt;dbl&gt;,
-## #   speed &lt;chr&gt;, subject &lt;chr&gt;</code></pre>
-<p>That’s better. Now, let’s pare down the data to those columns we
-actually care about, “x” and “y”, the x and y positions of the points,
-“subject”, and “speed”. Also notice that the MTrackJ file contains a
-“TID” and “PID” column identifying to what track (which dot in the
-image) and point (the series of positions) to which the x and y
-positions belong. So let’s keep these columns, too, then dump the
-others, and give it a quick plot with ggplot.</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat<span class="sc">%&gt;%</span></span>
-<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a>  <span class="fu">select</span>(TID,PID,x,y,subject,speed)</span>
-<span id="cb10-3"><a href="#cb10-3" tabindex="-1"></a>walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb10-4"><a href="#cb10-4" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x,y,<span class="at">col=</span>speed))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">facet_grid</span>(subject<span class="sc">~</span>.)</span></code></pre></div>
-<p><img src="MP2_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p>Notice that our leg point (TID=3) is higher than the hip. That’s odd!
-Well, not really. Convention holds that pixel 0,0 is the upper left of
-the image, so that means the coordinates are flipped vertically in our
-images. So let’s flip them back by finding the absolution value each y
-value minus the maximum y position (the image height).</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a>  <span class="fu">group_by</span>(speed,subject)<span class="sc">%&gt;%</span></span>
-<span id="cb11-3"><a href="#cb11-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">y=</span><span class="fu">abs</span>(y<span class="sc">-</span><span class="fu">max</span>(y)))</span>
-<span id="cb11-4"><a href="#cb11-4" tabindex="-1"></a>walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb11-5"><a href="#cb11-5" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(x,y,<span class="at">col=</span>speed))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">facet_grid</span>(subject<span class="sc">~</span>.)<span class="co">#grid it with columns = to speed</span></span></code></pre></div>
-<p><img src="MP2_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p>OK, all well ’n good. But does it make sense to identify our tracked
-points by “TID”, that is 1, 2, and 3? Wouldn’t it be better to change
-this to some character description like “hipR”, “hipC”, and “legR”, for
-right hip, center of the hip, and right leg, respectively. Let’s do it
-by changing TID to these strings using a series of mutate operations
-that replace each TID value. (if you do this, confirm the order is
-correct!)</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a>walk.dat2 <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">1</span>, <span class="st">&quot;hipR&quot;</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">2</span>, <span class="st">&quot;hipC&quot;</span>))<span class="sc">%&gt;%</span></span>
-<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">TID=</span><span class="fu">replace</span>(TID, TID<span class="sc">==</span><span class="dv">3</span>, <span class="st">&quot;legR&quot;</span>))</span>
-<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a><span class="fu">head</span>(walk.dat2)</span></code></pre></div>
-<pre><code>## # A tibble: 6 × 6
-## # Groups:   speed, subject [1]
-##   TID     PID     x     y subject speed
-##   &lt;chr&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;
-## 1 hipR      1  200.  178. me      fast 
-## 2 hipR      2  200.  178. me      fast 
-## 3 hipR      3  200.  178. me      fast 
-## 4 hipR      4  200.  178. me      fast 
-## 5 hipR      5  199.  177. me      fast 
-## 6 hipR      6  199.  177. me      fast</code></pre>
-<p>Now it’ll be easier to keep track of which track we intend to
-reference in any plotting or analysis.</p>
-<p>With the data loaded, let’s think about what sort of operations you
-need to produce on this data set. You need angle for pelvic tilt, right?
-The angle subtended by the tip of the of our meter-stick amplifiers and
-the center of the pelvis (<span class="math inline">\(\theta\)</span>)
-can be described in the following:</p>
-<div class="figure" style="text-align: center">
-<img src="img/tiltcalc.png" alt="A look at the coordinates of the amplified pelvic positions" width="324" />
-<p class="caption">
-A look at the coordinates of the amplified pelvic positions
-</p>
-</div>
-<p>where points <span class="math inline">\(x_1y_1\)</span>, <span
-class="math inline">\(x_2y_2\)</span>, and <span
-class="math inline">\(x_2y_1\)</span> respectively describe the
-coordinates of the pelvic center, the tip of the pelvic amplifier, and a
-theoretical point that represents a vertex horizontally aligned with the
-pelvis and vertically aligned with the hip amplifier. In other words,
-<span class="math inline">\(x_1y_1\)</span> describes the coordinates of
-“hipC” and <span class="math inline">\(x_2y_2\)</span> describes the
-coordinates of “hipR” in x and y pixels in the data above. So arranged,
-we have a right triangle with vertices described by the x and y pixels
-we have digitized with MTrackJ. With simple trigonometry, we can
-calculate <span class="math inline">\(\theta\)</span>. So please
-<strong>think about how to do this with calculations in R</strong>.</p>
-<p>The goal here is to calculate <span
-class="math inline">\(\theta\)</span> over every frame. But we have a
-problem. Notice that the data, as presented above, don’t have the x and
-y pixels for each point aligned in unique rows according to each frame
-(“PID”). That is, the data are in a “long” format where the column “TID”
-(the point name) describes “PID” (the frame). Put another way, x and y
-pixel data are repeated in succession <em>down</em> the table for each
-point name. This makes calculations for frame-specific <span
-class="math inline">\(\theta\)</span>, which will presumably require
-using the x and y coordinates for three points, very cumbersome.</p>
-<p>Not to worry, however. Data wonks are accustomed to this problem and
-we can simply transform the table to a “wide” format. By wide, we mean
-that, for each frame, we’ll have sepqrate x and y columns for each point
-name, making frame-specific calculations based on these points easy
-peasy.</p>
-<p>Here’s how it’s done:</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>walk.wide <span class="ot">&lt;-</span> walk.dat2<span class="sc">%&gt;%</span></span>
-<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="fu">pivot_wider</span>(<span class="at">names_from=</span>TID,<span class="at">values_from=</span><span class="fu">c</span>(<span class="st">&quot;x&quot;</span>,<span class="st">&quot;y&quot;</span>))</span>
-<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="fu">head</span>(walk.wide)</span></code></pre></div>
-<pre><code>## # A tibble: 6 × 9
-## # Groups:   speed, subject [1]
-##     PID subject speed x_hipR x_hipC x_legR y_hipR y_hipC y_legR
-##   &lt;dbl&gt; &lt;chr&gt;   &lt;chr&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;
-## 1     1 me      fast    200.   282.   185.   178.   167.  0.381
-## 2     2 me      fast    200.   282.   186.   178.   168.  0.394
-## 3     3 me      fast    200.   282.   186.   178.   168.  0.392
-## 4     4 me      fast    200.   282.   186.   178.   168.  0.370
-## 5     5 me      fast    199.   282.   186.   177.   168.  0.331
-## 6     6 me      fast    199.   283.   187.   177.   168.  0.310</code></pre>
-<p>Notice that we now have columns that are named as “x_” and “y_” with
-a point name suffix, i.e., we have taken the x and y column and made new
-ones based the point they describe. We have several new columns and
-fewer rows of course. For this we used <code>dplyr</code>’s
-<code>pivot_wider()</code> functions that, well, pivots long data to
-wide data. We told <code>pivot_wider()</code> to take the names from
-“TID” (the point names) to form the new columns with values from the
-columns named “x” and “y”. We could now compute <span
-class="math inline">\(\theta\)</span> for each PID (i.e., frame) based
-on the coordinates of each point.</p>
-</div>
-<div id="adding-references" class="section level2">
-<h2>Adding references</h2>
-<p>As we take on the rest of the mini-projexts, including this one,
-we’ll be reading scientific papers so that we can place our results in
-context. In addition, as scientists, we always want to support our
-statements of fact with references. For this, we’ll need to cite and
-include these papers in a bibliography.</p>
-<p><a
-href="https://rmarkdown.rstudio.com/authoring_bibliographies_and_citations.html">Adding
-reference to an .Rmd</a> is pretty straight forward. First we’ll need to
-establish a .bib file that will reside in the same directory as your
-.Rmd file. To do this, select “File-&gt;New File-&gt;Text File.” A new
-tab will appear with the name “Untitled1.txt”. Save this file as
-“BIOL5380.bib” (note the “.bib” extension) in the same directory as your
-.Rmd file. This .bib file will be referenced by your .Rmd when inserting
-citations.</p>
-<p>The framework for citations and references in .Rmd is formulated
-around <a href="https://en.wikipedia.org/wiki/BibTeX">BibTex</a>. BibTex
-is handy because you can find BibTex formatted citations in all your
-typical outlets (see note below). This system of citation uses a .bib
-file that contains text describing published works. Each work or
-potential reference in the .bib file is identified with a unique tag at
-the top of its entry and this entry contains the important bibliographic
-information. For instance, a .bib file containing a reference to the
-following paper</p>
-<p>Usherwood, J.R., 2005. Why not walk faster?. Biology Letters, 1(3),
-pp.338-341.</p>
-<p>would have the following text:</p>
-<pre><code>@article{usherwood2005not,
-  title={Why not walk faster?},
-  author={Usherwood, James Richard},
-  journal={Biology Letters},
-  volume={1},
-  number={3},
-  pages={338--341},
-  year={2005}
-}</code></pre>
-<p>Notice we have a tag “@article{usherwood2005not,”. This identifies
-the entry as a journal article (as apposed to a book or manual, etc.)
-and contains a key that is unique among all the other references in the
-.bib file. After this, the entry then goes on to identify the important
-bibliographic pieces: title, author, journal, etc.). Go ahead and add
-this BibTex reference to your BIOL5380.bib file and save it. For .Rmd to
-reference this .bib file, we need to specify a bibliography file in the
-YAML header. So now alter your YAML header at the top of the .Rmd so
-that it contains `bibliography: BIOL5380.bib”. The YAML header should
-now look something like this:</p>
-<pre><code>---
-title: &quot;Mini-Project 2&quot;
-author: The Inverted Pendula
-date: 26/Feb/2021
-output: html_document
-bibliography: BIOL5380.bib
----</code></pre>
-<p>With a .bib file now in place, we can use the reference keys to cite
-works listed in the .bib file. For this, we simply add the key label to
-the text with ‘@’. For instance, <code>@usherwood2005not</code> will
-produce <span class="citation">Usherwood (2005)</span>.</p>
-<p>When citing published works in text, we often follow certain
-formatting conventions. To be honest, your professor couldn’t care less
-about which format gets used in your .Rmds. Fortunately, R Markdown uses
-a familiar <a
-href="https://www.citethisforme.com/harvard-referencing">Harvard-like</a>
-format by default and he recommends plowing ahead with it. In a
-Harvard-like format, a reference in a sentence used in an explicit
-manner includes the reference year in parentheses. For instance, if we
-were to express that these authors studied the the Froude number in
-humans, we would write, “Underwood (2005) studied the Froude number in
-human walking.” The reference <code>usherwood2005not</code> is just
-inserted at the beginning of the sentence as in the following:</p>
-<pre><code>@usherwood2005not studied the Froude number in human walking.</code></pre>
-<p>However, Harvard-like convention follows that if we aren’t explicit
-about the study, we include the entire reference in parentheses. For
-instance, if we wanted to write, “A recent study considered the Froude
-number in human walking. <span class="citation">(Usherwood
-2005)</span>.” we would include the following:</p>
-<pre><code>A recent study considered the Froude number in human walking. [@usherwood2005not].</code></pre>
-<p>Note that <code>usherwood2005not</code> is wrapped in
-<code>[]</code>.</p>
-<p>In R Markdown, bibliographies will be placed at the end of the
-document (see below). Normally, this means you want to end your document
-with the header “References”. This will anchor the bibliography in this
-section.</p>
-<p>Note that this .bib file can be used in all your .Rmd documents, not
-just this one. As long as all the BibTex entries have unique keys, this
-.bib file can serve as a reference database for all your .Rmd
-citations.</p>
-<div class="green">
-<div class="row">
-<div class="col-sm-2">
-<a class="far fa-sticky-note fa-5x" style="color:#939681"></a>
-<!-- regular style -->
-</div>
-<div class="col-sm-9">
-<p>You may be wondering where you can find BibTex citations. Like so
-much of our lives, the answer points to Google, specifically Google
-Scholar. As an example, go to <a
-href="http://scholar.google.com/">Google Scholar</a> and search for the
-<span class="citation">Usherwood (2005)</span> paper. The entry under
-scholar will look like the following:</p>
-<p><img src="img/scholar1.png" /> <br></p>
-<p>Click on the big <code>"</code> at the bottom of the entry. This will
-bring you to a pop-up window that contains different citation formats
-for the entry.</p>
-<p><img src="img/scholar2.png" /> <br></p>
-<p>Now click on the “BibTex” link at the bottom of the window. This will
-lead you to a text file of the BibTex format. Simply copy and paste this
-to your .bib file. Voila.</p>
-</div>
-</div>
-</div>
+<div id="measuring-load-and-deformation" class="section level3">
+<h3>Measuring load and deformation</h3>
+<p>Prof. Kenaley will help you initiate the program that reads the load
+data from the load cell system. The program will depress a cylinder
+against the span of the wooden beam at either a slow or fast speed while
+it reads the load in grams. We will bend the dry piece with the wide
+side flat against the supports (“flat”, left in the figure below) at
+both slow and fast speeds and then flip it 90<span
+class="math inline">\(^\textrm{o}\)</span> so that the thin side rests
+against the supports (“flipped”, right in the figure below) and load it
+at a slow speed.</p>
+<center>
+<p><img src="img/wood.png" alt="drawing" width="400"/></p>
+<br> Two orientations of the wood stirrer.
+</center>
 <p><br></p>
+<p>Repeat the bending procedure twice for the wet piece, both with the
+broad side against the supports (i.e., “flat”), but once at a slow speed
+and once more at a fast speed.</p>
+<p>In total, we will have preformed 5 experiments:</p>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<thead>
+<tr>
+<th style="text-align:left;">
+moisture
+</th>
+<th style="text-align:left;">
+orientation
+</th>
+<th style="text-align:left;">
+speed
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+dry
+</td>
+<td style="text-align:left;">
+flat
+</td>
+<td style="text-align:left;">
+slow
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dry
+</td>
+<td style="text-align:left;">
+flat
+</td>
+<td style="text-align:left;">
+fast
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+dry
+</td>
+<td style="text-align:left;">
+flipped
+</td>
+<td style="text-align:left;">
+slow
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+wet
+</td>
+<td style="text-align:left;">
+flat
+</td>
+<td style="text-align:left;">
+fast
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+wet
+</td>
+<td style="text-align:left;">
+flat
+</td>
+<td style="text-align:left;">
+slow
+</td>
+</tr>
+</tbody>
+</table>
+<p>All the data will be recorded in a text file and placed in <a
+href="https://drive.google.com/drive/folders/1XgXdvIO2iOC7NwMiAc4Z7CXpJAX4PWvC?usp=sharing">this
+directory</a>.</p>
 </div>
-<div id="references" class="section level2 unnumbered">
-<h2 class="unnumbered">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-usherwood2005not" class="csl-entry">
-Usherwood, James Richard. 2005. <span>“Why Not Walk Faster?”</span>
-<em>Biology Letters</em> 1 (3): 338–41.
+</div>
+<div id="data-sheet" class="section level2">
+<h2>Data sheet</h2>
+<div id="guts" class="section level3">
+<h3>Guts</h3>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Material Data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Longitudinal
+</th>
+<th style="text-align:left;">
+Circumferential
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Length (m)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thickness (m)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Width (m)
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cross-sectional area m<span class="math inline">\(^2\)</span>
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="stress-strain-data" class="section level3">
+<h3>Stress-strain data</h3>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Intestine Data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Loading
+</th>
+<th style="text-align:left;">
+Unloading
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<ol style="list-style-type: decimal">
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="2" style="list-style-type: decimal">
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="3" style="list-style-type: decimal">
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="4" style="list-style-type: decimal">
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<ol start="5" style="list-style-type: decimal">
+<li></td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol></li>
+</ol>
+</div>
+<div id="beams" class="section level3">
+<h3>Beams</h3>
+<table class="table" style="margin-left: auto; margin-right: auto;">
+<caption>
+Material Data
+</caption>
+<thead>
+<tr>
+<th style="text-align:left;">
+</th>
+<th style="text-align:left;">
+Value
+</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Length (m)
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Thickness (m)
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Width (m)
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Cross-sectional area m<span class="math inline">\(^2\)</span>
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Three-point span
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+</td>
+<td style="text-align:left;">
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
+<div id="questions-to-address-in-your-report" class="section level2">
+<h2>Questions to address in your report</h2>
+<ol style="list-style-type: decimal">
+<li>What is the stiffness of the intestine in longitudinal and axial
+loading? How does the stiffness in these two directions compare?</li>
+<li>What evidence do you have that an intestinal tube is
+anisotropic?</li>
+<li>What do you think the function of anisotropy is in the
+intestine?</li>
+<li>Did beam orientation result in different flexural stiffness?</li>
+<li>Did strain rate affect wood flexural stiffness and did this response
+vary according to how wet the material was?</li>
+<li>How would this be important in loads applied to a human skeletal
+element?</li>
+<li>In your beam analysis, did you find any evidence of
+viscoelasticity?</li>
+</ol>
+<p>You can find explicit detail concerning the organization of an MP
+report <a
+href="https://bcbiomech.github.io/class/mini_projects.html">here</a>.
+This report is due Wednesday, March 17th.</p>
+</div>
+<div id="what-to-pay-attention-to-in-writing-the-report"
+class="section level2">
+<h2>What to pay attention to in writing the report</h2>
+<ul>
+<li>Data are plural.</li>
+<li>Don’t use <code>print()</code>, <code>head()</code>, etc. commands
+needlessly . . . we don’t need a large data table in our reports.</li>
+<li>Better methods for printing tables (eg. <code>pander()</code>,
+<code>kable</code>+<code>kableExtra</code>, etc.).</li>
+<li>Figures and tables need captions! For figures, use
+<code>fig.cap</code> parameter in r chunk options. For tables use the
+<code>caption</code> parameter in <code>kable()</code> or similar.</li>
+<li>Figures should be appropriately sized (check out
+<code>fig.width</code> and <code>fig.height</code> in r chunk
+options).</li>
+<li>Figure axes should be labeled appropriately.</li>
+</ul>
 </div>
 
 
