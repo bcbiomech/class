@@ -1,182 +1,164 @@
 ---
-title: 'Mini Project 3: Stretch the Pig, Bend the Twig'
+title: "Miniproject 2:Beach Muscles "
+bibliography: BIOL5380.bib
 ---
+
 
 ## Introduction
 
-Our third Mini Project explores experimental methods for quantifying the material and structural properties of biological tissue (e.g., wood and intestine). Please recall that material properties (the inherent ones) are independent of structural properties (i.e.,size and shape). The goals of this MP are to:
-
-1. Learn how to measure force and displacement so that you can construct a stress-strain curve.
-2. Use a homemade three-point bender to estimate flexural stiffness of biomaterials.
-3. Understand data acquisition using a computer and an Arduino.
-4. Explore the concept of anisotropy
-5. Combine your recently gathered skills in R programming with a proficiency with RMarkdown to write a short 2-page report outlining your results and conclusions.
-
-## Conceptual basis
-In lecture recentlty we explored the concepts of stress ($\sigma$), strain ($\varepsilon$), and stiffness ($E$, Young's modulus). These are all material properties and represent mechanical means to characterize biomaterials. These physical quantities are summarized here:
+Our musculoskeletal system is pretty handy in permitting us to move, hold, or manipulate objects, including our own bodies. Many vertebrate biomechanical systems make use of muscular force applied to levers in order to resists or overcome these loads. In this MP, we'll explore a classic lever system in the tetrapod body---the forelimb---one of the [3rd-order type](https://openoregon.pressbooks.pub/bodyphysics/chapter/body-levers/). Specifically, we'll consider how skeletal geometry and important physiological parameters like muscle length, and mass affect the force output in this system and how much it can accelerate a load.
 
 
-$$\sigma =\frac {F}{A} $$
+### First (Lady) Principles
 
-$$\varepsilon =\frac {\Delta L}{L_o} $$
+Imagine that you're at the plex and, in an effort to have arms that look as sleek and muscular as our [First Lady's](https://www.runnersworld.com/runners-stories/a20837148/im-a-runner-dr-jill-biden/), you start a program of biceps curls. Your job in this MP is to estimate how much mass you can lift (i.e., accelerate) with your two biceps groups. Let's assume the following.
 
-$$\varepsilon =\frac{d \sigma}{d \varepsilon}$$ 
- 
++ All the force to do the lift is exerted by your biceps femoralis
++ The weight in the palm of your hand
++ Your humerus is stationary
++ The elbow joint is a simple hinge linkage with one DOF
++ The flexion of the arm (i.e., curl motion) begins when your arm angle is 10$^\circ$ and is finished at 135$^\circ$.
 
-where $F$ is the applied force, $A$ is the cross-sectional area over which that force is applied, $\Delta L$ is the change in length in response to $F$, and $L_o$ is the initial length of the specimen. Young`s modulus ($E$) is the slope of the stress-strain curve and is constant for Hookean materials (i.e., they obey Hooke's Law and are completely spring like). As you may discover in this MP (and we have discussed in class), many biological materials are non-Hookean and the relationship between stress and strain is not linear. In addition, many biological materials may also demonstrate -anisotropic- behavior: the relationship between the stress and strain depends on the direction in which the stress is applied. For example, any biomaterial containing fibers of axial orientation (that is, parallel fibers) will show some degree of anisotropy. Examples of biomaterials with fibers include skin, intestine, wood, plant stems, etc.
+What we have here, according to a classic concept in physics, is a dynamic equilibrium problem where: if a torque applied is greater than the moment of mass on the lever, the mass of the dumbbell will be accelerated, a situation described by:
 
-In addition to nonlinear and anisotropic behaviors, many biomaterials are viscoelastic (as we have discussed in lecture), demonstrating a time-dependence in their response to loads. There are a host of methods available for quantifying time-dependent properties including creep tests (applying a constant force, i.e., an isotonic load) or applying a load at variable speeds. We'll take this latter approach. 
+$$
+ \alpha=\frac{\tau}{I},
+$$
 
-Lastly, we will learn that loads are not applied in simple tensile or compressive modes. Say, in bending a beam, the load is compressive and tensile at the same time (see below). How a biomaterial responds under bending (e.g., amount of strain, load at failure, etc.) is of a particular interests to biomechanists both to understand organismal design from an evolutionary perspective and what materials may be capable or incapable of in nature. To understand this structural response to a bending load, we may borrow a bag of tricks from material engineers: the three-point bending test. 
+where $\alpha$ is angular acceleration (in rad$\cdot$s$^{-2}$), $\tau$ is torque (N$\cdot$m), and $I$ is the mass moment of inertia (in kg$\cdot$m$^2$). The dumbbell has $I$ according to its distance from the fulcrum (i.e., joint) given by:
 
-<center>
-![bendstress](img/bendstress.jpg){#bendstress}
-<br>
-A beam subject to bending.
-</center>
+$$
+I=r^2 \cdot m,
+$$
 
-<br>
+where $r$ is the radius (the outlever) of the load and $m$ the mass of the load. This is the rotational application of Newton's Second Law and the basis of our model.
 
-As we'll learn from lecture, the two-dimensional shape of a beam determines its strain relationship to a bending stress or its deformation. So, how much it will deform under a stress is given by the flexural stiffness ($M$): 
-
-$$ M=EI $$
- 
-
-where $E$ is the Young's modulus and $I$ is the second moment area, which is essentially the distribution of that stiffness (i.e., area) through the shape with reference to the axis along which a load is applied. Thus, to understand the deformation that will result from a load and vice-versa, we must incorporate information about the shape. So, for a  beam under a symmetrical bending load, the deflection is given by:
-
-$$d=\frac{Fl^3}{3EI}$$
-
-where d is the deflection, $F$ is the applied force, l is the length of the beam, and $EI$ is the flexural stiffness. Using this, if we measure the deflection of a beam of length $l$ under a known load F, we can derive an estimate for the flexural stiffness of the beam, $EI$.
-
-## Measuring forces
-We, as biomechanists, can measure measure forces (i.e., loads) in several ways, some direct, some simple, and some more sophisticated. For instance, to apply a load to a material, one may simply add a mass and, because we're on Earth, we know that mass's acceleration, and thus can estimate force. In another manner, we can rely on transducers to convert  (i.e., -transduce-) signals from one type of energy to another. For this method of measuring changes in force, say a signal stored as mechanical energy, we must convert this mechanical energy to electrical energy using a force transducer. Such a device outputs a change in voltage that is proportional to the force that was applied to them. One of the most common elements used in force transducers is a compression-extension load cell, which is what you will be using in this lab. These devices contain elements that, when a load is applied, strains (in this case, shortens or lengthens) a metal foil which is linearly elastic or Hookean. A voltage is passed through the Hookean foil, and, when the cell is loaded, the cylinder changes length and, thus, changes the resistance. This change in resistance changes the voltage.  This voltage can be passed to an amplifier and microcontroller (computer) for analysis.
+Our task is now to establish how much torque ($\tau$) is generated at the outlever position of the arm system.
 
 ## Methods
 
-There are two parts to this lab: (1) investigating material properties (stress-strain relationships and anisotropy) and (2) instigating structural properties (beam loading and viscoelasticity). In the former, you will use a simple loading technique, measure the resultant strain, examine stiffness, and the extent to which the material is anisotropic.
+### A Law to Live By
 
-In the latter part, you will use 3-point bending tests to determine structural properties and flexural stiffness of wood. You'll also examine how time-dependency varies according to the viscoelastic nature of wood (i.e, how moist it is).
-
-
-## Stretch the pig
-
-These experiments will be done on your own with your team. Come by Higgins 535 to pick up the materials you need:
-
-+ Ruler
-+ Nuts
-+ Floss
-+ Clamp
-+ Intestine
-
-For this part of the lab you will use a spring clamp to mount a piece of animal tissue to a table. The animal tissue we will be using is pig intestine, which is an extremely thin and stretchy material typically used as sausage casing. We will measure the stress-strain relationship of pig intestine by cutting a small strip of the material and stretching it by applying a force to one end. This force will create stress within the material and cause it to elongate (strain). As you modulate the amount of stress applied to the material, you will measure its deformation and thereby derive its stress-strain relationship.
-
-### Preparing your sample
-
-The pig intestine was obtained from a local butcher. The material is difficult to work with once it starts to desiccate, so you will want to do as much preparation of the sample as possible before cutting your piece and beginning your experiments. First, cut a piece and  the material along the axial or circumferential direction---you will test the gut in both directions for this lab, so the order doesn't matter. Measure all three of its dimensions to the nearest mm with the supplied ruler. Next, find a clean section of the intestine and clamp it a table. Once you have the material bound, cut away material so that you are left with a thin strip about 5--8 cm long and 1 cm wide. Tie a short section of dental floss to the free end and then tie a hook to the free end of the floss fashioned from a paperclipl. 
-
-### Measuring stress and strain 
-
-In this section, you will obtain a stress-strain relationship for your sample by stretching your sample with known weights. Next, you hang weights from the free end of the sample to apply a known stress. Our weights in this case are 1/4-20 nuts, which each weigh 3.2 g, and you will suspend these from your sample using a paperclip or some other negligibly small item. As you add more mass to the free end of the sample, measure the extension of the sample with a ruler. Measure strain under 5 different loads, each representing the addition of two 1/4-20 nuts, and then remove them, one pair by one pair and measure the strain again. Record your results on  worksheet below for both an axially loaded sample and a circumferentially loaded sample.
-
-## Bend the twig
-
-For this set of experiments, we'll be meeting in Prof. Kenaley's lab (Higgins 535).
-
-### Preparing your sample
-
-For this part of the lab, you will be three-point bending a biomaterial (wood . . . birch, methinks). You will deflect a piece a known distance (1 mm) of wood spanning two supports separated by 20 mm. To begin, record the width and thickness or your piece of wood (in the middle is fine).
-
-Next, break the stirrer in half. Immerse one of the broken halve under water for 5 minutes.
-
-### Measuring load and deformation
-
-Prof. Kenaley will help you initiate the program that reads the load data from the load cell system. The program will depress a cylinder against the span of the wooden beam at either a slow or fast speed while it reads the load in grams. We will bend the dry piece with the wide side flat against the supports ("flat", left in the figure below) at both slow and fast speeds and then flip it 90$^\textrm{o}$ so that the thin side rests against the supports ("flipped", right in the figure below) and load it at a slow speed. 
-
-<center>
-
-<img src="img/wood.png" alt="drawing" width="400"/>
-
-<br>
-Two orientations of the wood stirrer.
-</center>
-<br>
-
-Repeat the bending procedure twice for the wet piece, both with the broad side against the supports (i.e., "flat"), but once at a slow speed and once more at a fast speed.
-
-In total, we will have preformed 5 experiments:
-
-```{r,echo=FALSE,message=FALSE}
-
-library(tidyverse)
-data.frame(d=c("dry","dry","dry","wet","wet"),o=c("flat","flat","flipped","flat","flat"),s=c("slow","fast","slow","fast","slow")
-)%>%knitr::kable(col.names=c("moisture","orientation","speed"))%>%
-  kableExtra::kable_styling()
-```
+First we need to know the geometry of your arm lever system. How long is the outlever? How long is the inlever? Assuming the biceps originates just on the [coracoid process of the scapula](https://en.wikipedia.org/wiki/Coracoid_process) and inserts on the proximal radius, what is the insertion angle and origin-insertion distance at rest right before the curl begins? Be sure to include these dimensions in a csv file with your submission. The file should look like this (replacing your name with mine):
 
 
-All the data will be recorded in a text file and placed in [this directory](https://drive.google.com/drive/folders/1XgXdvIO2iOC7NwMiAc4Z7CXpJAX4PWvC?usp=sharing).
+```{r}
+dat <- data.frame(outlever=0.26,inlever=0.05,ins.ang=160,orig.ins=0.3,mass=0.02) #mass from below
+write.csv(dat,"prof_kenaley_biceps.csv")
+dat <- read.csv("prof_kenaley_biceps.csv")
+print(dat)
+``` 
+
+Have a look at the figure of the arm system below to help you with this. In addition, the law of cosines may be really handy here. It states that, for a triangle with sides a, b, and c, the  angle A is:
+
+$$
+A=acos\Bigg(\cfrac{-a^2+b^2+c^2}{2bc}\Bigg)
+$$
 
 
+```{r elbow,echo=F,fig.cap=c("The human elbow lever, essentially a triangle (below) with variable length $a$"),fig.align = 'center'}
+knitr::include_graphics(c("img/elbow.png"))
 
-## Data sheet
+``` 
 
-### Guts
+```{r, echo=F,fig.cap=c("A triangle"),label="triangle",fig.align = 'center'}
+knitr::include_graphics(c("img/cosines.png"))
 
-```{r echo = FALSE }
+``` 
 
-mat.data <- matrix("",nrow=4, ncol=2)
-colnames(mat.data) <- c("Longitudinal","Circumferential")
-row.names(mat.data) <- c("Length (m)",	"Thickness (m)"	,	"Width (m)",	"Cross-sectional area m$^2$")
-knitr::kable(mat.data, caption = "Material Data")%>%kableExtra::kable_styling()
-```
+ 
+### Tension Headaches
 
+The magnitude of torque applied to the forearm during the curl depends upon the amount of force (i.e., tension) produced by the muscle. The amount of force produced by a muscle is, as we have discussed or will, determined by how many crossbridges can form. This number can be roughly estimated by a muscles's physiological cross-sectional area (PCSA), a value computed thusly:
 
-### Stress-strain data 
+$$
+PCSA=\cfrac{M_{muscle} \cdot cos(\phi)}{\rho \cdot L_{muscle}}
+$$
 
+where $M_{muscle}$ is the mass of the muscle (in kg), $\phi$ is the pennation angle, $L_{muscle}$ the length of the muscle (in cm), and $\rho$ the density of muscle. 
 
-```{r echo = FALSE, results = 'asis'}
+Compute the PCSA of your right biceps by making the following assumptions: 
 
-mat.data <- matrix("",nrow=6, ncol=2)
-colnames(mat.data) <- c("Loading","Unloading")
-row.names(mat.data) <- c(paste0(1:5,"."),"")
+1. the length of your biceps containing all the fibers is 60\% the origin-insertion length;
+2. the density of muscle is 0.00105 kg cm$^{-1}$; 
+3. the muscle is nonpennate ($\phi$=0); and lastly
+4. the mass of your muscle is approximated by a volume of playdough.
 
+To estimate the mass of your right biceps with playdough, sculpt the clay to a spheroid that matches the volume of your fully shortened biceps. Flexing and cupping the muscle with your left hand helps with estimating the muscle volume. Next, weigh the playdough (if your muscle mass is large enough, you may have to break the playdough into pieces and way them separately). Vertebrate muscle is about as dense as playdough. Record your mass data through the link above. 
 
-knitr::kable(mat.data, caption = "Intestine Data")%>%kableExtra::kable_styling()
+If the maximal force output of human white muscle is 20 N cm$^{-2}$ during an isometric contraction, how much force is produced at the start of the extension? Feel free to ignore length, velocity (it's isometric), and time considerations . . . for now. 
 
-```
+### Taking Mechanical Advantage
 
-### Beams
-
-```{r echo = FALSE, results = 'asis'}
-
-mat.data <- matrix("",nrow=6, ncol=1)
-colnames(mat.data) <- c("Value")
-row.names(mat.data) <- c("Length (m)",	"Thickness (m)"	,	"Width (m)",	"Cross-sectional area m$^2$","Three-point span","")
-knitr::kable(mat.data, caption = "Material Data")%>%kableExtra::kable_styling()
-
-```
+In a lever system, the torque applied (say by  muscle, $\tau_{muscle}$) is a function of the magnitude of the input force ($F_{max}$, if it's the maximal force as in the above), the inlever length ($L_{in}$), and angle of the input relative to the lever (the insertion angel, $\theta$). In other words, for our biceps:
 
 
+$$
+\tau_{muscle}=F_{max} \cdot L_{in} \cdot sin\theta
+$$
 
-## Questions to address in your report
+How much torque is applied to the forearm at 6 positions from the start of the curl to the end every 25$^\circ$?  Based on this, when is your arm lever system strongest? 
 
-1. What is the stiffness of the intestine in longitudinal and axial loading? How does the stiffness in these two directions compare?
-2. What evidence do you have that an intestinal tube is anisotropic? 
-3. What do you think the function of anisotropy is in the intestine? 
-4. Did beam orientation result in different flexural stiffness?
-5. Did strain rate affect wood flexural stiffness and did this response vary according to how wet the material was?
-6. How would this be important in loads applied to a human skeletal element?
-6. In your beam analysis, did you find any evidence of viscoelasticity?
+### A Hill-curve to Die On
+
+From this or previous explorations of muscle physiology, we now know that the amount of force produced by a muscle is a function of time (i.e., latency), shortening velocity, and muscle length. Thus, your previous calculations of torque could be a little bit off. Let's consider one of these factors, muscle length, an important part of Hill-type muscle models [@hill1938heat]. We're not so worried about a 20 ms or so delay in peak $F_{max}$, nor do we need to worry about shortening velocity because we're assessing whether an isometric contraction will impart enough torque to move (accelerate) the dumbbell. 
+
+To do this we must establish the relationship between the muscle-fiber length ($FL$) and muscle force ($F_{max}$), also called the force-fiber length factor or $F_{fl}$. Fortunately, the relationship between force and muscle fibre lengths has been approximated for mammalian skeletal muscle by several researchers, including [@Whiting:1999wv], from whence the following comes. It looks a bloody mess, but here it is:
+
+$$
+F_{fl}=-6.25\Bigg(\cfrac{FL}{FL_o}\Bigg)^2+12.5\Bigg(\cfrac{FL}{FL_o}\Bigg)-5.25,
+$$
 
 
+```{r fl,echo=F,fig.cap=c("The force-length relationship of vertebrate muscle"),fig.align = 'center'}
+knitr::include_graphics(c("img/fl.png"))
 
-You can find explicit detail concerning the organization of an MP report [here](https://bcbiomech.github.io/class/mini_projects.html). This report is due Wednesday, March 17th.
+``` 
 
-## What to pay attention to in writing the report
+where $FL_o$ is the optimal fiber length. So, ``What _is_ the optimal fiber length?" you ask. Well, we don't know, not exactly. But, a lot of good experimental work suggests that, for many muscles in many species, it's an $FL$  that is close to 75\% the maximum length. So let's use that, assuming the fibers are as long as the muscle and the maximum length of the muscle is reached at rest (i.e., elbow at 10$^\circ$). As you can see from the figure above, such a value assumes that the muscle is adapted to work over a range of lengths results in favorable sarcomere overlap.
 
-+ Data are plural.
-+ Don't use `print()`, `head()`, etc. commands needlessly . . . we don't need a large data table in our reports.
-+ Better methods for printing tables (eg. `pander()`, `kable`+`kableExtra`, etc.).
-+ Figures and tables need captions! For figures, use `fig.cap` parameter in r chunk options. For tables use the `caption` parameter in `kable()` or similar.
-+ Figures should be appropriately sized (check out `fig.width` and `fig.height` in r chunk options).
-+ Figure axes should be labeled appropriately.
+Once we know the $F_{fl}$ we can multiple this factor by $F_{max}$ to estimate how much force is being produced given the muscle's position of the force-length curve ($F_{muscle}$). Therefore, take this equation and write a function in R that you can pass through the $FL$s and $F_{max}$ values at each of the 6 arm positions to calculate $F_{muscle}$. 
+
+<!-- AME 2 includes custom funcitons -->
+
+*Include in your report an R chunk the script that codes this function.*
+
+### Arnold or Urkel?
+Now that you know how much torque your biceps can produce based on your arm's geometry, biceps mass and length, what is the maximum mass (i.e. heaviest weigh) you could lift at each position?
+
+Be sure to reference the second equation above to identify which variable for which you should solve. 
+
+The next and last part of this experiment is to test your model. So, skip on over to the *largest building on campus* and test these theoretical calculations. Find a weight of the closest mass for your calculation for an arm angle of 10$^\circ$. Go lighter or heavier until you can or can't accelerate the dumbbell.
+
+Please capture a video showing your attempt at proofing your model Be sure to give it the filename "first_last_plex" Make sure the mass is identified in the video and you isolate the biceps, i.e., no swinging.
+
+## What to address in the report
+
+After you recover, please synthesize your results and findings according to the suggested organization for an MP report. Remember, you must cite two relevant primary sources. You can find explicit detail concerning the organization of an MP report [here](mini_projects.html). 
+
+With this in mind, please address the following:
+
+  1. What are the $F_{muscle}$ values along the six arm position?
+  2. What input torques result from the $F_{muscle}$ values? 
+  3. How do these torque values compare to the those values computed using $F_{max}$ only, i.e., not considering a force-length relationship? 
+  4. For an arm angle of 10$^\circ$, how did your gym testing compare to your model estimations? That is, was it more or less than predicted? 
+
+  
+## Due Date and Submission
+
+Reports are due by Wednesday, February 14st at 11:59 pm. You should [compress your directory](https://forms.gle/sX9HpnV9bFgKJp3n7) containing the .Rmd, all class data, and videos of each member evaluatin the model. This .zip file should be uploaded [here](https://forms.gle/GbG1xC5vHxhQQ7hZA).
+
+
+What to pay attention to in writing the report:
+
++ Data are plural
++ Don't use print(), head(), etc. commands needlessly
++ Better methods for printing talbes (eg. pander())
++ Need captions for figures!
++ Figures should be appropriately sized.
++ Figure axes should be labelled appropriately
+
+
+### References
+
+
