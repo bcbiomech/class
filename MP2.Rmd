@@ -19,13 +19,13 @@ Imagine that you're at the plex and, in an effort to have arms that look as slee
 + The elbow joint is a simple hinge linkage with one DOF
 + The flexion of the arm (i.e., curl motion) begins when your arm angle is 10$^\circ$ and is finished at 135$^\circ$.
 
-What we have here, according to a classic concept in physics, is a dynamic equilibrium problem where: if a torque applied is greater than the moment of mass on the lever, the mass of the dumbbell will be accelerated, a situation described by:
+What we have here, according to a classic concept in physics, is a dynamic equilibrium problem. That is, if a torque applied is greater than the moment of mass on the lever, the mass of the dumbbell will be accelerated, a situation described by:
 
 $$
  \alpha=\frac{\tau}{I},
 $$
 
-where $\alpha$ is angular acceleration (in rad$\cdot$s$^{-2}$), $\tau$ is torque (N$\cdot$m), and $I$ is the mass moment of inertia (in kg$\cdot$m$^2$). The dumbbell has $I$ according to its distance from the fulcrum (i.e., joint) given by:
+where $\alpha$ is angular acceleration (in rad$\cdot$s$^{-2}$), $\tau$ is torque (N$\cdot$m), and $I$ is the mass moment of inertia (in kg$\cdot$m$^2$). The dumbbell has $I$ according to its distance from the fulcrum (i.e., joint), given by:
 
 $$
 I=r^2 \cdot m,
@@ -35,11 +35,15 @@ where $r$ is the radius (the outlever) of the load and $m$ the mass of the load.
 
 Our task is now to establish how much torque ($\tau$) is generated at the outlever position of the arm system.
 
+
+
 ## Methods
 
 ### A Law to Live By
 
-First we need to know the geometry of your arm lever system. How long is the outlever? How long is the inlever? Assuming the biceps originates just on the [coracoid process of the scapula](https://en.wikipedia.org/wiki/Coracoid_process) and inserts on the proximal radius, what is the insertion angle and origin-insertion distance at rest right before the curl begins? Be sure to include these dimensions in a csv file with your submission. The file should look like this (replacing your name with mine):
+First we need to know the geometry of your arm lever system. How long is the outlever? How long is the inlever? Assuming the biceps originates just on the [coracoid process of the scapula](https://en.wikipedia.org/wiki/Coracoid_process) and inserts on the proximal radius, what is the insertion angle and origin-insertion distance at rest right before the curl begins? Be sure to include these dimensions in a csv file with your submission. Also be sure to include the insertion angle in degrees. 
+
+The file should look like this (replacing your name with mine):
 
 
 ```{r}
@@ -69,7 +73,7 @@ knitr::include_graphics(c("img/cosines.png"))
  
 ### Tension Headaches
 
-The magnitude of torque applied to the forearm during the curl depends upon the amount of force (i.e., tension) produced by the muscle. The amount of force produced by a muscle is, as we have discussed or will, determined by how many crossbridges can form. This number can be roughly estimated by a muscles's physiological cross-sectional area (PCSA), a value computed thusly:
+The magnitude of torque applied to the forearm during the curl depends upon the amount of force (i.e., tension) produced by the muscle. The amount of force produced by a muscle is, as we have discussed or will, is determined by how many crossbridges can form. This number can be roughly estimated by a muscle's physiological cross-sectional area (PCSA), a value computed thusly:
 
 $$
 PCSA=\cfrac{M_{muscle} \cdot cos(\phi)}{\rho \cdot L_{muscle}}
@@ -97,7 +101,7 @@ $$
 \tau_{muscle}=F_{max} \cdot L_{in} \cdot sin\theta
 $$
 
-How much torque is applied to the forearm at 6 positions from the start of the curl to the end every 25$^\circ$?  Based on this, when is your arm lever system strongest? 
+How much torque is applied to the forearm at 6 positions from the start of the curl to the end every 25$^\circ$?  Based on this, we should be able to assess at what angle the arme produces the most muscle torque? 
 
 ### A Hill-curve to Die On
 
