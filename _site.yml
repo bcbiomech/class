@@ -34,6 +34,20 @@ navbar:
           href: AME5.html
         - text: "AME6"
           href: AME6.html
+      - text: "AME Solutions"
+        menu:
+        - text: "AME1"
+          href: AMEs/AME1_solution.html
+        - text: "AME2"
+          href: AMEs/AME2_solution.html
+        - text: "AME3"
+          href: AMEs/AME3_solution.html
+        - text: "AME4"
+          href: AMEs/AME4_solution.html
+        - text: "AME5"
+          href: AMEs/AME5_solution.html
+        - text: "AME6"
+          href: AMEs/AME6_solution.html
       - text: "Mini-Projects"
         menu:
         - text: "Mini-Projects Overview"
