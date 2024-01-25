@@ -3,7 +3,7 @@ title: "Lecture 4"
 subtitle: "Terrestrial Locomotion III"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2022/1/27"
+date: "2024/1/25"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -32,6 +32,7 @@ Today we'll ....
 
 - Unravel scaling in locomotion
 
+- AME assessment and revision proecess
 ]
 
 
@@ -95,6 +96,32 @@ knitr::include_graphics("https://www.physio-pedia.com/images/thumb/d/db/Hysteres
 
 ]
 
+---
+class: top
+
+
+# Scaling in locomotion
+
+.pull-left[
+- Stress:
+  $$\sigma=F/A$$
+- Strain is proportional to stress according to the elastic (Young's) modulus (*E*).
+
+- With length (size), mass scales cubically while $A$ scales to the square.
+
+- *F= M x g*, so forces (GRF in particular), increase with decreased duty factor
+
+- Bones are similarly stiff across terrestrial tetrapods
+
+- Problems?
+]
+
+.pull-right[
+![](https://boneclones.com/images/store-product/product-1572-main-main-big-1415043795.jpg)
+1= Horse, 12= Flying lemur
+]
+
+
 
 ---
 class: top
@@ -105,10 +132,10 @@ class: top
 .pull-left[
 - Capacity of a bone to support/generate force decreases relative to the increase in mass or weight of the animal.
 
-- Under geometric similarity (isometry), shape remains constant so that expected increase in withstanding increasing  skeletal stress is given by:
+- Under geometric similarity (isometry), shape remains constant so that expected increase in withstanding increasing skeletal stress is given by:
 
 $$ \frac{F}{A} \propto \frac{M^{1.0}}{M^{2/3}} \propto M^{1/3}$$
-
+- This is the ability to withstand a fracture!
 ]
 
 .pull-right[
@@ -125,6 +152,9 @@ knitr::include_graphics("img/bonestress.png")
 
 -  $\frac{F}{A} \propto M^{0.28}$, so some allometry in dimensions
 
+- no terrestrial mammals or birds should be able to run/gallop > 20 kg in body mass
+
+- would exceed compressive fracture strength of -240 MPa!
 ]
 
 
