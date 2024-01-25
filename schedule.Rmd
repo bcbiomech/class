@@ -18,7 +18,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Jan 23 | [Moving on Land II: Running et al. (3)](lect/Lecture03.html) | [Kuo (2007)](KuoWalking.pdf)| Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br> <br>[AEM1](AMEs/AME1.html) due
- | Thursday, Jan 25 | [Moving on Land III:Scaling/Joints, Levers, and Linkages (5)](lect/Lecture05.html) <br> / [Mini-Project I:Get Ur Gait On](MP1.html)||
+ | Thursday, Jan 25 | [Moving on Land III:Scaling/Joints, Levers, and Linkages (5)](lect/Lecture04.html) <br> / [Mini-Project I:Get Ur Gait On](MP1.html)||
  
 		
 
