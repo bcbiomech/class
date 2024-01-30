@@ -18,7 +18,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Jan 23 | [Moving on Land II: Running et al. (3)](lect/Lecture03.html) | [Kuo (2007)](KuoWalking.pdf)| Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br> <br>[AEM1](AMEs/AME1.html) due
- | Thursday, Jan 25 | [Moving on Land III:Scaling/Joints, Levers, and Linkages (5)](lect/Lecture04.html) <br> / [Mini-Project I:Get Ur Gait On](MP1.html)||
+ | Thursday, Jan 25 | [Moving on Land III:Scaling (4)](lect/Lecture04.html) <br> / [Mini-Project I:Get Ur Gait On](MP1.html)||
  
 		
 
@@ -26,24 +26,24 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Jan 30 |  [Muscles: Micro Predicts Macro (6)](lect/Lecture06.html) <!-- Add pennation topic to lecture -->| V Ch. 20 |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> AME1 assessment/revisions due
+ | Tuesday, Jan 30 |  [Levers, Linkages, and Muscles (5)](lect/Lecture05.html) <!-- Add pennation topic to lecture -->| V Ch. 20 |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> AME1 assessment/revisions due
   | Wednesday, Jan 31 | | | MP1 report due 
- | Thursday, Feb 1 | [Coarse Materials I (7)](lect/Lecture06.html) / [Mini-Project II: Get Ur Gait On!](MP2.html) | V pp. 286--306 |
+ | Thursday, Feb 1 | [Coarse Materials I (6)](lect/Lecture06.html) / [Mini-Project II: Get Ur Gait On!](MP2.html) | V pp. 286--306 |
  
 ## Week 4 Schedule
 
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Feb 6 | [Coarse Materials II (8)](lect/Lecture07.html) | V Ch. 16, 17 |Post to [discussion board](https://topicsinbiomechanics.slack.com/)<br><br> [AEM2](AMEs/AME2.html) due
- | Thursday, Feb 8 | [Coarse Materials III (9)](lect/Lecture08.html) |  V Ch. 18|
+ | Tuesday, Feb 6 | [Coarse Materials II (7)](lect/Lecture07.html) | V Ch. 16, 17 |Post to [discussion board](https://topicsinbiomechanics.slack.com/)<br><br> [AEM2](AMEs/AME2.html) due
+ | Thursday, Feb 8 | [Coarse Materials III (8)](lect/Lecture08.html) |  V Ch. 18|
  
 ## Week 5 Schedule
 
 | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Feb 13 | [Coarse Structures (10)](lect/Lecture09.html)  |  V Ch. 19     |Post to [discussion board](https://topicsinbiomechanics.slack.com/)<br><br> AME2 assessment/revisions due
+ | Tuesday, Feb 13 | [Coarse Structures (9)](lect/Lecture09.html)  |  V Ch. 19     |Post to [discussion board](https://topicsinbiomechanics.slack.com/)<br><br> AME2 assessment/revisions due
    | Wednesday, Feb 14 | | | MP2 report due 
- | Thursday, Feb 15 |  [Stretching/Bending (11)](lect/Lecture10.html) <br>[Mini-Project III: Stretch the Pig, Bend the Twig](MP3.html)|  V pp. 425-436        | 
+ | Thursday, Feb 15 |  [Stretching/Bending (10)](lect/Lecture10.html) <br>[Mini-Project III: Stretch the Pig, Bend the Twig](MP3.html)|  V pp. 425-436        | 
 .
  
 ## Week 6 Schedule
