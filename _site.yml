@@ -25,7 +25,7 @@ navbar:
         - text: "AME1"
           href: AMEs/AME1.html
         - text: "AME2"
-          href: AME2.html
+          href: AMEs/AME2.html
         - text: "AME3"
           href: AME3.html
         - text: "AME4"

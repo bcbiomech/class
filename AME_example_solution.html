@@ -11,7 +11,7 @@
 
 <meta name="author" content="Prof. K." />
 
-<meta name="date" content="2024-01-24" />
+<meta name="date" content="2024-01-30" />
 
 <title>AME Example Solution</title>
 
@@ -433,7 +433,7 @@ div.tocify {
           <a href="AMEs/AME1.html">AME1</a>
         </li>
         <li>
-          <a href="AME2.html">AME2</a>
+          <a href="AMEs/AME2.html">AME2</a>
         </li>
         <li>
           <a href="AME3.html">AME3</a>
@@ -540,7 +540,7 @@ div.tocify {
 
 <h1 class="title toc-ignore">AME Example Solution</h1>
 <h4 class="author">Prof. K.</h4>
-<h4 class="date">2024-01-24</h4>
+<h4 class="date">2024-01-30</h4>
 
 </div>
 
@@ -555,9 +555,6 @@ YAML header with your name, title, date and output as an html
 [1].</p></li>
 </ol>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
-<pre><code>## Warning: package &#39;ggplot2&#39; was built under R version 4.3.1</code></pre>
-<pre><code>## Warning: package &#39;dplyr&#39; was built under R version 4.3.1</code></pre>
-<pre><code>## Warning: package &#39;stringr&#39; was built under R version 4.3.1</code></pre>
 <pre><code>## ── Attaching core tidyverse packages ───────── tidyverse 2.0.0 ──
 ## ✔ dplyr     1.1.4     ✔ readr     2.1.4
 ## ✔ forcats   1.0.0     ✔ stringr   1.5.1
@@ -573,7 +570,7 @@ YAML header with your name, title, date and output as an html
 href="data/bite_force.csv">this link</a>. Read it in as CSV data and
 save it to an object named <code>dat</code>. [3]</li>
 </ol>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/bite_force.csv&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">&quot;data/bite_force.csv&quot;</span>)</span></code></pre></div>
 <pre><code>## Rows: 20 Columns: 3
 ## ── Column specification ─────────────────────────────────────────
 ## Delimiter: &quot;,&quot;
@@ -587,8 +584,8 @@ save it to an object named <code>dat</code>. [3]</li>
 squirrel maximum bite force and mass and how this relationship may vary
 by sex. [3]</li>
 </ol>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> </span>
-<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(mass,Fmax,<span class="at">col=</span>sex))<span class="sc">+</span><span class="fu">geom_point</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a>dat <span class="sc">%&gt;%</span> </span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(mass,Fmax,<span class="at">col=</span>sex))<span class="sc">+</span><span class="fu">geom_point</span>()</span></code></pre></div>
 <p><img src="AME_example_solution_files/figure-html/objective%204-1.png" width="672" /></p>
 </div>
 <div id="interpretation" class="section level2">
