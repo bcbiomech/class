@@ -1,5 +1,5 @@
 ---
-title: "Miniproject 2:Beach Muscles "
+title: "Miniproject 2: Beach Muscles "
 bibliography: BIOL5380.bib
 ---
 
