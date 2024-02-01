@@ -4,7 +4,7 @@
     <title>Lecture 6</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Christopher Kenaley" />
-    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -25,7 +25,7 @@ class: center, middle, inverse, title-slide
 ### Boston College
 ]
 .date[
-### 2021/2/2
+### 2024/2/1
 ]
 
 ---
@@ -42,7 +42,7 @@ class: inverse, top
 .pull-left[
 Today we'll ....
 
-- Wrap up with linkages
+- Wrap up with muscls
 
 - What is stress, strain?
 
@@ -61,54 +61,283 @@ Today we'll ....
 ---
 class: top
 
-# Levers are part of a postural system
+# Muscles generate mechanical work and power. 
 
-
+## How?
+ 
 .center[
 
+&lt;img src="img/sarcomere.jpg" width="400" /&gt;
+
+]
 
 
-&lt;img src="https://d3i71xaburhd42.cloudfront.net/9f2b00f5fc3474ba3ef190c9571a9d934cb561bb/5-Figure3-1.png" width="350" /&gt;
- 
-
-
- .footnote[
- `$$EMA=r/R$$` HIGH
- ]]
- 
- 
 ---
 class: top
 
-# Linkages
+# Muscles generate mechanical work and power. 
 
-## 4-bar linkage
+## How?
+ 
+.center[
+
+&lt;img src="img/filamenttheory.png" width="350" /&gt;
+
+]
+
+.footnote[ Sliding filament (crossbridge) theory. Gordon, Huxley &amp; Julian (1966)]
+
+
+
+---
+
+class: top
+
+# What determines amount of force produced by muscle?
 
 .pull-left[
+1. Time after activation
 
-### Can predict KE and ME based on morphology:
+]
 
-- Force amplification = `\(r/q\)`
-- Speed ampflication = `\(q/r\)`
+
+.pull-right[
+&lt;img src="img/latent.jpg" width="450" /&gt;
+]
+
+
+
+---
+class: top
+
+# What determines amount of force produced by muscle?
+
+.pull-left[
+1. Time after activation
+2. Muscle (sarcomere) length
+
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="img/filiments.jpg" width="550" /&gt;
 ]
 
 .pull-right[
-![](img/4bar2.png)
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="img/forcelength.png" width="550" /&gt;
 ]
 
 ---
 class: top
 
-# Linkages
+# What determines amount of force produced by muscle?
+
+.pull-left[
+1. Time after activation
+2. Muscle (sarcomere) length
+3. Shortening velocity
+
+&lt;br&gt;
+
+&lt;img src="img/forcevel.png" width="550" /&gt;
+
+    
+]
+
+
+
+---
+class: top
+
+# What determines amount of force produced by muscle?
+
+.pull-left[
+1. Time after activation
+2. Muscle (sarcomere) length
+3. Shortening velocity
+
+&lt;br&gt;
+
+&lt;img src="img/forcevel.png" width="550" /&gt;
+
+
+]
+
+.pull-right[
+
+V=? to maximize power?
+
+
+`$$P=F\times V$$`
+    
+&lt;br&gt;
+&lt;br&gt;
+
+&lt;img src="https://d3i71xaburhd42.cloudfront.net/2b0ce8ae4ce7e28430b71ba8983e33c3bad9c196/3-Figure2-1.png" width="550" /&gt;
+]
+
+---
+class: top
+
+# What determines amount of force produced by muscle?
+
+.pull-left[
+1. Time after activation
+2. Muscle (sarcomere) length
+3. Shortening velocity
+
+&lt;br&gt;
+
+&lt;img src="img/forcevel.png" width="550" /&gt;
+
+
+]
+
+.pull-right[
+
+Formalize F-V relationship... the Hill equation:
+
+`$$\frac{T}{T_o}=T^\prime=\frac{1-\frac{v}{v_{max}}}{1+c\frac{v}{v_{max}}}=\frac{1-v^\prime}{1+cv^\prime}$$`
+    
+
+&lt;img src="https://d3i71xaburhd42.cloudfront.net/2b0ce8ae4ce7e28430b71ba8983e33c3bad9c196/3-Figure2-1.png" width="550" /&gt;
+.footnote[
+`\(c\approx 1.2-4\)`
+]
+
+
+]
+
+
+---
+class: top
+
+# Metrics of muscle function
+
+## Generate mechanical work and power
+
+.pull-left[
+- Work = `\(F\cdot\Delta L\)` (Joules)
+- Power = Work/time (Joles/s = Watts)
+- Power = Work x Frequency (Joules/s = Watts)
+- Power = F x V (Joules/s = Watts)
+
+&lt;br&gt;
+
+
+
+]
+
+.pull-right[
+    
+&lt;br&gt;
+&lt;img src="img/musclework.png" width="250" /&gt;
+.footnote[
+
+]
+
+
+]
+
+---
+class: top
+
+# Metrics of muscle function
+
+## The work loop technique
+
+.pull-left[
+- Work = `\(F\cdot\Delta L\)` (Joules)
+- Power = Work/time (Joles/s = Watts)
+- Power = Work x Frequency (Joules/s = Watts)
+- Power = F x V (Joules/s = Watts)
+
+.center[
+&lt;img src="img/muscletest.png" width="60" /&gt;
+]
+
+]
+
+.pull-right[
+    
+&lt;br&gt;
+&lt;img src="img/workloop.png" width="200" /&gt;
+.footnote[
+
+]
+
+ 
+]
+
+---
+class: top
+
+# Metrics of muscle function
+
+
 
 .center[
 
-### Famous 4-bar from fish
-
-
-&lt;img src="img/fish4bar.jpg" width="550" /&gt;
+&lt;img src="img/motorbreakstrut.png" width="600" /&gt;
 ]
 
+
+
+---
+
+class: top
+
+# Lots more to study
+
+
+We know we don't know a lot about muscles
+
+.center[
+
+&lt;img src="https://s3-eu-west-1.amazonaws.com/s3-euw1-ap-pe-ws4-cws-documents.ri-prod/9780367190811/central/musclefuels/images/gastrocnemius.jpg" width="400" /&gt;
+Doublet potentiation
+
+]
+
+
+---
+
+class: top
+
+# Lots more to study
+
+
+We know we don't know a lot about muscles
+
+.center[
+
+&lt;img src="https://journals.physiology.org/cms/10.1152/jappl.1997.82.4.1219/asset/images/large/japp0542801.jpeg" width="400" /&gt;
+Doublet potentiation
+
+]
+
+
+
+
+
+---
+
+class: top
+
+# Lots more to study
+
+
+We know we don't know a lot about muscles
+
+.center[
+
+&lt;img src="https://www.researchgate.net/profile/Stanley-Salmons/publication/11155153/figure/fig5/AS:276867023163394@1443021650100/Mean-nFTIpP-n-6-for-doublets-lower-surface-triplets-intermediate-surface-and.png" width="400" /&gt;
+
+]
 ---
 class: top
 

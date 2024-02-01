@@ -28,7 +28,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Jan 30 |  [Levers, Linkages, and Muscles (5)](lect/Lecture05.html) <!-- Add pennation topic to lecture -->| V Ch. 20 |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> AME1 assessment/revisions due
   | Wednesday, Jan 31 | | | MP1 report due 
- | Thursday, Feb 1 | [Coarse Materials I (6)](lect/Lecture06.html) / [Mini-Project II: Get Ur Gait On!](MP2.html) | V pp. 286--306 |
+ | Thursday, Feb 1 | [Coarse Materials I (6)](lect/Lecture06.html) / [Mini-Project II: Beach Muscles](MP2.html) | V pp. 286--306 |
  
 ## Week 4 Schedule
 

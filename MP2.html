@@ -572,7 +572,7 @@ order to resists or overcome these loads. In this MP, we’ll explore a
 classic lever system in the tetrapod body—the forelimb—one of the <a
 href="https://openoregon.pressbooks.pub/bodyphysics/chapter/body-levers/">3rd-order
 type</a>. Specifically, we’ll consider how skeletal geometry and
-important physiological parameters like muscle length, and mass affect
+important physiological parameters, like muscle length and mass, affect
 the force output in this system and how much it can accelerate a
 load.</p>
 <div id="first-lady-principles" class="section level3">
@@ -617,13 +617,17 @@ I=r^2 \cdot m,
 outlever) of the load and <span class="math inline">\(m\)</span> the
 mass of the load. This is the rotational application of Newton’s Second
 Law and the basis of our model.</p>
-<p>Our task is now to establish how much torque (<span
-class="math inline">\(\tau\)</span>) is generated at the outlever
-position of the arm system.</p>
+<p>Based on these concepts, our task in this MP to calculate
+<u><strong>how much torque (<span class="math inline">\(\tau\)</span>)
+is generated at the outlever position of the arm
+system.</strong></u></p>
 </div>
 </div>
 <div id="methods" class="section level2">
 <h2>Methods</h2>
+<p>We’ll approach this problem by constructing a computational model
+based on dynamic equilibrium, one that includes some very important
+muscle and geometric parameters.</p>
 <div id="a-law-to-live-by" class="section level3">
 <h3>A Law to Live By</h3>
 <p>First we need to know the geometry of your arm lever system. How long
@@ -631,8 +635,9 @@ is the outlever? How long is the inlever? Assuming the biceps originates
 just on the <a
 href="https://en.wikipedia.org/wiki/Coracoid_process">coracoid process
 of the scapula</a> and inserts on the proximal radius, what is the
-insertion angle and origin-insertion distance at rest right before the
-curl begins? Be sure to include these dimensions in a csv file with your
+insertion angle and origin-insertion distance (<span
+class="math inline">\(L_{muscle}\)</span>) at rest right before the curl
+begins? Be sure to include these dimensions in a csv file with your
 submission. Also be sure to include the insertion angle in degrees.</p>
 <p>The file should look like this (replacing your name with mine):</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">outlever=</span><span class="fl">0.26</span>,<span class="at">inlever=</span><span class="fl">0.05</span>,<span class="at">ins.ang=</span><span class="dv">160</span>,<span class="at">orig.ins=</span><span class="fl">0.3</span>,<span class="at">mass=</span><span class="fl">0.02</span>) <span class="co">#mass from below</span></span>
@@ -648,10 +653,10 @@ states that, for a triangle with sides a, b, and c, the angle A is:</p>
 A=acos\Bigg(\cfrac{-a^2+b^2+c^2}{2bc}\Bigg)
 \]</span></p>
 <div class="figure" style="text-align: center">
-<img src="img/elbow.png" alt="The human elbow lever, essentially a triangle (below) with variable length $a$" width="200" />
+<img src="img/elbow2.png" alt="The human elbow lever, essentially a triangle (below) with variable length $L_{muscle}$" width="606" />
 <p class="caption">
 The human elbow lever, essentially a triangle (below) with variable
-length <span class="math inline">\(a\)</span>
+length <span class="math inline">\(L_{muscle}\)</span>
 </p>
 </div>
 <div class="figure" style="text-align: center">

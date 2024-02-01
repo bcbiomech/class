@@ -6,7 +6,7 @@ bibliography: BIOL5380.bib
 
 ## Introduction
 
-Our musculoskeletal system is pretty handy in permitting us to move, hold, or manipulate objects, including our own bodies. Many vertebrate biomechanical systems make use of muscular force applied to levers in order to resists or overcome these loads. In this MP, we'll explore a classic lever system in the tetrapod body---the forelimb---one of the [3rd-order type](https://openoregon.pressbooks.pub/bodyphysics/chapter/body-levers/). Specifically, we'll consider how skeletal geometry and important physiological parameters like muscle length, and mass affect the force output in this system and how much it can accelerate a load.
+Our musculoskeletal system is pretty handy in permitting us to move, hold, or manipulate objects, including our own bodies. Many vertebrate biomechanical systems make use of muscular force applied to levers in order to resists or overcome these loads. In this MP, we'll explore a classic lever system in the tetrapod body---the forelimb---one of the [3rd-order type](https://openoregon.pressbooks.pub/bodyphysics/chapter/body-levers/). Specifically, we'll consider how skeletal geometry and important physiological parameters, like muscle length and mass, affect the force output in this system and how much it can accelerate a load.
 
 
 ### First (Lady) Principles
@@ -33,15 +33,19 @@ $$
 
 where $r$ is the radius (the outlever) of the load and $m$ the mass of the load. This is the rotational application of Newton's Second Law and the basis of our model.
 
-Our task is now to establish how much torque ($\tau$) is generated at the outlever position of the arm system.
+
+Based on these concepts, our task in this MP to calculate <u>**how much torque ($\tau$) is generated at the outlever position of the arm system.**</u>
 
 
 
 ## Methods
 
+We'll approach this problem by constructing a computational model based on dynamic equilibrium, one that includes some very important muscle and geometric parameters.
+
+
 ### A Law to Live By
 
-First we need to know the geometry of your arm lever system. How long is the outlever? How long is the inlever? Assuming the biceps originates just on the [coracoid process of the scapula](https://en.wikipedia.org/wiki/Coracoid_process) and inserts on the proximal radius, what is the insertion angle and origin-insertion distance at rest right before the curl begins? Be sure to include these dimensions in a csv file with your submission. Also be sure to include the insertion angle in degrees. 
+First we need to know the geometry of your arm lever system. How long is the outlever? How long is the inlever? Assuming the biceps originates just on the [coracoid process of the scapula](https://en.wikipedia.org/wiki/Coracoid_process) and inserts on the proximal radius, what is the insertion angle and origin-insertion distance ($L_{muscle}$) at rest right before the curl begins? Be sure to include these dimensions in a csv file with your submission. Also be sure to include the insertion angle in degrees. 
 
 The file should look like this (replacing your name with mine):
 
@@ -60,8 +64,8 @@ A=acos\Bigg(\cfrac{-a^2+b^2+c^2}{2bc}\Bigg)
 $$
 
 
-```{r elbow,echo=F,fig.cap=c("The human elbow lever, essentially a triangle (below) with variable length $a$"),fig.align = 'center'}
-knitr::include_graphics(c("img/elbow.png"))
+```{r elbow,echo=F,fig.cap=c("The human elbow lever, essentially a triangle (below) with variable length $L_{muscle}$"),fig.align = 'center'}
+knitr::include_graphics(c("img/elbow2.png"))
 
 ``` 
 
