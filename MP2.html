@@ -45,107 +45,6 @@
 
 
 
-<style type="text/css">
-  code {
-    white-space: pre;
-  }
-  .sourceCode {
-    overflow: visible;
-  }
-</style>
-<style type="text/css" data-origin="pandoc">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  background-color: #f8f8f8; }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #204a87; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #8f5902; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #204a87; font-weight: bold; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #ce5c00; font-weight: bold; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    var j = 0;
-    while (j < rules.length) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
-        j++;
-        continue;
-      }
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') {
-        j++;
-        continue;
-      }
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
 
 
 
@@ -573,16 +472,8 @@ classic lever system in the tetrapod body—the forelimb—one of the <a
 href="https://openoregon.pressbooks.pub/bodyphysics/chapter/body-levers/">3rd-order
 type</a>. Specifically, we’ll consider how skeletal geometry and
 important physiological parameters, like muscle length and mass, affect
-the force output in this system and how much it can accelerate a
-load.</p>
-<div id="first-lady-principles" class="section level3">
-<h3>First (Lady) Principles</h3>
-<p>Imagine that you’re at the plex and, in an effort to have arms that
-look as sleek and muscular as our <a
-href="https://www.runnersworld.com/runners-stories/a20837148/im-a-runner-dr-jill-biden/">First
-Lady’s</a>, you start a program of biceps curls. Your job in this MP is
-to estimate how much mass you can lift (i.e., accelerate) with your two
-biceps groups. Let’s assume the following.</p>
+the force output in this system and maximum load it can support.</p>
+<p>To begin, let’s assume the following.</p>
 <ul>
 <li>All the force to do the lift is exerted by your biceps
 femoralis</li>
@@ -590,107 +481,260 @@ femoralis</li>
 <li>Your humerus is stationary</li>
 <li>The elbow joint is a simple hinge linkage with one DOF</li>
 <li>The flexion of the arm (i.e., curl motion) begins when your arm
-angle is 10<span class="math inline">\(^\circ\)</span> and is finished
-at 135<span class="math inline">\(^\circ\)</span>.</li>
+angle is 150<span class="math inline">\(^\circ\)</span> and is finished
+at 50<span class="math inline">\(^\circ\)</span>.</li>
 </ul>
 <p>What we have here, according to a classic concept in physics, is a
-dynamic equilibrium problem. That is, if a torque applied is greater
-than the moment of mass on the lever, the mass of the dumbbell will be
-accelerated, a situation described by:</p>
+dynamic equilibrium problem. That is, if the sum of torques is not zero,
+the mass of the dumbbell will be accelerated, a situation described
+by:</p>
 <p><span class="math display">\[
-\alpha=\frac{\tau}{I},
+\alpha=\frac{\Sigma\tau}{I},
 \]</span></p>
 <p>where <span class="math inline">\(\alpha\)</span> is angular
 acceleration (in rad<span class="math inline">\(\cdot\)</span>s<span
 class="math inline">\(^{-2}\)</span>), <span
-class="math inline">\(\tau\)</span> is torque (N<span
+class="math inline">\(\Sigma\tau\)</span> is sum of torques (N<span
 class="math inline">\(\cdot\)</span>m), and <span
 class="math inline">\(I\)</span> is the mass moment of inertia (in
 kg<span class="math inline">\(\cdot\)</span>m<span
-class="math inline">\(^2\)</span>). The dumbbell has <span
-class="math inline">\(I\)</span> according to its distance from the
-fulcrum (i.e., joint), given by:</p>
+class="math inline">\(^2\)</span>). Or, if <span
+class="math inline">\(\tau_{muscle}\)</span> represents muscle torque
+and <span class="math inline">\(\tau_{load}\)</span> the load tourque,
+we have</p>
 <p><span class="math display">\[
-I=r^2 \cdot m,
+\alpha=\frac{\tau_{muscle}-\tau_{load}}{I}.
 \]</span></p>
-<p>where <span class="math inline">\(r\)</span> is the radius (the
-outlever) of the load and <span class="math inline">\(m\)</span> the
-mass of the load. This is the rotational application of Newton’s Second
-Law and the basis of our model.</p>
-<p>Based on these concepts, our task in this MP to calculate
+<p>This is the rotational application of Newton’s Second Law. We can
+simplify our problem it we consider that, under equilibrium, <span
+class="math inline">\(\alpha=0\)</span>. Therefore, under equilibirium,
+<span class="math inline">\(\tau_{muscle}=\tau_{load}\)</span></p>
+<p>Based on these concepts, our task in this MP is to calculate
 <u><strong>how much torque (<span class="math inline">\(\tau\)</span>)
 is generated at the outlever position of the arm
 system.</strong></u></p>
-</div>
+<p>The specific goals are to:</p>
+<ol style="list-style-type: decimal">
+<li><p>Predict how much force and torque is produced by the biceps
+system over a range of extension/flexion angels.</p></li>
+<li><p>Assess how force and torque vary according to extension/flexion
+angle.</p></li>
+<li><p>Test these predictions in the gym.</p></li>
+</ol>
 </div>
 <div id="methods" class="section level2">
 <h2>Methods</h2>
 <p>We’ll approach this problem by constructing a computational model
 based on dynamic equilibrium, one that includes some very important
-muscle and geometric parameters.</p>
-<div id="a-law-to-live-by" class="section level3">
-<h3>A Law to Live By</h3>
-<p>First we need to know the geometry of your arm lever system. How long
-is the outlever? How long is the inlever? Assuming the biceps originates
-just on the <a
-href="https://en.wikipedia.org/wiki/Coracoid_process">coracoid process
-of the scapula</a> and inserts on the proximal radius, what is the
-insertion angle and origin-insertion distance (<span
-class="math inline">\(L_{muscle}\)</span>) at rest right before the curl
-begins? Be sure to include these dimensions in a csv file with your
-submission. Also be sure to include the insertion angle in degrees.</p>
-<p>The file should look like this (replacing your name with mine):</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">outlever=</span><span class="fl">0.26</span>,<span class="at">inlever=</span><span class="fl">0.05</span>,<span class="at">ins.ang=</span><span class="dv">160</span>,<span class="at">orig.ins=</span><span class="fl">0.3</span>,<span class="at">mass=</span><span class="fl">0.02</span>) <span class="co">#mass from below</span></span>
-<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">write.csv</span>(dat,<span class="st">&quot;prof_kenaley_biceps.csv&quot;</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">&quot;prof_kenaley_biceps.csv&quot;</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" tabindex="-1"></a><span class="fu">print</span>(dat)</span></code></pre></div>
-<pre><code>##   X outlever inlever ins.ang orig.ins mass
-## 1 1     0.26    0.05     160      0.3 0.02</code></pre>
-<p>Have a look at the figure of the arm system below to help you with
-this. In addition, the law of cosines may be really handy here. It
-states that, for a triangle with sides a, b, and c, the angle A is:</p>
+muscle and geometric parameters. We’ll model arm torque output over a
+range of arm extension/flexion angles, from nearly fully extended
+(extension angle of 150<span class="math inline">\(^\circ\)</span>) to
+fully flexed arm (extension angle of 50<span
+class="math inline">\(^\circ\)</span>). This will include extension
+angles of 50, 75, 100, 125, and 150<span
+class="math inline">\(^\circ\)</span>).</p>
+<div class="figure" style="text-align: center">
+<img src="img/elbow4.png" alt="Fig. 1: The human elbow lever at full extension and flexion." width="50%" />
+<p class="caption">
+Fig. 1: The human elbow lever at full extension and flexion.
+</p>
+</div>
+<pre><code>## ── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+## ✔ dplyr     1.1.4     ✔ readr     2.1.4
+## ✔ forcats   1.0.0     ✔ stringr   1.5.1
+## ✔ ggplot2   3.4.4     ✔ tibble    3.2.1
+## ✔ lubridate 1.9.2     ✔ tidyr     1.3.0
+## ✔ purrr     1.0.2     
+## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()
+## ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+<div id="the-lever-model" class="section level3">
+<h3>The lever model</h3>
+<div class="figure" style="text-align: center">
+<img src="img/lever2.png" alt="Fig. 2: The moments applied to a 3d order lever" width="50%" />
+<p class="caption">
+Fig. 2: The moments applied to a 3d order lever
+</p>
+</div>
+<p>When in equilibrium (i.e., no rotational motion, Figure 2), the sum
+of torques applied to a lever system like one of the 3rd order variety
+shown above are equal. That is, <span class="math inline">\(F_i \cdot
+L_i = F_{load} \cdot L_o\)</span>. Or, in terms of our 3rd order arm
+system, <span class="math inline">\(F_{muscle} \cdot L_i = F_{load}
+\cdot L_o\)</span>.</p>
+<p>This assumes that both forces, <span
+class="math inline">\(F_{muscle}\)</span> and <span
+class="math inline">\(F_{Load}\)</span> are applied normal to the lever
+system, that is at a perfect 90<span
+class="math inline">\(^\circ\)</span> angle. For our system, the
+geometry of which is presented below in Figure 3, let’s assume the load
+is in the palm, resting directly on the outlever and thus the angle of
+the load <span class="math inline">\(F_{load}\)</span> is normal. The
+insertion angle of the muscle relative to the inlever of the formarm
+<span class="math inline">\(\theta\)</span> is not normal and, in fact,
+changes with extension/flexion angle as seen in Figure 4.</p>
+<div class="figure" style="text-align: center">
+<img src="img/elbow2.png" alt="Fig. 3: The human elbow lever." width="50%" />
+<p class="caption">
+Fig. 3: The human elbow lever.
+</p>
+</div>
+<div class="figure" style="text-align: center">
+<img src="img/elbow3.png" alt="Fig. 4: The human elbow lever at full extension and flexion. Notice how the insertion angle and $L_{muscle}$ change" width="40%" />
+<p class="caption">
+Fig. 4: The human elbow lever at full extension and flexion. Notice how
+the insertion angle and <span class="math inline">\(L_{muscle}\)</span>
+change
+</p>
+</div>
+<p>Therefore, the torque applied my a muscle to the lever (<span
+class="math inline">\(\tau_{muscle}\)</span>) is also function of the
+insertion angle, in addition to <span
+class="math inline">\(F_{muscle}\)</span> and <span
+class="math inline">\(L_i\)</span>, or</p>
 <p><span class="math display">\[
-A=acos\Bigg(\cfrac{-a^2+b^2+c^2}{2bc}\Bigg)
+\tau_{muscle}=F_{muscle}  \cdot sin\theta \cdot L_i.
+\]</span></p>
+<!-- How much torque is applied to the forearm at 6 positions from the start of the curl to the end every 25$^\circ$?  Based on this, we should be able to assess at what angle the arm produces the most muscle torque?  -->
+</div>
+<div id="determining-f_muscle" class="section level3">
+<h3>Determining <span class="math inline">\(F_{muscle}\)</span></h3>
+<p>From this or previous explorations of muscle physiology, we now know
+that the amount of force produced by a muscle is a function of time
+(i.e., latency), shortening velocity, and muscle length. Because we’re
+applying an equilibrium model to our lever system, there will be no
+rotation and therefore no changes in muscle length at each arm postion.
+This means an isometric contraction and a muscle with no velocity. So,
+we don’t have to consider the force-velocity relationship. We can ignore
+latency in our model, logically assuming our contractions will last
+longer thant the 20–50 ms before peak muscle force.</p>
+<p>However, one of these factors, muscle length, is a factor and an
+extremely important part of Hill-type muscle models <span
+class="citation">(Hill 1938)</span> like the one we’re constructing</p>
+<p>To do this we must establish the relationship between the muscle
+length and the maximum amount of force a muscle can produce (<span
+class="math inline">\(F_{max}\)</span>), also called the force-length
+factor or <span class="math inline">\(f_{fl}\)</span>. Fortunately, the
+relationship between force and muscle length has been approximated for
+mammalian skeletal muscle by several researchers, including <span
+class="citation">(Whiting and Herzog 1999)</span>, from whence the
+following comes. It looks a bloody mess, but here it is:</p>
+<p><span
+class="math display">\[f_{fl}=-6.25\Bigg(\cfrac{L_{muscle}}{L_{opt}}\Bigg)^2+12.5\Bigg(\cfrac{L_{muscle}}{L_{opt}}\Bigg)-5.25,\]</span>
+<br> <br></p>
+<div class="figure" style="text-align: center">
+<img src="img/fl.png" alt="Fig. 5: The force-length relationship of vertebrate muscle" width="50%" />
+<p class="caption">
+Fig. 5: The force-length relationship of vertebrate muscle
+</p>
+</div>
+<p>where <span class="math inline">\(L_{opt}\)</span> is the optimal
+muscle length. So, ``What <em>is</em> the optimal muscle length?” you
+ask. Well, we don’t know, not exactly. But, a lot of good experimental
+work suggests that, for many muscles in many species, it’s an <span
+class="math inline">\(L_{muscle}\)</span> that is close to 80% the
+maximum length. So let’s use that and assume the maximum length of the
+muscle is reached at rest (i.e., extension angle of 150<span
+class="math inline">\(^\circ\)</span>, <span
+class="math inline">\(L_{muscle_r}\)</span>). Therefore, <span
+class="math inline">\(L_{opt}= L_{muscle_r} \cdot 0.8\)</span>.</p>
+<p>As you can see from Figure 5, such a value assumes that the muscle is
+adapted to work over a range of lengths that results in favorable
+sarcomere overlap. Once we know the we can multiple <span
+class="math inline">\(F_{max}\)</span> by the factor <span
+class="math inline">\(f_{fl}\)</span> to estimate how much force is
+being produced given the muscle’s position of the force-length curve
+(<span class="math inline">\(F_{muscle}\)</span>).</p>
+<!-- Therefore, take this equation and write a function in R that you can pass through the $FL$s and $F_{max}$ values at each of the 6 arm positions to calculate $F_{muscle}$.  -->
+<!-- AME 2 includes custom funcitons -->
+</div>
+<div id="determining-theta" class="section level3">
+<h3>Determining <span class="math inline">\(\theta\)</span></h3>
+<p>Have a look at the figure of the arm system in Figure 4. For any
+flexion/extension angle, insertion angle can be computed using the law
+of cosines. This law states that, for a triangle with length l, r, and o
+(left, right, and opposite) the angle <span
+class="math inline">\(\theta\)</span> is:</p>
+<p><span class="math display">\[
+\theta=acos\Bigg(\cfrac{-o^2+l^2+r^2}{2lr}\Bigg)
 \]</span></p>
 <div class="figure" style="text-align: center">
-<img src="img/elbow2.png" alt="The human elbow lever, essentially a triangle (below) with variable length $L_{muscle}$" width="606" />
+<img src="img/cosines.png" alt="Fig. 6: A triangle" width="50%" />
 <p class="caption">
-The human elbow lever, essentially a triangle (below) with variable
-length <span class="math inline">\(L_{muscle}\)</span>
+Fig. 6: A triangle
 </p>
 </div>
+<p>Here, it’s easy to see that <span class="math inline">\(o\)</span>
+would represent <span class="math inline">\(L_{arm}\)</span>, segment
+<span class="math inline">\(l\)</span> inlever length (<span
+class="math inline">\(L_{i}\)</span>), and segment <span
+class="math inline">\(r\)</span> the muscle length (<span
+class="math inline">\(L_{muscle}\)</span>).</p>
+<p>Please write a function named <code>law_cos</code> that will help you
+compute <span class="math inline">\(\theta\)</span>, the insertion
+angle. Make sure that the function takes the argumes
+<code>o</code>,<code>r``, and</code>l`.</p>
+</div>
+<div id="determining-l_muscle" class="section level3">
+<h3>Determining <span class="math inline">\(L_{muscle}\)</span></h3>
+<p>Similarly, muscle length will change with flexion angle and we can
+use the law of cosines to compute muscle length. Here we just solve for
+<span class="math inline">\(o\)</span> if we consider a triangle like
+that in Figure 7. Hoefully you can see that segment <span
+class="math inline">\(o\)</span> would represent <span
+class="math inline">\(L_{muscle}\)</span>, segment <span
+class="math inline">\(l\)</span> the arm length (<span
+class="math inline">\(L_{arm}\)</span>), segment <span
+class="math inline">\(r\)</span> the inlever length (<span
+class="math inline">\(L_i\)</span>), and <span
+class="math inline">\(theta\)</span> the flexion angle. Doing the
+algebra, we get:</p>
+<p><span class="math display">\[o=\sqrt{-1\cdot(cos(\theta)\cdot 2 \cdot
+l\cdot r-l^2-r^2)}.\]</span></p>
+<p>Please write a function named <code>law_cos2</code> that will help
+you compute <span class="math inline">\(L_{muscle}\)</span> at each
+flexion angle. Make sure that it includes the arguments <code>l</code>,
+<code>r</code>, and <code>theta</code>.</p>
+<p><em>Note:</em> You’ll have to do this first, before computing
+insertion angle. That is, you need <span
+class="math inline">\(L_{muscle}\)</span> to compute <span
+class="math inline">\(\theta\)</span>.</p>
 <div class="figure" style="text-align: center">
-<img src="img/cosines.png" alt="A triangle" width="151" />
+<img src="img/cosines2.png" alt="Fig. 7: Another triangle" width="50%" />
 <p class="caption">
-A triangle
+Fig. 7: Another triangle
 </p>
 </div>
 </div>
-<div id="tension-headaches" class="section level3">
-<h3>Tension Headaches</h3>
-<p>The magnitude of torque applied to the forearm during the curl
-depends upon the amount of force (i.e., tension) produced by the muscle.
-The amount of force produced by a muscle is, as we have discussed or
-will, is determined by how many crossbridges can form. This number can
-be roughly estimated by a muscle’s physiological cross-sectional area
-(PCSA), a value computed thusly:</p>
+<div id="determining-f_max" class="section level3">
+<h3>Determining <span class="math inline">\(F_{max}\)</span></h3>
+<p>To compute <span class="math inline">\(F_{muscle}\)</span>, we must
+therefore know the <span class="math inline">\(F_{max}\)</span>. As we
+have discussed or will, the amount of force produced by a muscle is is
+determined by how many crossbridges it can form. This number can be
+roughly estimated by a muscle’s physiological cross-sectional area
+(PCSA), a value computed in this way:</p>
 <p><span class="math display">\[
-PCSA=\cfrac{M_{muscle} \cdot cos(\phi)}{\rho \cdot L_{muscle}}
+PCSA=\cfrac{M_{muscle} \cdot cos(\phi)}{\rho \cdot L_{muscle_r}}
 \]</span></p>
 <p>where <span class="math inline">\(M_{muscle}\)</span> is the mass of
 the muscle (in kg), <span class="math inline">\(\phi\)</span> is the
-pennation angle, <span class="math inline">\(L_{muscle}\)</span> the
-length of the muscle (in cm), and <span
+pennation angle, <span class="math inline">\(L_{muscle_r}\)</span> the
+length of the muscle at rest (in cm), and <span
 class="math inline">\(\rho\)</span> the density of muscle.</p>
-<p>Compute the PCSA of your right biceps by making the following
+<p>When computing the PCSA of your biceps, make following
 assumptions:</p>
 <ol style="list-style-type: decimal">
-<li>the length of your biceps containing all the fibers is 60% the
-origin-insertion length;</li>
+<li>the length of your biceps containing all the fibers is the resting
+the origin-insertion length, <span
+class="math inline">\(L_{muscle_r}\)</span>, the length at full
+extension (150<span class="math inline">\(^\circ\)</span>);</li>
 <li>the density of muscle is 0.00105 kg cm<span
-class="math inline">\(^{-1}\)</span>;</li>
-<li>the muscle is nonpennate (<span
-class="math inline">\(\phi\)</span>=0); and lastly</li>
+class="math inline">\(^{-3}\)</span>;</li>
+<li>the muscle is <a
+href="https://en.wikipedia.org/wiki/Pennate_muscle">nonpennate</a>
+(<span class="math inline">\(\phi\)</span>=0); and lastly</li>
 <li>the mass of your muscle is approximated by a volume of
 playdough.</li>
 </ol>
@@ -700,142 +744,224 @@ biceps. Flexing and cupping the muscle with your left hand helps with
 estimating the muscle volume. Next, weigh the playdough (if your muscle
 mass is large enough, you may have to break the playdough into pieces
 and way them separately). Vertebrate muscle is about as dense as
-playdough. Record your mass data through the link above.</p>
-<p>If the maximal force output of human white muscle is 20 N cm<span
-class="math inline">\(^{-2}\)</span> during an isometric contraction,
-how much force is produced at the start of the extension? Feel free to
-ignore length, velocity (it’s isometric), and time considerations . . .
-for now.</p>
+playdough.</p>
+<p>If the maximal force output of human white muscle (the constant <span
+class="math inline">\(k\)</span>) is 80 N cm<span
+class="math inline">\(^{-2}\)</span> during an isometric contraction
+(our scenario), you can now compute <span
+class="math inline">\(F_{max}\)</span></p>
+<!-- First we need to know the geometry of your arm lever system. How long is the outlever? How long is the inlever? Assuming the biceps originates just on the [coracoid process of the scapula](https://en.wikipedia.org/wiki/Coracoid_process) and inserts on the proximal radius, origin-insertion distance ($L_{muscle}$) at rest (full extension) right before the curl begins? Of course, this is variable. -->
+<!-- Be sure to include these dimensions in a csv file with your submission. Also be sure to include the insertion angle in degrees.  -->
+<!-- The file should look like this (replacing your name with mine): -->
 </div>
-<div id="taking-mechanical-advantage" class="section level3">
-<h3>Taking Mechanical Advantage</h3>
-<p>In a lever system, the torque applied (say by muscle, <span
-class="math inline">\(\tau_{muscle}\)</span>) is a function of the
-magnitude of the input force (<span
-class="math inline">\(F_{max}\)</span>, if it’s the maximal force as in
-the above), the inlever length (<span
-class="math inline">\(L_{in}\)</span>), and angle of the input relative
-to the lever (the insertion angel, <span
-class="math inline">\(\theta\)</span>). In other words, for our
-biceps:</p>
-<p><span class="math display">\[
-\tau_{muscle}=F_{max} \cdot L_{in} \cdot sin\theta
-\]</span></p>
-<p>How much torque is applied to the forearm at 6 positions from the
-start of the curl to the end every 25<span
-class="math inline">\(^\circ\)</span>? Based on this, we should be able
-to assess at what angle the arme produces the most muscle torque?</p>
+<div id="putting-it-all-together" class="section level3">
+<h3>Putting it all together</h3>
+<p>Let’s assemble all this together. The ammount of tourque the biceps
+lever system can produce is therefore</p>
+<p><span class="math display">\[\tau_{muscle}=\cfrac{M_{muscle} \cdot
+cos(\phi)}{\rho \cdot L_{muscle_r}}\cdot k \cdot
+-6.25\Bigg(\cfrac{L_{muscle}}{L_{muscle_r}\cdot
+0.8}\Bigg)^2+12.5\Bigg(\cfrac{L_{muscle}}{L_{muscle_r} \cdot
+0.8}\Bigg)-5.25\cdot sin(\theta)\cdot L_i \]</span></p>
+<p>Perhaps your head is spinning and you’re not sure where all this
+comes from. These are just the the components discussed above in long
+form:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(F_{max}\)</span>, the maximum amount of
+force a muscle can produce determine by PCSA:</li>
+</ol>
+<p><span class="math display">\[\cfrac{M_{muscle} \cdot cos(\phi)}{\rho
+\cdot L_{muscle_r}}\cdot k\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li><span class="math inline">\(f_{fl}\)</span>, the force-length
+factor:</li>
+</ol>
+<p><span
+class="math display">\[-6.25\Bigg(\cfrac{L_{muscle}}{L_{muscle_r} \cdot
+0.8}\Bigg)^2+12.5\Bigg(\cfrac{L_{muscle}}{L_{muscle_r} \cdot
+0.8}\Bigg)-5.25\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li><p><span class="math inline">\(sin(\theta)\)</span>, the muscle
+insertion angle.</p></li>
+<li><p>and <span class="math inline">\(L_i\)</span>, the inlever
+length.</p></li>
+</ol>
+<p>Together, items 1 and 2 make up <span
+class="math inline">\(F_{muscle\)</span>}.</p>
+<p>You task is to render all this in repeatable and adjustable
+computational model as an R function. According to the model, this
+function should be named <code>model</code> and take as arguments the
+following:</p>
+<ul>
+<li><code>mass</code>: Muscle mass, <span
+class="math inline">\(M_{muscle}\)</span>, in kg.</li>
+<li><code>Lmuscler</code>: Length of the muscle at rest (150<span
+class="math inline">\(^\circ\)</span> extension), <span
+class="math inline">\(L_{muscle_r}\)</span> in m.</li>
+<li><code>Lmuscle</code>: Length of the muscle at any flexion/extension
+angle, <span class="math inline">\(L_{muscle}\)</span> in m.</li>
+<li><code>theta</code>: Insertion angle of the muscle any
+flexion/extension angle, <span
+class="math inline">\(\theta\)</span>.</li>
+<li><code>Lo</code>: Length of the inlever, <span
+class="math inline">\(L_i\)</span> in m.</li>
+<li><code>rho</code>: A value for muscle density <span
+class="math inline">\(\rho\)</span> with a default of 0.00105 kg cm<span
+class="math inline">\(^{-1}\)</span>.</li>
+<li><code>k</code>: A value for <span class="math inline">\(k\)</span>,
+the maximal force output of human white muscle with a default of 80 N
+cm<span class="math inline">\(^{-2}\)</span>.</li>
+</ul>
+<p><em>Note:</em> The PCSA model above depends on lengths in cm. Your
+computational model must account for this, especially given that our
+lengths are in m.</p>
+<p>The function should also return the predicted torque based on these
+inputs.</p>
+<p>Please apply this model function to the six extension angles: 50, 75,
+100, 125, and 150<span class="math inline">\(^\circ\)</span>). To begin
+your calculations, create a tibble that includes the following
+columns:</p>
+<ol style="list-style-type: decimal">
+<li><code>flexion</code>: the flexion angles, 50, 75, 100, 125, and
+150<span class="math inline">\(^\circ\)</span>, but in radians</li>
+<li><code>Lmuscle</code>: the <span
+class="math inline">\(L_{muscle}\)</span> values at each flexion
+angle</li>
+<li><code>theta</code>: the insertion angle values (<span
+class="math inline">\(\theta\)</span>) at each flexion angle.</li>
+</ol>
+<p>Then, apply the <code>model()</code> function using
+<code>mutate()</code> and your measured biometric data to add a new
+column <code>muscle_torque</code>. Call this tibble object
+<code>dat</code>.</p>
+<p>Please also add the predicted load mass your arm system could
+support. Remember that equilibrium assumes the muscle and load torques
+are equal. Therefor, you’ll have to find what mass results in a load
+torque that would equal the muscle torque. For that, <span
+class="math inline">\(\tau_{load}=\tau_{muscle}\)</span>. If</p>
+<p><span class="math display">\[\tau_{load}=F_{load} \cdot L_o,\]</span>
+where <span class="math inline">\(F_{load}\)</span> is the static force
+of the load and <span class="math inline">\(L_o\)</span> is the outlever
+length, and</p>
+<p><span class="math display">\[F_{load}=M_{load} \cdot g,\]</span>
+where <span class="math inline">\(M_{load}\)</span> is the mass of the
+load and <span class="math inline">\(g\)</span> the acceleration due to
+gravity, we then come to:</p>
+<p><span class="math display">\[ M_{load}=\frac{\tau_{muscle}}{L_o \cdot
+g}.\]</span> Please add <span class="math inline">\(M_{load}\)</span> to
+your <code>dat</code> table in the column <code>max_mass</code>.</p>
+<p>You should wind up with something like this (Prof. K’s data*):</p>
+<pre><code>## # A tibble: 6 × 5
+##   flexion Lmuscle theta muscle_torque max_mass
+##     &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;         &lt;dbl&gt;    &lt;dbl&gt;
+## 1   2.62    0.313 0.428          7.63     4.90
+## 2   2.18    0.298 0.795         16.7     10.7 
+## 3   1.75    0.277 1.18          26.0     16.7 
+## 4   1.31    0.251 1.60          30.2     19.4 
+## 5   0.873   0.226 2.06          25.0     16.0 
+## 6   0.436   0.207 2.58          13.0      8.34</code></pre>
+<p>*His biometric data were:</p>
+<table>
+<thead>
+<tr class="header">
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(M_{muscle}\)</span></td>
+<td>0.207 kg</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(L_o\)</span></td>
+<td>0.35 m</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(L_i\)</span></td>
+<td>0.06 m</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(L_{arm}\)</span></td>
+<td>0.26 m</td>
+</tr>
+</tbody>
+</table>
 </div>
-<div id="a-hill-curve-to-die-on" class="section level3">
-<h3>A Hill-curve to Die On</h3>
-<p>From this or previous explorations of muscle physiology, we now know
-that the amount of force produced by a muscle is a function of time
-(i.e., latency), shortening velocity, and muscle length. Thus, your
-previous calculations of torque could be a little bit off. Let’s
-consider one of these factors, muscle length, an important part of
-Hill-type muscle models <span class="citation">(Hill 1938)</span>. We’re
-not so worried about a 20 ms or so delay in peak <span
-class="math inline">\(F_{max}\)</span>, nor do we need to worry about
-shortening velocity because we’re assessing whether an isometric
-contraction will impart enough torque to move (accelerate) the
-dumbbell.</p>
-<p>To do this we must establish the relationship between the
-muscle-fiber length (<span class="math inline">\(FL\)</span>) and muscle
-force (<span class="math inline">\(F_{max}\)</span>), also called the
-force-fiber length factor or <span
-class="math inline">\(F_{fl}\)</span>. Fortunately, the relationship
-between force and muscle fibre lengths has been approximated for
-mammalian skeletal muscle by several researchers, including <span
-class="citation">(Whiting and Herzog 1999)</span>, from whence the
-following comes. It looks a bloody mess, but here it is:</p>
-<p><span class="math display">\[
-F_{fl}=-6.25\Bigg(\cfrac{FL}{FL_o}\Bigg)^2+12.5\Bigg(\cfrac{FL}{FL_o}\Bigg)-5.25,
-\]</span></p>
-<div class="figure" style="text-align: center">
-<img src="img/fl.png" alt="The force-length relationship of vertebrate muscle" width="624" />
-<p class="caption">
-The force-length relationship of vertebrate muscle
-</p>
-</div>
-<p>where <span class="math inline">\(FL_o\)</span> is the optimal fiber
-length. So, ``What <em>is</em> the optimal fiber length?” you ask. Well,
-we don’t know, not exactly. But, a lot of good experimental work
-suggests that, for many muscles in many species, it’s an <span
-class="math inline">\(FL\)</span> that is close to 75% the maximum
-length. So let’s use that, assuming the fibers are as long as the muscle
-and the maximum length of the muscle is reached at rest (i.e., elbow at
-10<span class="math inline">\(^\circ\)</span>). As you can see from the
-figure above, such a value assumes that the muscle is adapted to work
-over a range of lengths results in favorable sarcomere overlap.</p>
-<p>Once we know the <span class="math inline">\(F_{fl}\)</span> we can
-multiple this factor by <span class="math inline">\(F_{max}\)</span> to
-estimate how much force is being produced given the muscle’s position of
-the force-length curve (<span
-class="math inline">\(F_{muscle}\)</span>). Therefore, take this
-equation and write a function in R that you can pass through the <span
-class="math inline">\(FL\)</span>s and <span
-class="math inline">\(F_{max}\)</span> values at each of the 6 arm
-positions to calculate <span
-class="math inline">\(F_{muscle}\)</span>.</p>
-<!-- AME 2 includes custom funcitons -->
-<p><em>Include in your report an R chunk the script that codes this
-function.</em></p>
-</div>
-<div id="arnold-or-urkel" class="section level3">
-<h3>Arnold or Urkel?</h3>
+<div id="model-assessment" class="section level3">
+<h3>Model assessment</h3>
 <p>Now that you know how much torque your biceps can produce based on
 your arm’s geometry, biceps mass and length, what is the maximum mass
-(i.e. heaviest weigh) you could lift at each position?</p>
-<p>Be sure to reference the second equation above to identify which
-variable for which you should solve.</p>
+(i.e. heaviest weight) you could lift at each position?</p>
 <p>The next and last part of this experiment is to test your model. So,
 skip on over to the <em>largest building on campus</em> and test these
 theoretical calculations. Find a weight of the closest mass for your
-calculation for an arm angle of 10<span
-class="math inline">\(^\circ\)</span>. Go lighter or heavier until you
-can or can’t accelerate the dumbbell.</p>
+calculation for an arm angle that produced large <span
+class="math inline">\(M_{load}\)</span> value. Go lighter or heavier
+until you can or can’t accelerate the dumbbell.</p>
 <p>Please capture a video showing your attempt at proofing your model Be
 sure to give it the filename “first_last_plex” Make sure the mass is
 identified in the video and you isolate the biceps, i.e., no
 swinging.</p>
+</div>
+<div id="biometric-data" class="section level3">
+<h3>Biometric data</h3>
+<p>To recap, you’ll have to measure several dimension of your arm lever
+system to feed the model and asses its accuracy. Other values will have
+to be calculated.</p>
+<p>Those to be measured:</p>
+<ol style="list-style-type: decimal">
+<li>Muscle mass (<span class="math inline">\(M_{muscle}\)</span>): Do so
+with the playdough method in the lab.</li>
+<li>Arm length (<span class="math inline">\(L_{arm}\)</span>): Do so
+with a meter stick in the lab.</li>
+<li>Inlever length (<span class="math inline">\(Li\)</span>): Do so with
+a meter stick in the lab.</li>
+<li>Outlever length (<span class="math inline">\(Li\)</span>): Do so
+with a meter stick in the lab.</li>
+</ol>
+<p>Those to be calculated:</p>
+<ol style="list-style-type: decimal">
+<li>Muscle lengths at each flexion angle (<span
+class="math inline">\(L_{muscle}\)</span>)</li>
+<li>Muscle insertion angle at each flexion angle(<span
+class="math inline">\(\theta\)</span>)</li>
+</ol>
 </div>
 </div>
 <div id="what-to-address-in-the-report" class="section level2">
 <h2>What to address in the report</h2>
 <p>After you recover, please synthesize your results and findings
 according to the suggested organization for an MP report. Remember, you
-must cite two relevant primary sources. You can find explicit detail
+must cite two relevant primary sources. You can find explicit details
 concerning the organization of an MP report <a
 href="mini_projects.html">here</a>.</p>
 <p>With this in mind, please address the following:</p>
 <ol style="list-style-type: decimal">
-<li>What are the <span class="math inline">\(F_{muscle}\)</span> values
-along the six arm position?</li>
-<li>What input torques result from the <span
-class="math inline">\(F_{muscle}\)</span> values?</li>
-<li>How do these torque values compare to the those values computed
-using <span class="math inline">\(F_{max}\)</span> only, i.e., not
-considering a force-length relationship?</li>
-<li>For an arm angle of 10<span class="math inline">\(^\circ\)</span>,
-how did your gym testing compare to your model estimations? That is, was
-it more or less than predicted?</li>
+<li>What were your predicted <span
+class="math inline">\(\tau_{muscle}\)</span> and <span
+class="math inline">\(M_{load}\)</span> values at each flexion
+angle?</li>
+<li>Is there any pattern to these values? What explains these
+patterns?</li>
+<li>How did your gym testing compare to your model estimations? That is,
+was it more or less than predicted?</li>
+<li>If the model was produced poor predictions, why?</li>
 </ol>
+<p>Be sure to include at least one visualization of your
+predictions.</p>
 </div>
 <div id="due-date-and-submission" class="section level2">
 <h2>Due Date and Submission</h2>
 <p>Reports are due by Wednesday, February 14st at 11:59 pm. You should
-<a href="https://forms.gle/sX9HpnV9bFgKJp3n7">compress your
-directory</a> containing the .Rmd, all class data, and videos of each
-member evaluatin the model. This .zip file should be uploaded <a
-href="https://forms.gle/GbG1xC5vHxhQQ7hZA">here</a>.</p>
+compress your directory containing the .Rmd, all class data, and videos
+of each member assessing the model. This .zip file should be uploaded <a
+href="https://forms.gle/JPcZLjrrB7UKLhcj7">here</a>.</p>
 <p>What to pay attention to in writing the report:</p>
 <ul>
 <li>Data are plural</li>
 <li>Don’t use print(), head(), etc. commands needlessly</li>
-<li>Better methods for printing talbes (eg. pander())</li>
-<li>Need captions for figures!</li>
-<li>Figures should be appropriately sized.</li>
-<li>Figure axes should be labelled appropriately</li>
+<li>Figure axes should be labelled appropriately.</li>
 </ul>
 <div id="references" class="section level3 unnumbered">
 <h3 class="unnumbered">References</h3>

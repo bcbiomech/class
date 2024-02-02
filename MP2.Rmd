@@ -6,165 +6,351 @@ bibliography: BIOL5380.bib
 
 ## Introduction
 
-Our musculoskeletal system is pretty handy in permitting us to move, hold, or manipulate objects, including our own bodies. Many vertebrate biomechanical systems make use of muscular force applied to levers in order to resists or overcome these loads. In this MP, we'll explore a classic lever system in the tetrapod body---the forelimb---one of the [3rd-order type](https://openoregon.pressbooks.pub/bodyphysics/chapter/body-levers/). Specifically, we'll consider how skeletal geometry and important physiological parameters, like muscle length and mass, affect the force output in this system and how much it can accelerate a load.
+Our musculoskeletal system is pretty handy in permitting us to move, hold, or manipulate objects, including our own bodies. Many vertebrate biomechanical systems make use of muscular force applied to levers in order to resists or overcome these loads. In this MP, we'll explore a classic lever system in the tetrapod body---the forelimb---one of the [3rd-order type](https://openoregon.pressbooks.pub/bodyphysics/chapter/body-levers/). Specifically, we'll consider how skeletal geometry and important physiological parameters, like muscle length and mass, affect the force output in this system and maximum load it can support.
 
-
-### First (Lady) Principles
-
-Imagine that you're at the plex and, in an effort to have arms that look as sleek and muscular as our [First Lady's](https://www.runnersworld.com/runners-stories/a20837148/im-a-runner-dr-jill-biden/), you start a program of biceps curls. Your job in this MP is to estimate how much mass you can lift (i.e., accelerate) with your two biceps groups. Let's assume the following.
+To begin, let's assume the following.
 
 + All the force to do the lift is exerted by your biceps femoralis
 + The weight in the palm of your hand
 + Your humerus is stationary
 + The elbow joint is a simple hinge linkage with one DOF
-+ The flexion of the arm (i.e., curl motion) begins when your arm angle is 10$^\circ$ and is finished at 135$^\circ$.
++ The flexion of the arm (i.e., curl motion) begins when your arm angle is 150$^\circ$ and is finished at 50$^\circ$.
 
-What we have here, according to a classic concept in physics, is a dynamic equilibrium problem. That is, if a torque applied is greater than the moment of mass on the lever, the mass of the dumbbell will be accelerated, a situation described by:
-
-$$
- \alpha=\frac{\tau}{I},
-$$
-
-where $\alpha$ is angular acceleration (in rad$\cdot$s$^{-2}$), $\tau$ is torque (N$\cdot$m), and $I$ is the mass moment of inertia (in kg$\cdot$m$^2$). The dumbbell has $I$ according to its distance from the fulcrum (i.e., joint), given by:
+What we have here, according to a classic concept in physics, is a dynamic equilibrium problem. That is, if the sum of torques is not zero, the mass of the dumbbell will be accelerated, a situation described by:
 
 $$
-I=r^2 \cdot m,
+ \alpha=\frac{\Sigma\tau}{I},
 $$
 
-where $r$ is the radius (the outlever) of the load and $m$ the mass of the load. This is the rotational application of Newton's Second Law and the basis of our model.
+where $\alpha$ is angular acceleration (in rad$\cdot$s$^{-2}$), $\Sigma\tau$ is sum of torques (N$\cdot$m), and $I$ is the mass moment of inertia (in kg$\cdot$m$^2$). Or, if $\tau_{muscle}$ represents muscle torque and  $\tau_{load}$ the load tourque, we have
 
+$$
+ \alpha=\frac{\tau_{muscle}-\tau_{load}}{I}.
+$$
 
-Based on these concepts, our task in this MP to calculate <u>**how much torque ($\tau$) is generated at the outlever position of the arm system.**</u>
+This is the rotational application of Newton's Second Law. We can simplify our problem it we consider that, under equilibrium, $\alpha=0$. Therefore, under equilibirium, $\tau_{muscle}=\tau_{load}$
 
+Based on these concepts, our task in this MP is to calculate <u>**how much torque ($\tau$) is generated at the outlever position of the arm system.**</u>
 
+The specific goals are to:
+
+1. Predict how much force and torque is produced by the biceps system over a range of extension/flexion angels.
+
+2. Assess how force and torque vary according to extension/flexion angle.
+
+3. Test these predictions in the gym.
 
 ## Methods
 
-We'll approach this problem by constructing a computational model based on dynamic equilibrium, one that includes some very important muscle and geometric parameters.
+We'll approach this problem by constructing a computational model based on dynamic equilibrium, one that includes some very important muscle and geometric parameters. We'll model arm torque output over a range of arm extension/flexion angles, from nearly fully extended (extension angle of 150$^\circ$) to fully flexed arm (extension angle of 50$^\circ$). This will include extension angles of 50, 75, 100, 125, and 150$^\circ$).
 
-
-### A Law to Live By
-
-First we need to know the geometry of your arm lever system. How long is the outlever? How long is the inlever? Assuming the biceps originates just on the [coracoid process of the scapula](https://en.wikipedia.org/wiki/Coracoid_process) and inserts on the proximal radius, what is the insertion angle and origin-insertion distance ($L_{muscle}$) at rest right before the curl begins? Be sure to include these dimensions in a csv file with your submission. Also be sure to include the insertion angle in degrees. 
-
-The file should look like this (replacing your name with mine):
-
-
-```{r}
-dat <- data.frame(outlever=0.26,inlever=0.05,ins.ang=160,orig.ins=0.3,mass=0.02) #mass from below
-write.csv(dat,"prof_kenaley_biceps.csv")
-dat <- read.csv("prof_kenaley_biceps.csv")
-print(dat)
+```{r fig1,echo=F,fig.cap=c("Fig. 1: The human elbow lever at full extension and flexion."),fig.align = 'center',out.width="50%"}
+knitr::include_graphics(c("img/elbow4.png"))
+library(tidyverse)
 ``` 
 
-Have a look at the figure of the arm system below to help you with this. In addition, the law of cosines may be really handy here. It states that, for a triangle with sides a, b, and c, the  angle A is:
 
-$$
-A=acos\Bigg(\cfrac{-a^2+b^2+c^2}{2bc}\Bigg)
-$$
+### The lever model
 
 
-```{r elbow,echo=F,fig.cap=c("The human elbow lever, essentially a triangle (below) with variable length $L_{muscle}$"),fig.align = 'center'}
+```{r fig2,echo=F,fig.cap=c("Fig. 2: The moments applied to a 3d order lever"),fig.align = 'center',out.width="50%"}
+knitr::include_graphics(c("img/lever2.png"))
+``` 
+
+When in equilibrium (i.e., no rotational motion, Figure 2), the sum of torques applied to a lever system like one of the 3rd order variety shown above are equal. That is, $F_i \cdot L_i = F_{load} \cdot L_o$. Or, in terms of our 3rd order arm system, $F_{muscle} \cdot L_i = F_{load} \cdot L_o$.
+
+This assumes that both forces, $F_{muscle}$ and $F_{Load}$ are applied normal to the lever system, that is at a perfect 90$^\circ$ angle. For our system, the geometry of which is presented below in Figure 3, let's assume the load is in the palm, resting directly on the outlever and thus the angle of the load $F_{load}$ is normal. The insertion angle of the muscle relative to the inlever of the formarm $\theta$ is not normal and, in fact, changes with extension/flexion angle as seen in Figure 4. 
+
+
+```{r fig3,echo=F,fig.cap=c("Fig. 3: The human elbow lever."),fig.align = 'center',out.width="50%"}
 knitr::include_graphics(c("img/elbow2.png"))
 
 ``` 
 
-```{r, echo=F,fig.cap=c("A triangle"),label="triangle",fig.align = 'center'}
-knitr::include_graphics(c("img/cosines.png"))
+
+```{r elbowangml,echo=F,fig.cap=c("Fig. 4: The human elbow lever at full extension and flexion. Notice how the insertion angle and $L_{muscle}$ change"),fig.align = 'center',out.width="40%"}
+knitr::include_graphics(c("img/elbow3.png"))
 
 ``` 
 
- 
-### Tension Headaches
-
-The magnitude of torque applied to the forearm during the curl depends upon the amount of force (i.e., tension) produced by the muscle. The amount of force produced by a muscle is, as we have discussed or will, is determined by how many crossbridges can form. This number can be roughly estimated by a muscle's physiological cross-sectional area (PCSA), a value computed thusly:
-
-$$
-PCSA=\cfrac{M_{muscle} \cdot cos(\phi)}{\rho \cdot L_{muscle}}
-$$
-
-where $M_{muscle}$ is the mass of the muscle (in kg), $\phi$ is the pennation angle, $L_{muscle}$ the length of the muscle (in cm), and $\rho$ the density of muscle. 
-
-Compute the PCSA of your right biceps by making the following assumptions: 
-
-1. the length of your biceps containing all the fibers is 60\% the origin-insertion length;
-2. the density of muscle is 0.00105 kg cm$^{-1}$; 
-3. the muscle is nonpennate ($\phi$=0); and lastly
-4. the mass of your muscle is approximated by a volume of playdough.
-
-To estimate the mass of your right biceps with playdough, sculpt the clay to a spheroid that matches the volume of your fully shortened biceps. Flexing and cupping the muscle with your left hand helps with estimating the muscle volume. Next, weigh the playdough (if your muscle mass is large enough, you may have to break the playdough into pieces and way them separately). Vertebrate muscle is about as dense as playdough. Record your mass data through the link above. 
-
-If the maximal force output of human white muscle is 20 N cm$^{-2}$ during an isometric contraction, how much force is produced at the start of the extension? Feel free to ignore length, velocity (it's isometric), and time considerations . . . for now. 
-
-### Taking Mechanical Advantage
-
-In a lever system, the torque applied (say by  muscle, $\tau_{muscle}$) is a function of the magnitude of the input force ($F_{max}$, if it's the maximal force as in the above), the inlever length ($L_{in}$), and angle of the input relative to the lever (the insertion angel, $\theta$). In other words, for our biceps:
+Therefore, the torque applied my a muscle to the lever ($\tau_{muscle}$) is also function of the insertion angle, in addition to $F_{muscle}$ and $L_i$, or  
 
 
 $$
-\tau_{muscle}=F_{max} \cdot L_{in} \cdot sin\theta
+\tau_{muscle}=F_{muscle}  \cdot sin\theta \cdot L_i.
 $$
 
-How much torque is applied to the forearm at 6 positions from the start of the curl to the end every 25$^\circ$?  Based on this, we should be able to assess at what angle the arme produces the most muscle torque? 
+<!-- How much torque is applied to the forearm at 6 positions from the start of the curl to the end every 25$^\circ$?  Based on this, we should be able to assess at what angle the arm produces the most muscle torque?  -->
 
-### A Hill-curve to Die On
+### Determining $F_{muscle}$
 
-From this or previous explorations of muscle physiology, we now know that the amount of force produced by a muscle is a function of time (i.e., latency), shortening velocity, and muscle length. Thus, your previous calculations of torque could be a little bit off. Let's consider one of these factors, muscle length, an important part of Hill-type muscle models [@hill1938heat]. We're not so worried about a 20 ms or so delay in peak $F_{max}$, nor do we need to worry about shortening velocity because we're assessing whether an isometric contraction will impart enough torque to move (accelerate) the dumbbell. 
+From this or previous explorations of muscle physiology, we now know that the amount of force produced by a muscle is a function of time (i.e., latency), shortening velocity, and muscle length. Because we're applying an equilibrium model to our lever system, there will be no rotation and therefore no changes in muscle length at each arm postion. This means an isometric contraction and a muscle with no velocity. So, we don't have to consider the force-velocity relationship. We can ignore latency in our model, logically assuming our contractions will last longer thant the 20--50 ms before peak muscle force.
 
-To do this we must establish the relationship between the muscle-fiber length ($FL$) and muscle force ($F_{max}$), also called the force-fiber length factor or $F_{fl}$. Fortunately, the relationship between force and muscle fibre lengths has been approximated for mammalian skeletal muscle by several researchers, including [@Whiting:1999wv], from whence the following comes. It looks a bloody mess, but here it is:
+However, one of these factors, muscle length, is a factor and an extremely important part of Hill-type muscle models [@hill1938heat] like the one we're constructing
 
-$$
-F_{fl}=-6.25\Bigg(\cfrac{FL}{FL_o}\Bigg)^2+12.5\Bigg(\cfrac{FL}{FL_o}\Bigg)-5.25,
-$$
+To do this we must establish the relationship between the muscle length and the maximum amount of force a muscle can produce ($F_{max}$), also called the force-length factor or $f_{fl}$. Fortunately, the relationship between force and muscle length has been approximated for mammalian skeletal muscle by several researchers, including [@Whiting:1999wv], from whence the following comes. It looks a bloody mess, but here it is:
 
+$$f_{fl}=-6.25\Bigg(\cfrac{L_{muscle}}{L_{opt}}\Bigg)^2+12.5\Bigg(\cfrac{L_{muscle}}{L_{opt}}\Bigg)-5.25,$$
+<br>
+<br>
 
-```{r fl,echo=F,fig.cap=c("The force-length relationship of vertebrate muscle"),fig.align = 'center'}
+```{r fl,echo=F,fig.cap=c("Fig. 5: The force-length relationship of vertebrate muscle"),fig.align = 'center',out.width="50%"}
 knitr::include_graphics(c("img/fl.png"))
 
 ``` 
 
-where $FL_o$ is the optimal fiber length. So, ``What _is_ the optimal fiber length?" you ask. Well, we don't know, not exactly. But, a lot of good experimental work suggests that, for many muscles in many species, it's an $FL$  that is close to 75\% the maximum length. So let's use that, assuming the fibers are as long as the muscle and the maximum length of the muscle is reached at rest (i.e., elbow at 10$^\circ$). As you can see from the figure above, such a value assumes that the muscle is adapted to work over a range of lengths results in favorable sarcomere overlap.
+where $L_{opt}$ is the optimal muscle length. So, ``What _is_ the optimal muscle length?" you ask. Well, we don't know, not exactly. But, a lot of good experimental work suggests that, for many muscles in many species, it's an $L_{muscle}$  that is close to 80\% the maximum length. So let's use that and assume the maximum length of the muscle is reached at rest (i.e., extension angle of 150$^\circ$, $L_{muscle_r}$). Therefore, $L_{opt}= L_{muscle_r} \cdot 0.8$.
 
-Once we know the $F_{fl}$ we can multiple this factor by $F_{max}$ to estimate how much force is being produced given the muscle's position of the force-length curve ($F_{muscle}$). Therefore, take this equation and write a function in R that you can pass through the $FL$s and $F_{max}$ values at each of the 6 arm positions to calculate $F_{muscle}$. 
+As you can see from Figure 5, such a value assumes that the muscle is adapted to work over a range of lengths that results in favorable sarcomere overlap. Once we know the we can multiple $F_{max}$ by the factor $f_{fl}$ to estimate how much force is being produced given the muscle's position of the force-length curve ($F_{muscle}$).
+
+
+<!-- Therefore, take this equation and write a function in R that you can pass through the $FL$s and $F_{max}$ values at each of the 6 arm positions to calculate $F_{muscle}$.  -->
 
 <!-- AME 2 includes custom funcitons -->
 
-*Include in your report an R chunk the script that codes this function.*
 
-### Arnold or Urkel?
-Now that you know how much torque your biceps can produce based on your arm's geometry, biceps mass and length, what is the maximum mass (i.e. heaviest weigh) you could lift at each position?
+### Determining $\theta$
 
-Be sure to reference the second equation above to identify which variable for which you should solve. 
+Have a look at the figure of the arm system in Figure 4. For any flexion/extension angle, insertion angle can be computed using the law of cosines. This law states that, for a triangle with length l, r, and o (left, right, and opposite) the angle $\theta$ is:
 
-The next and last part of this experiment is to test your model. So, skip on over to the *largest building on campus* and test these theoretical calculations. Find a weight of the closest mass for your calculation for an arm angle of 10$^\circ$. Go lighter or heavier until you can or can't accelerate the dumbbell.
+
+$$
+\theta=acos\Bigg(\cfrac{-o^2+l^2+r^2}{2lr}\Bigg)
+$$
+
+
+```{r fig6, echo=F,fig.cap=c("Fig. 6: A triangle"),fig.align = 'center',out.width="50%"}
+knitr::include_graphics(c("img/cosines.png"))
+
+``` 
+
+Here, it's easy to see that $o$ would represent $L_{arm}$, segment $l$ inlever length ($L_{i}$), and  segment $r$ the muscle length ($L_{muscle}$).
+
+Please write a function named `law_cos` that will help you compute $\theta$, the insertion angle. Make sure that the function takes the argumes `o`,`r``, and `l`.
+
+### Determining $L_{muscle}$
+
+Similarly, muscle length will change with flexion angle and we can use the law of cosines to compute muscle length. Here we just solve for $o$ if we consider a triangle like that in Figure 7. Hoefully you can see that segment $o$ would represent $L_{muscle}$, segment $l$ the arm length ($L_{arm}$), segment $r$ the inlever length ($L_i$), and $theta$ the flexion angle. Doing the algebra, we get:
+
+$$o=\sqrt{-1\cdot(cos(\theta)\cdot 2 \cdot l\cdot r-l^2-r^2)}.$$
+
+Please write a function named `law_cos2` that will help you compute $L_{muscle}$ at each flexion angle. Make sure that it includes the arguments `l`, `r`, and `theta`.
+
+*Note:* You'll have to do this first, before computing insertion angle. That is, you need $L_{muscle}$ to compute $\theta$.
+
+
+```{r fig7, echo=F,fig.cap=c("Fig. 7: Another triangle"),fig.align = 'center',out.width="50%"}
+knitr::include_graphics(c("img/cosines2.png"))
+
+``` 
+
+
+### Determining $F_{max}$
+
+To compute $F_{muscle}$, we must therefore know the $F_{max}$. As we have discussed or will, the amount of force produced by a muscle is is determined by how many crossbridges it can form. This number can be roughly estimated by a muscle's physiological cross-sectional area (PCSA), a value computed in this way:
+
+$$
+PCSA=\cfrac{M_{muscle} \cdot cos(\phi)}{\rho \cdot L_{muscle_r}}
+$$
+
+
+where $M_{muscle}$ is the mass of the muscle (in kg), $\phi$ is the pennation angle, $L_{muscle_r}$ the length of the muscle at rest (in cm), and $\rho$ the density of muscle. 
+
+When computing the PCSA of your biceps, make following assumptions: 
+
+1. the length of your biceps containing all the fibers is the resting the origin-insertion length, $L_{muscle_r}$, the length at full extension (150$^\circ$);
+2. the density of muscle is 0.00105 kg cm$^{-3}$; 
+3. the muscle is [nonpennate](https://en.wikipedia.org/wiki/Pennate_muscle) ($\phi$=0); and lastly
+4. the mass of your muscle is approximated by a volume of playdough.
+
+To estimate the mass of your right biceps with playdough, sculpt the clay to a spheroid that matches the volume of your fully shortened biceps. Flexing and cupping the muscle with your left hand helps with estimating the muscle volume. Next, weigh the playdough (if your muscle mass is large enough, you may have to break the playdough into pieces and way them separately). Vertebrate muscle is about as dense as playdough.  
+
+If the maximal force output of human white muscle (the constant $k$) is 80 N cm$^{-2}$ during an isometric contraction (our scenario), you can now compute $F_{max}$
+
+<!-- First we need to know the geometry of your arm lever system. How long is the outlever? How long is the inlever? Assuming the biceps originates just on the [coracoid process of the scapula](https://en.wikipedia.org/wiki/Coracoid_process) and inserts on the proximal radius, origin-insertion distance ($L_{muscle}$) at rest (full extension) right before the curl begins? Of course, this is variable. -->
+
+<!-- Be sure to include these dimensions in a csv file with your submission. Also be sure to include the insertion angle in degrees.  -->
+
+<!-- The file should look like this (replacing your name with mine): -->
+
+### Putting it all together
+
+Let's assemble all this together. The ammount of tourque the biceps lever system can produce is therefore
+
+$$\tau_{muscle}=\cfrac{M_{muscle} \cdot cos(\phi)}{\rho \cdot L_{muscle_r}}\cdot k \cdot -6.25\Bigg(\cfrac{L_{muscle}}{L_{muscle_r}\cdot 0.8}\Bigg)^2+12.5\Bigg(\cfrac{L_{muscle}}{L_{muscle_r} \cdot 0.8}\Bigg)-5.25\cdot sin(\theta)\cdot L_i $$ 
+
+Perhaps your head is spinning and you're not sure where all this comes from. These are just the the components discussed above in long form:
+
+1. $F_{max}$, the maximum amount of force a muscle can produce determine by PCSA:
+
+$$\cfrac{M_{muscle} \cdot cos(\phi)}{\rho \cdot L_{muscle_r}}\cdot k$$
+
+2. $f_{fl}$, the force-length factor: 
+
+$$-6.25\Bigg(\cfrac{L_{muscle}}{L_{muscle_r} \cdot 0.8}\Bigg)^2+12.5\Bigg(\cfrac{L_{muscle}}{L_{muscle_r} \cdot 0.8}\Bigg)-5.25$$
+
+3. $sin(\theta)$, the muscle insertion angle.
+
+4. and $L_i$, the inlever length.
+
+Together, items 1 and 2 make up $F_{muscle$}.
+
+You task is to render all this in repeatable and adjustable computational model as an R function. According to the model, this function should be named `model` and take as arguments the following:
+
+  + `mass`: Muscle mass, $M_{muscle}$, in kg.
+  + `Lmuscler`: Length of the muscle at rest (150$^\circ$ extension), $L_{muscle_r}$ in m.
+  + `Lmuscle`: Length of the muscle at any flexion/extension angle, $L_{muscle}$ in m.
+  + `theta`: Insertion angle of the muscle any flexion/extension angle, $\theta$.
+  + `Lo`: Length of the inlever, $L_i$ in m.
+  + `rho`: A value for muscle density $\rho$ with a default of 0.00105 kg cm$^{-1}$.
+  + `k`: A value for $k$, the maximal force output of human white muscle with a default of 80 N cm$^{-2}$.
+  
+*Note:* The PCSA model above depends on lengths in cm. Your computational model must account for this, especially given that our lengths are in m.
+
+The function should also return the predicted torque based on these inputs.
+
+
+```{r sol,include=F,eval=T}
+law_cos <- function(o,r,l){
+  theta <- acos((-o^2+l^2+r^2)/(2*l*r))
+  return(theta)
+}
+
+
+law_cos2 <- function(l,r,theta){
+  o <- sqrt((cos(theta)*2*l*r-l^2-r^2)*-1)
+  return(o)
+}
+
+
+#my data
+mass=0.207
+Lo=0.35
+Larm=0.26
+Li=0.06
+Lmuscler = 0.3134007
+Lmuscle=0.3134007
+#the model
+model <- function(mass,Lmuscler,Lmuscle,Li,rho=0.00105,k=80,theta,opt=0.8){
+ PCSA <- mass/(Lmuscler*100*rho)
+ fmax <- PCSA*k
+ ffl <-  function(Lmuscle,Lmuscler,opt=0.5){-6.25*(Lmuscle/(Lmuscler*opt))^2+12.5*(Lmuscle/(Lmuscler*opt))-5.25}
+ 
+ fl <- ffl(Lmuscle=Lmuscle,Lmuscler=Lmuscler,opt=opt)
+ 
+ t <- fmax*fl*Li*sin(theta)
+ return(t)
+}
+
+
+#my data
+mass=0.207
+Lo=0.35
+Larm=0.26
+Li=0.06
+
+tibble(flexion=trackter::rad(seq(150,25,-25)),Lmuscle=law_cos2(Larm,Li,flexion)) %>% 
+  mutate(theta=law_cos(Larm,Lmuscle,Li)) %>% 
+  mutate(muscle_torque=model(mass=mass,Lmuscler = Lmuscle[1],Li = Li,Lmuscle = Lmuscle,theta=theta)) %>% 
+  mutate(max_mass=muscle_torque/(Lo*9.8)*2.2)
+
+```
+
+
+
+Please apply this model function to the six extension angles: 50, 75, 100, 125, and 150$^\circ$). To begin your calculations, create a tibble that includes the following columns:
+
+1. `flexion`: the flexion angles, 50, 75, 100, 125, and 150$^\circ$, but in radians
+2. `Lmuscle`: the $L_{muscle}$ values at each flexion angle
+3.  `theta`: the insertion angle values ($\theta$) at each flexion angle.
+
+Then, apply the `model()` function using `mutate()` and your measured biometric data to add a new column `muscle_torque`. Call this tibble object `dat`.
+
+Please also add the predicted load mass your arm system could support. Remember that equilibrium assumes the muscle and load torques are equal. Therefor, you'll have to find what mass results in a load torque that would equal the muscle torque. For that, $\tau_{load}=\tau_{muscle}$. If 
+
+$$\tau_{load}=F_{load} \cdot L_o,$$
+where $F_{load}$ is the static force of the load and $L_o$ is the outlever length, and
+
+$$F_{load}=M_{load} \cdot g,$$ 
+where $M_{load}$ is the mass of the load and $g$ the acceleration due to gravity, we then come to:
+
+
+$$ M_{load}=\frac{\tau_{muscle}}{L_o \cdot g}.$$
+Please add $M_{load}$ to your `dat` table in the column `max_mass`.
+
+You should wind up with something like this (Prof. K's data*):
+
+```{r d,echo=F}
+dat <- tibble(flexion=trackter::rad(seq(150,25,-25)),Lmuscle=law_cos2(Larm,Li,flexion)) %>% 
+  mutate(theta=law_cos(Larm,Lmuscle,Li)) %>% 
+  mutate(theta=law_cos(Larm,Lmuscle,Li)) %>% 
+  mutate(muscle_torque=model(mass=mass,Lmuscler = Lmuscle[1],Li = Li,Lmuscle = Lmuscle,theta=theta)) %>% 
+  mutate(max_mass=muscle_torque/(Lo*9.8)*2.2)
+print(dat)
+```
+
+
+*His biometric data were:
+
+| Variable| Value |
+| ----------- | ----------- |
+| $M_{muscle}$| 0.207 kg    |
+| $L_o$  | 0.35 m        |
+| $L_i$  | 0.06 m        |
+| $L_{arm}$ | 0.26 m      |
+
+
+
+### Model assessment
+
+Now that you know how much torque your biceps can produce based on your arm's geometry, biceps mass and length, what is the maximum mass (i.e. heaviest weight) you could lift at each position?
+
+The next and last part of this experiment is to test your model. So, skip on over to the *largest building on campus* and test these theoretical calculations. Find a weight of the closest mass for your calculation for an arm angle that produced large $M_{load}$ value. Go lighter or heavier until you can or can't accelerate the dumbbell.
 
 Please capture a video showing your attempt at proofing your model Be sure to give it the filename "first_last_plex" Make sure the mass is identified in the video and you isolate the biceps, i.e., no swinging.
 
+
+
+### Biometric data
+
+To recap, you'll have to measure several dimension of your arm lever system to feed the model and asses its accuracy. Other values will have to be calculated.
+
+Those to be measured:
+
+1. Muscle mass ($M_{muscle}$): Do so with the playdough method in the lab.
+2. Arm length ($L_{arm}$): Do so with a meter stick in the lab.
+3. Inlever length ($Li$): Do so with a meter stick in the lab.
+4. Outlever length ($Li$): Do so with a meter stick in the lab.
+
+Those to be calculated:
+
+1. Muscle lengths at each flexion angle ($L_{muscle}$)
+2. Muscle insertion angle at each flexion angle($\theta$)
+
+
 ## What to address in the report
 
-After you recover, please synthesize your results and findings according to the suggested organization for an MP report. Remember, you must cite two relevant primary sources. You can find explicit detail concerning the organization of an MP report [here](mini_projects.html). 
+After you recover, please synthesize your results and findings according to the suggested organization for an MP report. Remember, you must cite two relevant primary sources. You can find explicit details concerning the organization of an MP report [here](mini_projects.html). 
+
 
 With this in mind, please address the following:
 
-  1. What are the $F_{muscle}$ values along the six arm position?
-  2. What input torques result from the $F_{muscle}$ values? 
-  3. How do these torque values compare to the those values computed using $F_{max}$ only, i.e., not considering a force-length relationship? 
-  4. For an arm angle of 10$^\circ$, how did your gym testing compare to your model estimations? That is, was it more or less than predicted? 
+  1. What were your predicted $\tau_{muscle}$ and $M_{load}$ values at each flexion angle?
+  2. Is there any pattern to these values? What explains these patterns?
+  3. How did your gym testing compare to your model estimations? That is, was it more or less than predicted? 
+  4. If the model was produced poor predictions, why?
 
+Be sure to include at least one visualization of your predictions.
   
 ## Due Date and Submission
 
-Reports are due by Wednesday, February 14st at 11:59 pm. You should [compress your directory](https://forms.gle/sX9HpnV9bFgKJp3n7) containing the .Rmd, all class data, and videos of each member evaluatin the model. This .zip file should be uploaded [here](https://forms.gle/GbG1xC5vHxhQQ7hZA).
-
+Reports are due by Wednesday, February 14st at 11:59 pm. You should compress your directory containing the .Rmd, all class data, and videos of each member assessing the model. This .zip file should be uploaded [here](https://forms.gle/JPcZLjrrB7UKLhcj7).
 
 What to pay attention to in writing the report:
 
 + Data are plural
 + Don't use print(), head(), etc. commands needlessly
-+ Better methods for printing talbes (eg. pander())
-+ Need captions for figures!
-+ Figures should be appropriately sized.
-+ Figure axes should be labelled appropriately
++ Figure axes should be labelled appropriately.
 
 
 ### References
