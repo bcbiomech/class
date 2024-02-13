@@ -3,7 +3,7 @@ title: "Lecture 9"
 subtitle: "Coarse Structures"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/02/14"
+date: "2024/02/13"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -42,6 +42,58 @@ Today we'll ....
 
 
 ]
+
+
+---
+class: top
+
+# What if we have both?
+
+
+.center[
+```{r,echo=FALSE,out.width=650}
+#stride length
+knitr::include_graphics("img/mucuscartilage.png")
+
+```
+
+]
+
+.pull-left[
+
+
+.center[
+Maxwell model
+
+]
+
+
+]
+
+.pull-right[
+.center[
+
+Voigt model
+
+]
+]
+
+
+---
+class: top
+
+# Why this in a tendon?
+
+
+.center[
+```{r,echo=FALSE,out.width=450}
+#stride length
+knitr::include_graphics("https://www.physio-pedia.com/images/thumb/b/be/Rep_loading-unloading_curve_intechopen.jpeg/357px-Rep_loading-unloading_curve_intechopen.jpeg")
+
+```
+
+]
+
 
 
 ---
