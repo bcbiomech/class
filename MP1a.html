@@ -434,16 +434,16 @@ div.tocify {
           <a href="AMEs/AME2.html">AME2</a>
         </li>
         <li>
-          <a href="AME3.html">AME3</a>
+          <a href="AMEs/AME3.html">AME3</a>
         </li>
         <li>
-          <a href="AME4.html">AME4</a>
+          <a href="AMEs/AME4.html">AME4</a>
         </li>
         <li>
-          <a href="AME5.html">AME5</a>
+          <a href="AMEs/AME5.html">AME5</a>
         </li>
         <li>
-          <a href="AME6.html">AME6</a>
+          <a href="AMEs/AME6.html">AME6</a>
         </li>
       </ul>
     </li>
@@ -573,10 +573,14 @@ learning how to work in R will decrease your overall effort compared to
 where you started. So, just sit back, take it all in and rest
 assured—you’re making a great investment.</p>
 <center>
-<pre><code>## Warning: `qplot()` was deprecated in ggplot2 3.4.0.
-## This warning is displayed once every 8 hours.
-## Call `lifecycle::last_lifecycle_warnings()` to see where this
-## warning was generated.</code></pre>
+<pre><code>## Warning: `qplot()` was deprecated in ggplot2
+## 3.4.0.
+## This warning is displayed once
+## every 8 hours.
+## Call
+## `lifecycle::last_lifecycle_warnings()`
+## to see where this warning was
+## generated.</code></pre>
 <div class="figure">
 <img src="MP1a_files/figure-html/unnamed-chunk-1-1.png" alt="The R coding learning curve." width="672" />
 <p class="caption">
@@ -991,7 +995,8 @@ line . . .</p>
 could add a red smoothed line:</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a>o<span class="sc">%&gt;%</span></span>
 <span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>ms,<span class="at">y=</span>cm))<span class="sc">+</span><span class="fu">geom_point</span>()<span class="sc">+</span><span class="fu">geom_smooth</span>(<span class="at">col=</span><span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<pre><code>## `geom_smooth()` using method = &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
+<pre><code>## `geom_smooth()` using method =
+## &#39;loess&#39; and formula = &#39;y ~ x&#39;</code></pre>
 <p><img src="MP1a_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 <p>As you can see, in a sense, the <code>ggplot2</code> framework is
 layered:</p>
@@ -1176,8 +1181,9 @@ combine data with these functions.</p>
 <div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" tabindex="-1"></a>all.dat <span class="sc">%&gt;%</span></span>
 <span id="cb26-2"><a href="#cb26-2" tabindex="-1"></a>  <span class="fu">group_by</span>(who,rep) <span class="sc">%&gt;%</span></span>
 <span id="cb26-3"><a href="#cb26-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">max =</span> <span class="fu">max</span>(cm))</span></code></pre></div>
-<pre><code>## `summarise()` has grouped output by &#39;who&#39;. You can override
-## using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by
+## &#39;who&#39;. You can override using the
+## `.groups` argument.</code></pre>
 <pre><code>## # A tibble: 10 × 3
 ## # Groups:   who [2]
 ##    who   rep     max
@@ -1202,8 +1208,9 @@ variable for subsequent exploration.</p>
 <div class="sourceCode" id="cb29"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" tabindex="-1"></a>max.dat <span class="ot">&lt;-</span> all.dat <span class="sc">%&gt;%</span></span>
 <span id="cb29-2"><a href="#cb29-2" tabindex="-1"></a>  <span class="fu">group_by</span>(who,rep) <span class="sc">%&gt;%</span></span>
 <span id="cb29-3"><a href="#cb29-3" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">max =</span> <span class="fu">max</span>(cm))</span></code></pre></div>
-<pre><code>## `summarise()` has grouped output by &#39;who&#39;. You can override
-## using the `.groups` argument.</code></pre>
+<pre><code>## `summarise()` has grouped output by
+## &#39;who&#39;. You can override using the
+## `.groups` argument.</code></pre>
 </div>
 <div id="answering-the-question" class="section level2">
 <h2>Answering the Question</h2>

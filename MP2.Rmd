@@ -234,7 +234,7 @@ Lmuscle=0.3134007
 model <- function(mass,Lmuscler,Lmuscle,Li,rho=0.00105,k=80,theta,opt=0.8){
  PCSA <- mass/(Lmuscler*100*rho)
  fmax <- PCSA*k
- ffl <-  function(Lmuscle,Lmuscler,opt=0.5){-6.25*(Lmuscle/(Lmuscler*opt))^2+12.5*(Lmuscle/(Lmuscler*opt))-5.25}
+ ffl <-  function(Lmuscle,Lmuscler,opt=0.8){-6.25*(Lmuscle/(Lmuscler*opt))^2+12.5*(Lmuscle/(Lmuscler*opt))-5.25}
  
  fl <- ffl(Lmuscle=Lmuscle,Lmuscler=Lmuscler,opt=opt)
  
@@ -243,16 +243,38 @@ model <- function(mass,Lmuscler,Lmuscle,Li,rho=0.00105,k=80,theta,opt=0.8){
 }
 
 
+#Bev group
+dat1 <- tibble(
+ Person= c("Phil", "Colin", "Michael"),
+  Mmuscle = c(0.418, 0.252, 0.344),
+  Lo = c(0.320, 0.280, 0.320),
+  Li = c(0.080, 0.065, 0.080),
+  Larm = c(0.350, 0.31, 0.305)
+) %>% 
+  group_by(Person) %>% 
+  expand(theta=law_cos(Larm,Lmuscle,Li))
+
+dat1 %>% 
+   mutate(muscle_torque=model(mass=mass,Lmuscler = Lmuscle[1],Li = Li,Lmuscle = Lmuscle,theta=theta)) %>% 
+  mutate(max_mass=muscle_torque/(Lo*9.8)*2.2)
+
 #my data
 mass=0.207
 Lo=0.35
 Larm=0.26
 Li=0.06
 
+mass=0.418
+Lo=0.320
+Larm=0.350
+Li=0.08
+
 tibble(flexion=trackter::rad(seq(150,25,-25)),Lmuscle=law_cos2(Larm,Li,flexion)) %>% 
   mutate(theta=law_cos(Larm,Lmuscle,Li)) %>% 
   mutate(muscle_torque=model(mass=mass,Lmuscler = Lmuscle[1],Li = Li,Lmuscle = Lmuscle,theta=theta)) %>% 
-  mutate(max_mass=muscle_torque/(Lo*9.8)*2.2)
+  mutate(max_mass=muscle_torque/(Lo*9.8))
+
+
 
 ```
 
