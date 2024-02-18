@@ -1,10 +1,10 @@
 ---
-title: 'Mini Project 2: Stretch the Pig, Bend the Twig'
+title: 'Mini Project 3: Stretch the Pig, Bend the Twig'
 ---
 
 ## Introduction
 
-Our second Mini Project explores experimental methods for quantifying the material and structural properties of biological tissue (e.g., wood and intestine). Please recall that material properties (the inherent ones) are independent of structural properties (i.e.,size and shape). The goals of this MP are to:
+Our thirds Mini Project explores experimental methods for quantifying the material and structural properties of biological tissue (e.g., wood and intestine). Please recall that material properties (the inherent ones) are independent of structural properties (i.e.,size and shape). The goals of this MP are to:
 
 1. Learn how to measure force and displacement so that you can construct a stress-strain curve.
 2. Use a homemade three-point bender to estimate flexural stiffness of biomaterials.
@@ -163,14 +163,25 @@ knitr::kable(mat.data, caption = "Material Data")%>%kableExtra::kable_styling()
 1. What is the stiffness of the intestine in longitudinal and axial loading? How does the stiffness in these two directions compare?
 2. What evidence do you have that an intestinal tube is anisotropic? 
 3. What do you think the function of anisotropy is in the intestine? 
-4. Did beam orientation result in different flexural stiffness?
-5. Did strain rate affect wood flexural stiffness and did this response vary according to how wet the material was?
-6. How would this be important in loads applied to a human skeletal element?
+4. Did beam orientation results in greater flexural stiffness?
+5. How would this be important in loads applied to a human skeletal element?
 6. In your beam analysis, did you find any evidence of viscoelasticity?
 
 
 
-You can find explicit detail concerning the organization of an MP report [here](https://bcbiomech.github.io/class/mini_projects.html). This report is due Wednesday, March 17th.
+You can find explicit detail concerning the organization of an MP report [here](https://bcbiomech.github.io/class/mini_projects.html).
+
+## Due Date and Submission
+
+Reports are due by Wednesday, March 13th at 11:59 pm. You should compress your directory containing the .Rmd, all class data, and videos of each member assessing the model. This .zip file should be uploaded [here](https://forms.gle/UPopDX9WPuedbKh46).
+
+What to pay attention to in writing the report:
+
++ Data are plural
++ Don't use print(), head(), etc. commands needlessly
++ Figure axes should be labelled appropriately.
+
+
 
 ## What to pay attention to in writing the report
 
