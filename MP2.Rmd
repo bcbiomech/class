@@ -201,7 +201,7 @@ You task is to render all this in repeatable and adjustable computational model 
   + `Lmuscler`: Length of the muscle at rest (150$^\circ$ extension), $L_{muscle_r}$ in m.
   + `Lmuscle`: Length of the muscle at any flexion/extension angle, $L_{muscle}$ in m.
   + `theta`: Insertion angle of the muscle any flexion/extension angle, $\theta$.
-  + `Lo`: Length of the inlever, $L_i$ in m.
+  + `Li`: Length of the inlever, $L_i$ in m.
   + `rho`: A value for muscle density $\rho$ with a default of 0.00105 kg cm$^{-1}$.
   + `k`: A value for $k$, the maximal force output of human white muscle with a default of 80 N cm$^{-2}$.
   
