@@ -231,6 +231,7 @@ Li=0.06
 Lmuscler = 0.3134007
 Lmuscle=0.3134007
 #the model
+
 model <- function(mass,Lmuscler,Lmuscle,Li,rho=0.00105,k=80,theta,opt=0.8){
  PCSA <- mass/(Lmuscler*100*rho)
  fmax <- PCSA*k
