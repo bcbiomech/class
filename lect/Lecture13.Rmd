@@ -3,7 +3,7 @@ title: "Lecture 13"
 subtitle: "Fluids Around <br> An Introduction"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/02/28"
+date: "2024/02/27"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -28,8 +28,6 @@ library(scales)
 .pull-left[
 Today we'll ....
 
-- Finish off muscles
-
 - Define fluids
 
 - Define the conditions under which we can predict flows
@@ -44,133 +42,6 @@ Today we'll ....
 
 
 ]
-
-
----
-class: top
-
-# Metrics of muscle function
-
-## The work loop technique
-
-.pull-left[
-- Work = $F\cdot\Delta L$ (Joules)
-- Power = Work/time (Joles/s = Watts)
-- Power = Work x Frequency (Joules/s = Watts)
-- Power = F x V (Joules/s = Watts)
-
-.center[
-```{r,echo=FALSE,out.width=60}
-#stride length
-
-knitr::include_graphics("img/muscletest.png")
-
-```
-]
-
-]
-
-.pull-right[
-    
-<br>
-```{r,echo=FALSE,out.width=200}
-#stride length
-knitr::include_graphics("img/workloop.png")
-
-```
-.footnote[
-
-]
-
- 
-]
-
----
-class: top
-
-# Metrics of muscle function
-
-
-
-.center[
-
-```{r,echo=FALSE,out.width=600}
-#stride length
-
-knitr::include_graphics("img/motorbreakstrut.png")
-
-```
-]
-
-
-
----
-
-class: top
-
-# Lots more to study
-
-
-We know we don't know a lot about muscles
-
-.center[
-
-```{r,echo=FALSE,out.width=400}
-#stride length
-
-knitr::include_graphics("https://s3-eu-west-1.amazonaws.com/s3-euw1-ap-pe-ws4-cws-documents.ri-prod/9780367190811/central/musclefuels/images/gastrocnemius.jpg")
-
-```
-Doublet potentiation
-
-]
-
-
----
-
-class: top
-
-# Lots more to study
-
-
-We know we don't know a lot about muscles
-
-.center[
-
-```{r,echo=FALSE,out.width=400}
-#stride length
-
-knitr::include_graphics("https://journals.physiology.org/cms/10.1152/jappl.1997.82.4.1219/asset/images/large/japp0542801.jpeg")
-
-```
-Doublet potentiation
-
-]
-
-
-
-
-
----
-
-class: top
-
-# Lots more to study
-
-
-We know we don't know a lot about muscles
-
-.center[
-
-```{r,echo=FALSE,out.width=400}
-#stride length
-
-knitr::include_graphics("https://www.researchgate.net/profile/Stanley-Salmons/publication/11155153/figure/fig5/AS:276867023163394@1443021650100/Mean-nFTIpP-n-6-for-doublets-lower-surface-triplets-intermediate-surface-and.png")
-
-```
-
-]
-    
 
 ---
 class: top
