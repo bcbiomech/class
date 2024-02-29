@@ -3,7 +3,7 @@ title: "Lecture 14"
 subtitle: "Fluids Around <br> Bernoulli"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/03/02"
+date: "2024/02/29"
 output:
   xaringan::moon_reader:
     lib_dir: libs
