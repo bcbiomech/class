@@ -114,7 +114,9 @@ data.frame(d=c("dry","dry","dry","wet","wet"),o=c("flat","flat","flipped","flat"
 ```
 
 
-All the data will be recorded in a text file and placed in [this directory](https://drive.google.com/drive/folders/1XgXdvIO2iOC7NwMiAc4Z7CXpJAX4PWvC?usp=sharing).
+~~All the data will be recorded in a text file and placed in [this directory](https://drive.google.com/drive/folders/1XgXdvIO2iOC7NwMiAc4Z7CXpJAX4PWvC?usp=sharing).~~
+
+All the data will be recorded in a text file and placed in your personal Google feedback directories.
 
 
 
