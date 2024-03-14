@@ -3,7 +3,7 @@ title: "Lecture 16"
 subtitle: "Re: Shape"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2021/03/16"
+date: "2024/03/14"
 output:
   xaringan::moon_reader:
     lib_dir: libs
