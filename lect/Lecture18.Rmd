@@ -3,7 +3,7 @@ title: "Lecture 18"
 subtitle: "Gliding into D = m x g cos(theta)"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2022/03/23"
+date: "2023/03/21"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -67,6 +67,24 @@ LIFT: component perpendicular to direction of motion
 DRAG: component parallel to direction of motion
 
 
+---
+
+class: top
+
+# Review of lift
+
+
+```{r,echo=FALSE,out.width=350}
+#stride length
+knitr::include_graphics("https://static.scientificamerican.com/sciam/assets/Image/2020/saw0220Regi32_d.png?w=350")
+
+```
+
+LIFT: component perpendicular to direction of motion
+DRAG: component parallel to direction of motion
+
+
+
 
 
 ---
@@ -81,7 +99,7 @@ class: top
 
 ```{r,echo=FALSE,out.width=650}
 #stride length
-knitr::include_graphics("https://www.scienceabc.com/wp-content/uploads/ext-www.scienceabc.com/wp-content/uploads/2016/04/Lift-2.jpg-.jpg")
+knitr::include_graphics("https://www.grc.nasa.gov/www/k-12/VirtualAero/BottleRocket/airplane/Images/forces.gif")
 
 ```
 
