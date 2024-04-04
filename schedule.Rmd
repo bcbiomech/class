@@ -81,7 +81,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 ## Week 10 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Mar 26 | [Gliding into D = m$\cdot g\cdot$ cos($\theta$) (19)](lect/Lecture19.html)  | |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> [AEM4](AMEs/AME4.html) due
+ | Tuesday, Mar 26 | [Fish Swimming (19)](lect/Lecture19.html)  | [Sfakiotakis et al, 2009](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=757275&casa_token=I48yhmyTDY0AAAAA:hlx2Coqp-NuyrzmiV6VvSFZdWkf2Xd-d7DNJEMa1V-e2hJStcLdoQ_D14rlu-fanh21gf_kO&tag=1) |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> [AEM4](AMEs/AME4.html) due
   | Thursday, Mar 28 | No class (Easter) ||
  
 
@@ -89,7 +89,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
  
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Apr 2 | [Fish Swimming (20)](lect/Lecture20.html) | [Sfakiotakis et al, 2009](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=757275&casa_token=I48yhmyTDY0AAAAA:hlx2Coqp-NuyrzmiV6VvSFZdWkf2Xd-d7DNJEMa1V-e2hJStcLdoQ_D14rlu-fanh21gf_kO&tag=1)| Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> AME4 assessment/revisions due
+ | Tuesday, Apr 2 | MP4 wing design|| Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> AME4 assessment/revisions due
  | Thursday, Apr 4 | [There Will Be Blood (21)](lect/Lecture21.html)  | | 
 
  
@@ -97,20 +97,20 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |--------  
  | Tuesday, Apr 9 | [$Re$: The Tiny (22)](lect/Lecture22.html) / [Mini-Project V: It's Snot Rocket Science](MP5.html)  | |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br>[AEM5](AMEs/AME5.html) due
- | Thursday, Apr 11 |Final Project discussion ||MP4 report due  
+ | Thursday, Apr 11 |Final Project discussion ||
 
 ## Week 13 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- |--------
  | Tuesday, Apr 16 | No class, Monday Schedule || AME5 assessment/revisions due
- | Thursday, Apr 18 | Final Project Round Table | |MP5 report due, Team meetings with Prof. K 
+ | Thursday, Apr 18 | Final Project Round Table | |MP4 report due, Team meetings with Prof. K 
 
 
 ## Week 14 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Apr 23 | Final Project Work  | |
- | Thursday, Apr 25 | Final Project Work || 
+ | Thursday, Apr 25 | Final Project Work || MP5 report due  
 
 ## Week 15 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>

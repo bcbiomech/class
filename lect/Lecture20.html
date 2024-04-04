@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Lecture 20</title>
+    <title>Lecture 21</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Christopher Kenaley" />
+    <script src="libs/header-attrs-2.25/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -11,16 +12,26 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Lecture 20
-## Fish Swimming
+.title[
+# Lecture 21
+]
+.subtitle[
+## There Will Be Blood
+]
+.author[
 ### Dr. Christopher Kenaley
+]
+.institute[
 ### Boston College
-### 2021/04/07
+]
+.date[
+### 2024/04/04
+]
 
 ---
 
 class: top
-# Powered flight
+# There will be blood
 
 
 
@@ -31,9 +42,11 @@ class: top
 .pull-left[
 Today we'll introduce
 
-- Fish swimming basics (thrust, modes, etc.)
+- Hagen-Poiseuille law
 
-- Efficiency
+- Violation of H-P (how it really works)
+
+- Laundry list of other important laws/models
 
 
 ]
@@ -41,7 +54,27 @@ Today we'll introduce
 
 .pull-right[
 
-&lt;iframe width="400" height="200" src="https://www.youtube.com/embed/Mz7fuqJ8sKY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;iframe width="400" height="200" src="https://www.youtube.com/embed/pwmlP1hLJf0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+
+
+]
+
+
+
+
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+Cardiovascular system and elsewhere, too? Where?
+
+.center[
+
+&lt;img src="https://cvphysiology.com/s9v2f-3r4p7/share/h006-laminar-flow.png" width="600" /&gt;
+
 
 
 ]
@@ -52,16 +85,143 @@ Today we'll introduce
 
 class: top
 
-# Swimming basics
+# Flow in tubes (inside you!)
+
+.center[
+
+&lt;img src="img/tubeflow.png" width="600" /&gt;
+
+`$$\Delta p={\frac{8\mu LQ}{\pi R^{4}}}={\frac{8\pi \mu LQ}{A^{2}}}$$`
+
+]
+
+- The tube is stiff, straight, and uniform
+
+- Blood is Newtonian , i.e., viscosity is constant
+
+- The flow is uniform, laminar and steady, not pulsatile, and the velocity at the wall is zero (no slip at the wall)
+
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+.center[
+
+&lt;img src="img/tubeflow.png" width="600" /&gt;
+
+*Q* is the volumetric flow rate
+
+`$$Q=\frac{R^4\Delta P}{8\mu L}$$`
+Hagen-Poiseuille law
+
+Valid until the flow is turbulent!
+(Re &gt; ~ 2000)
+]
+
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+.center[
+
+&lt;img src="http://hyperphysics.phy-astr.gsu.edu/hbase/fluids/imgflu/tube.gif" width="600" /&gt;
+
+*Q* is the volumetric flow rate
+
+`$$Q=\frac{R^4\Delta P}{8\mu L}$$`
+Hagen-Poiseuille law
+
+Valid until the flow is turbulent!
+(Re &gt; ~ 2000)
+]
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+.center[
+
+&lt;img src="http://hyperphysics.phy-astr.gsu.edu/hbase/fluids/imgflu/tubec.gif
+" width="600" /&gt;
+
+`$$Q=\frac{R^4\Delta P}{8\mu L}$$`
+
+Hagen-Poiseuille law + Bernoulli 
+
+]
+
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+.center[
+
+&lt;img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2013/11/15/17/35/ds00525_-ds01120_-ds00064_-ds00178_-ds01052_-ds00537_-ds01179_im00642_ww5r236t_jpg.jpg
+" width="300" /&gt;
+
+*Q* is the volumetric flow rate
+
+`$$Q=\frac{R^4\Delta P}{8\mu L}$$`
+Hagen-Poiseuille law
+
+Effects of ateriosclerosis?
+]
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
+
+.center[
+
+&lt;img src="https://i1.wp.com/www.differencebetween.com/wp-content/uploads/2017/07/Difference-Between-Vasoconstriction-and-Vasodilation-3.png?w=800&amp;ssl=1
+" width="400" /&gt;
+
+*Q* is the volumetric flow rate
+
+`$$Q=\frac{R^4\Delta P}{8\mu L}$$`
+Hagen-Poiseuille law
+
+Non-linear effects of vasodialation and vasoconstriction?
+]
+
+
+---
+
+class: top
+
+# Flow in tubes (inside you!)
 
 .pull-left[
 
+Flow profile is altered by branches:
 
-&lt;img src="img/sharkmove1.jpg" width="650" /&gt;
+- Flow entering a side branch results in skewed profile. 
+- It takes a certain inlet length before the velocity develops into a parabolic profile again.....
+
+
 ]
 
 .pull-right[
-&lt;img src="img/lift.jpg" width="650" /&gt;
+
+&lt;img src="img/branch.png" width="400" /&gt;
+
+`\(\frac{l_{inlet}}{D}\approx 0.6Re\)`
+
+`\(l_{inlet}\approx 0.6ReD\)`
+
 
 ]
 
@@ -70,179 +230,73 @@ class: top
 
 class: top
 
-# Swimming basics
-
-
-.center[
-&lt;img src="img/swimmingtypes.jpg" width="550" /&gt;
-
-]
-
-
----
-
-class: top
-
-# Swimming basics
-
-
-.center[
-
-Elongate Body Theory
-
-&lt;img src="img/undswim.jpg" width="4550" /&gt;
-
-]
-
----
-
-class: top
-
-# Efficient swimming
-
-`\(\textrm{Strouhal number, S}t=\frac{fA}{U}\)`
-
-.center[
-&lt;img src="img/strouhal.jpg" width="450" /&gt;
-
-
-&lt;img src="img/strouhalnums.jpg" width="500" /&gt;
-
-]
-
-.center[
-Propulsive efficiency peaks when the kinematics result in maximum amplification of the shed vortices in the wake and an average velocity profile equivalent to a jet
-]
-
----
-
-class: top
-
-# Efficient swimming
-
-`\(\textrm{Froude number, Fr}=\frac{2U_f}{U_f+U_j}\)`
-
-
-.center[
-&lt;img src="img/froudefish.jpg" width="500" /&gt;
-
-
-Propulsive efficiency peaks when the kinematics result in maximum amplification of the shed vortices in the wake and an average velocity profile equivalent to a jet
-]
-                         
-    
----
-
-class: top
-
-# Swimming modes in fishes
-
+# Flow in tubes (inside you!)
 
 .pull-left[
-&lt;img src="https://www.researchgate.net/profile/Fotis-Sotiropoulos/publication/47809555/figure/fig4/AS:277256258768897@1443114451095/Simulated-swimming-modes-and-body-shapes-A-Midline-tracings-of-carangiform-and.png" width="650" /&gt;
 
-Once characterized by Amplitude and body "stiffness".
+ Flow profile is altered by branches (non-uniform):
 
-Now being reassessed, but generally a continuum according to where thrust is produced.
+- Aorta mean blood flow is about 6 l/min
+- D=3 cm
+- Mean velocity is ~ 15 cm/s
+- Re~1350
+
+
 
 ]
 
 .pull-right[
 
+&lt;img src="img/aorta.jpg" width="400" /&gt;
 
-&lt;iframe width="400" height="200" src="https://www.youtube.com/embed/wamEGOZXG3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+`\(\frac{l_{inlet}}{D}\approx 0.6Re\)`
 
-&lt;iframe width="400" height="200" src="https://www.youtube.com/embed/Mz7fuqJ8sKY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-
-]
-
----
-
-
-
-class: top
-
-# Back to efficiency
-
-
-
-.center[
-
-&lt;img src="https://images.newscientist.com/wp-content/uploads/2016/03/mg30651001.jpg?width=800" width="500" /&gt;
-
+`\(l_{inlet}\approx 0.6ReD\)`
 
 
 ]
-
----
-
-
-
-class: top
-
-# Back to efficiency
-
-
-
-.center[
-
-&lt;img src="img/eeltable.png" width="500" /&gt;
-
-
-
-]
-
 
 
 ---
 
 class: top
 
-# Using vortices
+# Flow in tubes (inside you!)
 
-
-
-.center[
-
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/GtuHgl35TT4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-
-
-]
----
-
-
-
-class: top
-
-# Using vortices
-
-
+Flow is pulsatile, but not everywhere.
 
 .center[
 
-&lt;img src="https://science.sciencemag.org/content/sci/302/5650/1511/F1.medium.gif" width="300" /&gt;
+&lt;img src="https://www.researchgate.net/publication/343487724/figure/fig2/AS:921709901271042@1596764173575/Windkessel-model-a-schematic-diagram-of-the-windkessel-effect-redrawn-based-on.ppm" width="400" /&gt;
 
 
 
 ]
+
+
 ---
 
 class: top
 
-# Using vortices
+#  Poiseuille, Bernoulli, Leplace, etc. in design
 
+.pull-left[
 
-
-.center[
-
-&lt;img src="img/karmangait.png" width="300" /&gt;
-
-
+- Number of capillaries (Fick's Law for diffusion)
+- Diameter of capillaries (Peclet number for balancing diffusion and convection)
+- Relative diameter of other vessels (Murray's law for minimizing circulatory work)
+- Relative thickness of vessel walls (Leplace's law for how size sets pressure versus wall tension)
+- Relative size of capillaries and alveoli (Diffusion coefficients of O2 in air and water.)
+- Concentration of RBCs (cell density vs. viscosity and Poiseuille pressure drop)
 
 ]
 
+.pull-right[
+
+&lt;img src="img/circsystem.jpg" width="400" /&gt;
 
 
+]
 
 ---
 
@@ -251,6 +305,7 @@ class: center, middle
 # Thanks!
 
 Slides created via the R package [**xaringan**](https://github.com/yihui/xaringan).
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
@@ -298,6 +353,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
