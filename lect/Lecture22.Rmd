@@ -3,7 +3,7 @@ title: "Lecture 22"
 subtitle: "Re: The tiny"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2022/04/11"
+date: "2024/04/9"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -13,7 +13,7 @@ output:
       countIncrementalSlides: false
 ---
 class: top
-# There will be blood
+# Being small
 
 ```{r,echo=FALSE,message=FALSE}
 library(tidyverse)
