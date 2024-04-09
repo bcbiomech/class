@@ -5,7 +5,7 @@ bibliography: BIOL5380.bib
 
 ## Introduction
 
-In this last Mini-project, we'll explore the role of size in fluid dynamics, especially how small things behave much differently than their large counter parts. This difference in behavior between the relatively small and large is critically important to so many aspects of biology (e.g., locomotion, material transport, etc.), but perhaps no issue related to size is more important in these times than the size of respiratory droplets and how this affects the risk of infection from SARS-CoV-2, the virus that causes CoVid. 
+In this last Mini-project, we'll explore the role of size in fluid dynamics, especially how small things behave much differently than their large counterparts. This difference in behavior between the relatively small and large is critically important to so many aspects of biology (e.g., locomotion, material transport, etc.). Recently, perhaps no issue related to size is more important than the size of respiratory droplets and how this affects the risk of infection from SARS-CoV-2, the virus that causes CoVid. 
 
 We humans and other tetrapods spew respiratory droplets as we talk, sing, cough, and sneeze. Because respiratory droplets come from a wet pharynx, they are of course mostly water. Thus, they tend to desiccate once outside the damp pharynx and therefore change in size once they leave your body. How much they desiccate depends on a number of factors and the most important of these is the humidity of the environment into which they are ejected.
 
@@ -32,7 +32,7 @@ R <- function(Ro,phi=0.05,RH=0.5){
   Ro*(phi/(1-RH))^(1/3)
 }
 
-Ro=(seq(0,20,0.1))/1e6
+Ro <- (seq(0,20,0.1))/1e6
 
 tibble(Ro=Ro)%>%
   mutate(

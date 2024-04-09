@@ -96,26 +96,26 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 ## Week 12 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |--------  
- | Tuesday, Apr 9 | [$Re$: The Tiny (22)](lect/Lecture22.html) / [Mini-Project V: It's Snot Rocket Science](MP5.html)  | |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br>[AEM5](AMEs/AME5.html) due
+ | Tuesday, Apr 9 | [$Re$: The Tiny (22)](lect/Lecture22.html) / [Mini-Project V: It's Snot Rocket Science](MP5.html)  | |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br>
  | Thursday, Apr 11 |Final Project discussion ||
 
 ## Week 13 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- |--------
- | Tuesday, Apr 16 | No class, Monday Schedule || AME5 assessment/revisions due
+ | Tuesday, Apr 16 | No class, Monday Schedule || [AEM5](AMEs/AME5.html) due
  | Thursday, Apr 18 | Final Project Round Table | |MP4 report due, Team meetings with Prof. K 
 
 
 ## Week 14 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Apr 23 | Final Project Work  | |
+ | Tuesday, Apr 23 | Final Project Work  | | AME5 revision due
  | Thursday, Apr 25 | Final Project Work || MP5 report due  
 
 ## Week 15 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Apr 30 | Final Project Work  | |
+ | Tuesday, Apr 30 | Final Project Work  ||
  | Thursday, May 2 | Final Project Work || 
  
 
