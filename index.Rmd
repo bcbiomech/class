@@ -10,6 +10,13 @@ Welcome to BIOL 5380, Topics in Biomechanics!!!
 
 In BIOL 5380, we'll explore how physical principles constrain or contribute to biological processes, including movement, feeding, and transport. By drawing on physics and mechanical engineering, the educational goal of the course is to understand how organisms swim, fly, walk, consume resources, and respond to moving fluids as well as how their size affects the design of mechanical systems. Central to all these topics will be investigations of how biological materials (e.g., wood, muscle, bone, skin, etc.) influence the mechanical behavior of complex life forms. The course will prepare students for more in-depth explorations of other related disciplines including biomechanical engineering, ergonomics, orthopedics, kinesiology, and sports medicine.
 
+If you're still wondering what we'll ponder, this word cloud represents common terms that appear on our class discussions.
+
+<center>
+![](word_cloud.svg)
+</center>
+<br>
+
 A second goal of the course is to engage in the scientific process, that is:
 
 learn $\rightarrow$ hypothesize $\rightarrow$ experiment $\rightarrow$ analyze $\rightarrow$ communicate
@@ -231,7 +238,7 @@ Students in this course, as all others at BC, must produce original work and cit
 
 If you write Professor Kenaley with a question, he’ll try to get back to you within 24 hours. Rather than write Prof. Kenaley with questions related to course mechanics and expectations, please post these in our [discussion board](https://topicsinbiomechanics.slack.com/), It’s probably the case that others have the same questions.
 
-Office hours, either in person on via Zoom, can be arranged by appointment via email so Slack. Office hours may involve more more than student or team, so please come equipped with poignant questions and expect that other students have questions as urgent as yours.
+Office hours, either in person on via Zoom, can be arranged by appointment via email or Slack. Office hours may involve more more than student or team, so please come equipped with poignant questions and expect that other students have questions as urgent as yours.
 
 
 
