@@ -124,7 +124,7 @@ When you're finished with AR calculations, you should duplicate the wings (birds
 
 We'll place your biomimetic wings and gull model in the flume and anchor it to a "sting" (see figure below) to measure lift and drag forces. To understand how this works, you'll have to withstand a bit of engineering wonk. We'll use two binocular Wheatstone bridge load cells to simultaneously measure lift and drag (see figure below). These instruments report a force based on how much shear strain occurs when a load is placed at the end of a cantilevered beam of aluminum. Because of the design of the sting, the input arms of our cantilevered sensor systems are longer and amplify the load. But we'll ignore this and assume it doesn't bias one load cell or the other.
 
-Turn on the swim tunnel to the preset velocity (determined by Prof. K and reported at the start of the experiment). "Swim"" the bird for 30 s at this predetermine speed. Lift and drag forces will be recorded on a PC and place in [**THIS DIRECTORY**](https://drive.google.com/drive/folders/15kbeHiL2ksA9ZgsGe5Q2lpLl5cEaAsIj?usp=sharing) that you can access later.
+Turn on the swim tunnel to the preset velocity (determined by Prof. K and reported at the start of the experiment). "Swim"" the bird for 30 s at this predetermine speed. Lift and drag forces will be recorded on a PC and placed in your personal Drive directories.
 
 <center>
 ![](bird.setup.png){ width=50% }
@@ -143,7 +143,7 @@ Particle image velocimetry (PIV) is an optical method of flow visualization and 
 
 To derive velocity vectors from moving particles in a field, researchers rely on sophisticated algorithms applied in various software packages, some free and some much more than free. For this reason, we will only qualitatively assess vorticity at the wing tips of our models by studying particle movement in videos taken you and your team. For this, you'll have to:
 
-1. Use the slo-motion setting on your phone's camera.
+1. Use the slow-motion setting on your phone's camera.
 2. Increase the intensity/brightness of the camera.
 3. Take a short clip of the flow over the tip of the wing. 
 
@@ -167,6 +167,10 @@ To derive velocity vectors from moving particles in a field, researchers rely on
 <!-- ![](FIJIPIV.png){ width=50% } -->
 <!-- </center> -->
 <!-- <br> -->
+
+## Part 3: Compute AR, $C_d$, $C_l$ and share
+
+After you have finished calculated $C_d$, $C_l$, please enter the name of your modela, AR, and values for $C_d$ and $C_l$ into [this sheet](https://docs.google.com/spreadsheets/d/11KsXHvms5vSzUrzsvFC_tWtc4OseVtHRpiwoqKVcKTE/edit?usp=sharing). Please do so by 11:59 on Friday April, 11th. These data and the rest of the class' data will be used to address the questions below.
 
 ## What to address in your report
 
