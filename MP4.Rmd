@@ -168,9 +168,9 @@ To derive velocity vectors from moving particles in a field, researchers rely on
 <!-- </center> -->
 <!-- <br> -->
 
-## Part 3: Compute AR, $C_d$, $C_l$ and share
+## Part 3: Compute AR, $C_D$, $C_L$ and share
 
-After you have finished calculated $C_d$, $C_l$, please enter the name of your modela, AR, and values for $C_d$ and $C_l$ into [this sheet](https://docs.google.com/spreadsheets/d/11KsXHvms5vSzUrzsvFC_tWtc4OseVtHRpiwoqKVcKTE/edit?usp=sharing). Please do so by 11:59 on Friday April, 11th. These data and the rest of the class' data will be used to address the questions below.
+After you have finished calculated $C_D$, $C_L$, please enter the name of your modela, AR, and values for $C_D$ and $C_L$ into [this sheet](https://docs.google.com/spreadsheets/d/1nzo3Qb067LA5CPNkcXndM-C8LJg7EqNFvGgHB4qBI0k/edit?usp=sharing). Please do so by 11:59 on Friday April, 12th. These data and the rest of the class' data will be used to address the questions below.
 
 ## What to address in your report
 
@@ -192,19 +192,19 @@ Lastly, using the images you took of your wings in the swim tunnel, address the 
 
 
 
-Please synthesize the results of your experiments and address these questions in a report that follows the structure outlined [here](https://bcbiomech.github.io/class/mini_projects.html). Reports are due Sunday, April 16th th at 11:59 pm. Your Rmd files (**with all the associated data!!!**) should be sent to Prof. K via email before then.
+Please synthesize the results of your experiments and address these questions in a report that follows the structure outlined [here](https://bcbiomech.github.io/class/mini_projects.html). Reports are due Thursday, Apr 18 th at 11:59 pm. Your Rmd files (**with all the associated data!!!**) should be zipped and [uploaded here](https://forms.gle/J3MKQLvJBAyGbiD58).
 
 ### Requirements for submission
 
-Like a few other past MPs, important analyses depend on timely submission of each team's data. So, please submit the following data by 11:59 pm on Monday 3rd in [**THIS SPREADSHEET**](https://docs.google.com/spreadsheets/d/1nzo3Qb067LA5CPNkcXndM-C8LJg7EqNFvGgHB4qBI0k/edit?usp=sharing):
+Like a few other past MPs, important analyses depend on timely submission of each team's data. So, please submit the following data by 11:59 pm on Friday the 12th in [**THIS SPREADSHEET**](https://docs.google.com/spreadsheets/d/1nzo3Qb067LA5CPNkcXndM-C8LJg7EqNFvGgHB4qBI0k/edit?usp=sharing):
 
   * wing file name for lift and drag data
-  * span and chord length (in mm)
-  * wetted area ($S$ in mm$^2$)
   * AR
-  * $C_D$, $C_L$, and $\frac{C_L}{C_D}$
+  * $C_D$
+  * $C_L$
 
-This means that each team is responsible for calculating $C_D$, $C_L$, and $\frac{C_L}{C_D}$ for their two wing models **well before the report deadline**.
+
+This means that each team is responsible for calculating AR $C_D$ and $C_L$ for their two wing models **well before the report deadline**.
 
 You can find explicit detail concerning the organization of an MP report [here](https://bcbiomech.github.io/class/mini_projects.html).
 
