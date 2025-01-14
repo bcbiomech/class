@@ -4,7 +4,7 @@
     <title>Welcome and Introduction</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Christopher Kenaley" />
-    <script src="libs/header-attrs-2.22/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.28/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
     <script src="libs/kePrint-0.0.1/kePrint.js"></script>
@@ -27,7 +27,7 @@ class: center, middle, inverse, title-slide
 ### Boston College
 ]
 .date[
-### 2024/16/1
+### 2024/13/1
 ]
 
 ---
@@ -37,7 +37,11 @@ class: inverse, top
 
 
 ```
-## Warning: package 'ggplot2' was built under R version 4.3.1
+## Warning: package 'ggplot2' was built under R version 4.2.3
+```
+
+```
+## Warning: package 'kableExtra' was built under R version 4.2.3
 ```
 
 &lt;!-- Add icon library --&gt;
@@ -86,9 +90,9 @@ kenaley@bc.edu
     &lt;a href="https://twitter.com/kenaley" class="fab fa-twitter"&gt;@kenaley&lt;/a&gt;
 &lt;/p&gt;
 
-kenaleylab.com
+kenaleylab.org
 
-office hours in Higgins 415/535 (by appointment) or over Zoom
+office hours in Higgins Higgins 425B/535 (by appointment)
 ]
 
 
@@ -322,7 +326,7 @@ How comfortable are you with scripting?
 - linear and angular
 
 .center[
-&lt;img src="https://useruploads.socratic.org/cEoiMUubQWGFHjA0wFhd_Torque.jpg" width="150" /&gt;
+&lt;img src="https://www.grc.nasa.gov/www/k-12/airplane/Images/torque.gif" width="300" /&gt;
 ]
 
 ]
@@ -401,7 +405,7 @@ Establish a function of the linear form:
 with coefficients from Blanco and Patek (2014) where `\(a=-4.4\)` and `\(L=2.1\)`. So the functions takes the form
 
 
-```r
+``` r
 force &lt;-function(x){-4.4+x*2.2}  
 ```
 
@@ -414,7 +418,7 @@ class: top
 Now, establish a length range (8-40 cm) for merus length and predict force?
 
 
-```r
+``` r
 L=seq(8,40,0.1)
 merus.pred &lt;- force(L)
 ```
@@ -423,7 +427,7 @@ Now let's plot to relationship.
 
 
 
-```r
+``` r
 qplot(L,merus.pred)+theme_classic(30)+ylab("Force (N)")
 knitr::include_graphics("merus.png")
 ```
@@ -444,7 +448,7 @@ Back to our question?
 Is this way too much? Too little?
 
 
-```r
+``` r
 qplot(L,merus.pred)+theme_classic(30)+ylab("Force (N)")+geom_point(aes(x=15,y=480),col="red")
 knitr::include_graphics("mantis.png")
 ```

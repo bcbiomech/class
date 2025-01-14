@@ -3,7 +3,7 @@ title: "Welcome and Introduction"
 subtitle: "Setting the Stage"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2024/16/1"
+date: "2024/13/1"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -66,9 +66,9 @@ kenaley@bc.edu
     <a href="https://twitter.com/kenaley" class="fab fa-twitter">@kenaley</a>
 </p>
 
-kenaleylab.com
+kenaleylab.org
 
-office hours in Higgins 415/535 (by appointment) or over Zoom
+office hours in Higgins Higgins 425B/535 (by appointment)
 ]
 
 
@@ -283,8 +283,8 @@ res%>%pivot_longer(cols=c("physics","scripting"),values_to = "resp")%>%
 - linear and angular
 
 .center[
-```{r,echo=FALSE,out.width=150}
-knitr::include_graphics("https://useruploads.socratic.org/cEoiMUubQWGFHjA0wFhd_Torque.jpg")
+```{r,echo=FALSE,out.width=300}
+knitr::include_graphics("https://www.grc.nasa.gov/www/k-12/airplane/Images/torque.gif")
 ```
 ]
 

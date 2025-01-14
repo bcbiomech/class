@@ -26,13 +26,13 @@ Pursuant to this, you'll engage in class projects that involve reading primary l
 
 # Course Deets
 
-**Delivery:**  In-person lectures Tuesday and some Thursdays from noon--1:15 in Higgins Hall 225. Asynchronous lab projects launched on Thursdays.
+**Delivery:**  In-person lectures Tuesday and some Thursdays from 10:30--11:45 in 245 Beacon, Room 230. Asynchronous lab projects launched on Thursdays.
 
 <!-- For those who can't make it to class, we'll be [Zooming](https://bccte.zoom.us/j/9533582156)  -->
 
 <!-- and [recording lectures](https://bostoncollege.instructure.com/courses/1615104/external_tools/109499). -->
 
-**Instructor:** [Christopher P. Kenaley (Prof. K)](https://kenaleylab.com)
+**Instructor:** [Christopher P. Kenaley (Prof. K)](https://kenaleylab.org)
 
 
 <a class="far fa-envelope fa-1x" style="color:#D3D8DD"></a> kenaley [ahhhht] bc.edu
@@ -44,7 +44,7 @@ Pursuant to this, you'll engage in class projects that involve reading primary l
 
 
 
-**office hours with Prof. Kenaley:** By appointment, in person or over Zoom [at this link](https://bccte.zoom.us/j/9533582156)
+**office hours with Prof. Kenaley:** By appointment, in person.
 
 
 <!-- **office hours with Trevor:** Wednesdays, 1:00-3:00 in person (Higgins 535) and Fridays 1:00-3:00 over Zoom [at this link](https://bccte.zoom.us/j/6907654693?pwd=TU5YelZnS1VLUnNJMnVSWFkwV3RUdz09) -->
