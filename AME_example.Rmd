@@ -27,7 +27,7 @@ dat <- tibble(
 dat %>% 
   ggplot(aes(mass,Fmax,col=sex))+geom_point()
 
-write_csv(dat %>% select(-m),"/Users/biology/Dropbox/Documents/bc (1)/5380.s24/class/data/bite_force.csv")
+write_csv(dat %>% select(-m),"data/bite_force.csv")
 ```
 
 ```{r,echo=F}

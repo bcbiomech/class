@@ -311,7 +311,7 @@ Note that this .bib file can be used in all your .Rmd documents, not just this o
 
 ## Due Date and Submission
 
-Reports are due by Wednesday January 31st at 11:59 pm. You should [compress your directory](https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac#:~:text=Compress%20a%20file%20or%20folder,file%20is%20called%20Archive.zip.) containing the .Rmd and data. This .zip file should be uploaded [here](https://forms.gle/GbG1xC5vHxhQQ7hZA).
+Reports are due by Wednesday January 29th at 11:59 pm. You should [compress your directory](https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac#:~:text=Compress%20a%20file%20or%20folder,file%20is%20called%20Archive.zip.) containing the .Rmd and data. This .zip file should be uploaded [here](https://forms.gle/GbG1xC5vHxhQQ7hZA).
 
 
 ## References

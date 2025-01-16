@@ -13,7 +13,7 @@
 
 <title>Mini Project 1: Get Ur Gait On</title>
 
-<script src="site_libs/header-attrs-2.25/header-attrs.js"></script>
+<script src="site_libs/header-attrs-2.28/header-attrs.js"></script>
 <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/sandstone.min.css" rel="stylesheet" />
@@ -55,7 +55,7 @@
 </style>
 <style type="text/css" data-origin="pandoc">
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -66,7 +66,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -154,6 +154,7 @@ code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warni
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging div.csl-entry {
   margin-left:2em;
@@ -529,7 +530,7 @@ div.tocify {
   <a href="https://topicsinbiomechanics.slack.com/">Discussion Board</a>
 </li>
 <li>
-  <a href="https://bostoncollege.instructure.com/courses/1652556">Course Canvas Page</a>
+  <a href="https://bostoncollege.instructure.com/courses/1665701">Course Canvas Page</a>
 </li>
 <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -542,7 +543,7 @@ div.tocify {
       <a href="author_contributions.html">Author Contribution Evaluation Guidelines</a>
     </li>
     <li>
-      <a href="https://forms.gle/1CMXtch2feruGxoX9">Author Contribution Evaluation Form</a>
+      <a href="https://forms.gle/mHoV2nk4zXKjXAfU8">Author Contribution Evaluation Form</a>
     </li>
   </ul>
 </li>
@@ -789,7 +790,7 @@ into one data frame for subsequent plotting and analysis.</p>
 <span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a>    <span class="fu">mutate</span>(<span class="at">speed=</span>speed,<span class="at">subject=</span>subject)</span>
 <span id="cb4-9"><a href="#cb4-9" tabindex="-1"></a>}</span></code></pre></div>
 <pre><code>## Rows: 150 Columns: 14
-## ── Column specification ────────────
+## ── Column specification ──────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
 ## lgl  (2): D2R [pixel], v [pixel/sec]
@@ -797,7 +798,7 @@ into one data frame for subsequent plotting and analysis.</p>
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ## Rows: 150 Columns: 14
-## ── Column specification ────────────
+## ── Column specification ──────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
 ## lgl  (2): D2R [pixel], v [pixel/sec]
@@ -805,7 +806,7 @@ into one data frame for subsequent plotting and analysis.</p>
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ## Rows: 150 Columns: 14
-## ── Column specification ────────────
+## ── Column specification ──────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
 ## lgl  (2): D2R [pixel], v [pixel/sec]
@@ -813,7 +814,7 @@ into one data frame for subsequent plotting and analysis.</p>
 ## ℹ Use `spec()` to retrieve the full column specification for this data.
 ## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
 ## Rows: 150 Columns: 14
-## ── Column specification ────────────
+## ── Column specification ──────────────────────────────────
 ## Delimiter: &quot;\t&quot;
 ## dbl (12): Nr, TID, PID, x [pixel], y [pixel], t [sec], I [val], Len [pixel],...
 ## lgl  (2): D2R [pixel], v [pixel/sec]
@@ -1101,14 +1102,15 @@ Be sure to use all of these data from past classes in your analysis.</p>
 </div>
 <div id="due-date-and-submission" class="section level2">
 <h2>Due Date and Submission</h2>
-<p>Reports are due by Wednesday January 31st at 11:59 pm. You should <a
+<p>Reports are due by Wednesday January 29th at 11:59 pm. You should <a
 href="https://support.apple.com/guide/mac-help/zip-and-unzip-files-and-folders-on-mac-mchlp2528/mac#:~:text=Compress%20a%20file%20or%20folder,file%20is%20called%20Archive.zip.">compress
 your directory</a> containing the .Rmd and data. This .zip file should
 be uploaded <a href="https://forms.gle/GbG1xC5vHxhQQ7hZA">here</a>.</p>
 </div>
 <div id="references" class="section level2 unnumbered">
 <h2 class="unnumbered">References</h2>
-<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="refs" class="references csl-bib-body hanging-indent"
+entry-spacing="0">
 <div id="ref-usherwood2005not" class="csl-entry">
 Usherwood, James Richard. 2005. <span>“Why Not Walk Faster?”</span>
 <em>Biology Letters</em> 1 (3): 338–41.

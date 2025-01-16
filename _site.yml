@@ -69,13 +69,13 @@ navbar:
     - text: "Discussion Board"
       href: https://topicsinbiomechanics.slack.com/
     - text: "Course Canvas Page"
-      href: https://bostoncollege.instructure.com/courses/1652556
+      href: https://bostoncollege.instructure.com/courses/1665701
     - text: "Author Contribution Evaluations"
       menu:
       - text: "Author Contribution Evaluation Guidelines"
         href: author_contributions.html
       - text: "Author Contribution Evaluation Form"
-        href: https://forms.gle/1CMXtch2feruGxoX9
+        href: https://forms.gle/mHoV2nk4zXKjXAfU8
       
    
       
