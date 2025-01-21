@@ -3,7 +3,7 @@ title: "Lecture 3"
 subtitle: "Terrestrial Locomotion II"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2024/1/23"
+date: "2025/1/21"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -14,6 +14,7 @@ output:
 ---
 
 ```{r setup, include=FALSE}
+
 options(htmltools.dir.version = FALSE)
 ```
 
@@ -59,7 +60,11 @@ class: top
 
 - Link to discussion: https://topicsinbiomechanics.slack.com/
 
+- MP1 groups posted here
+
 - Post to discussion board by EOD today
+
+- P/U MP1 gear outside Higgins 535
 
 
 ]
@@ -313,6 +318,7 @@ class: top
 
 [barefoot running](https://www.youtube.com/watch?v=r6YhVN_YIUk)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/r6YhVN_YIUk?si=nueiYy-4exithycJ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 ]
 ]
 
@@ -341,6 +347,8 @@ class: top
 .pull-left[
 
 [shod running](https://www.youtube.com/watch?v=zavoQM3727s)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/zavoQM3727s?si=xLduKWLiRFHR3ZL0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ]
 
