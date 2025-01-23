@@ -3,7 +3,7 @@ title: "Lecture 4"
 subtitle: "Terrestrial Locomotion III"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2024/1/25"
+date: "2025/1/23"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -154,7 +154,7 @@ knitr::include_graphics("img/bonestress.png")
 
 - no terrestrial mammals or birds should be able to run/gallop > 20 kg in body mass
 
-- would exceed compressive fracture strength of -240 MPa!
+- would exceed compressive fracture strength of ~240 MPa!
 ]
 
 
