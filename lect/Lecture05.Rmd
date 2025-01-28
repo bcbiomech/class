@@ -257,7 +257,7 @@ library(scales)
 
 
 .pull-left[
-Today we'll consider ....
+Next we'll consider ....
 
 - How muscles produce force (i.e., tension)
 
