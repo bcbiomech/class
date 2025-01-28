@@ -3,7 +3,7 @@ title: "Lecture 5"
 subtitle: "Joints, Levers, and Linkages<br>Muscles"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2024/30/1"
+date: "2025/28/1"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -195,7 +195,7 @@ class: top
 
 ```{r,echo=FALSE,out.width=250}
 #stride length
-knitr::include_graphics("https://cob.silverchair-cdn.com/cob/content_public/journal/jeb/208/9/10.1242_jeb.01520/3/m_jeb01520f2.jpeg?Expires=1708446257&Signature=wbl56urFKEF9LA-e0QEReLQOAkjNpfqk-ik1WvQoReoOqkHtj2hFCeCXjHJqDhMcif4Dchgx8di~bT2T7ABR8X2ttAPvNCDPNtBFUkYH1BtnhtmL6kPiy5SXS~ZhK9WSZHJ~aG2~R3HkBZvlIlM6vCbMX~Y4RX-sGaDJHZN-rWXJ1~yWJiiJ3fdWMiqwmJhAkxGszI8yuoTbGNfw5hc5aJBQt8~MTHFNKy-yiSaiXDcezFcq-0x3pv8sbrckQ3yLbqkuinUS11q4fdN1~gkLGP22Qwk3MkHBLtYU652Frg21Xw2Q3MMPbNiICGa50ULWosCDblFsRPbsGcvZyIkD3A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA")
+knitr::include_graphics("https://cob.silverchair-cdn.com/cob/content_public/journal/jeb/208/9/10.1242_jeb.01520/3/jeb01520f2.jpeg?Expires=1739879067&Signature=RUZdZOHRcnMl-AkGrQXrGO6WtkMBYxUmzr9~gem2OdPtEkHJDGh~s3NoC4LkQC5~6CLLvuYlUUyJ723kYafKukbaFRaXbCkXF~B7EBtXsK82bUPZkTdBOIFs8BSxvNyrSrKiJ7nAtf0wzIdWEttfGSp6~~BHRkWA~UMTAnJ53F8aMgiGd3fm1hkRaVKNIUpQOhJ~xmACKVenPJMp8jARtCpnRUdXTVJF-OTWe71KbBjXbYgDrtvxuo-uWhekTVYkEjHPIP8BL5umauXwVxU2aCOCKOVRSEZTgfQkeC34f7U3zsNPBF7SzZHOBlYGhLZylPDyuvAsaD-NOICcoQre6A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA")
 
 ```
  ]
@@ -613,7 +613,7 @@ We know we don't know a lot about muscles
 ```{r,echo=FALSE,out.width=400}
 #stride length
 
-knitr::include_graphics("https://journals.physiology.org/cms/10.1152/jappl.1997.82.4.1219/asset/images/large/japp0542801.jpeg")
+knitr::include_graphics("https://www.frontiersin.org/files/Articles/128285/fncel-09-00081-HTML/image_m/fncel-09-00081-g001.jpg")
 
 ```
 Doublet potentiation
