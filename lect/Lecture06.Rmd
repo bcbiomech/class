@@ -3,7 +3,7 @@ title: "Lecture 6"
 subtitle: "Coarse Materials I"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2024/2/1"
+date: "2025/30/1"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -15,7 +15,8 @@ output:
 class: inverse, top
 # Joints, Levers, and Linkages
 
-```{r,echo=FALSE,message=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=F}
+
 library(tidyverse)
 library(kableExtra)
 ```
