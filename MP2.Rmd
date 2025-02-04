@@ -364,7 +364,7 @@ Be sure to include at least one visualization of your predictions.
   
 ## Due Date and Submission
 
-Reports are due by Wednesday, February 14st at 11:59 pm. You should compress your directory containing the .Rmd, all class data, and videos of each member assessing the model. This .zip file should be uploaded [here](https://forms.gle/JPcZLjrrB7UKLhcj7).
+Reports are due by Wednesday, February 12th at 11:59 pm. You should compress your directory containing the .Rmd, all class data, and videos of each member assessing the model. This .zip file should be uploaded [here](https://forms.gle/FN7mdEfmxyGa2fXeA).
 
 What to pay attention to in writing the report:
 
