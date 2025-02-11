@@ -3,7 +3,7 @@ title: "Lecture 9"
 subtitle: "Coarse Structures"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2024/02/13"
+date: "2025/02/11"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -15,7 +15,7 @@ output:
 class: top
 # Structural properties
 
-```{r,echo=FALSE,message=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=F}
 library(tidyverse)
 library(kableExtra)
 library(scales)
@@ -34,63 +34,16 @@ Today we'll ....
 
 - Consider how structures resist bending
 
+- MP2
+
+- AME self-assessment advice
+
 ]
 
 
 .pull-right[
 ![](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXL4A1lCI63p7w9qJwAPua5vytkoEB5x8rjw&usqp=CAU)
 
-
-]
-
-
----
-class: top
-
-# What if we have both?
-
-
-.center[
-```{r,echo=FALSE,out.width=650}
-#stride length
-knitr::include_graphics("img/mucuscartilage.png")
-
-```
-
-]
-
-.pull-left[
-
-
-.center[
-Maxwell model
-
-]
-
-
-]
-
-.pull-right[
-.center[
-
-Voigt model
-
-]
-]
-
-
----
-class: top
-
-# Why this in a tendon?
-
-
-.center[
-```{r,echo=FALSE,out.width=450}
-#stride length
-knitr::include_graphics("https://www.physio-pedia.com/images/thumb/b/be/Rep_loading-unloading_curve_intechopen.jpeg/357px-Rep_loading-unloading_curve_intechopen.jpeg")
-
-```
 
 ]
 

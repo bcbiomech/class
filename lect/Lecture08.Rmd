@@ -3,7 +3,7 @@ title: "Lecture 8"
 subtitle: "Coarse Materials III"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2024/2/8"
+date: "2025/2/6"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -15,19 +15,15 @@ output:
 class: inverse, top
 # Material Properties, Failure, and the Viscous World
 
-```{r,echo=FALSE,message=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=F}
 library(tidyverse)
 library(kableExtra)
 ```
 
-<!-- Add icon library -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 
 
 .pull-left[
 Today we'll ....
-
-- Finish up with solid material properties
 
 - Consider fractures and imperfections
 
@@ -45,80 +41,6 @@ Today we'll ....
 ]
 
 
----
-class: top
-
-# Toughness
-
-.center[
-
-### The energy imparted is the **mechanical strain energy** that can be returned or be so great as to break the material
-
-]
-
-.pull-left[
-.center[
-$U=\int\sigma d\varepsilon$
-]
-
-```{r,echo=FALSE,out.width=350}
-#stride length
-knitr::include_graphics("img/toughness.png")
-
-```
-]
-
-.pull-right[
-$T=\int\sigma d\varepsilon$
-
-**Toughness:** the energy per unit volume required to break a material
-
-]
-
----
-class: top
-
-# Toughness
-
-.center[
-
-### Some (but not necessarily all) of the mechanical energy can be returned
-
-]
-
-.pull-left[
-.center[
-$U=\int\sigma d\varepsilon$
-]
-
-```{r,echo=FALSE,out.width=350}
-#stride length
-knitr::include_graphics("https://static.cambridge.org/binary/version/id/urn:cambridge.org:id:binary:20191021053530314-0709:9781108686624:72215fig26_6b.png?pub-status=live")
-
-```
-]
-
-.pull-right[
-
-**Resilience (R)**=
-
-$$\frac{\textrm{strain energy returned}}{\textrm{strain energy absorbed}}$$
-
-```{r,echo=FALSE}
-
-R <- data.frame(material=c("Silk","Elastin","Abductin","Collagen (tendon)","Resilin (wing hinge)"),
-           R=c("35%","76%","80%","93%","97%"))
-
-knitr::kable(R, format = 'html')
-```
-]
-
----
-class: top
-
-# Resilience in the vertebrate body
-
-### The cardiovascular system?
 
 
 
@@ -126,27 +48,7 @@ class: top
 ---
 class: top
 
-# Resilience in the vertebrate body
-
-### The cardiovascular system?
-
-.center[ 
-
-```{r,echo=FALSE,out.width=400}
-#stride length
-knitr::include_graphics("https://www.austincc.edu/apreview/NursingPics/VascularPics/Picture8.jpg")
-
-```
-]
-
-
-
-
-
----
-class: top
-
-# Fracture theory (without all the equations)
+# Fracture theory (with only a few the equations)
 
 ### In an ucompromised structure, stress in applied uniformly
 
@@ -167,7 +69,7 @@ knitr::include_graphics("img/fracturemode.png")
 ---
 class: top
 
-# Fracture theory (without all the equations)
+# Fracture theory (with only a few equations)
 
 ### In an ucompromised structure, stress in applied uniformly
 
@@ -190,7 +92,7 @@ knitr::include_graphics("img/fracturemode.png")
 ---
 class: top
 
-# Fracture theory (without all the equations)
+# Fracture theory (with only a few the equations)
 
 ### In an ucompromised structure, stress in applied uniformly
 
