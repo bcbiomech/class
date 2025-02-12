@@ -4,9 +4,9 @@ title: 'Mini Project 3: Stretch the Pig, Bend the Twig'
 
 ## Introduction
 
-Our thirds Mini Project explores experimental methods for quantifying the material and structural properties of biological tissue (e.g., wood and intestine). Please recall that material properties (the inherent ones) are independent of structural properties (i.e.,size and shape). The goals of this MP are to:
+Our third Mini Project explores experimental methods for quantifying the material and structural properties of biological tissue (e.g., wood and intestine). Please recall that material properties (the inherent ones) are independent of structural properties (i.e.,size and shape). The goals of this MP are to:
 
-1. Learn how to measure force and displacement so that you can construct a stress-strain curve.
+1. Learn how to measure force and deformation so that you can construct a stress-strain curve.
 2. Use a homemade three-point bender to estimate flexural stiffness of biomaterials.
 3. Understand data acquisition using a computer and an Arduino.
 4. Explore the concept of anisotropy
@@ -53,7 +53,7 @@ We, as biomechanists, can measure measure forces (i.e., loads) in several ways, 
 
 ## Methods
 
-There are two parts to this lab: (1) investigating material properties (stress-strain relationships and anisotropy) and (2) instigating structural properties (beam loading and viscoelasticity). In the former, you will use a simple loading technique, measure the resultant strain, examine stiffness, and the extent to which the material is anisotropic.
+There are two parts to this project: (1) investigating material properties (stress-strain relationships and anisotropy) and (2) instigating structural properties (beam loading and viscoelasticity). In the former, you will use a simple loading technique, measure the resultant strain, examine stiffness, and the extent to which the material is anisotropic.
 
 In the latter part, you will use 3-point bending tests to determine structural properties and flexural stiffness of wood. You'll also examine how time-dependency varies according to the viscoelastic nature of wood (i.e, how moist it is).
 
@@ -114,9 +114,9 @@ data.frame(d=c("dry","dry","dry","wet","wet"),o=c("flat","flat","flipped","flat"
 ```
 
 
-~~All the data will be recorded in a text file and placed in [this directory](https://drive.google.com/drive/folders/1XgXdvIO2iOC7NwMiAc4Z7CXpJAX4PWvC?usp=sharing).~~
+All the data will be recorded in a text file and placed in [this directory](https://drive.google.com/drive/folders/11bZz1G2JKLL8uQWp0s0aVuh-MJCxKzvg?usp=sharing).
 
-All the data will be recorded in a text file and placed in your personal Google feedback directories.
+<!-- All the data will be recorded in a text file and placed in your personal Google feedback directories. -->
 
 
 
@@ -175,14 +175,7 @@ You can find explicit detail concerning the organization of an MP report [here](
 
 ## Due Date and Submission
 
-Reports are due by Wednesday, March 13th at 11:59 pm. You should compress your directory containing the .Rmd, all class data, and videos of each member assessing the model. This .zip file should be uploaded [here](https://forms.gle/UPopDX9WPuedbKh46).
-
-What to pay attention to in writing the report:
-
-+ Data are plural
-+ Don't use print(), head(), etc. commands needlessly
-+ Figure axes should be labelled appropriately.
-
+Reports are due by Wednesday, March 12th at 11:59 pm. You should compress your directory containing the .Rmd and upload it here [here](https://forms.gle/m6oWcJaEcvGDd85v9).
 
 
 ## What to pay attention to in writing the report
