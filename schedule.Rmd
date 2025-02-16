@@ -49,13 +49,13 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 ## Week 6 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Feb 18 | [Adhesion (11)](lect/Lecture11.html) | [Russell et al. (2019)](https://academic.oup.com/icb/article/59/1/101/5486592)|Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> [AEM3](AMEs/AME3.html) due`
+ | Tuesday, Feb 18 | [Adhesion (11)](lect/Lecture11.html) | [Russell et al. (2019)](https://academic.oup.com/icb/article/59/1/101/5486592)|Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> 
  | Thursday, Feb 20 |  | |
  
 ## Week 7 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Feb 25 | [Fluid Motions Around: An Introduction (13)](lect/Lecture13.html) | |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> AME3 assessment/revisions due
+ | Tuesday, Feb 25 | [Fluid Motions Around: An Introduction (13)](lect/Lecture13.html) | |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br>[AEM3](AMEs/AME3.html) due
  | Thursday, Feb 27 | [Fluid Motions Around: Bernoulli (14)](lect/Lecture14.html) | |
 
 ## Spring Break
@@ -67,7 +67,7 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 ## Week 8 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Mar 11 | [Re: Drag (15)](lect/Lecture15.html) | [Qui et al. (2014)](https://www.nature.com/articles/ncomms6119) |Post to [discussion board](https://topicsinbiomechanics.slack.com/)
+ | Tuesday, Mar 11 | [Re: Drag (15)](lect/Lecture15.html) | [Qui et al. (2014)](https://www.nature.com/articles/ncomms6119) |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br>  AME3 assessment/revisions due
  | Wednesday, Mar 12 | | | MP3 report due
  | Thursday, Mar 13 | [Re: Shape (16)](lect/Lecture16.html) / [Mini-Project IV: Birds of Feather](MP4.html) | | 
 
