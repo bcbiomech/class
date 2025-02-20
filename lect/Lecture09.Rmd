@@ -85,7 +85,7 @@ Alexander, R.McN. 1981. Sci. Prog. Oxf. 67:109-120
 
 Mean bending safety factor during running
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,fig.cap=}
 R <- data.frame(species=c("Bullfrog","Salamanders","Possum","Eutherians","Iguana","Turtles","Crocs","Birds"),
                   SF=c(8,10.5,5.1,2.5,10.8,4.4,6.3,3.3)
                   )

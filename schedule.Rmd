@@ -49,8 +49,8 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 ## Week 6 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Feb 18 | [Adhesion (11)](lect/Lecture11.html) | [Russell et al. (2019)](https://academic.oup.com/icb/article/59/1/101/5486592)|Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> 
- | Thursday, Feb 20 |  | |
+ | Tuesday, Feb 18 | | [Russell et al. (2019)](https://academic.oup.com/icb/article/59/1/101/5486592)|Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> 
+ | Thursday, Feb 20 | [Adhesion (11)](lect/Lecture11.html)  | |
  
 ## Week 7 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
