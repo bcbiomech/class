@@ -3,7 +3,7 @@ title: "Lecture 13"
 subtitle: "Fluids Around <br> An Introduction"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2024/02/27"
+date: "2025/02/25"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -15,7 +15,7 @@ output:
 class: top
 # Fluids
 
-```{r,echo=FALSE,message=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=F}
 library(tidyverse)
 library(kableExtra)
 library(scales)
