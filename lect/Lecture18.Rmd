@@ -3,7 +3,7 @@ title: "Lecture 18"
 subtitle: "Gliding into D = m x g cos(theta)"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2023/03/21"
+date: "2024/03/20"
 output:
   xaringan::moon_reader:
     lib_dir: libs
@@ -15,7 +15,7 @@ output:
 class: top
 # Powered flight
 
-```{r,echo=FALSE,message=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=F}
 library(tidyverse)
 library(kableExtra)
 library(scales)
@@ -261,7 +261,7 @@ class: top
 
 ```{r,echo=FALSE,out.width=500}
 #stride length
-knitr::include_graphics("https://royalsocietypublishing.org/cms/asset/8c609013-d1ee-496f-bb8a-fd5388766e49/rstb20150384f04.jpg")
+knitr::include_graphics("https://royalsocietypublishing.org/cms/asset/7ff501db-011c-4eac-a253-a8d1414049c8/rstb20150384f04.jpg")
 
 ```
 

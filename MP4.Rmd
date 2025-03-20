@@ -192,11 +192,11 @@ Lastly, using the images you took of your wings in the swim tunnel, address the 
 
 
 
-Please synthesize the results of your experiments and address these questions in a report that follows the structure outlined [here](https://bcbiomech.github.io/class/mini_projects.html). Reports are due Thursday, Apr 18 th at 11:59 pm. Your Rmd files (**with all the associated data!!!**) should be zipped and [uploaded here](https://forms.gle/J3MKQLvJBAyGbiD58).
+Please synthesize the results of your experiments and address these questions in a report that follows the structure outlined [here](https://bcbiomech.github.io/class/mini_projects.html). Reports are due Thursday, Apr 17th at 11:59 pm. Your Rmd files (**with all the associated data!!!**) should be zipped and [uploaded here](https://forms.gle/J3MKQLvJBAyGbiD58).
 
 ### Requirements for submission
 
-Like a few other past MPs, important analyses depend on timely submission of each team's data. So, please submit the following data by 11:59 pm on Friday the 12th in [**THIS SPREADSHEET**](https://docs.google.com/spreadsheets/d/1nzo3Qb067LA5CPNkcXndM-C8LJg7EqNFvGgHB4qBI0k/edit?usp=sharing):
+Like a few other past MPs, important analyses depend on timely submission of each team's data. So, please submit the following data by 11:59 pm on Friday the 11th in [**THIS SPREADSHEET**](https://docs.google.com/spreadsheets/d/1nzo3Qb067LA5CPNkcXndM-C8LJg7EqNFvGgHB4qBI0k/edit?usp=sharing):
 
   * wing file name for lift and drag data
   * AR
