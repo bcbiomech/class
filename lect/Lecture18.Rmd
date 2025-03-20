@@ -3,7 +3,7 @@ title: "Lecture 18"
 subtitle: "Gliding into D = m x g cos(theta)"
 author: "Dr. Christopher Kenaley"
 institute: "Boston College"
-date: "2024/03/20"
+date: "2025/03/20"
 output:
   xaringan::moon_reader:
     lib_dir: libs
