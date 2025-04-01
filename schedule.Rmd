@@ -82,15 +82,15 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
  | Tuesday, Mar 25 | [Fish Swimming (19)](lect/Lecture19.html)  | [Sfakiotakis et al, 2009](https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=757275&casa_token=I48yhmyTDY0AAAAA:hlx2Coqp-NuyrzmiV6VvSFZdWkf2Xd-d7DNJEMa1V-e2hJStcLdoQ_D14rlu-fanh21gf_kO&tag=1) |Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> [AEM4](AMEs/AME4.html) due
-  | Thursday, Mar 27 | MP4 wing design ||
+  | Thursday, Mar 27 | [There Will Be Blood (20)](lect/Lecture21.html)|| Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> ||
  
 
 ## Week 11 Schedule
  
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Apr 1 | [There Will Be Blood (21)](lect/Lecture21.html)|| Post to [discussion board](https://topicsinbiomechanics.slack.com/) <br><br> AME4 assessment/revisions due
- | Thursday, Apr 3|  [$Re$: The Tiny (22)](lect/Lecture22.html)  | | 
+ | Tuesday, Apr 1 |  [$Re$: The Tiny (21)](lect/Lecture21.html) ||
+ | Thursday, Apr 3| MP4 work | | AME4 assessment/revisions due
 
  
 ## Week 12 Schedule

@@ -4,7 +4,7 @@
     <title>Lecture 21</title>
     <meta charset="utf-8" />
     <meta name="author" content="Dr. Christopher Kenaley" />
-    <script src="libs/header-attrs-2.16/header-attrs.js"></script>
+    <script src="libs/header-attrs-2.28/header-attrs.js"></script>
     <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
   </head>
@@ -16,7 +16,7 @@ class: center, middle, inverse, title-slide
 # Lecture 21
 ]
 .subtitle[
-## There Will Be Blood
+## Re: The tiny
 ]
 .author[
 ### Dr. Christopher Kenaley
@@ -25,13 +25,13 @@ class: center, middle, inverse, title-slide
 ### Boston College
 ]
 .date[
-### 2023/04/04
+### 2025/04/1
 ]
 
 ---
 
 class: top
-# There will be blood
+# Being small
 
 
 
@@ -40,13 +40,13 @@ class: top
 
 
 .pull-left[
-Today we'll introduce
+Today we'll consider
 
-- Hagen-Poiseuille law
+- Being small
 
-- Violation of H-P (how it really works)
+- Movement and translocation of the small
 
-- Laundry list of other important laws/models
+- Modeling this
 
 
 ]
@@ -54,7 +54,7 @@ Today we'll introduce
 
 .pull-right[
 
-&lt;iframe width="400" height="200" src="https://www.youtube.com/embed/pwmlP1hLJf0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+![](https://static.wixstatic.com/media/f4f67b_7db070f86706435fafb5acca66f8db69~mv2_d_2420_1330_s_2.png/v1/fill/w_527,h_286,al_c,q_85,usm_0.66_1.00_0.01/ReynoldsNumbersOrganisms.webp)
 
 
 ]
@@ -67,162 +67,156 @@ Today we'll introduce
 
 class: top
 
-# Flow in tubes (inside you!)
-
-Cardiovascular system and elsewhere, too? Where?
-
-.center[
-
-&lt;img src="https://www.cvphysiology.com/uploads/images/h006-laminar-flow.png" width="600" /&gt;
-
-
-
-]
-
----
-
-class: top
-
-# Flow in tubes (inside you!)
-
-.center[
-
-&lt;img src="img/tubeflow.png" width="600" /&gt;
-
-`$$\Delta p={\frac{8\mu LQ}{\pi R^{4}}}={\frac{8\pi \mu LQ}{A^{2}}}$$`
-
-]
-
-- The tube is stiff, straight, and uniform
-
-- Blood is Newtonian , i.e., viscosity is constant
-
-- The flow is uniform, laminar and steady, not pulsatile, and the velocity at the wall is zero (no slip at the wall)
-
-
----
-
-class: top
-
-# Flow in tubes (inside you!)
-
-.center[
-
-&lt;img src="img/tubeflow.png" width="600" /&gt;
-
-`$$Q=\frac{R^4\Delta P}{8\mu L}$$`
-Hagen-Poiseuille law
-
-Valid until the flow is turbulent!
-(Re &gt; ~ 2000)
-]
-
-
----
-
-class: top
-
-# Flow in tubes (inside you!)
-
-.center[
-
-&lt;img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2013/11/15/17/35/ds00525_-ds01120_-ds00064_-ds00178_-ds01052_-ds00537_-ds01179_im00642_ww5r236t_jpg.jpg
-" width="300" /&gt;
-
-`$$Q=\frac{R^4\Delta P}{8\mu L}$$`
-Hagen-Poiseuille law
-
-Effects of ateriosclerosis?
-]
-
----
-
-class: top
-
-# Flow in tubes (inside you!)
-
-.center[
-
-&lt;img src="https://i1.wp.com/www.differencebetween.com/wp-content/uploads/2017/07/Difference-Between-Vasoconstriction-and-Vasodilation-3.png?w=800&amp;ssl=1
-" width="400" /&gt;
-
-`$$Q=\frac{R^4\Delta P}{8\mu L}$$`
-Hagen-Poiseuille law
-
-Non-linear effects of vasodialation and vasoconstriction?
-]
-
-
----
-
-class: top
-
-# Flow in tubes (inside you!)
+#  Life at low Re
 
 .pull-left[
 
-Flow profile is altered by branches:
-
-- Flow entering a side branch results in skewed profile. 
-- It takes a certain inlet length before the velocity develops into a parabolic profile again.....
-
+- disturbances are manifest over huge relative distances
+(boundaries are all important)
+- inertia is negligible
+-  shape matters considerably less (no wakes)
 
 ]
 
 .pull-right[
 
-&lt;img src="img/branch.png" width="400" /&gt;
-
-`\(\frac{l_{inlet}}{D}\approx 0.6Re\)`
-
-`\(l_{inlet}\approx 0.6ReD\)`
+&lt;img src="https://static.wixstatic.com/media/f4f67b_7db070f86706435fafb5acca66f8db69~mv2_d_2420_1330_s_2.png/v1/fill/w_527,h_286,al_c,q_85,usm_0.66_1.00_0.01/ReynoldsNumbersOrganisms.webp" width="400" /&gt;
 
 
 ]
-
 
 ---
 
 class: top
 
-# Flow in tubes (inside you!)
+#  Life at low Re
 
 .pull-left[
 
- Flow profile is altered by branches (non-uniform):
-
-- Aorta mean blood flow is about 6 l/min
-- D=3 cm
-- Mean velocity is ~ 15 cm/s
-- Re~1350
-
-
+- disturbances are manifest over huge relative distances.
+(boundaries are all important)
+- inertia is negligible
+-  shape matters considerably less (no wakes)
 
 ]
 
 .pull-right[
 
-&lt;img src="img/aorta.jpg" width="400" /&gt;
-
-`\(\frac{l_{inlet}}{D}\approx 0.6Re\)`
-
-`\(l_{inlet}\approx 0.6ReD\)`
+&lt;img src="https://static.wixstatic.com/media/f4f67b_7db070f86706435fafb5acca66f8db69~mv2_d_2420_1330_s_2.png/v1/fill/w_527,h_286,al_c,q_85,usm_0.66_1.00_0.01/ReynoldsNumbersOrganisms.webp" width="400" /&gt;
 
 
 ]
+
+.center[
+&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/U9g4gRWkFTs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
+]
+
 
 
 ---
 
 class: top
 
-# Flow in tubes (inside you!)
+#  Life at low Re
 
-Flow is pulsatile, but not everywhere.
+
+.pull-left[
+How far will this flagellate go?
+
+]
+
+.pull-right[
+
+&lt;img src="https://water.mecc.edu/courses/ENV108/clipart/PAXIT015.jpg" width="400" /&gt;
+
+
+]
 
 .center[
 
-&lt;img src="https://www.researchgate.net/publication/343487724/figure/fig2/AS:921709901271042@1596764173575/Windkessel-model-a-schematic-diagram-of-the-windkessel-effect-redrawn-based-on.ppm" width="400" /&gt;
+`$$m\frac{dU}{dt}=6\pi r\mu U$$`
+`$$U=U_oe^{-6\pi rt\mu /m}$$`
+
+]
+
+
+---
+
+class: top
+
+#  Life at low Re
+
+
+.pull-left[
+How far will this flagellate go?
+
+speed= 40 μm s^−1
+
+size= 1 μm 
+
+`\(\textrm{mass=}10^{−12}\textrm{ g}\)`
+
+`\(\mu\)`=1 mPa/s
+
+`$$m\frac{dU}{dt}=6\pi r\mu U$$`
+`$$U=U_oe^{-6\pi rt\mu /m}$$`
+
+]
+
+.pull-right[
+
+&lt;img src="https://water.mecc.edu/courses/ENV108/clipart/PAXIT015.jpg" width="400" /&gt;
+
+
+]
+
+
+
+
+---
+
+class: top
+
+#  Life at low Re
+
+
+.pull-left[
+How far will this flagellate go?
+
+speed= 40 μm s^−1
+
+size= 1 μm 
+
+`\(\textrm{mass=}10^{−12}\textrm{ g}\)`
+
+`\(\mu\)`=1 mPa/s
+
+`$$m\frac{dU}{dt}=6\pi r\mu U$$`
+`$$U=U_oe^{-6\pi rt\mu /m}$$`
+
+]
+
+.pull-right[
+
+
+``` r
+u &lt;- function(Uo,m,mu,t,r){
+  Uo*exp(-6*pi*r*t*mu/m)
+}
+
+t &lt;- seq(0,1,0.001)
+Ut &lt;- u(Uo=40*1e-6,m=10^-12,t=t,r=1e-6,mu=1e-3)
+
+p1 &lt;- qplot(t,log(Ut))+theme_classic(20)+ylab("U (m/s)")+xlab("t (s)")
+print(p1)
+```
+
+&lt;img src="Lecture21_files/figure-html/unnamed-chunk-6-1.png" height="250" /&gt;
+
+
+]
+
+.center[
 
 
 
@@ -233,27 +227,138 @@ Flow is pulsatile, but not everywhere.
 
 class: top
 
-#  Poiseuille, Bernoulli, Leplace, etc. in design
+#  Life at low Re
+
 
 .pull-left[
 
-- Number of capillaries (Fick's Law for diffusion)
-- Diameter of capillaries (Peclet number for balancing diffusion and convection)
-- Relative diameter of other vessels (Murray's law for minimizing circulatory work)
-- Relative thickness of vessel walls (Leplace's law for how size sets pressure versus wall tension)
-- Relative size of capillaries and alveoli (Diffusion coefficients of O2 in air and water.)
-- Concentration of RBCs (cell density vs. viscosity and Poiseuille pressure drop)
+&lt;img src="Lecture21_files/figure-html/unnamed-chunk-7-1.png" height="300" /&gt;
 
 ]
 
 .pull-right[
 
-&lt;img src="img/circsystem.jpg" width="400" /&gt;
+
+&lt;img src="Lecture21_files/figure-html/unnamed-chunk-8-1.png" height="300" /&gt;
+
+dist=U x t
+
+]
+
+
+---
+
+class: top
+
+#  Life at low Re
+
+How far will it go?
+.pull-left[
+
+&lt;img src="Lecture21_files/figure-html/unnamed-chunk-9-1.png" height="300" /&gt;
+
+]
+
+.pull-right[
+
+
+&lt;img src="Lecture21_files/figure-html/unnamed-chunk-10-1.png" height="300" /&gt;
+
+```
+## [1] 4e-08
+```
+
+He atom is 1.4 × 10^-10 m
+
+]
+
+
+
+---
+
+class: top
+
+#  Life at low Re
+
+
+.pull-left[
+How far will a pollen spore go?
+
+speed= 10 m s^−1 
+
+size= 100 μm 
+
+`\(\textrm{mass=}2.5^{−10}\textrm{ g}\)`
+
+`\(\mu\)`=.2 mPa/s
+
+In the X . . .
+`$$m\frac{dU}{dt}=6\pi r\mu U$$`
+In the Y . . .
+`$$m\frac{dV}{dt}=6\pi r\mu U-mg$$`
 
 
 ]
 
+.pull-right[
+
+&lt;img src="https://www.botany.one/wp-content/uploads/2019/04/Misc_pollen_colorized.jpg" width="400" /&gt;
+
+
+]
+
+
 ---
+
+class: top
+
+#  Life at low Re
+
+
+.pull-left[
+How far will a pollen spore go?
+
+speed= 10 m s^−1 
+
+size= 100 μm 
+
+`\(\textrm{mass=}2.5^{−10}\textrm{ g}\)`
+
+`\(\mu\)`=.2 mPa/s
+
+In the X . . .
+`$$m\frac{dU}{dt}=6\pi r\mu U$$`
+In the Y . . .
+`$$m\frac{dV}{dt}=6\pi r\mu U-mg$$`
+
+
+]
+
+.pull-right[
+
+
+``` r
+t2 &lt;- seq(0,100,0.001)
+uy &lt;- function(Uo,m,mu,t,r,g=9.8){
+  Uo*exp(-6*pi*r*t*mu/m-g)*-1}
+
+Uy &lt;- uy(Uo=10,m=12.5*10^-9,t=t2,r=1e-4,mu=2e-5)
+Ux &lt;- u(Uo=10,m=12.5*10^-9,t=t2,r=1e-4,mu=2e-5)
+
+dy &lt;- cumsum(Uy*0.001)
+dx &lt;- cumsum(Ux*0.001)
+qplot(dx,dy)+ylab("dY (m)")+xlab("dX (m)")+theme_classic(20)
+```
+
+&lt;img src="Lecture21_files/figure-html/unnamed-chunk-12-1.png" width="200" /&gt;
+
+
+]
+
+
+---
+
+
 
 class: center, middle
 
