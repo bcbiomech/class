@@ -100,7 +100,7 @@ For your model, assume the following:
 4. Include at least three informative figures that represent your model output and seek to answer these questions.
 
 
-As a group, please synthesize the results of your model predictions and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports are due Thursday, April 25th, by 11:59 PM. They should be uploaded in a zipped directory [using this link](https://forms.gle/3wXSUd1QdCJRCXgh6).
+As a group, please synthesize the results of your model predictions and address these questions in a report in markdown format that follows the structure outlined on our [Min-projects page](mini_projects.html). Reports are due Thursday, May 1st, by 11:59 PM. They should be uploaded in a zipped directory [using this link](https://forms.gle/p3PNHB79Kyc1iEoR7).
 
 
 ## What to pay attention to in writing the report
