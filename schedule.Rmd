@@ -109,13 +109,13 @@ All assignments are due at 11:59 pm on the specified date. **V**= Vogel, S. Voge
 ## Week 14 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Apr 22 | No class (Monday Schedule)  | | AME5 revision due
+ | Tuesday, Apr 22 | No class (Monday Schedule)  | | 
  | Thursday, Apr 24 | Final Project Work || 
 
 ## Week 15 Schedule
  | **Date** <img width=200/>| **Topic (Lecture)** <img width=200/>| **Reading** <img width=200/> | **Assignment**<img width=200/>
 --------|--------|-------- |-------- |-------- 
- | Tuesday, Apr 29 | Final Project Work  ||
+ | Tuesday, Apr 29 | Final Project Work  || AME5 revision due
  | Thursday, May 1 | Final Project Work || MP5 report due  
  
 
